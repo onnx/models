@@ -4,7 +4,7 @@ This is a repository for storing ONNX models.
 
 ### Models
 
-- [BVLC AlexNet](bvlc)
+- [BVLC AlexNet](bvlc_alexnet)
 
 - [DenseNet-121](densenet121)
 
