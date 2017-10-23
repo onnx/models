@@ -4,23 +4,23 @@ This is a repository for storing ONNX models.
 
 ### Models
 
-- [BVLC AlexNet](bvlc_alexnet)
+- [BVLC AlexNet](bvlc_alexnet) (217 MByte)
 
-- [DenseNet-121](densenet121)
+- [DenseNet-121](densenet121) (31 MByte)
 
-- [Inception-v1](inception_v1)
+- [Inception-v1](inception_v1) (26 MByte)
 
-- [Inception-v2](inception_v2)
+- [Inception-v2](inception_v2) (41 MByte)
 
-- [ResNet-50](resnet50)
+- [ResNet-50](resnet50) (92 MByte)
 
-- [ShuffleNet](shufflenet)
+- [ShuffleNet](shufflenet) (6.7 MByte)
 
-- [SqueezeNet](squeezenet)
+- [SqueezeNet](squeezenet) (6.0 MByte)
 
-- [VGG-16](vgg16)
+- [VGG-16](vgg16) (310 MByte)
 
-- [VGG-19](vgg19)
+- [VGG-19](vgg19) (510 MByte)
 
 ### Usage
 
