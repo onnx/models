@@ -20,7 +20,7 @@ This is a repository for storing ONNX models.
 
 - [VGG-16](vgg16) (310 MByte)
 
-- [VGG-19](vgg19) (510M)
+- [VGG-19](vgg19) (510 MByte)
 
 ### Usage
 
