@@ -26,7 +26,7 @@ This is a repository for storing ONNX models.
 
 Every ONNX backend should support running these models out of the box. After dowloading and extracting the tarball of each model, there should be
 
-- A protobuf file `model.pb` which is the serialized ONNX model.
+- A protobuf file `model.onnx` which is the serialized ONNX model.
 - Several sets of sample inputs and outputs files (`test_data_*.npz`), they are numpy serialized archive.
 
 e.g. they can be used like this:
