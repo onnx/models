@@ -6,6 +6,12 @@ This is a repository for storing ONNX models.
 
 - [BVLC AlexNet](bvlc_alexnet) (217 MByte)
 
+- [BVLC GoogleNet](bvlc_googlenet) (26 MByte)
+
+- [BVLC CaffeNet](bvlc_reference_caffenet) (217 MByte)
+
+- [BVLC R-CNN ILSVRC13](bvlc_reference_rcnn_ilsvrc13) (206 MByte)
+
 - [DenseNet-121](densenet121) (31 MByte)
 
 - [Inception-v1](inception_v1) (26 MByte)
