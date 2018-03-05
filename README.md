@@ -6,6 +6,12 @@ This is a repository for storing ONNX models.
 
 - [BVLC AlexNet](bvlc_alexnet) (217 MByte)
 
+- [BVLC GoogleNet](bvlc_googlenet) (26 MByte)
+
+- [BVLC CaffeNet](bvlc_reference_caffenet) (217 MByte)
+
+- [BVLC R-CNN ILSVRC13](bvlc_reference_rcnn_ilsvrc13) (206 MByte)
+
 - [DenseNet-121](densenet121) (31 MByte)
 
 - [Inception-v1](inception_v1) (26 MByte)
@@ -26,7 +32,7 @@ This is a repository for storing ONNX models.
 
 Every ONNX backend should support running these models out of the box. After dowloading and extracting the tarball of each model, there should be
 
-- A protobuf file `model.pb` which is the serialized ONNX model.
+- A protobuf file `model.onnx` which is the serialized ONNX model.
 - Several sets of sample inputs and outputs files (`test_data_*.npz`), they are numpy serialized archive.
 
 e.g. they can be used like this:
