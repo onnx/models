@@ -30,7 +30,7 @@ This is a repository for storing ONNX models.
 
 - [MNIST](mnist) (26 kByte)
 
-- [Emotion-FERPlus](emotion_ferplus) (34 kByte)
+- [Emotion-FERPlus](emotion_ferplus) (34 MByte)
 
 ### Usage
 
