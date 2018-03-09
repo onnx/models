@@ -30,6 +30,8 @@ This is a repository for storing ONNX models.
 
 - [MNIST](mnist) (26 kByte)
 
+- [Emotion-FERPlus](emotion_ferplus) (34 kByte)
+
 ### Usage
 
 Every ONNX backend should support running these models out of the box. After dowloading and extracting the tarball of each model, there should be
