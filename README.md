@@ -32,7 +32,7 @@ This is a repository for storing ONNX models.
 
 - [Emotion-FERPlus](emotion_ferplus) (34 MByte)
 
-- [Tiny-YOLOv2](tiny_yolov2) (60.5 MByte)
+- [Tiny-YOLOv2](tiny_yolov2) (61 MByte)
 
 ### Usage
 
