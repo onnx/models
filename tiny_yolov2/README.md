@@ -1,7 +1,7 @@
 # Tiny YOLOv2
 
 Download: https://www.cntk.ai/OnnxModels/tiny_yolov2.tar.gz  
-Model size: 60.5 MB
+Model size: 61 MB
 
 ## Description
 This model is a real-time neural network for object detection that detects 20 different classes. It is made up of 9 convolutional layers and 6 max-pooling layers and is a smaller version of the more complex full [YOLOv2](https://pjreddie.com/darknet/yolov2/) network. 
