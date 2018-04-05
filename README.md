@@ -32,6 +32,8 @@ This is a repository for storing ONNX models.
 
 - [Emotion-FERPlus](emotion_ferplus) (34 MByte)
 
+- [Tiny-YOLOv2](tiny_yolov2) (60.5 MByte)
+
 ### Usage
 
 Every ONNX backend should support running these models out of the box. After downloading and extracting the tarball of each model, there should be
