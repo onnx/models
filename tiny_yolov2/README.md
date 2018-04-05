@@ -13,7 +13,7 @@ This model is a real-time neural network for object detection that detects 20 di
 The Tiny YOLO model was trained on the [Pascal VOC](http://host.robots.ox.ac.uk/pascal/VOC/) dataset.
 
 ## Source
-The model was converted from a Core ML version of Tiny YOLO using [ONNXMLTools](https://github.com/onnx/onnxmltools). The source code can be found [here](https://github.com/hollance/YOLO-CoreML-MPSNNGraph). The Core ML model in turn was converted from the [original network](https://pjreddie.com/darknet/yolov2/) implemented in Darknet (via intermediate conversion to Keras).
+The model was converted from a Core ML version of Tiny YOLO using [ONNXMLTools](https://github.com/onnx/onnxmltools). The source code can be found [here](https://github.com/hollance/YOLO-CoreML-MPSNNGraph). The Core ML model in turn was converted from the [original network](https://pjreddie.com/darknet/yolov2/) implemented in Darknet (via intermediate conversion through Keras).
 
 ## Model input and output
 ### Input
