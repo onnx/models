@@ -1,4 +1,44 @@
 # ResNet-50
-======
-Download: https://s3.amazonaws.com/download.onnx/models/resnet50.tar.gz
 
+Download:
+- release 1.1 https://s3.amazonaws.com/download.onnx/models/opset_3/resnet50.tar.gz
+- master: https://s3.amazonaws.com/download.onnx/models/opset_6/resnet50.tar.gz
+
+Model size: 103 MB
+
+## Description
+ResNet-50 is a deep convolutional networks for classification.
+
+### Paper
+[Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385)
+
+### Dataset
+[ILSVRC2015](http://www.image-net.org/challenges/LSVRC/2015/)
+
+## Source
+Caffe2 ResNet-50 ==> ONNX ResNet-50
+
+## Model input and output
+### Input
+```
+gpu_0/data_0: float[1, 3, 224, 224]
+```
+### Output
+```
+gpu_0/softmax_1: float[1, 1000]
+```
+### Pre-processing steps
+### Post-processing steps
+### Sample test data
+random generated sampe test data:
+- test_data_0.npz
+- test_data_1.npz
+- test_data_2.npz
+- test_data_set_0
+- test_data_set_1
+- test_data_set_2
+
+## Results/accuracy on test set
+
+## License
+MIT
