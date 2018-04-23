@@ -50,4 +50,4 @@ just the center crop. (Using the average of 10 crops,
 (4 + 1 center) * 2 mirror, should obtain a bit higher accuracy.)
 
 ## License
-BSD
+[BSD](LICENSE)
