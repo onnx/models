@@ -4,29 +4,29 @@ This is a repository for storing ONNX models.
 
 ### Models
 
-- [BVLC AlexNet](bvlc_alexnet) (217 MByte)
+- [BVLC AlexNet](bvlc_alexnet) (244 MByte)
 
-- [BVLC GoogleNet](bvlc_googlenet) (26 MByte)
+- [BVLC GoogleNet](bvlc_googlenet) (28 MByte)
 
-- [BVLC CaffeNet](bvlc_reference_caffenet) (217 MByte)
+- [BVLC CaffeNet](bvlc_reference_caffenet) (244 MByte)
 
-- [BVLC R-CNN ILSVRC13](bvlc_reference_rcnn_ilsvrc13) (206 MByte)
+- [BVLC R-CNN ILSVRC13](bvlc_reference_rcnn_ilsvrc13) (231 MByte)
 
-- [DenseNet-121](densenet121) (31 MByte)
+- [DenseNet-121](densenet121) (33 MByte)
 
-- [Inception-v1](inception_v1) (26 MByte)
+- [Inception-v1](inception_v1) (28 MByte)
 
-- [Inception-v2](inception_v2) (41 MByte)
+- [Inception-v2](inception_v2) (45 MByte)
 
-- [ResNet-50](resnet50) (92 MByte)
+- [ResNet-50](resnet50) (103 MByte)
 
-- [ShuffleNet](shufflenet) (6.7 MByte)
+- [ShuffleNet](shufflenet) (5.3 MByte)
 
-- [SqueezeNet](squeezenet) (6.0 MByte)
+- [SqueezeNet](squeezenet) (5 MByte)
 
-- [VGG-16](vgg16) (310 MByte)
+- [VGG-19](vgg19) (575 MByte)
 
-- [VGG-19](vgg19) (510 MByte)
+- [ZFNet](zfnet) (349 MByte)
 
 - [MNIST](mnist) (26 kByte)
 
