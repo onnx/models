@@ -43,4 +43,4 @@ random generated sampe test data:
 On the 200-class ILSVRC2013 detection dataset, R-CNN’s mAP is 31.4%.
 
 ## License
-BSD
+[BSD-3](LICENSE)
