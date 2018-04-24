@@ -53,4 +53,4 @@ This model obtains a top-1 accuracy 57.4% and a top-5 accuracy
 should obtain a bit higher accuracy still.)
 
 ## License
-[BSD](LICENSE)
+[BSD-3](LICENSE)
