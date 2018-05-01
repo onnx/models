@@ -19,7 +19,7 @@ Input image of the shape `(1x28x28)`
 Output is a `(1x10)` array
 
 ### Pre-processing steps
-Resize the input image to a `(1x28X28)` array of type `float32`, scaled to between `[0,1]` (computed by: `image/255`).
+Resize the input image to a `(1x28X28)` array of type `float32`.
 
 ### Post-processing steps
 Route the model output through a softmax function to map the aggregated activations across the network to probabilities across the 10 classes.
