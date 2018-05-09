@@ -42,7 +42,7 @@ Every ONNX backend should support running these models out of the box. After dow
 - Test data.
 
 
-The test date are provided in two different formats:
+The test data are provided in two different formats:
 - Serialized Numpy archives, which are files named like `test_data_*.npz`, each file contains one set of test inputs and outputs.
 They can be used like this:
 
