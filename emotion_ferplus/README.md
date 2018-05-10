@@ -26,7 +26,9 @@ Resize the input image to a `(1x64x64)` array of type `float32`.
 Route the model output through a softmax function to map the aggregated activations across the network to probabilities across the 8 classes, where the labels map as follows:  
 `emotion_table = {'neutral':0, 'happiness':1, 'surprise':2, 'sadness':3, 'anger':4, 'disgust':5, 'fear':6, 'contempt':7}`
 ### Sample test data 
-Sets of sample input and output files are provided in .npz format (`test_data_*.npz`). The input is a `(1x64x64)` numpy array of a test image, while the output is an array of length 8 corresponding to the output of evaluating the model on the sample input.
+Sets of sample input and output files are provided in 
+* the .npz format (`test_data_*.npz`). The input is a `(1x64x64)` numpy array of a test image, while the output is an array of length 8 corresponding to the output of evaluating the model on the sample input.
+* serialized protobuf TensorProtos (`.pb`), which are stored in the folders `test_data_set_*/`.
 
 ## License
 MIT
