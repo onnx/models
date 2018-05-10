@@ -25,7 +25,9 @@ Resize the input image to a (3x416x416) array of type float32.
 ### Post-processing steps
 The output is a (125x13x13) tensor where 13x13 is the number of grid cells that the image gets divided into. Each grid cell corresponds to 125 channels, made up of the 5 bounding boxes predicted by the grid cell and the 25 data elements that describe each bounding box (`5x25=125`). For more information on how to derive the final bounding boxes and their corresponding confidence scores, refer to this [post](http://machinethink.net/blog/object-detection-with-yolo/).
 ### Sample test data
-Sets of sample input and output files are provided in .npz format (`test_data_*.npz`). The input is a (3x416x416) numpy array of a test image from Pascal VOC, while the output is a numpy array of shape (1x125x13x13).
+Sets of sample input and output files are provided in 
+* the .npz format (`test_data_*.npz`). The input is a (3x416x416) numpy array of a test image from Pascal VOC, while the output is a numpy array of shape (1x125x13x13).
+* serialized protobuf TensorProtos (`.pb`), which are stored in the folders `test_data_set_*/`.
 
 ## License
 MIT
