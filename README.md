@@ -1,5 +1,5 @@
 <p align="center">
-<img src="ONNX_logo_main" width="329" height="295"/>
+<img src="ONNX_logo_main.png" width="329" height="295"/>
 </p>
 
 # ONNX Model Zoo
