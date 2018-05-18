@@ -29,7 +29,7 @@ List of deep learning models along with helper stuff like description of model, 
 * [Download ONNX model]()
 * [Download MMS archive]()
 * [Visualize network]()
-* [Reference](https://arxiv.org/pdf/1409.1556.pdf)
+* [Reference](https://arxiv.org/abs/1409.1556)
 * [Training code]()
 * [Dataset]()
 
@@ -47,7 +47,7 @@ List of deep learning models along with helper stuff like description of model, 
 * [Download ONNX model]()
 * [Download MMS archive]()
 * [Visualize network]()
-* [Reference](https://arxiv.org/pdf/1602.07360.pdf)
+* [Reference](https://arxiv.org/abs/1602.07360)
 * [Training code]()
 * [Dataset]()
 
@@ -55,10 +55,26 @@ List of deep learning models along with helper stuff like description of model, 
 
 ## Object Detection
 
+### 1. SSD: Single Shot Multi Detector
+* *description*
+* [Download ONNX model]()
+* [Download MMS archive]()
+* [Visualize network]()
+* [Reference](https://arxiv.org/abs/1512.02325)
+* [Training code]()
+* [Dataset]()
+
 ## Face Detection
+
+### 1. ArcFace: Additive Angular Margin Loss for Deep Face Recognition
+* *description*
+* [Download ONNX model]()
+* [Download MMS archive]()
+* [Visualize network]()
+* [Reference](https://arxiv.org/abs/1801.07698)
+* [Training code]()
+* [Dataset]()
 
 ## Object Detection and Segmentation
 
 ## Semantic Segmentation
-
-## Face Detection
