@@ -26,7 +26,7 @@ This is a repository for storing ONNX models.
 
 - [VGG-19](vgg19) (575 MByte)
 
-- [ZFNet](zfnet) (349 MByte)
+- [ZFNet-512](zfnet512) (349 MByte)
 
 - [MNIST](mnist) (26 kByte)
 

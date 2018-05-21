@@ -1,13 +1,14 @@
-# ZFNet
+# ZFNet-512
 
 Download:
-- release 1.1 https://s3.amazonaws.com/download.onnx/models/opset_3/zfnet.tar.gz
-- master: https://s3.amazonaws.com/download.onnx/models/opset_6/zfnet.tar.gz
+- release 1.1 https://s3.amazonaws.com/download.onnx/models/opset_3/zfnet512.tar.gz
+- master: https://s3.amazonaws.com/download.onnx/models/opset_6/zfnet512.tar.gz
 
 Model size: 349 MB
 
 ## Description
-ZFNet is a deep convolutional networks for classification.
+ZFNet-512 is a deep convolutional networks for classification.
+This model's 4th layer has 512 maps instead of 1024 maps mentioned in the paper.
 
 ### Paper
 [Visualizing and Understanding Convolutional Networks](https://arxiv.org/abs/1311.2901)
@@ -16,7 +17,7 @@ ZFNet is a deep convolutional networks for classification.
 [ILSVRC2013](http://www.image-net.org/challenges/LSVRC/2013/)
 
 ## Source
-Caffe2 ZFNet ==> ONNX ZFNet
+Caffe2 ZFNet-512 ==> ONNX ZFNet-512
 
 ## Model input and output
 ### Input
