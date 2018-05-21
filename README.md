@@ -4,7 +4,9 @@
 
 # ONNX Model Zoo
 
-List of deep learning models along with helper stuff like description of model, network visualization tool ([Netron](https://lutzroeder.github.io/Netron)), training code, link to paper and dataset for training and testing.
+This repository contains a collection of pre-trained models for the state of the art works in deep learning. Each model is available in ONNX and MMS archive format. Accompanying each model is the notebook used to train the model written in mxnet framework, along with links to the dataset and the original paper.
+
+We also have included a visualization tool ([Netron](https://lutzroeder.github.io/Netron)) to get a visual representation of the model architecture.
 
 *insert tags*
 <!--
