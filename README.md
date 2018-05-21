@@ -17,6 +17,7 @@ We also have included a visualization tool ([Netron](https://lutzroeder.github.i
 # Models
 ## Image Classification
 The model takes images as input and classifies the major object in the image into a set of pre-defined classes.
+
 | | | |
 |-|-|-|
 |<b>Alexnet</b><br /> *description*|<b>VGG-16</b><br /> *description*|<b> Resnet-18</b><br /> *description*|
@@ -26,6 +27,7 @@ The model takes images as input and classifies the major object in the image int
 
 ## Object Detection
 The model takes images as input and detects objects present in the image
+
 | | | |
 |-|-|-|
 |<b>SSD: Single Shot Multi Detector</b><br /> *description*|||
@@ -33,6 +35,7 @@ The model takes images as input and detects objects present in the image
 
 ## Face Detection and Recognition
 The model takes images as input and detects/recognizes human faces in the image
+
 | | | |
 |-|-|-|
 |<b>ArcFace</b><br /> *description*|||
