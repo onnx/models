@@ -6,7 +6,7 @@
 
 This repository contains a collection of pre-trained models for state of the art works in deep learning. Each model is available in ONNX and MMS archive format. Accompanying each model is the notebook used to train the model written in MXNet framework, along with links to the dataset and the original paper.
 
-We also have included a visualization tool ([Netron](https://lutzroeder.github.io/Netron)) to get a visual representation of the model architecture.
+[Netron](https://lutzroeder.github.io/Netron) is a visualization tool that can be used to get a visual representation of the model architecture.
 
 *insert tags*
 <!--
