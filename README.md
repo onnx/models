@@ -8,6 +8,8 @@ This repository contains a collection of pre-trained models for state of the art
 
 Visualize the network architecture of any model using [Netron](https://lutzroeder.github.io/Netron).
 
+Want to contribute a model? Check out the list of [backlog models](backlogs.md) to get started. Also have a look at the [rules]() for making a contribution before submitting a request.
+
 *insert tags*
 <!--
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
