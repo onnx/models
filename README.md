@@ -1,5 +1,5 @@
 <p align="center">
-<img src="ONNX Model Zoo Graphics.png" width="90%"/>
+<img src="images/ONNX Model Zoo Graphics.png" width="90%"/>
 </p>
 
 # ONNX Model Zoo
