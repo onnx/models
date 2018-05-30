@@ -7,7 +7,7 @@
 * Version 1.1:<br>Download: [link]() ; Size:
 ## Example notebook
 ## Training notebook
-View the notebook that can be used for training [here](train_notebook_squeezenet.ipynb)
+Use the notebook [train_squeezenet](train_notebook_squeezenet.ipynb) to train the model
 ## Paper
 SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size - [link](https://arxiv.org/abs/1602.07360)
 ## Dataset and Preparation
@@ -19,4 +19,4 @@ Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/cha
 ## Accuracy measures
 ## Tags
 ## Verify validation accuracy
-Use the notebook [test_script.ipynb](../test_script.ipynb) to verify the accuracy of the model on the validation set
+Use the notebook [test_script](../test_script.ipynb) to verify the accuracy of the model on the validation set
