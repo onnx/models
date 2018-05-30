@@ -31,7 +31,7 @@
  <br>Resnet-152 ; Size: 5MB
  
 ### Inference example notebook (How to use the models)
-View the [notebook](imagenet_inference.ipynb) to understand how to use above models for doing inference.
+View the [notebook](../imagenet_inference.ipynb) to understand how to use above models for doing inference.
 ### Training notebook
 View the notebook that can be used for training [here](train_notebook_squeezenet.ipynb). The notebook contains details for 
 parameters and network for each of the above variants of Resnet.
