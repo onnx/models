@@ -13,7 +13,8 @@ SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model si
 ## Dataset and Preparation
 Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/)
 ### Preparation:
-* Run [extract_imagenet.py](../extract_imagenet.py). Make sure to have [imagenet_val_maps.pklz](../imagenet_val_maps.pklz) file in the same folder.
+* Download [extract_imagenet.py](../extract_imagenet.py) and [imagenet_val_maps.pklz](../imagenet_val_maps.pklz) and place in same folder
+* Run [extract_imagenet.py](../extract_imagenet.py)
 ## Accuracy measures
 ## Tags
 ## Verify validation accuracy
