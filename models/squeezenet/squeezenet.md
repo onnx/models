@@ -7,9 +7,9 @@
 * [Squeezenet1.1]() ; Size: 5MB
 ## Example notebook
 ## Training notebook
-Use the notebook [train_squeezenet](train_squeezenet.ipynb) to train the model
-## Paper
-SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size - [link](https://arxiv.org/abs/1602.07360)
+Use this notebook to train the model: [train_squeezenet](train_squeezenet.ipynb)
+## References
+* Squeezenet1.0 <br>[SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size](https://arxiv.org/abs/1602.07360)
 ## Dataset and Preparation
 Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/)
 ### Preparation:
