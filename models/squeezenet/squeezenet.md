@@ -7,7 +7,7 @@
 * Version 1.1:<br>Download: [link]() ; Size:
 ## Example notebook
 ## Training notebook
-Use the notebook [train_squeezenet](train_notebook_squeezenet.ipynb) to train the model
+Use the notebook [train_squeezenet](train_squeezenet.ipynb) to train the model
 ## Paper
 SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size - [link](https://arxiv.org/abs/1602.07360)
 ## Dataset and Preparation
