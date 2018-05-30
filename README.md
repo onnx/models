@@ -22,11 +22,13 @@ The model takes images as input and classifies the major object in the image int
 
 | | | |
 |-|-|-|
-|<b>Squeezenet</b><br />A light-weight CNN providing <br />Alexnet level accuracy with 50X <br /> fewer parameters|<b>VGG-16</b><br />16 layer version of the deep<br /> CNN model which won Imagenet<br /> Challenge in 2014|<b> Resnet-18</b><br />18 layer version of the deep<br /> CNN model which won Imagenet<br /> Challenge in 2015|
+|<b>[Squeezenet](models/squeezenet.md)</b>|<b>[VGG-16](models/vgg.md)</b>|<b>[Resnet-18](models/resnet.md)</b>|
+|A light-weight CNN providing <br />Alexnet level accuracy with 50X <br /> fewer parameters|16 layer version of the deep<br /> CNN model which won Imagenet<br /> Challenge in 2014|18 layer version of the deep<br /> CNN model which won Imagenet<br /> Challenge in 2015|
+<!--
 |[ONNX model]() (5 MB)<br /> [MMS archive]() <br />[Example notebook]()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />[Reference](https://arxiv.org/abs/1602.07360) <br />[Training notebook]() <br />Dataset - [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/)|[ONNX model]() (*size*)<br /> [MMS archive]() <br />[Example notebook]()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />[Reference](https://arxiv.org/abs/1409.1556) <br />[Training notebook]() <br />Dataset - [ILSVRC2014](http://www.image-net.org/challenges/LSVRC/2014/) |[ONNX model]() (*size*)<br /> [MMS archive]() <br />[Example notebook]()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />[Reference](https://arxiv.org/abs/1512.03385) <br />[Training notebook]() <br />Dataset - [ILSVRC2015](http://www.image-net.org/challenges/LSVRC/2015/)
 |<b>Mobilenet</b><br />*description*|<b>Densenet</b><br />*description*||
 |[ONNX model]()<br /> [MMS archive]() <br />[Example notebook]()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />[Reference](https://arxiv.org/abs/1602.07360) <br />[Training notebook]() <br />Dataset - [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/)|[ONNX model]()<br /> [MMS archive]() <br />[Example notebook]() &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />[Reference](https://arxiv.org/abs/1602.07360) <br />[Training notebook]() <br />Dataset - [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/)|
-
+-->
 ## Object Detection
 The model takes images as input and detects objects present in the image
 
