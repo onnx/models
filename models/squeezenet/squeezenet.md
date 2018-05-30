@@ -21,4 +21,4 @@ Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/cha
 ## Accuracy measures
 ## Tags
 ## Verify validation accuracy
-Use the notebook [test_script](../test_script.ipynb) to verify the accuracy of the model on the validation set
+Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set
