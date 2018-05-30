@@ -1,7 +1,7 @@
 # Squeezenet
 ## ONNX model
-* Version 1.0: <br>Download: [link]() ; Size: 5MB
-* Version 1.1:<br>Download: [link]() ; Size: 5MB
+* Version 1.0: <br>[squeezenet1.0]() ; Size: 5MB
+* Version 1.1:<br>[squeezenet1.1]() ; Size: 5MB
 ## MMS archive
 * Version 1.0: <br>Download: [link]() ; Size:
 * Version 1.1:<br>Download: [link]() ; Size:
