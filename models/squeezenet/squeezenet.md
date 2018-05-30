@@ -6,7 +6,7 @@
 * [Squeezenet1.0]() ; Size: 5MB
 * [Squeezenet1.1]() ; Size: 5MB
 ## Example notebook
-View the [notebook](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook
+View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook
 ## Training notebook
 Use the notebook [train_squeezenet](train_squeezenet.ipynb) to train the model. It contains the hyperparameters and network details used for training the above models
 ## References
