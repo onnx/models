@@ -1,10 +1,10 @@
 # Squeezenet
 ## ONNX model
-* Version 1.0: <br>[squeezenet1.0]() ; Size: 5MB
-* Version 1.1:<br>[squeezenet1.1]() ; Size: 5MB
+* [Squeezenet1.0]() ; Size: 5MB
+* [Squeezenet1.1]() ; Size: 5MB
 ## MMS archive
-* Version 1.0: <br>Download: [link]() ; Size:
-* Version 1.1:<br>Download: [link]() ; Size:
+* [Squeezenet1.0]() ; Size: 5MB
+* [Squeezenet1.1]() ; Size: 5MB
 ## Example notebook
 ## Training notebook
 Use the notebook [train_squeezenet](train_squeezenet.ipynb) to train the model
