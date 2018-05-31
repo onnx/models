@@ -17,9 +17,9 @@ The model takes images as input and classifies the major object in the image int
 
 | | | |
 |-|-|-|
-|<b>[Squeezenet](models/squeezenet/README.md)</b>|<b>[VGG](models/vgg/README.md)</b>|<b>[Resnet](models/resnet/README.md)</b>|
+|<b>[Squeezenet](models/squeezenet/)</b>|<b>[VGG](models/vgg/)</b>|<b>[Resnet](models/resnet/)</b>|
 |A light-weight CNN providing Alexnet <br />level accuracy with 50X fewer<br /> parameters. Top-5 error from <br /> paper - ~20%|Deep CNN model (upto 19 layers)<br /> which won Imagenet Challenge in<br /> 2014. Top-5 error from <br /> paper - ~8%|Very deep CNN model (upto <br />152 layers) which won Imagenet<br /> Challenge in 2015. Top-5 error from <br /> paper - ~6%|
-|<b>[Mobilenet](models/mobilenet/README.md)</b>|||
+|<b>[Mobilenet](models/mobilenet/)</b>|||
 |Efficient CNN model for mobile <br />and embedded vision applications|||
 <!--
 |[ONNX model]() (5 MB)<br /> [MMS archive]() <br />[Example notebook]()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />[Reference](https://arxiv.org/abs/1602.07360) <br />[Training notebook]() <br />Dataset - [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/)|[ONNX model]() (*size*)<br /> [MMS archive]() <br />[Example notebook]()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />[Reference](https://arxiv.org/abs/1409.1556) <br />[Training notebook]() <br />Dataset - [ILSVRC2014](http://www.image-net.org/challenges/LSVRC/2014/) |[ONNX model]() (*size*)<br /> [MMS archive]() <br />[Example notebook]()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />[Reference](https://arxiv.org/abs/1512.03385) <br />[Training notebook]() <br />Dataset - [ILSVRC2015](http://www.image-net.org/challenges/LSVRC/2015/)
