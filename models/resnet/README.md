@@ -15,7 +15,7 @@
  Resnet-152 ; Size: 5MB
 
 
-##MMS archive
+## MMS archive
 * Version 1:   
  Resnet-18 ; Size: 5MB  
  Resnet-34 ; Size: 5MB  
