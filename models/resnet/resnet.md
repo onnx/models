@@ -33,7 +33,7 @@
 ### Inference example notebook (How to use the models)
 View the [notebook](imagenet_inference.ipynb) to understand how to use above models for doing inference.
 ### Training notebook
-View the notebook that can be used for training [here](train_notebook_squeezenet.ipynb). The notebook contains details for 
+View the notebook that can be used for training [here](train_notebook_resnet.ipynb). The notebook contains details for 
 parameters and network for each of the above variants of Resnet.
 ### Paper
 **Resnet-v1**<br>
