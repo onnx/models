@@ -27,8 +27,8 @@ View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understan
 Use the notebook [train_vgg](train_vgg.ipynb) to train the model. It contains the hyperparameters and network details used for training the above models
 ## Verify validation accuracy
 Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook
-## References
-* ****  
-Model from the paper [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/abs/1409.1556)
+## References 
+* **vgg16** and **vgg 19** are from the paper [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/abs/1409.1556)
+* **vgg16_bn** and **vgg19_bn** are the same models as above but with batch normalization applied after each convolution layer
 ## Accuracy measures
 ## Tags
