@@ -18,7 +18,7 @@ The model takes images as input and classifies the major object in the image int
 | | | |
 |-|-|-|
 |<b>[Squeezenet](models/squeezenet/README.md)</b>|<b>[VGG](models/vgg/README.md)</b>|<b>[Resnet](models/resnet/README.md)</b>|
-|A light-weight CNN providing Alexnet <br />level accuracy with 50X fewer<br /> parameters|Deep CNN model which won <br />Imagenet Challenge in 2014|Deep CNN model which won <br />Imagenet Challenge in 2015|
+|A light-weight CNN providing Alexnet <br />level accuracy with 50X fewer<br /> parameters|Deep CNN model which won Imagenet<br /> Challenge in 2014|Deep CNN model which won Imagenet<br /> Challenge in 2015|
 |<b>[Mobilenet](models/mobilenet/README.md)</b>|||
 |*description*|||
 <!--
