@@ -1,7 +1,7 @@
 # How to contribute
 In order to contribute a new model, issue a pull request which contains a file with the following:
 * ONNX model link
-* MMS archive link
+* MMS archive link (optional)
 * Dataset link (if applicable)
 * Confirmation the trained model meets published accuracy from original paper
 * Link to references (if applicable)
