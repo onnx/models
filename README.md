@@ -10,8 +10,7 @@ Visualize the network architecture of a model using [Netron](https://lutzroeder.
 
 Want to contribute a model? Check out the list of [backlog models](backlogs.md) to get started. Also refer to the [guidelines](contribute.md) for contribution before submitting a request.
 
-[![ONNX](images/ONNX_logo_main.png)](https://github.com/onnx)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+*insert tags*
 <!--
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
