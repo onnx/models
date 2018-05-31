@@ -24,7 +24,7 @@ The model takes images as input and classifies the major object in the image int
 |-|-|-|
 |<b>[Squeezenet](models/squeezenet/squeezenet.md)</b>|<b>[VGG](models/vgg/vgg.md)</b>|<b>[Resnet](models/resnet/resnet.md)</b>|
 |A light-weight CNN providing Alexnet <br />level accuracy with 50X fewer<br /> parameters|16 layer version of the deep CNN<br /> model which won Imagenet <br />Challenge in 2014|18 layer version of the deep CNN<br /> model which won Imagenet <br />Challenge in 2015|
-|<b>[Mobilenet](models/mobilenet.md)</b>|||
+|<b>[Mobilenet](models/mobilenet/mobilenet.md)</b>|||
 |*description*|||
 <!--
 |[ONNX model]() (5 MB)<br /> [MMS archive]() <br />[Example notebook]()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />[Reference](https://arxiv.org/abs/1602.07360) <br />[Training notebook]() <br />Dataset - [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/)|[ONNX model]() (*size*)<br /> [MMS archive]() <br />[Example notebook]()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />[Reference](https://arxiv.org/abs/1409.1556) <br />[Training notebook]() <br />Dataset - [ILSVRC2014](http://www.image-net.org/challenges/LSVRC/2014/) |[ONNX model]() (*size*)<br /> [MMS archive]() <br />[Example notebook]()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />[Reference](https://arxiv.org/abs/1512.03385) <br />[Training notebook]() <br />Dataset - [ILSVRC2015](http://www.image-net.org/challenges/LSVRC/2015/)
