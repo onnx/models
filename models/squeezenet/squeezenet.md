@@ -27,4 +27,4 @@ First, go to the [download page](http://www.image-net.org/download-images) (you 
 ## Accuracy measures
 ## Tags
 ## Verify validation accuracy
-Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set
+Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook
