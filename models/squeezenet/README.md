@@ -6,7 +6,7 @@
 * [Squeezenet1.0]() ; Size: 5MB
 * [Squeezenet1.1]() ; Size: 5MB
 ## Dataset
-Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prepare](../imagenet_prepare.md) for guidelines on preparing the dataset. 
+Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset. 
 ## Example notebook
 View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook
 ## Training notebook
