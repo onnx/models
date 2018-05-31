@@ -18,7 +18,7 @@ The model takes images as input and classifies the major object in the image int
 | | | |
 |-|-|-|
 |<b>[Squeezenet](models/squeezenet/README.md)</b>|<b>[VGG](models/vgg/README.md)</b>|<b>[Resnet](models/resnet/README.md)</b>|
-|A light-weight CNN providing Alexnet <br />level accuracy with 50X fewer<br /> parameters. Best top-5 error from <br /> paper - 19.7%|Deep CNN model (upto 19 layers)<br /> which won Imagenet Challenge in<br /> 2014|Very deep CNN model (upto <br />152 layers) which won Imagenet<br /> Challenge in 2015|
+|A light-weight CNN providing Alexnet <br />level accuracy with 50X fewer<br /> parameters. Top-5 error from <br /> paper - ~20%|Deep CNN model (upto 19 layers)<br /> which won Imagenet Challenge in<br /> 2014. Top-5 error from <br /> paper - ~8%|Very deep CNN model (upto <br />152 layers) which won Imagenet<br /> Challenge in 2015. Top-5 error from <br /> paper - ~8%|
 |<b>[Mobilenet](models/mobilenet/README.md)</b>|||
 |Efficient CNN model for mobile <br />and embedded vision applications|||
 <!--
