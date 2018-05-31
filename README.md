@@ -22,9 +22,9 @@ The model takes images as input and classifies the major object in the image int
 
 | | | |
 |-|-|-|
-|<b>[Squeezenet](models/squeezenet.md)</b>|<b>[VGG-16](models/vgg.md)</b>|<b>[Resnet-18](models/resnet.md)</b>|
-|A light-weight CNN providing <br />Alexnet level accuracy with 50X <br /> fewer parameters|16 layer version of the deep<br /> CNN model which won Imagenet<br /> Challenge in 2014|18 layer version of the deep<br /> CNN model which won Imagenet<br /> Challenge in 2015|
-|<b>[Mobilenet](models/mobilenet.md)</b>|||
+|<b>[Squeezenet](models/squeezenet/squeezenet.md)</b>|<b>[VGG](models/vgg/vgg.md)</b>|<b>[Resnet](models/resnet/resnet.md)</b>|
+|A light-weight CNN providing Alexnet <br />level accuracy with 50X fewer<br /> parameters|16 layer version of the deep CNN<br /> model which won Imagenet <br />Challenge in 2014|18 layer version of the deep CNN<br /> model which won Imagenet <br />Challenge in 2015|
+|<b>[Mobilenet](models/mobilenet/mobilenet.md)</b>|||
 |*description*|||
 <!--
 |[ONNX model]() (5 MB)<br /> [MMS archive]() <br />[Example notebook]()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />[Reference](https://arxiv.org/abs/1602.07360) <br />[Training notebook]() <br />Dataset - [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/)|[ONNX model]() (*size*)<br /> [MMS archive]() <br />[Example notebook]()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />[Reference](https://arxiv.org/abs/1409.1556) <br />[Training notebook]() <br />Dataset - [ILSVRC2014](http://www.image-net.org/challenges/LSVRC/2014/) |[ONNX model]() (*size*)<br /> [MMS archive]() <br />[Example notebook]()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />[Reference](https://arxiv.org/abs/1512.03385) <br />[Training notebook]() <br />Dataset - [ILSVRC2015](http://www.image-net.org/challenges/LSVRC/2015/)
@@ -32,21 +32,23 @@ The model takes images as input and classifies the major object in the image int
 |[ONNX model]()<br /> [MMS archive]() <br />[Example notebook]()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />[Reference](https://arxiv.org/abs/1602.07360) <br />[Training notebook]() <br />Dataset - [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/)|[ONNX model]()<br /> [MMS archive]() <br />[Example notebook]() &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />[Reference](https://arxiv.org/abs/1602.07360) <br />[Training notebook]() <br />Dataset - [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/)|
 -->
 ## Object Detection
+<!--
 The model takes images as input and detects objects present in the image
 
 | | | |
 |-|-|-|
 |<b>SSD: Single Shot Multi Detector</b><br /> *description*|||
 |[ONNX model]()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br /> [MMS archive]() <br />[Example notebook]()<br />[Reference](https://arxiv.org/abs/1512.02325) <br />[Training notebook]() <br />[Dataset]() |
-
+-->
 ## Face Detection and Recognition
+<!--
 The model takes images as input and detects/recognizes human faces in the image
 
 | | | |
 |-|-|-|
 |<b>ArcFace</b><br /> *description*|||
 |[ONNX model]()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br /> [MMS archive]() <br />[Example notebook]()<br />[Reference](https://arxiv.org/abs/1801.07698) <br />[Training notebook]() <br />[Dataset]() |
-
+-->
 
 ## Object Detection and Segmentation
 
