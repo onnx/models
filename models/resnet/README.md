@@ -35,7 +35,7 @@ Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/cha
 View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook
 
 ## Training notebook
-View the notebook that can be used for training [here](train_notebook_resnet.ipynb). The notebook contains details for 
+View the notebook that can be used for training [here](train_resnet.ipynb). The notebook contains details for 
 parameters and network for each of the above variants of Resnet.
 ## Verify validation accuracy
 Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook
