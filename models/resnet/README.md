@@ -41,10 +41,10 @@ parameters and network for each of the above variants of Resnet.
 Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook
 ## References
 **Resnet-v1**  
-[Deep residual learning for image recognition](https://arxiv.org/abs/1512.03385)<br>
- He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 770-778. 2016.<br>
+[Deep residual learning for image recognition](https://arxiv.org/abs/1512.03385)  
+ He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 770-778. 2016.  
   **Resnet-v2**  
-[Identity mappings in deep residual networks](https://arxiv.org/abs/1603.05027)<br>
+[Identity mappings in deep residual networks](https://arxiv.org/abs/1603.05027)  
 He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
 In European Conference on Computer Vision, pp. 630-645. Springer, Cham, 2016.
 
