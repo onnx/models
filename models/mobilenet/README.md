@@ -22,8 +22,5 @@ Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accur
 ## References
 **Mobilenet-v2**  
 Model from the paper [MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381)  
- 
- 
- 
 ## Accuracy measures
 ## Tags
