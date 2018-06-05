@@ -5,6 +5,7 @@
 * [vgg16_bn]() ; Size: 
 * [vgg19_bn]() ; Size:
 ## MMS archive
+[MXNet Model Server](https://github.com/awslabs/mxnet-model-server) (MMS) is a flexible and easy tool to serve deep learning models from ONNX or MXNet. To learn about ONNX model serving with MMS, head over to this [doc](https://github.com/awslabs/mxnet-model-server/blob/master/docs/export_from_onnx.md). 
 * [vgg16]() ; Size: 
 * [vgg19]() ; Size:
 * [vgg16_bn]() ; Size: 
