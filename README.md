@@ -2,23 +2,28 @@
 <img src="images/ONNX Model Zoo Graphics.png" width="90%"/>
 </p>
 
-# ONNX Model Zoo
+# Open Neural Network eXchange (ONNX) Model Zoo
 
-This repository contains a collection of pre-trained models for state of the art works in deep learning. Each model is available in ONNX and MMS archive format. Accompanying each model are notebooks for training and running inference on the model written in MXNet framework, along with links to the dataset and the original paper.
+The ONNX Model Zoo is a collection of pre-trained models for state of the art works in deep learning. Models are available in the ONNX protobuf format. Where available and supported, the models are also available in the MXNet Model Server (MMS) archive format. Accompanying each model are Jupyter notebooks for model training and running inference with the trained model. The notebooks are written in Python and include links to the training dataset as well as references to the original paper that describes the model architecture.
 
-Visualize the network architecture of a model using [Netron](https://lutzroeder.github.io/Netron).
+## Model Serving with MMS
+Many of the models in this model zoo can be served with [MXNet Model Server](https://github.com/awslabs/mxnet-model-server) (MMS). MMS is a flexible and easy tool to serve deep learning models by providing a REST API with an inference end point. Supported ONNX models such as those converted from Chainer, CNTK, MXNet, and PyTorch can be served with MMS. To learn about ONNX model serving with MMS, refer to the [MMS ONNX documentation](https://github.com/awslabs/mxnet-model-server/blob/master/docs/export_from_onnx.md). 
 
-Want to contribute a model? Check out the list of [backlog models](backlogs.md) to get started. Also refer to the [guidelines](contribute.md) for contribution before submitting a request.
+## Model Visualization
+You can see visualizations of each model's network architecture by using [Netron](https://lutzroeder.github.io/Netron).
+
+## Contributions
+Do you want to contribute a model? Check out the list of [backlog models](backlogs.md) <!-- should definitely pick a different name for this-->to get started. Also refer to the [contribution guidelines](contribute.md) before submitting a model.
 
 
-# Models
-## Image Classification
+## Models
+### Image Classification
 The model takes images as input and classifies the major object in the image into a set of pre-defined classes.
 
 | | | |
 |-|-|-|
 |<b>[Squeezenet](models/squeezenet/)</b>|<b>[VGG](models/vgg/)</b>|<b>[Resnet](models/resnet/)</b>|
-|A light-weight CNN providing Alexnet <br />level accuracy with 50X fewer<br /> parameters. Top-5 error from <br /> paper - ~20%|Deep CNN model (upto 19 layers)<br /> which won Imagenet Challenge in<br /> 2014. Top-5 error from <br /> paper - ~8%|Very deep CNN model (upto <br />152 layers) which won Imagenet<br /> Challenge in 2015. Top-5 error from <br /> paper - ~6%|
+|A light-weight CNN providing Alexnet <!--these breaks won't work on mobile or different width screens br /-->level accuracy with 50X fewer<br /> parameters. Top-5 error from <br /> paper - ~20%|Deep CNN model (upto 19 layers)<br /> which won the ImageNet Challenge in<br /> 2014. Top-5 error from <br /> paper - ~8%|Very deep CNN model (upto <br />152 layers) which won the ImageNet<br /> Challenge in 2015. Top-5 error from <br /> paper - ~6%|
 |<b>[Mobilenet](models/mobilenet/)</b>|||
 |Efficient CNN model for mobile <br />and embedded vision applications.<br />Top-5 error from paper - ~10%|||
 <!--
@@ -26,7 +31,7 @@ The model takes images as input and classifies the major object in the image int
 |<b>Mobilenet</b><br />*description*|<b>Densenet</b><br />*description*||
 |[ONNX model]()<br /> [MMS archive]() <br />[Example notebook]()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />[Reference](https://arxiv.org/abs/1602.07360) <br />[Training notebook]() <br />Dataset - [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/)|[ONNX model]()<br /> [MMS archive]() <br />[Example notebook]() &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />[Reference](https://arxiv.org/abs/1602.07360) <br />[Training notebook]() <br />Dataset - [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/)|
 -->
-## Object Detection
+### Object Detection
 <!--
 The model takes images as input and detects objects present in the image
 
@@ -35,7 +40,7 @@ The model takes images as input and detects objects present in the image
 |<b>SSD: Single Shot Multi Detector</b><br /> *description*|||
 |[ONNX model]()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br /> [MMS archive]() <br />[Example notebook]()<br />[Reference](https://arxiv.org/abs/1512.02325) <br />[Training notebook]() <br />[Dataset]() |
 -->
-## Face Detection and Recognition
+### Face Detection and Recognition
 <!--
 The model takes images as input and detects/recognizes human faces in the image
 
@@ -45,6 +50,6 @@ The model takes images as input and detects/recognizes human faces in the image
 |[ONNX model]()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br /> [MMS archive]() <br />[Example notebook]()<br />[Reference](https://arxiv.org/abs/1801.07698) <br />[Training notebook]() <br />[Dataset]() |
 -->
 
-## Object Detection and Segmentation
+### Object Detection and Segmentation
 
-## Semantic Segmentation
+### Semantic Segmentation
