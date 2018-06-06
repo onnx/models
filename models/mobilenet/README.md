@@ -11,12 +11,13 @@ https://github.com/awslabs/mxnet-model-server/blob/master/docs/model_zoo.md -->
 <!--links?-->
 
 ## MMS archive
-* Version 2:
- Mobilenetv2-1.0 ; Size: 5MB
+* Version 2:   
+ Mobilenetv2-1.0 ; Size: 5MB  
  Mobilenetv2-0.5 ; Size: 5MB
  <!--links?-->
 
 ## Dataset
+
 Dataset used for training and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/).
 <!-- this is not a link to the dataset -->
 

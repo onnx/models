@@ -18,20 +18,22 @@
  Resnet-152 ; Size: 5MB
 
 
-## MMS Archive
-* Version 1:
- Resnet-18 ; Size: 5MB
- Resnet-34 ; Size: 5MB
- Resnet-50 ; Size: 5MB
- Resnet-101 ; Size: 5MB
+
+## MMS archive
+* Version 1:   
+ Resnet-18 ; Size: 5MB  
+ Resnet-34 ; Size: 5MB  
+ Resnet-50 ; Size: 5MB  
+ Resnet-101 ; Size: 5MB  
+ Resnet-152 ; Size: 5MB  
+ 
+* Version 2:  
+  Resnet-18 ; Size: 5MB  
+ Resnet-34 ; Size: 5MB  
+ Resnet-50 ; Size: 5MB  
+ Resnet-101 ; Size: 5MB  
  Resnet-152 ; Size: 5MB
 
-* Version 2:
-  Resnet-18 ; Size: 5MB
- Resnet-34 ; Size: 5MB
- Resnet-50 ; Size: 5MB
- Resnet-101 ; Size: 5MB
- Resnet-152 ; Size: 5MB
 
 ## Dataset
 Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
@@ -44,6 +46,7 @@ View the notebook that can be used for training [here](train_resnet.ipynb). The 
 
 ## Verify Validation Accuracy
 Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
+
 
 ## References
 **Resnet-v1**
