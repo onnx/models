@@ -6,13 +6,14 @@
  
 
 ## MMS archive
-[MXNet Model Server](https://github.com/awslabs/mxnet-model-server) (MMS) is a flexible and easy tool to serve deep learning models from ONNX or MXNet. To learn about ONNX model serving with MMS, head over to this [doc](https://github.com/awslabs/mxnet-model-server/blob/master/docs/export_from_onnx.md). 
 * Version 2:   
  Mobilenetv2-1.0 ; Size: 5MB  
  Mobilenetv2-0.5 ; Size: 5MB
  
 ## Dataset
-Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset. 
+Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/). 
+
+Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset. 
 ## Example notebook
 View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook
 ## Training notebook
