@@ -36,7 +36,6 @@ The accuracies obtained by the models on the validation set are shown in the tab
 |-------------|:--------------|:--------------|
 |MobileNetv2-1.0|     70.94    |     89.99           |
 |MobileNetv2-0.5|              |             |
-=
 ## References
 **MobileNet-v2**
 Model from the paper [MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381)

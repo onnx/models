@@ -1,6 +1,7 @@
 # SqueezeNet
 
 ##Model
+
 |Model        |ONNX Model  | Model archives|
 |-------------|:--------------|:--------------|
 |SqueezeNet1.0|    [4.8 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.0/squeezenet1.0.onnx)    |  [4.8 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.0/squeezenet1.0.model)     |
