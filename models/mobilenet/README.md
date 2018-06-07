@@ -1,20 +1,15 @@
-# Mobilenet
+# MobileNet
 <!-- add a description -->
-<!-- why is there not the usage pattern for acquiring the model, serving the model, and running inference from the existing model zoo? Also what about the custom service and the inference input variable differences?:
-https://github.com/awslabs/mxnet-model-server/blob/master/docs/model_zoo.md -->
 
-## ONNX model
-<!-- Consider using a table for these -->
+## Model
 * Version 2:
- Mobilenetv2-1.0 ; Size: 5MB
- Mobilenetv2-0.5 ; Size: 5MB
-<!--links?-->
 
-## MMS archive
-* Version 2:   
- Mobilenetv2-1.0 ; Size: 5MB  
- Mobilenetv2-0.5 ; Size: 5MB
- <!--links?-->
+ |Model        |ONNX Model  | Model archives|
+|-------------|:--------------|:--------------|
+|MobileNetv2-1.0|    [13.6 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-1.0/mobilenetv2-1.0.onnx)    |  [13.7 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-1.0/mobilenetv2-1.0.model)     |
+|MobileNetv2-0.5|    [13.6 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-0.5/mobilenetv2-0.5.onnx)    |  [13.7 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-0.5/mobilenetv2-0.5.model)     |
+
+
 
 ## Dataset
 
@@ -33,10 +28,18 @@ View the notebook that can be used for training [here](train_mobilenet.ipynb). T
 ## Verify Validation Accuracy
 Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook
 
+## Validation accuracy
+The accuracies obtained by the models on the validation set are shown in the table below: 
+* Version 1:
+
+ |Model        |Top-1 accuracy (%)|Top-5 accuracy (%)|
+|-------------|:--------------|:--------------|
+|MobileNetv2-1.0|     70.94    |     89.99           |
+|MobileNetv2-0.5|              |             |
+=
 ## References
-**Mobilenet-v2**
+**MobileNet-v2**
 Model from the paper [MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381)
 
-## Accuracy Measures
 
-## Tags
+## Keywords

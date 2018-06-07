@@ -1,14 +1,13 @@
 # VGG
-## ONNX model
-* [vgg16]() ; Size: 
-* [vgg19]() ; Size:
-* [vgg16_bn]() ; Size: 
-* [vgg19_bn]() ; Size:
-## MMS archive
-* [vgg16]() ; Size: 
-* [vgg19]() ; Size:
-* [vgg16_bn]() ; Size: 
-* [vgg19_bn]() ; Size:
+## Model
+
+ |Model        |ONNX Model  | Model archives|
+|-------------|:--------------|:--------------|
+|VGG16|    [527.8 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16/vgg16.onnx)    |  [527.9 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16/vgg16.model)     |
+|VGG16-bn|    [527.9 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16-bn/vgg16-bn.onnx)    |  [527.9 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16-bn/vgg16-bn.model)     |
+|VGG19|    [548.1 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg19/vgg19.onnx)    |  [548.1 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg19/vgg19.model)     |
+|VGG19-bn|    [548.1 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg19-bn/vgg19-bn.onnx)    |  [548.2 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg19-bn/vgg19-bn.model)     |
+
 ## Dataset
 Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/). 
 
@@ -20,15 +19,15 @@ Use the notebook [train_vgg](train_vgg.ipynb) to train the model. It contains th
 ## Validation accuracy
 The accuracies obtained by the models on the validation set are shown in the table below: 
 
-|Model        |Top-1 error (%)|Top-5 error (%)|
+|Model        |Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|
-|vgg16        |     27.38     |      8.86     |
-|vgg16_bn     |     27.29     |      8.79     |
-|vgg19        |     26.28     |      8.42     |
-|vgg19_bn     |     26.16     |      8.21     |
+|VGG16        |     72.62     |      91.14     |
+|VGG16-bn     |     72.71     |      91.21    |
+|VGG19        |     73.72     |      91.58     |
+|VGG19-bn     |     73.83    |      91.79     |
 
 Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 ## References 
-* **vgg16** and **vgg 19** are from the paper [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/abs/1409.1556)
-* **vgg16_bn** and **vgg19_bn** are the same models as above but with batch normalization applied after each convolution layer
-## Tags
+* **VGG 16** and **vVGG 19** are from the paper [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/abs/1409.1556)
+* **VGG 16_bn** and **VGG 19_bn** are the same models as above but with batch normalization applied after each convolution layer
+## Keywords
