@@ -1,11 +1,11 @@
 # SqueezeNet
 
-##Model
+## Model
 
 |Model        |ONNX Model  | Model archives|
 |-------------|:--------------|:--------------|
-|SqueezeNet1.0|    [4.8 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.0/squeezenet1.0.onnx)    |  [4.8 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.0/squeezenet1.0.model)     |
-|SqueezeNet1.1|    [4.7 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.1/squeezenet1.1.onnx)    |  [4.7 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.1/squeezenet1.1.model)     |
+|SqueezeNet 1.0|    [4.8 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.0/squeezenet1.0.onnx)    |  [4.8 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.0/squeezenet1.0.model)     |
+|SqueezeNet 1.1|    [4.7 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.1/squeezenet1.1.onnx)    |  [4.7 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.1/squeezenet1.1.model)     |
 
 
 ## Dataset
@@ -21,8 +21,8 @@ The accuracies obtained by the models on the validation set are shown in the tab
 
 |Model        |Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|
-|SqueezeNet1.0|     56.52     |     79.07     |
-|SqueezeNet1.1|     56.34     |     79.12     |
+|SqueezeNet 1.0|     56.52     |     79.07     |
+|SqueezeNet 1.1|     56.34     |     79.12     |
 
 Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 ## References
