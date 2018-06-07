@@ -1,5 +1,8 @@
 # SqueezeNet
 SqueezeNet is a small CNN architecture which achieves AlexNet-level accuracy on ImageNet with 50x fewer parameters. SqueezeNet requires less communication across servers during distributed training, less bandwidth to export a new model from the cloud to an autonomous car and more feasible to deploy on FPGAs and other hardware with limited memory. 
+## Keyword
+CNN, SqueezeNet, ONNX, ImageNet, Computer Vision 
+
 ## Model
 
 |Model        |ONNX Model  | Model archives|

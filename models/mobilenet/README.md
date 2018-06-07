@@ -1,6 +1,7 @@
 # MobileNet
 MobileNet improves the state of the art performance of mobile models on multiple tasks and benchmarks as well as across a spectrum of different model sizes. MobileNet is based on an inverted residual structure where the shortcut connections are between the thin bottle- neck layers. The intermediate expansion layer uses lightweight depthwise convolutions to filter features as a source of non-linearity. Additionally,  it removes non-linearities in the narrow layers in order to maintain representational power. 
-
+## Keyword
+CNN, MobileNet, ONNX, ImageNet, Computer Vision 
 ## Model
 * Version 2:
 
