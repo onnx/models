@@ -7,16 +7,6 @@ The ONNX Model Zoo is a collection of pre-trained models for state of the art mo
 and run as python(.py) files.
 
 
-## Model Serving
-Want to try out models instantly? Many of the models in this model zoo can be served with [Model Server](https://github.com/awslabs/mxnet-model-server) using the model archives provided. Model Server is a flexible and easy tool to serve deep learning models by providing a REST API with an inference end point. Supported ONNX models such as those converted from Chainer, CNTK, MXNet, and PyTorch can be served with Model Server. To learn about ONNX model serving with Model Server, refer to the [MMS ONNX documentation](https://github.com/awslabs/mxnet-model-server/blob/master/docs/export_from_onnx.md). 
-
-## Model Visualization
-You can see visualizations of each model's network architecture by using [Netron](https://lutzroeder.github.io/Netron).
-
-## Contributions
-Do you want to contribute a model? Check out the list of [backlog models](backlogs.md) <!-- should definitely pick a different name for this-->to get started. Also refer to the [contribution guidelines](contribute.md) before submitting a model.
-
-
 ## Models
 ### Image Classification
 The model takes images as input and output the probability of it belonging to a set of pre-defined classes.
@@ -45,3 +35,14 @@ The model takes images as input and detects/recognizes human faces in the image
 -->
 
 ### Semantic Segmentation
+
+
+## Model Serving
+Want to try out models instantly? Many of the models in this model zoo can be served with [Model Server](https://github.com/awslabs/mxnet-model-server) using the model archives provided. Model Server is a flexible and easy tool to serve deep learning models by providing a REST API with an inference end point. Supported ONNX models such as those converted from Chainer, CNTK, MXNet, and PyTorch can be served with Model Server. To learn about ONNX model serving with Model Server, refer to the [MMS ONNX documentation](https://github.com/awslabs/mxnet-model-server/blob/master/docs/export_from_onnx.md). 
+
+## Model Visualization
+You can see visualizations of each model's network architecture by using [Netron](https://lutzroeder.github.io/Netron).
+
+## Contributions
+Do you want to contribute a model? Check out the list of [backlog models](backlogs.md) <!-- should definitely pick a different name for this-->to get started. Also refer to the [contribution guidelines](contribute.md) before submitting a model.
+
