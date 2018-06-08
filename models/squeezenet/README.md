@@ -1,42 +1,101 @@
 # SqueezeNet
 SqueezeNet is a small CNN architecture which achieves AlexNet-level accuracy on ImageNet with 50x fewer parameters. SqueezeNet requires less communication across servers during distributed training, less bandwidth to export a new model from the cloud to an autonomous car and more feasible to deploy on FPGAs and other hardware with limited memory. 
-## Keyword
-CNN, SqueezeNet, ONNX, ImageNet, Computer Vision 
+
 
 ## Model
 
-|Model        |ONNX Model  | Model archives|
-|-------------|:--------------|:--------------|
-|SqueezeNet 1.0|    [4.8 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.0/squeezenet1.0.onnx)    |  [4.8 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.0/squeezenet1.0.model)     |
-|SqueezeNet 1.1|    [4.7 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.1/squeezenet1.1.onnx)    |  [4.7 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.1/squeezenet1.1.model)     |
+|Model        |ONNX Model  | Model archives|Top-1 accuracy (%)|Top-5 accuracy (%)|
+|-------------|:--------------|:--------------|:--------------|:--------------|
+|SqueezeNet 1.0|    [4.8 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.0/squeezenet1.0.onnx)    |  [4.8 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.0/squeezenet1.0.model)     | 56.52     |     79.07     |
+|SqueezeNet 1.1|    [4.7 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.1/squeezenet1.1.onnx)    |  [4.7 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.1/squeezenet1.1.model)     |56.34     |     79.12     |
 
 
+## Inference
+We used MXNet as framework with gluon APIs to perform inference. View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook. 
+### Input 
+All pre-trained models expect input images normalized in the same way, i.e. mini-batches of 3-channel RGB images of shape (N x 3 x H x W), where N is the batch size, and H and W are expected to be at least 224. 
+### Pre-processing
+The images have to be loaded in to a range of [0, 1] and then normalized using mean = [0.485, 0.456, 0.406] and std = [0.229, 0.224, 0.225]. The transformation should preferrably happen at preprocessing.
+```bash
+def preprocess(img):   
+    '''
+    Preprocessing required on the images for inference with mxnet gluon
+    ''''''
+    
+    transform_fn = transforms.Compose([
+    transforms.Resize(224),
+    transforms.CenterCrop(224),
+    transforms.ToTensor(),
+    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+    ])
+    img = transform_fn(img)
+    img = img.expand_dims(axis=0) # batchify
+    
+    return img
+    
+ ```
+ 
+
+### Output
+The model outputs image scores for each of the [1000 classes of ImageNet](../../synset.txt). 
+
+### Post-process
+The post-processing involves calculating the softmax probablility scores for each classes and sorting them to report the most probable 
+classes
+
+```bash
+def postprocess(scores): 
+    '''
+    Postprocessing with mxnet gluon
+    ''''''
+    prob = mx.ndarray.softmax(scores).asnumpy()
+    # print the top-5 inferences class
+    prob = np.squeeze(prob)
+    a = np.argsort(prob)[::-1]
+    return a
+    
+ ```
+### Inference with Model Server
+Head on to [Quick start section of model server](https://github.com/awslabs/mxnet-model-server/blob/master/README.md#quick-start) for serving your models. 
+* **Start Server**:
+```bash
+mxnet-model-server --models squeezenet1_1=https://s3.amazonaws.com/onnx-model-zoo/squeezentnet/squeezenet1.1/squeezenet1.1.model
+``
+
+* **Run Prediction**:
+```bash
+curl -O https://s3.amazonaws.com/model-server/inputs/kitten.jpg
+curl -X POST http://127.0.0.1:8080/squeezenet1_1/predict -F "data=@kitten.jpeg"
+```
+Use the dataname as 'data' in predict call for all the above SqueezeNet models
 ## Dataset
-Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/). 
+Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
 
-Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset. 
-## Example notebook
-View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook.
-## Training notebook
-Use the notebook [train_squeezenet](train_squeezenet.ipynb) to train the model. It contains the hyperparameters and network details used for training the above models.
+## Training
+We used MXNet as framework with gluon APIs to perform training. View the [training notebook](train_squeezenet.ipynb) to understand details for parameters and network for each of the above variants of ResNet.
 
-## Verify Validation Accuracy
-Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
+## Validation
+We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 
 ## Validation accuracy
-The accuracies obtained by the models on the validation set are shown in the table below: 
-
+The accuracies obtained by the models on the validation set as mentioned above. The accuracies has been calculate on center cropped 
+images and is similar to accuracy obtained in the paper.
+<!--
 |Model        |Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|
 |SqueezeNet 1.0|     56.52     |     79.07     |
 |SqueezeNet 1.1|     56.34     |     79.12     |
+-->
 
-Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 ## References
 * **SqueezeNet1.0**  
 Model from the paper [SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size](https://arxiv.org/abs/1602.07360)
 * **SqueezeNet1.1**   
 Model from [Official SqueezeNet repo](https://github.com/DeepScale/SqueezeNet/tree/master/SqueezeNet_v1.1). SqueezeNet 1.1 has 2.4x less computation and slightly fewer parameters than SqueezeNet 1.0, without sacrificing accuracy.
+
+## Contributors
+
 ## Keywords
+CNN, SqueezeNet, ONNX, ImageNet, Computer Vision 
 
 

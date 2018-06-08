@@ -26,7 +26,7 @@ Deeper neural networks are more difficult to train. Residual learning framework 
 
 
 ## Inference
-View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook.
+We used MXNet as framework with gluon APIs to perform inference. View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook. 
 ### Input 
 All pre-trained models expect input images normalized in the same way, i.e. mini-batches of 3-channel RGB images of shape (N x 3 x H x W), where N is the batch size, and H and W are expected to be at least 224. 
 ### Pre-processing
@@ -34,8 +34,8 @@ The images have to be loaded in to a range of [0, 1] and then normalized using m
 ```bash
 def preprocess(img):   
     '''
-    Preprocessing required on the images for inference
-    '''
+    Preprocessing required on the images for inference with mxnet gluon
+    ''''''
     
     transform_fn = transforms.Compose([
     transforms.Resize(224),
@@ -52,14 +52,17 @@ def preprocess(img):
  
 
 ### Output
-The model outputs image scores for each of the [1000 classes of imagenet](../../synset.txt). 
+The model outputs image scores for each of the [1000 classes of ImageNet](../../synset.txt). 
 
 ### Post-process
 The post-processing involves calculating the softmax probablility scores for each classes and sorting them to report the most probable 
 classes
 
 ```bash
-def postprocess(scores):   
+def postprocess(scores): 
+    '''
+    Postprocessing with mxnet gluon
+    ''''''
     prob = mx.ndarray.softmax(scores).asnumpy()
     # print the top-5 inferences class
     prob = np.squeeze(prob)
@@ -85,10 +88,10 @@ Use the dataname as 'data' in predict call for all the above ResNet models
 Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
 
 ## Training
-View the [training notebook](train_resnet.ipynb) to understand details for parameters and network for each of the above variants of ResNet.
+We used MXNet as framework with gluon APIs to perform training. View the [training notebook](train_resnet.ipynb) to understand details for parameters and network for each of the above variants of ResNet.
 
 ## Validation
-Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
+We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 
 ## Validation accuracy
 The accuracies obtained by the models on the validation set are mentioned above. The validation was done using center cropping of images unlike
@@ -126,6 +129,7 @@ the paper using ten-cropping. Even with center crop, the accuracies are within 1
 He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
 In European Conference on Computer Vision, pp. 630-645. Springer, Cham, 2016.
 
+## Contributors
 
-## Keyword
+## Keywords
 CNN, ResNet, ONNX, ImageNet, Computer Vision 
