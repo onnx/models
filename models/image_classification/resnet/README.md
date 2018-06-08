@@ -60,7 +60,7 @@ def preprocess(img):
  
 
 ### Output
-The model outputs image scores for each of the [1000 classes of ImageNet](../../synset.txt). 
+The model outputs image scores for each of the [1000 classes of ImageNet](../synset.txt). 
 
 ### Postprocessing
 The post-processing involves calculating the softmax probablility scores for each classes and sorting them to report the most probable 
