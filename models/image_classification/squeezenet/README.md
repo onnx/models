@@ -60,7 +60,6 @@ def postprocess(scores):
     of probability
     ''''''
     prob = mx.ndarray.softmax(scores).asnumpy()
-    # print the top-5 inferences class
     prob = np.squeeze(prob)
     a = np.argsort(prob)[::-1]
     return a
