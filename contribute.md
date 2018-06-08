@@ -1,5 +1,6 @@
 # How to Contribute to the Model Zoo
 To contribute a new model, create a pull request with the following template:
+<hr>
 
 # Model Name
 Description of model
@@ -47,6 +48,8 @@ Link to references
 
 ## Contributors
 Contributors name
+<hr>
+
 
 ## Keyword
 Keywords/tags related to models
