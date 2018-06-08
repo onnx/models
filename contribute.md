@@ -19,9 +19,9 @@ Preprocessing required
 Output of network
 ### Postprocessing steps
 Post processing and meaning of output
-### Inference with Model Server(if applicable)
+### Inference with Model Server (if applicable)
 Details of inference with model server using model archives if applicable
-## Dataset(Train and validation)
+## Dataset (Train and validation)
 This section should discuss datasets and any preparation steps if required.
 
 ## Validation accuracy
@@ -29,9 +29,9 @@ Details of experiments leading to accuracy and comparison with the reference pap
 
 
 ## Training
-Training details (preprocessing, hyperparameters, resources and environment) alongwith link to a training notebook (optional)
+Training details (preprocessing, hyperparameters, resources and environment) along with link to a training notebook (optional)
 ## Validation
-Validation script/notebook used to obtain accuracy reported above alongwith details of how to use it and reproduce accuracy.
+Validation script/notebook used to obtain accuracy reported above along with details of how to use it and reproduce accuracy.
 
 ## References
 Link to references

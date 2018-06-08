@@ -26,7 +26,7 @@ Below is a list of models that we would like to have in the model zoo in the nea
 |-------------|:--------------|
 |Speech Recognition|	[Speech recognition with deep recurrent neural networks ](https://www.cs.toronto.edu/~fritz/absps/RNN13.pdf)|
 |	Text To Speech|	[Deep voice: Real time neural text to speech ](https://arxiv.org/abs/1702.07825)	|
-|	Language Model|	[Deep Neural Network Language Models ](http://delivery.acm.org/10.1145/2400000/2390943/p20-arisoy.pdf?ip=54.240.196.184&id=2390943&acc=OPEN&key=4D4702B0C3E38B35%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35%2E6D218144511F3437&__acm__=1523570675_9fde1b1a23a2e27621043cfdfa4e4b63)	|
+|	Language Model|	[Deep Neural Network Language Models ](https://pdfs.semanticscholar.org/a177/45f1d7045636577bcd5d513620df5860e9e5.pdf)	|
 |	Machine Translation|	[Neural Machine Translation by jointly learning to align and translate ](https://arxiv.org/abs/1409.0473)|
 |Machine Translation|	[Google's Neural Machine Translation System: Bridging the Gap between Human and Machine Translation ](https://arxiv.org/abs/1609.08144)	|
 
@@ -35,8 +35,7 @@ Below is a list of models that we would like to have in the model zoo in the nea
 |-------------|:--------------|
 |Visual Question Answering	|[VQA: Visual Question Answering ](https://arxiv.org/pdf/1505.00468v6.pdf)
 |Visual Question Answering	|[Yin and Yang: Balancing and Answering Binary Visual Questions ](https://arxiv.org/pdf/1511.05099.pdf)
-|Visual Question Answering	|[Making the V in VQA Matter: ](https://arxiv.org/pdf/1612.00837.pdf)
-|	Visual Question Answering	|	[Elevating the Role of Image Understanding in Visual Question Answering ](https://arxiv.org/pdf/1612.00837.pdf)
+|Visual Question Answering	|[Making the V in VQA Matter: Elevating the Role of Image Understanding in Visual Question Answering](https://arxiv.org/pdf/1612.00837.pdf)
 |	Visual Dialog|	[Visual Dialog ](https://arxiv.org/abs/1611.08669)
 
 
@@ -44,8 +43,8 @@ Below is a list of models that we would like to have in the model zoo in the nea
 |Model      | Reference | 
 |-------------|:--------------|
 |Time Series Forecasting|	[Modeling Long- and Short-Term Temporal Patterns with Deep Neural Networks ](https://arxiv.org/pdf/1703.07015.pdf)
+|Recommender systems|[DropoutNet: Addressing Cold Start in Recommender Systems](http://www.cs.toronto.edu/~mvolkovs/nips2017_deepcf.pdf)
 |Collaborative filtering||
-|Recommender systems||
 |Autoencoders||
 
 Want other models in this Model Zoo? Go ahead and raise a GitHub issue outlining details and update the above list to call the community for contribution.

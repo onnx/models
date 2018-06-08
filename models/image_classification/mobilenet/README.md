@@ -1,5 +1,5 @@
 # MobileNet
-MobileNet improves the state of the art performance of mobile models on multiple tasks and benchmarks as well as across a spectrum of different model sizes. MobileNet is based on an inverted residual structure where the shortcut connections are between the thin bottle- neck layers. The intermediate expansion layer uses lightweight depthwise convolutions to filter features as a source of non-linearity. Additionally,  it removes non-linearities in the narrow layers in order to maintain representational power. 
+MobileNet improves the state of the art performance of mobile models on multiple tasks and benchmarks as well as across a spectrum of different model sizes. MobileNet is based on an inverted residual structure where the shortcut connections are between the thin bottleneck layers. The intermediate expansion layer uses lightweight depthwise convolutions to filter features as a source of non-linearity. Additionally,  it removes non-linearities in the narrow layers in order to maintain representational power.
 
 ## Model
 MobileNet reduces the dimensionality of a layer thus reducing the dimensionality of the operating space. The  trade off between computation and accuracy is exploited in Mobilenet via a width multiplier parameter approach which allows one to reduce the dimensionality of the activation space until the manifold of interest spans this entire space.
@@ -12,9 +12,9 @@ The two variants of the model are using multiplier 1.0 and 0.5 respectively.
 |MobileNet v2-0.5|    [13.6 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-0.5/mobilenetv2-0.5.onnx)    |  [13.7 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-0.5/mobilenetv2-0.5.model)     |          |             |
 
 ## Inference
-We used MXNet as framework with gluon APIs to perform inference. View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook. 
+We used MXNet as framework with gluon APIs to perform inference. View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook.
 ### Input 
-All pre-trained models expect input images normalized in the same way, i.e. mini-batches of 3-channel RGB images of shape (N x 3 x H x W), where N is the batch size, and H and W are expected to be at least 224. 
+All pre-trained models expect input images normalized in the same way, i.e. mini-batches of 3-channel RGB images of shape (N x 3 x H x W), where N is the batch size, and H and W are expected to be at least 224.
 The inference was done using jpeg image.
 
 ### Preprocessing
@@ -42,11 +42,10 @@ def preprocess(img):
  
 
 ### Output
-The model outputs image scores for each of the [1000 classes of ImageNet](../../synset.txt). 
+The model outputs image scores for each of the [1000 classes of ImageNet](../../synset.txt).
 
 ### Postprocessing
-The post-processing involves calculating the softmax probablility scores for each classes and sorting them to report the most probable 
-classes
+The post-processing involves calculating the softmax probablility scores for each classes and sorting them to report the most probable classes.
 
 ```bash
 def postprocess(scores): 
