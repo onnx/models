@@ -40,4 +40,4 @@ Semantic segmentation models will identify multiple classes of objects in an ima
 You can see visualizations of each model's network architecture by using [Netron](https://lutzroeder.github.io/Netron).
 
 ## Contributions
-Do you want to contribute a model? Check out the list of [backlog models](backlogs.md) <!-- should definitely pick a different name for this-->to get started. Also refer to the [contribution guidelines](contribute.md) before submitting a model.
+Do you want to contribute a model? Check out the list of [target models](target.md) <!-- should definitely pick a different name for this-->to get started. Also refer to the [contribution guidelines](contribute.md) before submitting a model.
