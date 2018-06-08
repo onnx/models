@@ -3,6 +3,10 @@ Deeper neural networks are more difficult to train. Residual learning framework 
 
 
 ## Model
+
+The model below are ResNet v1 and V2. ResNet models consists of residual blocks and came up to counter the effect of deteriorating accuracies with more layers due to network not learning the initial layers.
+ResNet v2 uses pre-activation function whereas ResNet v1  uses post-activation for the residual blocks.
+
 * Version 1:
 
  |Model        |ONNX Model  | Model archives|Top-1 accuracy (%)|Top-5 accuracy (%)|

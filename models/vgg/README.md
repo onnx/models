@@ -6,6 +6,8 @@ VGG presents the effect of the convolutional network depth on its accuracy in th
 
 ## Model
 
+The model below are variant of same network with different number of layers and use of batch normalisation.
+
  |Model        |ONNX Model  | Model archives|Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|:--------------|:--------------|
 |VGG 16|    [527.8 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16/vgg16.onnx)    |  [527.9 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16/vgg16.model)     | 72.62     |      91.14     |

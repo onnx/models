@@ -3,7 +3,8 @@ SqueezeNet is a small CNN architecture which achieves AlexNet-level accuracy on 
 
 
 ## Model
-
+Squeezenet 1.0 gives AlexNet level of accuracy with 50X fewer parameters.
+SqueezeNet 1.1 has 2.4x less computation and slightly fewer parameters than SqueezeNet 1.0, without sacrificing accuracy.
 |Model        |ONNX Model  | Model archives|Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|:--------------|:--------------|
 |SqueezeNet 1.0|    [4.8 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.0/squeezenet1.0.onnx)    |  [4.8 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.0/squeezenet1.0.model)     | 56.52     |     79.07     |
@@ -92,7 +93,7 @@ We used MXNet as framework with gluon APIs to perform validation. Use the notebo
 * **SqueezeNet1.0**  
 Model from the paper [SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size](https://arxiv.org/abs/1602.07360)
 * **SqueezeNet1.1**   
-Model from [Official SqueezeNet repo](https://github.com/DeepScale/SqueezeNet/tree/master/SqueezeNet_v1.1). SqueezeNet 1.1 has 2.4x less computation and slightly fewer parameters than SqueezeNet 1.0, without sacrificing accuracy.
+Model from [Official SqueezeNet repo](https://github.com/DeepScale/SqueezeNet/tree/master/SqueezeNet_v1.1). 
 
 ## Contributors
 

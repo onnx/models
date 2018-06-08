@@ -2,6 +2,8 @@
 MobileNet improves the state of the art performance of mobile models on multiple tasks and benchmarks as well as across a spectrum of different model sizes. MobileNet is based on an inverted residual structure where the shortcut connections are between the thin bottle- neck layers. The intermediate expansion layer uses lightweight depthwise convolutions to filter features as a source of non-linearity. Additionally,  it removes non-linearities in the narrow layers in order to maintain representational power. 
 
 ## Model
+MobileNet reduces the dimensionality of a layer thus reducing the dimensionality of the operating space. The  trade off between computation and accuracy is exploited in Mobilenet via a width multiplier parameter approach which allows one to reduce the dimensionality of the activation space until the manifold of interest spans this entire space.
+The two variants of the model are using multiplier 1.0 and 0.5 respectively.
 * Version 2:
 
  |Model        |ONNX Model  | Model archives|Top-1 accuracy (%)|Top-5 accuracy (%)|
