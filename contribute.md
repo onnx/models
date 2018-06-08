@@ -25,7 +25,7 @@ Details of inference with model server using model archives if applicable
 This section should discuss datasets and any preparation steps if required.
 
 ## Validation accuracy
-Details of experiments leading to accuracy and comparison with the refernce paper.
+Details of experiments leading to accuracy and comparison with the reference paper.
 
 
 ## Training
