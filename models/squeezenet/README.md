@@ -60,7 +60,7 @@ Head on to [Quick start section of model server](https://github.com/awslabs/mxne
 * **Start Server**:
 ```bash
 mxnet-model-server --models squeezenet1_1=https://s3.amazonaws.com/onnx-model-zoo/squeezentnet/squeezenet1.1/squeezenet1.1.model
-``
+```
 
 * **Run Prediction**:
 ```bash
@@ -71,12 +71,6 @@ Use the dataname as 'data' in predict call for all the above SqueezeNet models
 ## Dataset
 Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
 
-## Training
-We used MXNet as framework with gluon APIs to perform training. View the [training notebook](train_squeezenet.ipynb) to understand details for parameters and network for each of the above variants of ResNet.
-
-## Validation
-We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
-
 ## Validation accuracy
 The accuracies obtained by the models on the validation set as mentioned above. The accuracies has been calculate on center cropped 
 images and is similar to accuracy obtained in the paper.
@@ -86,6 +80,13 @@ images and is similar to accuracy obtained in the paper.
 |SqueezeNet 1.0|     56.52     |     79.07     |
 |SqueezeNet 1.1|     56.34     |     79.12     |
 -->
+
+
+## Training
+We used MXNet as framework with gluon APIs to perform training. View the [training notebook](train_squeezenet.ipynb) to understand details for parameters and network for each of the above variants of ResNet.
+
+## Validation
+We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 
 ## References
 * **SqueezeNet1.0**  

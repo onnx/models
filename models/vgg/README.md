@@ -63,7 +63,7 @@ Head on to [Quick start section of model server](https://github.com/awslabs/mxne
 * **Start Server**:
 ```bash
 mxnet-model-server --models vgg16=https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16/vgg16.model
-``
+```
 
 * **Run Prediction**:
 ```bash
@@ -73,12 +73,6 @@ curl -X POST http://127.0.0.1:8080/vgg16/predict -F "data=@kitten.jpeg"
 Use the dataname as 'data' in predict call for all the above VGG models
 ## Dataset
 Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
-
-## Training
-We used MXNet as framework with gluon APIs to perform training. View the [training notebook](train_vgg.ipynb) to understand details for parameters and network for each of the above variants of VGG.
-
-## Validation
-We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 
 
 
@@ -93,6 +87,14 @@ images and is similar to accuracy obtained in the paper.
 |VGG 19        |     73.72     |      91.58     |
 |VGG 19_bn     |     73.83    |      91.79     |
 -->
+
+
+## Training
+We used MXNet as framework with gluon APIs to perform training. View the [training notebook](train_vgg.ipynb) to understand details for parameters and network for each of the above variants of VGG.
+
+## Validation
+We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
+
 
 ## References 
 * **VGG 16** and **vVGG 19** are from the paper [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/abs/1409.1556)

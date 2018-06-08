@@ -59,7 +59,7 @@ Head on to [Quick start section of model server](https://github.com/awslabs/mxne
 * **Start Server**:
 ```bash
 mxnet-model-server --models mobilenetv2_1_0=https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-1.0/mobilenetv2-1.0.model
-``
+```
 
 * **Run Prediction**:
 ```bash
@@ -69,13 +69,6 @@ curl -X POST http://127.0.0.1:8080/mobilenetv2_1_0/predict -F "data=@kitten.jpeg
 Use the dataname as 'data' in predict call for all the above MobileNet models
 ## Dataset
 Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
-
-## Training
-We used MXNet as framework with gluon APIs to perform training. View the [training notebook](train_mobilenet.ipynb) to understand details for parameters and network for each of the above variants of MobileNet.
-
-## Validation
-We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
-
 
 
 ## Validation accuracy
@@ -89,11 +82,20 @@ images and is similar to accuracy obtained in the paper.
 |MobileNet v2-0.5|              |             |
 
 -->
+
+
+## Training
+We used MXNet as framework with gluon APIs to perform training. View the [training notebook](train_mobilenet.ipynb) to understand details for parameters and network for each of the above variants of MobileNet.
+
+## Validation
+We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
+
+
 ## References
 **MobileNet-v2**
 Model from the paper [MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381)
 
-##Contributors
+## Contributors
 
 ## Keyword
 CNN, MobileNet, ONNX, ImageNet, Computer Vision 

@@ -87,11 +87,6 @@ Use the dataname as 'data' in predict call for all the above ResNet models
 ## Dataset
 Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
 
-## Training
-We used MXNet as framework with gluon APIs to perform training. View the [training notebook](train_resnet.ipynb) to understand details for parameters and network for each of the above variants of ResNet.
-
-## Validation
-We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 
 ## Validation accuracy
 The accuracies obtained by the models on the validation set are mentioned above. The validation was done using center cropping of images unlike
@@ -118,6 +113,14 @@ the paper using ten-cropping. Even with center crop, the accuracies are within 1
 |ResNet-152|    78.20         |     94.21           |
 
 -->
+
+## Training
+We used MXNet as framework with gluon APIs to perform training. View the [training notebook](train_resnet.ipynb) to understand details for parameters and network for each of the above variants of ResNet.
+
+## Validation
+We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
+
+
 
 ## References
 **ResNet-v1**
