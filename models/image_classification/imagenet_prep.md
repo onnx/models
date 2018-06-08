@@ -10,7 +10,7 @@ According to the horovod tutorial you should also resize the images before train
 -->
 
 ## Download
-First, go to the [download page](http://www.image-net.org/download-images) (you may need to register an account), and find the page for ILSVRC2012. Next, find and download the following two files:
+First, go to the [ImageNet download page](http://www.image-net.org/download-images) (you may need to register an account), and find the page for ILSVRC2012. Next, find and download the following two files:
 
 |Filename                 | Size  |
 |-------------------------|:------|

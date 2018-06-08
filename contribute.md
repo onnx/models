@@ -13,14 +13,19 @@ Description of model
 
 ## Inference
 Step by step instructions on how to use the pretrained model and link to an example notebook/code. This section should ideally contain:
+
 ### Input to model
-Input to network
+Input to network (Example: 224x224 pixels in RGB)
+
 ### Preprocessing steps
 Preprocessing required
+
 ### Output of model
 Output of network
+
 ### Postprocessing steps
 Post processing and meaning of output
+
 ### Inference with Model Server (if applicable)
 Details of inference with model server using model archives if applicable
 
@@ -47,7 +52,7 @@ Link to references
 <hr>
 
 ## Contributors
-Contributors name
+Contributors' name
 <hr>
 
 
