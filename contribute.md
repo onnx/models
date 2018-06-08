@@ -7,7 +7,7 @@ Description of model
 
  |Model        |ONNX Model  | Model archives(optional)|Accuracy |
 |-------------|:--------------|:--------------|:--------------|
-|Model-Name       |ONNX Model link with size  |  [ Model archive](https://github.com/awslabs/mxnet-model-server/blob/master/docs/export_from_onnx.md) link with size.|Accuracy values |
+|Model-Name       |ONNX Model link with size  |  [ Model archive](https://github.com/awslabs/mxnet-model-server/blob/master/docs/export_from_onnx.md) link with size|Accuracy values |
 ## Inference
 Step by step instructions on how to use the pretrained model and link to an example notebook/code. This section should ideally contain:
 
