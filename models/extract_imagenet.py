@@ -7,7 +7,7 @@ import gzip
 from tqdm import tqdm
 from mxnet.gluon.utils import check_sha1
 
-_TARGET_DIR = os.path.expanduser('~/.mxnet/datasets/imagenet')
+_TARGET_DIR = os.path.expanduser('~/.onnx/datasets/imagenet')
 _TRAIN_TAR = 'ILSVRC2012_img_train.tar'
 _TRAIN_TAR_SHA1 = '43eda4fe35c1705d6606a6a7a633bc965d194284'
 _VAL_TAR = 'ILSVRC2012_img_val.tar'

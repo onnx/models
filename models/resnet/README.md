@@ -8,21 +8,21 @@ Deeper neural networks are more difficult to train. Residual learning framework 
  |Model        |ONNX Model  | Model archives|Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|:--------------|:--------------|
 |ResNet-18|    [44.7 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet18v1/resnet18v1.onnx)    |  [44.7 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet18v1/resnet18v1.model)     | 69.93         |     89.29           |
-|ResNet-34|    [83.3 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet34v1/resnet34v1.onnx)    |  [83.3 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet34v1/resnet34v1.model)     |73.73         |     91.40           |
-|ResNet-50|    [97.8 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet50v1/resnet50v1.onnx)    |  [97.8 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet50v1/resnet50v1.model)     |74.93         |     92.38           |
-|ResNet-101|    [170.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet101v1/resnet101v1.onnx)    |  [170.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet101v1/resnet101v1.model)     | 76.48         |     93.20           |
-|ResNet-152|    [230.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet152v1/resnet152v1.onnx)    |  [230.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet152v1/resnet152v1.model)     |77.11         |     93.61           |
+|ResNet-34|    [83.3 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet34v1/resnet34v1.onnx)    |  [83.4 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet34v1/resnet34v1.model)     |73.73         |     91.40           |
+|ResNet-50|    [97.8 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet50v1/resnet50v1.onnx)    |  [98.0 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet50v1/resnet50v1.model)     |74.93         |     92.38           |
+|ResNet-101|    [170.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet101v1/resnet101v1.onnx)    |  [170.9 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet101v1/resnet101v1.model)     | 76.48         |     93.20           |
+|ResNet-152|    [230.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet152v1/resnet152v1.onnx)    |  [230.9 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet152v1/resnet152v1.model)     |77.11         |     93.61           |
 
 
 * Version 2:
 
  |Model        |ONNX Model  | Model archives|Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|:--------------|:--------------|
-|ResNet-18|    [44.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet18v2/resnet18v2.onnx)    |  [44.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet18v2/resnet18v2.model)     |    69.70         |     89.49          |
-|ResNet-34|    [83.2 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet34v2/resnet34v2.onnx)    |  [83.2 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet34v2/resnet34v2.model)     | 73.36         |     91.43           |
-|ResNet-50|    [97.7 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet50v2/resnet50v2.onnx)    |  [97.7 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet50v2/resnet50v2.model)     |75.81         |     92.82           |
-|ResNet-101|    [170.4 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet101v2/resnet101v2.onnx)    |  [170.4 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet101v2/resnet101v2.model)     | 77.42         |     93.61           |
-|ResNet-152|    [230.3 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet152v2/resnet152v2.onnx)    |  [230.3 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet152v2/resnet152v2.model)     | 78.20         |     94.21           |
+|ResNet-18|    [44.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet18v2/resnet18v2.onnx)    |  [44.7 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet18v2/resnet18v2.model)     |    69.70         |     89.49          |
+|ResNet-34|    [83.2 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet34v2/resnet34v2.onnx)    |  [83.3 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet34v2/resnet34v2.model)     | 73.36         |     91.43           |
+|ResNet-50|    [97.7 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet50v2/resnet50v2.onnx)    |  [97.8 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet50v2/resnet50v2.model)     |75.81         |     92.82           |
+|ResNet-101|    [170.4 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet101v2/resnet101v2.onnx)    |  [170.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet101v2/resnet101v2.model)     | 77.42         |     93.61           |
+|ResNet-152|    [230.3 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet152v2/resnet152v2.onnx)    |  [230.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet152v2/resnet152v2.model)     | 78.20         |     94.21           |
 
 
 ## Inference
@@ -118,7 +118,7 @@ the paper using ten-cropping. Even with center crop, the accuracies are within 1
 We used MXNet as framework with gluon APIs to perform training. View the [training notebook](train_resnet.ipynb) to understand details for parameters and network for each of the above variants of ResNet.
 
 ## Validation
-We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_verify](../imagenet_verify.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
+We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_validation](../imagenet_validation.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 
 
 
