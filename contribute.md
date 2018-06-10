@@ -61,4 +61,4 @@ Keywords/tags related to models
 <hr>
 
 <!-- add link to the pull request/issue page-->
- View an [example submission](./models/resnet/README.md)
+ View an [example submission](./models/image_classification/resnet/README.md)
