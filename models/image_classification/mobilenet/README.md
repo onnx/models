@@ -86,8 +86,7 @@ Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/cha
 
 
 ## Validation accuracy
-The accuracy obtained by the model on the validation set is mentioned above. The accuracy has been calculate on center cropped 
-images and is similar to accuracy obtained in the paper.
+The accuracy obtained by the model on the validation set is mentioned above. The accuracy has been calculate on center cropped images and is within 1-2% of the accuracy obtained in the paper.
 <!--* Version 1:
 
  |Model        |Top-1 accuracy (%)|Top-5 accuracy (%)|
@@ -110,6 +109,9 @@ We used MXNet as framework with gluon APIs to perform validation. Use the notebo
 Model from the paper [MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381)
 
 ## Contributors
+
+## Acknowledgments
+[MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io), [MMS](https://github.com/awslabs/mxnet-model-server)
 
 ## Keyword
 CNN, MobileNet, ONNX, ImageNet, Computer Vision 

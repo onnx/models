@@ -87,8 +87,7 @@ Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/cha
 
 
 ## Validation accuracy
-The accuracies obtained by the models on the validation set as mentioned above. The accuracies has been calculate on center cropped 
-images and is similar to accuracy obtained in the paper.
+The accuracies obtained by the models on the validation set as mentioned above. The accuracy has been calculate on center cropped images and is within 1-2% of the accuracy obtained in the paper.
 
 <!--|Model        |Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|
@@ -111,6 +110,9 @@ We used MXNet as framework with gluon APIs to perform validation. Use the notebo
 * **VGG 16_bn** and **VGG 19_bn** are the same models as above but with batch normalization applied after each convolution layer
 
 ## Contributors
+
+## Acknowledgments
+[MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io), [MMS](https://github.com/awslabs/mxnet-model-server)
 
 ## Keywords
 CNN, VGG, ONNX, ImageNet, Computer Vision 
