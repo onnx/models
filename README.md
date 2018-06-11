@@ -3,6 +3,10 @@
 </p>
 
 # Open Neural Network eXchange (ONNX) Model Zoo
+
+[![Generic badge](https://img.shields.io/badge/Build-Work_In_Progress-red.svg)](#) 
+[![Generic badge](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](#)
+
 The ONNX Model Zoo is a collection of pre-trained models for state of the art models in deep learning. Models are available in the ONNX protobuf format. Where available and supported, the models are also available in the  Model Server archive format. Accompanying each model are [Jupyter](http://jupyter.org) notebooks for model training and running inference with the trained model. The notebooks are written in Python and include links to the training dataset as well as references to the original paper that describes the model architecture. The notebooks can be exported as python
  and run as python(.py) files.
 
