@@ -1,6 +1,7 @@
 # VGG
 
-VGG presents the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. VGG networks have increased depth with very small (3 × 3) convolution filters, which showed a significant improvement on the prior-art configurations achieved by pushing the depth to 16–19 weight layers. The work secured the first and the second places in the localisation and classification tracks respectively in ImageNet Challenge 2014. The representations from VGG generalise well to other datasets, where they achieve state-of-the-art results. 
+VGG presents the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. VGG networks have increased depth with very small (3 × 3) convolution filters, which showed a significant improvement on the prior-art configurations achieved by pushing the depth to 16–19 weight layers. The work secured the first and the second places in the localisation and classification tracks respectively in ImageNet Challenge 2014. The representations from VGG generalise well to other datasets, where they achieve state-of-the-art results. The models perform image classification - they take images as input and classifies the major object in the image into a set of pre-defined classes. They are trained ImageNet dataset which contains images from 1000 classes.
+VGG models provide very high accuracies but at the cost of increased model sizes. They are ideal for cases when high accuracy of classification is essential and there are limited constraints on model sizes.
 
 ## Model
 

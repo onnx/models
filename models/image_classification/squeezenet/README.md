@@ -1,5 +1,5 @@
 # SqueezeNet
-SqueezeNet is a small CNN which achieves AlexNet level accuracy on ImageNet with 50x fewer parameters. SqueezeNet requires less communication across servers during distributed training, less bandwidth to export a new model from the cloud to an autonomous car and more feasible to deploy on FPGAs and other hardware with limited memory.
+SqueezeNet is a small CNN which achieves AlexNet level accuracy on ImageNet with 50x fewer parameters. SqueezeNet requires less communication across servers during distributed training, less bandwidth to export a new model from the cloud to an autonomous car and more feasible to deploy on FPGAs and other hardware with limited memory. The models perform image classification - they take images as input and classifies the major object in the image into a set of pre-defined classes. They are trained ImageNet dataset which contains images from 1000 classes. SqueezeNet models are highly efficient in terms of size and speed while providing good accuracies. This makes them ideal for platforms with strict constraints on size.
 
 ## Model
 Squeezenet 1.1 gives AlexNet level of accuracy with 50X fewer parameters.
