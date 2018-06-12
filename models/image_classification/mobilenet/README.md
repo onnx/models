@@ -82,7 +82,7 @@ curl -X POST http://127.0.0.1:8080/mobilenetv2_1_0/predict -F "data=@kitten.jpeg
 For inference requests with this model, Model Server expects the image to be passed in the data variable, which is the input layer's name in the model. In the previous example this was data=@kitten.jpeg.
 
 ## Dataset
-Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
+Dataset used for train and validation: [ImageNet (ILSVRC2012)](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
 
 
 ## Validation accuracy
@@ -109,6 +109,8 @@ We used MXNet as framework with gluon APIs to perform validation. Use the notebo
 Model from the paper [MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381)
 
 ## Contributors
+* [ankkhedia](https://github.com/ankkhedia) (Amazon AI)
+* [abhinavs95](https://github.com/abhinavs95) (Amazon AI)
 
 ## Acknowledgments
 [MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io), [MMS](https://github.com/awslabs/mxnet-model-server)

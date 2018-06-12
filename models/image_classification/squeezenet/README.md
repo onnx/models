@@ -81,7 +81,7 @@ curl -X POST http://127.0.0.1:8080/squeezenet1_1/predict -F "data=@kitten.jpeg"
 For inference requests with this model, Model Server expects the image to be passed in the data variable, which is the input layer's name in the model. In the previous example this was data=@kitten.jpeg.
 
 ## Dataset
-Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
+Dataset used for train and validation: [ImageNet (ILSVRC2012)](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
 
 ## Validation accuracy
 The accuracy obtained by the model on the validation set is mentioned above. The accuracy has been calculate on center cropped images and is within 1-2% of the accuracy obtained in the paper.
@@ -101,11 +101,13 @@ We used MXNet as framework with gluon APIs to perform validation. Use the notebo
 
 ## References
 * **SqueezeNet1.1**  
-Model from the paper [SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size](https://arxiv.org/abs/1602.07360)
+SqueezeNet1.1 presented in the [Official SqueezeNet repo](https://github.com/DeepScale/SqueezeNet/tree/master/SqueezeNet_v1.1) is an improved version of SqueezeNet1.0 from the paper [SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size](https://arxiv.org/abs/1602.07360)
 <!-- * **SqueezeNet1.1**   
 Model from [Official SqueezeNet repo](https://github.com/DeepScale/SqueezeNet/tree/master/SqueezeNet_v1.1).
 -->
 ## Contributors
+* [abhinavs95](https://github.com/abhinavs95) (Amazon AI)
+* [ankkhedia](https://github.com/ankkhedia) (Amazon AI)
 
 ## Acknowledgments
 [MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io), [MMS](https://github.com/awslabs/mxnet-model-server)

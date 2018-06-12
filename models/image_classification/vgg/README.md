@@ -83,7 +83,7 @@ curl -X POST http://127.0.0.1:8080/vgg16/predict -F "data=@kitten.jpeg"
 For inference requests with all above VGG models, Model Server expects the image to be passed in the data variable, which is the input layer's name in the model. In the previous example this was data=@kitten.jpeg.
 
 ## Dataset
-Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
+Dataset used for train and validation: [ImageNet (ILSVRC2012)](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
 
 
 
@@ -107,10 +107,12 @@ We used MXNet as framework with gluon APIs to perform validation. Use the notebo
 
 
 ## References 
-* **VGG 16** and **vVGG 19** are from the paper [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/abs/1409.1556)
+* **VGG 16** and **VGG 19** are from the paper [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/abs/1409.1556)
 * **VGG 16_bn** and **VGG 19_bn** are the same models as above but with batch normalization applied after each convolution layer
 
 ## Contributors
+* [abhinavs95](https://github.com/abhinavs95) (Amazon AI)
+* [ankkhedia](https://github.com/ankkhedia) (Amazon AI)
 
 ## Acknowledgments
 [MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io), [MMS](https://github.com/awslabs/mxnet-model-server)

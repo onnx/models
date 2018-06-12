@@ -98,7 +98,7 @@ For inference requests with all above ResNet models, Model Server expects the im
 
 
 ## Dataset
-Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
+Dataset used for train and validation: [ImageNet (ILSVRC2012)](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
 
 
 ## Validation accuracy
@@ -146,6 +146,8 @@ He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
 In European Conference on Computer Vision, pp. 630-645. Springer, Cham, 2016.
 
 ## Contributors
+* [ankkhedia](https://github.com/ankkhedia) (Amazon AI)
+* [abhinavs95](https://github.com/abhinavs95) (Amazon AI)
 
 ## Acknowledgments
 [MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io), [MMS](https://github.com/awslabs/mxnet-model-server)
