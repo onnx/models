@@ -30,7 +30,7 @@ These models detect the presence of faces in images. Some more popular models ar
 
 |Model Class |Reference |Description |
 |-|-|-|
-|<b>ArcFace</b>|[Deng et al.](https://arxiv.org/abs/1801.07698)|[contribute](contribute.md)|
+|<b>ArcFace</b>|[Deng et al.](https://arxiv.org/abs/1801.07698)|Coming soon|
 |<b>CNN Cascade</b>|[Li et al.](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Li_A_Convolutional_Neural_2015_CVPR_paper.pdf)|[contribute](contribute.md)|
 
 <hr>
@@ -40,10 +40,10 @@ These models detect the presence of multiple objects in an image and segment out
 
 |Model Class |Reference |Description |
 |-|-|-|
-|<b>SSD</b>|[Liu et al.](https://arxiv.org/abs/1512.02325)|[contribute](contribute.md)|
+|<b>SSD</b>|[Liu et al.](https://arxiv.org/abs/1512.02325)|Coming soon|
 |<b>Faster-RCNN</b>|[Ren et al.](https://arxiv.org/abs/1506.01497)|[contribute](contribute.md)|
 |<b>Mask-RCNN</b>|[He et al.](https://arxiv.org/abs/1703.06870)|[contribute](contribute.md)|
-|<b>YOLO v2</b>|[Redmon et al.](https://arxiv.org/abs/1612.08242)|[contribute](contribute.md)|
+|<b>YOLO v2</b>|[Redmon et al.](https://arxiv.org/abs/1612.08242)|Coming soon|
 |<b>YOLO v3</b>|[Redmon et al.](https://pjreddie.com/media/files/papers/YOLOv3.pdf)|[contribute](contribute.md)|
 
 <hr>
@@ -53,7 +53,7 @@ Semantic segmentation models will identify multiple classes of objects in an ima
 
 |Model Class |Reference |Description |
 |-|-|-|
-|<b>FCN</b>|[Long et al.](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)|[contribute](contribute.md)|
+|<b>FCN</b>|[Long et al.](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)|Coming soon|
 
 <hr>
 
