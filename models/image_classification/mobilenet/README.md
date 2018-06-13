@@ -1,5 +1,5 @@
 # MobileNet
-MobileNet improves the state of the art performance of mobile models on multiple tasks and benchmarks as well as across a spectrum of different model sizes. MobileNet is based on an inverted residual structure where the shortcut connections are between the thin bottleneck layers. The intermediate expansion layer uses lightweight depthwise convolutions to filter features as a source of non-linearity. Additionally,  it removes non-linearities in the narrow layers in order to maintain representational power.
+MobileNet improves the state of the art performance of mobile models on multiple tasks and benchmarks as well as across a spectrum of different model sizes. MobileNet is based on an inverted residual structure where the shortcut connections are between the thin bottleneck layers. The intermediate expansion layer uses lightweight depthwise convolutions to filter features as a source of non-linearity. Additionally,  it removes non-linearities in the narrow layers in order to maintain representational power. The models perform image classification - they take images as input and classifies the major object in the image into a set of pre-defined classes. They are trained ImageNet dataset which contains images from 1000 classes. MobileNet models are also very efficient in terms of speed and size and hence are ideal for embedded and mobile applications.
 
 ## Model
 MobileNet reduces the dimensionality of a layer thus reducing the dimensionality of the operating space. The  trade off between computation and accuracy is exploited in Mobilenet via a width multiplier parameter approach which allows one to reduce the dimensionality of the activation space until the manifold of interest spans this entire space.
@@ -82,12 +82,11 @@ curl -X POST http://127.0.0.1:8080/mobilenetv2_1_0/predict -F "data=@kitten.jpeg
 For inference requests with this model, Model Server expects the image to be passed in the data variable, which is the input layer's name in the model. In the previous example this was data=@kitten.jpeg.
 
 ## Dataset
-Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
+Dataset used for train and validation: [ImageNet (ILSVRC2012)](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
 
 
 ## Validation accuracy
-The accuracy obtained by the model on the validation set is mentioned above. The accuracy has been calculate on center cropped 
-images and is similar to accuracy obtained in the paper.
+The accuracy obtained by the model on the validation set is mentioned above. The accuracy has been calculate on center cropped images and is within 1-2% of the accuracy obtained in the paper.
 <!--* Version 1:
 
  |Model        |Top-1 accuracy (%)|Top-5 accuracy (%)|
@@ -110,6 +109,11 @@ We used MXNet as framework with gluon APIs to perform validation. Use the notebo
 Model from the paper [MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381)
 
 ## Contributors
+* [ankkhedia](https://github.com/ankkhedia) (Amazon AI)
+* [abhinavs95](https://github.com/abhinavs95) (Amazon AI)
+
+## Acknowledgments
+[MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io), [MMS](https://github.com/awslabs/mxnet-model-server)
 
 ## Keyword
 CNN, MobileNet, ONNX, ImageNet, Computer Vision 

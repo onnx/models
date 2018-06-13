@@ -1,6 +1,7 @@
 # VGG
 
-VGG presents the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. VGG networks have increased depth with very small (3 × 3) convolution filters, which showed a significant improvement on the prior-art configurations achieved by pushing the depth to 16–19 weight layers. The work secured the first and the second places in the localisation and classification tracks respectively in ImageNet Challenge 2014. The representations from VGG generalise well to other datasets, where they achieve state-of-the-art results. 
+VGG presents the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. VGG networks have increased depth with very small (3 × 3) convolution filters, which showed a significant improvement on the prior-art configurations achieved by pushing the depth to 16–19 weight layers. The work secured the first and the second places in the localisation and classification tracks respectively in ImageNet Challenge 2014. The representations from VGG generalise well to other datasets, where they achieve state-of-the-art results. The models perform image classification - they take images as input and classifies the major object in the image into a set of pre-defined classes. They are trained ImageNet dataset which contains images from 1000 classes.
+VGG models provide very high accuracies but at the cost of increased model sizes. They are ideal for cases when high accuracy of classification is essential and there are limited constraints on model sizes.
 
 ## Model
 
@@ -82,13 +83,12 @@ curl -X POST http://127.0.0.1:8080/vgg16/predict -F "data=@kitten.jpeg"
 For inference requests with all above VGG models, Model Server expects the image to be passed in the data variable, which is the input layer's name in the model. In the previous example this was data=@kitten.jpeg.
 
 ## Dataset
-Dataset used for train and validation: [ILSVRC2012](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
+Dataset used for train and validation: [ImageNet (ILSVRC2012)](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
 
 
 
 ## Validation accuracy
-The accuracies obtained by the models on the validation set as mentioned above. The accuracies has been calculate on center cropped 
-images and is similar to accuracy obtained in the paper.
+The accuracies obtained by the models on the validation set as mentioned above. The accuracy has been calculate on center cropped images and is within 1-2% of the accuracy obtained in the paper.
 
 <!--|Model        |Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|
@@ -107,10 +107,15 @@ We used MXNet as framework with gluon APIs to perform validation. Use the notebo
 
 
 ## References 
-* **VGG 16** and **vVGG 19** are from the paper [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/abs/1409.1556)
+* **VGG 16** and **VGG 19** are from the paper [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/abs/1409.1556)
 * **VGG 16_bn** and **VGG 19_bn** are the same models as above but with batch normalization applied after each convolution layer
 
 ## Contributors
+* [abhinavs95](https://github.com/abhinavs95) (Amazon AI)
+* [ankkhedia](https://github.com/ankkhedia) (Amazon AI)
+
+## Acknowledgments
+[MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io), [MMS](https://github.com/awslabs/mxnet-model-server)
 
 ## Keywords
 CNN, VGG, ONNX, ImageNet, Computer Vision 
