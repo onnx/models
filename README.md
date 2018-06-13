@@ -53,7 +53,7 @@ Semantic segmentation models will identify multiple classes of objects in an ima
 
 |Model Class |Reference |Description |
 |-|-|-|
-|<b>FCN</b>|[Long et al.](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=5&ved=0ahUKEwiI9YjW5ZDaAhVW5mMKHYifAL4QFghUMAQ&url=https%3A%2F%2Fpeople.eecs.berkeley.edu%2F~jonlong%2Flong_shelhamer_fcn.pdf&usg=AOvVaw1OZIT1dpO9NAS45hB7mhG8)|[contribute](contribute.md)|
+|<b>FCN</b>|[Long et al.](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)|[contribute](contribute.md)|
 
 <hr>
 
@@ -61,7 +61,7 @@ Semantic segmentation models will identify multiple classes of objects in an ima
 
 |Model Class |Reference |Description |
 |-|-|-|
-|   Gender Detection| [Age and Gender Classification using Convolutional Neural Networks](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=7&ved=0ahUKEwjEzsev5pDaAhVI2GMKHZvjCjEQFgiLATAG&url=http%3A%2F%2Fciteseerx.ist.psu.edu%2Fviewdoc%2Fdownload%3Fdoi%3D10.1.1.722.9654%26rep%3Drep1%26type%3Dpdf&usg=AOvVaw0-c9n2_ZcsRCyc6BCb0Zdj)	|[contribute](contribute.md)|
+|   Gender Detection| [Age and Gender Classification using Convolutional Neural Networks](https://www.openu.ac.il/home/hassner/projects/cnn_agegender/CNN_AgeGenderEstimation.pdf)	|[contribute](contribute.md)|
 |	Super Resolution|	[Image Super resolution using deep convolutional networks ](http://ieeexplore.ieee.org/document/7115171/?reload=true)	|[contribute](contribute.md)|
 <hr>
 

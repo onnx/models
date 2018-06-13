@@ -27,3 +27,5 @@ If so, then update the command below to use a relative path or give directions f
 * Run the following command:
 
 ``python extract_imagenet.py --download-dir *path to download folder* --target-dir *path to extract folder*``
+
+Please note that the usage of the dataset must be non-commercial as per the [ImageNet license](http://www.image-net.org/download-faq)
