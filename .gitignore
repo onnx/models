@@ -1,0 +1,13 @@
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# virtualenv
+.venv
+venv/
+ENV/
+
+# mac
+.DS_Store
+
+# PyCharm
+.idea/
