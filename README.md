@@ -1,17 +1,17 @@
-<p align="center">
-<img src="images/ONNX Model Zoo Graphics.png" width="90%"/>
-</p>
-
 # Open Neural Network eXchange (ONNX) Model Zoo
 
 [![Generic badge](https://img.shields.io/badge/Status-Work_In_Progress-red.svg)](#) 
 [![Generic badge](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](contribute.md)
 
-The ONNX Model Zoo is a collection of pre-trained models for state of the art models in deep learning. Models are available in the ONNX protobuf format. Where available and supported, the models are also available in the  Model Server archive format. Accompanying each model are [Jupyter](http://jupyter.org) notebooks for model training and running inference with the trained model. The notebooks are written in Python and include links to the training dataset as well as references to the original paper that describes the model architecture. The notebooks can be exported as python
- and run as python(.py) files.
+<p align="center">
+	<img src="images/ONNX Model Zoo Graphics.png" width="60%"/>
+</p>
+
+The ONNX Model Zoo is a collection of pre-trained models for state of the art models in deep learning, available in the ONNX format. Where supported, the models are also available in the  [Model Server](https://github.com/awslabs/mxnet-model-server) archive format. Accompanying each model are [Jupyter](http://jupyter.org) notebooks for model training and running inference with the trained model. The notebooks are written in Python and include links to the training dataset as well as references to the original paper that describes the model architecture. The notebooks can be exported and run as python(.py) files.
 
 ## What is ONNX?
-The Open Neural Network eXchange ([ONNX](http://onnx.ai)) is a open format to represent deep learning models. With ONNX, AI developers can more easily move models between state-of-the-art tools and choose the combination that is best for them. ONNX is developed and supported by a community of partners.
+The Open Neural Network eXchange ([ONNX](http://onnx.ai)) is a open format to represent deep learning models. With ONNX, developers can move models between state-of-the-art tools and choose the combination that is best for them. ONNX is developed and supported by a community of partners.
+
 ## Models
 
 ### Image Classification
@@ -107,7 +107,8 @@ Semantic segmentation models will identify multiple classes of objects in an ima
 <hr>
 
 ## Model Serving
- Want to try out models instantly? Many of the models in this model zoo can be served with [Model Server](https://github.com/awslabs/mxnet-model-server) using the model archives provided. Model Server is a flexible and easy tool to serve deep learning models by providing a REST API with an inference end point. Supported ONNX models such as those converted from Chainer, CNTK, MXNet, and PyTorch can be served with Model Server. To learn about ONNX model serving with Model Server, refer to the [Model Server ONNX documentation](https://github.com/awslabs/mxnet-model-server/blob/master/docs/export_from_onnx.md). 
+ Want to try out models instantly? Many of the models in this model zoo can be served with [Model Server](https://github.com/awslabs/mxnet-model-server) using the model archives provided. Model Server is a flexible and easy tool to serve deep learning models by providing a REST API with an inference end point. Supported ONNX models such as those converted from Chainer, CNTK, MXNet, and PyTorch can be served with Model Server. To learn about ONNX model serving with Model Server, refer to the [Model Server ONNX documentation](https://github.com/awslabs/mxnet-model-server/blob/master/docs/export_from_onnx.md).
+
 ## Model Visualization
 You can see visualizations of each model's network architecture by using [Netron](https://lutzroeder.github.io/Netron).
 
