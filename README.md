@@ -65,7 +65,7 @@ Semantic segmentation models will identify multiple classes of objects in an ima
 |	Super Resolution|	[Image Super resolution using deep convolutional networks ](http://ieeexplore.ieee.org/document/7115171/?reload=true)	|[contribute](contribute.md)|
 <hr>
 
-### GAN models
+### Generative models
 |Model Class |Reference |Description |
 |-|-|-|
 |	Text to Image|	[Generative Adversarial Text to image Synthesis ](https://arxiv.org/abs/1605.05396)|[contribute](contribute.md)|
