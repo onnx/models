@@ -1,6 +1,9 @@
 # FER+ Emotion Recognition
 
-Download: https://www.cntk.ai/OnnxModels/emotion_ferplus.tar.gz  
+Download:
+- release 1.1: https://www.cntk.ai/OnnxModels/opset_2/emotion_ferplus.tar.gz  
+- master: https://www.cntk.ai/OnnxModels/opset_7/emotion_ferplus.tar.gz 
+
 Model size: 34 MB
 
 ## Description
