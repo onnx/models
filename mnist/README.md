@@ -1,6 +1,9 @@
 # MNIST - Handwritten Digit Recognition
 
-Download package: https://www.cntk.ai/OnnxModels/mnist.tar.gz  
+Download package:  
+- release 1.0: https://www.cntk.ai/OnnxModels/mnist/opset_1/mnist.tar.gz
+- master: https://www.cntk.ai/OnnxModels/mnist/opset_7/mnist.tar.gz
+
 Model size: 26 kB
 
 ## Description
