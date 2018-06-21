@@ -2,7 +2,7 @@
 
 Download:
 - release 1.0: https://www.cntk.ai/OnnxModels/emotion_ferplus/opset_2/emotion_ferplus.tar.gz  
-- master: https://www.cntk.ai/OnnxModels/emotion_ferplus/opset_7/emotion_ferplus.tar.gz 
+- release 1.2: https://www.cntk.ai/OnnxModels/emotion_ferplus/opset_7/emotion_ferplus.tar.gz 
 
 Model size: 34 MB
 
