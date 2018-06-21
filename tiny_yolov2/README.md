@@ -2,7 +2,7 @@
 
 Download: 
 - release 1.0: https://www.cntk.ai/OnnxModels/tiny_yolov2/opset_1/tiny_yolov2.tar.gz
-- master: https://www.cntk.ai/OnnxModels/tiny_yolov2/opset_7/tiny_yolov2.tar.gz
+- release 1.2: https://www.cntk.ai/OnnxModels/tiny_yolov2/opset_7/tiny_yolov2.tar.gz
 
 Model size: 61 MB
 
