@@ -1,7 +1,8 @@
 # AlexNet
 Download:
-- release 1.1 https://s3.amazonaws.com/download.onnx/models/opset_3/bvlc_alexnet.tar.gz
-- master: https://s3.amazonaws.com/download.onnx/models/opset_6/bvlc_alexnet.tar.gz
+- release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/bvlc_alexnet.tar.gz
+- release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/bvlc_alexnet.tar.gz
+- release 1.2 and master: https://s3.amazonaws.com/download.onnx/models/opset_7/bvlc_alexnet.tar.gz
 
 Model size: 244 MB
 

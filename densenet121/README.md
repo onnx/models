@@ -1,8 +1,9 @@
 # DenseNet-121
 
 Download:
-- release 1.1 https://s3.amazonaws.com/download.onnx/models/opset_3/densenet121.tar.gz
-- master: https://s3.amazonaws.com/download.onnx/models/opset_6/densenet121.tar.gz
+- release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/densenet121.tar.gz
+- release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/densenet121.tar.gz
+- release 1.2 and master: https://s3.amazonaws.com/download.onnx/models/opset_7/densenet121.tar.gz
 
 Model size: 33 MB
 

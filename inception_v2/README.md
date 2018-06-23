@@ -1,8 +1,9 @@
 # Inception v2
 
 Download:
-- release 1.1 https://s3.amazonaws.com/download.onnx/models/opset_3/inception_v2.tar.gz
-- master: https://s3.amazonaws.com/download.onnx/models/opset_6/inception_v2.tar.gz
+- release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/inception_v2.tar.gz
+- release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/inception_v2.tar.gz
+- release 1.2 and master: https://s3.amazonaws.com/download.onnx/models/opset_7/inception_v2.tar.gz
 
 Model size: 45 MB
 

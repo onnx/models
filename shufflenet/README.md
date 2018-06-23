@@ -1,8 +1,9 @@
 # ShuffleNet
 
 Download:
-- release 1.1 https://s3.amazonaws.com/download.onnx/models/opset_3/shufflenet.tar.gz
-- master: https://s3.amazonaws.com/download.onnx/models/opset_6/shufflenet.tar.gz
+- release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/shufflenet.tar.gz
+- release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/shufflenet.tar.gz
+- release 1.2 and master: https://s3.amazonaws.com/download.onnx/models/opset_7/shufflenet.tar.gz
 
 Model size: 5.3 MB
 
