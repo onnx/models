@@ -24,7 +24,7 @@ Caffe2 ResNet-50 ==> ONNX ResNet-50
 * Mean: 128
 * Std: 128
 * Scale: 256
-* Reference: [the training script](https://github.com/Azure/BatchAI/blob/master/recipes/Caffe2/Caffe2-GPU-Distributed/resnet50_trainer.py#L61)
+* Reference: [the training script](https://github.com/pytorch/pytorch/blob/master/caffe2/python/examples/resnet50_trainer.py#L61)
 ### Input
 ```
 gpu_0/data_0: float[1, 3, 224, 224]
