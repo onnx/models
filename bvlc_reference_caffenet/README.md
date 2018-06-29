@@ -2,7 +2,8 @@
 Download:
 - release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/bvlc_reference_caffenet.tar.gz
 - release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/bvlc_reference_caffenet.tar.gz
-- release 1.2 and master: https://s3.amazonaws.com/download.onnx/models/opset_7/bvlc_reference_caffenet.tar.gz
+- release 1.2: https://s3.amazonaws.com/download.onnx/models/opset_7/bvlc_reference_caffenet.tar.gz
+- master: https://s3.amazonaws.com/download.onnx/models/opset_8/bvlc_reference_caffenet.tar.gz
 
 Model size: 244 MB
 
