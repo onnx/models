@@ -3,7 +3,8 @@
 Download:
 - release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/squeezenet.tar.gz
 - release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/squeezenet.tar.gz
-- release 1.2 and master: https://s3.amazonaws.com/download.onnx/models/opset_7/squeezenet.tar.gz
+- release 1.2: https://s3.amazonaws.com/download.onnx/models/opset_7/squeezenet.tar.gz
+- master: https://s3.amazonaws.com/download.onnx/models/opset_8/squeezenet.tar.gz
 
 Model size: 5 MB
 
