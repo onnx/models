@@ -1,14 +1,19 @@
 # MobileNet
-MobileNet improves the state of the art performance of mobile models on multiple tasks and benchmarks as well as across a spectrum of different model sizes. MobileNet is based on an inverted residual structure where the shortcut connections are between the thin bottleneck layers. The intermediate expansion layer uses lightweight depthwise convolutions to filter features as a source of non-linearity. Additionally,  it removes non-linearities in the narrow layers in order to maintain representational power. The models perform image classification - they take images as input and classifies the major object in the image into a set of pre-defined classes. They are trained ImageNet dataset which contains images from 1000 classes. MobileNet models are also very efficient in terms of speed and size and hence are ideal for embedded and mobile applications.
+
+## Use cases
+Mobilenet models perform image classification - they take images as input and classify the major object in the image into a set of pre-defined classes. They are trained on ImageNet dataset which contains images from 1000 classes. MobileNet models are also very efficient in terms of speed and size and hence are ideal for embedded and mobile applications.
+
+## Description
+MobileNet improves the state-of-the-art performance of mobile models on multiple tasks and benchmarks as well as across a spectrum of different model sizes. MobileNet is based on an inverted residual structure where the shortcut connections are between the thin bottleneck layers. The intermediate expansion layer uses lightweight depthwise convolutions to filter features as a source of non-linearity. Additionally,  it removes non-linearities in the narrow layers in order to maintain representational power. 
 
 ## Model
 MobileNet reduces the dimensionality of a layer thus reducing the dimensionality of the operating space. The  trade off between computation and accuracy is exploited in Mobilenet via a width multiplier parameter approach which allows one to reduce the dimensionality of the activation space until the manifold of interest spans this entire space.
 The below model is using multiplier value as 1.0.
 * Version 2:
 
- |Model        |ONNX Model  | Model archives|Top-1 accuracy (%)|Top-5 accuracy (%)|
+ |Model        |ONNX Model  | ONNX version|Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|:--------------|:--------------|
-|MobileNet v2-1.0|    [13.6 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-1.0/mobilenetv2-1.0.onnx)    |  [13.7 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-1.0/mobilenetv2-1.0.model)     | 70.94    |     89.99           |
+|MobileNet v2-1.0|    [13.6 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-1.0/mobilenetv2-1.0.onnx)    |    1.2.1   | 70.94    |     89.99           |
 <!--
 |MobileNet v2-0.5|    [13.6 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-0.5/mobilenetv2-0.5.onnx)    |  [13.7 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-0.5/mobilenetv2-0.5.model)     |          |             |
 -->
@@ -21,65 +26,15 @@ All pre-trained models expect input images normalized in the same way, i.e. mini
 The inference was done using jpeg image.
 
 ### Preprocessing
-The images have to be loaded in to a range of [0, 1] and then normalized using mean = [0.485, 0.456, 0.406] and std = [0.229, 0.224, 0.225]. The transformation should preferrably happen at preprocessing.
-
-```bash
-import mxnet
-from mxnet.gluon.data.vision import transforms
-def preprocess(img):   
-    '''
-    
-    Preprocessing required on the images for inference with mxnet gluon
-    The function takes path to an image and returns processed tensor
-    ''''''
-    transform_fn = transforms.Compose([
-    transforms.Resize(224),
-    transforms.CenterCrop(224),
-    transforms.ToTensor(),
-    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
-    ])
-    img = transform_fn(img)
-    img = img.expand_dims(axis=0) # batchify
-    
-    return img
-    
- ```
- 
+The images have to be loaded in to a range of [0, 1] and then normalized using mean = [0.485, 0.456, 0.406] and std = [0.229, 0.224, 0.225]. The transformation should preferrably happen at preprocessing. Check [imagenet_preprocess.py](../imagenet_preprocess.py) for code.
 
 ### Output
 The model outputs image scores for each of the [1000 classes of ImageNet](../synset.txt).
 
 ### Postprocessing
-The post-processing involves calculating the softmax probablility scores for each classes and sorting them to report the most probable classes.
+The post-processing involves calculating the softmax probablility scores for each class and sorting them to report the most probable classes. Check [imagenet_postprocess.py](../imagenet_postprocess.py) for code.
 
-```bash
-import mxnet as mx
-def postprocess(scores): 
-    '''
-    Postprocessing with mxnet gluon
-    The function takes scores generated by network and returns the class IDs in decreasing order
-    of probability
-    ''''''
-    prob = mx.ndarray.softmax(scores).asnumpy()
-    prob = np.squeeze(prob)
-    a = np.argsort(prob)[::-1]
-    return a
-    
- ```
- 
-### Inference with Model Server
-To learn how to use model archives with Model Server, try out the [Model Server QuickStart](https://github.com/awslabs/mxnet-model-server/blob/master/README.md#quick-start) to get Model Server installed and tested. If you already have installed the server, you can use the commands below to start serving this model.
-* **Start Server**:
-```bash
-mxnet-model-server --models mobilenetv2_1_0=https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-1.0/mobilenetv2-1.0.model
-```
-
-* **Run Prediction**:
-```bash
-curl -O https://s3.amazonaws.com/model-server/inputs/kitten.jpg
-curl -X POST http://127.0.0.1:8080/mobilenetv2_1_0/predict -F "data=@kitten.jpeg"
-```
-For inference requests with this model, Model Server expects the image to be passed in the data variable, which is the input layer's name in the model. In the previous example this was data=@kitten.jpeg.
+To do quick inference with the model, check out [Model Server](https://github.com/awslabs/mxnet-model-server/blob/master/docs/model_zoo.md/#mobilenetv2-1.0_onnx).
 
 ## Dataset
 Dataset used for train and validation: [ImageNet (ILSVRC2012)](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
@@ -87,15 +42,6 @@ Dataset used for train and validation: [ImageNet (ILSVRC2012)](http://www.image-
 
 ## Validation accuracy
 The accuracy obtained by the model on the validation set is mentioned above. The accuracy has been calculate on center cropped images and is within 1-2% of the accuracy obtained in the paper.
-<!--* Version 1:
-
- |Model        |Top-1 accuracy (%)|Top-5 accuracy (%)|
-|-------------|:--------------|:--------------|
-|MobileNet v2-1.0|     70.94    |     89.99           |
-|MobileNet v2-0.5|              |             |
-
--->
-
 
 ## Training
 We used MXNet as framework with gluon APIs to perform training. View the [training notebook](train_mobilenet.ipynb) to understand details for parameters and network for each of the above variants of MobileNet.
@@ -113,7 +59,10 @@ Model from the paper [MobileNetV2: Inverted Residuals and Linear Bottlenecks](ht
 * [abhinavs95](https://github.com/abhinavs95) (Amazon AI)
 
 ## Acknowledgments
-[MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io), [MMS](https://github.com/awslabs/mxnet-model-server)
+[MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io)
 
 ## Keyword
-CNN, MobileNet, ONNX, ImageNet, Computer Vision 
+CNN, MobileNet, ONNX, ImageNet, Computer Vision
+
+## License
+Apache 2.0

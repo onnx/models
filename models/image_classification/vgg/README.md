@@ -1,18 +1,22 @@
 # VGG
 
-VGG presents the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. VGG networks have increased depth with very small (3 × 3) convolution filters, which showed a significant improvement on the prior-art configurations achieved by pushing the depth to 16–19 weight layers. The work secured the first and the second places in the localisation and classification tracks respectively in ImageNet Challenge 2014. The representations from VGG generalise well to other datasets, where they achieve state-of-the-art results. The models perform image classification - they take images as input and classifies the major object in the image into a set of pre-defined classes. They are trained ImageNet dataset which contains images from 1000 classes.
+## Use cases
+VGG models perform image classification - they take images as input and classify the major object in the image into a set of pre-defined classes. They are trained on ImageNet dataset which contains images from 1000 classes.
 VGG models provide very high accuracies but at the cost of increased model sizes. They are ideal for cases when high accuracy of classification is essential and there are limited constraints on model sizes.
+
+## Description
+VGG presents the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. VGG networks have increased depth with very small (3 × 3) convolution filters, which showed a significant improvement on the prior-art configurations achieved by pushing the depth to 16–19 weight layers. The work secured the first and the second places in the localisation and classification tracks respectively in ImageNet Challenge 2014. The representations from VGG generalise well to other datasets, where they achieve state-of-the-art results.
 
 ## Model
 
 The models below are variant of same network with different number of layers and use of batch normalisation. VGG 16 and VGG 19 have 16 and 19 convolutional layers respectively. VGG 16_bn and VGG 19_bn have the same architecture as their original counterparts but with batch normalization applied after each convolutional layer, which leads to better convergence and slightly better accuracies.
 
- |Model        |ONNX Model  | Model archives|Top-1 accuracy (%)|Top-5 accuracy (%)|
+ |Model        |ONNX Model  | ONNX version|Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|:--------------|:--------------|
-|VGG 16|    [527.8 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16/vgg16.onnx)    |  [527.9 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16/vgg16.model)     | 72.62     |      91.14     |
-|VGG 16_bn|    [527.9 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16-bn/vgg16-bn.onnx)    |  [527.9 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16-bn/vgg16-bn.model)     |   72.71     |      91.21    |
-|VGG 19|    [548.1 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg19/vgg19.onnx)    |  [548.1 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg19/vgg19.model)     | 73.72     |      91.58     |
-|VGG 19_bn|    [548.1 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg19-bn/vgg19-bn.onnx)    |  [548.2 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg19-bn/vgg19-bn.model)     | 73.83    |      91.79     |
+|VGG 16|    [527.8 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16/vgg16.onnx)    | 1.2.1  | 72.62     |      91.14     |
+|VGG 16_bn|    [527.9 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16-bn/vgg16-bn.onnx)    |  1.2.1  |   72.71     |      91.21    |
+|VGG 19|    [548.1 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg19/vgg19.onnx)    |  1.2.1   | 73.72     |      91.58     |
+|VGG 19_bn|    [548.1 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg19-bn/vgg19-bn.onnx)    |  1.2.1    | 73.83    |      91.79     |
 
 ## Inference
 We used MXNet as framework with gluon APIs to perform inference. View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook. 
@@ -22,70 +26,18 @@ All pre-trained models expect input images normalized in the same way, i.e. mini
 The inference was done using jpeg image.
 
 ### Preprocessing
-The images have to be loaded in to a range of [0, 1] and then normalized using mean = [0.485, 0.456, 0.406] and std = [0.229, 0.224, 0.225]. The transformation should preferrably happen at preprocessing.
-
-```bash
-import mxnet
-from mxnet.gluon.data.vision import transforms
-def preprocess(img):   
-    '''
-    
-    Preprocessing required on the images for inference with mxnet gluon
-    The function takes path to an image and returns processed tensor
-    ''''''
-    transform_fn = transforms.Compose([
-    transforms.Resize(224),
-    transforms.CenterCrop(224),
-    transforms.ToTensor(),
-    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
-    ])
-    img = transform_fn(img)
-    img = img.expand_dims(axis=0) # batchify
-    
-    return img
-    
- ```
- 
+The images have to be loaded in to a range of [0, 1] and then normalized using mean = [0.485, 0.456, 0.406] and std = [0.229, 0.224, 0.225]. The transformation should preferrably happen at preprocessing. Check [imagenet_preprocess.py](../imagenet_preprocess.py) for code.
 
 ### Output
 The model outputs image scores for each of the [1000 classes of ImageNet](../synset.txt).
 
 ### Postprocessing
-The post-processing involves calculating the softmax probablility scores for each classes and sorting them to report the most probable classes.
+The post-processing involves calculating the softmax probablility scores for each class and sorting them to report the most probable classes. Check [imagenet_postprocess.py](../imagenet_postprocess.py) for code.
 
-```bash
-import mxnet as mx
-def postprocess(scores): 
-    '''
-    Postprocessing with mxnet gluon
-    The function takes scores generated by network and returns the class IDs in decreasing order
-    of probability
-    ''''''
-    prob = mx.ndarray.softmax(scores).asnumpy()
-    prob = np.squeeze(prob)
-    a = np.argsort(prob)[::-1]
-    return a
-    
- ```
- 
-### Inference with Model Server
-To learn how to use model archives with Model Server, try out the [Model Server QuickStart](https://github.com/awslabs/mxnet-model-server/blob/master/README.md#quick-start) to get Model Server installed and tested. If you already have installed the server, you can use the commands below to start serving this model.
-* **Start Server**:
-```bash
-mxnet-model-server --models vgg16=https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16/vgg16.model
-```
-
-* **Run Prediction**:
-```bash
-curl -O https://s3.amazonaws.com/model-server/inputs/kitten.jpg
-curl -X POST http://127.0.0.1:8080/vgg16/predict -F "data=@kitten.jpeg"
-```
-For inference requests with all above VGG models, Model Server expects the image to be passed in the data variable, which is the input layer's name in the model. In the previous example this was data=@kitten.jpeg.
+To do quick inference with the model, check out [Model Server](https://github.com/awslabs/mxnet-model-server/blob/master/docs/model_zoo.md/#vgg_header).
 
 ## Dataset
 Dataset used for train and validation: [ImageNet (ILSVRC2012)](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
-
-
 
 ## Validation accuracy
 The accuracies obtained by the models on the validation set as mentioned above. The accuracy has been calculate on center cropped images and is within 1-2% of the accuracy obtained in the paper.
@@ -115,7 +67,10 @@ We used MXNet as framework with gluon APIs to perform validation. Use the notebo
 * [ankkhedia](https://github.com/ankkhedia) (Amazon AI)
 
 ## Acknowledgments
-[MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io), [MMS](https://github.com/awslabs/mxnet-model-server)
+[MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io)
 
 ## Keywords
-CNN, VGG, ONNX, ImageNet, Computer Vision 
+CNN, VGG, ONNX, ImageNet, Computer Vision
+
+## License
+Apache 2.0

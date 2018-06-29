@@ -1,10 +1,16 @@
 # Model Name
+
+## Use-cases
+Model use cases
+
+## Description
 Description of model
+
 ## Model
 
- |Model        |ONNX Model  | Model archives(optional)|Accuracy |
+ |Model        |ONNX Model  | ONNX version|Accuracy |
 |-------------|:--------------|:--------------|:--------------|
-|Model Name       |ONNX Model link with size  |  [ Model archive](https://github.com/awslabs/mxnet-model-server/blob/master/docs/export_from_onnx.md) link with size|Accuracy values |
+|Model Name       |ONNX Model link with size  |  ONNX version used for conversion|Accuracy values |
 <hr>
 
 ## Inference
@@ -21,10 +27,6 @@ Output of network
 
 ### Postprocessing steps
 Post processing and meaning of output
-
-### Inference with Model Server (if applicable)
-Details of inference with model server using model archives if applicable
-
 <hr>
 
 ## Dataset (Train and validation)
@@ -52,9 +54,13 @@ Contributors' name
 <hr>
 
 ## Acknowledgements
-Thank anyone whose existing work was used (optional)
+Thank anyone whose existing work was used
 <hr>
 
-## Keyword
+## Keywords
 Keywords/tags related to models
+<hr>
+
+## License
+Add license information
 <hr>
