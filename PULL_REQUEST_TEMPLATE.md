@@ -8,9 +8,9 @@ Description of model
 
 ## Model
 
- |Model        |ONNX Model  | ONNX version|Accuracy |
-|-------------|:--------------|:--------------|:--------------|
-|Model Name       |ONNX Model link with size  |  ONNX version used for conversion|Accuracy values |
+ |Model        |Download  | Download (with sample test data)|ONNX version|Accuracy |
+|-------------|:--------------|:--------------|:--------------|:--------------|
+|Model Name       |ONNX Model download link with size  |  tar file containing ONNX model and synthetic test data|ONNX version used for conversion|Accuracy values |
 <hr>
 
 ## Inference
