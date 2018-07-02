@@ -10,9 +10,9 @@ SqueezeNet is a small CNN which achieves AlexNet level accuracy on ImageNet with
 Squeezenet 1.1 gives AlexNet level of accuracy with 50X fewer parameters.
 <!-- SqueezeNet 1.1 has 2.4x less computation and slightly fewer parameters than SqueezeNet 1.0, without sacrificing accuracy.-->
 
-|Model        |ONNX Model  | ONNX version|Top-1 accuracy (%)|Top-5 accuracy (%)|
-|-------------|:--------------|:--------------|:--------------|:--------------|
-|SqueezeNet 1.1|    [4.7 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.1/squeezenet1.1.onnx)    |  1.2.1   |56.34     |     79.12     |
+|Model        |Download  | Download (with sample test data)|ONNX Version|Top-1 accuracy (%)|Top-5 accuracy (%)|
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|SqueezeNet 1.1|    [4.7 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.1/squeezenet1.1.onnx)    | [5.9 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.1/squeezenet1.1.tar.gz) |1.2.1   |56.34     |     79.12     |
 
 ## Inference
 We used MXNet as framework with gluon APIs to perform inference. View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook.
@@ -35,7 +35,7 @@ To do quick inference with the model, check out [Model Server](https://github.co
 Dataset used for train and validation: [ImageNet (ILSVRC2012)](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
 
 ## Validation accuracy
-The accuracy obtained by the model on the validation set is mentioned above. The accuracy has been calculate on center cropped images and is within 1-2% of the accuracy obtained in the paper.
+The accuracies obtained by the model on the validation set are mentioned above. The accuracies have been calculated on center cropped images with a maximum deviation of 1.2% (top-5 accuracy) from the paper.
 
 ## Training
 We used MXNet as framework with gluon APIs to perform training. View the [training notebook](train_squeezenet.ipynb) to understand details for parameters and network for each of the above variants of SqueezeNet.

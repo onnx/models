@@ -11,9 +11,9 @@ MobileNet reduces the dimensionality of a layer thus reducing the dimensionality
 The below model is using multiplier value as 1.0.
 * Version 2:
 
- |Model        |ONNX Model  | ONNX version|Top-1 accuracy (%)|Top-5 accuracy (%)|
-|-------------|:--------------|:--------------|:--------------|:--------------|
-|MobileNet v2-1.0|    [13.6 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-1.0/mobilenetv2-1.0.onnx)    |    1.2.1   | 70.94    |     89.99           |
+ |Model        |Download  |Download (with sample test data)| ONNX version|Top-1 accuracy (%)|Top-5 accuracy (%)|
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|MobileNet v2-1.0|    [13.6 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-1.0/mobilenetv2-1.0.onnx)    |  [14.1 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-1.0/mobilenetv2-1.0.tar.gz) |  1.2.1   | 70.94    |     89.99           |
 <!--
 |MobileNet v2-0.5|    [13.6 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-0.5/mobilenetv2-0.5.onnx)    |  [13.7 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-0.5/mobilenetv2-0.5.model)     |          |             |
 -->
@@ -41,7 +41,7 @@ Dataset used for train and validation: [ImageNet (ILSVRC2012)](http://www.image-
 
 
 ## Validation accuracy
-The accuracy obtained by the model on the validation set is mentioned above. The accuracy has been calculate on center cropped images and is within 1-2% of the accuracy obtained in the paper.
+The accuracies obtained by the model on the validation set are mentioned above. The accuracies have been calculated on center cropped images with a maximum deviation of 1% (top-1 accuracy) from the paper.
 
 ## Training
 We used MXNet as framework with gluon APIs to perform training. View the [training notebook](train_mobilenet.ipynb) to understand details for parameters and network for each of the above variants of MobileNet.
