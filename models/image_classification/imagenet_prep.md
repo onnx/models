@@ -22,7 +22,7 @@ First, go to the [ImageNet download page](http://www.image-net.org/download-imag
 <!-- Isn't the assumption that they've cloned this repo and they have the files already?
 If so, then update the command below to use a relative path or give directions from the root of the repo.
 -->
-* Download the helper script [extract_imagenet.py](/models/extract_imagenet.py), and the validation labels [imagenet_val_maps.pklz](/models/imagenet_val_maps.pklz).
+* Download the helper script [extract_imagenet.py](extract_imagenet.py), and the validation labels [imagenet_val_maps.pklz](imagenet_val_maps.pklz).
 * Place both files in the same folder.
 * Run the following command:
 
