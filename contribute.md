@@ -1,0 +1,5 @@
+# How to Contribute to the Model Zoo
+
+To contribute a new model, create a [pull request](https://github.com/abhinavs95/modelzoo/pull/new/). A pre-defined pull request [template](PULL_REQUEST_TEMPLATE.md) is loaded when creating a new pull request, which describes all the artifacts required for making the contribution.
+
+View an [example submission](./models/image_classification/resnet/README.md) to get a sense of the final output.
