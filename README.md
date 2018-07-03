@@ -23,6 +23,16 @@ This collection of models take images as input, then classifies the major object
 |<b>[ResNet](models/image_classification/resnet/)</b>|[He et al.](https://arxiv.org/abs/1512.03385), [He et al.](https://arxiv.org/abs/1603.05027)|Very deep CNN model (up to 152 layers), won the ImageNet Challenge in 2015. <br>Top-5 error from  paper - ~6%|
 |<b>[SqueezeNet](models/image_classification/squeezenet/)</b>|[Iandola et al.](https://arxiv.org/abs/1602.07360)|A light-weight CNN providing Alexnet level accuracy with 50X fewer parameters. <br>Top-5 error from  paper - ~20%|
 |<b>[VGG](models/image_classification/vgg/)</b>|[Simonyan et al.](https://arxiv.org/abs/1409.1556)|Deep CNN model (upto 19 layers) which won the ImageNet Challenge in 2014. <br>Top-5 error from  paper - ~8%|
+|<b>[Bvlc_AlexNet](bvlc_alexnet)</b>|[Krizhevsky et al.](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)|Deep CNN model for Image Classification |
+|<b>[Bvlc_GoogleNet](bvlc_googlenet)</b>|[Szegedy et al.](https://arxiv.org/pdf/1409.4842.pdf)|Deep CNN model for Image Classification|
+|<b>[Bvlc_reference_CaffeNet](bvlc_reference_caffenet)</b>|[Krizhevsky et al.](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)|Deep CNN model for Image Classification|
+|<b>[Bvlc_reference_RCNN_ILSVRC13](bvlc_reference_rcnn_ilsvrc13)</b>|[Girshick et al.](https://arxiv.org/abs/1311.2524)|Deep CNN model for Image Classification|
+|<b>[DenseNet121](densenet121)</b>|[Huang et al.](https://arxiv.org/abs/1608.06993)|Deep CNN model for Image Classification|
+|<b>[Inception_v1](inception_v1)</b>|[Szegedy et al.](https://arxiv.org/abs/1409.4842)|Deep CNN model for Image Classification|
+|<b>[Inception_v2](inception_v2)</b>|[Szegedy et al.](https://arxiv.org/abs/1512.00567)|Deep CNN model for Image Classification|
+|<b>[ShuffleNet](shufflenet)</b>|[Zhang et al.](https://arxiv.org/abs/1707.01083)|Deep CNN model for Image Classification|
+|<b>[ZFNet512](zfnet512)</b>|[Zeiler et al.](https://arxiv.org/abs/1311.2901)|Deep CNN model for Image Classification|
+
 <hr>
 
 ### Face Detection and Recognition
@@ -40,6 +50,7 @@ These models detect the presence of multiple objects in an image and segment out
 
 |Model Class |Reference |Description |
 |-|-|-|
+|<b>Tiny_YOLOv2</b>|[Redmon et al.](https://arxiv.org/pdf/1612.08242.pdf)|Deep CNN model for Object Detection|
 |<b>SSD</b>|[Liu et al.](https://arxiv.org/abs/1512.02325)|[contribute](contribute.md)|
 |<b>Faster-RCNN</b>|[Ren et al.](https://arxiv.org/abs/1506.01497)|[contribute](contribute.md)|
 |<b>Mask-RCNN</b>|[He et al.](https://arxiv.org/abs/1703.06870)|[contribute](contribute.md)|
@@ -55,6 +66,20 @@ Semantic segmentation models will identify multiple classes of objects in an ima
 |-|-|-|
 |<b>FCN</b>|[Long et al.](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)|[contribute](contribute.md)|
 
+<hr>
+
+### Emotion Recognition
+
+|Model Class |Reference |Description |
+|-|-|-|
+|[Emotion FerPlus](emotion_ferplus) |[Barsoum et al.](https://arxiv.org/abs/1608.01041)	|Deep CNN model for Emotion recognition|
+<hr>
+
+### Hand Written Digit Recognition
+
+|Model Class |Reference |Description |
+|-|-|-|
+|[MNIST- Hand Written Digit Recognition](mnist) |[Convolutional Neural Network with MNIST](https://github.com/Microsoft/CNTK/blob/master/Tutorials/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.ipynb)	|Deep CNN model for hand written digit identification|
 <hr>
 
 ### Super Resolution
@@ -128,5 +153,77 @@ Semantic segmentation models will identify multiple classes of objects in an ima
 ## Model Visualization
 You can see visualizations of each model's network architecture by using [Netron](https://lutzroeder.github.io/Netron).
 
+## Usage
+
+Every ONNX backend should support running these models out of the box. After downloading and extracting the tarball of each model, there should be
+
+- A protobuf file `model.onnx` which is the serialized ONNX model.
+- Test data.
+
+
+The test data are provided in two different formats:
+- Serialized Numpy archives, which are files named like `test_data_*.npz`, each file contains one set of test inputs and outputs.
+They can be used like this:
+
+```python
+import numpy as np
+import onnx
+import onnx_backend as backend
+
+# Load the model and sample inputs and outputs
+model = onnx.load(model_pb_path)
+sample = np.load(npz_path, encoding='bytes')
+inputs = list(sample['inputs'])
+outputs = list(sample['outputs'])
+
+# Run the model with an onnx backend and verify the results
+np.testing.assert_almost_equal(outputs, backend.run_model(model, inputs))
+```
+
+- Serialized protobuf TensorProtos, which are stored in folders named like `test_data_set_*`.
+They can be used as the following:
+```python
+import numpy as np
+import onnx
+import os
+import glob
+import onnx_backend as backend
+
+from onnx import numpy_helper
+
+model = onnx.load('model.onnx')
+test_data_dir = 'test_data_set_0'
+
+# Load inputs
+inputs = []
+inputs_num = len(glob.glob(os.path.join(test_data_dir, 'input_*.pb')))
+for i in range(inputs_num):
+    input_file = os.path.join(test_data_dir, 'input_{}.pb'.format(i))
+    tensor = onnx.TensorProto()
+    with open(input_file, 'rb') as f:
+        tensor.ParseFromString(f.read())
+    inputs.append(numpy_helper.to_array(tensor))
+
+# Load reference outputs
+ref_outputs = []
+ref_outputs_num = len(glob.glob(os.path.join(test_data_dir, 'output_*.pb')))
+for i in range(ref_outputs_num):
+    output_file = os.path.join(test_data_dir, 'output_{}.pb'.format(i))
+    tensor = onnx.TensorProto()
+    with open(output_file, 'rb') as f:
+        tensor.ParseFromString(f.read())
+    ref_outputs.append(numpy_helper.to_array(tensor))
+
+# Run the model on the backend
+outputs = list(backend.run_model(model, inputs))
+
+# Compare the results with reference outputs.
+for ref_o, o in zip(ref_outputs, outputs):
+    np.testing.assert_almost_equal(ref_o, o)
+```
 ## Contributions
 Do you want to contribute a model? To get started, pick any model presented above with the [contribute](contribute.md) link under the Description column. The links point to a page containing guidelines for making a contribution.
+
+# License
+
+[MIT License](LICENSE)
