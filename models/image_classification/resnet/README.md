@@ -81,8 +81,5 @@ In European Conference on Computer Vision, pp. 630-645. Springer, Cham, 2016.
 ## Acknowledgments
 [MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io)
 
-## Keywords
-CNN, ResNet, ONNX, ImageNet, Computer Vision 
-
 ## License
 Apache 2.0

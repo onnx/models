@@ -1,7 +1,7 @@
 # MobileNet
 
 ## Use cases
-Mobilenet models perform image classification - they take images as input and classify the major object in the image into a set of pre-defined classes. They are trained on ImageNet dataset which contains images from 1000 classes. MobileNet models are also very efficient in terms of speed and size and hence are ideal for embedded and mobile applications.
+MobileNet models perform image classification - they take images as input and classify the major object in the image into a set of pre-defined classes. They are trained on ImageNet dataset which contains images from 1000 classes. MobileNet models are also very efficient in terms of speed and size and hence are ideal for embedded and mobile applications.
 
 ## Description
 MobileNet improves the state-of-the-art performance of mobile models on multiple tasks and benchmarks as well as across a spectrum of different model sizes. MobileNet is based on an inverted residual structure where the shortcut connections are between the thin bottleneck layers. The intermediate expansion layer uses lightweight depthwise convolutions to filter features as a source of non-linearity. Additionally,  it removes non-linearities in the narrow layers in order to maintain representational power. 
@@ -60,9 +60,6 @@ Model from the paper [MobileNetV2: Inverted Residuals and Linear Bottlenecks](ht
 
 ## Acknowledgments
 [MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io)
-
-## Keyword
-CNN, MobileNet, ONNX, ImageNet, Computer Vision
 
 ## License
 Apache 2.0

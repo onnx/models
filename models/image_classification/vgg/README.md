@@ -69,8 +69,5 @@ We used MXNet as framework with gluon APIs to perform validation. Use the notebo
 ## Acknowledgments
 [MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io)
 
-## Keywords
-CNN, VGG, ONNX, ImageNet, Computer Vision
-
 ## License
 Apache 2.0

@@ -56,8 +56,5 @@ Model from [Official SqueezeNet repo](https://github.com/DeepScale/SqueezeNet/tr
 ## Acknowledgments
 [MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io)
 
-## Keywords
-CNN, SqueezeNet, ONNX, ImageNet, Computer Vision
-
 ## License
 Apache 2.0
