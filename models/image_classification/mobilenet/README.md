@@ -51,15 +51,13 @@ We used MXNet as framework with gluon APIs to perform validation. Use the notebo
 
 
 ## References
-**MobileNet-v2**
-Model from the paper [MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381)
+* **MobileNet-v2** Model from the paper [MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381)
+
+* [MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io)
 
 ## Contributors
 * [ankkhedia](https://github.com/ankkhedia) (Amazon AI)
 * [abhinavs95](https://github.com/abhinavs95) (Amazon AI)
-
-## Acknowledgments
-[MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io)
 
 ## License
 Apache 2.0

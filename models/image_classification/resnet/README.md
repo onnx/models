@@ -65,21 +65,20 @@ We used MXNet as framework with gluon APIs to perform training. View the [traini
 We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_validation](../imagenet_validation.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 
 ## References
-**ResNet-v1**
+* **ResNet-v1**
 [Deep residual learning for image recognition](https://arxiv.org/abs/1512.03385)
  He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 770-778. 2016.
 
-**ResNet-v2**
+* **ResNet-v2**
 [Identity mappings in deep residual networks](https://arxiv.org/abs/1603.05027)
 He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
 In European Conference on Computer Vision, pp. 630-645. Springer, Cham, 2016.
 
+* [MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io)
+
 ## Contributors
 * [ankkhedia](https://github.com/ankkhedia) (Amazon AI)
 * [abhinavs95](https://github.com/abhinavs95) (Amazon AI)
-
-## Acknowledgments
-[MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io)
 
 ## License
 Apache 2.0

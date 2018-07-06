@@ -63,10 +63,6 @@ Link to references
 Contributors' name
 <hr>
 
-## Acknowledgements
-Thank anyone whose existing work was used
-<hr>
-
 ## License
 Add license information
 <hr>
