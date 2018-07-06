@@ -40,7 +40,7 @@ These models detect and/or recognize human faces in images. Some more popular mo
 
 |Model Class |Reference |Description |
 |-|-|-|
-|<b>ArcFace</b>|[Deng et al.](https://arxiv.org/abs/1801.07698)|Coming soon|
+|<b>[ArcFace](models/face_recognition/ArcFace/)</b>|[Deng et al.](https://arxiv.org/abs/1801.07698)|ArcFace is a CNN based model for face recognition which learns discriminative features of faces and produces embeddings for input face images.|
 |<b>CNN Cascade</b>|[Li et al.](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Li_A_Convolutional_Neural_2015_CVPR_paper.pdf)|[contribute](contribute.md)|
 
 <hr>
