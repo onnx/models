@@ -1,4 +1,5 @@
 import mxnet as mx
+import numpy as np
 
 # Post-processing function for ImageNet models
 def postprocess(scores): 
