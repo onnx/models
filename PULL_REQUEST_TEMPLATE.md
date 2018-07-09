@@ -48,7 +48,9 @@ Details of experiments leading to accuracy and comparison with the reference pap
 <hr>
 
 ## Training
-Training details (preprocessing, hyperparameters, resources and environment) along with link to a training notebook (optional)
+Training details (preprocessing, hyperparameters, resources and environment) along with link to a training notebook (optional). 
+
+Also clarify in case the model is not trained from scratch and include the source/process used to obtain the ONNX model.
 <hr>
 
 ## Validation
