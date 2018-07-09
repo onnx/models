@@ -11,12 +11,12 @@ VGG presents the effect of the convolutional network depth on its accuracy in th
 
 The models below are variant of same network with different number of layers and use of batch normalisation. VGG 16 and VGG 19 have 16 and 19 convolutional layers respectively. VGG 16_bn and VGG 19_bn have the same architecture as their original counterparts but with batch normalization applied after each convolutional layer, which leads to better convergence and slightly better accuracies.
 
- |Model        |Download  | Download (with sample test data)|ONNX Version|Top-1 accuracy (%)|Top-5 accuracy (%)|
-|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|VGG 16|    [527.8 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16/vgg16.onnx)    | [490.0 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16/vgg16.tar.gz)| 1.2.1  | 72.62     |      91.14     |
-|VGG 16_bn|    [527.9 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16-bn/vgg16-bn.onnx) |[490.2 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16-bn/vgg16-bn.tar.gz)   |  1.2.1  |   72.71     |      91.21    |
-|VGG 19|    [548.1 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg19/vgg19.onnx)    | [508.5 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg19/vgg19.tar.gz)| 1.2.1   | 73.72     |      91.58     |
-|VGG 19_bn|    [548.1 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg19-bn/vgg19-bn.onnx) |[508.6 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg19-bn/vgg19-bn.tar.gz)   |  1.2.1    | 73.83    |      91.79     |
+ |Model        |Download  |Checksum|Download (with sample test data)| ONNX version |Opset version|Top-1 accuracy (%)|Top-5 accuracy (%)| 
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|VGG 16|    [527.8 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16/vgg16.onnx)    | [MD5](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16/vgg16-md5.txt)|[490.0 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16/vgg16.tar.gz)| 1.2.1  |7| 72.62     |      91.14     |
+|VGG 16_bn|    [527.9 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16-bn/vgg16-bn.onnx) |[MD5](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16/vgg16-bn-md5.txt)|[490.2 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16-bn/vgg16-bn.tar.gz)   |  1.2.1  |7|   72.71     |      91.21    |
+|VGG 19|    [548.1 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg19/vgg19.onnx)    | [MD5](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16/vgg19-md5.txt)|[508.5 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg19/vgg19.tar.gz)| 1.2.1  |7 | 73.72     |      91.58     |
+|VGG 19_bn|    [548.1 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg19-bn/vgg19-bn.onnx) |[MD5](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16/vgg19-bn-md5.txt)|[508.6 MB](https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg19-bn/vgg19-bn.tar.gz)   |  1.2.1 |7   | 73.83    |      91.79     |
 
 ## Inference
 We used MXNet as framework with gluon APIs to perform inference. View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook. 

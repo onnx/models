@@ -11,9 +11,9 @@ MobileNet reduces the dimensionality of a layer thus reducing the dimensionality
 The below model is using multiplier value as 1.0.
 * Version 2:
 
- |Model        |Download  |Download (with sample test data)| ONNX version|Top-1 accuracy (%)|Top-5 accuracy (%)|
-|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|MobileNet v2-1.0|    [13.6 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-1.0/mobilenetv2-1.0.onnx)    |  [14.1 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-1.0/mobilenetv2-1.0.tar.gz) |  1.2.1   | 70.94    |     89.99           |
+ |Model        |Download  |Checksum|Download (with sample test data)| ONNX version |Opset version|Top-1 accuracy (%)|Top-5 accuracy (%)| 
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|MobileNet v2-1.0|    [13.6 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-1.0/mobilenetv2-1.0.onnx)  |[MD5](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-1.0/mobilenetv2-1.0-md5.txt)  |  [14.1 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-1.0/mobilenetv2-1.0.tar.gz) |  1.2.1  | 7| 70.94    |     89.99           | 
 <!--
 |MobileNet v2-0.5|    [13.6 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-0.5/mobilenetv2-0.5.onnx)    |  [13.7 MB](https://s3.amazonaws.com/onnx-model-zoo/mobilenet/mobilenetv2-0.5/mobilenetv2-0.5.model)     |          |             |
 -->

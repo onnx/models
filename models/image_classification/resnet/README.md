@@ -13,24 +13,24 @@ ResNet v2 uses pre-activation function whereas ResNet v1  uses post-activation f
 
 * Version 1:
 
- |Model        |Download  | Download (with sample test data)|ONNX Version|Top-1 accuracy (%)|Top-5 accuracy (%)|
-|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|ResNet-18|    [44.7 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet18v1/resnet18v1.onnx)    | [42.9 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet18v1/resnet18v1.tar.gz)    |  1.2.1  | 69.93         |    89.29|         
-|ResNet-34|    [83.3 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet34v1/resnet34v1.onnx)    |  [78.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet34v1/resnet34v1.tar.gz)    |  1.2.1   |73.73         |     91.40           |
-|ResNet-50|    [97.8 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet50v1/resnet50v1.onnx)    | [92.2 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet50v1/resnet50v1.tar.gz)    |1.2.1    |74.93         |     92.38           |
-|ResNet-101|    [170.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet101v1/resnet101v1.onnx)    | [159.8 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet101v1/resnet101v1.tar.gz)    |  1.2.1    | 76.48         |     93.20           |
-|ResNet-152|    [230.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet152v1/resnet152v1.onnx)    | [217.2 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet152v1/resnet152v1.tar.gz)    | 1.2.1   |77.11         |     93.61           |
+|Model        |Download  |Checksum|Download (with sample test data)| ONNX version |Opset version|Top-1 accuracy (%)|Top-5 accuracy (%)| 
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|ResNet-18|    [44.7 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet18v1/resnet18v1.onnx)    | [MD5](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet18v1/resnet18v1-md5.txt)|[42.9 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet18v1/resnet18v1.tar.gz)    |  1.2.1  |7| 69.93         |    89.29|         
+|ResNet-34|    [83.3 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet34v1/resnet34v1.onnx)    | [MD5](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet34v1/resnet34v1-md5.txt)| [78.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet34v1/resnet34v1.tar.gz)    |  1.2.1   |7|73.73         |     91.40           |
+|ResNet-50|    [97.8 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet50v1/resnet50v1.onnx)    | [MD5](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet50v1/resnet50v1-md5.txt)|[92.2 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet50v1/resnet50v1.tar.gz)    |1.2.1    |7|74.93         |     92.38           |
+|ResNet-101|    [170.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet101v1/resnet101v1.onnx)    | [MD5](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet101v1/resnet101v1-md5.txt)|[159.8 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet101v1/resnet101v1.tar.gz)    |  1.2.1  |7  | 76.48         |     93.20           |
+|ResNet-152|    [230.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet152v1/resnet152v1.onnx)    |[MD5](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet152v1/resnet152v1-md5.txt)|[217.2 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet152v1/resnet152v1.tar.gz)    | 1.2.1  |7 |77.11         |     93.61           |
 
 
 * Version 2:
 
- |Model        |Download  | Download (with sample test data)|ONNX Version|Top-1 accuracy (%)|Top-5 accuracy (%)|
-|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|ResNet-18|    [44.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet18v2/resnet18v2.onnx)    |  [42.9 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet18v2/resnet18v2.tar.gz)    | 1.2.1   |    69.70         |     89.49          |
-|ResNet-34|    [83.2 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet34v2/resnet34v2.onnx)    | [78.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet34v2/resnet34v2.tar.gz)    |  1.2.1   | 73.36         |     91.43           |
-|ResNet-50|    [97.7 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet50v2/resnet50v2.onnx)    |  [92.0 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet50v2/resnet50v2.tar.gz)    | 1.2.1 |75.81         |     92.82           |
-|ResNet-101|    [170.4 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet101v2/resnet101v2.onnx)    |[159.4 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet101v2/resnet101v2.tar.gz)    |  1.2.1   | 77.42         |     93.61           |
-|ResNet-152|    [230.3 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet152v2/resnet152v2.onnx)    | [216.0 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet152v2/resnet152v2.tar.gz)    | 1.2.1    | 78.20         |     94.21           |
+|Model        |Download  |Checksum|Download (with sample test data)| ONNX version |Opset version|Top-1 accuracy (%)|Top-5 accuracy (%)| 
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|ResNet-18|    [44.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet18v2/resnet18v2.onnx)    | [MD5](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet18v2/resnet18v2-md5.txt)| [42.9 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet18v2/resnet18v2.tar.gz)    | 1.2.1  |7 |    69.70         |     89.49          |
+|ResNet-34|    [83.2 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet34v2/resnet34v2.onnx)    | [MD5](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet34v2/resnet34v2-md5.txt)|[78.6 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet34v2/resnet34v2.tar.gz)    |  1.2.1   |7| 73.36         |     91.43           |
+|ResNet-50|    [97.7 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet50v2/resnet50v2.onnx)    |  [MD5](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet50v2/resnet50v2-md5.txt)|[92.0 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet50v2/resnet50v2.tar.gz)    | 1.2.1 |7|75.81         |     92.82           |
+|ResNet-101|    [170.4 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet101v2/resnet101v2.onnx)    |[MD5](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet101v2/resnet101v2-md5.txt)|[159.4 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet101v2/resnet101v2.tar.gz)    |  1.2.1  |7 | 77.42         |     93.61           |
+|ResNet-152|    [230.3 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet152v2/resnet152v2.onnx)    | [MD5](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet152v2/resnet152v2-md5.txt)|[216.0 MB](https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet152v2/resnet152v2.tar.gz)    | 1.2.1   |7 | 78.20         |     94.21           |
 
 
 ## Inference

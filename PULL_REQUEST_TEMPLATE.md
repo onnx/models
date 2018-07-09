@@ -8,9 +8,9 @@ Description of model
 
 ## Model
 
- |Model        |Download  | Download (with sample test data)|ONNX version|Accuracy |
-|-------------|:--------------|:--------------|:--------------|:--------------|
-|Model Name       |ONNX Model download link with size  |  tar file containing ONNX model and synthetic test data (in .pb format)|ONNX version used for conversion|Accuracy values |
+ |Model        |Download  |Checksum| Download (with sample test data)|ONNX version|Opset version|Accuracy |
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|Model Name       |ONNX Model download link with size  | MD5 checksum for the ONNX model| tar file containing ONNX model and synthetic test data (in .pb format)|ONNX version used for conversion| Opset version used for conversion|Accuracy values |
 
 All ONNX models must pass the ONNX model checker before contribution. The snippet of code below can be used to perform the check. If any errors are encountered, it implies the check has failed.
 
