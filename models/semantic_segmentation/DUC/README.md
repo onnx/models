@@ -1,0 +1,71 @@
+# DUC
+
+## Use cases
+DUC is a semantic segmentation model, i.e., for an input image the model labels each pixel in the image into a set of pre-defined categories. The model provides very good accuracy in terms of mIOU score and can be used in any application requiring semantic segmentation. In particular, since the model is trained on the [cityscapes dataset](#Dataset) which contains images from urban street scenes, it can be used effectively in self driving vehicle systems.
+
+## Description
+DUC is a CNN based model for semantic segmentation which uses an image classification network (ResNet) as a backend and acheives improved accuracy in terms of mIOU score using two novel techniques. The first technique is called Dense Upsampling Convolution (DUC) which generates pixel-level prediction by capturing and decoding more detailed information that is generally missing in bilinear upsampling. Secondly, a framework called Hybrid Dilated Convolution (HDC) is proposed in the encoding phase which enlarges the receptive fields of the network to aggregate global information. It also alleviates the checkerboard receptive field problem ("gridding") caused by the standard dilated convolution operation.
+
+## Model
+The model ResNet101_DUC_HDC uses ResNet101 as a backend network with both Dense Upsampling Convolution (DUC) and Hybrid Dilated Convolution (HDC) techniques.
+
+|Model        |Download  |Checksum|Download (with sample test data)| ONNX version |Opset version|mIOU (%)| 
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|ResNet101_DUC_HDC|    [248.6 MB](https://s3.amazonaws.com/onnx-model-zoo/duc/ResNet101_DUC_HDC.onnx) |[MD5](https://s3.amazonaws.com/onnx-model-zoo/duc/ResNet101_DUC_HDC-md5.txt)   | [282.0 MB](https://s3.amazonaws.com/onnx-model-zoo/duc/ResNet101_DUC_HDC.tar.gz) |1.2.2  |7 |81.92 |
+
+## Inference
+We used MXNet as framework to perform inference. View the notebook [duc-inference](duc-inference.ipynb) to understand how to use above models for doing inference. A brief description of the inference process is provided below:
+
+### Input 
+Since the model is trained on the cityscapes dataset which contains images of urban street scenes, the input should preferably be an image of a street scene to produce accurate results. There are no constraints on the size of the image. The example in the inference notebook is done using a png image.
+
+### Preprocessing
+
+
+### Output
+
+
+### Postprocessing
+
+<!--
+To do quick inference with the model, check out [Model Server](https://github.com/awslabs/mxnet-model-server/blob/master/docs/model_zoo.md/#arcface-resnet100_onnx).
+-->
+
+## Dataset
+Cityscapes dataset is used for training and validation. It is a large dataset that focuses on semantic understanding of urban street scenes. It contains 5000 images with fine annotations across 50 cities, different seasons, varying scene layout and background. There are a total of 30 categories in the dataset of which 19 are included for training and evaluation. The training, validation and test set contains 2975, 500 and 1525 fine images, respectively.
+
+### Download
+First, go to the [Cityscapes download page](https://www.cityscapes-dataset.com/downloads/) and register for an account (login if account already made). Next, find and download the following two files:
+
+|Filename                 | Size  | Details|
+|-------------------------|:------|:-------|
+|leftImg8bit_trainvaltest.zip| 11 GB| train/val/test images|
+|gtFine_trainvaltest.zip  | 241 MB| fine annotations for train and val sets|
+
+### Setup
+* Unpack the zip files into folders `leftImg8bit_trainvaltest` and `gtFine_trainvaltest`.
+* Use the path to the train/val folders inside these folders for training/validation.
+* Use the files [val.lst](https://s3.amazonaws.com/onnx-model-zoo/duc/val.lst) and [train.lst](https://s3.amazonaws.com/onnx-model-zoo/duc/train.lst) containing image lists required during validation and training respectively.
+
+Please note that the dataset is under copyright. Refer to the [citation](https://www.cityscapes-dataset.com/citation/) page for details.
+
+## Validation accuracy
+The accuracies obtained by the models on the validation set are mentioned above and they match with those mentioned in the paper.
+
+## Training
+Coming soon.
+
+## Validation
+The metric used for validation is mean Intersection Over Union (mIOU). For each class the intersection over union (IOU) of pixel labels between the output and the target segmentation maps is computed and then averaged over all classes to give us the mean intersection over union (mIOU).
+
+We used MXNet framework to compute mIOU of the models on the validation set described above. Use the notebook [duc-validation](duc-validation.ipynb) to verify the mIOU of the model.
+
+## References
+* All models are from the paper [Understanding Convolution for Semantic Segmentation](https://arxiv.org/abs/1702.08502).
+* [TuSimple-DUC repo](https://github.com/TuSimple/TuSimple-DUC), [MXNet](http://mxnet.incubator.apache.org)
+
+## Contributors
+[abhinavs95](https://github.com/abhinavs95) (Amazon AI)
+
+## License
+Apache 2.0
