@@ -1,7 +1,7 @@
 # DUC
 
 ## Use cases
-DUC is a semantic segmentation model, i.e., for an input image the model labels each pixel in the image into a set of pre-defined categories. The model provides very good accuracy in terms of mIOU score and can be used in any application requiring semantic segmentation. In particular, since the model is trained on the [cityscapes dataset](#Dataset) which contains images from urban street scenes, it can be used effectively in self driving vehicle systems.
+DUC is a semantic segmentation model, i.e., for an input image the model labels each pixel in the image into a set of pre-defined categories. The model provides very good accuracy in terms of mIOU score and can be used in any application requiring semantic segmentation. In particular, since the model is trained on the [cityscapes dataset](#dset) which contains images from urban street scenes, it can be used effectively in self driving vehicle systems.
 
 ## Description
 DUC is a CNN based model for semantic segmentation which uses an image classification network (ResNet) as a backend and acheives improved accuracy in terms of mIOU score using two novel techniques. The first technique is called Dense Upsampling Convolution (DUC) which generates pixel-level prediction by capturing and decoding more detailed information that is generally missing in bilinear upsampling. Secondly, a framework called Hybrid Dilated Convolution (HDC) is proposed in the encoding phase which enlarges the receptive fields of the network to aggregate global information. It also alleviates the checkerboard receptive field problem ("gridding") caused by the standard dilated convolution operation.
@@ -9,8 +9,8 @@ DUC is a CNN based model for semantic segmentation which uses an image classific
 ## Model
 The model ResNet101_DUC_HDC uses ResNet101 as a backend network with both Dense Upsampling Convolution (DUC) and Hybrid Dilated Convolution (HDC) techniques.
 
-|Model        |Download  |Checksum|Download (with sample test data)| ONNX version |Opset version|mIOU (%)| 
-|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|Model        |Download  |Checksum|Download (with sample test data)| ONNX version |Opset version|[mIOU](#metric) (%)|
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |ResNet101_DUC_HDC|    [248.6 MB](https://s3.amazonaws.com/onnx-model-zoo/duc/ResNet101_DUC_HDC.onnx) |[MD5](https://s3.amazonaws.com/onnx-model-zoo/duc/ResNet101_DUC_HDC-md5.txt)   | [282.0 MB](https://s3.amazonaws.com/onnx-model-zoo/duc/ResNet101_DUC_HDC.tar.gz) |1.2.2  |7 |81.92 |
 
 ## Inference
@@ -31,7 +31,7 @@ Since the model is trained on the cityscapes dataset which contains images of ur
 To do quick inference with the model, check out [Model Server](https://github.com/awslabs/mxnet-model-server/blob/master/docs/model_zoo.md/#arcface-resnet100_onnx).
 -->
 
-## Dataset
+## <a name="dset"></a>Dataset
 Cityscapes dataset is used for training and validation. It is a large dataset that focuses on semantic understanding of urban street scenes. It contains 5000 images with fine annotations across 50 cities, different seasons, varying scene layout and background. There are a total of 30 categories in the dataset of which 19 are included for training and evaluation. The training, validation and test set contains 2975, 500 and 1525 fine images, respectively.
 
 ### Download
@@ -55,7 +55,7 @@ The accuracies obtained by the models on the validation set are mentioned above 
 ## Training
 Coming soon.
 
-## Validation
+## <a name="metric"></a>Validation
 The metric used for validation is mean Intersection Over Union (mIOU). For each class the intersection over union (IOU) of pixel labels between the output and the target segmentation maps is computed and then averaged over all classes to give us the mean intersection over union (mIOU).
 
 We used MXNet framework to compute mIOU of the models on the validation set described above. Use the notebook [duc-validation](duc-validation.ipynb) to verify the mIOU of the model.
