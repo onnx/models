@@ -17,15 +17,16 @@ The model ResNet101_DUC_HDC uses ResNet101 as a backend network with both Dense 
 We used MXNet as framework to perform inference. View the notebook [duc-inference](duc-inference.ipynb) to understand how to use above models for doing inference. A brief description of the inference process is provided below:
 
 ### Input 
-Since the model is trained on the cityscapes dataset which contains images of urban street scenes, the input should preferably be an image of a street scene to produce accurate results. There are no constraints on the size of the image. The example in the inference notebook is done using a png image.
+Since the model is trained on the cityscapes dataset which contains images of urban street scenes, the input should preferably be an image of a street scene to produce best results. There are no constraints on the size of the image. The example in the inference notebook is done using a png image.
 
 ### Preprocessing
-
+The DUC layer has an effect of partitioning the image into d^2 subparts (d = downsampling rate). This is why the input image is extrapolated with a small border in order to obtain an accurate reshaped image after the DUC layer. After this the image is normalized using mean subtraction. Check [duc-preprocess.py](duc-preprocess.py) for code.
 
 ### Output
-
+The output of the network is a tensor os shape (1 X `label_num` X `H`*`W`) where `H` and `W` are the height and width of the output segmented map.
 
 ### Postprocessing
+The output tensor is reshaped and resized to give the softmax map of shape (`H` X `W` X `label_num`). The raw label map is computed by doing an argmax on the softmax map which is used to generate the colorized segmented images. Check [duc-postprocess.py](duc-postprocess.py) for code.
 
 <!--
 To do quick inference with the model, check out [Model Server](https://github.com/awslabs/mxnet-model-server/blob/master/docs/model_zoo.md/#arcface-resnet100_onnx).
@@ -56,7 +57,7 @@ The accuracies obtained by the models on the validation set are mentioned above 
 Coming soon.
 
 ## <a name="metric"></a>Validation
-The metric used for validation is mean Intersection Over Union (mIOU). For each class the intersection over union (IOU) of pixel labels between the output and the target segmentation maps is computed and then averaged over all classes to give us the mean intersection over union (mIOU).
+The metric used for validation is **mean Intersection Over Union (mIOU)**. For each class the intersection over union (IOU) of pixel labels between the output and the target segmentation maps is computed and then averaged over all classes to give us the mean intersection over union (mIOU).
 
 We used MXNet framework to compute mIOU of the models on the validation set described above. Use the notebook [duc-validation](duc-validation.ipynb) to verify the mIOU of the model.
 
