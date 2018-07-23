@@ -1,7 +1,7 @@
 # DUC
 
 ## Use cases
-DUC is a semantic segmentation model, i.e., for an input image the model labels each pixel in the image into a set of pre-defined categories. The model provides very good accuracy in terms of mIOU score and can be used in any application requiring semantic segmentation. In particular, since the model is trained on the [cityscapes dataset](#dset) which contains images from urban street scenes, it can be used effectively in self driving vehicle systems.
+DUC is a semantic segmentation model, i.e., for an input image the model labels each pixel in the image into a set of pre-defined categories. The model provides very good accuracy in terms of [mIOU](#metric) score and can be used in any application requiring semantic segmentation. In particular, since the model is trained on the [cityscapes dataset](#dset) which contains images from urban street scenes, it can be used effectively in self driving vehicle systems.
 
 ## Description
 DUC is a CNN based model for semantic segmentation which uses an image classification network (ResNet) as a backend and achieves improved accuracy in terms of mIOU score using two novel techniques. The first technique is called Dense Upsampling Convolution (DUC) which generates pixel-level prediction by capturing and decoding more detailed information that is generally missing in bilinear upsampling. Secondly, a framework called Hybrid Dilated Convolution (HDC) is proposed in the encoding phase which enlarges the receptive fields of the network to aggregate global information. It also alleviates the checkerboard receptive field problem ("gridding") caused by the standard dilated convolution operation.
@@ -51,7 +51,7 @@ First, go to the [Cityscapes download page](https://www.cityscapes-dataset.com/d
 Please note that the dataset is under copyright. Refer to the [citation](https://www.cityscapes-dataset.com/citation/) page for details.
 
 ## Validation accuracy
-The accuracies obtained by the models on the validation set are mentioned above and they match with those mentioned in the paper.
+The [mIOU](#metric) score obtained by the models on the validation set are mentioned above and they match with those mentioned in the paper.
 
 ## Training
 Coming soon.
