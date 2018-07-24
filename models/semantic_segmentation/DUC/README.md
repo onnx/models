@@ -1,4 +1,4 @@
-# DUC
+# Dense Upsampling Convolution (DUC)
 
 ## Use cases
 DUC is a semantic segmentation model, i.e., for an input image the model labels each pixel in the image into a set of pre-defined categories. The model provides very good accuracy in terms of [mIOU](#metric) score and can be used in any application requiring semantic segmentation. In particular, since the model is trained on the [cityscapes dataset](#dset) which contains images from urban street scenes, it can be used effectively in self driving vehicle systems.
