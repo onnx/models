@@ -1,8 +1,9 @@
 #!/usr/bin/python
 #
-# Cityscapes labels
-#
-
+'''
+This script contains label names, original ids, modified train ids and color maps for the categories in the cityscapes dataset.
+Used in the duc-inference.ipynb and duc-validation.ipynb
+'''
 from collections import namedtuple
 
 

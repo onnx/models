@@ -46,11 +46,11 @@ These models detect and/or recognize human faces in images. Some more popular mo
 <hr>
 
 ### Semantic Segmentation
-Semantic segmentation models partition an input image by labelling each pixel into a set of pre-defined categories.
+Semantic segmentation models partition an input image by labeling each pixel into a set of pre-defined categories.
 
 |Model Class |Reference |Description |
 |-|-|-|
-|<b>[DUC](models/semantic_segmentation/DUC/)</b>|[Wang et al.](https://arxiv.org/abs/1702.08502)|Deep CNN based model with >80% mIOU trained on urban street images|
+|<b>[DUC](models/semantic_segmentation/DUC/)</b>|[Wang et al.](https://arxiv.org/abs/1702.08502)|Deep CNN based model with >80% [mIOU](/models/semantic_segmentation/DUC/README.md/#metric) (mean Intersection Over Union) trained on urban street images|
 |<b>FCN</b>|[Long et al.](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)|[contribute](contribute.md)|
 
 <hr>

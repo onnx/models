@@ -1,7 +1,7 @@
 # Dense Upsampling Convolution (DUC)
 
 ## Use cases
-DUC is a semantic segmentation model, i.e., for an input image the model labels each pixel in the image into a set of pre-defined categories. The model provides very good accuracy in terms of [mIOU](#metric) score and can be used in any application requiring semantic segmentation. In particular, since the model is trained on the [cityscapes dataset](#dset) which contains images from urban street scenes, it can be used effectively in self driving vehicle systems.
+DUC is a semantic segmentation model, i.e., for an input image the model labels each pixel in the image into a set of pre-defined categories. The model provides very good accuracy in terms of [mIOU](#metric) (mean Intersection Over Union) score and can be used in any application requiring semantic segmentation. In particular, since the model is trained on the [cityscapes dataset](#dset) which contains images from urban street scenes, it can be used effectively in self driving vehicle systems.
 
 ## Description
 DUC is a CNN based model for semantic segmentation which uses an image classification network (ResNet) as a backend and achieves improved accuracy in terms of mIOU score using two novel techniques. The first technique is called Dense Upsampling Convolution (DUC) which generates pixel-level prediction by capturing and decoding more detailed information that is generally missing in bilinear upsampling. Secondly, a framework called Hybrid Dilated Convolution (HDC) is proposed in the encoding phase which enlarges the receptive fields of the network to aggregate global information. It also alleviates the checkerboard receptive field problem ("gridding") caused by the standard dilated convolution operation.
@@ -23,10 +23,10 @@ Since the model is trained on the cityscapes dataset which contains images of ur
 The DUC layer has an effect of partitioning the image into d^2 subparts (d = downsampling rate). This is why the input image is extrapolated with a small border in order to obtain an accurate reshaped image after the DUC layer. After this the image is normalized using mean subtraction. Check [duc-preprocess.py](duc-preprocess.py) for code.
 
 ### Output
-The output of the network is a tensor of shape (1 X `label_num` X `H`*`W`) where `H` and `W` are the height and width of the output segmented map.
+The output of the network is a tensor of shape (1 X `label_num` X `H` * `W`) where `H` and `W` are the height and width of the output segmented map.
 
 ### Postprocessing
-The output tensor is reshaped and resized to give the softmax map of shape (`H` X `W` X `label_num`). The raw label map is computed by doing an argmax on the softmax map which is used to generate the colorized segmented images. Check [duc-postprocess.py](duc-postprocess.py) for code.
+The output tensor is reshaped and resized to give the softmax map of shape (`H` X `W` X `label_num`). The raw label map is computed by doing an argmax on the softmax map. The script [cityscapes_labels.py](cityscapes_labels.py) contains the segmentation category labels and their corresponding color map. Using this the colorized segmented images are generated. Check [duc-postprocess.py](duc-postprocess.py) for code.  
 
 <!--
 To do quick inference with the model, check out [Model Server](https://github.com/awslabs/mxnet-model-server/blob/master/docs/model_zoo.md/#arcface-resnet100_onnx).
@@ -57,9 +57,9 @@ The [mIOU](#metric) score obtained by the models on the validation set are menti
 Coming soon.
 
 ## <a name="metric"></a>Validation
-The metric used for validation is **mean Intersection Over Union (mIOU)**. For each class the intersection over union (IOU) of pixel labels between the output and the target segmentation maps is computed and then averaged over all classes to give us the mean intersection over union (mIOU).
+**mean Intersection Over Union (mIOU)** is the metric used for validation. For each class the intersection over union (IOU) of pixel labels between the output and the target segmentation maps is computed and then averaged over all classes to give us the mean intersection over union (mIOU).
 
-We used MXNet framework to compute mIOU of the models on the validation set described above. Use the notebook [duc-validation](duc-validation.ipynb) to verify the mIOU of the model.
+We used MXNet framework to compute mIOU of the models on the validation set described above. Use the notebook [duc-validation](duc-validation.ipynb) to verify the mIOU of the model. The scripts [cityscapes_loader.py](cityscapes_loader.py), [cityscapes_labels.py](cityscapes_labels.py) and [utils.py](utils.py) are used in the notebook for data loading and processing.
 
 ## References
 * All models are from the paper [Understanding Convolution for Semantic Segmentation](https://arxiv.org/abs/1702.08502).

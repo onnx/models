@@ -1,3 +1,7 @@
+'''
+This script contains helper functions which are used by cityscapes_loader.py in duc-validation.ipynb
+'''
+
 import logging
 import math
 import os

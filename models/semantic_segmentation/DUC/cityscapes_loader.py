@@ -17,7 +17,8 @@ import utils
 class CityLoader(mx.io.DataIter):
     """
     Data Loader class for Cityscapes Dataset.
-    Used for loading and preparing images from the dataset for train/val/test.
+    Performs loading and preparing of images from the dataset for train/val/test.
+    Used in duc-validation.ipynb
     """
     def __init__(self, data_list, input_args):
         super(CityLoader, self).__init__()
