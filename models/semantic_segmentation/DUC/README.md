@@ -46,7 +46,6 @@ First, go to the [Cityscapes download page](https://www.cityscapes-dataset.com/d
 ### Setup
 * Unpack the zip files into folders `leftImg8bit_trainvaltest` and `gtFine_trainvaltest`.
 * Use the path to the train/val folders inside these folders for training/validation.
-* Use the files [val.lst](https://s3.amazonaws.com/onnx-model-zoo/duc/val.lst) and [train.lst](https://s3.amazonaws.com/onnx-model-zoo/duc/train.lst) containing image lists required during validation and training respectively.
 
 Please note that the dataset is under copyright. Refer to the [citation](https://www.cityscapes-dataset.com/citation/) page for details.
 
