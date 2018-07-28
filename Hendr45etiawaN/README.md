@@ -1,4 +1,4 @@
-# Open Neural Network eXchange (ONNX) Model Zoo
+_# Open Neural Network eXchange (ONNX) Model Zoo
 
 [![Generic badge](https://img.shields.io/badge/Status-Work_In_Progress-red.svg)](#) 
 [![Generic badge](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](contribute.md)
