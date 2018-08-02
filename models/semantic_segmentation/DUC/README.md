@@ -50,9 +50,6 @@ Please note that the dataset is under copyright. Refer to the [citation](https:/
 ## Validation accuracy
 The [mIOU](#metric) score obtained by the models on the validation set are mentioned above and they match with those mentioned in the paper.
 
-## Training
-Coming soon.
-
 ## <a name="metric"></a>Validation
 **mean Intersection Over Union (mIOU)** is the metric used for validation. For each class the intersection over union (IOU) of pixel labels between the output and the target segmentation maps is computed and then averaged over all classes to give us the mean intersection over union (mIOU).
 
