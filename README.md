@@ -14,7 +14,23 @@ The Open Neural Network eXchange ([ONNX](http://onnx.ai)) is an open format to r
 
 ## Models
 
-### Image Classification
+* [Image Classification](#image_classification)
+* [Semantic Segmentation](#semantic_segmentation)
+* [Object Detection & Segmentation](#object_detection)
+* [Face Detection and Recognition](#face_detection)
+* [Emotion Recognition](#emotion_detection)
+* [Gender Detection](#gender_detection)
+* [Hand Written Digit Recognition](#digit_recognition)
+* [Super Resolution](#super_resolution)
+* [Style Transfer](#style_transfer)
+* [Machine Translation](#machine_translation)
+* [Speech Processing](#speech)
+* [Language Modelling](#language)
+* [Visual Question Answering & Dialog](#visual_qna)
+* [Other interesting models](#others)
+
+
+### Image Classification <a name="image_classification"/>
 This collection of models take images as input, then classifies the major objects in the images into a set of predefined classes.
 
 |Model Class |Reference |Description |
@@ -35,17 +51,7 @@ This collection of models take images as input, then classifies the major object
 
 <hr>
 
-### Face Detection and Recognition
-These models detect and/or recognize human faces in images. Some more popular models are used for detection/recognition of celebrity faces, gender, age, and emotions.
-
-|Model Class |Reference |Description |
-|-|-|-|
-|<b>[ArcFace](models/face_recognition/ArcFace/)</b>|[Deng et al.](https://arxiv.org/abs/1801.07698)|ArcFace is a CNN based model for face recognition which learns discriminative features of faces and produces embeddings for input face images.|
-|<b>CNN Cascade</b>|[Li et al.](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Li_A_Convolutional_Neural_2015_CVPR_paper.pdf)|[contribute](contribute.md)|
-
-<hr>
-
-### Semantic Segmentation
+### Semantic Segmentation <a name="semantic_segmentation"/>
 Semantic segmentation models partition an input image by labeling each pixel into a set of pre-defined categories.
 
 |Model Class |Reference |Description |
@@ -55,7 +61,7 @@ Semantic segmentation models partition an input image by labeling each pixel int
 
 <hr>
 
-### Object Detection & Segmentation
+### Object Detection & Segmentation <a name="object_detection"/>
 These models detect the presence of multiple objects in an image and segment out areas of the image where the objects are detected.
 
 |Model Class |Reference |Description |
@@ -69,41 +75,51 @@ These models detect the presence of multiple objects in an image and segment out
 
 <hr>
 
-### Emotion Recognition
+### Face Detection and Recognition <a name="face_detection"/>
+These models detect and/or recognize human faces in images. Some more popular models are used for detection/recognition of celebrity faces, gender, age, and emotions.
+
+|Model Class |Reference |Description |
+|-|-|-|
+|<b>[ArcFace](models/face_recognition/ArcFace/)</b>|[Deng et al.](https://arxiv.org/abs/1801.07698)|ArcFace is a CNN based model for face recognition which learns discriminative features of faces and produces embeddings for input face images.|
+|<b>CNN Cascade</b>|[Li et al.](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Li_A_Convolutional_Neural_2015_CVPR_paper.pdf)|[contribute](contribute.md)|
+
+<hr>
+
+### Emotion Recognition <a name="emotion_detection"/>
 
 |Model Class |Reference |Description |
 |-|-|-|
 |[Emotion FerPlus](emotion_ferplus) |[Barsoum et al.](https://arxiv.org/abs/1608.01041)	|Deep CNN model for Emotion recognition|
 <hr>
 
-### Hand Written Digit Recognition
-
-|Model Class |Reference |Description |
-|-|-|-|
-|[MNIST- Hand Written Digit Recognition](mnist) |[Convolutional Neural Network with MNIST](https://github.com/Microsoft/CNTK/blob/master/Tutorials/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.ipynb)	|Deep CNN model for hand written digit identification|
-<hr>
-
-### Super Resolution
-
-|Model Class |Reference |Description |
-|-|-|-|
-|Image Super resolution using deep convolutional networks |	[Dong et al.](http://ieeexplore.ieee.org/document/7115171/?reload=true)	|[contribute](contribute.md)|
-<hr>
-
-### Gender Detection
+### Gender Detection <a name="gender_detection"/>
 
 |Model Class |Reference |Description |
 |-|-|-|
 |Age and Gender Classification using Convolutional Neural Networks| [Levi et al.](https://www.openu.ac.il/home/hassner/projects/cnn_agegender/CNN_AgeGenderEstimation.pdf)	|[contribute](contribute.md)|
 <hr>
 
-### Style Transfer
+### Hand Written Digit Recognition <a name="digit_recognition"/>
+
+|Model Class |Reference |Description |
+|-|-|-|
+|[MNIST- Hand Written Digit Recognition](mnist) |[Convolutional Neural Network with MNIST](https://github.com/Microsoft/CNTK/blob/master/Tutorials/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.ipynb)	|Deep CNN model for hand written digit identification|
+<hr>
+
+### Super Resolution <a name="super_resolution"/>
+
+|Model Class |Reference |Description |
+|-|-|-|
+|Image Super resolution using deep convolutional networks |	[Dong et al.](http://ieeexplore.ieee.org/document/7115171/?reload=true)	|[contribute](contribute.md)|
+<hr>
+
+### Style Transfer <a name="style_transfer"/>
 |Model Class |Reference |Description |
 |-|-|-|
 |Unpaired Image to Image Translation using Cycle consistent Adversarial Network|[Zhu et al.](https://arxiv.org/abs/1703.10593)|[contribute](contribute.md)|
 <hr>
 
-### Machine Translation
+### Machine Translation <a name="machine_translation"/>
 
 |Model Class |Reference |Description |
 |-|-|-|
@@ -111,7 +127,7 @@ These models detect the presence of multiple objects in an image and segment out
 |Google's Neural Machine Translation System|	[Wu et al.](https://arxiv.org/abs/1609.08144)|[contribute](contribute.md)|
 <hr>
 
-### Speech Processing
+### Speech Processing <a name="speech"/>
 
 |Model Class |Reference |Description |
 |-|-|-|
@@ -120,14 +136,14 @@ These models detect the presence of multiple objects in an image and segment out
 
 <hr>
 
-### Language Modelling
+### Language Modelling <a name="language"/>
 
 |Model Class |Reference |Description |
 |-|-|-|
 |Deep Neural Network Language Models|	[Arisoy et al.](https://pdfs.semanticscholar.org/a177/45f1d7045636577bcd5d513620df5860e9e5.pdf)	|[contribute](contribute.md)|
 <hr>
 
-### Visual Question Answering & Dialog
+### Visual Question Answering & Dialog <a name="visual_qna"/>
 
 |Model Class |Reference |Description |
 |-|-|-|
@@ -138,7 +154,7 @@ These models detect the presence of multiple objects in an image and segment out
 
 <hr>
 
-### Other interesting models
+### Other interesting models <a name="others"/>
 
 |Model Class |Reference |Description |
 |-|-|-|
