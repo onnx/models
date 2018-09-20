@@ -4,7 +4,8 @@ Download:
 - release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/resnet50.tar.gz
 - release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/resnet50.tar.gz
 - release 1.2: https://s3.amazonaws.com/download.onnx/models/opset_7/resnet50.tar.gz
-- master: https://s3.amazonaws.com/download.onnx/models/opset_8/resnet50.tar.gz
+- release 1.3: https://s3.amazonaws.com/download.onnx/models/opset_8/resnet50.tar.gz
+- master: https://s3.amazonaws.com/download.onnx/models/opset_9/resnet50.tar.gz
 
 Model size: 103 MB
 

@@ -4,7 +4,8 @@ Download:
 - release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/zfnet512.tar.gz
 - release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/zfnet512.tar.gz
 - release 1.2: https://s3.amazonaws.com/download.onnx/models/opset_7/zfnet512.tar.gz
-- master: https://s3.amazonaws.com/download.onnx/models/opset_8/zfnet512.tar.gz
+- release 1.3: https://s3.amazonaws.com/download.onnx/models/opset_8/zfnet512.tar.gz
+- master: https://s3.amazonaws.com/download.onnx/models/opset_9/zfnet512.tar.gz
 
 Model size: 349 MB
 
