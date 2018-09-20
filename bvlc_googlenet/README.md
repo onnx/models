@@ -3,7 +3,8 @@ Download:
 - release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/bvlc_googlenet.tar.gz
 - release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/bvlc_googlenet.tar.gz
 - release 1.2: https://s3.amazonaws.com/download.onnx/models/opset_7/bvlc_googlenet.tar.gz
-- master: https://s3.amazonaws.com/download.onnx/models/opset_8/bvlc_googlenet.tar.gz
+- release 1.3: https://s3.amazonaws.com/download.onnx/models/opset_8/bvlc_googlenet.tar.gz
+- master: https://s3.amazonaws.com/download.onnx/models/opset_9/bvlc_googlenet.tar.gz
 
 Model size: 28 MB
 

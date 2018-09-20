@@ -4,7 +4,8 @@ Download:
 - release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/vgg19.tar.gz
 - release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/vgg19.tar.gz
 - release 1.2: https://s3.amazonaws.com/download.onnx/models/opset_7/vgg19.tar.gz
-- master: https://s3.amazonaws.com/download.onnx/models/opset_8/vgg19.tar.gz
+- release 1.3: https://s3.amazonaws.com/download.onnx/models/opset_8/vgg19.tar.gz
+- master: https://s3.amazonaws.com/download.onnx/models/opset_9/vgg19.tar.gz
 
 Model size: 575 MB
 
