@@ -23,16 +23,19 @@ The model is trained in CNTK, using the cross entropy training mode. You can fin
 ### Input
 The model expects input of the shape `(Nx1x64x64)`, where `N` is the batch size.
 ### Preprocessing
-Given a numpy array `img` representing the image you would like to score:
+Given a path `image_path` to the image you would like to score:
 ```python
 import numpy as np
 
-def preprocess(img):
-  input_shape = (1, 64, 64)
-  img = np.resize(img, input_shape)
-  img = np.expand_dims(img, axis=0) #batchify
-  return img
+def preprocess(image_path):
+  input_shape = (1, 1, 64, 64)
+  img = Image.open(image_path)
+  img = img.resize((64, 64), Image.ANTIALIAS)
+  img_data = np.array(img)
+  img_data = np.resize(img_data, input_shape)
+  return img_data
 ```
+
 ### Output
 The model outputs a `(1x8)` array of scores corresponding to the 8 emotion classes, where the labels map as follows:  
 `emotion_table = {'neutral':0, 'happiness':1, 'surprise':2, 'sadness':3, 'anger':4, 'disgust':5, 'fear':6, 'contempt':7}`
