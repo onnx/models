@@ -26,6 +26,7 @@ The model expects input of the shape `(Nx1x64x64)`, where `N` is the batch size.
 Given a path `image_path` to the image you would like to score:
 ```python
 import numpy as np
+from PIL import Image
 
 def preprocess(image_path):
   input_shape = (1, 1, 64, 64)
