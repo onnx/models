@@ -41,13 +41,30 @@ All pre-trained models expect input images normalized in the same way, i.e. mini
 The inference was done using jpeg image.
 
 ### Preprocessing
-The images have to be loaded in to a range of [0, 1] and then normalized using mean = [0.485, 0.456, 0.406] and std = [0.229, 0.224, 0.225]. The transformation should preferrably happen at preprocessing. Check [imagenet_preprocess.py](../imagenet_preprocess.py) for code.
+The images have to be loaded in to a range of [0, 1] and then normalized using mean = [0.485, 0.456, 0.406] and std = [0.229, 0.224, 0.225]. The transformation should preferrably happen at preprocessing. 
+
+The following code shows how to preprocess a NCHW tensor:
+
+```python
+import numpy
+
+def preprocess(img_data):
+    mean_vec = np.array([0.485, 0.456, 0.406])
+    stddev_vec = np.array([0.229, 0.224, 0.225])
+    norm_img_data = np.zeros(img_data.shape).astype('float32')
+    for i in range(img_data.shape[0]):  
+         # for each pixel in each channel, divide the value by 255 to get value between [0, 1] and then normalize
+        norm_img_data[i,:,:] = (img_data[i,:,:]/255 - mean_vec[i]) / stddev_vec[i]
+    return norm_image_data
+```
+
+Check [imagenet_preprocess.py](../imagenet_preprocess.py) for additional sample code.
 
 ### Output
 The model outputs image scores for each of the [1000 classes of ImageNet](../synset.txt).
 
 ### Postprocessing
-The post-processing involves calculating the softmax probablility scores for each class and sorting them to report the most probable classes. Check [imagenet_postprocess.py](../imagenet_postprocess.py) for code.
+The post-processing involves calculating the softmax probablility scores for each class. You can also sort them to report the most probable classes. Check [imagenet_postprocess.py](../imagenet_postprocess.py) for code.
 
 To do quick inference with the model, check out [Model Server](https://github.com/awslabs/mxnet-model-server/blob/master/docs/model_zoo.md/#resnet_header).
 
