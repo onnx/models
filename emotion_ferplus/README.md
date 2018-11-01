@@ -7,8 +7,9 @@ This model is a deep convolutional neural network for emotion recognition in fac
 
 | Model          | Checksum  | Download (with sample test data) | ONNX version | Opset version | 
 |----------------|:----------|:-----------|:--------|:-------------|
-|Emotion FERPlus |[MD5](https://www.cntk.ai/OnnxModels/emotion_ferplus/opset_2/emotion_ferplus-md5.txt)|[32.4 MB](https://www.cntk.ai/OnnxModels/emotion_ferplus/opset_2/emotion_ferplus.tar.gz)|1.0|2|
-|                |[MD5](https://www.cntk.ai/OnnxModels/emotion_ferplus/opset_7/emotion_ferplus-md5.txt)|[32.4 MB](https://www.cntk.ai/OnnxModels/emotion_ferplus/opset_7/emotion_ferplus.tar.gz)|1.2|7|
+|Emotion FERPlus |[MD5](https://onnxzoo.blob.core.windows.net/models/opset_2/emotion_ferplus/emotion_ferplus-md5.txt)|[31 MB](https://onnxzoo.blob.core.windows.net/models/opset_2/emotion_ferplus/emotion_ferplus.tar.gz)|1.0|2|
+|                |[MD5](https://onnxzoo.blob.core.windows.net/models/opset_7/emotion_ferplus/emotion_ferplus-md5.txt)|[31 MB](https://onnxzoo.blob.core.windows.net/models/opset_7/emotion_ferplus/emotion_ferplus.tar.gz)|1.2|7|
+|                |[MD5](https://onnxzoo.blob.core.windows.net/models/opset_8/emotion_ferplus/emotion_ferplus-md5.txt)|[31 MB](https://onnxzoo.blob.core.windows.net/models/opset_8/emotion_ferplus/emotion_ferplus.tar.gz)|1.3|8|
 
 ### Paper
 "Training Deep Networks for Facial Expression Recognition with Crowd-Sourced Label Distribution" [arXiv:1608.01041](https://arxiv.org/abs/1608.01041)
