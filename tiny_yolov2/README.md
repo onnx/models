@@ -6,8 +6,9 @@ This model is a real-time neural network for object detection that detects 20 di
 ## Model
 |Model|Checksum|Download (with sample test data)| ONNX version |Opset version|
 |-----|:-------|:-------------------------------|:-------------|:------------|
-|Tiny YOLOv2|[MD5](https://www.cntk.ai/OnnxModels/tiny_yolov2/opset_1/tiny_yolov2-md5.txt)|[60.8 MB](https://www.cntk.ai/OnnxModels/tiny_yolov2/opset_1/tiny_yolov2.tar.gz) |1.0  |1 |
-|     |[MD5](https://www.cntk.ai/OnnxModels/tiny_yolov2/opset_7/tiny_yolov2-md5.txt)|[60.8 MB](https://www.cntk.ai/OnnxModels/tiny_yolov2/opset_7/tiny_yolov2.tar.gz) |1.2  |7 |
+|Tiny YOLOv2|[MD5](https://onnxzoo.blob.core.windows.net/models/opset_1/tiny_yolov2/tiny_yolov2-md5.txt)|[58 MB](https://onnxzoo.blob.core.windows.net/models/opset_1/tiny_yolov2/tiny_yolov2.tar.gz) |1.0  |1 |
+|     |[MD5](https://onnxzoo.blob.core.windows.net/models/opset_7/tiny_yolov2/tiny_yolov2-md5.txt)|[58 MB](https://onnxzoo.blob.core.windows.net/models/opset_7/tiny_yolov2/tiny_yolov2.tar.gz) |1.2  |7 |
+|     |[MD5](https://onnxzoo.blob.core.windows.net/models/opset_8/tiny_yolov2/tiny_yolov2-md5.txt)|[58 MB](https://onnxzoo.blob.core.windows.net/models/opset_8/tiny_yolov2/tiny_yolov2.tar.gz) |1.3  |8 |
 
 ### Paper
 "YOLO9000: Better, Faster, Stronger" [arXiv:1612.08242](https://arxiv.org/pdf/1612.08242.pdf)
