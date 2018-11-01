@@ -6,8 +6,9 @@ This model predicts handwritten digits using a convolutional neural network (CNN
 ## Model
 |Model|Checksum|Download (with sample test data)| ONNX version |Opset version|
 |-----|:-------|:-------------------------------|:-------------|:------------|
-|MNIST|[MD5](https://www.cntk.ai/OnnxModels/mnist/opset_1/mnist-md5.txt)|[26.2 kB](https://www.cntk.ai/OnnxModels/mnist/opset_1/mnist.tar.gz) |1.0  |1 |
-|     |[MD5](https://www.cntk.ai/OnnxModels/mnist/opset_7/mnist-md5.txt)|[25.9 kB](https://www.cntk.ai/OnnxModels/mnist/opset_7/mnist.tar.gz) |1.2  |7 |
+|MNIST|[MD5](https://onnxzoo.blob.core.windows.net/models/opset_1/mnist/mnist-md5.txt)|[26 kB](https://onnxzoo.blob.core.windows.net/models/opset_1/mnist/mnist.tar.gz) |1.0  |1 |
+|     |[MD5](https://onnxzoo.blob.core.windows.net/models/opset_7/mnist/mnist-md5.txt)|[26 kB](https://onnxzoo.blob.core.windows.net/models/opset_7/mnist/mnist.tar.gz) |1.2  |7 |
+|     |[MD5](https://onnxzoo.blob.core.windows.net/models/opset_8/mnist/mnist-md5.txt)|[26 kB](https://onnxzoo.blob.core.windows.net/models/opset_8/mnist/mnist.tar.gz) |1.3  |8 |
 
 ### Dataset
 The model has been trained on the popular [MNIST dataset](http://yann.lecun.com/exdb/mnist/).
