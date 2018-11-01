@@ -197,6 +197,8 @@ outputs = list(sample['outputs'])
 np.testing.assert_almost_equal(outputs, backend.run_model(model, inputs))
 ```
 
+Note: please replace `onnx_backend` in your code with the appropriate framework of your choice that provides ONNX inferencing support, and likewise replace `backend.run_model` with said framework's model evaluation logic.
+
 - Serialized protobuf TensorProtos, which are stored in folders named like `test_data_set_*`.
 They can be used as the following:
 ```python
