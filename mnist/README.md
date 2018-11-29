@@ -16,6 +16,9 @@ The model has been trained on the popular [MNIST dataset](http://yann.lecun.com/
 ### Source
 The model is trained in CNTK following the tutorial [CNTK 103D: Convolutional Neural Network with MNIST](https://github.com/Microsoft/CNTK/blob/master/Tutorials/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.ipynb). Note that the specific architecture used is the model with alternating convolution and max pooling layers (found under the "Solution" section at the end of the tutorial).
 
+### Demo
+[Demo implemented by ONNX.js (model file: MNIST V1.2)](https://microsoft.github.io/onnxjs-demo/#/mnist)
+
 ## Inference
 We used CNTK as the framework to perform inference. A brief description of the inference process is provided below:
 
