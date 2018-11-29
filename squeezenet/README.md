@@ -22,7 +22,7 @@ SqueezeNet is a light-weight convolutional networks for classification.
 Caffe2 SqueezeNet ==> ONNX SqueezeNet
 
 ### Demo
-[Demo implemented by ONNX.js (model file: squeezenet V1.2)](https://microsoft.github.io/onnxjs-demo/#/squeezenet)
+[Run SqueezeNet in browser](https://microsoft.github.io/onnxjs-demo/#/squeezenet) - implemented by ONNX.js with SqueezeNet release 1.2
 
 ## Model input and output
 ### Input
