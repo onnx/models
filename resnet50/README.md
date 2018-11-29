@@ -1,5 +1,3 @@
-# ResNet-50
-
 Download:
 - release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/resnet50.tar.gz
 - release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/resnet50.tar.gz
@@ -17,6 +15,9 @@ ResNet-50 is a deep convolutional networks for classification.
 
 ### Dataset
 [ILSVRC2015](http://www.image-net.org/challenges/LSVRC/2015/)
+
+### Demo
+[Demo implemented by ONNX.js (model file: resnet50 V1.2)](https://microsoft.github.io/onnxjs-demo/resnet50)
 
 ## Source
 Caffe2 ResNet-50 ==> ONNX ResNet-50
