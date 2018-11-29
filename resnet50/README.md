@@ -1,4 +1,4 @@
-c# ResNet-50
+# ResNet-50
 
 Download:
 - release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/resnet50.tar.gz
