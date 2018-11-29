@@ -21,7 +21,7 @@ The model is trained on the FER+ annotations for the standard Emotion FER [datas
 The model is trained in CNTK, using the cross entropy training mode. You can find the source code [here](https://github.com/ebarsoum/FERPlus).
 
 ### Demo
-[Demo implemented by ONNX.js (model file: emotion_ferplus V1.2)](https://microsoft.github.io/onnxjs-demo/#/emotion_ferplus)
+[Run Emotion_FERPlus in browser](https://microsoft.github.io/onnxjs-demo/#/emotion_ferplus) - implemented by ONNX.js with Emotion_FERPlus version 1.2
 
 ## Inference
 ### Input
