@@ -19,7 +19,7 @@ ResNet-50 is a deep convolutional networks for classification.
 [ILSVRC2015](http://www.image-net.org/challenges/LSVRC/2015/)
 
 ### Demo
-[Demo implemented by ONNX.js (model file: resnet50 V1.2)](https://microsoft.github.io/onnxjs-demo/#/resnet50)
+[Run ResNet-50 in browser](https://microsoft.github.io/onnxjs-demo/#/resnet50) - implemented by ONNX.js with model file resnet50 V1.2
 
 ## Source
 Caffe2 ResNet-50 ==> ONNX ResNet-50
