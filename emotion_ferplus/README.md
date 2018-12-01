@@ -20,6 +20,9 @@ The model is trained on the FER+ annotations for the standard Emotion FER [datas
 ### Source
 The model is trained in CNTK, using the cross entropy training mode. You can find the source code [here](https://github.com/ebarsoum/FERPlus).
 
+### Demo
+[Run Emotion_FERPlus in browser](https://microsoft.github.io/onnxjs-demo/#/emotion_ferplus) - implemented by ONNX.js with Emotion_FERPlus version 1.2
+
 ## Inference
 ### Input
 The model expects input of the shape `(Nx1x64x64)`, where `N` is the batch size.
