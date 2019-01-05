@@ -168,6 +168,7 @@ These models detect and/or recognize human faces in images. Some more popular mo
 
 <hr>
 <a name="usage-"/>
+
 ## Usage
 
 Every ONNX backend should support running the models out of the box. After downloading and extracting the tarball of each model, you will find:
