@@ -13,7 +13,7 @@ The ONNX Model Zoo is a collection of pre-trained models for state-of-the-art mo
 The Open Neural Network eXchange ([ONNX](http://onnx.ai)) is an open format to represent deep learning models. With ONNX, developers can move models between state-of-the-art tools and choose the combination that is best for them. ONNX is developed and supported by a community of partners.
 
 ## Models
-##### Read the [Usage](#usage) section below for more details on the file formats in the ONNX Model Zoo (.onnx, .pb, .npz) and starter Python code for validating your ONNX model using test data.
+#### Read the [Usage](#usage-) section below for more details on the file formats in the ONNX Model Zoo (.onnx, .pb, .npz) and starter Python code for validating your ONNX model using test data.
 
 * [Image Classification](#image_classification)
 * [Semantic Segmentation](#semantic_segmentation)
@@ -167,8 +167,8 @@ These models detect and/or recognize human faces in images. Some more popular mo
 |Autoencoders||[contribute](contribute.md)|
 
 <hr>
-
-## Usage <a name="usage"/>
+<a name="usage-"/>
+## Usage
 
 Every ONNX backend should support running the models out of the box. After downloading and extracting the tarball of each model, you will find:
 
