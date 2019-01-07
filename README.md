@@ -7,12 +7,13 @@
 	<img src="images/ONNX_Model_Zoo_Graphics.png" width="60%"/>
 </p>
 
-The ONNX Model Zoo is a collection of pre-trained models for state-of-the-art models in deep learning, available in the ONNX format. Accompanying each model are [Jupyter](http://jupyter.org) notebooks for model training and running inference with the trained model. The notebooks are written in Python and include links to the training dataset as well as references to the original paper that describes the model architecture. The notebooks can be exported and run as python(.py) files.
+The ONNX Model Zoo is a collection of pre-trained models for state-of-the-art models in deep learning, available in the ONNX format. Accompanying each model are [Jupyter notebooks](http://jupyter.org) for model training and running inference with the trained model. The notebooks are written in Python and include links to the training dataset as well as references to the original paper that describes the model architecture. The notebooks can also be exported and run as Python (.py) files.
 
 ## What is ONNX?
 The Open Neural Network eXchange ([ONNX](http://onnx.ai)) is an open format to represent deep learning models. With ONNX, developers can move models between state-of-the-art tools and choose the combination that is best for them. ONNX is developed and supported by a community of partners.
 
 ## Models
+#### Read the [Usage](#usage-) section below for more details on the file formats in the ONNX Model Zoo (.onnx, .pb, .npz) and starter Python code for validating your ONNX model using test data.
 
 * [Image Classification](#image_classification)
 * [Semantic Segmentation](#semantic_segmentation)
@@ -166,41 +167,21 @@ These models detect and/or recognize human faces in images. Some more popular mo
 |Autoencoders||[contribute](contribute.md)|
 
 <hr>
-
-## Model Visualization
-You can see visualizations of each model's network architecture by using [Netron](https://lutzroeder.github.io/Netron).
+<a name="usage-"/>
 
 ## Usage
 
-Every ONNX backend should support running these models out of the box. After downloading and extracting the tarball of each model, there should be
+Every ONNX backend should support running the models out of the box. After downloading and extracting the tarball of each model, you will find:
 
-- A protobuf file `model.onnx` which is the serialized ONNX model.
-- Test data.
+- A protobuf file `model.onnx` that represents the serialized ONNX model.
+- Test data (in the form of serialized protobuf TensorProto files or serialized NumPy archives).
 
+The test data files can be used to validate ONNX models from the Model Zoo. We have provided the following interface examples for you to get started. Please replace `onnx_backend` in your code with the appropriate framework of your choice that provides ONNX inferencing support, and likewise replace `backend.run_model` with the framework's model evaluation logic. 
 
-The test data are provided in two different formats:
-- Serialized Numpy archives, which are files named like `test_data_*.npz`, each file contains one set of test inputs and outputs.
-They can be used like this:
+There are two different formats for the test data files:
 
-```python
-import numpy as np
-import onnx
-import onnx_backend as backend
+- Serialized protobuf TensorProtos (.pb), stored in folders with the naming convention `test_data_set_*`.
 
-# Load the model and sample inputs and outputs
-model = onnx.load(model_pb_path)
-sample = np.load(npz_path, encoding='bytes')
-inputs = list(sample['inputs'])
-outputs = list(sample['outputs'])
-
-# Run the model with an onnx backend and verify the results
-np.testing.assert_almost_equal(outputs, backend.run_model(model, inputs))
-```
-
-Note: please replace `onnx_backend` in your code with the appropriate framework of your choice that provides ONNX inferencing support, and likewise replace `backend.run_model` with said framework's model evaluation logic.
-
-- Serialized protobuf TensorProtos, which are stored in folders named like `test_data_set_*`.
-They can be used as the following:
 ```python
 import numpy as np
 import onnx
@@ -240,6 +221,27 @@ outputs = list(backend.run_model(model, inputs))
 for ref_o, o in zip(ref_outputs, outputs):
     np.testing.assert_almost_equal(ref_o, o)
 ```
+
+- Serialized Numpy archives, stored in files with the naming convention `test_data_*.npz`. Each file contains one set of test inputs and outputs.
+
+```python
+import numpy as np
+import onnx
+import onnx_backend as backend
+
+# Load the model and sample inputs and outputs
+model = onnx.load(model_pb_path)
+sample = np.load(npz_path, encoding='bytes')
+inputs = list(sample['inputs'])
+outputs = list(sample['outputs'])
+
+# Run the model with an onnx backend and verify the results
+np.testing.assert_almost_equal(outputs, backend.run_model(model, inputs))
+```
+
+## Model Visualization
+You can see visualizations of each model's network architecture by using [Netron](https://lutzroeder.github.io/Netron).
+
 ## Contributions
 Do you want to contribute a model? To get started, pick any model presented above with the [contribute](contribute.md) link under the Description column. The links point to a page containing guidelines for making a contribution.
 
