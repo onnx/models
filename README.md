@@ -16,16 +16,12 @@ The Open Neural Network eXchange ([ONNX](http://onnx.ai)) is an open format to r
 #### Read the [Usage](#usage-) section below for more details on the file formats in the ONNX Model Zoo (.onnx, .pb, .npz) and starter Python code for validating your ONNX model using test data.
 
 * [Image Classification](#image_classification)
-* [Semantic Segmentation](#semantic_segmentation)
-* [Object Detection & Segmentation](#object_detection)
-* [Face Detection and Recognition](#face_detection)
-* [Emotion Recognition](#emotion_detection)
-* [Gender Detection](#gender_detection)
-* [Hand Written Digit Recognition](#digit_recognition)
+* [Object Detection & Image Segmentation](#object_detection)
+* [Body, Face, and Gesture Analysis](#body_analysis)
 * [Super Resolution](#super_resolution)
 * [Style Transfer](#style_transfer)
+* [Speech & Audio Processing](#speech)
 * [Machine Translation](#machine_translation)
-* [Speech Processing](#speech)
 * [Language Modelling](#language)
 * [Visual Question Answering & Dialog](#visual_qna)
 * [Other interesting models](#others)
@@ -52,18 +48,15 @@ This collection of models take images as input, then classifies the major object
 
 <hr>
 
-### Semantic Segmentation <a name="semantic_segmentation"/>
-Semantic segmentation models partition an input image by labeling each pixel into a set of pre-defined categories.
+#### Domain-based Image Classification <a name="domain_based_image"/>
 
 |Model Class |Reference |Description |
 |-|-|-|
-|<b>[DUC](models/semantic_segmentation/DUC/)</b>|[Wang et al.](https://arxiv.org/abs/1702.08502)|Deep CNN based model with >80% [mIOU](/models/semantic_segmentation/DUC/README.md/#metric) (mean Intersection Over Union) trained on urban street images|
-|<b>FCN</b>|[Long et al.](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)|[contribute](contribute.md)|
-
+|[MNIST- Hand Written Digit Recognition](mnist) |[Convolutional Neural Network with MNIST](https://github.com/Microsoft/CNTK/blob/master/Tutorials/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.ipynb)	|Deep CNN model for hand written digit identification|
 <hr>
 
-### Object Detection & Segmentation <a name="object_detection"/>
-These models detect the presence of multiple objects in an image and segment out areas of the image where the objects are detected.
+### Object Detection & Image Segmentation <a name="object_detection"/>
+Object detection models detect the presence of multiple objects in an image and segment out areas of the image where the objects are detected. Semantic segmentation models partition an input image by labeling each pixel into a set of pre-defined categories.
 
 |Model Class |Reference |Description |
 |-|-|-|
@@ -73,39 +66,22 @@ These models detect the presence of multiple objects in an image and segment out
 |<b>Mask-RCNN</b>|[He et al.](https://arxiv.org/abs/1703.06870)|[contribute](contribute.md)|
 |<b>YOLO v2</b>|[Redmon et al.](https://arxiv.org/abs/1612.08242)|[contribute](contribute.md)|
 |<b>YOLO v3</b>|[Redmon et al.](https://pjreddie.com/media/files/papers/YOLOv3.pdf)|[contribute](contribute.md)|
+|<b>[DUC](models/semantic_segmentation/DUC/)</b>|[Wang et al.](https://arxiv.org/abs/1702.08502)|Deep CNN based model with >80% [mIOU](/models/semantic_segmentation/DUC/README.md/#metric) (mean Intersection Over Union) trained on urban street images|
+|<b>FCN</b>|[Long et al.](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)|[contribute](contribute.md)|
 
 <hr>
 
-### Face Detection and Recognition <a name="face_detection"/>
-These models detect and/or recognize human faces in images. Some more popular models are used for detection/recognition of celebrity faces, gender, age, and emotions.
+### Body, Face, and Gesture Analysis <a name="body_analysis"/>
+Face dection models indentify and/or recognize human faces in images. Some more popular models are used for detection/recognition of celebrity faces, gender, age, and emotions.
 
 |Model Class |Reference |Description |
 |-|-|-|
 |<b>[ArcFace](models/face_recognition/ArcFace/)</b>|[Deng et al.](https://arxiv.org/abs/1801.07698)|ArcFace is a CNN based model for face recognition which learns discriminative features of faces and produces embeddings for input face images.|
 |<b>CNN Cascade</b>|[Li et al.](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Li_A_Convolutional_Neural_2015_CVPR_paper.pdf)|[contribute](contribute.md)|
-
-<hr>
-
-### Emotion Recognition <a name="emotion_detection"/>
-
-|Model Class |Reference |Description |
-|-|-|-|
-|[Emotion FerPlus](emotion_ferplus) |[Barsoum et al.](https://arxiv.org/abs/1608.01041)	|Deep CNN model for Emotion recognition|
-<hr>
-
-### Gender Detection <a name="gender_detection"/>
-
-|Model Class |Reference |Description |
-|-|-|-|
+|[Emotion FerPlus](emotion_ferplus) |[Barsoum et al.](https://arxiv.org/abs/1608.01041)	| Deep CNN for emotion recognition|
 |Age and Gender Classification using Convolutional Neural Networks| [Levi et al.](https://www.openu.ac.il/home/hassner/projects/cnn_agegender/CNN_AgeGenderEstimation.pdf)	|[contribute](contribute.md)|
 <hr>
 
-### Hand Written Digit Recognition <a name="digit_recognition"/>
-
-|Model Class |Reference |Description |
-|-|-|-|
-|[MNIST- Hand Written Digit Recognition](mnist) |[Convolutional Neural Network with MNIST](https://github.com/Microsoft/CNTK/blob/master/Tutorials/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.ipynb)	|Deep CNN model for hand written digit identification|
-<hr>
 
 ### Super Resolution <a name="super_resolution"/>
 
@@ -120,21 +96,21 @@ These models detect and/or recognize human faces in images. Some more popular mo
 |Unpaired Image to Image Translation using Cycle consistent Adversarial Network|[Zhu et al.](https://arxiv.org/abs/1703.10593)|[contribute](contribute.md)|
 <hr>
 
+### Speech and Audio Processing <a name="speech"/>
+
+|Model Class |Reference |Description |
+|-|-|-|
+|Speech recognition with deep recurrent neural networks|	[Graves et al.](https://www.cs.toronto.edu/~fritz/absps/RNN13.pdf)|[contribute](contribute.md)|
+|Deep voice: Real time neural text to speech |	[Arik et al.](https://arxiv.org/abs/1702.07825)	|[contribute](contribute.md)|
+|Sound Generative models|	[WaveNet: A Generative Model for Raw Audio ](https://arxiv.org/abs/1609.03499)|[contribute](contribute.md)|
+<hr>
+
 ### Machine Translation <a name="machine_translation"/>
 
 |Model Class |Reference |Description |
 |-|-|-|
 |Neural Machine Translation by jointly learning to align and translate|	[Bahdanau et al.](https://arxiv.org/abs/1409.0473)|[contribute](contribute.md)|
 |Google's Neural Machine Translation System|	[Wu et al.](https://arxiv.org/abs/1609.08144)|[contribute](contribute.md)|
-<hr>
-
-### Speech Processing <a name="speech"/>
-
-|Model Class |Reference |Description |
-|-|-|-|
-|Speech recognition with deep recurrent neural networks|	[Graves et al.](https://www.cs.toronto.edu/~fritz/absps/RNN13.pdf)|[contribute](contribute.md)|
-|Deep voice: Real time neural text to speech |	[Arik et al.](https://arxiv.org/abs/1702.07825)	|[contribute](contribute.md)|
-
 <hr>
 
 ### Language Modelling <a name="language"/>
@@ -160,7 +136,6 @@ These models detect and/or recognize human faces in images. Some more popular mo
 |Model Class |Reference |Description |
 |-|-|-|
 |Text to Image|	[Generative Adversarial Text to image Synthesis ](https://arxiv.org/abs/1605.05396)|[contribute](contribute.md)|
-|Sound Generative models|	[WaveNet: A Generative Model for Raw Audio ](https://arxiv.org/abs/1609.03499)|[contribute](contribute.md)|
 |Time Series Forecasting|	[Modeling Long- and Short-Term Temporal Patterns with Deep Neural Networks ](https://arxiv.org/pdf/1703.07015.pdf)|[contribute](contribute.md)|
 |Recommender systems|[DropoutNet: Addressing Cold Start in Recommender Systems](http://www.cs.toronto.edu/~mvolkovs/nips2017_deepcf.pdf)|[contribute](contribute.md)|
 |Collaborative filtering||[contribute](contribute.md)|
