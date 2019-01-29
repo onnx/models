@@ -97,7 +97,7 @@ Face detection models indentify and/or recognize human faces in images. Some mor
 |Unpaired Image to Image Translation using Cycle consistent Adversarial Network|[Zhu et al.](https://arxiv.org/abs/1703.10593)|[contribute](contribute.md)|
 <hr>
 
-### Speech and Audio Processing <a name="speech"/>
+### Speech & Audio Processing <a name="speech"/>
 
 |Model Class |Reference |Description |
 |-|-|-|
