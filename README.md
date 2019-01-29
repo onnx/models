@@ -17,7 +17,7 @@ The Open Neural Network eXchange ([ONNX](http://onnx.ai)) is an open format to r
 
 * [Image Classification](#image_classification)
 * [Object Detection & Image Segmentation](#object_detection)
-* [Body, Face, and Gesture Analysis](#body_analysis)
+* [Body, Face, & Gesture Analysis](#body_analysis)
 * [Super Resolution](#super_resolution)
 * [Style Transfer](#style_transfer)
 * [Speech & Audio Processing](#speech)
@@ -49,6 +49,7 @@ This collection of models take images as input, then classifies the major object
 <hr>
 
 #### Domain-based Image Classification <a name="domain_based_image"/>
+This subset of models classify images for specific domains and datasets.
 
 |Model Class |Reference |Description |
 |-|-|-|
@@ -72,7 +73,7 @@ Object detection models detect the presence of multiple objects in an image and 
 <hr>
 
 ### Body, Face, and Gesture Analysis <a name="body_analysis"/>
-Face dection models indentify and/or recognize human faces in images. Some more popular models are used for detection/recognition of celebrity faces, gender, age, and emotions.
+Face detection models indentify and/or recognize human faces in images. Some more popular models are used for detection/recognition of celebrity faces, gender, age, and emotions.
 
 |Model Class |Reference |Description |
 |-|-|-|
