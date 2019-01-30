@@ -1,7 +1,6 @@
 # Open Neural Network eXchange (ONNX) Model Zoo
-
-[![Generic badge](https://img.shields.io/badge/Status-Work_In_Progress-red.svg)](#) 
 [![Generic badge](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](contribute.md)
+[![Generic badge](https://img.shields.io/badge/Status-Work_In_Progress-red.svg)](#) 
 
 <p align="center">
 	<img src="images/ONNX_Model_Zoo_Graphics.png" width="60%"/>
@@ -18,7 +17,6 @@ The Open Neural Network eXchange ([ONNX](http://onnx.ai)) is an open format to r
 * [Image Classification](#image_classification)
 * [Object Detection & Image Segmentation](#object_detection)
 * [Body, Face & Gesture Analysis](#body_analysis)
-* [Super Resolution](#super_resolution)
 * [Style Transfer](#style_transfer)
 * [Speech & Audio Processing](#speech)
 * [Machine Translation](#machine_translation)
@@ -32,19 +30,19 @@ This collection of models take images as input, then classifies the major object
 
 |Model Class |Reference |Description |
 |-|-|-|
-|<b>[MobileNet](models/image_classification/mobilenet/)</b>|[Sandler et al.](https://arxiv.org/abs/1801.04381)|Efficient CNN model for mobile and embedded vision applications. <br>Top-5 error from paper - ~10%|
-|<b>[ResNet](models/image_classification/resnet/)</b>|[He et al.](https://arxiv.org/abs/1512.03385), [He et al.](https://arxiv.org/abs/1603.05027)|Very deep CNN model (up to 152 layers), won the ImageNet Challenge in 2015. <br>Top-5 error from  paper - ~6%|
+|<b>[MobileNet](models/image_classification/mobilenet/)</b>|[Sandler et al.](https://arxiv.org/abs/1801.04381)|Computationally efficient CNN model for mobile and embedded vision applications. <br>Top-5 error from paper - ~10%|
+|<b>[ResNet](models/image_classification/resnet/)</b>|[He et al.](https://arxiv.org/abs/1512.03385), [He et al.](https://arxiv.org/abs/1603.05027)|Very deep state-of-the-art CNN model (up to 152 layers), won the ImageNet Challenge in 2015. <br>Top-5 error from  paper - ~3.6%|
 |<b>[SqueezeNet](models/image_classification/squeezenet/)</b>|[Iandola et al.](https://arxiv.org/abs/1602.07360)|A light-weight CNN providing Alexnet level accuracy with 50X fewer parameters. <br>Top-5 error from  paper - ~20%|
-|<b>[VGG](models/image_classification/vgg/)</b>|[Simonyan et al.](https://arxiv.org/abs/1409.1556)|Deep CNN model (upto 19 layers) which won the ImageNet Challenge in 2014. <br>Top-5 error from  paper - ~8%|
-|<b>[Bvlc_AlexNet](bvlc_alexnet)</b>|[Krizhevsky et al.](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)|Deep CNN model for Image Classification |
-|<b>[Bvlc_GoogleNet](bvlc_googlenet)</b>|[Szegedy et al.](https://arxiv.org/pdf/1409.4842.pdf)|Deep CNN model for Image Classification|
-|<b>[Bvlc_reference_CaffeNet](bvlc_reference_caffenet)</b>|[Krizhevsky et al.](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)|Deep CNN model for Image Classification|
-|<b>[Bvlc_reference_RCNN_ILSVRC13](bvlc_reference_rcnn_ilsvrc13)</b>|[Girshick et al.](https://arxiv.org/abs/1311.2524)|Deep CNN model for Image Classification|
-|<b>[DenseNet121](densenet121)</b>|[Huang et al.](https://arxiv.org/abs/1608.06993)|Deep CNN model for Image Classification|
-|<b>[Inception_v1](inception_v1)</b>|[Szegedy et al.](https://arxiv.org/abs/1409.4842)|Deep CNN model for Image Classification|
-|<b>[Inception_v2](inception_v2)</b>|[Szegedy et al.](https://arxiv.org/abs/1512.00567)|Deep CNN model for Image Classification|
-|<b>[ShuffleNet](shufflenet)</b>|[Zhang et al.](https://arxiv.org/abs/1707.01083)|Deep CNN model for Image Classification|
-|<b>[ZFNet512](zfnet512)</b>|[Zeiler et al.](https://arxiv.org/abs/1311.2901)|Deep CNN model for Image Classification|
+|<b>[VGG](models/image_classification/vgg/)</b>|[Simonyan et al.](https://arxiv.org/abs/1409.1556)|Deep CNN model (up to 19 layers) which won the ImageNet Challenge in 2014. <br>Top-5 error from  paper - ~8%|
+|<b>[Bvlc_AlexNet](bvlc_alexnet)</b>|[Krizhevsky et al.](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)|Deep CNN model for Image Classification (up to 8 layers), won the ImageNet Challenge in 2012. <br>Top-5 error from paper - ~15%|
+|<b>[Bvlc_GoogleNet](bvlc_googlenet)</b>|[Szegedy et al.](https://arxiv.org/pdf/1409.4842.pdf)|Deep CNN model (up to 22 layers) implemented in Caffe and won at the ImageNet Challenge in 2014. <br>Top-5 error from paper - ~6.7%|
+|<b>[Bvlc_reference_CaffeNet](bvlc_reference_caffenet)</b>|[Krizhevsky et al.](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)|Deep CNN variation of AlexNet for Image Classification in Caffe where the max pooling precedes the local response normalization (LRN) so that the LRN takes less compute and memory.|
+|<b>[Bvlc_reference_RCNN_ILSVRC13](bvlc_reference_rcnn_ilsvrc13)</b>|[Girshick et al.](https://arxiv.org/abs/1311.2524)|Pure Caffe implementation of R-CNN for image classification as presented at CVPR in 2014.|
+|<b>[DenseNet121](densenet121)</b>|[Huang et al.](https://arxiv.org/abs/1608.06993)|Deep CNN model for Image Classification, connecting every layer to every other layer.|
+|<b>[Inception_v1](inception_v1)</b>|[Szegedy et al.](https://arxiv.org/abs/1409.4842)|Deep CNN model (up to 22 layers) for Image Classification - same as GoogLeNet, implemented through Caffe2. <br>Top-5 error from paper - ~6.7%|
+|<b>[Inception_v2](inception_v2)</b>|[Szegedy et al.](https://arxiv.org/abs/1512.00567)|Deep CNN model for Image Classification as an adaptation to Inception v1 with batch normalization <br> Top-5 error from paper ~4.82%|
+|<b>[ShuffleNet](shufflenet)</b>|[Zhang et al.](https://arxiv.org/abs/1707.01083)|Computationally efficient deep CNN model for Image Classification, providing a ~13x speedup over AlexNet on ARM-based mobile devices <br> Top-1 error from paper - ~7.8%|
+|<b>[ZFNet512](zfnet512)</b>|[Zeiler et al.](https://arxiv.org/abs/1311.2901)|Deep CNN model (up to 8 layers) for Image Classification that tuned the hyperparameters of AlexNet and won the ImageNet Challenge in 2013. <br> Top-5 error from paper - ~14.3%|
 
 <hr>
 
@@ -67,28 +65,20 @@ Object detection models detect the presence of multiple objects in an image and 
 |<b>Mask-RCNN</b>|[He et al.](https://arxiv.org/abs/1703.06870)|[contribute](contribute.md)|
 |<b>YOLO v2</b>|[Redmon et al.](https://arxiv.org/abs/1612.08242)|[contribute](contribute.md)|
 |<b>YOLO v3</b>|[Redmon et al.](https://pjreddie.com/media/files/papers/YOLOv3.pdf)|[contribute](contribute.md)|
-|<b>[DUC](models/semantic_segmentation/DUC/)</b>|[Wang et al.](https://arxiv.org/abs/1702.08502)|Deep CNN based model with >80% [mIOU](/models/semantic_segmentation/DUC/README.md/#metric) (mean Intersection Over Union) trained on urban street images|
+|<b>[DUC](models/semantic_segmentation/DUC/)</b>|[Wang et al.](https://arxiv.org/abs/1702.08502)|Deep CNN based semantic segmentation model with >80% [mIOU](/models/semantic_segmentation/DUC/README.md/#metric) (mean Intersection Over Union), trained on urban street images|
 |<b>FCN</b>|[Long et al.](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)|[contribute](contribute.md)|
 
 <hr>
 
 ### Body, Face & Gesture Analysis <a name="body_analysis"/>
-Face detection models indentify and/or recognize human faces in images. Some more popular models are used for detection/recognition of celebrity faces, gender, age, and emotions.
+Face detection models indentify and/or recognize human faces in images. Some more popular models are used for detection of celebrity faces, gender, age, and emotions.
 
 |Model Class |Reference |Description |
 |-|-|-|
 |<b>[ArcFace](models/face_recognition/ArcFace/)</b>|[Deng et al.](https://arxiv.org/abs/1801.07698)|ArcFace is a CNN based model for face recognition which learns discriminative features of faces and produces embeddings for input face images.|
 |<b>CNN Cascade</b>|[Li et al.](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Li_A_Convolutional_Neural_2015_CVPR_paper.pdf)|[contribute](contribute.md)|
-|[**Emotion FerPlus**](emotion_ferplus) |[Barsoum et al.](https://arxiv.org/abs/1608.01041)	| Deep CNN for emotion recognition based on human faces|
+|[**Emotion FerPlus**](emotion_ferplus) |[Barsoum et al.](https://arxiv.org/abs/1608.01041)	| Deep CNN for emotion recognition trained on images of faces.|
 |Age and Gender Classification using Convolutional Neural Networks| [Levi et al.](https://www.openu.ac.il/home/hassner/projects/cnn_agegender/CNN_AgeGenderEstimation.pdf)	|[contribute](contribute.md)|
-<hr>
-
-
-### Super Resolution <a name="super_resolution"/>
-
-|Model Class |Reference |Description |
-|-|-|-|
-|Image Super resolution using deep convolutional networks |	[Dong et al.](http://ieeexplore.ieee.org/document/7115171/?reload=true)	|[contribute](contribute.md)|
 <hr>
 
 ### Style Transfer <a name="style_transfer"/>
@@ -137,6 +127,7 @@ Face detection models indentify and/or recognize human faces in images. Some mor
 |Model Class |Reference |Description |
 |-|-|-|
 |Text to Image|	[Generative Adversarial Text to image Synthesis ](https://arxiv.org/abs/1605.05396)|[contribute](contribute.md)|
+|Image Super resolution using deep convolutional networks |	[Dong et al.](http://ieeexplore.ieee.org/document/7115171/?reload=true)	|[contribute](contribute.md)|
 |Time Series Forecasting|	[Modeling Long- and Short-Term Temporal Patterns with Deep Neural Networks ](https://arxiv.org/pdf/1703.07015.pdf)|[contribute](contribute.md)|
 |Recommender systems|[DropoutNet: Addressing Cold Start in Recommender Systems](http://www.cs.toronto.edu/~mvolkovs/nips2017_deepcf.pdf)|[contribute](contribute.md)|
 |Collaborative filtering||[contribute](contribute.md)|
