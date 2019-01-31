@@ -1,6 +1,5 @@
 # Open Neural Network eXchange (ONNX) Model Zoo
 [![Generic badge](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](contribute.md)
-[![Generic badge](https://img.shields.io/badge/Status-Work_In_Progress-red.svg)](#) 
 
 <p align="center">
 	<img src="images/ONNX_Model_Zoo_Graphics.png" width="60%"/>
@@ -17,13 +16,12 @@ The Open Neural Network eXchange ([ONNX](http://onnx.ai)) is an open format to r
 * [Image Classification](#image_classification)
 * [Object Detection & Image Segmentation](#object_detection)
 * [Body, Face & Gesture Analysis](#body_analysis)
-* [Style Transfer](#style_transfer)
+* [Image Manipulation](#image_manipulation)
 * [Speech & Audio Processing](#speech)
 * [Machine Translation](#machine_translation)
 * [Language Modelling](#language)
 * [Visual Question Answering & Dialog](#visual_qna)
 * [Other interesting models](#others)
-
 
 ### Image Classification <a name="image_classification"/>
 This collection of models take images as input, then classifies the major objects in the images into a set of predefined classes.
@@ -43,7 +41,6 @@ This collection of models take images as input, then classifies the major object
 |<b>[Inception_v2](inception_v2)</b>|[Szegedy et al.](https://arxiv.org/abs/1512.00567)|Deep CNN model for Image Classification as an adaptation to Inception v1 with batch normalization <br> Top-5 error from paper ~4.82%|
 |<b>[ShuffleNet](shufflenet)</b>|[Zhang et al.](https://arxiv.org/abs/1707.01083)|Computationally efficient deep CNN model for Image Classification, providing a ~13x speedup over AlexNet on ARM-based mobile devices <br> Top-1 error from paper - ~7.8%|
 |<b>[ZFNet512](zfnet512)</b>|[Zeiler et al.](https://arxiv.org/abs/1311.2901)|Deep CNN model (up to 8 layers) for Image Classification that tuned the hyperparameters of AlexNet and won the ImageNet Challenge in 2013. <br> Top-5 error from paper - ~14.3%|
-
 <hr>
 
 #### Domain-based Image Classification <a name="domain_based_image"/>
@@ -67,11 +64,10 @@ Object detection models detect the presence of multiple objects in an image and 
 |<b>YOLO v3</b>|[Redmon et al.](https://pjreddie.com/media/files/papers/YOLOv3.pdf)|[contribute](contribute.md)|
 |<b>[DUC](models/semantic_segmentation/DUC/)</b>|[Wang et al.](https://arxiv.org/abs/1702.08502)|Deep CNN based semantic segmentation model with >80% [mIOU](/models/semantic_segmentation/DUC/README.md/#metric) (mean Intersection Over Union), trained on urban street images|
 |<b>FCN</b>|[Long et al.](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)|[contribute](contribute.md)|
-
 <hr>
 
 ### Body, Face & Gesture Analysis <a name="body_analysis"/>
-Face detection models indentify and/or recognize human faces in images. Some more popular models are used for detection of celebrity faces, gender, age, and emotions.
+Face detection models identify and/or recognize human faces in images. Some more popular models are used for detection of celebrity faces, gender, age, and emotions.
 
 |Model Class |Reference |Description |
 |-|-|-|
@@ -81,13 +77,17 @@ Face detection models indentify and/or recognize human faces in images. Some mor
 |Age and Gender Classification using Convolutional Neural Networks| [Levi et al.](https://www.openu.ac.il/home/hassner/projects/cnn_agegender/CNN_AgeGenderEstimation.pdf)	|[contribute](contribute.md)|
 <hr>
 
-### Style Transfer <a name="style_transfer"/>
+### Image Manipulation <a name="image_manipulation"/>
+Image manipulation models use neural networks to transform input images to modified output images. Some popular models in this category involve style transfer or enhancing images by increasing resolution.
+
 |Model Class |Reference |Description |
 |-|-|-|
 |Unpaired Image to Image Translation using Cycle consistent Adversarial Network|[Zhu et al.](https://arxiv.org/abs/1703.10593)|[contribute](contribute.md)|
+|Image Super resolution using deep convolutional networks |	[Dong et al.](http://ieeexplore.ieee.org/document/7115171/?reload=true)	|[contribute](contribute.md)|
 <hr>
 
 ### Speech & Audio Processing <a name="speech"/>
+This class of models uses audio data to train models that can identify voice, generate music, or even read text out loud.
 
 |Model Class |Reference |Description |
 |-|-|-|
@@ -97,6 +97,7 @@ Face detection models indentify and/or recognize human faces in images. Some mor
 <hr>
 
 ### Machine Translation <a name="machine_translation"/>
+This class of natural language processing models learns how to translate input text to another language.
 
 |Model Class |Reference |Description |
 |-|-|-|
@@ -105,6 +106,7 @@ Face detection models indentify and/or recognize human faces in images. Some mor
 <hr>
 
 ### Language Modelling <a name="language"/>
+This subset of natural language processing models learns representations of language from large corpuses of text.
 
 |Model Class |Reference |Description |
 |-|-|-|
@@ -112,6 +114,7 @@ Face detection models indentify and/or recognize human faces in images. Some mor
 <hr>
 
 ### Visual Question Answering & Dialog <a name="visual_qna"/>
+This subset of natural language processing models uses input images to answer questions about those images.
 
 |Model Class |Reference |Description |
 |-|-|-|
@@ -119,24 +122,21 @@ Face detection models indentify and/or recognize human faces in images. Some mor
 |Yin and Yang: Balancing and Answering Binary Visual Questions |[Zhang et al.](https://arxiv.org/pdf/1511.05099.pdf)|[contribute](contribute.md)|
 |Making the V in VQA Matter|[Goyal et al.](https://arxiv.org/pdf/1612.00837.pdf)|[contribute](contribute.md)|
 |Visual Dialog|	[Das et al.](https://arxiv.org/abs/1611.08669)|[contribute](contribute.md)|
-
 <hr>
 
 ### Other interesting models <a name="others"/>
+There are many interesting deep learning models that do not fit into the categories described above. The ONNX team would like to highly encourage users and researchers to [contribute](contribute.md) their models to the growing model zoo.
 
 |Model Class |Reference |Description |
 |-|-|-|
 |Text to Image|	[Generative Adversarial Text to image Synthesis ](https://arxiv.org/abs/1605.05396)|[contribute](contribute.md)|
-|Image Super resolution using deep convolutional networks |	[Dong et al.](http://ieeexplore.ieee.org/document/7115171/?reload=true)	|[contribute](contribute.md)|
 |Time Series Forecasting|	[Modeling Long- and Short-Term Temporal Patterns with Deep Neural Networks ](https://arxiv.org/pdf/1703.07015.pdf)|[contribute](contribute.md)|
 |Recommender systems|[DropoutNet: Addressing Cold Start in Recommender Systems](http://www.cs.toronto.edu/~mvolkovs/nips2017_deepcf.pdf)|[contribute](contribute.md)|
-|Collaborative filtering||[contribute](contribute.md)|
-|Autoencoders||[contribute](contribute.md)|
-
+|Collaborative filtering|[Neural Collaborative Filtering](https://arxiv.org/pdf/1708.05031.pdf)|[contribute](contribute.md)|
+|Autoencoders|[A Hierarchical Neural Autoencoder for Paragraphs and Documents](https://arxiv.org/abs/1506.01057)|[contribute](contribute.md)|
 <hr>
-<a name="usage-"/>
 
-## Usage
+## Usage <a name="usage-"/>
 
 Every ONNX backend should support running the models out of the box. After downloading and extracting the tarball of each model, you will find:
 
