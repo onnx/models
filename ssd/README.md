@@ -7,7 +7,7 @@ Description of model
 
 |Model        |Download  |Checksum| Download (with sample test data)|ONNX version|Opset version|Accuracy |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|SSD       |ONNX Model download link with size  | MD5 checksum for the ONNX model| tar file containing ONNX model and synthetic test data (in .pb format)|1.4.1 |10 |mAP of 0.195 |
+|SSD       |[80.4 MB](https://onnxzoo.blob.core.windows.net/models/opset_10/ssd/ssd.onnx) | [MD5](https://onnxzoo.blob.core.windows.net/models/opset_10/ssd/ssd-md5.txt) | [78.5 MB](https://onnxzoo.blob.core.windows.net/models/opset_10/ssd/ssd.tar.gz) |1.4.1 |10 |mAP of 0.195 |
 
 
 
@@ -66,7 +66,7 @@ Backbone is ResNet34 pretrained on ILSVRC 2012 (from torchvision). Modifications
 <hr>
 
 ## References
-This model is converted from mlperf/inference [repository](https://github.com/mlperf/inference/tree/master/cloud/single_stage_detector) with modifications.
+This model is converted from mlperf/inference [repository](https://github.com/mlperf/inference/tree/master/cloud/single_stage_detector) with modifications in [repository](https://github.com/BowenBao/inference/tree/master/cloud/single_stage_detector/pytorch).
 <hr>
 
 ## License
