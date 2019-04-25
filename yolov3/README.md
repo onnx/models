@@ -63,7 +63,7 @@ boxes: `(1x'n_candidates'x4)`, the coordinates of all anchor boxes,
 scores: `(1x80x'n_candidates')`, the scores of all anchor boxes per class,
 indices: `('nbox'x3)`, selected indices from the boxes tensor. The selected index format is (batch_index, class_index, box_index). The class list is [here](https://github.com/qqwweee/keras-yolo3/blob/master/model_data/coco_classes.txt)
 
-## Postprocessing steps
+### Postprocessing steps
 Post processing and meaning of output
 ```
 out_boxes, out_scores, out_classes = [], [], []
@@ -91,7 +91,7 @@ Joseph Redmon, Ali Farhadi. YOLOv3: An Incremental Improvement, [paper](https://
 <hr>
 
 ## References
-This model is converted from a keras model [repository](https://github.com/qqwweee/keras-yolo3) using keras2onnx convertor [repository](https://github.com/onnx/keras-onnx).
+This model is converted from a keras model [repository](https://github.com/qqwweee/keras-yolo3) using keras2onnx converter [repository](https://github.com/onnx/keras-onnx).
 <hr>
 
 ## License
