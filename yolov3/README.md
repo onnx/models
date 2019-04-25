@@ -1,13 +1,13 @@
 # YOLOv3
 
 ## Description
-This model is a real-time neural network for object detection that detects 80 different classes.
+This model is a neural network for real-time object detection that detects 80 different classes. It is very fast and accurate.
 
 ## Model
 
-|Model        |Download  |Checksum|ONNX version|Opset version|Accuracy |
-|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|YOLOv3       |[237 MB](https://onnxzoo.blob.core.windows.net/models/opset_10/yolov3/yolov3.onnx) | [MD5](https://onnxzoo.blob.core.windows.net/models/opset_10/yolov3/yolov3-md5.txt) |1.4.1 |10 |mAP of 0.553 |
+|Model        |Download  |Checksum|Download (with sample test data)|ONNX version|Opset version|Accuracy |
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|YOLOv3       |[237 MB](https://onnxzoo.blob.core.windows.net/models/opset_10/yolov3/yolov3.onnx) | [MD5](https://onnxzoo.blob.core.windows.net/models/opset_10/yolov3/yolov3-md5.txt) |[222 MB](https://onnxzoo.blob.core.windows.net/models/opset_10/yolov3/yolov3.tar.gz)|1.5 |10 |mAP of 0.553 |
 
 
 
@@ -16,7 +16,8 @@ This model is a real-time neural network for object detection that detects 80 di
 ## Inference
 
 ### Input to model
-Image shape `(1x3x416x416)`
+Resized image `(1x3x416x416)`
+Original image size `(1x2)`
 
 ### Preprocessing steps
 The images have to be loaded in to a range of [0, 1]. The transformation should preferrably happen at preprocessing.
@@ -41,7 +42,6 @@ def letterbox_image(image, size):
     new_image.paste(image, ((w-nw)//2, (h-nh)//2))
     return new_image
 
-# img = Image.open(img_path)
 def preprocess(img):
     model_image_size = (416, 416)
     boxed_image = letterbox_image(img, tuple(reversed(model_image_size)))
@@ -50,22 +50,18 @@ def preprocess(img):
     image_data = np.transpose(image_data, [2, 0, 1])
     image_data = np.expand_dims(image_data, 0)
     return image_data
+
+image = Image.open(img_path)
+# input
+image_data = preprocess(image)
+image_size = np.array([image.size[1], image.size[0]], dtype=np.int32).reshape(1, 2)
 ```
 
 ### Output of model
 The model has 3 outputs.
 boxes: `(1x'n_candidates'x4)`, the coordinates of all anchor boxes,
 scores: `(1x80x'n_candidates')`, the scores of all anchor boxes per class,
-indices: `('nbox'x3)`, selected indices from the boxes tensor. The selected index format is (batch_index, class_index, box_index).
-
-Here is the python API to run onnx model:
-```
-import onnxruntime
-sess = onnxruntime.InferenceSession('yolov3.onnx')
-feed_f = dict(zip(['input_1:01', 'image_shape:01'],
-             (image_data, np.array([image.size[1], image.size[0]], dtype=np.int32).reshape(1, 2))))
-all_boxes, all_scores, indices = sess.run(None, input_feed=feed_f)
-```
+indices: `('nbox'x3)`, selected indices from the boxes tensor. The selected index format is (batch_index, class_index, box_index). The class list is [here](https://github.com/qqwweee/keras-yolo3/blob/master/model_data/coco_classes.txt)
 
 ## Postprocessing steps
 Post processing and meaning of output
@@ -73,9 +69,9 @@ Post processing and meaning of output
 out_boxes, out_scores, out_classes = [], [], []
 for idx_ in indices:
     out_classes.append(idx_[1])
-    out_scores.append(all_scores[tuple(idx_)])
+    out_scores.append(scores[tuple(idx_)])
     idx_1 = (idx_[0], idx_[2])
-    out_boxes.append(all_boxes[idx_1])
+    out_boxes.append(boxes[idx_1])
 ```
 out_boxes, out_scores, out_classes are list of resulting boxes, scores, and classes.
 <hr>
@@ -86,7 +82,7 @@ We use pretrained weights from pjreddie.com [here](https://pjreddie.com/media/fi
 
 ## Validation accuracy
 Metric is COCO box mAP (averaged over IoU of 0.5:0.95), computed over 2017 COCO val data.
-mAP of 0.553.
+mAP of 0.553 based on original Yolov3 model [here](https://pjreddie.com/darknet/yolo/)
 <hr>
 
 ## Publication/Attribution
@@ -95,10 +91,9 @@ Joseph Redmon, Ali Farhadi. YOLOv3: An Incremental Improvement, [paper](https://
 <hr>
 
 ## References
-This model is converted from a keras model [repository](https://github.com/qqwweee/keras-yolo3) using
-keras2onnx convertor [repository](https://github.com/onnx/keras-onnx).
+This model is converted from a keras model [repository](https://github.com/qqwweee/keras-yolo3) using keras2onnx convertor [repository](https://github.com/onnx/keras-onnx).
 <hr>
 
 ## License
-Apache License 2.0
+MIT License
 <hr>
