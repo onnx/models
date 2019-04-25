@@ -17,7 +17,7 @@ This model is a neural network for real-time object detection that detects 80 di
 
 ### Input to model
 Resized image `(1x3x416x416)`
-Original image size `(1x2)`
+Original image size `(1x2)` which is `[image.size[1], image.size[0]]` 
 
 ### Preprocessing steps
 The images have to be loaded in to a range of [0, 1]. The transformation should preferrably happen at preprocessing.
