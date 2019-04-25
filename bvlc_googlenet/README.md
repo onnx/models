@@ -33,7 +33,7 @@ data_0: float[1, 3, 224, 224]
 ```
 ### Output
 ```
-softmaxout_1: float[1, 1000]
+prob_0: float[1, 1000]
 ```
 ### Pre-processing steps
 ### Post-processing steps
