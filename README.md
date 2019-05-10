@@ -96,6 +96,14 @@ This class of models uses audio data to train models that can identify voice, ge
 |Sound Generative models|	[WaveNet: A Generative Model for Raw Audio ](https://arxiv.org/abs/1609.03499)|[contribute](contribute.md)|
 <hr>
 
+### Machine Comprehension <a name="machine_comprehension"/>
+This subset of natural language processing models that answer questions about a given context paragraph.
+
+|Model Class |Reference |Description |
+|-|-|-|
+|Bidirectional Attention Flow|[Seo et al.](https://arxiv.org/pdf/1611.01603)|EM of 68.1% in SQuADv1.1|
+<hr>
+
 ### Machine Translation <a name="machine_translation"/>
 This class of natural language processing models learns how to translate input text to another language.
 
