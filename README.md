@@ -18,6 +18,7 @@ The Open Neural Network eXchange ([ONNX](http://onnx.ai)) is an open format to r
 * [Body, Face & Gesture Analysis](#body_analysis)
 * [Image Manipulation](#image_manipulation)
 * [Speech & Audio Processing](#speech)
+* [Machine Comprehension](#machine_comprehension)
 * [Machine Translation](#machine_translation)
 * [Language Modelling](#language)
 * [Visual Question Answering & Dialog](#visual_qna)
