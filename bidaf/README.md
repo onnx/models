@@ -7,7 +7,7 @@ This model is a neural network for answering a query about a given context parag
 
  |Model        |Download  |Checksum|Download (with sample test data)|ONNX version|Opset version|Accuracy |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|BiDAF  |[41.5 MB](https://onnxzoo.blob.core.windows.net/models/opset_9/bidaf/bidaf.onnx) | [MD5](https://onnxzoo.blob.core.windows.net/models/opset_9/bidaf/bidaf-md5.txt) |[37.3 MB](https://onnxzoo.blob.core.windows.net/models/opset_9/bidaf/bidaf.tar.gz)|1.5 |9 |EM of 68.1 in SQuAD v1.1 |
+|BiDAF  |[41.5 MB](https://onnxzoo.blob.core.windows.net/models/opset_9/bidaf/bidaf.onnx) | [MD5](https://onnxzoo.blob.core.windows.net/models/opset_9/bidaf/bidaf-md5.txt) |[37.3 MB](https://onnxzoo.blob.core.windows.net/models/opset_9/bidaf/bidaf.tar.gz)|1.5 |ONNX 9, ONNX.ML 1 |EM of 68.1 in SQuAD v1.1 |
 
  <hr>
 
@@ -17,7 +17,7 @@ This model is a neural network for answering a query about a given context parag
  Tokenized strings of context paragraph and query.
 
  ### Preprocessing steps
- Tokenize words and chars in string for context and query. The tokenized words are in lower case, while chars are not. Chars of each word needs to be clamped or padded to list of length 16.
+ Tokenize words and chars in string for context and query. The tokenized words are in lower case, while chars are not. Chars of each word needs to be clamped or padded to list of length 16. Note [NLTK](https://www.nltk.org/install.html) is used in preprocess for word tokenize.
 
 * context_word: [seq, 1,] of string
 * context_char: [seq, 1, 1, 16] of string
@@ -29,18 +29,14 @@ This model is a neural network for answering a query about a given context parag
  ```python
 import numpy as np
 import string
-import re
+from nltk import word_tokenize
 
 def preprocess(text):
-    # insert space before and after delimiters, then strip spaces
-    delimiters = string.punctuation
-    text = re.sub('(['+delimiters+'])', r' \1 ', text).strip()
-    # merge consecutive spaces
-    text = re.sub('[ ]+', ' ', text)
+    tokens = word_tokenize(text)
     # split into lower-case word tokens, in numpy array with shape of (seq, 1)
-    words = np.asarray(text.lower().split(' ')).reshape(-1, 1)
+    words = np.asarray([w.lower() for w in tokens]).reshape(-1, 1)
     # split words into chars, in numpy array with shape of (seq, 1, 1, 16)
-    chars = [[c for c in t][:16] for t in text.split(' ')]
+    chars = [[c for c in t][:16] for t in tokens]
     chars = [cs+['']*(16-len(cs)) for cs in chars]
     chars = np.asarray(chars).reshape(-1, 1, 1, 16)
     return words, chars
@@ -61,17 +57,15 @@ The model has 2 outputs.
  ### Postprocessing steps
 Post processing and meaning of output
 ```
-import onnxruntime
-sess = onnxruntime.InferenceSession('bidaf.onnx')
-answer = sess.run(['start_pos', 'end_pos'], {'context_word':cw, 'context_char':cc, 'query_word':qw, 'query_char':qc})
+# assuming answer contains the np arrays for start_pos/end_pos
 start = np.asscalar(answer[0])
 end = np.asscalar(answer[1])
-print(cw[start:end+1])
+print([w.encode() for w in cw[start:end+1].reshape(-1)])
 ```
 
 For this testcase, it would output
 ```
-[['brown']].
+[b'brown'].
 ```
 <hr>
 
