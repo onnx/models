@@ -7,7 +7,7 @@ This model is a neural network for answering a query about a given context parag
 
  |Model        |Download  |Checksum|Download (with sample test data)|ONNX version|Opset version|Accuracy |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|BiDAF  |[41.5 MB](https://onnxzoo.blob.core.windows.net/models/opset_9/bidaf/bidaf.onnx) | [MD5](https://onnxzoo.blob.core.windows.net/models/opset_9/bidaf/bidaf-md5.txt) |[37.3 MB](https://onnxzoo.blob.core.windows.net/models/opset_9/bidaf/bidaf.tar.gz)|1.5 |ONNX 9, ONNX.ML 1 |EM of 68.1 in SQuAD v1.1 |
+|BiDAF  |[41.5 MB](https://onnxzoo.blob.core.windows.net/models/opset_9/bidaf/bidaf.onnx) | [MD5](https://onnxzoo.blob.core.windows.net/models/opset_9/bidaf/bidaf-md5.txt) |[37.3 MB](https://onnxzoo.blob.core.windows.net/models/opset_9/bidaf/bidaf.tar.gz)|1.4 |ONNX 9, ONNX.ML 1 |EM of 68.1 in SQuAD v1.1 |
 
  <hr>
 
