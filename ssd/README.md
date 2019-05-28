@@ -31,7 +31,10 @@ def preprocess(img_path):
     input_shape = (1, 3, 1200, 1200)
     img = Image.open(img_path)
     img = img.resize((1200, 1200), Image.BILINEAR)
-    img_data = np.array(img)
+    img_data = np.array(img, dtype='float32')
+    img_data /= 255.0
+    img_data = np.transpose(img_data, [2, 0, 1])
+    img_data = np.expand_dims(img_data, 0)
     mean_vec = np.array([0.485, 0.456, 0.406])
     stddev_vec = np.array([0.229, 0.224, 0.225])
     norm_img_data = np.zeros(img_data.shape).astype('float32')
