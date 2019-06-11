@@ -19,7 +19,7 @@ This model is a real-time neural network for object detection that detects 80 di
 Image shape `(3x'height'x'width')`
 
 ### Preprocessing steps
-The images have to be loaded in to a range of [0, 1], resized and then normalized using mean = [0.485, 0.456, 0.406] and std = [0.229, 0.224, 0.225]. The transformation should preferrably happen at preprocessing.
+The images have to be loaded in to a range of [0, 255], resized, converted to BGR and then normalized using mean = [102.9801, 115.9465, 122.7717]. The transformation should preferrably happen at preprocessing.
 
 This model can take images of different sizes as input. However, to achieve best performance, it is recommended to resize the image such that both height and width are within the range of [800, 1333], and then pad the image with zeros such that both height and width are divisible by 32.
 
