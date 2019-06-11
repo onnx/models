@@ -1,7 +1,7 @@
 # Mask R-CNN
 
 ## Description
-This model is a real-time neural network for object detection that detects 80 different [classes](https://onnxzoo.blob.core.windows.net/models/opset_10/mask_rcnn/coco_classes.txt).
+This model is a real-time neural network for object instance segmentation that detects 80 different [classes](https://onnxzoo.blob.core.windows.net/models/opset_10/mask_rcnn/coco_classes.txt).
 
 ## Model
 
