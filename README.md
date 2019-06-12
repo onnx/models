@@ -60,7 +60,7 @@ Object detection models detect the presence of multiple objects in an image and 
 |<b>[Tiny_YOLOv2](tiny_yolov2)</b>|[Redmon et al.](https://arxiv.org/pdf/1612.08242.pdf)|Deep CNN model for Object Detection|
 |<b>[SSD](ssd)</b>|[Liu et al.](https://arxiv.org/abs/1512.02325)|Deep CNN model for Object Detection|
 |<b>Faster-RCNN</b>|[Ren et al.](https://arxiv.org/abs/1506.01497)|[contribute](contribute.md)|
-|<b>Mask-RCNN</b>|[He et al.](https://arxiv.org/abs/1703.06870)|[contribute](contribute.md)|
+|<b>[Mask-RCNN](mask_rcnn)</b>|[He et al.](https://arxiv.org/abs/1703.06870)|Deep CNN model for Object Segmentation|
 |<b>YOLO v2</b>|[Redmon et al.](https://arxiv.org/abs/1612.08242)|[contribute](contribute.md)|
 |<b>[YOLO v3](yolov3)</b>|[Redmon et al.](https://pjreddie.com/media/files/papers/YOLOv3.pdf)|Deep CNN model for Real-Time Object Detection (mAP = 55.3% in COCO)|
 |<b>[DUC](models/semantic_segmentation/DUC/)</b>|[Wang et al.](https://arxiv.org/abs/1702.08502)|Deep CNN based semantic segmentation model with >80% [mIOU](/models/semantic_segmentation/DUC/README.md/#metric) (mean Intersection Over Union), trained on urban street images|
