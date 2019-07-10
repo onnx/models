@@ -30,7 +30,7 @@ This collection of models take images as input, then classifies the major object
 |Model Class |Reference |Description |
 |-|-|-|
 |<b>[MobileNet](Image/image_classification/MobileNet)</b>|[Sandler et al.](https://arxiv.org/abs/1801.04381)|Computationally efficient CNN model for mobile and embedded vision applications. <br>Top-5 error from paper - ~10%|
-|<b>[ResNet](models/image_classification/resnet/)</b>|[He et al.](https://arxiv.org/abs/1512.03385), [He et al.](https://arxiv.org/abs/1603.05027)|Very deep state-of-the-art CNN model (up to 152 layers), won the ImageNet Challenge in 2015. <br>Top-5 error from  paper - ~3.6%|
+|<b>[ResNet](Image/image_classification/resnet/)</b>|[He et al.](https://arxiv.org/abs/1512.03385), [He et al.](https://arxiv.org/abs/1603.05027)|Very deep state-of-the-art CNN model (up to 152 layers), won the ImageNet Challenge in 2015. <br>Top-5 error from  paper - ~3.6%|
 |<b>[SqueezeNet](models/image_classification/squeezenet/)</b>|[Iandola et al.](https://arxiv.org/abs/1602.07360)|A light-weight CNN providing Alexnet level accuracy with 50X fewer parameters. <br>Top-5 error from  paper - ~20%|
 |<b>[VGG](models/image_classification/vgg/)</b>|[Simonyan et al.](https://arxiv.org/abs/1409.1556)|Deep CNN model (up to 19 layers) which won the ImageNet Challenge in 2014. <br>Top-5 error from  paper - ~8%|
 |<b>[Bvlc_AlexNet](bvlc_alexnet)</b>|[Krizhevsky et al.](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)|Deep CNN model for Image Classification (up to 8 layers), won the ImageNet Challenge in 2012. <br>Top-5 error from paper - ~15%|
