@@ -57,13 +57,13 @@ Object detection models detect the presence of multiple objects in an image and 
 
 |Model Class |Reference |Description |
 |-|-|-|
-|<b>[Image\object_detection_and_image_segmentation\Tiny_YOLOv2]()</b>|[Redmon et al.](https://arxiv.org/pdf/1612.08242.pdf)|Deep CNN model for Object Detection|
-|<b>[Image\object_detection_and_image_segmentation\SSD](ssd)</b>|[Liu et al.](https://arxiv.org/abs/1512.02325)|Deep CNN model for Object Detection|
-|<b>[Image\object_detection_and_image_segmentation\Faster-RCNN](faster_rcnn)</b>|[Ren et al.](https://arxiv.org/abs/1506.01497)|Deep CNN model for Object Detection|
-|<b>[Image\object_detection_and_image_segmentation\Mask-RCNN](mask_rcnn)</b>|[He et al.](https://arxiv.org/abs/1703.06870)|Deep CNN model for Object Segmentation|
+|<b>[Tiny YOLOv2](Image/object_detection_and_image_segmentation/Tiny_YOLOv2)</b>|[Redmon et al.](https://arxiv.org/pdf/1612.08242.pdf)|Deep CNN model for Object Detection|
+|<b>[SSD](Image/object_detection_and_image_segmentation/SSD)</b>|[Liu et al.](https://arxiv.org/abs/1512.02325)|Deep CNN model for Object Detection|
+|<b>[Faster-RCNN](Image/object_detection_and_image_segmentation/Faster-RCNN)</b>|[Ren et al.](https://arxiv.org/abs/1506.01497)|Deep CNN model for Object Detection|
+|<b>[Mask-RCNN](Image/object_detection_and_image_segmentation/Mask-RCNN)</b>|[He et al.](https://arxiv.org/abs/1703.06870)|Deep CNN model for Object Segmentation|
 |<b>YOLO v2</b>|[Redmon et al.](https://arxiv.org/abs/1612.08242)|[contribute](contribute.md)|
-|<b>[YOLO v3](yolov3)</b>|[Redmon et al.](https://pjreddie.com/media/files/papers/YOLOv3.pdf)|Deep CNN model for Real-Time Object Detection (mAP = 55.3% in COCO)|
-|<b>[Image\object_detection_and_image_segmentation\DUC](models/semantic_segmentation/DUC/)</b>|[Wang et al.](https://arxiv.org/abs/1702.08502)|Deep CNN based semantic segmentation model with >80% [mIOU](/models/semantic_segmentation/DUC/README.md/#metric) (mean Intersection Over Union), trained on urban street images|
+|<b>[YOLO v3](Image/object_detection_and_image_segmentation/YOLOv3)</b>|[Redmon et al.](https://pjreddie.com/media/files/papers/YOLOv3.pdf)|Deep CNN model for Real-Time Object Detection (mAP = 55.3% in COCO)|
+|<b>[DUC](Image/object_detection_and_image_segmentation/DUC)</b>|[Wang et al.](https://arxiv.org/abs/1702.08502)|Deep CNN based semantic segmentation model with >80% [mIOU](/models/semantic_segmentation/DUC/README.md/#metric) (mean Intersection Over Union), trained on urban street images|
 |<b>FCN</b>|[Long et al.](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)|[contribute](contribute.md)|
 <hr>
 
@@ -72,7 +72,7 @@ Face detection models identify and/or recognize human faces in images. Some more
 
 |Model Class |Reference |Description |
 |-|-|-|
-|<b>[ArcFace](models/face_recognition/ArcFace/)</b>|[Deng et al.](https://arxiv.org/abs/1801.07698)|ArcFace is a CNN based model for face recognition which learns discriminative features of faces and produces embeddings for input face images.|
+|<b>[ArcFace](Image/Body_Face_and_Gesture_Analysis/ArcFace)</b>|[Deng et al.](https://arxiv.org/abs/1801.07698)|ArcFace is a CNN based model for face recognition which learns discriminative features of faces and produces embeddings for input face images.|
 |<b>CNN Cascade</b>|[Li et al.](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Li_A_Convolutional_Neural_2015_CVPR_paper.pdf)|[contribute](contribute.md)|
 |[Emotion FerPlus](Image/Body_Face_and_Gesture_Analysis/Emotion_Ferplus) |[Barsoum et al.](https://arxiv.org/abs/1608.01041)	| Deep CNN for emotion recognition trained on images of faces.|
 |Age and Gender Classification using Convolutional Neural Networks| [Levi et al.](https://www.openu.ac.il/home/hassner/projects/cnn_agegender/CNN_AgeGenderEstimation.pdf)	|[contribute](contribute.md)|
@@ -102,7 +102,7 @@ This subset of natural language processing models that answer questions about a 
 
 |Model Class |Reference |Description |
 |-|-|-|
-|Bidirectional Attention Flow|[Seo et al.](https://arxiv.org/pdf/1611.01603)|EM of 68.1% in SQuADv1.1|
+|<b>Bidirectional Attention Flow(Text/Machine_Comprehension/Bidirectional_Attention_Flow)</b>|[Seo et al.](https://arxiv.org/pdf/1611.01603)|EM of 68.1% in SQuADv1.1|
 <hr>
 
 ### Machine Translation <a name="machine_translation"/>
