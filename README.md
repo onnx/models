@@ -102,7 +102,7 @@ This subset of natural language processing models that answer questions about a 
 
 |Model Class |Reference |Description |
 |-|-|-|
-|<b>Bidirectional Attention Flow(Text/Machine_Comprehension/Bidirectional_Attention_Flow)</b>|[Seo et al.](https://arxiv.org/pdf/1611.01603)|EM of 68.1% in SQuADv1.1|
+|<b>[Bidirectional Attention Flow](Text/Machine_Comprehension/Bidirectional_Attention_Flow)</b>|[Seo et al.](https://arxiv.org/pdf/1611.01603)|EM of 68.1% in SQuADv1.1|
 <hr>
 
 ### Machine Translation <a name="machine_translation"/>
