@@ -49,7 +49,7 @@ This subset of models classify images for specific domains and datasets.
 
 |Model Class |Reference |Description |
 |-|-|-|
-|<b>[MNIST-Handwritten Digit Recognition](Image/image_classification/MNIST-Handwritten Digit Recognition)</b>|[Convolutional Neural Network with MNIST](https://github.com/Microsoft/CNTK/blob/master/Tutorials/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.ipynb)	|Deep CNN model for handwritten digit identification|
+|<b>[MNIST-Handwritten Digit Recognition](Image/image_classification/MNIST-Handwritten_Digit_Recognition)</b>|[Convolutional Neural Network with MNIST](https://github.com/Microsoft/CNTK/blob/master/Tutorials/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.ipynb)	|Deep CNN model for handwritten digit identification|
 <hr>
 
 ### Object Detection & Image Segmentation <a name="object_detection"/>
