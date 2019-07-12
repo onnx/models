@@ -81,4 +81,4 @@ def main():
     extract_val(val_tar_fname, os.path.join(target_dir, 'val'))
 
 if __name__ == '__main__':
-    main() 
+    main()
