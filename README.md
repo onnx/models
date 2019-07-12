@@ -58,6 +58,9 @@ Object detection models detect the presence of multiple objects in an image and 
 |Model Class |Reference |Description |
 |-|-|-|
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of f4e1ec2... Updated folder links
 |<b>[Tiny YOLOv2](image/object_detection_and_segmentation/tiny_yolov2)</b>|[Redmon et al.](https://arxiv.org/pdf/1612.08242.pdf)|A real-time CNN for object detection that detects 20 different classes. A smaller version of the more complex full YOLOv2 network.|
 |<b>[SSD](image/object_detection_and_segmentation/ssd)</b>|[Liu et al.](https://arxiv.org/abs/1512.02325)|Single Stage Detector: real-time CNN for object detection that detects 80 different classes.|
 |<b>[Faster-RCNN](image/object_detection_and_segmentation/faster-rcnn)</b>|[Ren et al.](https://arxiv.org/abs/1506.01497)|Increases efficiency from R-CNN by connecting a RPN with a CNN to create a single, unified network for object detection that detects 80 different classes.|
