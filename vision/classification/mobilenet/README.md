@@ -19,25 +19,25 @@ The below model is using multiplier value as 1.0.
 -->
 
 ## Inference
-We used MXNet as framework with gluon APIs to perform inference. View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook.
+We used MXNet as framework with gluon APIs to perform inference. View the notebook [imagenet_inference](vision/classification/imagenet/imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook.
 
 ### Input 
 All pre-trained models expect input images normalized in the same way, i.e. mini-batches of 3-channel RGB images of shape (N x 3 x H x W), where N is the batch size, and H and W are expected to be at least 224.
 The inference was done using jpeg image.
 
 ### Preprocessing
-The images have to be loaded in to a range of [0, 1] and then normalized using mean = [0.485, 0.456, 0.406] and std = [0.229, 0.224, 0.225]. The transformation should preferrably happen at preprocessing. Check [imagenet_preprocess.py](../imagenet_preprocess.py) for code.
+The images have to be loaded in to a range of [0, 1] and then normalized using mean = [0.485, 0.456, 0.406] and std = [0.229, 0.224, 0.225]. The transformation should preferrably happen at preprocessing. Check [imagenet_preprocess.py](vision/classification/imagenet/imagenet_preprocess.py) for code.
 
 ### Output
-The model outputs image scores for each of the [1000 classes of ImageNet](../synset.txt).
+The model outputs image scores for each of the [1000 classes of ImageNet](vision/classification/imagenet/synset.txt).
 
 ### Postprocessing
-The post-processing involves calculating the softmax probablility scores for each class and sorting them to report the most probable classes. Check [imagenet_postprocess.py](../imagenet_postprocess.py) for code.
+The post-processing involves calculating the softmax probablility scores for each class and sorting them to report the most probable classes. Check [imagenet_postprocess.py](vision/classification/imagenet/imagenet_postprocess.py) for code.
 
 To do quick inference with the model, check out [Model Server](https://github.com/awslabs/mxnet-model-server/blob/master/docs/model_zoo.md/#mobilenetv2-1.0_onnx).
 
 ## Dataset
-Dataset used for train and validation: [ImageNet (ILSVRC2012)](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
+Dataset used for train and validation: [ImageNet (ILSVRC2012)](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](vision/classification/imagenet/imagenet_prep.md) for guidelines on preparing the dataset.
 
 
 ## Validation accuracy
@@ -47,7 +47,7 @@ The accuracies obtained by the model on the validation set are mentioned above. 
 We used MXNet as framework with gluon APIs to perform training. View the [training notebook](train_mobilenet.ipynb) to understand details for parameters and network for each of the above variants of MobileNet.
 
 ## Validation
-We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_validation](../imagenet_validation.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
+We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_validation](vision/classification/imagenet/imagenet_validation.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 
 
 ## References
