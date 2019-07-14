@@ -2,7 +2,7 @@
 [![Generic badge](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](contribute.md)
 
 <p align="center">
-	<img src="images/ONNX_Model_Zoo_Graphics.png" width="60%"/>
+	<img src="resource/images/ONNX_Model_Zoo_Graphics.png" width="60%"/>
 </p>
 
 The ONNX Model Zoo is a collection of pre-trained models for state-of-the-art models in deep learning, available in the ONNX format. Accompanying each model are [Jupyter notebooks](http://jupyter.org) for model training and running inference with the trained model. The notebooks are written in Python and include links to the training dataset as well as references to the original paper that describes the model architecture. The notebooks can also be exported and run as Python (.py) files.
@@ -29,19 +29,19 @@ This collection of models take images as input, then classifies the major object
 
 |Model Class |Reference |Description |
 |-|-|-|
-|<b>[MobileNet](models/image_classification/mobilenet/)</b>|[Sandler et al.](https://arxiv.org/abs/1801.04381)|Computationally efficient CNN model for mobile and embedded vision applications. <br>Top-5 error from paper - ~10%|
-|<b>[ResNet](models/image_classification/resnet/)</b>|[He et al.](https://arxiv.org/abs/1512.03385), [He et al.](https://arxiv.org/abs/1603.05027)|Very deep state-of-the-art CNN model (up to 152 layers), won the ImageNet Challenge in 2015. <br>Top-5 error from  paper - ~3.6%|
-|<b>[SqueezeNet](models/image_classification/squeezenet/)</b>|[Iandola et al.](https://arxiv.org/abs/1602.07360)|A light-weight CNN providing Alexnet level accuracy with 50X fewer parameters. <br>Top-5 error from  paper - ~20%|
-|<b>[VGG](models/image_classification/vgg/)</b>|[Simonyan et al.](https://arxiv.org/abs/1409.1556)|Deep CNN model (up to 19 layers) which won the ImageNet Challenge in 2014. <br>Top-5 error from  paper - ~8%|
-|<b>[Bvlc_AlexNet](bvlc_alexnet)</b>|[Krizhevsky et al.](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)|Deep CNN model for Image Classification (up to 8 layers), won the ImageNet Challenge in 2012. <br>Top-5 error from paper - ~15%|
-|<b>[Bvlc_GoogleNet](bvlc_googlenet)</b>|[Szegedy et al.](https://arxiv.org/pdf/1409.4842.pdf)|Deep CNN model (up to 22 layers) implemented in Caffe and won at the ImageNet Challenge in 2014. <br>Top-5 error from paper - ~6.7%|
-|<b>[Bvlc_reference_CaffeNet](bvlc_reference_caffenet)</b>|[Krizhevsky et al.](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)|Deep CNN variation of AlexNet for Image Classification in Caffe where the max pooling precedes the local response normalization (LRN) so that the LRN takes less compute and memory.|
-|<b>[Bvlc_reference_RCNN_ILSVRC13](bvlc_reference_rcnn_ilsvrc13)</b>|[Girshick et al.](https://arxiv.org/abs/1311.2524)|Pure Caffe implementation of R-CNN for image classification as presented at CVPR in 2014.|
-|<b>[DenseNet121](densenet121)</b>|[Huang et al.](https://arxiv.org/abs/1608.06993)|Deep CNN model for Image Classification, connecting every layer to every other layer.|
-|<b>[Inception_v1](inception_v1)</b>|[Szegedy et al.](https://arxiv.org/abs/1409.4842)|Deep CNN model (up to 22 layers) for Image Classification - same as GoogLeNet, implemented through Caffe2. <br>Top-5 error from paper - ~6.7%|
-|<b>[Inception_v2](inception_v2)</b>|[Szegedy et al.](https://arxiv.org/abs/1512.00567)|Deep CNN model for Image Classification as an adaptation to Inception v1 with batch normalization <br> Top-5 error from paper ~4.82%|
-|<b>[ShuffleNet](shufflenet)</b>|[Zhang et al.](https://arxiv.org/abs/1707.01083)|Computationally efficient deep CNN model for Image Classification, providing a ~13x speedup over AlexNet on ARM-based mobile devices <br> Top-1 error from paper - ~7.8%|
-|<b>[ZFNet512](zfnet512)</b>|[Zeiler et al.](https://arxiv.org/abs/1311.2901)|Deep CNN model (up to 8 layers) for Image Classification that tuned the hyperparameters of AlexNet and won the ImageNet Challenge in 2013. <br> Top-5 error from paper - ~14.3%|
+|<b>[MobileNet](vision/classification/mobilenet)</b>|[Sandler et al.](https://arxiv.org/abs/1801.04381)|Computationally efficient CNN model for mobile and embedded vision applications. <br>Top-5 error from paper - ~10%|
+|<b>[ResNet](vision/classification/resnet)</b>|[He et al.](https://arxiv.org/abs/1512.03385), [He et al.](https://arxiv.org/abs/1603.05027)|Very deep state-of-the-art CNN model (up to 152 layers), won the ImageNet Challenge in 2015. <br>Top-5 error from  paper - ~3.6%|
+|<b>[SqueezeNet](vision/classification/squeezenet)</b>|[Iandola et al.](https://arxiv.org/abs/1602.07360)|A light-weight CNN providing Alexnet level accuracy with 50X fewer parameters. <br>Top-5 error from  paper - ~20%|
+|<b>[VGG](vision/classification/vgg)</b>|[Simonyan et al.](https://arxiv.org/abs/1409.1556)|Deep CNN model (up to 19 layers) which won the ImageNet Challenge in 2014. <br>Top-5 error from  paper - ~8%|
+|<b>[AlexNet](vision/classification/alexnet)</b>|[Krizhevsky et al.](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)|Deep CNN model for Image Classification (up to 8 layers), won the ImageNet Challenge in 2012. <br>Top-5 error from paper - ~15%|
+|<b>[GoogleNet](vision/classification/inception_and_googlenet/googlenet)</b>|[Szegedy et al.](https://arxiv.org/pdf/1409.4842.pdf)|Deep CNN model (up to 22 layers) implemented in Caffe and won at the ImageNet Challenge in 2014. <br>Top-5 error from paper - ~6.7%|
+|<b>[CaffeNet](vision/classification/caffenet)</b>|[Krizhevsky et al.](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)|Deep CNN variation of AlexNet for Image Classification in Caffe where the max pooling precedes the local response normalization (LRN) so that the LRN takes less compute and memory.|
+|<b>[RCNN_ILSVRC13](vision/classification/rcnn_ilsvrc13)</b>|[Girshick et al.](https://arxiv.org/abs/1311.2524)|Pure Caffe implementation of R-CNN for image classification as presented at CVPR in 2014.|
+|<b>[DenseNet-121](vision/classification/densenet-121)</b>|[Huang et al.](https://arxiv.org/abs/1608.06993)|Deep CNN model for Image Classification, connecting every layer to every other layer.|
+|<b>[Inception_V1](vision/classification/inception_and_googlenet/inception_v1)</b>|[Szegedy et al.](https://arxiv.org/abs/1409.4842)|Deep CNN model (up to 22 layers) for Image Classification - same as GoogLeNet, implemented through Caffe2. <br>Top-5 error from paper - ~6.7%|
+|<b>[Inception_V2](vision/classification/inception_and_googlenet/inception_v2)</b>|[Szegedy et al.](https://arxiv.org/abs/1512.00567)|Deep CNN model for Image Classification as an adaptation to Inception v1 with batch normalization <br> Top-5 error from paper ~4.82%|
+|<b>[ShuffleNet](vision/classification/shufflenet)</b>|[Zhang et al.](https://arxiv.org/abs/1707.01083)|Computationally efficient deep CNN model for Image Classification, providing a ~13x speedup over AlexNet on ARM-based mobile devices <br> Top-1 error from paper - ~7.8%|
+|<b>[ZFNet-512](vision/classification/zfnet-512)</b>|[Zeiler et al.](https://arxiv.org/abs/1311.2901)|Deep CNN model (up to 8 layers) for Image Classification that tuned the hyperparameters of AlexNet and won the ImageNet Challenge in 2013. <br> Top-5 error from paper - ~14.3%|
 <hr>
 
 #### Domain-based Image Classification <a name="domain_based_image"/>
@@ -49,7 +49,7 @@ This subset of models classify images for specific domains and datasets.
 
 |Model Class |Reference |Description |
 |-|-|-|
-|[**MNIST**- Handwritten Digit Recognition](mnist) |[Convolutional Neural Network with MNIST](https://github.com/Microsoft/CNTK/blob/master/Tutorials/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.ipynb)	|Deep CNN model for handwritten digit identification|
+|<b>[MNIST-Handwritten Digit Recognition](vision/classification/mnist)</b>|[Convolutional Neural Network with MNIST](https://github.com/Microsoft/CNTK/blob/master/Tutorials/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.ipynb)	|Deep CNN model for handwritten digit identification|
 <hr>
 
 ### Object Detection & Image Segmentation <a name="object_detection"/>
@@ -57,13 +57,13 @@ Object detection models detect the presence of multiple objects in an image and 
 
 |Model Class |Reference |Description |
 |-|-|-|
-|<b>[Tiny_YOLOv2](tiny_yolov2)</b>|[Redmon et al.](https://arxiv.org/pdf/1612.08242.pdf)|Deep CNN model for Object Detection|
-|<b>[SSD](ssd)</b>|[Liu et al.](https://arxiv.org/abs/1512.02325)|Deep CNN model for Object Detection|
-|<b>[Faster-RCNN](faster_rcnn)</b>|[Ren et al.](https://arxiv.org/abs/1506.01497)|Deep CNN model for Object Detection|
-|<b>[Mask-RCNN](mask_rcnn)</b>|[He et al.](https://arxiv.org/abs/1703.06870)|Deep CNN model for Object Segmentation|
+|<b>[Tiny YOLOv2](vision/object_detection_segmentation/tiny_yolov2)</b>|[Redmon et al.](https://arxiv.org/pdf/1612.08242.pdf)|Deep CNN model for Object Detection|
+|<b>[SSD](vision/object_detection_segmentation/ssd)</b>|[Liu et al.](https://arxiv.org/abs/1512.02325)|Deep CNN model for Object Detection|
+|<b>[Faster-RCNN](vision/object_detection_segmentation/faster-rcnn)</b>|[Ren et al.](https://arxiv.org/abs/1506.01497)|Deep CNN model for Object Detection|
+|<b>[Mask-RCNN](vision/object_detection_segmentation/mask-rcnn)</b>|[He et al.](https://arxiv.org/abs/1703.06870)|Deep CNN model for Object Segmentation|
 |<b>YOLO v2</b>|[Redmon et al.](https://arxiv.org/abs/1612.08242)|[contribute](contribute.md)|
-|<b>[YOLO v3](yolov3)</b>|[Redmon et al.](https://pjreddie.com/media/files/papers/YOLOv3.pdf)|Deep CNN model for Real-Time Object Detection (mAP = 55.3% in COCO)|
-|<b>[DUC](models/semantic_segmentation/DUC/)</b>|[Wang et al.](https://arxiv.org/abs/1702.08502)|Deep CNN based semantic segmentation model with >80% [mIOU](/models/semantic_segmentation/DUC/README.md/#metric) (mean Intersection Over Union), trained on urban street images|
+|<b>[YOLO v3](vision/object_detection_segmentation/yolov3)</b>|[Redmon et al.](https://pjreddie.com/media/files/papers/YOLOv3.pdf)|Deep CNN model for Real-Time Object Detection (mAP = 55.3% in COCO)|
+|<b>[DUC](vision/object_detection_segmentation/duc)</b>|[Wang et al.](https://arxiv.org/abs/1702.08502)|Deep CNN based semantic segmentation model with >80% [mIOU](/models/semantic_segmentation/DUC/README.md/#metric) (mean Intersection Over Union), trained on urban street images|
 |<b>FCN</b>|[Long et al.](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)|[contribute](contribute.md)|
 <hr>
 
@@ -72,9 +72,9 @@ Face detection models identify and/or recognize human faces in images. Some more
 
 |Model Class |Reference |Description |
 |-|-|-|
-|<b>[ArcFace](models/face_recognition/ArcFace/)</b>|[Deng et al.](https://arxiv.org/abs/1801.07698)|ArcFace is a CNN based model for face recognition which learns discriminative features of faces and produces embeddings for input face images.|
+|<b>[ArcFace](vision/body_analysis/arcface)</b>|[Deng et al.](https://arxiv.org/abs/1801.07698)|ArcFace is a CNN based model for face recognition which learns discriminative features of faces and produces embeddings for input face images.|
 |<b>CNN Cascade</b>|[Li et al.](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Li_A_Convolutional_Neural_2015_CVPR_paper.pdf)|[contribute](contribute.md)|
-|[**Emotion FerPlus**](emotion_ferplus) |[Barsoum et al.](https://arxiv.org/abs/1608.01041)	| Deep CNN for emotion recognition trained on images of faces.|
+|[Emotion FerPlus](vision/body_analysis/emotion_ferplus) |[Barsoum et al.](https://arxiv.org/abs/1608.01041)	| Deep CNN for emotion recognition trained on images of faces.|
 |Age and Gender Classification using Convolutional Neural Networks| [Levi et al.](https://www.openu.ac.il/home/hassner/projects/cnn_agegender/CNN_AgeGenderEstimation.pdf)	|[contribute](contribute.md)|
 <hr>
 
@@ -102,7 +102,7 @@ This subset of natural language processing models that answer questions about a 
 
 |Model Class |Reference |Description |
 |-|-|-|
-|Bidirectional Attention Flow|[Seo et al.](https://arxiv.org/pdf/1611.01603)|EM of 68.1% in SQuADv1.1|
+|<b>[Bidirectional Attention Flow](text/machine_comprehension/bidirectional_attention_flow)</b>|[Seo et al.](https://arxiv.org/pdf/1611.01603)|EM of 68.1% in SQuADv1.1|
 <hr>
 
 ### Machine Translation <a name="machine_translation"/>
