@@ -68,7 +68,7 @@ Backbone is ResNet34 pretrained on ILSVRC 2012 (from torchvision). Modifications
 <hr>
 
 ## References
-This model is converted from mlperf/inference [repository](https://github.com/mlperf/inference/tree/master/cloud/single_stage_detector) with modifications in [repository](https://github.com/BowenBao/inference/tree/master/cloud/single_stage_detector/pytorch).
+This model is converted from mlperf/inference [repository](https://github.com/mlperf/inference/tree/master/others/cloud/single_stage_detector) with modifications in [repository](https://github.com/BowenBao/inference/tree/master/cloud/single_stage_detector/pytorch).
 <hr>
 
 ## License
