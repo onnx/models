@@ -93,7 +93,7 @@ This class of models uses audio data to train models that can identify voice, ge
 |Model Class |Reference |Description |
 |-|-|-|
 |Speech recognition with deep recurrent neural networks|	[Graves et al.](https://www.cs.toronto.edu/~fritz/absps/RNN13.pdf)|A RNN model for sequential data for speech recognition. Labels problems where the input-output alignment is unknown<br>[contribute](contribute.md)|
-|Deep voice: Real time neural text to speech |	[Arik et al.](https://arxiv.org/abs/1702.07825)	|A DNN model performs end-to-end neural speech synthesis. Requires fewer parameters and its faster/more flexible than other systems. <br>[contribute](contribute.md)|
+|Deep voice: Real time neural text to speech |	[Arik et al.](https://arxiv.org/abs/1702.07825)	|A DNN model that performs end-to-end neural speech synthesis. Requires fewer parameters and it is faster than other systems. <br>[contribute](contribute.md)|
 |Sound Generative models|	[WaveNet: A Generative Model for Raw Audio ](https://arxiv.org/abs/1609.03499)|A CNN model that generates raw audio waveforms. Has predictive distribution for each audio sample. Generates realistic music fragments. <br>[contribute](contribute.md)|
 <hr>
 
@@ -102,7 +102,7 @@ This subset of natural language processing models that answer questions about a 
 
 |Model Class |Reference |Description |
 |-|-|-|
-|<b>[Bidirectional Attention Flow](text/machine_comprehension/bidirectional_attention_flow)</b>|[Seo et al.](https://arxiv.org/pdf/1611.01603)|A model that answers a query about a given context paragraph. This is a multi-stage hierarchical process that represents the context at different levels of granularity and uses bidirectional attention flow mechanism to obtain a query-aware context representation without early summarization.|
+|<b>[Bidirectional Attention Flow](text/machine_comprehension/bidirectional_attention_flow)</b>|[Seo et al.](https://arxiv.org/pdf/1611.01603)|A model that answers a query about a given context paragraph.|
 <hr>
 
 ### Machine Translation <a name="machine_translation"/>
@@ -110,8 +110,8 @@ This class of natural language processing models learns how to translate input t
 
 |Model Class |Reference |Description |
 |-|-|-|
-|Neural Machine Translation by jointly learning to align and translate|	[Bahdanau et al.](https://arxiv.org/abs/1409.0473)|Aims to build a single neural network that can be jointly tuned to maximize the translation performance. The model belongs to a family of encoder-decoders and consists of an encoder that encodes a source sentence into a fixed-length vector from which a decoder generates a translation. <br>[contribute](contribute.md)|
-|Google's Neural Machine Translation System|	[Wu et al.](https://arxiv.org/abs/1609.08144)|This model helps to improve issues faced by the Neural Machine Translation (NMT) systems like parallelism that helps to decrease training time, accelerate the final translation speed, and the handling of rare words dividing words into a limited set of common sub-word units for both input and output.<br>[contribute](contribute.md)|
+|Neural Machine Translation by jointly learning to align and translate|	[Bahdanau et al.](https://arxiv.org/abs/1409.0473)|Aims to build a single neural network that can be jointly tuned to maximize the translation performance. <br>[contribute](contribute.md)|
+|Google's Neural Machine Translation System|	[Wu et al.](https://arxiv.org/abs/1609.08144)|This model helps to improve issues faced by the Neural Machine Translation (NMT) systems like parallelism that helps accelerate the final translation speed.<br>[contribute](contribute.md)|
 <hr>
 
 ### Language Modelling <a name="language"/>
