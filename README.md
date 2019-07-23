@@ -29,7 +29,8 @@ This collection of models take images as input, then classifies the major object
 
 |Model Class |Reference |Description |
 |-|-|-|
-|<b>[MobileNet](vision/classification/mobilenet)</b>|[Sandler et al.](https://arxiv.org/abs/1801.04381)|Light-weight deep neural network best suited for mobile and embedded vision applications.|
+|<b>[MobileNet](vision/classification/mobilenet)</b>|[Sandler et al.](https://arxiv.org/abs/1801.04381)|Light-weight deep neural network best suited for mobile and embedded vision applications. 
+Top-5 error from paper - ~10%|
 |<b>[ResNet](vision/classification/resnet)</b>|[He et al.](https://arxiv.org/abs/1512.03385)|A CNN model (up to 152 layers). Uses shortcut connections to achieve higher accuracy when classifying images.|
 |<b>[SqueezeNet](vision/classification/squeezenet)</b>|[Iandola et al.](https://arxiv.org/abs/1602.07360)|A light-weight CNN model providing AlexNet level accuracy with 50x fewer parameters.|
 |<b>[VGG](vision/classification/vgg)</b>|[Simonyan et al.](https://arxiv.org/abs/1409.1556)|Deep CNN model(up to 19 layers). Classifies images into 1000 object categories such as keyboard, mouse, pencil, and many animals. |
