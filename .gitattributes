@@ -1,1 +1,11 @@
 *.onnx filter=lfs diff=lfs merge=lfs -text
+<<<<<<< HEAD
+=======
+*.pb filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.tar filter=lfs diff=lfs merge=lfs -text
+*.gz filter=lfs diff=lfs merge=lfs -text
+*.pkl filter=lfs diff=lfs merge=lfs -text
+*.tar.gz filter=lfs diff=lfs merge=lfs -text
+*.tgz filter=lfs diff=lfs merge=lfs -text
+>>>>>>> 91a1300c62026e5d404646338bb40433dde36e19
