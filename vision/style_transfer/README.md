@@ -3,7 +3,9 @@
 ## Use-cases
 This artistic style transfer model mixes the content of an image with the style of another image. Below are examples of style transfer models. Each model transfers a unique style to a photograph of a door arch.  
 
-[<img src="images/input_images/amber.jpg">](images/style_images/amber.jpg)
+<p align="center">
+  <img src="images/input_images/amber.jpg" width="50%" height="50%">
+</p>
 
 |Model        |Mosaic  |Candy  | Rain Princess |Udnie  |Pointilism|
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
