@@ -13,13 +13,13 @@ The model uses the method described in [Perceptual Losses for Real-Time Style Tr
   
 
 ## Model
- |Model        |Download  |Checksum| Download (with sample test data)|ONNX version|Opset version|Accuracy |
-|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|Mosaic|ONNX Model download link with size  | MD5 checksum for the ONNX model| tar file containing ONNX model and synthetic test data (in .pb format)|ONNX version used for conversion| Opset version used for conversion|Accuracy values |
-|Candy|ONNX Model download link with size  | MD5 checksum for the ONNX model| tar file containing ONNX model and synthetic test data (in .pb format)|ONNX version used for conversion| Opset version used for conversion|Accuracy values |
-|Rain Princess|ONNX Model download link with size  | MD5 checksum for the ONNX model| tar file containing ONNX model and synthetic test data (in .pb format)|ONNX version used for conversion| Opset version used for conversion|Accuracy values | 
-|Udnie|ONNX Model download link with size  | MD5 checksum for the ONNX model| tar file containing ONNX model and synthetic test data (in .pb format)|ONNX version used for conversion| Opset version used for conversion|Accuracy values |
-|Pointilism|ONNX Model download link with size  | MD5 checksum for the ONNX model| tar file containing ONNX model and synthetic test data (in .pb format)|ONNX version used for conversion| Opset version used for conversion|Accuracy values |
+ |Model        |Download  |Checksum| Download (with sample test data)|ONNX version|Opset version|
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|Mosaic|[6,571kb](models/mosaic.onnx)  | MD5 checksum for the ONNX model| tar file containing ONNX model and synthetic test data (in .pb format)|1.5.0|9|
+|Candy|[6,571kb](models/candy.onnx)  | MD5 checksum for the ONNX model| tar file containing ONNX model and synthetic test data (in .pb format)|1.5.0|9|
+|Rain Princess|[6,571kb](models/rain_princess.onnx)  | MD5 checksum for the ONNX model| tar file containing ONNX model and synthetic test data (in .pb format)|1.5.0|9|
+|Udnie|[6,571kb](models/udnie.onnx)  | MD5 checksum for the ONNX model| tar file containing ONNX model and synthetic test data (in .pb format)|1.5.0|9|
+|Pointilism|[6,571kb](models/pointilism.onnx)  | MD5 checksum for the ONNX model| tar file containing ONNX model and synthetic test data (in .pb format)|1.5.0|9|
 <hr>
 
 ## Inference
