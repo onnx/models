@@ -13,55 +13,63 @@ The model uses the method described in [Perceptual Losses for Real-Time Style Tr
   
 
 ## Model
- |Model        |Download  |Checksum| Download (with sample test data)|ONNX version|Opset version|
+ |Model        |Download  |MD5 Checksum| Download (with sample test data)|ONNX version|Opset version|
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|Mosaic|[6,571kb](models/mosaic.onnx)  | MD5 checksum for the ONNX model| tar file containing ONNX model and synthetic test data (in .pb format)|1.5.0|9|
-|Candy|[6,571kb](models/candy.onnx)  | MD5 checksum for the ONNX model| tar file containing ONNX model and synthetic test data (in .pb format)|1.5.0|9|
-|Rain Princess|[6,571kb](models/rain_princess.onnx)  | MD5 checksum for the ONNX model| tar file containing ONNX model and synthetic test data (in .pb format)|1.5.0|9|
-|Udnie|[6,571kb](models/udnie.onnx)  | MD5 checksum for the ONNX model| tar file containing ONNX model and synthetic test data (in .pb format)|1.5.0|9|
-|Pointilism|[6,571kb](models/pointilism.onnx)  | MD5 checksum for the ONNX model| tar file containing ONNX model and synthetic test data (in .pb format)|1.5.0|9|
+|Mosaic|[6,571 KB](models/mosaic.onnx)  | 39f0d4d12cf758a7aa31eb150d66244a| [16,703 KB](models/transform_mosaic.tar.gz)|1.5.0|9|
+|Candy|[6,571 KB](models/candy.onnx)  | ef6b9b26d2821ee0c082f229b2e6efcd| [16,768 KB](models/transform_candy.tar.gz)|1.5.0|9|
+|Rain Princess|[6,571 KB](models/rain_princess.onnx)  | 8253cf9670bb24b38152bd71de5571f1|[16,829 KB](models/transform_rain_princess.tar.gz)|1.5.0|9|
+|Udnie|[6,571 KB](models/udnie.onnx)  | f3797cf0dd731c83b307ffa76aed2e67| [16,765 KB](models/transform_udnie.tar.gz)|1.5.0|9|
+|Pointilism|[6,571 KB](models/pointilism.onnx)  | e3241660ecd9f14a671d7229bf18cbd1| [16,741 KB](models/transform_pointilism.tar.gz)|1.5.0|9|
 <hr>
 
 ## Inference
-Step by step instructions on how to use the pretrained model and link to an example notebook/code. This section should ideally contain:
+Refer to [fns-pytorch-to-onnx.ipynb](fns-pytorch-to-onnx.ipynb) for detailed preprocessing and postprocessing.
 
 ### Input to model
-Input to network (Example: 224x224 pixels in RGB)
+The input to the model are 3-channel RGB images. The images have to be loaded in a range of [0, 255]. If running into memory issues, try resizing the image by increasing the scale number. 
 
 ### Preprocessing steps
-Preprocessing required
+```
+from PIL import Image
+import numpy as np
+
+# loading input and resize if needed
+image = Image.open("PATH TO IMAGE")
+scale = 1 # increase the scale when running into memory issues
+image = image.resize((int(image.size[0] / scale), int(image.size[1] / scale)), Image.ANTIALIAS)
+
+# Preprocess image
+x = np.array(image).astype('float32')
+x = np.transpose(x, [2, 0, 1])
+x = np.expand_dims(x, axis=0)
+```
 
 ### Output of model
-Output of network
+The converted ONNX model outputs a NumPy float32 array of shape [10, 3, ‘height’, ‘width’). The height and width of the output image are the same as the height and width of the input image. 
 
 ### Postprocessing steps
-Post processing and meaning of output
+```
+result = np.clip(result, 0, 255)
+result = result.transpose(1,2,0).astype("uint8")
+img = Image.fromarray(result)
+```
 <hr>
 
 ## Dataset (Train and validation)
-This section should discuss datasets and any preparation steps if required.
-<hr>
-
-## Validation accuracy
-Details of experiments leading to accuracy and comparison with the reference paper.
+The original fast neural style model is from [pytorch/examples/fast_neural_style](https://github.com/pytorch/examples/tree/master/fast_neural_style). All models are trained using the [COCO 2014 Training images dataset](http://cocodataset.org/#download) [80K/13GB]. 
 <hr>
 
 ## Training
-Training details (preprocessing, hyperparameters, resources and environment) along with link to a training notebook (optional). 
-
-Also clarify in case the model is not trained from scratch and include the source/process used to obtain the ONNX model.
+Refer to [pytorch/examples/fast_neural_style](https://github.com/pytorch/examples/tree/master/fast_neural_style) for training details in PyTorch. Refer to [fns-pytorch-to-onnx.ipynb](fns-pytorch-to-onnx.ipynb) for the conversion process.
 <hr>
 
-## Validation
-Validation script/notebook used to obtain accuracy reported above along with details of how to use it and reproduce accuracy.
-<hr>
 
 ## References
-Link to references
+Original style transfer model in PyTorch: <https://github.com/pytorch/examples/tree/master/fast_neural_style>
 <hr>
 
 ## Contributors
-Contributors' name
+[Jennifer Wang](https://github.com/jennifererwangg)
 <hr>
 
 ## License
