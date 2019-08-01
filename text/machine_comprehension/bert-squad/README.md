@@ -9,7 +9,7 @@ BERT (Bidirectional Encoder Representations from Transformers) applies Transform
 ## Model
 
  |Model        |Download  |Checksum|Download (with sample test data)| ONNX version |Opset version|Dependencies| 
-|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 |BERT-Squad| [393,930 KB](model/bert.onnx)  |dc59794145b4a37995a2667370dc3d6f |  [78 KB](model/saved_model.pb.gz) |  1.5.2  | 8| [tokenization.py](dependencies/tokenization.py) [run_onnx_squad.py](dependencies/run_onnx_squad.py)  | 
 
 ## Inference
