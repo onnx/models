@@ -8,9 +8,9 @@ Super Resolution uses efficient  [Sub-pixel convolutional layer](https://arxiv.o
 
 ## Model
 
- |Model        |Download  |Checksum|Download (with sample test data)| ONNX version |
-|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|MobileNet v2-1.0|    [240 KB](super_resolution_tutorial.onnx)  |[MD5](super_resolution-md5.txt)  |  [7.6 MB](super_resolution_test_image.gz) |  1.5.0  |
+ |Model      |Download  |Checksum|Download (with sample test data)| ONNX version |
+|-------------|:--------------|:--------------|:--------------|:--------------|
+|Super_Resolution v1|    [240 KB](super_resolution_tutorial.onnx)  |[MD5](super_resolution-md5.txt)  |  [7.6 MB](super_resolution_test_image.gz) |  1.5.0  |
 
 ## Inference
 
