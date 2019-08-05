@@ -50,7 +50,7 @@ x = np.expand_dims(x, axis=0)
 ```
 
 ### Output of model
-The converted ONNX model outputs a NumPy float32 array of shape [1, 3, ‘height’, ‘width’). The height and width of the output image are the same as the height and width of the input image. 
+The converted ONNX model outputs a NumPy float32 array of shape [1, 3, ‘height’, ‘width’]. The height and width of the output image are the same as the height and width of the input image. 
 
 ### Postprocessing steps
 ```
