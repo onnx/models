@@ -16,7 +16,7 @@ BERT (Bidirectional Encoder Representations from Transformers) applies Transform
 We used onnxruntime to preform the inference. 
 
 ### Input 
-Uses WordPiece tokenisation method to split the input text into list of tokens that are available in the vocabulary (30,522 words).
+Uses WordPiece tokenisation method to split the input paragraph and questions into list of tokens that are available in the vocabulary (30,522 words).
 Then converts these tokens into features
 <li>input_ids: list of numerical ids for the tokenised text
 <li>input_mask: will be set to 1 for real tokens and 0 for the padding tokens
@@ -24,6 +24,37 @@ Then converts these tokens into features
 <li>label_ids: one-hot encoded labels for the text
 
 ### Preprocessing
+Write an inputs.json file that includes the context paragraph and questions. 
+```python
+%%writefile inputs.json
+{
+  "version": "1.4",
+  "data": [
+    {
+      "paragraphs": [
+        {
+          "context": "In its early years, the new convention center failed to meet attendance and revenue expectations.[12] By 2002, many Silicon Valley businesses were choosing the much larger Moscone Center in San Francisco over the San Jose Convention Center due to the latter's limited space. A ballot measure to finance an expansion via a hotel tax failed to reach the required two-thirds majority to pass. In June 2005, Team San Jose built the South Hall, a $6.77 million, blue and white tent, adding 80,000 square feet (7,400 m2) of exhibit space",
+          "qas": [
+            {
+              "question": "where is the businesses choosing to go?",
+              "id": "1"
+            },
+            {
+              "question": "how may votes did the ballot measure need?",
+              "id": "2"
+            },
+            {
+              "question": "By what year many Silicon Valley businesses were choosing the Moscone Center?",
+              "id": "3"
+            }
+          ]
+        }
+      ],
+      "title": "Conference Center"
+    }
+  ]
+}
+```
 Get parameters and convert input examples into features
 ```python
 # preprocess input 
@@ -48,7 +79,7 @@ input_ids, input_mask, segment_ids, extra_data = convert_examples_to_features(ev
 ```
 
 ### Output
-Given a question and a context paragraph, the model predicts a start and an end token from the paragraph that most likely answers the questions. Computes a start vector and a final transformer output for each token. 
+For each question about the context paragraph, the model predicts a start and an end token from the paragraph that most likely answers the questions.
 
 ### Postprocessing
 Write the predictions (answers to the questions) in a file. 
