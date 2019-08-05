@@ -112,4 +112,4 @@ Fine-tuned the model using SQuAD-1.1 dataset. Look at [BertTutorial.ipynb](https
 [Kundana Pillari](https://github.com/kundanapillari)
 
 ## License
-Add License information
+Apache 2.0
