@@ -51,7 +51,7 @@ Postprocessing involves converting the array of pixels into an image that is sca
 
 
 ## Dataset
-This example trains a super-resolution network on the [BSD300 Dataset](https://github.com/pytorch/examples/tree/master/super_resolution) , using crops from the 200 training images, and evaluating on crops of the 100 test images.
+This model has been trained on the [BSD300 Dataset](https://github.com/pytorch/examples/tree/master/super_resolution) , using crops from the 200 training images.
 
 ## Training
 View the  [training notebook](https://github.com/pytorch/examples/tree/master/super_resolution) to understand details for parameters and network for SuperResolution
