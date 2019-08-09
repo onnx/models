@@ -10,7 +10,7 @@ BERT (Bidirectional Encoder Representations from Transformers) applies Transform
 
  |Model        |Download  |Checksum|Download (with sample test data)| ONNX version |Opset version|Dependencies| 
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-|BERT-Squad| [393,930 KB](model/bert.onnx)  |[MD5](BERT-md5.txt) |  [932 KB](model/saved_model.pb) |  1.5.2  | 8| [tokenization.py](dependencies/tokenization.py) [run_onnx_squad.py](dependencies/run_onnx_squad.py)  | 
+|BERT-Squad| [393,930 KB](model/bert.onnx.tar.gz)  |[MD5](BERT-md5.txt) |  [394,117 KB](model/download_sample.tar.gz) |  1.5.2  | 8| [tokenization.py](dependencies/tokenization.py) [run_onnx_squad.py](dependencies/run_onnx_squad.py)  | 
 
 ## Inference
 We used onnxruntime to perform the inference. 
