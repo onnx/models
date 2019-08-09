@@ -13,7 +13,7 @@ BERT (Bidirectional Encoder Representations from Transformers) applies Transform
 |BERT-Squad| [393,930 KB](model/bert.onnx)  |[MD5](BERT-md5.txt) |  [932 KB](model/saved_model.pb) |  1.5.2  | 8| [tokenization.py](dependencies/tokenization.py) [run_onnx_squad.py](dependencies/run_onnx_squad.py)  | 
 
 ## Inference
-We used onnxruntime to preform the inference. 
+We used onnxruntime to perform the inference. 
 
 ### Input 
 Uses WordPiece tokenisation method to split the input paragraph and questions into list of tokens that are available in the vocabulary (30,522 words).
@@ -98,7 +98,7 @@ write_predictions(eval_examples, extra_data, all_results,
 The model is trained with [SQuAD v1.1](https://rajpurkar.github.io/SQuAD-explorer/explore/1.1/dev/) dataset that contains 100,000+ question-answer pairs on 500+ articles. 
 
 ## Validation accuracy
-Metric is Exact Matching (EM) of 84.3, computed over SQuAD v1.1 dev data.
+Metric is Exact Matching (EM) of 80.7, computed over SQuAD v1.1 dev data.
 
 ## Training
 Fine-tuned the model using SQuAD-1.1 dataset. Look at [BertTutorial.ipynb](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/BertTutorial.ipynb) for more information for converting the model from tensorflow to onnx and for fine-tuning
