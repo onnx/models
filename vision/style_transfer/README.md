@@ -40,8 +40,8 @@ import numpy as np
 
 # loading input and resize if needed
 image = Image.open("PATH TO IMAGE")
-scale = 1 # increase the scale when running into memory issues
-image = image.resize((int(image.size[0] / scale), int(image.size[1] / scale)), Image.ANTIALIAS)
+size_reduction_factor = 1 
+image = image.resize((int(image.size[0] / size_reduction_factor), int(image.size[1] / size_reduction_factor)), Image.ANTIALIAS)
 
 # Preprocess image
 x = np.array(image).astype('float32')
