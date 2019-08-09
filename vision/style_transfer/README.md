@@ -78,5 +78,5 @@ Original style transfer model in PyTorch: <https://github.com/pytorch/examples/t
 <hr>
 
 ## License
-Add license information
+BSD-3-Clause
 <hr>
