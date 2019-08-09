@@ -1,16 +1,7 @@
 # Fast Neural Style Transfer
 
 ## Use-cases
-This artistic style transfer model mixes the content of an image with the style of another image. Below are examples of style transfer models. Each model transfers a unique style to a photograph of a door arch.  
-
-<p align="center">
-  <img src="images/input_images/amber.jpg" width="50%" height="50%">
-</p>
-
-|Model        |Mosaic  |Candy  | Rain Princess |Udnie  |Pointilism|
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-|Style Images       |[<img src="images/style_images/mosaic.jpg">](images/style_images/mosaic.jpg)| [<img src="images/style_images/candy.jpg">](images/style_images/candy.jpg)|[<img src="images/style_images/rain_princess.jpg">](images/style_images/rain_princess.jpg)| [<img src="images/style_images/udnie.jpg">](images/style_images/udnie.jpg)| [<img src="images/style_images/pointilism.jpg">](images/style_images/pointilism.jpg)|
-|Output Image      |[<img src="images/output_images/amber_mosaic.jpg">](images/style_images/amber_mosaic.jpg)| [<img src="images/output_images/amber_candy.jpg">](images/style_images/amber_candy.jpg)|[<img src="images/output_images/amber_rain_princess.jpg">](images/style_images/amber_rain_princess.jpg)| [<img src="images/output_images/amber_udnie.jpg">](images/style_images/amber_udnie.jpg)|[<img src="images/output_images/amber_pointilism.jpg">](images/style_images/amber_pointilism.jpg)|
+This artistic style transfer model mixes the content of an image with the style of another image. Examples of the styles can be seen [here](https://github.com/pytorch/examples/tree/master/fast_neural_style#models).
 
 
 ## Description
