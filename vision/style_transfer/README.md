@@ -20,11 +20,11 @@ The model uses the method described in [Perceptual Losses for Real-Time Style Tr
 ## Model
  |Model        |Download  |MD5 Checksum| Download (with sample test data)|ONNX version|Opset version|
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|Mosaic|[6,571 KB](models/mosaic.onnx)  | 39f0d4d12cf758a7aa31eb150d66244a| [7,162 KB](models/mosaic.tar.gz)|1.5.0|9|
-|Candy|[6,571 KB](models/candy.onnx)  | ef6b9b26d2821ee0c082f229b2e6efcd| [7,167 KB](models/candy.tar.gz)|1.5.0|9|
-|Rain Princess|[6,571 KB](models/rain_princess.onnx)  | 8253cf9670bb24b38152bd71de5571f1|[7,173 KB](models/rain_princess.tar.gz)|1.5.0|9|
-|Udnie|[6,571 KB](models/udnie.onnx)  | f3797cf0dd731c83b307ffa76aed2e67| [7,167 KB](models/udnie.tar.gz)|1.5.0|9|
-|Pointilism|[6,571 KB](models/pointilism.onnx)  | e3241660ecd9f14a671d7229bf18cbd1| [7,164 KB](models/pointilism.tar.gz)|1.5.0|9|
+|Mosaic|[6.6 MB](models/mosaic.onnx)  | 39f0d4d12cf758a7aa31eb150d66244a| [7.2 MB](models/mosaic.tar.gz)|1.4|9|
+|Candy|[6.6 MB](models/candy.onnx)  | ef6b9b26d2821ee0c082f229b2e6efcd| [7.2 MB](models/candy.tar.gz)|1.4|9|
+|Rain Princess|[6.6 MB](models/rain_princess.onnx)  | 8253cf9670bb24b38152bd71de5571f1|[7.2 MB](models/rain_princess.tar.gz)|1.4|9|
+|Udnie|[6.6 MB](models/udnie.onnx)  | f3797cf0dd731c83b307ffa76aed2e67| [7.2 MB](models/udnie.tar.gz)|1.4|9|
+|Pointilism|[6.6 MB](models/pointilism.onnx)  | e3241660ecd9f14a671d7229bf18cbd1| [7.2 MB](models/pointilism.tar.gz)|1.4|9|
 <hr>
 
 ## Inference
