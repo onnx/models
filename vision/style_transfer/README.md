@@ -1,4 +1,4 @@
-# Fast Neural Style
+# Fast Neural Style Transfer
 
 ## Use-cases
 This artistic style transfer model mixes the content of an image with the style of another image. Below are examples of style transfer models. Each model transfers a unique style to a photograph of a door arch.  
