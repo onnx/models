@@ -103,7 +103,7 @@ write_predictions(eval_examples, extra_data, all_results,
 The model is trained with [SQuAD v1.1](https://rajpurkar.github.io/SQuAD-explorer/explore/1.1/dev/) dataset that contains 100,000+ question-answer pairs on 500+ articles. 
 
 ## Validation accuracy
-Metric is Exact Matching (EM) of 80.7, computed over SQuAD v1.1 dev data for this onnx model. 
+Metric is Exact Matching (EM) of 80.7, computed over SQuAD v1.1 dev data, for this onnx model. 
 
 ## Training
 Fine-tuned the model using SQuAD-1.1 dataset. Look at [BertTutorial.ipynb](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/BertTutorial.ipynb) for more information for converting the model from tensorflow to onnx and for fine-tuning
