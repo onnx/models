@@ -13,7 +13,7 @@ BERT (Bidirectional Encoder Representations from Transformers) applies Transform
 |BERT-Squad| [393 MB](model/bert.onnx.tar.gz)  |[MD5](BERT-md5.txt) |  [394 KB](model/download_sample.tar.gz) |  1.3 | 8| [tokenization.py](dependencies/tokenization.py) [run_onnx_squad.py](dependencies/run_onnx_squad.py)  | 
 
 ## Inference
-We used ONNX Runtime to perform the inference. 
+We used [ONNX Runtime] (https://github.com/microsoft/onnxruntime) to perform the inference. 
 
 ### Input 
 Uses WordPiece tokenisation method to split the input paragraph and questions into list of tokens that are available in the vocabulary (30,522 words).
