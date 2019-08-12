@@ -19,7 +19,7 @@ The model uses the method described in [Perceptual Losses for Real-Time Style Tr
 <hr>
 
 ## Inference
-Refer to [fns-pytorch-to-onnx.ipynb](fns-pytorch-to-onnx.ipynb) for detailed preprocessing and postprocessing.
+Refer to [style-transfer-ort.ipynb](style-transfer-ort.ipynb) for detailed preprocessing and postprocessing.
 
 ### Input to model
 The input to the model are 3-channel RGB images. The images have to be loaded in a range of [0, 255]. If running into memory issues, try resizing the image by increasing the scale number. 
@@ -56,7 +56,7 @@ The original fast neural style model is from [pytorch/examples/fast_neural_style
 <hr>
 
 ## Training
-Refer to [pytorch/examples/fast_neural_style](https://github.com/pytorch/examples/tree/master/fast_neural_style) for training details in PyTorch. Refer to [fns-pytorch-to-onnx.ipynb](fns-pytorch-to-onnx.ipynb) for the conversion process.
+Refer to [pytorch/examples/fast_neural_style](https://github.com/pytorch/examples/tree/master/fast_neural_style) for training details in PyTorch. 
 <hr>
 
 
