@@ -8,23 +8,18 @@ BERT (Bidirectional Encoder Representations from Transformers) applies Transform
 
 ## Model
 
- |Model |Download  |Checksum|Download (with sample test data)| ONNX version |Opset version | 
+ |Model        |Download  |Checksum|Download (with sample test data)| ONNX version |Opset version|Dependencies| 
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-|BERT-Squad| [393 MB](model/bert8.onnx.tar.gz)  |[MD5](BERT8-md5.txt) |  [788 MB](model/download_sample_8.tar.gz) |  1.3 | 8|
-|BERT-Squad| [393 MB](model/bert10.onnx.tar.gz)  |[MD5](BERT10-md5.txt) |  [788 MB](model/download_sample_10.tar.gz) |  1.5 | 10| 
-
-Dependencies
- * [tokenization.py](dependencies/tokenization.py)  
- * [run_onnx_squad.py](dependencies/run_onnx_squad.py)  
+|BERT-Squad| [393 MB](model/bert.onnx.tar.gz)  |[MD5](BERT-md5.txt) |  [394 KB](model/download_sample.tar.gz) |  1.5 | 10| [tokenization.py](dependencies/tokenization.py) [run_onnx_squad.py](dependencies/run_onnx_squad.py)  | 
 
 ## Inference
-We used [ONNX Runtime](https://github.com/microsoft/onnxruntime) to perform the inference. 
+We used [ONNX Runtime] (https://github.com/microsoft/onnxruntime) to perform the inference. 
 
 ### Input 
-The input is a paragraph and questions relating to that paragraph. The model uses WordPiece tokenisation method to split the input paragraph and questions into list of tokens that are available in the vocabulary (30,522 words).
+Uses WordPiece tokenisation method to split the input paragraph and questions into list of tokens that are available in the vocabulary (30,522 words).
 Then converts these tokens into features
 <li>input_ids: list of numerical ids for the tokenised text
-<li>input_mask: will be set to 1 for real tokens and 0 for       the padding tokens
+<li>input_mask: will be set to 1 for real tokens and 0 for the padding tokens
 <li>segment_ids: for our case, this will be set to the list of ones
 <li>label_ids: one-hot encoded labels for the text
 
@@ -103,7 +98,7 @@ write_predictions(eval_examples, extra_data, all_results,
 The model is trained with [SQuAD v1.1](https://rajpurkar.github.io/SQuAD-explorer/explore/1.1/dev/) dataset that contains 100,000+ question-answer pairs on 500+ articles. 
 
 ## Validation accuracy
-Metric is Exact Matching (EM) of 80.7, computed over SQuAD v1.1 dev data for this onnx model. 
+Metric is Exact Matching (EM) of 80.7, computed over SQuAD v1.1 dev data.
 
 ## Training
 Fine-tuned the model using SQuAD-1.1 dataset. Look at [BertTutorial.ipynb](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/BertTutorial.ipynb) for more information for converting the model from tensorflow to onnx and for fine-tuning
