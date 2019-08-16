@@ -56,11 +56,7 @@ The original fast neural style model is from [pytorch/examples/fast_neural_style
 <hr>
 
 ## Training
-<<<<<<< HEAD:vision/style_transfer/README.md
-Refer to [pytorch/examples/fast_neural_style](https://github.com/pytorch/examples/tree/master/fast_neural_style) for training details in PyTorch. Refer to [conversion.ipynb](conversion.ipynb) for detailed conversion process.
-=======
 Refer to [pytorch/examples/fast_neural_style](https://github.com/pytorch/examples/tree/master/fast_neural_style) for training details in PyTorch. 
->>>>>>> 8450a58309179f6cf1d5556c0f3ae730df11bb9b:vision/style_transfer/fast_neural_style/README.md
 <hr>
 
 
