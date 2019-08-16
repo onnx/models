@@ -85,7 +85,11 @@ Image manipulation models use neural networks to transform input images to modif
 |-|-|-|
 |Unpaired Image to Image Translation using Cycle consistent Adversarial Network|[Zhu et al.](https://arxiv.org/abs/1703.10593)|The model uses learning to translate an image from a source domain X to a target domain Y in the absence of paired examples. <br>[contribute](contribute.md)|
 |Image Super resolution using deep convolutional networks |	[Dong et al.](http://ieeexplore.ieee.org/document/7115171/?reload=true)	|A deep CNN that takes low-resolution image as the input and outputs the high-resolution one. Fast speed for restoration quality. <br>[contribute](contribute.md)|
+<<<<<<< HEAD
 |[Fast Neural Style Transfer](vision/style_transfer) |	[Johnson et al.](https://arxiv.org/abs/1603.08155)	|This method uses a loss network pretrained for image classification to define perceptual loss functions that measure perceptual differences in content and style between images. The loss network remains fixed during the training process. Compared to the optimization-based method,the network gives similar qualitative results but is three times faster.|
+=======
+|[Fast Neural Style Transfer](vision/style_transfer) |	[Johnson et al.](https://arxiv.org/abs/1603.08155)	|This method uses a loss network pretrained for image classification to define perceptual loss functions that measure perceptual differences in content and style between images. The loss network remains fixed during the training process.|
+>>>>>>> 8450a58309179f6cf1d5556c0f3ae730df11bb9b
 <hr>
 
 ### Speech & Audio Processing <a name="speech"/>
@@ -104,6 +108,7 @@ This subset of natural language processing models that answer questions about a 
 |Model Class |Reference |Description |
 |-|-|-|
 |<b>[Bidirectional Attention Flow](text/machine_comprehension/bidirectional_attention_flow)</b>|[Seo et al.](https://arxiv.org/pdf/1611.01603)|A model that answers a query about a given context paragraph.|
+|<b>[BERT-Squad](text/machine_comprehension/bert-squad)</b>|[Devlin et al.](https://arxiv.org/pdf/1810.04805.pdf)|This model answers questions based on the context of the given input paragraph. |
 <hr>
 
 ### Machine Translation <a name="machine_translation"/>
