@@ -84,7 +84,7 @@ Image manipulation models use neural networks to transform input images to modif
 |Model Class |Reference |Description |
 |-|-|-|
 |Unpaired Image to Image Translation using Cycle consistent Adversarial Network|[Zhu et al.](https://arxiv.org/abs/1703.10593)|The model uses learning to translate an image from a source domain X to a target domain Y in the absence of paired examples. <br>[contribute](contribute.md)|
-|Image Super resolution using deep convolutional networks |	[Dong et al.](http://ieeexplore.ieee.org/document/7115171/?reload=true)	|A deep CNN that takes low-resolution image as the input and outputs the high-resolution one. Fast speed for restoration quality. <br>[contribute](contribute.md)|
+|[Image Super resolution using deep convolutional networks](vision/super_resolution/sub_pixel_cnn_2016) |	[Dong et al.](http://ieeexplore.ieee.org/document/7115171/?reload=true)	|A deep CNN that takes low-resolution image as the input and outputs the high-resolution one. Fast speed for restoration quality. |
 <hr>
 
 ### Speech & Audio Processing <a name="speech"/>
