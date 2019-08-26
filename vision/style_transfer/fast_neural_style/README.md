@@ -23,8 +23,6 @@ The model uses the method described in [Perceptual Losses for Real-Time Style Tr
 |Pointilism|[6.6 MB](models/opset8/pointilism.onnx)  | a188752e35eaf7c77381601151c63bb4| [7.2 MB](models/opset8/pointilism.tar.gz)|1.4|8|
 <hr>
 
-
-
 ## Inference
 Refer to [style-transfer-ort.ipynb](style-transfer-ort.ipynb) for detailed preprocessing and postprocessing.
 
