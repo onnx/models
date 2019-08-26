@@ -78,10 +78,8 @@ Image manipulation models use neural networks to transform input images to modif
 |Model Class |Reference |Description |
 |-|-|-|
 |Unpaired Image to Image Translation using Cycle consistent Adversarial Network|[Zhu et al.](https://arxiv.org/abs/1703.10593)|The model uses learning to translate an image from a source domain X to a target domain Y in the absence of paired examples. <br>[contribute](contribute.md)|
-
-|<b>[Super Resolution with sub-pixel CNN](vision/super_resolution/sub_pixel_cnn_2016)</b> |	[Shi et al.](https://arxiv.org/abs/1609.05158)	|A deep CNN that takes low-resolution image as the input and outputs the high-resolution one. Fast speed for restoration quality. |
+|<b>[Super Resolution with sub-pixel CNN](vision/super_resolution/sub_pixel_cnn_2016)</b> |	[Shi et al.](https://arxiv.org/abs/1609.05158)	|A deep CNN that uses sub-pixel convolution layers to upscale the input image. |
 |<b>[Fast Neural Style Transfer](vision/style_transfer)</b> |	[Johnson et al.](https://arxiv.org/abs/1603.08155)	|This method uses a loss network pretrained for image classification to define perceptual loss functions that measure perceptual differences in content and style between images. The loss network remains fixed during the training process.|
-
 <hr>
 
 ### Speech & Audio Processing <a name="speech"/>
