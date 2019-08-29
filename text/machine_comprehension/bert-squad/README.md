@@ -10,8 +10,8 @@ BERT (Bidirectional Encoder Representations from Transformers) applies Transform
 
  |Model        |Download  |Checksum|Download (with sample test data)| ONNX version |Opset version|
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | 
-|BERT-Squad| [393 MB](model/bertsquad8.onnx.tar.gz)  |[MD5](BERT-md5-8.txt) |  [394 MB](model/download_sample_8.tar.gz) |  1.3 | 8|
-|BERT-Squad| [393 MB](model/bertsquad10.onnx.tar.gz)  |[MD5](BERT-md5-10.txt) |  [394 MB](model/download_sample_10.tar.gz) |  1.5 | 10| 
+|BERT-Squad| [393 MB](model/bertsquad8.onnx)  |[MD5](BERT-md5-8.txt) |  [394 MB](model/download_sample_8.tar.gz) |  1.3 | 8|
+|BERT-Squad| [393 MB](model/bertsquad10.onnx)  |[MD5](BERT-md5-10.txt) |  [394 MB](model/download_sample_10.tar.gz) |  1.5 | 10| 
 
 Dependencies
 * [tokenization.py](dependencies/tokenization.py)
