@@ -159,7 +159,7 @@ import numpy as np
 import onnx
 import os
 import glob
-import onnx_backend as backend
+from onnx.backend.base import Backend as backend
 
 from onnx import numpy_helper
 
@@ -199,7 +199,7 @@ for ref_o, o in zip(ref_outputs, outputs):
 ```python
 import numpy as np
 import onnx
-import onnx_backend as backend
+from onnx.backend.base import Backend as backend
 
 # Load the model and sample inputs and outputs
 model = onnx.load(model_pb_path)
