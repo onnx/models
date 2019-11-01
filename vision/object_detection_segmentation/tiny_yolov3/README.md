@@ -86,7 +86,7 @@ mAP of 0.331 based on original tiny Yolov3 model [here](https://pjreddie.com/dar
 <hr>
 
 ## Publication/Attribution
-Joseph Redmon, Ali Farhadi. YOLOv3: An Incremental Improvement, [paper](https://pjreddie.com/media/files/papers/YOLOv3.pdf)
+Joseph Redmon, Ali Farhadi. YOLOv3: An Incremental Improvement, [paper](https://arxiv.org/pdf/1804.02767.pdf)
 
 <hr>
 
