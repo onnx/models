@@ -7,7 +7,7 @@ This model is a neural network for real-time object detection that detects 80 di
 
 |Model        |Download  |Checksum|Download (with sample test data)|ONNX version|Opset version|Accuracy |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|Tiny YOLOv3       |[34 MB](https://onnxzoo.blob.core.windows.net/models/opset_11/tiny_yolov3/yolov3-tiny.onnx) | [MD5](https://onnxzoo.blob.core.windows.net/models/opset_11/tiny_yolov3/yolov3-tiny-md5.txt) |[33 MB](https://onnxzoo.blob.core.windows.net/models/opset_11/tiny_yolov3/yolov3-tiny.tar.gz)|1.6 |11 |mAP of 0.331 |
+|Tiny YOLOv3       |[34 MB](https://github.com/onnx/models/blob/master/vision/object_detection_segmentation/tiny_yolov3/model/yolov3-tiny.onnx) | [MD5](https://github.com/onnx/models/blob/master/vision/object_detection_segmentation/tiny_yolov3/yolov3-tiny-md5.txt) |[33 MB](https://github.com/onnx/models/blob/master/vision/object_detection_segmentation/tiny_yolov3/model/yolov3-tiny.tar.gz)|1.6 |11 |mAP of 0.331 |
 
 
 
