@@ -17,13 +17,9 @@ Transformer-based language model for text generation.
 
 ### Input to model
 Sequence of words as a string. Example: "Here is some text to encode : Hello World", tokenized by Byte-Pair-Encoding.
-**input_ids**: Indices of input tokens in the vocabulary.
-**past**: precomputed hidden-states
-Other optional inputs to the model are:
-**attention_mask**: Mask tensor that has a value of 1 for real input tokens and 0 for padding tokens.
-**token_type_ids**: A parallel sequence of tokens (can be used to indicate various portions of the inputs).
-**position_ids**: Indices of tokens in the position embeddings.
-**head_mask**: Mask tensor that has a value of 1 when head is not maked, and 0 when head is masked.
+**input_ids**: Indices of input tokens in the vocabulary. It's a long tensor of dynamic shape (batch_size, sequence_length).
+
+
 
 ### Preprocessing steps
 Use ```tokenizer.encode()``` to encode the input text:
@@ -34,12 +30,12 @@ tokens_tensor = torch.tensor([torch.tensor(tokenizer.encode(text))])
 ```
 
 ### Output of model
-Output tuple can have different sizes depending on the configurations and inputs.
-**last_hidden_state**: Sequence of hidden-states at the last layer of the model.
-**past**: pre-computed hidden-states.
-Optional outputs are:
-**hidden_states**: Hidden-states of the model at the output of each layer
-**attentions**: Attentions weights
+**last_hidden_state**: Sequence of hidden-states at the last layer of the model. It's a float tensor of size (batch_size, sequence_length, hidden_size).
+**past**: pre-computed hidden-states. It's a list of tensors (key and values in the attention blocks) of size (batch_size, num_heads, sequence_length, sequence_length), one per each layer.
+
+Output of this model is the tuple (last_hidden_state, past)
+
+Note that output_hidden_states=False and output_attentions=False in the PretrainedConfig configs.
 
 ### Postprocessing steps
 ```python
