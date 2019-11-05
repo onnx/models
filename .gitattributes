@@ -6,4 +6,5 @@
 *.pkl filter=lfs diff=lfs merge=lfs -text
 *.tar.gz filter=lfs diff=lfs merge=lfs -text
 *.tgz filter=lfs diff=lfs merge=lfs -text
+*.tar.xz filter=lfs diff=lfs merge=lfs -text
 text/machine_comprehension/gpt-2/model/GPT2.tar.xz filter=lfs diff=lfs merge=lfs -text
