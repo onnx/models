@@ -72,5 +72,5 @@ Negin Raoof
 <hr>
 
 ## License
-Add license information
+Apache License
 <hr>
