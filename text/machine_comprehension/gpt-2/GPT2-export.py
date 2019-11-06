@@ -6,8 +6,6 @@ from transformers import GPT2Model, GPT2Tokenizer
 import numpy as np
 import os
 
-# Transformers has a unified API
-# for 8 transformer architectures and 30 pretrained weights.
 #          Model          | Tokenizer          | Pretrained weights shortcut
 MODELS = [
     (GPT2Model, GPT2Tokenizer, 'gpt2'),
@@ -110,6 +108,7 @@ def gpt2_test():
                  dynamic_axes={'input': [0, 1, 2, 3]})
 
         inference(f, input_ids_1, output_1)
+        #Test dynamic input shapes
         inference(f, input_ids_2, output_2)
 
 
