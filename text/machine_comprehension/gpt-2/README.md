@@ -14,6 +14,7 @@ Transformer-based language model for text generation.
 
 
 ## Inference
+The script for ONNX model conversion and ONNXRuntime inference is [here](https://github.com/onnx/models/blob/master/text/machine_comprehension/gpt-2/GPT2-export.py)
 
 ### Input to model
 Sequence of words as a string. Example: "Here is some text to encode : Hello World", tokenized by Byte-Pair-Encoding.
