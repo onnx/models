@@ -10,7 +10,7 @@ Transformer-based language model for text generation.
 
  |Model        |Download  |Checksum| Download (with sample test data)|ONNX version|Opset version|Accuracy |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|GPT-2       |[522.81 MB](https://onnxzoo.blob.core.windows.net/models/opset_10/GPT2/model.onnx) | [MD5](https://onnxzoo.blob.core.windows.net/models/opset_10/GPT2/gpt2-md5.txt)| [438.3 MB](https://onnxzoo.blob.core.windows.net/models/opset_10/GPT2/GPT-2.tar.gz)| 1.6 | 10 |mAP of [0.024](https://docs.google.com/spreadsheets/d/1sryqufw2D0XlUH4sq3e9Wnxu5EAQkaohzrJbd5HdQ_w/edit#gid=0)|
+|GPT-2       |[522.81 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/gpt-2/model/model.onnx) | [MD5](https://github.com/onnx/models/blob/master/text/machine_comprehension/gpt-2/model/gpt2-md5.txt)| [438.3 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/gpt-2/model/GPT-2.tar.gz)| 1.6 | 10 |mAP of [0.024](https://docs.google.com/spreadsheets/d/1sryqufw2D0XlUH4sq3e9Wnxu5EAQkaohzrJbd5HdQ_w/edit#gid=0)|
 
 
 ## Inference
