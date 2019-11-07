@@ -7,15 +7,20 @@ The ONNX Model Zoo is a collection of pre-trained, state-of-the-art models in th
 ## Models
 #### Read the [Usage](#usage-) section below for more details on the file formats in the ONNX Model Zoo (.onnx, .pb, .npz) and starter Python code for validating your ONNX model using test data.
 
+#### Vision
 * [Image Classification](#image_classification)
 * [Object Detection & Image Segmentation](#object_detection)
 * [Body, Face & Gesture Analysis](#body_analysis)
 * [Image Manipulation](#image_manipulation)
-* [Speech & Audio Processing](#speech)
+
+#### Language
 * [Machine Comprehension](#machine_comprehension)
 * [Machine Translation](#machine_translation)
 * [Language Modelling](#language)
+
+#### Other
 * [Visual Question Answering & Dialog](#visual_qna)
+* [Speech & Audio Processing](#speech)
 * [Other interesting models](#others)
 
 ### Image Classification <a name="image_classification"/>
