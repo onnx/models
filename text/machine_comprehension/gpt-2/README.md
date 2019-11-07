@@ -53,7 +53,7 @@ https://s3.amazonaws.com/models.huggingface.co/bert/gpt2-pytorch_model.bin
 <hr>
 
 ## Validation accuracy
-Metric and benchmarking details are provided by Huggigngface in this [post](https://medium.com/huggingface/benchmarking-transformers-pytorch-and-tensorflow-e2917fb891c2).
+Metric and benchmarking details are provided by HuggingFace in this [post](https://medium.com/huggingface/benchmarking-transformers-pytorch-and-tensorflow-e2917fb891c2).
 <hr>
 
 
@@ -69,5 +69,5 @@ Negin Raoof
 <hr>
 
 ## License
-Apache License
+Apache 2.0 License
 <hr>
