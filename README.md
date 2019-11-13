@@ -218,7 +218,7 @@ np.testing.assert_almost_equal(outputs, backend.run_model(model, inputs))
 ```
 
 ## Model Visualization
-You can see visualizations of each model's network architecture by using [Netron](https://lutzroeder.github.io/Netron).
+You can see visualizations of each model's network architecture by using [Netron](https://github.com/lutzroeder/Netron).
 
 ## Contributions
 Do you want to contribute a model? To get started, pick any model presented above with the [contribute](contribute.md) link under the Description column. The links point to a page containing guidelines for making a contribution.
