@@ -105,6 +105,7 @@ This subset of natural language processing models that answer questions about a 
 |-|-|-|
 |<b>[Bidirectional Attention Flow](text/machine_comprehension/bidirectional_attention_flow)</b>|[Seo et al.](https://arxiv.org/pdf/1611.01603)|A model that answers a query about a given context paragraph.|
 |<b>[BERT-Squad](text/machine_comprehension/bert-squad)</b>|[Devlin et al.](https://arxiv.org/pdf/1810.04805.pdf)|This model answers questions based on the context of the given input paragraph. |
+|<b>[GPT-2](text/machine_comprehension/gpt-2)</b>|[Radford et al.](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)|A large transformer-based language model that given a sequence of words within some text, predicts the next word. |
 <hr>
 
 ### Machine Translation <a name="machine_translation"/>
