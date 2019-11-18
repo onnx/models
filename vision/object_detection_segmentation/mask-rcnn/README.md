@@ -70,6 +70,20 @@ scores: `('nbox')`.
 
 masks: `('nbox', 1, 28, 28)`.
 
+
+
+To acquire the outputs, you need to run `onnxruntime.InferenceSession` with specified input and outputs, but you can get their names from the session object:
+
+```python
+sess = onnxruntime.InferenceSession("mask_rcnn_R_50_FPN_1x.onnx")
+input_name = sess.get_inputs()[0].name
+label_names = [output.name for output in sess.get_outputs()]
+boxes, labels, scores, masks = sess.run(
+    label_names,
+    {input_name: img_data}
+)
+```
+
 ### Postprocessing steps
 
 The following code shows how to patch the original image with detections, class annotations and segmentation, filtered by scores:
@@ -157,3 +171,4 @@ This model is converted from [facebookresearch/maskrcnn-benchmark](https://githu
 ## License
 MIT License
 <hr>
+
