@@ -16,8 +16,7 @@ MODELS = [
 data_dir = 'test_data_set_0'
 
 url, filename = ("https://github.com/pytorch/hub/raw/master/dog.jpg", "dog.jpg")
-try: urllib.URLopener().retrieve(url, filename)
-except: urllib.request.urlretrieve(url, filename)
+urllib.URLopener().retrieve(url, filename)
 
 
 def save_tensor_proto(file_path, name, data):
