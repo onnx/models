@@ -43,7 +43,7 @@ Output of this model is tensor of shape 1000, with confidence scores over Imagen
 <hr>
 
 ## Dataset (Train and Validation)
-Models are pretrainedon ImageNet.
+Models are pretrained on ImageNet.
 For training we usetrain+valset in COCO except for 5000 images from minivalset, and use the minivalset to test.
 Details of performance on COCO object detection are provided [here](https://arxiv.org/pdf/1807.11164v1.pdf)
 <hr>
