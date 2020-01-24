@@ -45,12 +45,12 @@ def save(name, model, inputs, outputs, input_names=['input'], output_names=['out
     if not os.path.exists(dir):
         os.makedirs(dir)
 
-    def f(t):
-        return [f(i) for i in t] if isinstance(t, (list, tuple)) else t
+    def make_list(t):
+        return [make_list(i) for i in t] if isinstance(t, (list, tuple)) else t
 
-    def g(t, res):
+    def update_list(t, res):
         for i in t:
-            res.append(i) if not isinstance(i, (list, tuple)) else g(i, res)
+            res.append(i) if not isinstance(i, (list, tuple)) else update_list(i, res)
         return res
 
     model_dir = os.path.join(dir, 'model.onnx')
@@ -65,10 +65,10 @@ def save(name, model, inputs, outputs, input_names=['input'], output_names=['out
     if not os.path.exists(test_data_dir):
         os.makedirs(test_data_dir)
 
-    inputs = f(inputs)
-    inputs = g(inputs, [])
-    outputs = f(outputs)
-    outputs = g(outputs, [])
+    inputs = make_list(inputs)
+    inputs = update_list(inputs, [])
+    outputs = make_list(outputs)
+    outputs = update_list(outputs, [])
 
     save_data(test_data_dir, 'input', inputs)
     save_data(test_data_dir, 'output', outputs)
