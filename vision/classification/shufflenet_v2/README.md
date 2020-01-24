@@ -13,7 +13,7 @@ Computationally efficient CNN architecture designed specifically for mobile devi
 |ShuffleNetV2 |[9.2MB](https://github.com/onnx/models/blob/master/vision/classification/shufflenet_v2/model/model.onnx) | [MD5](https://github.com/onnx/models/blob/master/vision/classification/shufflenet_v2/model/shufflenetv2-md5.txt) | [8.7MB](https://github.com/onnx/models/blob/master/vision/classification/shufflenet_v2/model/model.zip) | 1.6 | 10 | 30.64 | 11.68| 
 
 ## Inference
-The script for ONNX model conversion and ONNX Runtime inference is [here](https://github.com/onnx/models/blob/master/vision/classification/shufflenet_v2/shufflenet-export.py) 
+[This script](https://github.com/onnx/models/blob/master/vision/classification/shufflenet_v2/shufflenet-export.py) converts the model from PyTorch to ONNX and uses ONNX Runtime for inference. 
 
 ### Input to model
 Input to the model are 3-channel RGB images of shape (3 x H x W), where H and W are expected to be at least 224.
@@ -31,7 +31,7 @@ preprocess = transforms.Compose([
 ])
 input_tensor = preprocess(input_image)
 ```
-Crete a mini-batch as expected by the model
+Create a mini-batch as expected by the model.
 ```python
 input_batch = input_tensor.unsqueeze(0)
 ```
@@ -45,7 +45,7 @@ Output of this model is tensor of shape 1000, with confidence scores over Imagen
 ## Dataset (Train and Validation)
 Models are pretrained on ImageNet.
 For training we use train+valset in COCO except for 5000 images from minivalset, and use the minivalset to test.
-Details of performance on COCO object detection are provided [here](https://arxiv.org/pdf/1807.11164v1.pdf)
+Details of performance on COCO object detection are provided in [this paper](https://arxiv.org/pdf/1807.11164v1.pdf)
 <hr>
 
 ## References
