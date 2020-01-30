@@ -6,7 +6,7 @@ This model is a real-time neural network for object detection that detects 80 di
 ## Model
 |Model|Checksum|Download (with sample test data)| ONNX version |Opset version|
 |-----|:-------|:-------------------------------|:-------------|:------------|
-|YOLOv2|[MD5](https://onnxzoo.blob.core.windows.net/models/opset_1/yolov2/yolov2-md5.txt)|[58 MB](https://onnxzoo.blob.core.windows.net/models/opset_1/yolov2/yolov2.tar.gz) |1.3  |8 |
+|YOLOv2|[MD5]()|[58 MB]() |1.3  |8 |
 
 
 ### Paper
@@ -16,7 +16,7 @@ This model is a real-time neural network for object detection that detects 80 di
 The YOLOv2 model was trained on the [COCO](http://cocodataset.org/#home) dataset.
 
 ### Source
-The model was converted from a Core ML version of YOLOv2 using [WinMLTools](https://pypi.org/project/winmltools/). The source code can be found [here](https://github.com/hollance/YOLO-CoreML-MPSNNGraph). The Core ML model in turn was converted from the [original network](https://pjreddie.com/darknet/yolov2/) implemented in Darknet (via intermediate conversion through Keras) after performing modifications to fix the `merge` operator in the `route` layers of the `yolov2.cfg` file according to [the following link](https://github.com/allanzelener/YAD2K/issues/80#issuecomment-347211163).
+The model was converted to ONNX from a Core ML version of YOLOv2 using [WinMLTools](https://pypi.org/project/winmltools/). The base source code for this conversion can be found [here](https://github.com/hollance/YOLO-CoreML-MPSNNGraph). The [original network](https://pjreddie.com/darknet/yolov2/) implemented in Darknet was [modified](https://github.com/allanzelener/YAD2K/issues/80#issuecomment-347211163) to allow for conversion to Keras format. Additionally, to enable conversion to (1) Keras from Darknet format; and (2) Core ML from Keras format, modifications to layers of the `yolov2.cfg` file were required, and were performed according to [link](https://github.com/allanzelener/YAD2K/blob/master/yad2k.py).
 
 ## Inference
 ### Input
