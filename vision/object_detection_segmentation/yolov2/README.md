@@ -1,4 +1,4 @@
-# Model Name YOLOv2
+# YOLOv2
 
 ## Description
 This model is a real-time neural network for object detection that detects 80 different classes from the [COCO dataset](http://cocodataset.org/#home). For information on network architecture, see the [full YOLOv2 paper](https://pjreddie.com/darknet/yolov2/). 
