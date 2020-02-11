@@ -61,7 +61,7 @@ Metric and benchmarking details are provided by HuggingFace in this [post](https
 Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, andIlya Sutskever. Language Models are Unsupervised Multitask Learners. 2019.
 
 ## References
-This model is converted directly from [huggingface/transformers](https://github.com/huggingface/transformers/blob/master/transformers/modeling_gpt2.py)
+This model is converted directly from [huggingface/transformers](https://github.com/huggingface/transformers/blob/master/src/transformers/modeling_gpt2.py).
 <hr>
 
 ## Contributors

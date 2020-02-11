@@ -2,16 +2,22 @@ import torch
 import onnxruntime
 import onnx
 from onnx import numpy_helper
-from transformers import GPT2Model, GPT2Tokenizer
+from PIL import Image
+from torchvision import transforms
 
 import numpy as np
 import os
+import urllib
 
-#          Model          | Tokenizer          | Pretrained weights shortcut
+#           GitHub Repo    |    Model
 MODELS = [
-    (GPT2Model, GPT2Tokenizer, 'gpt2'),
+    ('pytorch/vision:v0.5.0', 'shufflenet_v2_x0_5'),
+    ('pytorch/vision:v0.5.0', 'shufflenet_v2_x1_0'),
 ]
 data_dir = 'test_data_set_0'
+
+url, filename = ("https://github.com/pytorch/hub/raw/master/dog.jpg", "dog.jpg")
+urllib.request.urlretrieve(url, filename)
 
 
 def flatten(inputs):
@@ -22,12 +28,6 @@ def update_flatten_list(inputs, res_list):
     for i in inputs:
         res_list.append(i) if not isinstance(i, (list, tuple)) else update_flatten_list(i, res_list)
     return res_list
-
-
-def to_numpy(x):
-    if type(x) is not np.ndarray:
-        x = x.detach().cpu().numpy() if x.requires_grad else x.cpu().numpy()
-    return x
 
 
 def save_tensor_proto(file_path, name, data):
@@ -94,6 +94,12 @@ def save_model(name, model, inputs, outputs, input_names=None, output_names=None
     return model_dir, test_data_dir
 
 
+def to_numpy(x):
+    if type(x) is not np.ndarray:
+        x = x.detach().cpu().numpy() if x.requires_grad else x.cpu().numpy()
+    return x
+
+
 def inference(file, inputs, outputs):
     inputs_flatten = flatten(inputs)
     inputs_flatten = update_flatten_list(inputs_flatten, [])
@@ -110,26 +116,29 @@ def inference(file, inputs, outputs):
         print("== Done ==")
 
 
-def gpt2_test():
-    for model_class, tokenizer_class, pretrained_weights in MODELS:
-        # Load pretrained model/tokenizer
-        tokenizer = tokenizer_class.from_pretrained(pretrained_weights)
-        model = model_class.from_pretrained(pretrained_weights)
+def shufflenetv2_test():
+    for github_repo, model in MODELS:
+        # Load pretrained model
+        model = torch.hub.load(github_repo, model, pretrained=True)
         model.eval()
-        # Encode text
-        # Add special tokens takes care of adding [CLS], [SEP], <s>... tokens in the right way for each model.
-        input_ids_1 = torch.tensor(
-            [[tokenizer.encode("Here is some text to encode Hello World", add_special_tokens=True)]])
-        with torch.no_grad():
-            output_1 = model(input_ids_1)  # Models outputs are now tuples
+        input_image = Image.open(filename)
+        preprocess = transforms.Compose([
+            transforms.Resize(256),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+        ])
+        input_tensor = preprocess(input_image)
+        input_1 = input_tensor.unsqueeze(0)
+        output_1 = model(input_1)
 
-        model_dir, data_dir = save_model('gpt2', model.cpu(), input_ids_1, output_1,
+        model_dir, data_dir = save_model('shufflenetv2', model.cpu(), input_1, output_1,
                                          opset_version=10,
-                                         input_names=['input1'],
-                                         dynamic_axes={'input1': [0, 1, 2, 3]})
+                                         input_names=['input'],
+                                         output_names=['output'])
 
         # Test exported model with TensorProto data saved in files
-        inputs_flatten = flatten(input_ids_1)
+        inputs_flatten = flatten(input_1)
         inputs_flatten = update_flatten_list(inputs_flatten, [])
         outputs_flatten = flatten(output_1)
         outputs_flatten = update_flatten_list(outputs_flatten, [])
@@ -152,14 +161,5 @@ def gpt2_test():
 
         inference(model_dir, inputs, outputs)
 
-        # Test exported model with a new input
-        print("== Feeding model with new input ==")
-        input_ids_2 = torch.tensor(
-              [[tokenizer.encode("Here is some alternative text to encode I love Seattle", add_special_tokens=True)]])
-        with torch.no_grad():
-            output_2 = model(input_ids_2)
 
-        inference(model_dir, input_ids_2, output_2)
-
-
-gpt2_test()
+shufflenetv2_test()
