@@ -54,7 +54,7 @@ def preprocess(img):
 image = Image.open(img_path)
 # input
 image_data = preprocess(image)
-image_size = np.array([image.size[1], image.size[0]], dtype=np.int32).reshape(1, 2)
+image_size = np.array([image.size[1], image.size[0]], dtype=np.float32).reshape(1, 2)
 ```
 
 ### Output of model
