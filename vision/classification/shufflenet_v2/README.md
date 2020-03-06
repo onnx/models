@@ -10,7 +10,7 @@ Computationally efficient CNN architecture designed specifically for mobile devi
 
 |Model        |Download  |Checksum| Download (with sample test data)|ONNX version|Opset version|Top-1 error |Top-5 error |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|ShuffleNetV2 |[9.2MB](https://github.com/onnx/models/blob/master/vision/classification/shufflenet_v2/model/model.onnx) | [MD5](https://github.com/onnx/models/blob/master/vision/classification/shufflenet_v2/model/shufflenetv2-md5.txt) | [8.7MB](https://github.com/onnx/models/blob/master/vision/classification/shufflenet_v2/model/model.zip) | 1.6 | 10 | 30.64 | 11.68| 
+|ShuffleNetV2 |[9.2MB](https://github.com/onnx/models/blob/master/vision/classification/shufflenet_v2/model/model.onnx) | [MD5](https://github.com/onnx/models/blob/master/vision/classification/shufflenet_v2/model/shufflenetv2-md5.txt) | [8.7MB](https://github.com/onnx/models/blob/master/vision/classification/shufflenet_v2/model/model.tar.gz) | 1.6 | 10 | 30.64 | 11.68| 
 
 ## Inference
 [This script](https://github.com/onnx/models/blob/master/vision/classification/shufflenet_v2/shufflenet-export.py) converts the model from PyTorch to ONNX and uses ONNX Runtime for inference. 
