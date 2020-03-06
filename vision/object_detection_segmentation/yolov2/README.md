@@ -15,7 +15,7 @@ The model was converted to ONNX from a Core ML version of YOLOv2 using [WinMLToo
 shape `(1x3x416x416)`
 
 ### Output of model
-shape `(1x425x13x13)`
+shape `(1x125x13x13)`
 
 ### Postprocessing steps
 The output is a `(125x13x13)` tensor where 13x13 is the number of grid cells that the image gets divided into. Each grid cell corresponds to 5 channels, made up of the 5 bounding boxes predicted by the grid cell and the 20 classes that describe each bounding box (`5 x (20 classes + 5) = 125`). For more information on how to derive the final bounding boxes and their corresponding confidence scores, refer to this [post](http://machinethink.net/blog/object-detection-with-yolo/).
