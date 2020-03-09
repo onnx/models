@@ -1,0 +1,2 @@
+cf11f1eceb4731f8dd39345467fe94a1  bidaf.onnx
+bc23c6241ea4b012eeb3828f0bfee596  bidaf.tar.gz
