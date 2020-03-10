@@ -1,4 +1,4 @@
-# YOLOv2
+# YOLOv2-COCO
 
 ## Description
 This model aims to detect objects in real time. It detects 80 different classes from the [COCO Datasets](http://cocodataset.org/#home). For information on network architecture, see the [author's page](https://pjreddie.com/darknet/yolov2/) and [white paper](https://arxiv.org/pdf/1612.08242.pdf).
