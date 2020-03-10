@@ -10,20 +10,20 @@ BERT (Bidirectional Encoder Representations from Transformers) applies Transform
 
  |Model        |Download  |Checksum|Download (with sample test data)| ONNX version |Opset version|
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-|BERT-Squad| [393 MB](model/bertsquad-8.onnx)  |[MD5](model/bert-md5.txt) |  [394 MB](model/bertsquad-8.tar.gz) |  1.3 | 8|
-|BERT-Squad| [393 MB](model/bertsquad-10.onnx)  |[MD5](model/bert-md5.txt) |  [394 MB](model/bertsquad-10.tar.gz) |  1.5 | 10|
+|BERT-Squad| [393 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bertsquad-8.onnx)  |[MD5](model/bert-md5.txt) |  [394 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bertsquad-8.tar.gz) |  1.3 | 8|
+|BERT-Squad| [393 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bertsquad-10.onnx)  |[MD5](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bert-md5.txt) |  [394 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bertsquad-10.tar.gz) |  1.5 | 10|
 
 Dependencies
-* [tokenization.py](dependencies/tokenization.py)
-* [run_onnx_squad.py](dependencies/run_onnx_squad.py)
+* [tokenization.py](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/dependencies/tokenization.py)
+* [run_onnx_squad.py](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/dependencies/run_onnx_squad.py)
 
 ## Inference
 We used [ONNX Runtime](https://github.com/microsoft/onnxruntime) to perform the inference.
 
 ### Input
-The input is a paragraph and questions relating to that paragraph. The model uses the WordPiece tokenisation method to split the input paragraph and questions into list of tokens that are available in the vocabulary (30,522 words).
+The input is a paragraph and questions relating to that paragraph. The model uses the WordPiece tokenization method to split the input paragraph and questions into list of tokens that are available in the vocabulary (30,522 words).
 Then converts these tokens into features
-<li>input_ids: list of numerical ids for the tokenised text
+<li>input_ids: list of numerical ids for the tokenized text
 <li>input_mask: will be set to 1 for real tokens and 0 for the padding tokens
 <li>segment_ids: for our case, this will be set to the list of ones
 <li>label_ids: one-hot encoded labels for the text

@@ -10,11 +10,11 @@ Transformer-based language model for text generation.
 
  |Model        |Download  |Checksum| Download (with sample test data)|ONNX version|Opset version|Accuracy |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|GPT-2       |[522.81 MB](model/gpt2-10.onnx) | [MD5](model/gpt2-md5.txt)| [438.3 MB](model/gpt2-10.tar.gz)| 1.6 | 10 |mAP of [0.024](https://docs.google.com/spreadsheets/d/1sryqufw2D0XlUH4sq3e9Wnxu5EAQkaohzrJbd5HdQ_w/edit#gid=0)|
+|GPT-2       |[522.81 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/gpt-2/model/gpt2-10.onnx) | [MD5](https://github.com/onnx/models/blob/master/text/machine_comprehension/gpt-2/model/gpt2-md5.txt)| [438.3 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/gpt-2/model/gpt2-10.tar.gz)| 1.6 | 10 |mAP of [0.024](https://docs.google.com/spreadsheets/d/1sryqufw2D0XlUH4sq3e9Wnxu5EAQkaohzrJbd5HdQ_w/edit#gid=0)|
 
 
 ## Inference
-The script for ONNX model conversion and ONNX Runtime inference is [here](GPT2-export.py).
+The script for ONNX model conversion and ONNX Runtime inference is [here](https://github.com/onnx/models/blob/master/text/machine_comprehension/gpt-2/GPT2-export.py).
 
 ### Input to model
 Sequence of words as a string. Example: "Here is some text to encode : Hello World", tokenized by Byte-Pair-Encoding.
