@@ -158,9 +158,9 @@ Every ONNX backend should support running the models out of the box. After downl
 - A protobuf file `model.onnx` that represents the serialized ONNX model.
 - Test data (in the form of serialized protobuf TensorProto files or serialized NumPy archives).
 
-The test data files can be used to validate ONNX models from the Model Zoo. We have provided the following interface examples for you to get started. Please replace `onnx_backend` in your code with the appropriate framework of your choice that provides ONNX inferencing support, and likewise replace `backend.run_model` with the framework's model evaluation logic. 
+### Usage - Test data starter code
 
-### Usage - Test Data formats
+The test data files can be used to validate ONNX models from the Model Zoo. We have provided the following interface examples for you to get started. Please replace `onnx_backend` in your code with the appropriate framework of your choice that provides ONNX inferencing support, and likewise replace `backend.run_model` with the framework's model evaluation logic. 
 
 There are two different formats for the test data files:
 
@@ -233,7 +233,7 @@ To download a specific model:
 To download all models:
 `git lfs pull --include="*" --exclude=""`
 
-### Usage - Model Visualization
+### Usage - Model visualization
 You can see visualizations of each model's network architecture by using [Netron](https://github.com/lutzroeder/Netron).
 
 ## Contributions
