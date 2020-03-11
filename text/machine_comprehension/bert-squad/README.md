@@ -10,8 +10,8 @@ BERT (Bidirectional Encoder Representations from Transformers) applies Transform
 
  |Model        |Download  |Checksum|Download (with sample test data)| ONNX version |Opset version|
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-|BERT-Squad| [393 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bertsquad-8.onnx)  |[MD5](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bert-md5.txt) |  [394 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bertsquad-8.tar.gz) |  1.3 | 8|
-|BERT-Squad| [393 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bertsquad-10.onnx)  |[MD5](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bert-md5.txt) |  [394 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bertsquad-10.tar.gz) |  1.5 | 10|
+|BERT-Squad| [416 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bertsquad-8.onnx)  |[MD5](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bert-md5.txt) |  [385 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bertsquad-8.tar.gz) |  1.3 | 8|
+|BERT-Squad| [416 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bertsquad-10.onnx)  |[MD5](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bert-md5.txt) |  [384 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bertsquad-10.tar.gz) |  1.5 | 10|
 
 Dependencies
 * [tokenization.py](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/dependencies/tokenization.py)
