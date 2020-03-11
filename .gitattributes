@@ -6,4 +6,3 @@
 *.pkl filter=lfs diff=lfs merge=lfs -text
 *.tar.gz filter=lfs diff=lfs merge=lfs -text
 *.tgz filter=lfs diff=lfs merge=lfs -text
-vision/object_detection_segmentation/yolov2-coco/model/yolov2_coco.onnx filter=lfs diff=lfs merge=lfs -text
