@@ -1,11 +1,13 @@
 # ONNX Model Zoo
 
-Open Neural Network Exchange (ONNX) is an open standard format for representing machine learning models. ONNX is supported by a community of partners who have implemented it in many frameworks and tools.
+[Open Neural Network Exchange (ONNX)](http://onnx.ai) is an open standard format for representing machine learning models. ONNX is supported by a community of partners who have implemented it in many frameworks and tools.
 
-The ONNX Model Zoo is a collection of pre-trained, state-of-the-art models in the [ONNX](http://onnx.ai) format contributed by community members like you. Accompanying each model are [Jupyter notebooks](http://jupyter.org) for model training and running inference with the trained model. The notebooks are written in Python and include links to the training dataset as well as references to the original paper that describes the model architecture. 
+The ONNX Model Zoo is a collection of pre-trained, state-of-the-art models in the ONNX format contributed by community members like you. Accompanying each model are [Jupyter notebooks](http://jupyter.org) for model training and running inference with the trained model. The notebooks are written in Python and include links to the training dataset as well as references to the original paper that describes the model architecture. 
+
+We are standardizing on [Git LFS (Large File Storage)](https://git-lfs.github.com/) to store our ONNX model files. To download an ONNX model, navigate to the appropriate Github page and click the `Download` button on the top right.
 
 ## Models
-#### Read the [Usage](#usage-) section below for more details on the file formats in the ONNX Model Zoo (.onnx, .pb, .npz) and starter Python code for validating your ONNX model using test data.
+#### Read the [Usage](#usage-) section below for more details on the file formats in the ONNX Model Zoo (.onnx, .pb, .npz), downloading multiple ONNX models through [Git LFS command line](#gitlfs-), and starter Python code for validating your ONNX model using test data.
 
 #### Vision
 * [Image Classification](#image_classification)
@@ -156,6 +158,8 @@ Every ONNX backend should support running the models out of the box. After downl
 - A protobuf file `model.onnx` that represents the serialized ONNX model.
 - Test data (in the form of serialized protobuf TensorProto files or serialized NumPy archives).
 
+### Usage - Test data starter code
+
 The test data files can be used to validate ONNX models from the Model Zoo. We have provided the following interface examples for you to get started. Please replace `onnx_backend` in your code with the appropriate framework of your choice that provides ONNX inferencing support, and likewise replace `backend.run_model` with the framework's model evaluation logic. 
 
 There are two different formats for the test data files:
@@ -219,7 +223,17 @@ outputs = list(sample['outputs'])
 np.testing.assert_almost_equal(outputs, backend.run_model(model, inputs))
 ```
 
-## Model Visualization
+### Usage - Git LFS <a name="gitlfs-"/>
+
+On default, cloning this repository will not download any ONNX models. Install Git LFS with `pip install git lfs`.
+
+To download a specific model:
+`git lfs pull --include="[MODELNAME].onnx"`
+
+To download all models:
+`git lfs pull --include="*" --exclude=""`
+
+### Usage - Model visualization
 You can see visualizations of each model's network architecture by using [Netron](https://github.com/lutzroeder/Netron).
 
 ## Contributions
