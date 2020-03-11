@@ -64,6 +64,7 @@ Object detection models detect the presence of multiple objects in an image and 
 |<b>[Faster-RCNN](vision/object_detection_segmentation/faster-rcnn)</b>|[Ren et al.](https://arxiv.org/abs/1506.01497)|Increases efficiency from R-CNN by connecting a RPN with a CNN to create a single, unified network for object detection that detects 80 different classes.|
 |<b>[Mask-RCNN](vision/object_detection_segmentation/mask-rcnn)</b>|[He et al.](https://arxiv.org/abs/1703.06870)|A real-time neural network for object instance segmentation that detects 80 different classes. Extends Faster R-CNN as each of the 300 elected ROIs go through 3 parallel branches of the network: label prediction, bounding box prediction and mask prediction.|
 |<b>[YOLO v2](vision/object_detection_segmentation/yolov2)</b>|[Redmon et al.](https://arxiv.org/abs/1612.08242)|A CNN model for real-time object detection system that can detect over 9000 object categories. It uses a single network evaluation, enabling it to be more than 1000x faster than R-CNN and 100x faster than Faster R-CNN.
+|<b>[YOLO v2-coco](vision/object_detection_segmentation/yolov2-coco)</b>|[Redmon et al.](https://arxiv.org/abs/1612.08242)|A CNN model for real-time object detection system that can detect over 9000 object categories. It uses a single network evaluation, enabling it to be more than 1000x faster than R-CNN and 100x faster than Faster R-CNN. This model is trained with COCO dataset and contains 80 classes.
 |<b>[YOLO v3](vision/object_detection_segmentation/yolov3)</b>|[Redmon et al.](https://arxiv.org/pdf/1804.02767.pdf)|A deep CNN model for real-time object detection that detects 80 different classes. A little bigger than YOLOv2 but still very fast. As accurate as SSD but 3 times faster.|
 |<b>[Tiny YOLOv3](vision/object_detection_segmentation/tiny_yolov3)</b>|[Redmon et al.](https://arxiv.org/pdf/1804.02767.pdf)| A smaller version of YOLOv3 model. |
 |<b>[DUC](vision/object_detection_segmentation/duc)</b>|[Wang et al.](https://arxiv.org/abs/1702.08502)|Deep CNN based pixel-wise semantic segmentation model with >80% [mIOU](/models/semantic_segmentation/DUC/README.md/#metric) (mean Intersection Over Union). Trained on cityscapes dataset, which can be effectively implemented in self driving vehicle systems.|
@@ -71,7 +72,7 @@ Object detection models detect the presence of multiple objects in an image and 
 <hr>
 
 ### Body, Face & Gesture Analysis <a name="body_analysis"/>
-Face detection models identify and/or recognize human faces and emotions in given images. Body and Gesture Analysis models identify gender and age in given image. 
+Face detection models identify and/or recognize human faces and emotions in given images. Body and Gesture Analysis models identify gender and age in given image.
 
 |Model Class |Reference |Description |
 |-|-|-|
