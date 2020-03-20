@@ -226,7 +226,7 @@ np.testing.assert_almost_equal(outputs, backend.run_model(model, inputs))
 
 ### Usage - Git LFS <a name="gitlfs-"/>
 
-On default, cloning this repository will not download any ONNX models. Install Git LFS with `pip install git lfs`.
+On default, cloning this repository will not download any ONNX models. Install Git LFS with `pip install git-lfs`.
 
 To download a specific model:
 `git lfs pull --include="[MODELNAME].onnx"`
