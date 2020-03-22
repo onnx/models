@@ -11,7 +11,7 @@ The model LResNet100E-IR is an ArcFace model that uses ResNet100 as a backend wi
 
 |Model        |Download  |Checksum| Download (with sample test data)|ONNX version|Opset version|LFW * accuracy (%)|CFP-FF * accuracy (%)|CFP-FP * accuracy (%)|AgeDB-30 * accuracy (%)|
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|LResNet100E-IR|    [248.9 MB](https://s3.amazonaws.com/onnx-model-zoo/arcface/resnet100/resnet100.onnx)|[MD5](https://s3.amazonaws.com/onnx-model-zoo/arcface/resnet100/resnet100-md5.txt)|  [226.6 MB](https://s3.amazonaws.com/onnx-model-zoo/arcface/resnet100/resnet100.tar.gz) | 1.3  |8|99.77     | 99.83  |  94.21     | 97.87|
+|LResNet100E-IR|    [248.9 MB](arcfaceresnet100-opset8.onnx)|[MD5](arcfaceresnet100-opset8-md5.txt)|  [226.6 MB](arcfaceresnet100-opset8.tar.gz) | 1.3  |8|99.77     | 99.83  |  94.21     | 97.87|
 
 \* each of the accuracy metrics correspond to accuracies on different [validation sets](#val_data) each with their own [validation methods](#val_method).
 
