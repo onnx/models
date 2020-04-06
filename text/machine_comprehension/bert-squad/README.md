@@ -8,14 +8,14 @@ BERT (Bidirectional Encoder Representations from Transformers) applies Transform
 
 ## Model
 
- |Model        |Download  |Checksum|Download (with sample test data)| ONNX version |Opset version|
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-|BERT-Squad| [416 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bertsquad-8.onnx)  |[MD5](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bert-md5.txt) |  [385 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bertsquad-8.tar.gz) |  1.3 | 8|
-|BERT-Squad| [416 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bertsquad-10.onnx)  |[MD5](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bert-md5.txt) |  [384 MB](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/model/bertsquad-10.tar.gz) |  1.5 | 10|
+ |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+|BERT-Squad| [416 MB](model/bertsquad-8.onnx) |  [385 MB](model/bertsquad-8.tar.gz) |  1.3 | 8|
+|BERT-Squad| [416 MB](model/bertsquad-10.onnx) |  [384 MB](model/bertsquad-10.tar.gz) |  1.5 | 10|
 
 Dependencies
-* [tokenization.py](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/dependencies/tokenization.py)
-* [run_onnx_squad.py](https://github.com/onnx/models/blob/master/text/machine_comprehension/bert-squad/dependencies/run_onnx_squad.py)
+* [tokenization.py](dependencies/tokenization.py)
+* [run_onnx_squad.py](dependencies/run_onnx_squad.py)
 
 ## Inference
 We used [ONNX Runtime](https://github.com/microsoft/onnxruntime) to perform the inference.
