@@ -11,24 +11,24 @@ The model LResNet100E-IR is an ArcFace model that uses ResNet100 as a backend wi
 
 |Model        |Download  |Download (with sample test data)|ONNX version|Opset version|LFW * accuracy (%)|CFP-FF * accuracy (%)|CFP-FP * accuracy (%)|AgeDB-30 * accuracy (%)|
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|LResNet100E-IR|    [248.9 MB](model/arcfaceresnet100-opset8.onnx)|[226.6 MB](model/arcfaceresnet100-opset8.tar.gz) | 1.3  |8|99.77     | 99.83  |  94.21     | 97.87|
+|LResNet100E-IR|    [248.9 MB](model/arcfaceresnet100-8.onnx)|[226.6 MB](model/arcfaceresnet100-8.tar.gz) | 1.3  |8|99.77     | 99.83  |  94.21     | 97.87|
 
 \* each of the accuracy metrics correspond to accuracies on different [validation sets](#val_data) each with their own [validation methods](#val_method).
 
 ## Inference
-We used MXNet as framework to perform inference. View the notebook [arcface_inference](arcface_inference.ipynb) to understand how to use above models for doing inference. A brief description of the inference process is provided below:
+We used MXNet as framework to perform inference. View the notebook [arcface_inference](dependencies/arcface_inference.ipynb) to understand how to use above models for doing inference. A brief description of the inference process is provided below:
 
 ### Input 
 The input to the model should preferably be images containing a single face in each image. There are no constraints on the size of the image. The example displayed in the inference notebook was done using jpeg images.
 
 ### Preprocessing
-In order to input only face pixels into the network, all input images are passed through a pretrained face detection and alignment model, [MTCNN detector](https://kpzhang93.github.io/MTCNN_face_detection_alignment/index.html). The output of this model are landmark points and a bounding box corresponding to the face in the image. Using this output, the image is processed using affine transforms to generate the aligned face images which are input to the network. Check [face_preprocess.py](face_preprocess.py) and [inference notebook](arcface_inference.ipynb) for code.
+In order to input only face pixels into the network, all input images are passed through a pretrained face detection and alignment model, [MTCNN detector](https://kpzhang93.github.io/MTCNN_face_detection_alignment/index.html). The output of this model are landmark points and a bounding box corresponding to the face in the image. Using this output, the image is processed using affine transforms to generate the aligned face images which are input to the network. Check [face_preprocess.py](dependencies/face_preprocess.py) and [inference notebook](dependencies/arcface_inference.ipynb) for code.
 
 ### Output
 The model outputs an embedding vector for the input face images. The size of the vector is tunable (512 for LResNet100E-IR).
 
 ### Postprocessing
-The post-processing involves normalizing the output embedding vectors to have unit length. Check [face_postprocess.py](face_postprocess.py) for code.
+The post-processing involves normalizing the output embedding vectors to have unit length. Check [face_postprocess.py](dependencies/face_postprocess.py) for code.
 
 To do quick inference with the model, check out [Model Server](https://github.com/awslabs/mxnet-model-server/blob/master/docs/model_zoo.md/#arcface-resnet100_onnx).
 
@@ -52,7 +52,7 @@ The following three datasets are used for validation:
 The accuracies obtained by the models on the validation set are mentioned above. Maximum deviation of 0.2%(CFP-FP) in accuracy is observed compared to that in the paper.
 
 ## Training
-We used MXNet as framework to perform training. View the [training notebook](train_arcface.ipynb) to understand details for parameters and network for each of the above variants of ArcFace.
+We used MXNet as framework to perform training. View the [training notebook](dependencies/train_arcface.ipynb) to understand details for parameters and network for each of the above variants of ArcFace.
 
 ## <a name="val_method"></a>Validation
 The validation techniques for the three validation sets are described below:
@@ -62,7 +62,7 @@ The validation techniques for the three validation sets are described below:
 
 * **AgeDB** : Validation is only performed on AgeDB-30 as mentioned above, with a metric same as LFW.
 
-We used MXNet as framework to perform validation. Use the notebook [arcface_validation](arcface_validation.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
+We used MXNet as framework to perform validation. Use the notebook [arcface_validation](dependencies/arcface_validation.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 
 ## References
 * All models are from the paper [ArcFace: Additive Angular Margin Loss for Deep Face Recognition](https://arxiv.org/abs/1801.07698).

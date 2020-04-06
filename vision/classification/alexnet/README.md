@@ -1,12 +1,12 @@
 # AlexNet
-Download:
-- release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/bvlc_alexnet.tar.gz
-- release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/bvlc_alexnet.tar.gz
-- release 1.2: https://s3.amazonaws.com/download.onnx/models/opset_7/bvlc_alexnet.tar.gz
-- release 1.3: https://s3.amazonaws.com/download.onnx/models/opset_8/bvlc_alexnet.tar.gz
-- master: https://s3.amazonaws.com/download.onnx/models/opset_9/bvlc_alexnet.tar.gz
 
-Model size: 244 MB
+|Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+|AlexNet| [238 MB](model/bvlcalexnet-3.onnx)  |  [225 MB](model/bvlcalexnet-3.tar.gz) |  1.1 | 3|
+|AlexNet| [238 MB](model/bvlcalexnet-6.onnx)  |  [225 MB](model/bvlcalexnet-6.tar.gz) |  1.1.2 | 6|
+|AlexNet| [238 MB](model/bvlcalexnet-7.onnx)  |  [226 MB](model/bvlcalexnet-7.tar.gz) |  1.2 | 7|
+|AlexNet| [238 MB](model/bvlcalexnet-8.onnx)  |  [226 MB](model/bvlcalexnet-8.tar.gz) |  1.3 | 8|
+|AlexNet| [238 MB](model/bvlcalexnet-9.onnx)  |  [226 MB](model/bvlcalexnet-9.tar.gz) |  1.4 | 9|
 
 ## Description
 AlexNet is the name of a convolutional neural network for classification,
@@ -37,7 +37,7 @@ softmaxout_1: float[1, 1000]
 ### Pre-processing steps
 ### Post-processing steps
 ### Sample test data
-random generated sampe test data:
+Randomly generated sample test data:
 - test_data_0.npz
 - test_data_1.npz
 - test_data_2.npz
