@@ -10,7 +10,7 @@ The model uses the method described in [Perceptual Losses for Real-Time Style Tr
 
 ## Model
  |Model        |Download  |Download (with sample test data)|ONNX version|Opset version|
-|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|-------------|:--------------|:--------------|:--------------|:--------------|
 |Mosaic|[6.6 MB](models/opset9/mosaic.onnx)  | [7.2 MB](models/opset9/mosaic.tar.gz)|1.4|9|
 |Candy|[6.6 MB](models/opset9/candy.onnx)  | [7.2 MB](models/opset9/candy.tar.gz)|1.4|9|
 |Rain Princess|[6.6 MB](models/opset9/rain_princess.onnx)  |[7.2 MB](models/opset9/rain_princess.tar.gz)|1.4|9|
