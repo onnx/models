@@ -8,7 +8,7 @@ Super Resolution uses efficient  [Sub-pixel convolutional layer](https://arxiv.o
 
 ## Model
 
- |Model      |Download  |Checksum|Download (with sample test data)| ONNX version | Opset Version
+ |Model      |Download  |Download (with sample test data)| ONNX version | Opset Version
 |-------------|:--------------|:--------------|:--------------| :------------|
 |Super_Resolution|    [240 KB](model/super_resolution.onnx)  |  [7.6 MB](model/super_resolution_test_image.tar.gz) |  1.5.0  | 10
 
