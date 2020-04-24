@@ -1,12 +1,12 @@
 # GoogleNet
-Download:
-- release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/bvlc_googlenet.tar.gz
-- release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/bvlc_googlenet.tar.gz
-- release 1.2: https://s3.amazonaws.com/download.onnx/models/opset_7/bvlc_googlenet.tar.gz
-- release 1.3: https://s3.amazonaws.com/download.onnx/models/opset_8/bvlc_googlenet.tar.gz
-- master: https://s3.amazonaws.com/download.onnx/models/opset_9/bvlc_googlenet.tar.gz
 
-Model size: 28 MB
+|Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+|GoogleNet-121| [32 MB](model/googlenet-3.onnx)  |  [28 MB](model/googlenet-3.tar.gz) |  1.1 | 3|
+|GoogleNet-121| [32 MB](model/googlenet-6.onnx)  |  [28 MB](model/googlenet-6.tar.gz) |  1.1.2 | 6|
+|GoogleNet-121| [32 MB](model/googlenet-7.onnx)  |  [28 MB](model/googlenet-7.tar.gz) |  1.2 | 7|
+|GoogleNet-121| [32 MB](model/googlenet-8.onnx)  |  [28 MB](model/googlenet-8.tar.gz) |  1.3 | 8|
+|GoogleNet-121| [32 MB](model/googlenet-9.onnx)  |  [28 MB](model/googlenet-9.tar.gz) |  1.4 | 9|
 
 ## Description
 GoogLeNet is the name of a convolutional neural network for classification,
