@@ -1,13 +1,12 @@
 # Inception v1
 
-Download:
-- release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/inception_v1.tar.gz
-- release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/inception_v1.tar.gz
-- release 1.2: https://s3.amazonaws.com/download.onnx/models/opset_7/inception_v1.tar.gz
-- release 1.3: https://s3.amazonaws.com/download.onnx/models/opset_8/inception_v1.tar.gz
-- master: https://s3.amazonaws.com/download.onnx/models/opset_9/inception_v1.tar.gz
-
-Model size: 28 MB
+|Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+|Inception-1| [28 MB](model/inception-v1-3.onnx)  |  [31 MB](model/inception-v1-3.tar.gz) |  1.1 | 3|
+|Inception-1| [28 MB](model/inception-v1-6.onnx)  |  [31 MB](model/inception-v1-6.tar.gz) |  1.1.2 | 6|
+|Inception-1| [28 MB](model/inception-v1-7.onnx)  |  [31 MB](model/inception-v1-7.tar.gz) |  1.2 | 7|
+|Inception-1| [28 MB](model/inception-v1-8.onnx)  |  [31 MB](model/inception-v1-8.tar.gz) |  1.3 | 8|
+|Inception-1| [28 MB](model/inception-v1-9.onnx)  |  [31 MB](model/inception-v1-9.tar.gz) |  1.4 | 9|
 
 ## Description
 Inception v1 is a reproduction of GoogLeNet.

@@ -2,11 +2,11 @@
 
 |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-|GoogleNet-121| [28 MB](model/googlenet-3.onnx)  |  [31 MB](model/googlenet-3.tar.gz) |  1.1 | 3|
-|GoogleNet-121| [28 MB](model/googlenet-6.onnx)  |  [31 MB](model/googlenet-6.tar.gz) |  1.1.2 | 6|
-|GoogleNet-121| [28 MB](model/googlenet-7.onnx)  |  [31 MB](model/googlenet-7.tar.gz) |  1.2 | 7|
-|GoogleNet-121| [28 MB](model/googlenet-8.onnx)  |  [31 MB](model/googlenet-8.tar.gz) |  1.3 | 8|
-|GoogleNet-121| [28 MB](model/googlenet-9.onnx)  |  [31 MB](model/googlenet-9.tar.gz) |  1.4 | 9|
+|GoogleNet| [28 MB](model/googlenet-3.onnx)  |  [31 MB](model/googlenet-3.tar.gz) |  1.1 | 3|
+|GoogleNet| [28 MB](model/googlenet-6.onnx)  |  [31 MB](model/googlenet-6.tar.gz) |  1.1.2 | 6|
+|GoogleNet| [28 MB](model/googlenet-7.onnx)  |  [31 MB](model/googlenet-7.tar.gz) |  1.2 | 7|
+|GoogleNet| [28 MB](model/googlenet-8.onnx)  |  [31 MB](model/googlenet-8.tar.gz) |  1.3 | 8|
+|GoogleNet| [28 MB](model/googlenet-9.onnx)  |  [31 MB](model/googlenet-9.tar.gz) |  1.4 | 9|
 
 ## Description
 GoogLeNet is the name of a convolutional neural network for classification,
