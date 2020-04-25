@@ -1,13 +1,12 @@
 # Inception v2
 
-Download:
-- release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/inception_v2.tar.gz
-- release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/inception_v2.tar.gz
-- release 1.2: https://s3.amazonaws.com/download.onnx/models/opset_7/inception_v2.tar.gz
-- release 1.3: https://s3.amazonaws.com/download.onnx/models/opset_8/inception_v2.tar.gz
-- master: https://s3.amazonaws.com/download.onnx/models/opset_9/inception_v2.tar.gz
-
-Model size: 45 MB
+|Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+|Inception-2| [44 MB](model/inception-v2-3.onnx)  |  [44 MB](model/inception-v2-3.tar.gz) |  1.1 | 3|
+|Inception-2| [44 MB](model/inception-v2-6.onnx)  |  [44 MB](model/inception-v2-6.tar.gz) |  1.1.2 | 6|
+|Inception-2| [44 MB](model/inception-v2-7.onnx)  |  [44 MB](model/inception-v2-7.tar.gz) |  1.2 | 7|
+|Inception-2| [44 MB](model/inception-v2-8.onnx)  |  [44 MB](model/inception-v2-8.tar.gz) |  1.3 | 8|
+|Inception-2| [44 MB](model/inception-v2-9.onnx)  |  [44 MB](model/inception-v2-9.tar.gz) |  1.4 | 9|
 
 ## Description
 Inception v2 is a deep convolutional networks for classification.
