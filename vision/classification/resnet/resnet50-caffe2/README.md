@@ -10,7 +10,7 @@ Download:
 Model size: 103 MB
 
 ## Description
-ResNet-50 is a deep convolutional networks for classification.
+ResNet-50 is a deep convolutional network for classification.
 
 ### Paper
 [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385)
