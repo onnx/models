@@ -19,7 +19,7 @@ ResNet v2 uses pre-activation function whereas ResNet v1  uses post-activation f
 |ResNet-34|    [83.3 MB](model/resnet34-v1.onnx)    | [78.6 MB](model/resnet34-v1.tar.gz)    |  1.2.1   |7|73.73         |     91.40           |
 |ResNet-50|    [97.8 MB](model/resnet50-v1.onnx)    |[92.2 MB](model/resnet50-v1.tar.gz)    |1.2.1    |7|74.93         |     92.38           |
 |ResNet-101|    [170.6 MB](model/resnet101-v1.onnx)   | [159.8 MB](model/resnet101-v1.tar.gz)    |  1.2.1  |7  | 76.48         |     93.20           |
-|ResNet-152|    [230.6 MB]((model/resnet152-v1.onnx)    |[217.2 MB](model/resnet152-v1.tar.gz)    | 1.2.1  |7 |77.11         |     93.61           |
+|ResNet-152|    [230.6 MB](model/resnet152-v1.onnx)    |[217.2 MB](model/resnet152-v1.tar.gz)    | 1.2.1  |7 |77.11         |     93.61           |
 
 
 * Version 2:
