@@ -1,13 +1,13 @@
 # R-CNN ILSVRC13
 
-Download:
-- release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/bvlc_reference_rcnn_ilsvrc13.tar.gz
-- release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/bvlc_reference_rcnn_ilsvrc13.tar.gz
-- release 1.2: https://s3.amazonaws.com/download.onnx/models/opset_7/bvlc_reference_rcnn_ilsvrc13.tar.gz
-- release 1.3: https://s3.amazonaws.com/download.onnx/models/opset_8/bvlc_reference_rcnn_ilsvrc13.tar.gz
-- master: https://s3.amazonaws.com/download.onnx/models/opset_9/bvlc_reference_rcnn_ilsvrc13.tar.gz
+|Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+|R-CNN ILSVRC13| [32 MB](model/rcnn-ilsvrc13-3.onnx)  |  [231 MB](model/rcnn-ilsvrc13-3.tar.gz) |  1.1 | 3|
+|R-CNN ILSVRC13| [32 MB](model/rcnn-ilsvrc13-6.onnx)  |  [231 MB](model/rcnn-ilsvrc13-6.tar.gz) |  1.1.2 | 6|
+|R-CNN ILSVRC13| [32 MB](model/rcnn-ilsvrc13-7.onnx)  |  [231 MB](model/rcnn-ilsvrc13-7.tar.gz) |  1.2 | 7|
+|R-CNN ILSVRC13| [32 MB](model/rcnn-ilsvrc13-8.onnx)  |  [231 MB](model/rcnn-ilsvrc13-8.tar.gz) |  1.3 | 8|
+|R-CNN ILSVRC13| [32 MB](model/rcnn-ilsvrc13-9.onnx)  |  [231 MB](model/rcnn-ilsvrc13-9.tar.gz) |  1.4 | 9|
 
-Model size: 231 MB
 
 ## Description
 R-CNN is a convolutional neural network for detection.
