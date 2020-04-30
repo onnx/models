@@ -141,7 +141,7 @@ def load_bin(path, image_size):
   for flip in [0,1]:
     data = nd.empty((len(issame_list)*2, 3, image_size[0], image_size[1]))
     data_list.append(data)
-  for i in xrange(len(issame_list)*2):
+  for i in range(len(issame_list)*2):
     _bin = bins[i]
     img = mx.image.imdecode(_bin)
     img = nd.transpose(img, axes=(2, 0, 1))
@@ -170,7 +170,7 @@ def test(data_set, mx_model, batch_size, nfolds=10, data_extra = None, label_sha
     _label = nd.ones( (batch_size,) )
   else:
     _label = nd.ones( label_shape )
-  for i in xrange( len(data_list) ):
+  for i in range( len(data_list) ):
     data = data_list[i]
     embeddings = None
     ba = 0
@@ -198,7 +198,7 @@ def test(data_set, mx_model, batch_size, nfolds=10, data_extra = None, label_sha
   _xnorm = 0.0
   _xnorm_cnt = 0
   for embed in embeddings_list:
-    for i in xrange(embed.shape[0]):
+    for i in range(embed.shape[0]):
       _em = embed[i]
       _norm=np.linalg.norm(_em)
       _xnorm+=_norm
