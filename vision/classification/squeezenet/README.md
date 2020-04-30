@@ -8,16 +8,16 @@ SqueezeNet is a small CNN which achieves AlexNet level accuracy on ImageNet with
 
 ## Model
 Squeezenet 1.1 gives AlexNet level of accuracy with 50X fewer parameters.
-<!-- SqueezeNet 1.1 has 2.4x less computation and slightly fewer parameters than SqueezeNet 1.0, without sacrificing accuracy.-->
+SqueezeNet 1.1 has 2.4x less computation and slightly fewer parameters than SqueezeNet 1.0, without sacrificing accuracy.
 
-|Model        |Download  |Checksum|Download (with sample test data)| ONNX version |Opset version|Top-1 accuracy (%)|Top-5 accuracy (%)| 
-|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|SqueezeNet 1.1|    [4.7 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.1/squeezenet1.1.onnx) |[MD5](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.1/squeezenet1.1-md5.txt)   | [5.9 MB](https://s3.amazonaws.com/onnx-model-zoo/squeezenet/squeezenet1.1/squeezenet1.1.tar.gz) |1.2.1  |7 |56.34     |     79.12     |
+|Model        |Download  |Download (with sample test data)| ONNX version |Opset version|Top-1 accuracy (%)|Top-5 accuracy (%)|
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|SqueezeNet 1.1|    [4.7 MB](model/squeezenet1.1-7.onnx) | [5.9 MB](model/squeezenet1.1-7.tar.gz) |1.2.1  |7 |56.34     |     79.12     |
 
 ## Inference
 We used MXNet as framework with gluon APIs to perform inference. View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook.
 
-### Input 
+### Input
 All pre-trained models expect input images normalized in the same way, i.e. mini-batches of 3-channel RGB images of shape (N x 3 x H x W), where N is the batch size, and H and W are expected to be at least 224. The inference was done using a jpeg image.
 
 ### Preprocessing
