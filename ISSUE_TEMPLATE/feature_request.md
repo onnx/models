@@ -1,9 +1,9 @@
-# New Feature
+# Feature Request - Name
 
 ### What is the problem that this feature solves?
 Please detail the discrepancy with our current functionality.
 
-## Describe the feature
+### Describe the feature
 Why is this feature necessary? What does it accomplish?
 
 ### Relevant Model Zoo feature areas

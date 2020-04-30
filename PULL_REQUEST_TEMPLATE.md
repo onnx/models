@@ -9,7 +9,7 @@ Description of model
 ## Model
 
  |Model        |Download  | Download (with sample test data)|ONNX version|Opset version|Accuracy |
-|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |Model Name       | Relative link to ONNX Model with size  | tar file containing ONNX model and synthetic test data (in .pb format)|ONNX version used for conversion| Opset version used for conversion|Accuracy values |
 
 Please submit new models with Git LFS (commit directly to the repository, and use relative links (i.e. ***model/alexnet-7.onnx***) in the table above. In this file name example, ***alexnet*** is the name of the model and ***7*** is the opset number.
