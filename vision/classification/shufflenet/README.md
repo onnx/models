@@ -1,13 +1,12 @@
-# ShuffleNet
+# ShuffleNetV1
 
-Download:
-- release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/shufflenet.tar.gz
-- release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/shufflenet.tar.gz
-- release 1.2: https://s3.amazonaws.com/download.onnx/models/opset_7/shufflenet.tar.gz
-- release 1.3: https://s3.amazonaws.com/download.onnx/models/opset_8/shufflenet.tar.gz
-- master: https://s3.amazonaws.com/download.onnx/models/opset_9/shufflenet.tar.gz
-
-Model size: 5.3 MB
+|Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+|ShuffleNetv1| [5.3 MB](model/shufflenet-3.onnx)  |  [7 MB](model/shufflenet-3.tar.gz) |  1.1 | 3|
+|ShuffleNetv1| [5.3 MB](model/shufflenet-6.onnx)  |  [9 MB](model/shufflenet-6.tar.gz) |  1.1.2 | 6|
+|ShuffleNetv1| [5.3 MB](model/shufflenet-7.onnx)  |  [9 MB](model/shufflenet-7.tar.gz) |  1.2 | 7|
+|ShuffleNetv1| [5.3 MB](model/shufflenet-8.onnx)  |  [9 MB](model/shufflenet-8.tar.gz) |  1.3 | 8|
+|ShuffleNetv1| [5.3 MB](model/shufflenet-9.onnx)  |  [9 MB](model/shufflenet-9.tar.gz) |  1.4 | 9|
 
 ## Description
 ShuffleNet is a deep convolutional networks for classification.
