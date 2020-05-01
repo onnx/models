@@ -1,13 +1,13 @@
-8 ZFNet-512
+# ZFNet-512
 
-Download:
-- release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/zfnet512.tar.gz
-- release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/zfnet512.tar.gz
-- release 1.2: https://s3.amazonaws.com/download.onnx/models/opset_7/zfnet512.tar.gz
-- release 1.3: https://s3.amazonaws.com/download.onnx/models/opset_8/zfnet512.tar.gz
-- master: https://s3.amazonaws.com/download.onnx/models/opset_9/zfnet512.tar.gz
+|Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+|ZFNet-512| [341 MB](model/zfnet512-3.onnx)  |  [320 MB](model/zfnet512-3.tar.gz) |  1.1 | 3|
+|ZFNet-512| [341 MB](model/zfnet512-6.onnx)  |  [320 MB](model/zfnet512-6.tar.gz) |  1.1.2 | 6|
+|ZFNet-512| [341 MB](model/zfnet512-7.onnx)  |  [320 MB](model/zfnet512-7.tar.gz) |  1.2 | 7|
+|ZFNet-512| [341 MB](model/zfnet512-8.onnx)  |  [320 MB](model/zfnet512-8.tar.gz) |  1.3 | 8|
+|ZFNet-512| [341 MB](model/zfnet512-9.onnx)  |  [320 MB](model/zfnet512-9.tar.gz) |  1.4 | 9|
 
-Model size: 349 MB
 
 ## Description
 ZFNet-512 is a deep convolutional networks for classification.
