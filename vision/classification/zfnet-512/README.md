@@ -5,8 +5,8 @@
 |ZFNet-512| [341 MB](model/zfnet512-3.onnx)  |  [320 MB](model/zfnet512-3.tar.gz) |  1.1 | 3|
 |ZFNet-512| [341 MB](model/zfnet512-6.onnx)  |  [320 MB](model/zfnet512-6.tar.gz) |  1.1.2 | 6|
 |ZFNet-512| [341 MB](model/zfnet512-7.onnx)  |  [320 MB](model/zfnet512-7.tar.gz) |  1.2 | 7|
-|ZFNet-512| [341 MB](model/zfnet512-8.onnx)  |  [320 MB](model/zfnet512-8.tar.gz) |  1.3 | 8|
-|ZFNet-512| [341 MB](model/zfnet512-9.onnx)  |  [320 MB](model/zfnet512-9.tar.gz) |  1.4 | 9|
+|ZFNet-512| [341 MB](model/zfnet512-8.onnx)  |  [318 MB](model/zfnet512-8.tar.gz) |  1.3 | 8|
+|ZFNet-512| [341 MB](model/zfnet512-9.onnx)  |  [318 MB](model/zfnet512-9.tar.gz) |  1.4 | 9|
 
 
 ## Description
