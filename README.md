@@ -2,7 +2,7 @@
 
 [Open Neural Network Exchange (ONNX)](http://onnx.ai) is an open standard format for representing machine learning models. ONNX is supported by a community of partners who have implemented it in many frameworks and tools.
 
-The ONNX Model Zoo is a collection of pre-trained, state-of-the-art models in the ONNX format contributed by community members like you. Accompanying each model are [Jupyter notebooks](http://jupyter.org) for model training and running inference with the trained model. The notebooks are written in Python and include links to the training dataset as well as references to the original paper that describes the model architecture. 
+The ONNX Model Zoo is a collection of pre-trained, state-of-the-art models in the ONNX format contributed by community members like you. Accompanying each model are [Jupyter notebooks](http://jupyter.org) for model training and running inference with the trained model. The notebooks are written in Python and include links to the training dataset as well as references to the original paper that describes the model architecture.
 
 We are standardizing on [Git LFS (Large File Storage)](https://git-lfs.github.com/) to store our ONNX model files. To download an ONNX model, navigate to the appropriate Github page and click the `Download` button on the top right.
 
@@ -59,14 +59,14 @@ Object detection models detect the presence of multiple objects in an image and 
 
 |Model Class |Reference |Description |
 |-|-|-|
-|<b>[Tiny YOLOv2](vision/object_detection_segmentation/tiny_yolov2)</b>|[Redmon et al.](https://arxiv.org/pdf/1612.08242.pdf)|A real-time CNN for object detection that detects 20 different classes. A smaller version of the more complex full YOLOv2 network.|
+|<b>[Tiny YOLOv2](vision/object_detection_segmentation/tiny-yolov2)</b>|[Redmon et al.](https://arxiv.org/pdf/1612.08242.pdf)|A real-time CNN for object detection that detects 20 different classes. A smaller version of the more complex full YOLOv2 network.|
 |<b>[SSD](vision/object_detection_segmentation/ssd)</b>|[Liu et al.](https://arxiv.org/abs/1512.02325)|Single Stage Detector: real-time CNN for object detection that detects 80 different classes.|
 |<b>[Faster-RCNN](vision/object_detection_segmentation/faster-rcnn)</b>|[Ren et al.](https://arxiv.org/abs/1506.01497)|Increases efficiency from R-CNN by connecting a RPN with a CNN to create a single, unified network for object detection that detects 80 different classes.|
 |<b>[Mask-RCNN](vision/object_detection_segmentation/mask-rcnn)</b>|[He et al.](https://arxiv.org/abs/1703.06870)|A real-time neural network for object instance segmentation that detects 80 different classes. Extends Faster R-CNN as each of the 300 elected ROIs go through 3 parallel branches of the network: label prediction, bounding box prediction and mask prediction.|
 |<b>[YOLO v2](vision/object_detection_segmentation/yolov2)</b>|[Redmon et al.](https://arxiv.org/abs/1612.08242)|A CNN model for real-time object detection system that can detect over 9000 object categories. It uses a single network evaluation, enabling it to be more than 1000x faster than R-CNN and 100x faster than Faster R-CNN.
 |<b>[YOLO v2-coco](vision/object_detection_segmentation/yolov2-coco)</b>|[Redmon et al.](https://arxiv.org/abs/1612.08242)|A CNN model for real-time object detection system that can detect over 9000 object categories. It uses a single network evaluation, enabling it to be more than 1000x faster than R-CNN and 100x faster than Faster R-CNN. This model is trained with COCO dataset and contains 80 classes.
 |<b>[YOLO v3](vision/object_detection_segmentation/yolov3)</b>|[Redmon et al.](https://arxiv.org/pdf/1804.02767.pdf)|A deep CNN model for real-time object detection that detects 80 different classes. A little bigger than YOLOv2 but still very fast. As accurate as SSD but 3 times faster.|
-|<b>[Tiny YOLOv3](vision/object_detection_segmentation/tiny_yolov3)</b>|[Redmon et al.](https://arxiv.org/pdf/1804.02767.pdf)| A smaller version of YOLOv3 model. |
+|<b>[Tiny YOLOv3](vision/object_detection_segmentation/tiny-yolov3)</b>|[Redmon et al.](https://arxiv.org/pdf/1804.02767.pdf)| A smaller version of YOLOv3 model. |
 |<b>[DUC](vision/object_detection_segmentation/duc)</b>|[Wang et al.](https://arxiv.org/abs/1702.08502)|Deep CNN based pixel-wise semantic segmentation model with >80% [mIOU](/models/semantic_segmentation/DUC/README.md/#metric) (mean Intersection Over Union). Trained on cityscapes dataset, which can be effectively implemented in self driving vehicle systems.|
 |FCN|[Long et al.](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)|Deep CNN based segmentation model trained end-to-end, pixel-to-pixel that produces efficient inference and learning. Built off of AlexNet, VGG net, GoogLeNet classification methods. <br>[contribute](contribute.md)|
 <hr>
@@ -161,7 +161,7 @@ Every ONNX backend should support running the models out of the box. After downl
 
 ### Usage - Test data starter code
 
-The test data files can be used to validate ONNX models from the Model Zoo. We have provided the following interface examples for you to get started. Please replace `onnx_backend` in your code with the appropriate framework of your choice that provides ONNX inferencing support, and likewise replace `backend.run_model` with the framework's model evaluation logic. 
+The test data files can be used to validate ONNX models from the Model Zoo. We have provided the following interface examples for you to get started. Please replace `onnx_backend` in your code with the appropriate framework of your choice that provides ONNX inferencing support, and likewise replace `backend.run_model` with the framework's model evaluation logic.
 
 There are two different formats for the test data files:
 

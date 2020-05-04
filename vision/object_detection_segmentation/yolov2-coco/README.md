@@ -6,9 +6,9 @@ This model aims to detect objects in real time. It detects 80 different classes 
 ## Model
 The model was converted to ONNX from PyTorch version of YOLOv2 using [PyTorch-Yolo2](https://github.com/marvis/pytorch-yolo2). The output is fully verified by generating bounding boxes under PyTorch and onnxruntime.
 
-|Model|Checksum|Download (with sample test data)| ONNX version |Opset version|
-|-----|:-------|:-------------------------------|:-------------|:------------|
-|YOLOv2|[MD5](https://github.com/onnx/models/blob/master/vision/object_detection_segmentation/yolov2-coco/model/yolov2_coco_md5.txt)|[203.9 MB](https://github.com/onnx/models/blob/master/vision/object_detection_segmentation/yolov2-coco/model/yolov2_coco.onnx) |1.5  |9 |
+|Model|Download| ONNX version |Opset version|
+|-----|:--------------|:-------------|:------------|
+|YOLOv2|[203.9 MB](model/yolov2-coco-9.onnx) |1.5  |9 |
 
 ## Inference
 ### Input to model
