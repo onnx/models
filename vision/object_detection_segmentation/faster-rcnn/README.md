@@ -5,9 +5,9 @@ This model is a real-time neural network for object detection that detects 80 di
 
 ## Model
 
-|Model        |Download  |Checksum| Download (with sample test data)|ONNX version|Opset version|Accuracy |
-|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|Faster R-CNN R-50-FPN      |[167.3 MB](https://onnxzoo.blob.core.windows.net/models/opset_10/faster_rcnn/faster_rcnn_R_50_FPN_1x.onnx) | [MD5](https://onnxzoo.blob.core.windows.net/models/opset_10/faster_rcnn/faster_rcnn_R_50_FPN_1x-md5.txt) | [158.0 MB](https://onnxzoo.blob.core.windows.net/models/opset_10/faster_rcnn/faster_rcnn_R_50_FPN_1x.tar.gz) |1.5 |10 |mAP of 0.35 |
+|Model        |Download  | Download (with sample test data)|ONNX version|Opset version|Accuracy |
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|Faster R-CNN R-50-FPN      |[167.3 MB](model/FasterRCNN-10.onnx) |[158.0 MB](model/FasterRCNN-10.tar.gz) |1.5 |10 |mAP of 0.35 |
 
 
 
