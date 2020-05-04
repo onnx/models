@@ -8,9 +8,9 @@ Super Resolution uses efficient  [Sub-pixel convolutional layer](https://arxiv.o
 
 ## Model
 
- |Model      |Download  |Download (with sample test data)| ONNX version | Opset Version
+|Model      |Download  |Download (with sample test data)| ONNX version | Opset Version|
 |-------------|:--------------|:--------------|:--------------| :------------|
-|Super_Resolution|    [240 KB](model/super_resolution.onnx)  |  [7.6 MB](model/super_resolution_test_image.tar.gz) |  1.5.0  | 10
+|Super_Resolution|    [240 KB](model/super-resolution-10.onnx)  |  [7.6 MB](model/super-resolution-10.tar.gz) |  1.5.0  | 10|
 
 ## Inference
 Get started with this model by running through the [included inference notebook](dependencies/Run_Super_Resolution_Model.ipynb) for Super Resolution or following the steps below.
