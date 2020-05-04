@@ -5,9 +5,9 @@ This model is a neural network for real-time object detection that detects 80 di
 
 ## Model
 
-|Model        |Download  |Checksum|Download (with sample test data)|ONNX version|Opset version|Accuracy |
-|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|YOLOv3       |[237 MB](https://onnxzoo.blob.core.windows.net/models/opset_10/yolov3/yolov3.onnx) | [MD5](https://onnxzoo.blob.core.windows.net/models/opset_10/yolov3/yolov3-md5.txt) |[222 MB](https://onnxzoo.blob.core.windows.net/models/opset_10/yolov3/yolov3.tar.gz)|1.5 |10 |mAP of 0.553 |
+|Model        |Download  |Download (with sample test data)|ONNX version|Opset version|Accuracy |
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|YOLOv3       |[237 MB](model/yolov3-10.onnx) |[222 MB](model/yolov3-10.tar.gz)|1.5 |10 |mAP of 0.553 |
 
 
 
@@ -17,7 +17,7 @@ This model is a neural network for real-time object detection that detects 80 di
 
 ### Input to model
 Resized image `(1x3x416x416)`
-Original image size `(1x2)` which is `[image.size[1], image.size[0]]` 
+Original image size `(1x2)` which is `[image.size[1], image.size[0]]`
 
 ### Preprocessing steps
 The images have to be loaded in to a range of [0, 1]. The transformation should preferrably happen at preprocessing.
