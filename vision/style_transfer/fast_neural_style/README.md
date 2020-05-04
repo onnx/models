@@ -1,7 +1,7 @@
 # Fast Neural Style Transfer
 
 ## Use-cases
-This artistic style transfer model mixes the content of an image with the style of another image. Examples of the styles can be seen [here](https://github.com/pytorch/examples/tree/master/fast_neural_style#models).
+This artistic style transfer model mixes the content of an image with the style of another image. Examples of the styles can be seen [in this PyTorch example](https://github.com/pytorch/examples/tree/master/fast_neural_style#models).
 
 
 ## Description
@@ -11,20 +11,20 @@ The model uses the method described in [Perceptual Losses for Real-Time Style Tr
 ## Model
  |Model        |Download  |Download (with sample test data)|ONNX version|Opset version|
 |-------------|:--------------|:--------------|:--------------|:--------------|
-|Mosaic|[6.6 MB](models/opset9/mosaic.onnx)  | [7.2 MB](models/opset9/mosaic.tar.gz)|1.4|9|
-|Candy|[6.6 MB](models/opset9/candy.onnx)  | [7.2 MB](models/opset9/candy.tar.gz)|1.4|9|
-|Rain Princess|[6.6 MB](models/opset9/rain_princess.onnx)  |[7.2 MB](models/opset9/rain_princess.tar.gz)|1.4|9|
-|Udnie|[6.6 MB](models/opset9/udnie.onnx)  | [7.2 MB](models/opset9/udnie.tar.gz)|1.4|9|
-|Pointilism|[6.6 MB](models/opset9/pointilism.onnx)  | [7.2 MB](models/opset9/pointilism.tar.gz)|1.4|9|
-|Mosaic|[6.6 MB](models/opset8/mosaic.onnx)  | [7.2 MB](models/opset8/mosaic.tar.gz)|1.4|8|
-|Candy|[6.6 MB](models/opset8/candy.onnx)  | [7.2 MB](models/opset8/candy.tar.gz)|1.4|8|
-|Rain Princess|[6.6 MB](models/opset8/rain_princess.onnx)  |[7.2 MB](models/opset8/rain_princess.tar.gz)|1.4|8|
-|Udnie|[6.6 MB](models/opset8/udnie.onnx)  | [7.2 MB](models/opset8/udnie.tar.gz)|1.4|8|
-|Pointilism|[6.6 MB](models/opset8/pointilism.onnx)  | [7.2 MB](models/opset8/pointilism.tar.gz)|1.4|8|
+|Mosaic|[6.6 MB](model/mosaic-9.onnx)  | [7.2 MB](model/mosaic-9.tar.gz)|1.4|9|
+|Candy|[6.6 MB](model/candy-9.onnx)  | [7.2 MB](model/candy-9.tar.gz)|1.4|9|
+|Rain Princess|[6.6 MB](model/rain-princess-9.onnx)  |[7.2 MB](model/rain-princess-9.tar.gz)|1.4|9|
+|Udnie|[6.6 MB](model/udnie-9.onnx)  | [7.2 MB](model/udnie-9.tar.gz)|1.4|9|
+|Pointilism|[6.6 MB](model/pointilism-9.onnx)  | [7.2 MB](model/pointilism-9.tar.gz)|1.4|9|
+|Mosaic|[6.6 MB](model/mosaic-8.onnx)  | [7.2 MB](model/mosaic-8.tar.gz)|1.4|8|
+|Candy|[6.6 MB](model/candy-8.onnx)  | [7.2 MB](model/candy-8.tar.gz)|1.4|8|
+|Rain Princess|[6.6 MB](model/rain-princess-8.onnx)  |[7.2 MB](model/rain-princess-8.tar.gz)|1.4|8|
+|Udnie|[6.6 MB](model/udnie-8.onnx)  | [7.2 MB](model/udnie-8.tar.gz)|1.4|8|
+|Pointilism|[6.6 MB](model/pointilism-8.onnx)  | [7.2 MB](model/pointilism-8.tar.gz)|1.4|8|
 <hr>
 
 ## Inference
-Refer to [style-transfer-ort.ipynb](style-transfer-ort.ipynb) for detailed preprocessing and postprocessing.
+Refer to [style-transfer-ort.ipynb](dependencies/style-transfer-ort.ipynb) for detailed preprocessing and postprocessing.
 
 ### Input to model
 The input to the model are 3-channel RGB images. The images have to be loaded in a range of [0, 255]. If running into memory issues, try resizing the image by increasing the scale number.
@@ -61,7 +61,7 @@ The original fast neural style model is from [pytorch/examples/fast_neural_style
 <hr>
 
 ## Training
-Refer to [pytorch/examples/fast_neural_style](https://github.com/pytorch/examples/tree/master/fast_neural_style) for training details in PyTorch. Refer to [conversion.ipynb](conversion.ipynb) to learn how the PyTorch models are converted to ONNX format.
+Refer to [pytorch/examples/fast_neural_style](https://github.com/pytorch/examples/tree/master/fast_neural_style) for training details in PyTorch. Refer to [conversion.ipynb](dependencies/conversion.ipynb) to learn how the PyTorch models are converted to ONNX format.
 <hr>
 
 
