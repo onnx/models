@@ -1,7 +1,7 @@
 # Faster R-CNN
 
 ## Description
-This model is a real-time neural network for object detection that detects 80 different [classes](https://onnxzoo.blob.core.windows.net/models/opset_10/faster_rcnn/coco_classes.txt).
+This model is a real-time neural network for object detection that detects 80 different [classes](coco_classes.txt).
 
 ## Model
 
@@ -19,11 +19,11 @@ This model is a real-time neural network for object detection that detects 80 di
 Image shape `(3x'height'x'width')`
 
 ### Preprocessing steps
-The images have to be loaded in to a range of [0, 255], resized, converted to BGR and then normalized using mean = [102.9801, 115.9465, 122.7717]. The transformation should preferrably happen at preprocessing.
+The images have to be loaded in to a range of [0, 255], resized, converted to BGR and then normalized using mean = [102.9801, 115.9465, 122.7717]. The transformation should preferably happen at preprocessing.
 
 This model can take images of different sizes as input. However, to achieve best performance, it is recommended to resize the image such that both height and width are within the range of [800, 1333], and then pad the image with zeros such that both height and width are divisible by 32.
 
-The following code shows how to preprocess the image demo.jpg:
+The following code shows how to preprocess the [demo image](demo.jpg):
 
 ```python
 import numpy as np
