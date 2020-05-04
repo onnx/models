@@ -55,7 +55,7 @@ def preprocess(image):
 
     return image
 
-img = Image.open('demo.jpg')
+img = Image.open('dependencies/demo.jpg')
 img_data = preprocess(img)
 ```
 
