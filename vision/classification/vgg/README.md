@@ -7,7 +7,7 @@ VGG models provide very high accuracies but at the cost of increased model sizes
 ## Description
 VGG presents the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. VGG networks have increased depth with very small (3 × 3) convolution filters, which showed a significant improvement on the prior-art configurations achieved by pushing the depth to 16–19 weight layers. The work secured the first and the second places in the localization and classification tracks respectively in ImageNet Challenge 2014. The representations from VGG generalize well to other datasets, where they achieve state-of-the-art results.
 
-MXNet VGG ==> ONNX VGG [16, 16-bn, 19, 19-bn]
+MXNet VGG ==> ONNX VGG [16, 16-bn, 19, 19-bn]  
 Caffe2 VGG-19 ==> ONNX VGG [19-caffe2]
 
 ## Model
