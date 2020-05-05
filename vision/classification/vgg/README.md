@@ -5,18 +5,26 @@ VGG models perform image classification - they take images as input and classify
 VGG models provide very high accuracies but at the cost of increased model sizes. They are ideal for cases when high accuracy of classification is essential and there are limited constraints on model sizes.
 
 ## Description
-VGG presents the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. VGG networks have increased depth with very small (3 × 3) convolution filters, which showed a significant improvement on the prior-art configurations achieved by pushing the depth to 16–19 weight layers. The work secured the first and the second places in the localisation and classification tracks respectively in ImageNet Challenge 2014. The representations from VGG generalise well to other datasets, where they achieve state-of-the-art results.
+VGG presents the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. VGG networks have increased depth with very small (3 × 3) convolution filters, which showed a significant improvement on the prior-art configurations achieved by pushing the depth to 16–19 weight layers. The work secured the first and the second places in the localization and classification tracks respectively in ImageNet Challenge 2014. The representations from VGG generalize well to other datasets, where they achieve state-of-the-art results.
+
+MxNet VGG ==> ONNX VGG [16, 16-bn, 19, 19-bn]
+Caffe2 VGG-19 ==> ONNX VGG [19-caffe2]
 
 ## Model
 
-The models below are variant of same network with different number of layers and use of batch normalisation. VGG 16 and VGG 19 have 16 and 19 convolutional layers respectively. VGG 16_bn and VGG 19_bn have the same architecture as their original counterparts but with batch normalization applied after each convolutional layer, which leads to better convergence and slightly better accuracies.
+The models below are variant of same network with different number of layers and use of batch normalization. VGG 16 and VGG 19 have 16 and 19 convolutional layers respectively. VGG 16_bn and VGG 19_bn have the same architecture as their original counterparts but with batch normalization applied after each convolutional layer, which leads to better convergence and slightly better accuracies.
 
  |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |VGG 16|    [527.8 MB](model/vgg16-7.onnx)    |[490.0 MB](model/vgg16-7.tar.gz)| 1.2.1  |7| 72.62     |      91.14     |
-|VGG 16_bn|    [527.9 MB](model/vgg16-bn-7.onnx) |[490.2 MB](model/vgg16-bn-7.tar.gz)   |  1.2.1  |7|   72.71     |      91.21    |
+|VGG 16-bn|    [527.9 MB](model/vgg16-bn-7.onnx) |[490.2 MB](model/vgg16-bn-7.tar.gz)   |  1.2.1  |7|   72.71     |      91.21    |
 |VGG 19|    [548.1 MB](model/vgg19-7.onnx)    |[508.5 MB](model/vgg19-7.tar.gz)| 1.2.1  |7 | 73.72     |      91.58     |
-|VGG 19_bn|    [548.1 MB](model/vgg19-bn-7.onnx) |[508.6 MB](model/vgg19-bn-7.tar.gz)   |  1.2.1 |7   | 73.83    |      91.79     |
+|VGG 19-bn|    [548.1 MB](model/vgg19-bn-7.onnx) |[508.6 MB](model/vgg19-bn-7.tar.gz)   |  1.2.1 |7   | 73.83    |      91.79     |
+|VGG 19-caffe2| [561.2 MB](model/vgg19-caffe2-3.onnx) |[524.3 MB](model/vgg19-caffe2-3.tar.gz)   |  1.1 |3   | | |
+|VGG 19-caffe2| [561.2 MB](model/vgg19-caffe2-6.onnx) |[524.3 MB](model/vgg19-caffe2-6.tar.gz)   |  1.1.2 |6   | | |
+|VGG 19-caffe2| [561.2 MB](model/vgg19-caffe2-7.onnx) |[524.3 MB](model/vgg19-caffe2-7.tar.gz)   |  1.2 |7   | | |
+|VGG 19-caffe2| [561.2 MB](model/vgg19-caffe2-8.onnx) |[524.3 MB](model/vgg19-caffe2-8.tar.gz)   |  1.3 |8   | | |
+|VGG 19-caffe2| [561.2 MB](model/vgg19-caffe2-9.onnx) |[524.3 MB](model/vgg19-caffe2-9.tar.gz)   |  1.4 |9   | | |
 
 ## Inference
 We used MXNet as framework with gluon APIs to perform inference. View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook.
