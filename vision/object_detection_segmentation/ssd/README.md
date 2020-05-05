@@ -7,7 +7,7 @@ This model is a real-time neural network for object detection that detects 80 di
 
 |Model        |Download  | Download (with sample test data)|ONNX version|Opset version|Accuracy |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|SSD       |[80.4 MB](ssd-10.onnx) | [78.5 MB](ssd-10.tar.gz) |1.5 |10 |mAP of 0.195 |
+|SSD       |[80.4 MB](model/ssd-10.onnx) | [78.5 MB](model/ssd-10.tar.gz) |1.5 |10 |mAP of 0.195 |
 
 
 
