@@ -17,33 +17,33 @@ ResNet v2 uses pre-activation function whereas ResNet v1  uses post-activation f
 
 [Run ResNet-50 in browser](https://microsoft.github.io/onnxjs-demo/#/resnet50) - implemented by ONNX.js with ResNet50-Caffe2 release 1.2
 
-* Version 1:
+* ResNet V1:
 
 |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|ResNet18-v1|    [44.7 MB](model/resnet18-v1-7.onnx)    |[42.9 MB](model/resnet18-v1-7.tar.gz)    |  1.2.1  |7| 69.93         |    89.29|         
-|ResNet34-v1|    [83.3 MB](model/resnet34-v1-7.onnx)    | [78.6 MB](model/resnet34-v1-7.tar.gz)    |  1.2.1   |7|73.73         |     91.40           |
-|ResNet50-v1|    [97.8 MB](model/resnet50-v1-7.onnx)    |[92.2 MB](model/resnet50-v1-7.tar.gz)    |1.2.1    |7|74.93         |     92.38           |
-|ResNet101-v1|    [170.6 MB](model/resnet101-v1-7.onnx)   | [159.8 MB](model/resnet101-v1-7.tar.gz)    |  1.2.1  |7  | 76.48         |     93.20           |
-|ResNet152-v1|    [230.6 MB](model/resnet152-v1-7.onnx)    |[217.2 MB](model/resnet152-v1-7.tar.gz)    | 1.2.1  |7 |77.11         |     93.61           |
+|ResNet18|    [44.7 MB](model/resnet18-v1-7.onnx)    |[42.9 MB](model/resnet18-v1-7.tar.gz)    |  1.2.1  |7| 69.93         |    89.29|         
+|ResNet34|    [83.3 MB](model/resnet34-v1-7.onnx)    | [78.6 MB](model/resnet34-v1-7.tar.gz)    |  1.2.1   |7|73.73         |     91.40           |
+|ResNet50|    [97.8 MB](model/resnet50-v1-7.onnx)    |[92.2 MB](model/resnet50-v1-7.tar.gz)    |1.2.1    |7|74.93         |     92.38           |
+|ResNet101|    [170.6 MB](model/resnet101-v1-7.onnx)   | [159.8 MB](model/resnet101-v1-7.tar.gz)    |  1.2.1  |7  | 76.48         |     93.20           |
+|ResNet152|    [230.6 MB](model/resnet152-v1-7.onnx)    |[217.2 MB](model/resnet152-v1-7.tar.gz)    | 1.2.1  |7 |77.11         |     93.61           |
 
 |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
 |-------------|:--------------|:--------------|:--------------|:--------------|
-|ResNet50-v1-caffe2| [32 MB](model/resnet50-caffe2-v1-3.onnx)  |  [95 MB](model/resnet50-caffe2-v1-3.tar.gz) |  1.1 | 3|
-|ResNet50-v1-caffe2| [32 MB](model/resnet50-caffe2-v1-6.onnx)  |  [96 MB](model/resnet50-caffe2-v1-6.tar.gz) |  1.1.2 | 6|
-|ResNet50-v1-caffe2| [32 MB](model/resnet50-caffe2-v1-7.onnx)  |  [100 MB](model/resnet50-caffe2-v1-7.tar.gz) |  1.2 | 7|
-|ResNet50-v1-caffe2| [32 MB](model/resnet50-caffe2-v1-8.onnx)  |  [100 MB](model/resnet50-caffe2-v1-8.tar.gz) |  1.3 | 8|
-|ResNet50-v1-caffe2| [32 MB](model/resnet50-caffe2-v1-9.onnx)  |  [100 MB](model/resnet50-caffe2-v1-9.tar.gz) |  1.4 | 9|
+|ResNet50-caffe2| [32 MB](model/resnet50-caffe2-v1-3.onnx)  |  [95 MB](model/resnet50-caffe2-v1-3.tar.gz) |  1.1 | 3|
+|ResNet50-caffe2| [32 MB](model/resnet50-caffe2-v1-6.onnx)  |  [96 MB](model/resnet50-caffe2-v1-6.tar.gz) |  1.1.2 | 6|
+|ResNet50-caffe2| [32 MB](model/resnet50-caffe2-v1-7.onnx)  |  [100 MB](model/resnet50-caffe2-v1-7.tar.gz) |  1.2 | 7|
+|ResNet50-caffe2| [32 MB](model/resnet50-caffe2-v1-8.onnx)  |  [100 MB](model/resnet50-caffe2-v1-8.tar.gz) |  1.3 | 8|
+|ResNet50-caffe2| [32 MB](model/resnet50-caffe2-v1-9.onnx)  |  [100 MB](model/resnet50-caffe2-v1-9.tar.gz) |  1.4 | 9|
 
-* Version 2:
+* ResNet V2:
 
 |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|ResNet18-v2|    [44.6 MB](model/resnet18-v2-7.onnx)    | [42.9 MB](model/resnet18-v2-7.tar.gz)    | 1.2.1  |7 |    69.70         |     89.49          |
-|ResNet34-v2|    [83.2 MB](model/resnet34-v2-7.onnx)    |[78.6 MB](model/resnet34-v2-7.tar.gz)    |  1.2.1   |7| 73.36         |     91.43           |
-|ResNet50-v2|    [97.7 MB](model/resnet50-v2-7.onnx)   |[92.0 MB](model/resnet50-v2-7.tar.gz)    | 1.2.1 |7|75.81         |     92.82           |
-|ResNet101-v2|    [170.4 MB](model/resnet101-v2-7.onnx)    |[159.4 MB](model/resnet101-v2-7.tar.gz)    |  1.2.1  |7 | 77.42         |     93.61           |
-|ResNet152-v2|    [230.3 MB](model/resnet152-v2-7.onnx)    |[216.0 MB](model/resnet152-v2-7.tar.gz)    | 1.2.1   |7 | 78.20         |     94.21           |
+|ResNet18|    [44.6 MB](model/resnet18-v2-7.onnx)    | [42.9 MB](model/resnet18-v2-7.tar.gz)    | 1.2.1  |7 |    69.70         |     89.49          |
+|ResNet34|    [83.2 MB](model/resnet34-v2-7.onnx)    |[78.6 MB](model/resnet34-v2-7.tar.gz)    |  1.2.1   |7| 73.36         |     91.43           |
+|ResNet50|    [97.7 MB](model/resnet50-v2-7.onnx)   |[92.0 MB](model/resnet50-v2-7.tar.gz)    | 1.2.1 |7|75.81         |     92.82           |
+|ResNet101|    [170.4 MB](model/resnet101-v2-7.onnx)    |[159.4 MB](model/resnet101-v2-7.tar.gz)    |  1.2.1  |7 | 77.42         |     93.61           |
+|ResNet152|    [230.3 MB](model/resnet152-v2-7.onnx)    |[216.0 MB](model/resnet152-v2-7.tar.gz)    | 1.2.1   |7 | 78.20         |     94.21           |
 
 
 ## Inference
