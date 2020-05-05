@@ -7,18 +7,21 @@ Computationally efficient CNN architecture designed specifically for mobile devi
 ShuffleNet is a deep convolutional network for image classification. [ShuffleNetV2](https://pytorch.org/hub/pytorch_vision_shufflenet_v2/) is an improved architecture that is the state-of-the-art in terms of speed and accuracy tradeoff used for image classification.
 
 Caffe2 ShuffleNet-v1 ==> ONNX ShuffleNet-v1
-PyTorch ShuffleNetv2 ==> ONNX ShuffleNet-v2
+PyTorch ShuffleNet-v2 ==> ONNX ShuffleNet-v2
 
 ## Model
 
 |Model        |Download  |Download (with sample test data)|ONNX version|Opset version|Top-1 error |Top-5 error |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |ShuffleNet-v2 |[9.2MB](model/shufflenet-v2-10.onnx) |  [8.7MB](model/shufflenet-v2-10.tar.gz) | 1.6 | 10 | 30.64 | 11.68|
-|ShuffleNet-v1| [5.3 MB](model/shufflenet-3.onnx)  |  [7 MB](model/shufflenet-3.tar.gz) |  1.1 | 3| | |
-|ShuffleNet-v1| [5.3 MB](model/shufflenet-6.onnx)  |  [9 MB](model/shufflenet-6.tar.gz) |  1.1.2 | 6| | |
-|ShuffleNet-v1| [5.3 MB](model/shufflenet-7.onnx)  |  [9 MB](model/shufflenet-7.tar.gz) |  1.2 | 7| | |
-|ShuffleNet-v1| [5.3 MB](model/shufflenet-8.onnx)  |  [9 MB](model/shufflenet-8.tar.gz) |  1.3 | 8| | |
-|ShuffleNet-v1| [5.3 MB](model/shufflenet-9.onnx)  |  [9 MB](model/shufflenet-9.tar.gz) |  1.4 | 9| | |
+
+|Model        |Download  |Download (with sample test data)|ONNX version|Opset version|
+|-------------|:--------------|:--------------|:--------------|:--------------|
+|ShuffleNet-v1| [5.3 MB](model/shufflenet-3.onnx)  |  [7 MB](model/shufflenet-3.tar.gz) |  1.1 | 3|
+|ShuffleNet-v1| [5.3 MB](model/shufflenet-6.onnx)  |  [9 MB](model/shufflenet-6.tar.gz) |  1.1.2 | 6|
+|ShuffleNet-v1| [5.3 MB](model/shufflenet-7.onnx)  |  [9 MB](model/shufflenet-7.tar.gz) |  1.2 | 7|
+|ShuffleNet-v1| [5.3 MB](model/shufflenet-8.onnx)  |  [9 MB](model/shufflenet-8.tar.gz) |  1.3 | 8|
+|ShuffleNet-v1| [5.3 MB](model/shufflenet-9.onnx)  |  [9 MB](model/shufflenet-9.tar.gz) |  1.4 | 9|
 
 ## Inference
 [This script](ShufflenetV2-export.py) converts the ShuffleNetv2 model from PyTorch to ONNX and uses ONNX Runtime for inference.

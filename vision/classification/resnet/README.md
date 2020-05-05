@@ -26,11 +26,14 @@ ResNet v2 uses pre-activation function whereas ResNet v1  uses post-activation f
 |ResNet50-v1|    [97.8 MB](model/resnet50-v1-7.onnx)    |[92.2 MB](model/resnet50-v1-7.tar.gz)    |1.2.1    |7|74.93         |     92.38           |
 |ResNet101-v1|    [170.6 MB](model/resnet101-v1-7.onnx)   | [159.8 MB](model/resnet101-v1-7.tar.gz)    |  1.2.1  |7  | 76.48         |     93.20           |
 |ResNet152-v1|    [230.6 MB](model/resnet152-v1-7.onnx)    |[217.2 MB](model/resnet152-v1-7.tar.gz)    | 1.2.1  |7 |77.11         |     93.61           |
-|ResNet50-v1-caffe2| [32 MB](model/resnet50-caffe2-v1-3.onnx)  |  [95 MB](model/resnet50-caffe2-v1-3.tar.gz) |  1.1 | 3| | |
-|ResNet50-v1-caffe2| [32 MB](model/resnet50-caffe2-v1-6.onnx)  |  [96 MB](model/resnet50-caffe2-v1-6.tar.gz) |  1.1.2 | 6| | |
-|ResNet50-v1-caffe2| [32 MB](model/resnet50-caffe2-v1-7.onnx)  |  [100 MB](model/resnet50-caffe2-v1-7.tar.gz) |  1.2 | 7| | |
-|ResNet50-v1-caffe2| [32 MB](model/resnet50-caffe2-v1-8.onnx)  |  [100 MB](model/resnet50-caffe2-v1-8.tar.gz) |  1.3 | 8| | |
-|ResNet50-v1-caffe2| [32 MB](model/resnet50-caffe2-v1-9.onnx)  |  [100 MB](model/resnet50-caffe2-v1-9.tar.gz) |  1.4 | 9| | |
+
+|Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
+|-------------|:--------------|:--------------|:--------------|:--------------|
+|ResNet50-v1-caffe2| [32 MB](model/resnet50-caffe2-v1-3.onnx)  |  [95 MB](model/resnet50-caffe2-v1-3.tar.gz) |  1.1 | 3|
+|ResNet50-v1-caffe2| [32 MB](model/resnet50-caffe2-v1-6.onnx)  |  [96 MB](model/resnet50-caffe2-v1-6.tar.gz) |  1.1.2 | 6|
+|ResNet50-v1-caffe2| [32 MB](model/resnet50-caffe2-v1-7.onnx)  |  [100 MB](model/resnet50-caffe2-v1-7.tar.gz) |  1.2 | 7|
+|ResNet50-v1-caffe2| [32 MB](model/resnet50-caffe2-v1-8.onnx)  |  [100 MB](model/resnet50-caffe2-v1-8.tar.gz) |  1.3 | 8|
+|ResNet50-v1-caffe2| [32 MB](model/resnet50-caffe2-v1-9.onnx)  |  [100 MB](model/resnet50-caffe2-v1-9.tar.gz) |  1.4 | 9|
 
 * Version 2:
 

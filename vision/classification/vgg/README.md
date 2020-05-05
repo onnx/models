@@ -20,11 +20,14 @@ The models below are variant of same network with different number of layers and
 |VGG 16-bn|    [527.9 MB](model/vgg16-bn-7.onnx) |[490.2 MB](model/vgg16-bn-7.tar.gz)   |  1.2.1  |7|   72.71     |      91.21    |
 |VGG 19|    [548.1 MB](model/vgg19-7.onnx)    |[508.5 MB](model/vgg19-7.tar.gz)| 1.2.1  |7 | 73.72     |      91.58     |
 |VGG 19-bn|    [548.1 MB](model/vgg19-bn-7.onnx) |[508.6 MB](model/vgg19-bn-7.tar.gz)   |  1.2.1 |7   | 73.83    |      91.79     |
-|VGG 19-caffe2| [561.2 MB](model/vgg19-caffe2-3.onnx) |[524.3 MB](model/vgg19-caffe2-3.tar.gz)   |  1.1 |3   | | |
-|VGG 19-caffe2| [561.2 MB](model/vgg19-caffe2-6.onnx) |[524.3 MB](model/vgg19-caffe2-6.tar.gz)   |  1.1.2 |6   | | |
-|VGG 19-caffe2| [561.2 MB](model/vgg19-caffe2-7.onnx) |[524.3 MB](model/vgg19-caffe2-7.tar.gz)   |  1.2 |7   | | |
-|VGG 19-caffe2| [561.2 MB](model/vgg19-caffe2-8.onnx) |[524.3 MB](model/vgg19-caffe2-8.tar.gz)   |  1.3 |8   | | |
-|VGG 19-caffe2| [561.2 MB](model/vgg19-caffe2-9.onnx) |[524.3 MB](model/vgg19-caffe2-9.tar.gz)   |  1.4 |9   | | |
+
+|Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
+|-------------|:--------------|:--------------|:--------------|:--------------|
+|VGG 19-caffe2| [561.2 MB](model/vgg19-caffe2-3.onnx) |[524.3 MB](model/vgg19-caffe2-3.tar.gz)   |  1.1 |3   |
+|VGG 19-caffe2| [561.2 MB](model/vgg19-caffe2-6.onnx) |[524.3 MB](model/vgg19-caffe2-6.tar.gz)   |  1.1.2 |6   |
+|VGG 19-caffe2| [561.2 MB](model/vgg19-caffe2-7.onnx) |[524.3 MB](model/vgg19-caffe2-7.tar.gz)   |  1.2 |7   |
+|VGG 19-caffe2| [561.2 MB](model/vgg19-caffe2-8.onnx) |[524.3 MB](model/vgg19-caffe2-8.tar.gz)   |  1.3 |8   |
+|VGG 19-caffe2| [561.2 MB](model/vgg19-caffe2-9.onnx) |[524.3 MB](model/vgg19-caffe2-9.tar.gz)   |  1.4 |9   |
 
 ## Inference
 We used MXNet as framework with gluon APIs to perform inference. View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook.
