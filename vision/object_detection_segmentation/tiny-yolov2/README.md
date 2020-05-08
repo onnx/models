@@ -1,14 +1,16 @@
 # Tiny YOLOv2
 
 ## Description
-This model is a real-time neural network for object detection that detects 20 different classes. It is made up of 9 convolutional layers and 6 max-pooling layers and is a smaller version of the more complex full [YOLOv2](https://pjreddie.com/darknet/yolov2/) network. 
+This model is a real-time neural network for object detection that detects 20 different classes. It is made up of 9 convolutional layers and 6 max-pooling layers and is a smaller version of the more complex full [YOLOv2](https://pjreddie.com/darknet/yolov2/) network.
+
+CoreML TinyYoloV2 ==> ONNX TinyYoloV2
 
 ## Model
-|Model|Checksum|Download (with sample test data)| ONNX version |Opset version|
+|Model|Download|Download (with sample test data)| ONNX version |Opset version|
 |-----|:-------|:-------------------------------|:-------------|:------------|
-|Tiny YOLOv2|[MD5](https://onnxzoo.blob.core.windows.net/models/opset_1/tiny_yolov2/tiny_yolov2-md5.txt)|[58 MB](https://onnxzoo.blob.core.windows.net/models/opset_1/tiny_yolov2/tiny_yolov2.tar.gz) |1.0  |1 |
-|     |[MD5](https://onnxzoo.blob.core.windows.net/models/opset_7/tiny_yolov2/tiny_yolov2-md5.txt)|[58 MB](https://onnxzoo.blob.core.windows.net/models/opset_7/tiny_yolov2/tiny_yolov2.tar.gz) |1.2  |7 |
-|     |[MD5](https://onnxzoo.blob.core.windows.net/models/opset_8/tiny_yolov2/tiny_yolov2-md5.txt)|[58 MB](https://onnxzoo.blob.core.windows.net/models/opset_8/tiny_yolov2/tiny_yolov2.tar.gz) |1.3  |8 |
+|Tiny YOLOv2|[62 MB](model/tinyyolov2-1.onnx)|[59 MB](model/tinyyolov2-1.tar.gz) |1.0  |1 |
+|     |[62 MB](model/tinyyolov2-7.onnx)|[59 MB](model/tinyyolov2-7.tar.gz) |1.2  |7 |
+|     |[62 MB](model/tinyyolov2-8.onnx)|[59 MB](model/tinyyolov2-8.tar.gz) |1.3  |8 |
 
 ### Paper
 "YOLO9000: Better, Faster, Stronger" [arXiv:1612.08242](https://arxiv.org/pdf/1612.08242.pdf)
@@ -28,7 +30,7 @@ shape `(1x125x13x13)`
 ### Postprocessing
 The output is a `(125x13x13)` tensor where 13x13 is the number of grid cells that the image gets divided into. Each grid cell corresponds to 125 channels, made up of the 5 bounding boxes predicted by the grid cell and the 25 data elements that describe each bounding box (`5x25=125`). For more information on how to derive the final bounding boxes and their corresponding confidence scores, refer to this [post](http://machinethink.net/blog/object-detection-with-yolo/).
 ### Sample test data
-Sets of sample input and output files are provided in 
+Sets of sample input and output files are provided in
 * serialized protobuf TensorProtos (`.pb`), which are stored in the folders `test_data_set_*/`.
 
 ## License
