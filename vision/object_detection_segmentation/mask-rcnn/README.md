@@ -1,13 +1,13 @@
 # Mask R-CNN
 
 ## Description
-This model is a real-time neural network for object instance segmentation that detects 80 different [classes](https://onnxzoo.blob.core.windows.net/models/opset_10/mask_rcnn/coco_classes.txt).
+This model is a real-time neural network for object instance segmentation that detects 80 different [classes](dependencies/coco_classes.txt).
 
 ## Model
 
-|Model        |Download  |Checksum| Download (with sample test data)|ONNX version|Opset version|Accuracy |
-|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|Mask R-CNN R-50-FPN      |[177.9 MB](https://onnxzoo.blob.core.windows.net/models/opset_10/mask_rcnn/mask_rcnn_R_50_FPN_1x.onnx) | [MD5](https://onnxzoo.blob.core.windows.net/models/opset_10/mask_rcnn/mask_rcnn_R_50_FPN_1x-md5.txt) | [168.8 MB](https://onnxzoo.blob.core.windows.net/models/opset_10/mask_rcnn/mask_rcnn_R_50_FPN_1x.tar.gz) |1.5 |10 |mAP of 0.36 & 0.33 |
+|Model        |Download  | Download (with sample test data)|ONNX version|Opset version|Accuracy |
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|Mask R-CNN R-50-FPN      |[177.9 MB](model/MaskRCNN-10.onnx) | [168.8 MB](model/MaskRCNN-10.tar.gz) |1.5 |10 |mAP of 0.36 & 0.33 |
 
 
 <hr>
@@ -18,11 +18,11 @@ This model is a real-time neural network for object instance segmentation that d
 Image shape `(3x'height'x'width')`
 
 ### Preprocessing steps
-The images have to be loaded in to a range of [0, 255], resized, converted to BGR and then normalized using mean = [102.9801, 115.9465, 122.7717]. The transformation should preferrably happen at preprocessing.
+The images have to be loaded in to a range of [0, 255], resized, converted to BGR and then normalized using mean = [102.9801, 115.9465, 122.7717]. The transformation should preferably happen at preprocessing.
 
 This model can take images of different sizes as input. However, to achieve best performance, it is recommended to resize the image such that both height and width are within the range of [800, 1333], and then pad the image with zeros such that both height and width are divisible by 32.
 
-The following code shows how to preprocess the image demo.jpg:
+The following code shows how to preprocess the [demo image](dependencies/demo.jpg):
 
 ```python
 import numpy as np
@@ -55,7 +55,7 @@ def preprocess(image):
 
     return image
 
-img = Image.open('demo.jpg')
+img = Image.open('dependencies/demo.jpg')
 img_data = preprocess(img)
 ```
 

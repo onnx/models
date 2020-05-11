@@ -9,24 +9,24 @@ DUC is a CNN based model for semantic segmentation which uses an image classific
 ## Model
 The model ResNet101_DUC_HDC uses ResNet101 as a backend network with both Dense Upsampling Convolution (DUC) and Hybrid Dilated Convolution (HDC) techniques.
 
-|Model        |Download  |Checksum|Download (with sample test data)| ONNX version |Opset version|[mIOU](#metric) (%)|
-|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|ResNet101_DUC_HDC|    [248.6 MB](https://s3.amazonaws.com/onnx-model-zoo/duc/ResNet101_DUC_HDC.onnx) |[MD5](https://s3.amazonaws.com/onnx-model-zoo/duc/ResNet101_DUC_HDC-md5.txt)   | [282.0 MB](https://s3.amazonaws.com/onnx-model-zoo/duc/ResNet101_DUC_HDC.tar.gz) |1.2.2  |7 |81.92 |
+|Model        |Download  |Download (with sample test data)| ONNX version |Opset version|[mIOU](#metric) (%)|
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|ResNet101_DUC_HDC|    [248.6 MB](model/ResNet101-DUC-7.onnx) | [282.0 MB](model/ResNet101-DUC-7.tar.gz) |1.2.2  |7 |81.92 |
 
 ## Inference
-We used MXNet as framework to perform inference. View the notebook [duc-inference](duc-inference.ipynb) to understand how to use above models for doing inference. A brief description of the inference process is provided below:
+We used MXNet as framework to perform inference. View the notebook [duc-inference](dependencies/duc-inference.ipynb) to understand how to use above models for doing inference. A brief description of the inference process is provided below:
 
-### Input 
+### Input
 Since the model is trained on the cityscapes dataset which contains images of urban street scenes, the input should preferably be an image of a street scene to produce best results. There are no constraints on the size of the image. The example in the inference notebook is done using a png image.
 
 ### Preprocessing
-The DUC layer has an effect of partitioning the image into d^2 subparts (d = downsampling rate). This is why the input image is extrapolated with a small border in order to obtain an accurate reshaped image after the DUC layer. After this the image is normalized using mean subtraction. Check [duc-preprocess.py](duc-preprocess.py) for code.
+The DUC layer has an effect of partitioning the image into d^2 subparts (d = downsampling rate). This is why the input image is extrapolated with a small border in order to obtain an accurate reshaped image after the DUC layer. After this the image is normalized using mean subtraction. Check [duc-preprocess.py](dependencies/duc-preprocess.py) for code.
 
 ### Output
 The output of the network is a tensor of shape (1 X `label_num` X `H` * `W`) where `H` and `W` are the height and width of the output segmented map.
 
 ### Postprocessing
-The output tensor is reshaped and resized to give the softmax map of shape (`H` X `W` X `label_num`). The raw label map is computed by doing an argmax on the softmax map. The script [cityscapes_labels.py](cityscapes_labels.py) contains the segmentation category labels and their corresponding color map. Using this the colorized segmented images are generated. Check [duc-postprocess.py](duc-postprocess.py) for code.  
+The output tensor is reshaped and resized to give the softmax map of shape (`H` X `W` X `label_num`). The raw label map is computed by doing an argmax on the softmax map. The script [cityscapes_labels.py](dependencies/cityscapes_labels.py) contains the segmentation category labels and their corresponding color map. Using this the colorized segmented images are generated. Check [duc-postprocess.py](dependencies/duc-postprocess.py) for code.  
 
 To do quick inference with the model, check out [Model Server](https://github.com/awslabs/mxnet-model-server/blob/master/docs/model_zoo.md/#duc-resnet101_onnx).
 
@@ -53,7 +53,7 @@ The [mIOU](#metric) score obtained by the models on the validation set are menti
 ## <a name="metric"></a>Validation
 **mean Intersection Over Union (mIOU)** is the metric used for validation. For each class the intersection over union (IOU) of pixel labels between the output and the target segmentation maps is computed and then averaged over all classes to give us the mean intersection over union (mIOU).
 
-We used MXNet framework to compute mIOU of the models on the validation set described above. Use the notebook [duc-validation](duc-validation.ipynb) to verify the mIOU of the model. The scripts [cityscapes_loader.py](cityscapes_loader.py), [cityscapes_labels.py](cityscapes_labels.py) and [utils.py](utils.py) are used in the notebook for data loading and processing.
+We used MXNet framework to compute mIOU of the models on the validation set described above. Use the notebook [duc-validation](dependencies/duc-validation.ipynb) to verify the mIOU of the model. The scripts [cityscapes_loader.py](dependencies/cityscapes_loader.py), [cityscapes_labels.py](dependencies/cityscapes_labels.py) and [utils.py](dependencies/utils.py) are used in the notebook for data loading and processing.
 
 ## References
 * All models are from the paper [Understanding Convolution for Semantic Segmentation](https://arxiv.org/abs/1702.08502).
