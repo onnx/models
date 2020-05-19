@@ -13,6 +13,7 @@ for path in Path('vision').rglob('*.onnx'):
 
 # run checker on each model
 for model_name in model_list:
+    print(model_name)
     model = onnx.load(model_name)
     onnx.checker.check_model(model)
 
