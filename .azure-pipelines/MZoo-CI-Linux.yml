@@ -1,0 +1,24 @@
+- job: 'Test'
+  pool:
+    vmImage: 'Ubuntu-16.04'
+  strategy:
+    matrix:
+      py36:
+        python.version: '3.6'
+        onnx.version: '1.5'
+    maxParallel: 2
+
+  steps:
+  - script: sudo install -d -m 0777 /home/vsts/.conda/envs
+    displayName: Fix Conda permissions
+
+  - task: CondaEnvironment@1
+    inputs:
+      createCustomEnvironment: true
+      environmentName: 'py$(python.version)'
+      packageSpecs: 'python=$(python.version) protobuf'
+
+  - script: |
+      python -m pip install onnx==$(onnx.version)
+      python test_models.py
+    displayName: Install dependencies and test ONNX models
