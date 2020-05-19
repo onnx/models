@@ -4,7 +4,7 @@
 
 The ONNX Model Zoo is a collection of pre-trained, state-of-the-art models in the ONNX format contributed by community members like you. Accompanying each model are [Jupyter notebooks](http://jupyter.org) for model training and running inference with the trained model. The notebooks are written in Python and include links to the training dataset as well as references to the original paper that describes the model architecture.
 
-We are standardizing on [Git LFS (Large File Storage)](https://git-lfs.github.com/) to store our ONNX model files. To download an ONNX model, navigate to the appropriate Github page and click the `Download` button on the top right.
+We have standardized on [Git LFS (Large File Storage)](https://git-lfs.github.com/) to store our ONNX model files. To download an ONNX model, navigate to the appropriate Github page and click the `Download` button on the top right.
 
 ## Models
 #### Read the [Usage](#usage-) section below for more details on the file formats in the ONNX Model Zoo (.onnx, .pb, .npz), downloading multiple ONNX models through [Git LFS command line](#gitlfs-), and starter Python code for validating your ONNX model using test data.
