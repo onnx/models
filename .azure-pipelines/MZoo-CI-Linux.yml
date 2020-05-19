@@ -1,3 +1,7 @@
+trigger:
+- master
+
+jobs:
 - job: 'Test'
   pool:
     vmImage: 'Ubuntu-16.04'

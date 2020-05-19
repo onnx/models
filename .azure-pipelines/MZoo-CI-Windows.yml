@@ -2,7 +2,6 @@ trigger:
 - master
 
 jobs:
-
 - job: 'Test'
   pool:
     vmImage: 'vs2017-win2016'
