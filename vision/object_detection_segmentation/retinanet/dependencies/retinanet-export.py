@@ -13,7 +13,6 @@ import numpy as np
 import onnx
 
 
-iterations = 10
 data_dir = 'test_data_set_0'
 
 
@@ -131,16 +130,6 @@ def perf_run(sess, feeds, min_counts=5, min_duration_seconds=10):
 def torch_inference(model, input):
     print("====== Torch Inference ======")
     output=model(input)
-    with torch.no_grad():
-        total = []
-        for x in range(iterations):
-            t0 = timer()
-            output_1 = model(input)
-            iter_time = timer() - t0
-            total.append(iter_time)
-            duration = sum(total) * 1000 / iterations
-
-    print("run for {} iterations, avg {} ms".format(iterations, duration))
     return output
 
 
@@ -153,10 +142,6 @@ def ort_inference(file, inputs_flatten, outputs_flatten):
         print("== Checking model output ==")
         [np.testing.assert_allclose(to_numpy(output), ort_outs[i], rtol=1e-03, atol=1e-05) for i, output in
          enumerate(outputs_flatten)]
-
-    count, duration, per_iter_cost = perf_run(ort_sess, ort_inputs, min_counts=iterations)
-    avg_rnn = sum(per_iter_cost) * 1000 / count
-    print('run for {} iterations, avg {} ms'.format(count, avg_rnn))
     print("== Done ==")
 
 
