@@ -38,9 +38,9 @@ def preprocess(img_data):
 
 Model has 2 outputs:
 
-Classification heads: List of classification heads.
+Classification heads: List of classification box heads per feature level.
 
-Bounding box regression heads: List of bounding box heads.
+Bounding box regression heads: List of box regression heads per feature level.
 
 ### Postprocessing
 The following script from [NVIDIA/retinanet-examples](https://github.com/NVIDIA/retinanet-examples/blob/0aba7724e42f5b654d8171a6cac8b54e07fb8206/retinanet/model.py#L141) shows how to:
