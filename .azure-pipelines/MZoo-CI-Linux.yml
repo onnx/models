@@ -2,14 +2,14 @@ trigger:
 - master
 
 jobs:
-- job: 'Test'
+- job: 'Model Zoo CI - Linux'
   pool:
     vmImage: 'Ubuntu-16.04'
   strategy:
     matrix:
       py36:
-        python.version: '3.6'
-        onnx.version: '1.5'
+        python.version: '3.7'
+        onnx.version: '1.7'
     maxParallel: 2
 
   steps:
