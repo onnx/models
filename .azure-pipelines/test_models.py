@@ -6,14 +6,13 @@ from pathlib import Path
 model_list = []
 
 for path in Path('text').rglob('*.onnx'):
-    model_list.append(path.name)
+    model_list.append(path)
 
 for path in Path('vision').rglob('*.onnx'):
-    model_list.append(path.name)
+    model_list.append(path)
 
 # run checker on each model
 for model_name in model_list:
-    print(model_name)
     model = onnx.load(model_name)
     onnx.checker.check_model(model)
 
