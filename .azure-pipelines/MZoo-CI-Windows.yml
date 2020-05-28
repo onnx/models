@@ -2,14 +2,14 @@ trigger:
 - master
 
 jobs:
-- job: 'Test'
+- job: 'Model Zoo CI - Windows'
   pool:
-    vmImage: 'vs2017-win2016'
+    vmImage: 'windows-2019'
   strategy:
     matrix:
       py37:
         python.version: '3.7'
-        onnx.version: '1.6'
+        onnx.version: '1.7'
     maxParallel: 2
 
   steps:
@@ -26,7 +26,7 @@ jobs:
 
   - script: |
       call activate py$(python.version)
-      git lfs fetch --all
+      git lfs pull
       python -m pip install onnx==$(onnx.version)
       python .azure-pipelines/test_models.py
     displayName: Install dependencies and test ONNX models
