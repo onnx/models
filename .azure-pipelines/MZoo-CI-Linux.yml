@@ -2,7 +2,7 @@ trigger:
 - master
 
 jobs:
-- job: 'Model Zoo CI - Linux'
+- job: 'Model_Zoo_Linux'
   pool:
     vmImage: 'Ubuntu-16.04'
   strategy:
