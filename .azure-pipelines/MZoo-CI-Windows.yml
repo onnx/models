@@ -2,7 +2,7 @@ trigger:
 - master
 
 jobs:
-- job: 'Model Zoo CI - Windows'
+- job: 'Model_Zoo_Win'
   pool:
     vmImage: 'windows-2019'
   strategy:
