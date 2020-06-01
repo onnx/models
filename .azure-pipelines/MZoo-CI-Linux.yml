@@ -20,10 +20,10 @@ jobs:
     inputs:
       createCustomEnvironment: true
       environmentName: 'py$(python.version)'
-      packageSpecs: 'python=$(python.version) protobuf'
+      packageSpecs: 'python=$(python.version)'
 
   - script: |
-      git lfs pull
+      git lfs pull --recent
       python -m pip install onnx==$(onnx.version)
       python .azure-pipelines/test_models.py
     displayName: Install dependencies and test ONNX models
