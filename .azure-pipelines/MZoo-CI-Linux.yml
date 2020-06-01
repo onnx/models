@@ -7,7 +7,7 @@ jobs:
     vmImage: 'Ubuntu-16.04'
   strategy:
     matrix:
-      py36:
+      py37:
         python.version: '3.7'
         onnx.version: '1.7'
     maxParallel: 2
