@@ -1,4 +1,4 @@
-# RetinanNet
+# RetinaNet
 
 ## Description
 [RetinaNet](https://github.com/NVIDIA/retinanet-examples) is a single-stage object detection model.
@@ -7,7 +7,7 @@
 
 |Model        |Download  | Download (with sample test data)|ONNX version|Opset version|Accuracy |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|RetinaNet (ResNet101 backbone)|    [228.4 MB](model/retinanet.onnx)   | [143.7 MB](model/retinanet.tar.gz)    |  1.6.0  |9| mAP 0.376      |
+|RetinaNet (ResNet101 backbone)|    [228.4 MB](model/retinanet-9.onnx)   | [153.3 MB](model/retinanet-9.tar.gz)    |  1.6.0  |9| mAP 0.376      |
 
 ## Inference
 A sample script for ONNX model conversion and ONNXRuntime inference can be found [here](dependencies/retinanet-export.py).
@@ -21,16 +21,17 @@ The images have to be loaded in to a range of [0, 1] and then normalized using m
 The following code shows how to preprocess a NCHW tensor:
 
 ```python
-import numpy as np
+from torchvision import transforms
 
-def preprocess(img_data):
-    mean_vec = np.array([0.485, 0.456, 0.406])
-    stddev_vec = np.array([0.229, 0.224, 0.225])
-    norm_img_data = np.zeros(img_data.shape).astype('float32')
-    for i in range(img_data.shape[0]):  
-         # for each pixel in each channel, divide the value by 255 to get value between [0, 1] and then normalize
-        norm_img_data[i,:,:] = (img_data[i,:,:]/255 - mean_vec[i]) / stddev_vec[i]
-    return norm_img_data
+preprocess = transforms.Compose([
+    transforms.Resize(256),
+    transforms.CenterCrop(224),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+])
+input_tensor = preprocess(input_image)
+# Create a mini-batch as expected by the model.
+input_batch = input_tensor.unsqueeze(0)
 ```
 
 
@@ -38,9 +39,11 @@ def preprocess(img_data):
 
 Model has 2 outputs:
 
-Classification heads: List of classification box heads per feature level.
+Classification heads: List of classifying anchor box heads of rank 4, one per feature level (5 levels).
 
-Bounding box regression heads: List of box regression heads per feature level.
+Bounding box regression heads: List of regressions (from anchor boxes to object boxes) of rank 4, one per feature level (5 levels).
+
+Output sizes depend on model (convolutional layers) parameters.
 
 ### Postprocessing
 The following script from [NVIDIA/retinanet-examples](https://github.com/NVIDIA/retinanet-examples/blob/0aba7724e42f5b654d8171a6cac8b54e07fb8206/retinanet/model.py#L141) shows how to:

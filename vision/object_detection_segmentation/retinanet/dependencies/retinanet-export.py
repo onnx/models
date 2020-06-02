@@ -1,19 +1,18 @@
-import io
-import sys
 import os
 import torch
-
-from retinanet.model import Model
-from retinanet.data import DataIterator
-
-from timeit import default_timer as timer
-from onnx import numpy_helper
 import onnxruntime
 import numpy as np
-import onnx
 
+from retinanet.model import Model
+from PIL import Image
+from torchvision import transforms
+
+from onnx import numpy_helper
+import urllib
 
 data_dir = 'test_data_set_0'
+url, filename = ("https://github.com/onnx/models/raw/master/vision/object_detection_segmentation/retinanet/dependencies/demo.jpg", "demo.jpg")
+urllib.request.urlretrieve(url, filename)
 
 
 def flatten(inputs):
@@ -108,25 +107,6 @@ def inference(file, inputs, outputs):
         print("== Done ==")
 
 
-def perf_run(sess, feeds, min_counts=5, min_duration_seconds=10):
-    # warm up
-    sess.run([], feeds)
-
-    start = timer()
-    run = True
-    count = 0
-    per_iter_cost = []
-    while run:
-        iter_start = timer()
-        sess.run([], feeds)
-        end = timer()
-        count = count + 1
-        per_iter_cost.append(end - iter_start)
-        if end - start >= min_duration_seconds and count >= min_counts:
-            run = False
-    return count, (end - start), per_iter_cost
-
-
 def torch_inference(model, input):
     print("====== Torch Inference ======")
     output=model(input)
@@ -145,43 +125,27 @@ def ort_inference(file, inputs_flatten, outputs_flatten):
     print("== Done ==")
 
 
-def get_image_from_url(url, size=None):
-    import requests
-    from PIL import Image
-    from io import BytesIO
-    from torchvision import transforms
-
-    data = requests.get(url)
-    image = Image.open(BytesIO(data.content)).convert("RGB")
-    image = image.resize(size, Image.BILINEAR)
-
-    to_tensor = transforms.ToTensor()
-    return to_tensor(image)
-
-
-def get_test_images():
-    image_url = "http://farm3.staticflickr.com/2469/3915380994_2e611b1779_z.jpg"
-    image = get_image_from_url(url=image_url, size=(384, 384))
-    images = torch.unsqueeze(image, dim=0)
-    return images
-
-
 # Download pretrained model from:
 # https://github.com/NVIDIA/retinanet-examples/releases/tag/19.04
 model, state = Model.load('retinanet_rn101fpn/retinanet_rn101fpn.pth')
 model.eval()
 model.exporting = True
-image = get_test_images()
-output = torch_inference(model, image)
+input_image = Image.open(filename)
+preprocess = transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+])
+input_tensor = preprocess(input_image)
+input_tensor = input_tensor.unsqueeze(0)
+output = torch_inference(model, input_tensor)
 
 # Test exported model with TensorProto data saved in files
-inputs_flatten = flatten(image.detach().cpu().numpy())
+inputs_flatten = flatten(input_tensor.detach().cpu().numpy())
 inputs_flatten = update_flatten_list(inputs_flatten, [])
 outputs_flatten = flatten(output)
 outputs_flatten = update_flatten_list(outputs_flatten, [])
 
-model_dir, data_dir = save_model('retinanet_resnet101', model.cpu(), image, output, input_names=['input'],
+model_dir, data_dir = save_model('retinanet_resnet101', model.cpu(), input_tensor, output, input_names=['input'],
                                  opset_version=9)
 
 ort_inference(model_dir, inputs_flatten, outputs_flatten)
-
