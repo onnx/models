@@ -37,11 +37,16 @@ input_batch = input_tensor.unsqueeze(0)
 
 Model has 2 outputs:
 
-Classification heads: List of classifying anchor box heads of rank 4, one per feature level (5 levels).
+Classification heads: 5 tensors of rank 4, each tensor corresponding to the classifying anchor box heads of one feature level in the feature pyramid network.
 
-Bounding box regression heads: List of regressions (from anchor boxes to object boxes) of rank 4, one per feature level (5 levels).
+Bounding box regression heads: 5 tensors of rank 4, each tensor corresponding to the regressions (from anchor boxes to object boxes) of one feature level in the feature pyramid network.
 
-Output sizes depend on model (convolutional layers) parameters.
+Output sizes depend on input images sizes and model (subnetworks convolutional layers) parameters.
+
+Output dimensions for the sample input image mini-batch of size [1, 3, 480, 640]:
+
+- Class heads sizes: [1, 720, 60, 80], [1, 720, 30, 40], [1, 720, 15, 20], [1, 720, 8, 10], [1, 720, 4, 5]
+- Regression box heads sizes: [1, 36, 60, 80], [1, 36, 30, 40], [1, 36, 15, 20], [1, 36, 8, 10], [1, 36, 4, 5]
 
 ### Postprocessing
 The following script from [NVIDIA/retinanet-examples](https://github.com/NVIDIA/retinanet-examples/blob/0aba7724e42f5b654d8171a6cac8b54e07fb8206/retinanet/model.py#L141) shows how to:
