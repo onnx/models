@@ -43,7 +43,7 @@ Bounding box regression heads: 5 tensors of rank 4, each tensor corresponding to
 
 Output sizes depend on input images sizes and model (subnetworks convolutional layers) parameters.
 
-Output dimensions for the sample input image mini-batch of size [1, 3, 480, 640]:
+Output dimensions for an image mini-batch of size [1, 3, 480, 640]:
 
 - Class heads sizes: [1, 720, 60, 80], [1, 720, 30, 40], [1, 720, 15, 20], [1, 720, 8, 10], [1, 720, 4, 5]
 - Regression box heads sizes: [1, 36, 60, 80], [1, 36, 30, 40], [1, 36, 15, 20], [1, 36, 8, 10], [1, 36, 4, 5]
