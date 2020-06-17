@@ -1,3 +1,11 @@
+---
+name: Bug report
+about: Create a bug report to help us improve our model zoo offerings.
+title: ''
+labels: 'bug'
+assignees: ''
+
+---
 # Bug Report
 
 ### Which model does this pertain to?
