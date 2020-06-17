@@ -17,9 +17,9 @@ Please name the model and link to the relevant paper (if applicable).
 Why is this model an improvement upon current ONNX model zoo offerings? 
 
 ### Relevant model information
-**Source repository**:  
-**Model Zoo category**: Vision, Language, Other  
-**Model Zoo sub-category**: Image Classification, Object Detection & Image Segmentation, Body, Face & Gesture Analysis, Image Manipulation, Machine Comprehension, Machine Translation, Language Modelling, Visual Question Answering & Dialog, Speech & Audio Processing, Other interesting models  
+**Source repository** (*e.g. Github link*):  
+**Model Zoo category** (*e.g. Vision*): 
+**Model Zoo sub-category** (*e.g. Image Classification*): 
 
 ### Notes
 Any additional information.
