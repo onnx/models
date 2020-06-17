@@ -1,4 +1,14 @@
-# Feature Request - Name
+---
+name: Feature Request
+about: Create a feature request for a functionality that doesn't currently exist in the ONNX model zoo.
+title: ''
+labels: 'enhancement'
+assignees: ''
+
+ 
+
+---
+# Feature Request
 
 ### What is the problem that this feature solves?
 Please detail the discrepancy with our current functionality.
