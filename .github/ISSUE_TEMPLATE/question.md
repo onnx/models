@@ -14,7 +14,7 @@ assignees: ''
 Explain your question here.
 
 ### Further information
-**Relevant Area** (*e.g. model usage, converters, backend, best practices, pre-/post- processing*): 
+**Relevant Area** (*e.g. model usage, backend, best practices, pre-/post- processing, converters*): 
 
 Is this issue related to a specific model?  
 **Model name** (*e.g. mnist*):  
