@@ -18,7 +18,7 @@ Why is this model an improvement upon current ONNX model zoo offerings?
 
 ### Relevant model information
 **Source repository** (*e.g. Github link*):  
-**Model Zoo category** (*e.g. Vision*): 
+**Model Zoo category** (*e.g. Vision*):   
 **Model Zoo sub-category** (*e.g. Image Classification*): 
 
 ### Notes
