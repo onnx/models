@@ -1,27 +1,28 @@
-# Open Neural Network eXchange (ONNX) Model Zoo
-[![Generic badge](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](contribute.md)
+# ONNX Model Zoo
 
-<p align="center">
-	<img src="resource/images/ONNX_Model_Zoo_Graphics.png" width="60%"/>
-</p>
+[Open Neural Network Exchange (ONNX)](http://onnx.ai) is an open standard format for representing machine learning models. ONNX is supported by a community of partners who have implemented it in many frameworks and tools.
 
-The ONNX Model Zoo is a collection of pre-trained models for state-of-the-art models in deep learning, available in the ONNX format. Accompanying each model are [Jupyter notebooks](http://jupyter.org) for model training and running inference with the trained model. The notebooks are written in Python and include links to the training dataset as well as references to the original paper that describes the model architecture. The notebooks can also be exported and run as Python (.py) files.
+The ONNX Model Zoo is a collection of pre-trained, state-of-the-art models in the ONNX format contributed by community members like you. Accompanying each model are [Jupyter notebooks](http://jupyter.org) for model training and running inference with the trained model. The notebooks are written in Python and include links to the training dataset as well as references to the original paper that describes the model architecture.
 
-## What is ONNX?
-The Open Neural Network eXchange ([ONNX](http://onnx.ai)) is an open format to represent deep learning models. With ONNX, developers can move models between state-of-the-art tools and choose the combination that is best for them. ONNX is developed and supported by a community of partners.
+We are standardizing on [Git LFS (Large File Storage)](https://git-lfs.github.com/) to store our ONNX model files. To download an ONNX model, navigate to the appropriate Github page and click the `Download` button on the top right.
 
 ## Models
-#### Read the [Usage](#usage-) section below for more details on the file formats in the ONNX Model Zoo (.onnx, .pb, .npz) and starter Python code for validating your ONNX model using test data.
+#### Read the [Usage](#usage-) section below for more details on the file formats in the ONNX Model Zoo (.onnx, .pb, .npz), downloading multiple ONNX models through [Git LFS command line](#gitlfs-), and starter Python code for validating your ONNX model using test data.
 
+#### Vision
 * [Image Classification](#image_classification)
 * [Object Detection & Image Segmentation](#object_detection)
 * [Body, Face & Gesture Analysis](#body_analysis)
 * [Image Manipulation](#image_manipulation)
-* [Speech & Audio Processing](#speech)
+
+#### Language
 * [Machine Comprehension](#machine_comprehension)
 * [Machine Translation](#machine_translation)
 * [Language Modelling](#language)
+
+#### Other
 * [Visual Question Answering & Dialog](#visual_qna)
+* [Speech & Audio Processing](#speech)
 * [Other interesting models](#others)
 
 ### Image Classification <a name="image_classification"/>
@@ -40,7 +41,8 @@ This collection of models take images as input, then classifies the major object
 |<b>[DenseNet-121](vision/classification/densenet-121)</b>|[Huang et al.](https://arxiv.org/abs/1608.06993)|Model that has every layer connected to every other layer and passes on its own feature providing strong gradient flow and more diversified features.|
 |<b>[Inception_V1](vision/classification/inception_and_googlenet/inception_v1)</b>|[Szegedy et al.](https://arxiv.org/abs/1409.4842)|This model is same as GoogLeNet, implemented through Caffe2 that has improved utilization of the computing resources inside the network and helps with the vanishing gradient problem. <br> Top-5 error from paper - ~6.7%|
 |<b>[Inception_V2](vision/classification/inception_and_googlenet/inception_v2)</b>|[Szegedy et al.](https://arxiv.org/abs/1512.00567)|Deep CNN model for Image Classification as an adaptation to Inception v1 with batch normalization. This model has reduced computational cost and improved image resolution compared to Inception v1. <br> Top-5 error from paper ~4.82%|
-|<b>[ShuffleNet](vision/classification/shufflenet)</b>|[Zhang et al.](https://arxiv.org/abs/1707.01083)|Extremely computation efficient CNN model that is designed specifically for mobile devices. This model greatly reduces the computational cost and provides a ~13x speedup over AlexNet on ARM-based mobile devices. Compared to MobileNet, ShuffleNet achieves superior performance by a significant margin due to it's efficient structure. <br> Top-1 error from paper - ~7.8%|
+|<b>[ShuffleNet_V1](vision/classification/shufflenet)</b>|[Zhang et al.](https://arxiv.org/abs/1707.01083)|Extremely computation efficient CNN model that is designed specifically for mobile devices. This model greatly reduces the computational cost and provides a ~13x speedup over AlexNet on ARM-based mobile devices. Compared to MobileNet, ShuffleNet achieves superior performance by a significant margin due to it's efficient structure. <br> Top-1 error from paper - ~32.6%|
+|<b>[ShuffleNet_V2](vision/classification/shufflenet)</b>|[Zhang et al.](https://arxiv.org/abs/1807.11164)|Extremely computation efficient CNN model that is designed specifically for mobile devices. This network architecture design considers direct metric such as speed, instead of indirect metric like FLOP. <br> Top-1 error from paper - ~30.6%|
 |<b>[ZFNet-512](vision/classification/zfnet-512)</b>|[Zeiler et al.](https://arxiv.org/abs/1311.2901)|Deep CNN model (up to 8 layers) that increased the number of features that the network is capable of detecting that helps to pick image features at a finer level of resolution. <br> Top-5 error from paper - ~14.3%|
 <hr>
 
@@ -57,24 +59,27 @@ Object detection models detect the presence of multiple objects in an image and 
 
 |Model Class |Reference |Description |
 |-|-|-|
-|<b>[Tiny YOLOv2](vision/object_detection_segmentation/tiny_yolov2)</b>|[Redmon et al.](https://arxiv.org/pdf/1612.08242.pdf)|A real-time CNN for object detection that detects 20 different classes. A smaller version of the more complex full YOLOv2 network.|
+|<b>[Tiny YOLOv2](vision/object_detection_segmentation/tiny-yolov2)</b>|[Redmon et al.](https://arxiv.org/pdf/1612.08242.pdf)|A real-time CNN for object detection that detects 20 different classes. A smaller version of the more complex full YOLOv2 network.|
 |<b>[SSD](vision/object_detection_segmentation/ssd)</b>|[Liu et al.](https://arxiv.org/abs/1512.02325)|Single Stage Detector: real-time CNN for object detection that detects 80 different classes.|
 |<b>[Faster-RCNN](vision/object_detection_segmentation/faster-rcnn)</b>|[Ren et al.](https://arxiv.org/abs/1506.01497)|Increases efficiency from R-CNN by connecting a RPN with a CNN to create a single, unified network for object detection that detects 80 different classes.|
 |<b>[Mask-RCNN](vision/object_detection_segmentation/mask-rcnn)</b>|[He et al.](https://arxiv.org/abs/1703.06870)|A real-time neural network for object instance segmentation that detects 80 different classes. Extends Faster R-CNN as each of the 300 elected ROIs go through 3 parallel branches of the network: label prediction, bounding box prediction and mask prediction.|
-|<b>YOLO v2</b>|[Redmon et al.](https://arxiv.org/abs/1612.08242)|A CNN model for real-time object detection system that can detect over 9000 object categories. It uses a single network evaluation, enabling it to be more than 1000x faster than R-CNN and 100x faster than Faster R-CNN. <br>[contribute](contribute.md)|
-|<b>[YOLO v3](vision/object_detection_segmentation/yolov3)</b>|[Redmon et al.](https://pjreddie.com/media/files/papers/YOLOv3.pdf)|A deep CNN model for real-time object detection that detects 80 different classes. A little bigger than YOLOv2 but still very fast. As accurate as SSD but 3 times faster.|
+|<b>[RetinaNet](vision/object_detection_segmentation/retinanet)</b>|[Lin et al.](https://arxiv.org/abs/1708.02002)|A real-time dense detector network for object detection that addresses class imbalance through Focal Loss. RetinaNet is able to match the speed of previous one-stage detectors and defines the state-of-the-art in two-stage detectors (surpassing R-CNN).|
+|<b>[YOLO v2](vision/object_detection_segmentation/yolov2)</b>|[Redmon et al.](https://arxiv.org/abs/1612.08242)|A CNN model for real-time object detection system that can detect over 9000 object categories. It uses a single network evaluation, enabling it to be more than 1000x faster than R-CNN and 100x faster than Faster R-CNN.
+|<b>[YOLO v2-coco](vision/object_detection_segmentation/yolov2-coco)</b>|[Redmon et al.](https://arxiv.org/abs/1612.08242)|A CNN model for real-time object detection system that can detect over 9000 object categories. It uses a single network evaluation, enabling it to be more than 1000x faster than R-CNN and 100x faster than Faster R-CNN. This model is trained with COCO dataset and contains 80 classes.
+|<b>[YOLO v3](vision/object_detection_segmentation/yolov3)</b>|[Redmon et al.](https://arxiv.org/pdf/1804.02767.pdf)|A deep CNN model for real-time object detection that detects 80 different classes. A little bigger than YOLOv2 but still very fast. As accurate as SSD but 3 times faster.|
+|<b>[Tiny YOLOv3](vision/object_detection_segmentation/tiny-yolov3)</b>|[Redmon et al.](https://arxiv.org/pdf/1804.02767.pdf)| A smaller version of YOLOv3 model. |
 |<b>[DUC](vision/object_detection_segmentation/duc)</b>|[Wang et al.](https://arxiv.org/abs/1702.08502)|Deep CNN based pixel-wise semantic segmentation model with >80% [mIOU](/models/semantic_segmentation/DUC/README.md/#metric) (mean Intersection Over Union). Trained on cityscapes dataset, which can be effectively implemented in self driving vehicle systems.|
-|<b>FCN</b>|[Long et al.](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)|Deep CNN based segmentation model trained end-to-end, pixel-to-pixel that produces efficient inference and learning. Built off of AlexNet, VGG net, GoogLeNet classification methods. <br>[contribute](contribute.md)|
+|FCN|[Long et al.](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)|Deep CNN based segmentation model trained end-to-end, pixel-to-pixel that produces efficient inference and learning. Built off of AlexNet, VGG net, GoogLeNet classification methods. <br>[contribute](contribute.md)|
 <hr>
 
 ### Body, Face & Gesture Analysis <a name="body_analysis"/>
-Face detection models identify and/or recognize human faces and emotions in given images. Body and Gesture Analysis models identify gender and age in given image. 
+Face detection models identify and/or recognize human faces and emotions in given images. Body and Gesture Analysis models identify gender and age in given image.
 
 |Model Class |Reference |Description |
 |-|-|-|
 |<b>[ArcFace](vision/body_analysis/arcface)</b>|[Deng et al.](https://arxiv.org/abs/1801.07698)|A CNN based model for face recognition which learns discriminative features of faces and produces embeddings for input face images.|
-|<b>CNN Cascade</b>|[Li et al.](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Li_A_Convolutional_Neural_2015_CVPR_paper.pdf)|The model operates at multiple resolutions, quickly rejecting the background regions in the fast low resolution stages in an image and carefully evaluates a small number of challenging candidates in the last high resolution stage. <br>[contribute](contribute.md)|
-|[Emotion FerPlus](vision/body_analysis/emotion_ferplus) |[Barsoum et al.](https://arxiv.org/abs/1608.01041)	| Deep CNN for emotion recognition trained on images of faces.|
+|CNN Cascade|[Li et al.](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Li_A_Convolutional_Neural_2015_CVPR_paper.pdf)|The model operates at multiple resolutions, quickly rejecting the background regions in the fast low resolution stages in an image and carefully evaluates a small number of challenging candidates in the last high resolution stage. <br>[contribute](contribute.md)|
+|<b>[Emotion FerPlus](vision/body_analysis/emotion_ferplus)</b> |[Barsoum et al.](https://arxiv.org/abs/1608.01041)	| Deep CNN for emotion recognition trained on images of faces.|
 |Age and Gender Classification using Convolutional Neural Networks| [Levi et al.](https://www.openu.ac.il/home/hassner/projects/cnn_agegender/CNN_AgeGenderEstimation.pdf)	|This model accurately classifies gender and age even the amount of learning data is limited.<br>[contribute](contribute.md)|
 <hr>
 
@@ -84,7 +89,8 @@ Image manipulation models use neural networks to transform input images to modif
 |Model Class |Reference |Description |
 |-|-|-|
 |Unpaired Image to Image Translation using Cycle consistent Adversarial Network|[Zhu et al.](https://arxiv.org/abs/1703.10593)|The model uses learning to translate an image from a source domain X to a target domain Y in the absence of paired examples. <br>[contribute](contribute.md)|
-|Image Super resolution using deep convolutional networks |	[Dong et al.](http://ieeexplore.ieee.org/document/7115171/?reload=true)	|A deep CNN that takes low-resolution image as the input and outputs the high-resolution one. Fast speed for restoration quality. <br>[contribute](contribute.md)|
+|<b>[Super Resolution with sub-pixel CNN](vision/super_resolution/sub_pixel_cnn_2016)</b> |	[Shi et al.](https://arxiv.org/abs/1609.05158)	|A deep CNN that uses sub-pixel convolution layers to upscale the input image. |
+|<b>[Fast Neural Style Transfer](vision/style_transfer/fast_neural_style)</b> |	[Johnson et al.](https://arxiv.org/abs/1603.08155)	|This method uses a loss network pretrained for image classification to define perceptual loss functions that measure perceptual differences in content and style between images. The loss network remains fixed during the training process.|
 <hr>
 
 ### Speech & Audio Processing <a name="speech"/>
@@ -103,6 +109,8 @@ This subset of natural language processing models that answer questions about a 
 |Model Class |Reference |Description |
 |-|-|-|
 |<b>[Bidirectional Attention Flow](text/machine_comprehension/bidirectional_attention_flow)</b>|[Seo et al.](https://arxiv.org/pdf/1611.01603)|A model that answers a query about a given context paragraph.|
+|<b>[BERT-Squad](text/machine_comprehension/bert-squad)</b>|[Devlin et al.](https://arxiv.org/pdf/1810.04805.pdf)|This model answers questions based on the context of the given input paragraph. |
+|<b>[GPT-2](text/machine_comprehension/gpt-2)</b>|[Radford et al.](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)|A large transformer-based language model that given a sequence of words within some text, predicts the next word. |
 <hr>
 
 ### Machine Translation <a name="machine_translation"/>
@@ -152,7 +160,9 @@ Every ONNX backend should support running the models out of the box. After downl
 - A protobuf file `model.onnx` that represents the serialized ONNX model.
 - Test data (in the form of serialized protobuf TensorProto files or serialized NumPy archives).
 
-The test data files can be used to validate ONNX models from the Model Zoo. We have provided the following interface examples for you to get started. Please replace `onnx_backend` in your code with the appropriate framework of your choice that provides ONNX inferencing support, and likewise replace `backend.run_model` with the framework's model evaluation logic. 
+### Usage - Test data starter code
+
+The test data files can be used to validate ONNX models from the Model Zoo. We have provided the following interface examples for you to get started. Please replace `onnx_backend` in your code with the appropriate framework of your choice that provides ONNX inferencing support, and likewise replace `backend.run_model` with the framework's model evaluation logic.
 
 There are two different formats for the test data files:
 
@@ -215,8 +225,18 @@ outputs = list(sample['outputs'])
 np.testing.assert_almost_equal(outputs, backend.run_model(model, inputs))
 ```
 
-## Model Visualization
-You can see visualizations of each model's network architecture by using [Netron](https://lutzroeder.github.io/Netron).
+### Usage - Git LFS <a name="gitlfs-"/>
+
+On default, cloning this repository will not download any ONNX models. Install Git LFS with `pip install git-lfs`.
+
+To download a specific model:
+`git lfs pull --include="[MODELNAME].onnx"`
+
+To download all models:
+`git lfs pull --include="*" --exclude=""`
+
+### Usage - Model visualization
+You can see visualizations of each model's network architecture by using [Netron](https://github.com/lutzroeder/Netron).
 
 ## Contributions
 Do you want to contribute a model? To get started, pick any model presented above with the [contribute](contribute.md) link under the Description column. The links point to a page containing guidelines for making a contribution.

@@ -1,12 +1,12 @@
 # CaffeNet
-Download:
-- release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/bvlc_reference_caffenet.tar.gz
-- release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/bvlc_reference_caffenet.tar.gz
-- release 1.2: https://s3.amazonaws.com/download.onnx/models/opset_7/bvlc_reference_caffenet.tar.gz
-- release 1.3: https://s3.amazonaws.com/download.onnx/models/opset_8/bvlc_reference_caffenet.tar.gz
-- master: https://s3.amazonaws.com/download.onnx/models/opset_9/bvlc_reference_caffenet.tar.gz
 
-Model size: 244 MB
+|Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+|CaffeNet| [238 MB](model/caffenet-3.onnx)  |  [244 MB](model/caffenet-3.tar.gz) |  1.1 | 3|
+|CaffeNet| [238 MB](model/caffenet-6.onnx)  |  [244 MB](model/caffenet-6.tar.gz) |  1.1.2 | 6|
+|CaffeNet| [238 MB](model/caffenet-7.onnx)  |  [244 MB](model/caffenet-7.tar.gz) |  1.2 | 7|
+|CaffeNet| [238 MB](model/caffenet-8.onnx)  |  [244 MB](model/caffenet-8.tar.gz) |  1.3 | 8|
+|CaffeNet| [238 MB](model/caffenet-9.onnx)  |  [244 MB](model/caffenet-9.tar.gz) |  1.4 | 9|
 
 ## Description
 CaffeNet a variant of AlexNet.

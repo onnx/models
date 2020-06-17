@@ -1,13 +1,12 @@
 # DenseNet-121
 
-Download:
-- release 1.1: https://s3.amazonaws.com/download.onnx/models/opset_3/densenet121.tar.gz
-- release 1.1.2: https://s3.amazonaws.com/download.onnx/models/opset_6/densenet121.tar.gz
-- release 1.2: https://s3.amazonaws.com/download.onnx/models/opset_7/densenet121.tar.gz
-- release 1.3: https://s3.amazonaws.com/download.onnx/models/opset_8/densenet121.tar.gz
-- master: https://s3.amazonaws.com/download.onnx/models/opset_9/densenet121.tar.gz
-
-Model size: 33 MB
+|Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+|DenseNet-121| [32 MB](model/densenet-3.onnx)  |  [33 MB](model/densenet-3.tar.gz) |  1.1 | 3|
+|DenseNet-121| [32 MB](model/densenet-6.onnx)  |  [33 MB](model/densenet-6.tar.gz) |  1.1.2 | 6|
+|DenseNet-121| [32 MB](model/densenet-7.onnx)  |  [33 MB](model/densenet-7.tar.gz) |  1.2 | 7|
+|DenseNet-121| [32 MB](model/densenet-8.onnx)  |  [33 MB](model/densenet-8.tar.gz) |  1.3 | 8|
+|DenseNet-121| [32 MB](model/densenet-9.onnx)  |  [33 MB](model/densenet-9.tar.gz) |  1.4 | 9|
 
 ## Description
 DenseNet-121 is a convolutional neural network for classification.
