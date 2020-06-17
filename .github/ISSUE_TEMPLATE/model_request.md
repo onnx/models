@@ -2,7 +2,7 @@
 name: Model Request
 about: Request a model that does not currently exist in the ONNX model zoo.
 title: ''
-labels: 'model request'
+labels: 'model-request'
 assignees: ''
 
  
