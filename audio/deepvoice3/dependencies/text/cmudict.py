@@ -1,3 +1,8 @@
+'''
+DISCLAIMER 
+This file was originally created by the developers of the DeepVoice3 repository and is used to preprocess input data.
+'''
+
 import re
 
 
