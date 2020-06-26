@@ -1,3 +1,8 @@
+'''
+DISCLAIMER 
+This file was originally created by the developers of the DeepVoice3 repository and is used to preprocess input data.
+'''
+
 # -*- coding: utf-8 -*-
 
 import inflect
@@ -12,15 +17,15 @@ _dollars_re = re.compile(r'\$([0-9\.\,]*[0-9]+)')
 _ordinal_re = re.compile(r'[0-9]+(st|nd|rd|th)')
 _number_re = re.compile(r'[0-9]+')
 
-
+# Replaces commas with empty characters 
 def _remove_commas(m):
     return m.group(1).replace(',', '')
 
-
+# Replaces decimals with "point"
 def _expand_decimal_point(m):
     return m.group(1).replace('.', ' point ')
 
-
+# Decode dollar symbols
 def _expand_dollars(m):
     match = m.group(1)
     parts = match.split('.')
@@ -41,11 +46,11 @@ def _expand_dollars(m):
     else:
         return 'zero dollars'
 
-
+# Expand numbers 
 def _expand_ordinal(m):
     return _inflect.number_to_words(m.group(0))
 
-
+# Decode numbers 
 def _expand_number(m):
     num = int(m.group(0))
     if num > 1000 and num < 3000:
@@ -60,7 +65,7 @@ def _expand_number(m):
     else:
         return _inflect.number_to_words(num, andword='')
 
-
+# Removes punctutation marks and other special characters
 def normalize_numbers(text):
     text = re.sub(_comma_number_re, _remove_commas, text)
     text = re.sub(_pounds_re, r'\1 pounds', text)
