@@ -99,8 +99,8 @@ This class of models uses audio data to train models that can identify voice, ge
 |Model Class |Reference |Description |
 |-|-|-|
 |Speech recognition with deep recurrent neural networks|	[Graves et al.](https://www.cs.toronto.edu/~fritz/absps/RNN13.pdf)|A RNN model for sequential data for speech recognition. Labels problems where the input-output alignment is unknown<br>[contribute](contribute.md)|
-|<b>[Deep voice: Real time neural text to speech](audio/deepvoice3)</b> |	[Arik et al.](https://arxiv.org/abs/1702.07825)	|A DNN model that performs end-to-end neural speech synthesis. Requires fewer parameters and it is faster than other systems. <br>[contribute](contribute.md)|
-|Sound Generative models|	[WaveNet: A Generative Model for Raw Audio ](https://arxiv.org/abs/1609.03499)|A CNN model that generates raw audio waveforms. Has predictive distribution for each audio sample. Generates realistic music fragments. <br>[contribute](contribute.md)|
+|<b>[Deep voice: Real time neural text to speech](audio/deepvoice3)</b> |	[Arik et al.](https://arxiv.org/abs/1702.07825)	|A Deep learning model that performs end-to-end neural speech synthesis. Requires fewer parameters and is faster than other state-of-the-art neural speech synthesis systems.|
+|Sound Generative models|	[WaveNet: A Generative Model for Raw Audio ](https://arxiv.org/abs/1609.03499)|A CNN model that generates raw audio waveforms. Has predictive distribution for each audio sample. Generates realistic music fragments.<br>[contribute](contribute.md)|
 <hr>
 
 ### Machine Comprehension <a name="machine_comprehension"/>
