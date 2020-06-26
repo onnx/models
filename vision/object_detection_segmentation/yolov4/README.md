@@ -86,7 +86,7 @@ mAP50 on COCO 2017 dataset is 0.5733, based on the original tensorflow [model](h
 ## References
 This model is diretly coverted from [hunglc007/tensorflow-yolov4-tflite](https://github.com/hunglc007/tensorflow-yolov4-tflite).
 
-## Contributers
+## Contributors
 [Jennifer Wang](https://github.com/jennifererwangg)
 
 ## License
