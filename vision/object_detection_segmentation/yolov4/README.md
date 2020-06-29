@@ -1,7 +1,7 @@
 # YOLOv4
 
 ## Description
-[YOLOv4](https://github.com/hunglc007/tensorflow-yolov4-tflite) optimizes the speed and accuracy of object detection. It is twice faster than EfficientDet and improves YOLOv3's AP and FPS by 10% and 12%, respectively. 
+[YOLOv4](https://github.com/hunglc007/tensorflow-yolov4-tflite) optimizes the speed and accuracy of object detection. It is two times faster than EfficientDet. It improves YOLOv3's AP and FPS by 10% and 12%, respectively, with mAP50 of 52.32 on the COCO 2017 dataset and FPS of 41.7 on Tesla 100.
 
 ## Model
 
@@ -9,6 +9,8 @@
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |YOLOv4       |[251 MB](model/yolov4.onnx) |[236 MB](model/yolov4.tar.gz)|1.6 |11 |mAP of 0.5733 |
 
+### Source
+Tensorflow => ONNX
 
 
 ## Inference
@@ -17,12 +19,12 @@ A tutorial for the conversion process can be found in the [conversion](dependenc
 
 Validation of the converted model and a graph representation of it can be found in the [validation](dependencies/onnx-model-validation.ipynb) notebook.
 ### Running inference
-A tutorial for running inference using onnxruntime can be found in the [ort](dependencies/ort.ipynb) notebook.
+A tutorial for running inference using onnxruntime can be found in the [inference](dependencies/inference.ipynb) notebook.
 ### Input to model
-Input images are resized to the shape `(1, 416, 416, 3)`.
+This model expects input shapes of `(1, 416, 416, 3)`. Each dimension represents the following variables: `(batch_size, height, width, channels)`.
 
 ### Preprocessing steps
-The following code shows how to preprocess an image. For more information and an example on how preprocess is done, please visit [this](dependencies/ort.ipynb) notebook.
+The following code shows how preprocessing is done. For more information and an example on how preprocess is done, please visit the [inference](dependencies/inference.ipynb) notebook.
 
 ```python
 import numpy as np
@@ -71,7 +73,7 @@ There are 3 output layers. For each layer, there are 255 outputs: 85 values per 
 The 85 values of each anchor consists of 4 box coordinates describing the predicted bounding box (x, y, h, w), 1 object confidence, and 80 class confidences. [Here](https://github.com/hunglc007/tensorflow-yolov4-tflite/blob/master/data/classes/coco.names) is the class list.
 
 ### Postprocessing steps
-To see postprocess steps and an example, please visit [this](dependencies/ort.ipynb) notebook.
+To see postprocessing steps and an example, please visit the [inference](dependencies/inference.ipynb) notebook.
 
 ## Dataset
 Pretrained yolov4 weights can be downloaded [here](https://drive.google.com/open?id=1cewMfusmPjYWbrnuJRuKhPMwRe_b9PaT). 
