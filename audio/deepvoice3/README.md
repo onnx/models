@@ -10,7 +10,7 @@ Deep learning model that performs end-to-end neural speech synthesis. Requires f
 |DeepVoice3      | [52.8 MB](audio/deepvoice3/model/deepvoice3-11.onnx) | [49.1 MB](audio/deepvoice3/model/deepvoice3-11.tar.gz) |1.6| 11|3.78 MOS|
 
 ### Source
-Pytorch => onnx model
+PyTorch DeepVoice3 => ONNX DeepVoice3
 
 ## Inference
 Used [ONNX Runtime](https://github.com/microsoft/onnxruntime) to perform inference
@@ -25,7 +25,7 @@ A few actions were taken on the text to improve the quality of the audio predict
 * Every utterance ended with a period or a question mark.
 * Spaces replaced between words with separator characters that represent the time between words uttered by the speaker.
 
-Get parameters and convert textual features to an internal representation.
+Get parameters and convert textual features to an internal representation:
 ``` 
 sequence = np.array(frontend.text_to_sequence(text, p=p))
 sequence = torch.from_numpy(sequence).unsqueeze(0).long().to(device)
@@ -37,7 +37,7 @@ speaker_ids = None if speaker_id is None else torch.LongTensor([speaker_id]).to(
 Generates audio output. The decoder uses mel-band log-magnitude spectograms as audio frame representation.
 
 ### Postprocessing
-Print text with generated audio. 
+Print text with generated audio:
 ```
 for idx, text in enumerate(texts):
   print(idx, text)
