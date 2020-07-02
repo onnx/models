@@ -14,6 +14,11 @@ Transformer-based language model for text generation.
 |GPT-2-LM-HEAD |[664.87 MB](model/gpt2-lm-head-10.onnx) | [607 MB](model/gpt2-lm-head-10.tar.gz)| 1.6 | 10 |mAP of [0.024](https://docs.google.com/spreadsheets/d/1sryqufw2D0XlUH4sq3e9Wnxu5EAQkaohzrJbd5HdQ_w/edit#gid=0)|
 
 
+### Source
+PyTorch GPT-2 ==> ONNX GPT-2  
+PyTorch GPT-2 + script changes ==> ONNX GPT-2-LM-HEAD
+
+
 ## Inference
 The script for ONNX model conversion and ONNX Runtime inference is [here](dependencies/GPT2-export.py).
 
