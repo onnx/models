@@ -53,7 +53,7 @@ The original model is pretrained with the [LJSpeech](https://keithito.com/LJ-Spe
 The pretrained model is referenced in the [deepvoice3_pytorch](https://github.com/r9y9/deepvoice3_pytorch) repository. 
 
 ### Validation accuracy
-Speech naturalness of 95.5 and Pronunciation accuracy of 95.1 computed over LJSpeech dataset.
+Mean Opinion Score (MOS) of 3.78 computed over LJSpeech dataset.
 <hr>
 
 ### References
