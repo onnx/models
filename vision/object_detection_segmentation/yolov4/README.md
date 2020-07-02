@@ -10,7 +10,7 @@
 |YOLOv4       |[251 MB](model/yolov4.onnx) |[236 MB](model/yolov4.tar.gz)|1.6 |11 |mAP of 0.5733 |
 
 ### Source
-Tensorflow => ONNX
+Tensorflow YOLOv4 => ONNX YOLOv4
 
 
 ## Inference
@@ -33,25 +33,25 @@ import cv2
 # this function is from tensorflow-yolov4-tflite/core/utils.py
 def image_preprocess(image, target_size, gt_boxes=None):
 
-    ih, iw    = target_size
-    h,  w, _  = image.shape
+    ih, iw = target_size
+    h, w, _ = image.shape
 
     scale = min(iw/w, ih/h)
-    nw, nh  = int(scale * w), int(scale * h)
+    nw, nh = int(scale * w), int(scale * h)
     image_resized = cv2.resize(image, (nw, nh))
 
-    image_paded = np.full(shape=[ih, iw, 3], fill_value=128.0)
+    image_padded = np.full(shape=[ih, iw, 3], fill_value=128.0)
     dw, dh = (iw - nw) // 2, (ih-nh) // 2
-    image_paded[dh:nh+dh, dw:nw+dw, :] = image_resized
-    image_paded = image_paded / 255.
+    image_padded[dh:nh+dh, dw:nw+dw, :] = image_resized
+    image_padded = image_padded / 255.
 
     if gt_boxes is None:
-        return image_paded
+        return image_padded
 
     else:
         gt_boxes[:, [0, 2]] = gt_boxes[:, [0, 2]] * scale + dw
         gt_boxes[:, [1, 3]] = gt_boxes[:, [1, 3]] * scale + dh
-        return image_paded, gt_boxes
+        return image_padded, gt_boxes
 
 # input
 input_size = 416
@@ -83,7 +83,7 @@ mAP50 on COCO 2017 dataset is 0.5733, based on the original tensorflow [model](h
 
 ## Publication/Attribution
 * [YOLOv4: Optimal Speed and Accuracy of Object Detection](https://arxiv.org/abs/2004.10934). Alexey Bochkovskiy, Chien-Yao Wang, Hong-Yuan Mark Liao. 
-* Original [models](https://github.com/AlexeyAB/darknet).
+* Original models from [Darknet Github repository](https://github.com/AlexeyAB/darknet).
 
 ## References
 This model is diretly coverted from [hunglc007/tensorflow-yolov4-tflite](https://github.com/hunglc007/tensorflow-yolov4-tflite).
