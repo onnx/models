@@ -13,18 +13,29 @@ EfficientNet-Lite 4 is the largest variant and most accurate of the set of Effic
 |EfficientNet-Lite4     | [51.9 MB](model/efficientnet-lite4.onnx)	  | [157 MB](efficientnet-lite4.tar.gz)|1.7.0|11|
 
 ### Source
-Tensorflow => Onnx
+Tensorflow EfficientNet-Lite4 => ONNX EfficientNet-Lite4
 
 <hr>
 
 
 ## Inference
 
+### Running Inference 
+The following steps show how to run the inference using onnxruntime. 
+
+    import onnxruntime as rt
+    
+    # load model
+    sess = rt.InferenceSession(MODEL + ".onnx")
+    # run inference 
+    results = sess.run(["Softmax:0"], {"images:0": img_batch})[0]
+    
+
 ### Input to model
-Input image to model is resized to shape float32[1,224,224,3]. The batch size is 1, with 224 x 224 height and width dimensions. The input is an RBG image that has 3 channels: red, green, and blue. Inference was done using a jpg image.
+Input image to model is resized to shape `float32[1,224,224,3]`. The batch size is 1, with 224 x 224 height and width dimensions. The input is an RBG image that has 3 channels: red, green, and blue. Inference was done using a jpg image.
 
 ### Preprocessing steps
-The following steps show how to preprocess the input image. For more details visit this [notebook](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/efficientnet-lite.ipynb)
+The following steps show how to preprocess the input image. For more details visit [this conversion notebook](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/efficientnet-lite.ipynb)
 
     import numpy as np
     import math
@@ -86,7 +97,7 @@ The following steps show how to preprocess the input image. For more details vis
     img_batch = np.expand_dims(img, axis=0)
 
 ### Output of model
-Output of model is an inference score with array shape float32[1,1000]. The output references the labels_map.txt file which maps an index to a label to classify the type of image. 
+Output of model is an inference score with array shape `float32[1,1000]`. The output references the `labels_map.txt` file which maps an index to a label to classify the type of image. 
 
 ### Postprocessing steps
 The following steps detail how to print the output results of the model.
@@ -109,7 +120,7 @@ Refer to [efficientnet-lite4 conversion notebook](https://github.com/onnx/tensor
 <hr>
 
 ## References
-Original Tensorflow to Onnx conversion [tutorial](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/efficientnet-lite.ipynb). The Juypter Notebook references how to run an evaluation on the efficientnet-lite4 model and export it as a saved model. It also details how to convert the tensorflow model into onnx, and how to run its preprocessing and postprocessing code for the inputs and outputs. 
+Tensorflow to Onnx conversion [tutorial](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/efficientnet-lite.ipynb). The Juypter Notebook references how to run an evaluation on the efficientnet-lite4 model and export it as a saved model. It also details how to convert the tensorflow model into onnx, and how to run its preprocessing and postprocessing code for the inputs and outputs. 
 <hr>
 
 ## Contributors
