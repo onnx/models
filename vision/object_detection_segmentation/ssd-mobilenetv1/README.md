@@ -20,7 +20,7 @@ Tensorflow SSD-MobileNetV1 ==> ONNX SSD-MobileNetV1
 ## Inference
 
 ### Running inference 
-Refer to this [inference notebook] for more details on how to run inference using onnxruntime and define environment variables for the model. 
+Refer to this [inference notebook](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/ConvertingSSDMobilenetToONNX.ipynb) for more details on how to run inference using onnxruntime and define environment variables for the model. 
      
     import onnxruntime as rt
     
