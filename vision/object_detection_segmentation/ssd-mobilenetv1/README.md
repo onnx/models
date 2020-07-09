@@ -2,7 +2,7 @@
 
 ## Description
 
-SSD-MobilenetV1 is an object detection model that uses a Single Shot MultiBox Detector(SSD) approach to predict object classes to boundary boxes.
+SSD-MobilenetV1 is an object detection model that uses a Single Shot MultiBox Detector(SSD) approach to predict object classes for boundary boxes. 
 
 SSD enables the model to only need to take one single shot to detect multiple objects in an image, and mobilenet is a base network that provides high-level features for object detection. The combination of these two model frameworks produces an efficent, high-accuracy detection model that requires less computational powers.
 
@@ -15,7 +15,7 @@ The SSD-MobilenetV1 is suitable for mobile and embedded based vision application
 |SSD-MobilenetV1       | [29.3 MB](object_detection_segmentation/ssd-mobilenetv1/models/ssd_mobilenet_v1_coco_2018_01_28.onnx)  |[76.5 MB](object_detection_segmentation/ssd-mobilenetv1/models/ssd_mobilenet_v1_coco_2018_01_28.tar.gz) |1.7.0 | 10 |
 
 ### Source
-Tensorflow SSD-MobilenetV1 ==> ONNX SSD-MobilenetV1 
+Tensorflow SSD-MobileNetV1 ==> ONNX SSD-MobileNetV1 
 
 ## Inference
 
@@ -60,15 +60,15 @@ The following code shows how preprocessing is done. For more information and an 
     img_data = np.expand_dims(img_data.astype(np.uint8), axis=0)
  
 ### Output
-Given each batch of images, the model returns 4 tensors:
+Given each batch of images, the model returns 4 tensor arrays:
 
-`num_detections`: the number of detections
+`num_detections`: the number of detections.
 
 `detection_boxes`: a list of bounding boxes. Each list item describes a box with top, left, bottom, right relative to the image size.
 
-`detection_scores`: the score for each detection
+`detection_scores`: the score for each detection with values between 0 and 1 representing probability that a class was detected.
 
-`detection_classes`: the coco class for the detection
+`detection_classes`: Array of 10 integers (output as floating point values) each indicating the index of a class label from the coco class
 
 It outputs the image with boundary boxes and labels. The full list of classes can be found in the [coco dataset](https://cocodataset.org/#home).
 
