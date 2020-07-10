@@ -7,7 +7,7 @@ Deep learning model that performs end-to-end neural speech synthesis. Requires f
 
 |Model        |Download  | Download (with sample test data)|ONNX version|Opset version|Accuracy|
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|DeepVoice3      | [52.8 MB](audio/deepvoice3/model/deepvoice3-11.onnx) | [49.1 MB](audio/deepvoice3/model/deepvoice3-11.tar.gz) |1.6| 11|3.78 MOS|
+|DeepVoice3      | [52.8 MB](audio/deepvoice3/model/deepvoice3-11.onnx) | [49.1 MB](audio/deepvoice3/model/deepvoice3-11.tar.gz) |1.6| 11|3.63 MOS|
 
 ### Source
 PyTorch DeepVoice3 => ONNX DeepVoice3
