@@ -121,6 +121,8 @@ Refer to [efficientnet-lite4 conversion notebook](https://github.com/onnx/tensor
 
 ## References
 Tensorflow to Onnx conversion [tutorial](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/efficientnet-lite.ipynb). The Juypter Notebook references how to run an evaluation on the efficientnet-lite4 model and export it as a saved model. It also details how to convert the tensorflow model into onnx, and how to run its preprocessing and postprocessing code for the inputs and outputs. 
+
+Refer to this [paper](https://arxiv.org/abs/1905.11946) for more details on the model.
 <hr>
 
 ## Contributors
