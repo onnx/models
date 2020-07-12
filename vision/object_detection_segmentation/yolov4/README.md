@@ -15,7 +15,7 @@ Tensorflow YOLOv4 => ONNX YOLOv4
 
 ## Inference
 ### Conversion
-A tutorial for the conversion process can be found in the [conversion](dependencies/conversion.ipynb) notebook.
+A tutorial for the conversion process can be found in the [conversion](dependencies/Conversion.ipynb) notebook.
 
 Validation of the converted model and a graph representation of it can be found in the [validation](dependencies/onnx-model-validation.ipynb) notebook.
 ### Running inference
