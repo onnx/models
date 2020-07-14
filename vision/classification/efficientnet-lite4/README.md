@@ -35,7 +35,7 @@ The following steps show how to run the inference using onnxruntime.
 Input image to model is resized to shape `float32[1,224,224,3]`. The batch size is 1, with 224 x 224 height and width dimensions. The input is an RBG image that has 3 channels: red, green, and blue. Inference was done using a jpg image.
 
 ### Preprocessing steps
-The following steps show how to preprocess the input image. For more details visit [this conversion notebook](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/efficientnet-lite.ipynb)
+The following steps show how to preprocess the input image. For more details visit [this conversion notebook](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/efficientnet-lite.ipynb).
 
     import numpy as np
     import math
