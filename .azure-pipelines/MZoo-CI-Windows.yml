@@ -26,6 +26,6 @@ jobs:
 
   - script: |
       call activate py$(python.version)
-      python -m pip install onnx==$(onnx.version)
+      python -m pip install onnx==$(onnx.version) requests
       python .azure-pipelines/test_models.py
     displayName: Install dependencies and test ONNX models
