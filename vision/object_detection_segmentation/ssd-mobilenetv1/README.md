@@ -122,7 +122,7 @@ The model was trained using [MS COCO 2017 Train Images, Val Images, and Train/Va
 
 ### Training
 
-Training details for model's preprocess is found in this [jupyter notebook](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/ConvertingSSDMobilenetToONNX.ipynb). 
+Training details for the SSD-MobileNet model's preprocessing is found in this [tutorial notebook](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/ConvertingSSDMobilenetToONNX.ipynb). 
 The notebook also details how the ONNX model was converted. 
 
 ### References
