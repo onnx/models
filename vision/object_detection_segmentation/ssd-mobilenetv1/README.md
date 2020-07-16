@@ -78,7 +78,7 @@ It outputs the image with boundary boxes and labels. The full list of classes ca
     # draw boundary boxes and label for each detection
     def draw_detection(draw, d, c):
         width, height = draw.im.size
-        # the box is relative to the image size so we multiply with height and width to get pixels.
+        # the box is relative to the image size so we multiply with height and width to get pixels
         top = d[0] * height
         left = d[1] * width
         bottom = d[2] * height
