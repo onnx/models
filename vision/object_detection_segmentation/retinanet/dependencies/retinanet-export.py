@@ -1,20 +1,18 @@
+import os
 import torch
 import onnxruntime
-import onnx
-from onnx import numpy_helper
-from transformers import GPT2Model, GPT2LMHeadModel, GPT2Tokenizer
-
 import numpy as np
-import os
 
-# Transformers has a unified API
-# for 8 transformer architectures and 30 pretrained weights.
-#          Model          | Tokenizer          | Pretrained weights shortcut          | save_name
-MODELS = [
-    (GPT2Model, GPT2Tokenizer, 'gpt2', 'gpt2'),
-    (GPT2LMHeadModel, GPT2Tokenizer, 'gpt2', 'gpt2-lm-head'),
-]
+from retinanet.model import Model
+from PIL import Image
+from torchvision import transforms
+
+from onnx import numpy_helper
+import urllib
+
 data_dir = 'test_data_set_0'
+url, filename = ("https://github.com/onnx/models/raw/master/vision/object_detection_segmentation/retinanet/dependencies/demo.jpg", "demo.jpg")
+urllib.request.urlretrieve(url, filename)
 
 
 def flatten(inputs):
@@ -80,12 +78,8 @@ def save_model(name, model, inputs, outputs, input_names=None, output_names=None
                                 "Number of output names provided is not equal to the number of output.")
 
     model_dir = os.path.join(dir, 'model.onnx')
-    if isinstance(model, torch.jit.ScriptModule):
-        torch.onnx._export(model, inputs, model_dir, verbose=True, input_names=input_names,
-                           output_names=output_names, example_outputs=outputs, **kwargs)
-    else:
-        torch.onnx.export(model, inputs, model_dir, verbose=True, input_names=input_names,
-                          output_names=output_names, example_outputs=outputs, **kwargs)
+    torch.onnx.export(model, inputs, model_dir, verbose=True, input_names=input_names,
+                      output_names=output_names, example_outputs=outputs, **kwargs)
 
     test_data_dir = os.path.join(dir, data_dir)
     if not os.path.exists(test_data_dir):
@@ -113,56 +107,45 @@ def inference(file, inputs, outputs):
         print("== Done ==")
 
 
-def gpt2_test():
-    for model_class, tokenizer_class, pretrained_weights, save_name in MODELS:
-        # Load pretrained model/tokenizer
-        tokenizer = tokenizer_class.from_pretrained(pretrained_weights)
-        model = model_class.from_pretrained(pretrained_weights)
-        model.eval()
-        # Encode text
-        # Add special tokens takes care of adding [CLS], [SEP], <s>... tokens in the right way for each model.
-        input_ids_1 = torch.tensor(
-            [[tokenizer.encode("Here is some text to encode Hello World", add_special_tokens=True)]])
-        with torch.no_grad():
-            output_1 = model(input_ids_1)  # Models outputs are now tuples
-
-        model_dir, data_dir = save_model(save_name, model.cpu(), input_ids_1, output_1,
-                                         opset_version=10,
-                                         input_names=['input1'],
-                                         dynamic_axes={'input1': [0, 1, 2, 3]})
-
-        # Test exported model with TensorProto data saved in files
-        inputs_flatten = flatten(input_ids_1)
-        inputs_flatten = update_flatten_list(inputs_flatten, [])
-        outputs_flatten = flatten(output_1)
-        outputs_flatten = update_flatten_list(outputs_flatten, [])
-
-        inputs = []
-        for i, _ in enumerate(inputs_flatten):
-            f_ = os.path.join(data_dir, '{0}_{1}.pb'.format("input", i))
-            tensor = onnx.TensorProto()
-            with open(f_, 'rb') as file:
-                tensor.ParseFromString(file.read())
-            inputs.append(numpy_helper.to_array(tensor))
-
-        outputs = []
-        for i, _ in enumerate(outputs_flatten):
-            f_ = os.path.join(data_dir, '{0}_{1}.pb'.format("output", i))
-            tensor = onnx.TensorProto()
-            with open(f_, 'rb') as file:
-                tensor.ParseFromString(file.read())
-            outputs.append(numpy_helper.to_array(tensor))
-
-        inference(model_dir, inputs, outputs)
-
-        # Test exported model with a new input
-        print("== Feeding model with new input ==")
-        input_ids_2 = torch.tensor(
-              [[tokenizer.encode("Here is some alternative text to encode I love Seattle", add_special_tokens=True)]])
-        with torch.no_grad():
-            output_2 = model(input_ids_2)
-
-        inference(model_dir, input_ids_2, output_2)
+def torch_inference(model, input):
+    print("====== Torch Inference ======")
+    output=model(input)
+    return output
 
 
-gpt2_test()
+def ort_inference(file, inputs_flatten, outputs_flatten):
+    print("====== ORT Inference ======")
+    ort_sess = onnxruntime.InferenceSession(file)
+    ort_inputs = dict((ort_sess.get_inputs()[i].name, to_numpy(input)) for i, input in enumerate(inputs_flatten))
+    ort_outs = ort_sess.run(None, ort_inputs)
+    if outputs_flatten is not None:
+        print("== Checking model output ==")
+        [np.testing.assert_allclose(to_numpy(output), ort_outs[i], rtol=1e-03, atol=1e-05) for i, output in
+         enumerate(outputs_flatten)]
+    print("== Done ==")
+
+
+# Download pretrained model from:
+# https://github.com/NVIDIA/retinanet-examples/releases/tag/19.04
+model, state = Model.load('retinanet_rn101fpn/retinanet_rn101fpn.pth')
+model.eval()
+model.exporting = True
+input_image = Image.open(filename)
+preprocess = transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+])
+input_tensor = preprocess(input_image)
+input_tensor = input_tensor.unsqueeze(0)
+output = torch_inference(model, input_tensor)
+
+# Test exported model with TensorProto data saved in files
+inputs_flatten = flatten(input_tensor.detach().cpu().numpy())
+inputs_flatten = update_flatten_list(inputs_flatten, [])
+outputs_flatten = flatten(output)
+outputs_flatten = update_flatten_list(outputs_flatten, [])
+
+model_dir, data_dir = save_model('retinanet_resnet101', model.cpu(), input_tensor, output, input_names=['input'],
+                                 opset_version=9)
+
+ort_inference(model_dir, inputs_flatten, outputs_flatten)

@@ -10,6 +10,8 @@ This model predicts handwritten digits using a convolutional neural network (CNN
 |     |[26 kB](model/mnist-7.onnx)|[26 kB](model/mnist-7.tar.gz) |1.2  |7 |
 |     |[26 kB](model/mnist-8.onnx)|[26 kB](model/mnist-8.tar.gz) |1.3  |8 |
 
+TOP-1 TEST ERROR RATE: 1.1%
+
 ### Dataset
 The model has been trained on the popular [MNIST dataset](http://yann.lecun.com/exdb/mnist/).
 
@@ -23,12 +25,25 @@ The model is trained in CNTK following the tutorial [CNTK 103D: Convolutional Ne
 We used CNTK as the framework to perform inference. A brief description of the inference process is provided below:
 
 ### Input
-shape `(1x1x28x28)`
+Input tensor has shape `(1x1x28x28)`, with type of float32.      
+One image at a time. This model doesn't support mini-batch.      
 
 ### Preprocessing
+Images are resized into (28x28) in grayscale, with a black background and a white foreground (the number should be in white). Color value is scaled to [0.0, 1.0]. 
+
+Example:
+```python
+import numpy as np
+import cv2
+
+image = cv2.imread('input.png')
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+gray = cv2.resize(gray, (28,28)).astype(np.float32)/255
+input = np.reshape(gray, (1,1,28,28)
+```
 
 ### Output
-shape `(1x10)`
+The likelihood of each number before [softmax](https://en.wikipedia.org/wiki/Softmax_function), with shape of `(1x10)`.
 
 ### Postprocessing
 Route the model output through a softmax function to map the aggregated activations across the network to probabilities across the 10 classes.
