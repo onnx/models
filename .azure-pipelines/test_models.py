@@ -1,20 +1,21 @@
 import onnx
 from pathlib import Path
+import subprocess
 
-# identify list of onnx models in model Zoo
-model_list = []
+PIPE = subprocess.PIPE
+cwd_path = Path.cwd()
+obtain_diff = subprocess.Popen(['git', 'diff', '--name-only', '--diff-filter=AM', 'origin/master', 'HEAD'], cwd=cwd_path, stdout=PIPE, stderr=PIPE)
 
-for path in Path('text').rglob('*.onnx'):
-    if path.stat().st_size >= 200:
-        model_list.append(str(path))
+stdoutput, stderroutput = obtain_diff.communicate()
+diff_list = stdoutput.split()
 
-for path in Path('vision').rglob('*.onnx'):
-    if path.stat().st_size >= 200:
-        model_list.append(str(path))
+# identify list of changed onnx models in model Zoo
+model_list = [str(model).replace("b'","").replace("'", "") for model in diff_list if ".onnx" in str(model)]
 
 # run checker on each model
-for model_name in model_list:
-    model = onnx.load(model_name)
+for model_path in model_list:
+    pull_model = subprocess.Popen(['git', 'lfs', 'pull', '--include=', model_path], cwd=cwd_path)
+    model = onnx.load(model_path)
     onnx.checker.check_model(model)
 
     print("Model ", model_name, "has been successfully checked!")
