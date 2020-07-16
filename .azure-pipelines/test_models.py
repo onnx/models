@@ -24,7 +24,7 @@ commit_id = str(stdoutput).replace("b'","").replace("'", "")[:-2]
 # identify list of changed onnx models in model Zoo
 model_list = [str(model).replace("b'","").replace("'", "") for model in diff_list if ".onnx" in str(model)]
 
-print("=== Running ONNX Checker on added models ===\n")
+print("\n=== Running ONNX Checker on added models ===\n")
 # run checker on each model
 for model_path in model_list:
     model_name = model_path.split('/')[-1]
