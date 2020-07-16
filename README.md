@@ -1,6 +1,4 @@
 # ONNX Model Zoo
-[![Build Status](https://img.shields.io/azure-devops/build/onnx-pipelines/onnx/11?label=Windows&logo=azure-pipelines)](https://dev.azure.com/onnx-pipelines/onnx/_build?definitionId=11)
-[![Build Status](https://img.shields.io/azure-devops/build/onnx-pipelines/onnx/11?label=Linux&logo=azure-pipelines)](https://dev.azure.com/onnx-pipelines/onnx/_build?definitionId=10)
 
 [Open Neural Network Exchange (ONNX)](http://onnx.ai) is an open standard format for representing machine learning models. ONNX is supported by a community of partners who have implemented it in many frameworks and tools.
 
