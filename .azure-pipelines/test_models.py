@@ -14,6 +14,8 @@ model_list = [str(model).replace("b'","").replace("'", "") for model in diff_lis
 
 # run checker on each model
 for model_path in model_list:
+    model_name = model_path.split('/')[-2]
+    print("Testing ", model_name, ".")
     pull_model = subprocess.Popen(['git', 'lfs', 'pull', '--include=', model_path], cwd=cwd_path)
     model = onnx.load(model_path)
     onnx.checker.check_model(model)
