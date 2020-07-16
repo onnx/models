@@ -2,7 +2,7 @@
 
 ## Description
 
-SSD-MobilenetV1 is an object detection model that uses a Single Shot MultiBox Detector(SSD) approach to predict object classes for boundary boxes. 
+SSD-MobilenetV1 is an object detection model that uses a Single Shot MultiBox Detector (SSD) approach to predict object classes for boundary boxes. 
 
 SSD enables the model to only need to take one single shot to detect multiple objects in an image, and mobilenet is a base network that provides high-level features for object detection. The combination of these two model frameworks produces an efficent, high-accuracy detection model that requires less computational powers.
 
