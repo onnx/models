@@ -1,6 +1,12 @@
 import onnx
 from pathlib import Path
 import subprocess
+import requests
+
+def save_file(url, file_name):
+  r = requests.get(url)
+  with open(file_name, 'wb') as f:
+    f.write(r.content)
 
 PIPE = subprocess.PIPE
 cwd_path = Path.cwd()
@@ -14,9 +20,12 @@ model_list = [str(model).replace("b'","").replace("'", "") for model in diff_lis
 
 # run checker on each model
 for model_path in model_list:
-    model_name = model_path.split('/')[-2]
-    print("Testing ", model_name, ".")
-    pull_model = subprocess.Popen(['git', 'lfs', 'pull', '--include=', model_path], cwd=cwd_path)
+    model_name = model_path.split('/')[-1]
+    print("Testing:", model_name)
+
+    model_url = "https://github.com/onnx/models/raw/master/" + model_path
+    save_file(model_url, model_path)
+
     model = onnx.load(model_path)
     onnx.checker.check_model(model)
 
