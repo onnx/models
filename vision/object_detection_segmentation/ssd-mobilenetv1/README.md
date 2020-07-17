@@ -68,7 +68,7 @@ Given each batch of images, the model returns 4 tensor arrays:
 
 `detection_scores`: the score for each detection with values between 0 and 1 representing probability that a class was detected.
 
-`detection_classes`: Array of 10 integers (output as floating point values) each indicating the index of a class label from the coco class
+`detection_classes`: Array of 10 integers (floating point values) indicating the index of a class label from the COCO class.
 
 It outputs the image with boundary boxes and labels. The full list of classes can be found in the [coco dataset](https://cocodataset.org/#home).
 
