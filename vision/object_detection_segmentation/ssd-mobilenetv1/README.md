@@ -2,7 +2,7 @@
 
 ## Description
 
-SSD-MobilenetV1 is an object detection model that uses a Single Shot MultiBox Detector(SSD) approach to predict object classes for boundary boxes. 
+SSD-MobilenetV1 is an object detection model that uses a Single Shot MultiBox Detector (SSD) approach to predict object classes for boundary boxes. 
 
 SSD is a CNN that enables the model to only need to take one single shot to detect multiple objects in an image, and MobileNet is a CNN base network that provides high-level features for object detection. The combination of these two model frameworks produces an efficient, high-accuracy detection model that requires less computational cost.
 
@@ -71,7 +71,8 @@ Given each batch of images, the model returns 4 tensor arrays:
 
 `detection_scores`: the score for each detection with values between 0 and 1 representing probability that a class was detected.
 
-`detection_classes`: Array of 10 integers (output as floating point values) each indicating the index of a class label from the COCO class
+`detection_classes`: Array of 10 integers (floating point values) indicating the index of a class label from the COCO class.
+
 
 
 ### Postprocessing
@@ -79,7 +80,7 @@ Given each batch of images, the model returns 4 tensor arrays:
     # draw boundary boxes and label for each detection
     def draw_detection(draw, d, c):
         width, height = draw.im.size
-        # the box is relative to the image size so we multiply with height and width to get pixels.
+        # the box is relative to the image size so we multiply with height and width to get pixels
         top = d[0] * height
         left = d[1] * width
         bottom = d[2] * height
@@ -123,11 +124,11 @@ The model was trained using [MS COCO 2017 Train Images, Val Images, and Train/Va
 
 ### Training
 
-Training details for model's preprocess is found in this [jupyter notebook](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/ConvertingSSDMobilenetToONNX.ipynb). 
+Training details for the SSD-MobileNet model's preprocessing is found in this [tutorial notebook](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/ConvertingSSDMobilenetToONNX.ipynb). 
 The notebook also details how the ONNX model was converted. 
 
 ### References
-Tensorflow to Onnx conversion [tutorial](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/ConvertingSSDMobilenetToONNX.ipynb). The Juypter Notebook references how to run an evaluation on the SSD-MobilenetV1 model and export it as a saved model. It also details how to convert the tensorflow model into onnx, and how to run its preprocessing and postprocessing code for the inputs and outputs. 
+Tensorflow to ONNX conversion [tutorial](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/ConvertingSSDMobilenetToONNX.ipynb). The notebook references how to run an evaluation on the SSD-MobilenetV1 model and export it as a saved model. It also details how to convert the tensorflow model into onnx, and how to run its preprocessing and postprocessing code for the inputs and outputs. 
 
 
 ## Contributors
