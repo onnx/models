@@ -10,7 +10,7 @@ EfficientNet-Lite 4 is the largest variant and most accurate of the set of Effic
 
  |Model        |Download | Download (with sample test data)|ONNX version|Opset version|
 |-------------|:--------------|:--------------|:--------------|:--------------|
-|EfficientNet-Lite4     | [51.9 MB](model/efficientnet-lite4.onnx)	  | [157 MB](efficientnet-lite4.tar.gz)|1.7.0|11|
+|EfficientNet-Lite4     | [51.9 MB](model/efficientnet-lite4.onnx)	  | [157 MB](model/efficientnet-lite4.tar.gz)|1.7.0|11|
 
 ### Source
 Tensorflow EfficientNet-Lite4 => ONNX EfficientNet-Lite4
