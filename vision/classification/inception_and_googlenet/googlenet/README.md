@@ -41,7 +41,7 @@ prob_0: float[1, 1000]
 import imageio
 from PIL import Image
 ```
-#### Get Image and pre process
+#### Obtain and pre-process image
 
 ```python
 def get_image(path):
