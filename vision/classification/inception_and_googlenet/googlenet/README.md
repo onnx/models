@@ -68,7 +68,7 @@ def preprocess(img):
     return img
 ```
 
-### Predict Workflow and Post-processing steps
+### Post-processing steps
 ```python
 def predict(path):
     # based on : https://mxnet.apache.org/versions/1.0.0/tutorials/python/predict_image.html
