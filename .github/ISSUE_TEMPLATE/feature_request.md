@@ -5,7 +5,7 @@ title: ''
 labels: 'enhancement'
 assignees: ''
 
-
+ 
 
 ---
 # Feature Request
@@ -18,7 +18,7 @@ Why is this feature necessary? What does it accomplish?
 
 ### Relevant Model Zoo feature areas
 Which area in the Model Zoo infrastructure does this impact?  
-Feature Area: CI, new models, file organization, model storage, other
+**Feature Area** (*e.g. CI, file organization, model storage, other*):
 
 ### Notes
 Any additional information
