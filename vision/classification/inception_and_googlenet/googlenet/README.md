@@ -82,7 +82,7 @@ def predict(path):
     return a
 ```
 ### Sample test data
-random generated sampe test data:
+random generated sample test data:
 - test_data_set_0
 - test_data_set_1
 - test_data_set_2
