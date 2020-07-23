@@ -36,7 +36,7 @@ data_0: float[1, 3, 224, 224]
 prob_0: float[1, 1000]
 ```
 ### Pre-processing steps
-#### necessary imports 
+#### Necessary Imports 
 ```python
 import imageio
 from PIL import Image
