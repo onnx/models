@@ -9,7 +9,7 @@ RoBERTa builds on BERT’s language masking strategy and modifies key hyperparam
 ## Model
 
  |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|Accuracy|
-| ------------- | ------------- | ------------- | ------------- | ------------- |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 |RoBERTa| [249 MB](model/roberta-9.onnx) |  [231 MB](model/roberta-9.tar.gz) |  1.4 | 9|mAP of [0.0183](https://docs.google.com/spreadsheets/d/1sryqufw2D0XlUH4sq3e9Wnxu5EAQkaohzrJbd5HdQ_w/edit#gid=0)|
 
 ## Source
