@@ -2,14 +2,17 @@ import torch
 import onnxruntime
 import onnx
 from onnx import numpy_helper
-from transformers import GPT2Model, GPT2Tokenizer
+from transformers import GPT2Model, GPT2LMHeadModel, GPT2Tokenizer
 
 import numpy as np
 import os
 
-#          Model          | Tokenizer          | Pretrained weights shortcut
+# Transformers has a unified API
+# for 8 transformer architectures and 30 pretrained weights.
+#          Model          | Tokenizer          | Pretrained weights shortcut          | save_name
 MODELS = [
-    (GPT2Model, GPT2Tokenizer, 'gpt2'),
+    (GPT2Model, GPT2Tokenizer, 'gpt2', 'gpt2'),
+    (GPT2LMHeadModel, GPT2Tokenizer, 'gpt2', 'gpt2-lm-head'),
 ]
 data_dir = 'test_data_set_0'
 
@@ -111,7 +114,7 @@ def inference(file, inputs, outputs):
 
 
 def gpt2_test():
-    for model_class, tokenizer_class, pretrained_weights in MODELS:
+    for model_class, tokenizer_class, pretrained_weights, save_name in MODELS:
         # Load pretrained model/tokenizer
         tokenizer = tokenizer_class.from_pretrained(pretrained_weights)
         model = model_class.from_pretrained(pretrained_weights)
@@ -123,7 +126,7 @@ def gpt2_test():
         with torch.no_grad():
             output_1 = model(input_ids_1)  # Models outputs are now tuples
 
-        model_dir, data_dir = save_model('gpt2', model.cpu(), input_ids_1, output_1,
+        model_dir, data_dir = save_model(save_name, model.cpu(), input_ids_1, output_1,
                                          opset_version=10,
                                          input_names=['input1'],
                                          dynamic_axes={'input1': [0, 1, 2, 3]})
