@@ -36,9 +36,53 @@ data_0: float[1, 3, 224, 224]
 prob_0: float[1, 1000]
 ```
 ### Pre-processing steps
+#### Necessary Imports 
+```python
+import imageio
+from PIL import Image
+```
+#### Obtain and pre-process image
+
+```python
+def get_image(path):
+'''
+    Using path to image, return the RGB load image
+'''
+    img = imageio.imread(path, pilmode='RGB')
+    return img
+    
+# Pre-processing function for ImageNet models using numpy
+def preprocess(img):   
+    '''
+    Preprocessing required on the images for inference with mxnet gluon
+    The function takes loaded image and returns processed tensor
+    '''
+    img = np.array(Image.fromarray(img).resize((224, 224))).astype(np.float32)
+    img[:, :, 0] -= 123.68
+    img[:, :, 1] -= 116.779
+    img[:, :, 2] -= 103.939
+    img[:,:,[0,1,2]] = img[:,:,[2,1,0]]
+    img = img.transpose((2, 0, 1))
+    img = np.expand_dims(img, axis=0)
+    
+    return img
+```
+
 ### Post-processing steps
+```python
+def predict(path):
+    # based on : https://mxnet.apache.org/versions/1.0.0/tutorials/python/predict_image.html
+    img = get_image(path)
+    img = preprocess(img)
+    mod.forward(Batch([mx.nd.array(img)]))
+    # Take softmax to generate probabilities
+    prob = mod.get_outputs()[0].asnumpy()
+    prob = np.squeeze(prob)
+    a = np.argsort(prob)[::-1]
+    return a
+```
 ### Sample test data
-random generated sampe test data:
+random generated sample test data:
 - test_data_set_0
 - test_data_set_1
 - test_data_set_2

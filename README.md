@@ -4,7 +4,7 @@
 
 The ONNX Model Zoo is a collection of pre-trained, state-of-the-art models in the ONNX format contributed by community members like you. Accompanying each model are [Jupyter notebooks](http://jupyter.org) for model training and running inference with the trained model. The notebooks are written in Python and include links to the training dataset as well as references to the original paper that describes the model architecture.
 
-We are standardizing on [Git LFS (Large File Storage)](https://git-lfs.github.com/) to store our ONNX model files. To download an ONNX model, navigate to the appropriate Github page and click the `Download` button on the top right.
+We have standardized on [Git LFS (Large File Storage)](https://git-lfs.github.com/) to store ONNX model files. To download an ONNX model, navigate to the appropriate Github page and click the `Download` button on the top right.
 
 ## Models
 #### Read the [Usage](#usage-) section below for more details on the file formats in the ONNX Model Zoo (.onnx, .pb, .npz), downloading multiple ONNX models through [Git LFS command line](#gitlfs-), and starter Python code for validating your ONNX model using test data.
@@ -62,6 +62,7 @@ Object detection models detect the presence of multiple objects in an image and 
 |-|-|-|
 |<b>[Tiny YOLOv2](vision/object_detection_segmentation/tiny-yolov2)</b>|[Redmon et al.](https://arxiv.org/pdf/1612.08242.pdf)|A real-time CNN for object detection that detects 20 different classes. A smaller version of the more complex full YOLOv2 network.|
 |<b>[SSD](vision/object_detection_segmentation/ssd)</b>|[Liu et al.](https://arxiv.org/abs/1512.02325)|Single Stage Detector: real-time CNN for object detection that detects 80 different classes.|
+|<b>[SSD-MobileNetV1](vision/object_detection_segmentation/ssd-mobilenetv1)</b>|[Howard et al.](https://arxiv.org/abs/1704.04861)|A variant of MobileNet that uses the Single Shot Detector (SSD) model framework. The model detects 80 different object classes and locates up to 10 objects in an image.|
 |<b>[Faster-RCNN](vision/object_detection_segmentation/faster-rcnn)</b>|[Ren et al.](https://arxiv.org/abs/1506.01497)|Increases efficiency from R-CNN by connecting a RPN with a CNN to create a single, unified network for object detection that detects 80 different classes.|
 |<b>[Mask-RCNN](vision/object_detection_segmentation/mask-rcnn)</b>|[He et al.](https://arxiv.org/abs/1703.06870)|A real-time neural network for object instance segmentation that detects 80 different classes. Extends Faster R-CNN as each of the 300 elected ROIs go through 3 parallel branches of the network: label prediction, bounding box prediction and mask prediction.|
 |<b>[RetinaNet](vision/object_detection_segmentation/retinanet)</b>|[Lin et al.](https://arxiv.org/abs/1708.02002)|A real-time dense detector network for object detection that addresses class imbalance through Focal Loss. RetinaNet is able to match the speed of previous one-stage detectors and defines the state-of-the-art in two-stage detectors (surpassing R-CNN).|
@@ -232,7 +233,7 @@ np.testing.assert_almost_equal(outputs, backend.run_model(model, inputs))
 On default, cloning this repository will not download any ONNX models. Install Git LFS with `pip install git-lfs`.
 
 To download a specific model:
-`git lfs pull --include="[MODELNAME].onnx"`
+`git lfs pull --include="[path to model].onnx" --exclude=""`
 
 To download all models:
 `git lfs pull --include="*" --exclude=""`
