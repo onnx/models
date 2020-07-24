@@ -35,7 +35,7 @@ input_ids = torch.tensor(tokenizer.encode(text, add_special_tokens=True)).unsque
 ```
 
 ### Output
-Output of this model is the tuple (batch_size, 2)
+Output of this model is a float32 tensor ```[batch_size, 2]``` 
 
 ### Postprocessing
 Print sentiment prediction
