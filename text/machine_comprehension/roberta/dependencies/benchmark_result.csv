@@ -1,0 +1,5 @@
+model_name,inputs,engine,version,device,precision,optimizer,io_binding,b1_s8,b1_s16,b1_s32,b1_s64,b1_s128,b4_s8,b4_s16,b4_s32,b4_s64,b4_s128
+roberta-base,1,onnxruntime,1.4.0,cpu,fp32,True,True,27.32,30.70,40.76,66.82,114.21,48.61,77.78,121.66,269.07,374.07
+roberta-base,1,onnxruntime,1.4.0,cpu,fp32,True,False,31.97,30.86,36.71,58.38,110.96,49.55,79.63,124.39,237.77,417.26
+model_name,inputs,engine,version,device,precision,optimizer,io_binding,b1_s8,b1_s16,b1_s32,b1_s64,b1_s128,b4_s8,b4_s16,b4_s32,b4_s64,b4_s128
+roberta-base,1,torchscript,1.5.0,cpu,fp32,,,23.62,28.19,38.87,69.25,138.40,38.65,69.83,125.37,287.74,693.71
