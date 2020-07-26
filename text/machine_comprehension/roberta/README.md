@@ -11,23 +11,23 @@ RoBERTa builds on BERT’s language masking strategy and modifies key hyperparam
  |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|Accuracy|
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 |RoBERTa-BASE| [499 MB](model/roberta-base-11.onnx) |  [295 MB](model/roberta-base-11.tar.gz) |  1.6 | 11|[96.7](https://paperswithcode.com/paper/roberta-a-robustly-optimized-bert-pretraining/review/?hl=6023)|
-|RoBERTa-STT-2| [501 MB](model/roberta-stt-9.onnx) |  [434 MB](model/roberta-stt-9.tar.gz) |  1.4 | 9|[88.5](https://paperswithcode.com/paper/roberta-a-robustly-optimized-bert-pretraining/review/?hl=6023)|
+|RoBERTa-SequenceClassification| [501 MB](model/roberta-stt-9.onnx) |  [434 MB](model/roberta-stt-9.tar.gz) |  1.4 | 9|[88.5](https://paperswithcode.com/paper/roberta-a-robustly-optimized-bert-pretraining/review/?hl=6023)|
 
 ## Source
 PyTorch RoBERTa => ONNX RoBERTa
-PyTorch RoBERTa + script changes => ONNX RoBERTa-STT-2
+PyTorch RoBERTa + script changes => ONNX RoBERTa-SequenceClassification
 
 ## Conversion
 Here is the [benchmark script](https://github.com/microsoft/onnxruntime/blob/master/onnxruntime/python/tools/transformers/run_benchmark.sh) that was used for exporting RoBERTa-BASE model. 
 
-Tutorial for conversion of RoBERTa-STT-2 model can be found in the [conversion](https://github.com/SeldonIO/seldon-models/blob/master/pytorch/moviesentiment_roberta/pytorch-roberta-onnx.ipynb) notebook.
+Tutorial for conversion of RoBERTa-SequenceClassification model can be found in the [conversion](https://github.com/SeldonIO/seldon-models/blob/master/pytorch/moviesentiment_roberta/pytorch-roberta-onnx.ipynb) notebook.
 
 Official tool from huggingface that can be used to convert transformers models to ONNX can be found [here](https://github.com/huggingface/transformers/blob/master/src/transformers/convert_graph_to_onnx.py)
 
 ## Inference
 We used [ONNX Runtime](https://github.com/microsoft/onnxruntime) to perform the inference.
 
-Tutorial for running inference for RoBERTa-STT-2 model using onnxruntime can be found in the [inference](dependencies/roberta-inference.ipynb) notebook.
+Tutorial for running inference for RoBERTa-SequenceClassification model using onnxruntime can be found in the [inference](dependencies/roberta-inference.ipynb) notebook.
 
 ### Input
 Input is a sequence of words as a string. Example: "This film is so good", tokenized by RobertaTokenizer. input_ids: Indices of input tokens in the vocabulary. It's a int64 tensor of dynamic shape (batch_size, sentence_length).
@@ -44,7 +44,7 @@ input_ids = torch.tensor(tokenizer.encode(text, add_special_tokens=True)).unsque
 For RoBERTa-BASE model:
 Output of this model is a float32 tensors ```[batch_size,seq_len,768]``` and ```[batch_size,768]```
 
-For RoBERTa-STT-2 model:
+For RoBERTa-SequenceClassification model:
 Output of this model is a float32 tensor ```[batch_size, 2]```
 
 ### Postprocessing
@@ -53,7 +53,7 @@ For RoBERTa-BASE model:
 last_hidden_states = ort_out[0]
 ```
 
-For RoBERTa-STT-2 model:
+For RoBERTa-SequenceClassification model:
 Print sentiment prediction
 ```python
 pred = np.argmax(ort_out)
@@ -66,7 +66,7 @@ elif(pred == 1):
 ## Dataset
 Pretrained RoBERTa-BASE model weights can be downloaded [here](https://s3.amazonaws.com/models.huggingface.co/bert/roberta-base-pytorch_model.bin)
 
-RoBERTa-STT-2 model weights can be downloaded [here](https://storage.googleapis.com/seldon-models/pytorch/moviesentiment_roberta/pytorch_model.bin).
+RoBERTa-SequenceClassification model weights can be downloaded [here](https://storage.googleapis.com/seldon-models/pytorch/moviesentiment_roberta/pytorch_model.bin).
 
 ## Validation accuracy
 Metric and benchmarking details are provided by [fairseq](https://github.com/pytorch/fairseq/tree/master/examples/roberta)
@@ -78,7 +78,7 @@ Benchmark results where ONNX Runtime uses optimizer for model optimization, and 
 * [RoBERTa: A Robustly Optimized BERT Pretraining Approach](https://arxiv.org/pdf/1907.11692.pdf).Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, Veselin Stoyanov
 
 ## References
-* The RoBERTa-STT-2 model is converted directly from [seldon-models/pytorch](https://github.com/SeldonIO/seldon-models/blob/master/pytorch/moviesentiment_roberta/pytorch-roberta-onnx.ipynb)
+* The RoBERTa-SequenceClassification model is converted directly from [seldon-models/pytorch](https://github.com/SeldonIO/seldon-models/blob/master/pytorch/moviesentiment_roberta/pytorch-roberta-onnx.ipynb)
 * [Accelerate your NLP pipelines using Hugging Face Transformers and ONNX Runtime](https://medium.com/microsoftazure/accelerate-your-nlp-pipelines-using-hugging-face-transformers-and-onnx-runtime-2443578f4333)
 
 ## Contributors
