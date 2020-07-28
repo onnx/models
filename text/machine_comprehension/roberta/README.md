@@ -10,8 +10,8 @@ RoBERTa builds on BERT’s language masking strategy and modifies key hyperparam
 
  |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|Accuracy|
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-|RoBERTa-BASE| [499 MB](model/roberta-base-11.onnx) |  [295 MB](model/roberta-base-11.tar.gz) |  1.6 | 11|[96.7](https://paperswithcode.com/paper/roberta-a-robustly-optimized-bert-pretraining/review/?hl=6023)|
-|RoBERTa-SequenceClassification| [501 MB](model/roberta-stt-9.onnx) |  [434 MB](model/roberta-stt-9.tar.gz) |  1.4 | 9|[88.5](https://paperswithcode.com/paper/roberta-a-robustly-optimized-bert-pretraining/review/?hl=6023)|
+|RoBERTa-BASE| [499 MB](model/roberta-base-11.onnx) |  [295 MB](model/roberta-base-11.tar.gz) |  1.6 | 11|MCC of [0.85](dependencies/roberta-sequence-classification-validation.ipynb)|
+|RoBERTa-SequenceClassification| [501 MB](model/rroberta-sequence-classification-9.onnx) |  [434 MB](model/roberta-sequence-classification-9.tar.gz) |  1.4 | 9|88.5|
 
 ## Source
 PyTorch RoBERTa => ONNX RoBERTa
