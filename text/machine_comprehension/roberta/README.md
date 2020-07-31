@@ -95,9 +95,6 @@ RoBERTa-SequenceClassification model weights can be downloaded [here](https://st
 
 Metric and benchmarking details are provided by [fairseq](https://github.com/pytorch/fairseq/tree/master/examples/roberta)
 
-Benchmark results where ONNX Runtime uses optimizer for model optimization, and IO binding is enabled can be found [here](dependencies/benchmark_result.csv)
-[run_benchmark.sh](https://github.com/microsoft/onnxruntime/blob/master/onnxruntime/python/tools/transformers/run_benchmark.sh) was used to get the results
-
 ## Publication/Attribution
 * [RoBERTa: A Robustly Optimized BERT Pretraining Approach](https://arxiv.org/pdf/1907.11692.pdf).Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, Veselin Stoyanov
 
