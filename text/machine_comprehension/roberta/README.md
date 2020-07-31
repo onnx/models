@@ -93,7 +93,7 @@ RoBERTa-SequenceClassification model weights can be downloaded [here](https://st
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 |```roberta.base```| 87.6 | 92.8 |  91.9 | 78.7|94.8|90.2|63.6|91.2|
 
-Metric and benchmarking details are provided by [fairseq](https://github.com/pytorch/fairseq/tree/master/examples/roberta)
+Metric and benchmarking details are provided by [fairseq](https://github.com/pytorch/fairseq/tree/master/examples/roberta).
 
 ## Publication/Attribution
 * [RoBERTa: A Robustly Optimized BERT Pretraining Approach](https://arxiv.org/pdf/1907.11692.pdf).Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, Veselin Stoyanov
