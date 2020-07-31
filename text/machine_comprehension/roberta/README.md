@@ -81,6 +81,12 @@ Pretrained RoBERTa-BASE model weights can be downloaded [here](https://s3.amazon
 RoBERTa-SequenceClassification model weights can be downloaded [here](https://storage.googleapis.com/seldon-models/pytorch/moviesentiment_roberta/pytorch_model.bin).
 
 ## Validation accuracy
+## Validation accuracy
+[GLUE (Wang et al., 2019)](https://gluebenchmark.com/) (dev set, single model, single-task finetuning)
+ |Model        |MNLI |QNLI| QQP |RTE|SST-2|MRPC|CoLA|STS-B|
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+|```roberta.base```| 87.6 | 92.8 |  91.9 | 78.7|94.8|90.2|63.6|91.2|
+
 Metric and benchmarking details are provided by [fairseq](https://github.com/pytorch/fairseq/tree/master/examples/roberta)
 
 Benchmark results where ONNX Runtime uses optimizer for model optimization, and IO binding is enabled can be found [here](dependencies/benchmark_result.csv)
