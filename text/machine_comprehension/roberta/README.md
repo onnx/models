@@ -36,7 +36,7 @@ For RoBERTa-BASE model:
 Input is a sequence of words as a string. Example: "Text to encode: Hello, World"
 
 For RoBERTa-SequenceClassification model: 
-Input is a sequence of words as a string relating to sentiment. Example: "This film is so good"
+Input is a sequence of words as a string including sentiment. Example: "This film is so good"
 
 
 ### Preprocessing
