@@ -22,7 +22,7 @@ Here is the [benchmark script](https://github.com/microsoft/onnxruntime/blob/mas
 
 Tutorial for conversion of RoBERTa-SequenceClassification model can be found in the [conversion](https://github.com/SeldonIO/seldon-models/blob/master/pytorch/moviesentiment_roberta/pytorch-roberta-onnx.ipynb) notebook.
 
-Official tool from huggingface that can be used to convert transformers models to ONNX can be found [here](https://github.com/huggingface/transformers/blob/master/src/transformers/convert_graph_to_onnx.py)
+Official tool from HuggingFace that can be used to convert transformers models to ONNX can be found [here](https://github.com/huggingface/transformers/blob/master/src/transformers/convert_graph_to_onnx.py)
 
 ## Inference
 We used [ONNX Runtime](https://github.com/microsoft/onnxruntime) to perform the inference.
@@ -30,11 +30,23 @@ We used [ONNX Runtime](https://github.com/microsoft/onnxruntime) to perform the 
 Tutorial for running inference for RoBERTa-SequenceClassification model using onnxruntime can be found in the [inference](dependencies/roberta-inference.ipynb) notebook.
 
 ### Input
-Input is a sequence of words as a string. Example: "This film is so good", tokenized by RobertaTokenizer. input_ids: Indices of input tokens in the vocabulary. It's a int64 tensor of dynamic shape (batch_size, sentence_length).
+input_ids: Indices of input tokens in the vocabulary. It's a int64 tensor of dynamic shape (batch_size, sequence_length). Text tokenized by RobertaTokenizer. 
+
+For RoBERTa-BASE model: 
+Input is a sequence of words as a string. Example: "Text to encode: Hello, World"
+
+For RoBERTa-SequenceClassification model: 
+Input is a sequence of words as a string relating to sentiment. Example: "This film is so good"
+
 
 ### Preprocessing
-Use tokenizer.encode() to encode the input text:
+For RoBERTa-BASE and RoBERTa-SequenceClassification model use tokenizer.encode() to encode the input text:
 ```python
+import torch
+import numpy as np
+from simpletransformers.model import TransformerModel
+from transformers import RobertaForSequenceClassification, RobertaTokenizer
+
 text = "This film is so good"
 tokenizer = RobertaTokenizer.from_pretrained('roberta-base')
 input_ids = torch.tensor(tokenizer.encode(text, add_special_tokens=True)).unsqueeze(0)  # Batch size 1
