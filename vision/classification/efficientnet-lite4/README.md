@@ -108,7 +108,7 @@ The following steps detail how to print the output results of the model.
     results = sess.run(["Softmax:0"], {"images:0": img_batch})[0]
     result = reversed(results[0].argsort()[-5:])
     for r in result:
-        print(r, labels[str(r-1)], results[0][r])
+        print(r, labels[str(r)], results[0][r])
 <hr>
 
 ## Dataset (Train and validation)
