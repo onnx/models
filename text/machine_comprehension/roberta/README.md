@@ -76,14 +76,14 @@ elif(pred == 1):
 ```
 
 ## Dataset
-RoBERTa-BASE model was pretrained on the five datasets:
+RoBERTa-BASE model was trained on five datasets:
 * [BookCorpus](https://yknzhu.wixsite.com/mbweb), a dataset consisting of 11,038 unpublished books;
 * [English Wikipedia](https://en.wikipedia.org/wiki/English_Wikipedia) (excluding lists, tables and headers) ;
 * [CC-News](https://commoncrawl.org/2016/10/news-dataset-available/), a dataset containing 63 millions English news articles crawled between September 2016 and February 2019.
 * [OpenWebText](https://github.com/jcpeterson/openwebtext), an opensource recreation of the WebText dataset used to train GPT-2,
 * [Stories](https://arxiv.org/abs/1806.02847) a dataset containing a subset of CommonCrawl data filtered to match the story-like style of Winograd schemas.
 
-Pretrained RoBERTa-BASE model weights can be downloaded [here](https://s3.amazonaws.com/models.huggingface.co/bert/roberta-base-pytorch_model.bin)
+Pretrained RoBERTa-BASE model weights can be downloaded [here](https://s3.amazonaws.com/models.huggingface.co/bert/roberta-base-pytorch_model.bin).
 
 RoBERTa-SequenceClassification model weights can be downloaded [here](https://storage.googleapis.com/seldon-models/pytorch/moviesentiment_roberta/pytorch_model.bin).
 
