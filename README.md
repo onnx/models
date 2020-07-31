@@ -4,7 +4,7 @@
 
 The ONNX Model Zoo is a collection of pre-trained, state-of-the-art models in the ONNX format contributed by community members like you. Accompanying each model are [Jupyter notebooks](http://jupyter.org) for model training and running inference with the trained model. The notebooks are written in Python and include links to the training dataset as well as references to the original paper that describes the model architecture.
 
-We are standardizing on [Git LFS (Large File Storage)](https://git-lfs.github.com/) to store our ONNX model files. To download an ONNX model, navigate to the appropriate Github page and click the `Download` button on the top right.
+We have standardized on [Git LFS (Large File Storage)](https://git-lfs.github.com/) to store ONNX model files. To download an ONNX model, navigate to the appropriate Github page and click the `Download` button on the top right.
 
 ## Models
 #### Read the [Usage](#usage-) section below for more details on the file formats in the ONNX Model Zoo (.onnx, .pb, .npz), downloading multiple ONNX models through [Git LFS command line](#gitlfs-), and starter Python code for validating your ONNX model using test data.
@@ -44,6 +44,7 @@ This collection of models take images as input, then classifies the major object
 |<b>[ShuffleNet_V1](vision/classification/shufflenet)</b>|[Zhang et al.](https://arxiv.org/abs/1707.01083)|Extremely computation efficient CNN model that is designed specifically for mobile devices. This model greatly reduces the computational cost and provides a ~13x speedup over AlexNet on ARM-based mobile devices. Compared to MobileNet, ShuffleNet achieves superior performance by a significant margin due to it's efficient structure. <br> Top-1 error from paper - ~32.6%|
 |<b>[ShuffleNet_V2](vision/classification/shufflenet)</b>|[Zhang et al.](https://arxiv.org/abs/1807.11164)|Extremely computation efficient CNN model that is designed specifically for mobile devices. This network architecture design considers direct metric such as speed, instead of indirect metric like FLOP. <br> Top-1 error from paper - ~30.6%|
 |<b>[ZFNet-512](vision/classification/zfnet-512)</b>|[Zeiler et al.](https://arxiv.org/abs/1311.2901)|Deep CNN model (up to 8 layers) that increased the number of features that the network is capable of detecting that helps to pick image features at a finer level of resolution. <br> Top-5 error from paper - ~14.3%|
+|<b>[EfficientNet-Lite4](vision/classification/efficientnet-lite4)</b>|[Tan et al.](https://arxiv.org/abs/1905.11946)|CNN model with an order of magnitude of few computations and parameters, while still acheiving state-of-the-art accuracy and better efficiency than previous ConvNets. <br> Top-5 error from paper - ~2.9%|
 <hr>
 
 #### Domain-based Image Classification <a name="domain_based_image"/>
@@ -61,6 +62,7 @@ Object detection models detect the presence of multiple objects in an image and 
 |-|-|-|
 |<b>[Tiny YOLOv2](vision/object_detection_segmentation/tiny-yolov2)</b>|[Redmon et al.](https://arxiv.org/pdf/1612.08242.pdf)|A real-time CNN for object detection that detects 20 different classes. A smaller version of the more complex full YOLOv2 network.|
 |<b>[SSD](vision/object_detection_segmentation/ssd)</b>|[Liu et al.](https://arxiv.org/abs/1512.02325)|Single Stage Detector: real-time CNN for object detection that detects 80 different classes.|
+|<b>[SSD-MobileNetV1](vision/object_detection_segmentation/ssd-mobilenetv1)</b>|[Howard et al.](https://arxiv.org/abs/1704.04861)|A variant of MobileNet that uses the Single Shot Detector (SSD) model framework. The model detects 80 different object classes and locates up to 10 objects in an image.|
 |<b>[Faster-RCNN](vision/object_detection_segmentation/faster-rcnn)</b>|[Ren et al.](https://arxiv.org/abs/1506.01497)|Increases efficiency from R-CNN by connecting a RPN with a CNN to create a single, unified network for object detection that detects 80 different classes.|
 |<b>[Mask-RCNN](vision/object_detection_segmentation/mask-rcnn)</b>|[He et al.](https://arxiv.org/abs/1703.06870)|A real-time neural network for object instance segmentation that detects 80 different classes. Extends Faster R-CNN as each of the 300 elected ROIs go through 3 parallel branches of the network: label prediction, bounding box prediction and mask prediction.|
 |<b>[RetinaNet](vision/object_detection_segmentation/retinanet)</b>|[Lin et al.](https://arxiv.org/abs/1708.02002)|A real-time dense detector network for object detection that addresses class imbalance through Focal Loss. RetinaNet is able to match the speed of previous one-stage detectors and defines the state-of-the-art in two-stage detectors (surpassing R-CNN).|
@@ -68,6 +70,7 @@ Object detection models detect the presence of multiple objects in an image and 
 |<b>[YOLO v2-coco](vision/object_detection_segmentation/yolov2-coco)</b>|[Redmon et al.](https://arxiv.org/abs/1612.08242)|A CNN model for real-time object detection system that can detect over 9000 object categories. It uses a single network evaluation, enabling it to be more than 1000x faster than R-CNN and 100x faster than Faster R-CNN. This model is trained with COCO dataset and contains 80 classes.
 |<b>[YOLO v3](vision/object_detection_segmentation/yolov3)</b>|[Redmon et al.](https://arxiv.org/pdf/1804.02767.pdf)|A deep CNN model for real-time object detection that detects 80 different classes. A little bigger than YOLOv2 but still very fast. As accurate as SSD but 3 times faster.|
 |<b>[Tiny YOLOv3](vision/object_detection_segmentation/tiny-yolov3)</b>|[Redmon et al.](https://arxiv.org/pdf/1804.02767.pdf)| A smaller version of YOLOv3 model. |
+|<b>[YOLOv4](vision/object_detection_segmentation/yolov4)</b>|[Bochkovskiy et al.](https://arxiv.org/abs/2004.10934)|Optimizes the speed and accuracy of object detection. Two times faster than EfficientDet. It improves YOLOv3's AP and FPS by 10% and 12%, respectively, with mAP50 of 52.32 on the COCO 2017 dataset and FPS of 41.7 on Tesla 100.|
 |<b>[DUC](vision/object_detection_segmentation/duc)</b>|[Wang et al.](https://arxiv.org/abs/1702.08502)|Deep CNN based pixel-wise semantic segmentation model with >80% [mIOU](/models/semantic_segmentation/DUC/README.md/#metric) (mean Intersection Over Union). Trained on cityscapes dataset, which can be effectively implemented in self driving vehicle systems.|
 |FCN|[Long et al.](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)|Deep CNN based segmentation model trained end-to-end, pixel-to-pixel that produces efficient inference and learning. Built off of AlexNet, VGG net, GoogLeNet classification methods. <br>[contribute](contribute.md)|
 <hr>
@@ -230,7 +233,7 @@ np.testing.assert_almost_equal(outputs, backend.run_model(model, inputs))
 On default, cloning this repository will not download any ONNX models. Install Git LFS with `pip install git-lfs`.
 
 To download a specific model:
-`git lfs pull --include="[MODELNAME].onnx"`
+`git lfs pull --include="[path to model].onnx" --exclude=""`
 
 To download all models:
 `git lfs pull --include="*" --exclude=""`
