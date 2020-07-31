@@ -85,10 +85,8 @@ RoBERTa-BASE model was pretrained on the five datasets:
 
 Pretrained RoBERTa-BASE model weights can be downloaded [here](https://s3.amazonaws.com/models.huggingface.co/bert/roberta-base-pytorch_model.bin)
 
-RoBERTa-SequenceClassification model was trained on [polarity dataset v1.0](http://www.cs.cornell.edu/people/pabo/movie-review-data/mix20_rand700_tokens_cleaned.zip)
 RoBERTa-SequenceClassification model weights can be downloaded [here](https://storage.googleapis.com/seldon-models/pytorch/moviesentiment_roberta/pytorch_model.bin).
 
-## Validation accuracy
 ## Validation accuracy
 [GLUE (Wang et al., 2019)](https://gluebenchmark.com/) (dev set, single model, single-task finetuning)
  |Model        |MNLI |QNLI| QQP |RTE|SST-2|MRPC|CoLA|STS-B|
