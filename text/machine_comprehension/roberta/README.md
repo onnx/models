@@ -76,7 +76,7 @@ elif(pred == 1):
 ```
 
 ## Dataset
-RoBERTa-BASE model was pretrained on the five datasets:
+RoBERTa-BASE model was trained on five datasets:
 * [BookCorpus](https://yknzhu.wixsite.com/mbweb), a dataset consisting of 11,038 unpublished books;
 * [English Wikipedia](https://en.wikipedia.org/wiki/English_Wikipedia) (excluding lists, tables and headers) ;
 * [CC-News](https://commoncrawl.org/2016/10/news-dataset-available/), a dataset containing 63 millions English news articles crawled between September 2016 and February 2019.
