@@ -93,7 +93,7 @@ def postprocess_bbbox(pred_bbox, ANCHORS, STRIDES, XYSCALE=[1,1,1]):
         conv_raw_dxdy = pred[:, :, :, :, 0:2]
         conv_raw_dwdh = pred[:, :, :, :, 2:4]
         xy_grid = np.meshgrid(np.arange(output_size), np.arange(output_size))
-        xy_grid = np.expand_dims(np.stack(xy_grid, axis=-1), axis=2)  # [gx, gy, 1, 2]
+        xy_grid = np.expand_dims(np.stack(xy_grid, axis=-1), axis=2)
 
         xy_grid = np.tile(np.expand_dims(xy_grid, axis=0), [1, 1, 1, 3, 1])
         xy_grid = xy_grid.astype(np.float)
@@ -142,7 +142,6 @@ def postprocess_boxes(pred_bbox, org_img_shape, input_size, score_threshold):
     # # (5) discard some boxes with low scores
     classes = np.argmax(pred_prob, axis=-1)
     scores = pred_conf * pred_prob[np.arange(len(pred_coor)), classes]
-    # scores = pred_prob[np.arange(len(pred_coor)), classes]
     score_mask = scores > score_threshold
     mask = np.logical_and(scale_mask, score_mask)
     coors, scores, classes = pred_coor[mask], scores[mask], classes[mask]
