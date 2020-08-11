@@ -28,7 +28,7 @@ class onnx_zoo:
         name = input("Enter model name: ")
         get_model_versions(name)
         model_name = input("Enter model name from options: ")
-        saved_path = input("Enter path to save the model: ")
+        saved_path = input("Enter saved path: ") + "/"
         if(os.path.exists(saved_path) == False):
             print("Error: Invalid path")
             sys.exit()
@@ -74,8 +74,8 @@ class onnx_zoo:
             print("OS error: {0}".format(err))
             sys.exit()
         except:
-           print("Error: " + self.file_name + " model metadata is too big.")
-           sys.exit()
+            print("Error: " + self.file_name + " model metadata is too big.")
+            sys.exit()
 
         if meta is not None:
             print("custom_metadata_map={}".format(meta.custom_metadata_map))
@@ -87,10 +87,3 @@ class onnx_zoo:
         else:
             print("Metadata does not exist")
         
-
-#mobile = onnx_zoo()
-#mobile.get_metadata()
-
-#mobilenet = onnx_zoo("mobilenetv2-7", "/Users/shirleysu/Downloads/")
-#mobilenet.get_pretrained()
-#get_model_versions("efficientnet-lite4")
