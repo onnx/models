@@ -1,8 +1,5 @@
-import onnx
-import numpy as np
 from pathlib import Path
 import re
-import pdb
 
 model_list = []
 dict = {}   # ex: "vgg" : "https://github.com/onnx/models/blob/master/vision/classification/vgg/model/vgg16-7.onnx?raw=true"
