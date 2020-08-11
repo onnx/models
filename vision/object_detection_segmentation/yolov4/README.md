@@ -75,7 +75,7 @@ The 85 values of each anchor consists of 4 box coordinates describing the predic
 ### Postprocessing steps
 The following postprocessing steps are modified from the [hunglc007/tensorflow-yolov4-tflite](https://github.com/hunglc007/tensorflow-yolov4-tflite) repository.
 ```python
-import scipy
+from scipy import special
 import colorsys
 import random
 
@@ -100,7 +100,7 @@ def postprocess_bbbox(pred_bbox, ANCHORS, STRIDES, XYSCALE=[1,1,1]):
         xy_grid = np.tile(np.expand_dims(xy_grid, axis=0), [1, 1, 1, 3, 1])
         xy_grid = xy_grid.astype(np.float)
 
-        pred_xy = ((scipy.special.expit(conv_raw_dxdy) * XYSCALE[i]) - 0.5 * (XYSCALE[i] - 1) + xy_grid) * STRIDES[i]
+        pred_xy = ((special.expit(conv_raw_dxdy) * XYSCALE[i]) - 0.5 * (XYSCALE[i] - 1) + xy_grid) * STRIDES[i]
         pred_wh = (np.exp(conv_raw_dwdh) * ANCHORS[i])
         pred[:, :, :, :, 0:4] = np.concatenate([pred_xy, pred_wh], axis=-1)
 
@@ -213,7 +213,7 @@ def read_class_names(class_file_name):
             names[ID] = name.strip('\n')
     return names
 
-def draw_bbox(image, bboxes, classes=read_class_names(cfg.YOLO.CLASSES), show_label=True):
+def draw_bbox(image, bboxes, classes=read_class_names("coco.names"), show_label=True):
     """
     bboxes: [x_min, y_min, x_max, y_max, probability, cls_id] format coordinates.
     """
