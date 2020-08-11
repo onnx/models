@@ -1,5 +1,3 @@
-import onnx
-import numpy as np
 from pathlib import Path
 import re
 from collections import defaultdict
