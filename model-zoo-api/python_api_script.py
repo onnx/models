@@ -54,7 +54,7 @@ class onnx_zoo:
         try:
             onnx.checker.check_model(self.saved_path + self.file_name)
             print("Successfully downloaded the model!")
-        except: # catch all exceptions
+        except BaseException: # catch all exceptions
             e = syst.exc_info()[0]
             write_to_page("Error: %s" %e)
         
@@ -64,7 +64,7 @@ class onnx_zoo:
         except os.error as err:
             print("OS error: {0}".format(err))
             sys.exit()
-        except:
+        except BaseException:
             print("Error: Load " + self.file_name + " model first.")
             sys.exit()
         
@@ -73,7 +73,7 @@ class onnx_zoo:
         except os.error as err:
             print("OS error: {0}".format(err))
             sys.exit()
-        except:
+        except BaseException:
             print("Error: " + self.file_name + " model metadata is too big.")
             sys.exit()
 
