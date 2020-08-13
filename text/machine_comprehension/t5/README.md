@@ -140,7 +140,7 @@ This model is converted directly from [huggingface/transformers](https://github.
 <hr>
 
 ## Contributors
-Abel Riboulot
+[Abel Riboulot](https://github.com/abelriboulot)
 <hr>
 
 ## License
