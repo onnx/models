@@ -18,7 +18,8 @@ understanding through the training of multiple tasks at once.
 
 ### Source
 Huggingface PyTorch T5 + script changes ==> ONNX T5-encoder
-Huggingface PyTorch T5 + script changes ==> ONNX GPT-2-LM-HEAD
+
+Huggingface PyTorch T5 + script changes ==> ONNX T5-decoder-with-lm-head
 
 
 ## Inference
