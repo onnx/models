@@ -115,15 +115,12 @@ class GenerativeT5(torch.nn.Module):
             generated = torch.tensor(self.tokenizer(prompt)['input_ids'])[:max_context_length - 1].unsqueeze(0)
             if self.cuda and not self.onnx:
                 generated = generated.cuda()
-            temperature = temperature
+
             # Getting encoder past
             if self.onnx:
                 encoder_outputs_prompt = self.encoder.run(None, {"input_ids": generated.cpu().numpy()})[0]
             else:
                 encoder_outputs_prompt = self.encoder(generated)
-            repetition_penalty = repetition_penalty
-            top_k = top_k
-            top_p = top_p
 
             # The sequence now needs to start with a
             generated = torch.zeros((1,1), dtype=torch.long)
