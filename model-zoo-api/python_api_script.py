@@ -28,9 +28,9 @@ class onnx_zoo:
         name = input("Enter model name: ")
         get_model_versions(name)
         model_name = input("Enter model name from options: ")
-        saved_path = input("Enter saved path: ") + "/"
+        saved_path = input("Enter output directory name to save model: ") + "/"
         if(os.path.exists(saved_path) == False):
-            print("Error: Invalid path")
+            print("Error: " + saved_path + " does not exist")
             sys.exit()
         
         # save the intended directory path
@@ -54,9 +54,10 @@ class onnx_zoo:
         try:
             onnx.checker.check_model(self.saved_path + self.file_name)
             print("Successfully downloaded the model!")
-        except BaseException: # catch all exceptions
+        except SystemExit: # catch all exceptions
             e = syst.exc_info()[0]
             write_to_page("Error: %s" %e)
+            sys.exit()
         
     def get_metadata(self):
         try:
@@ -64,7 +65,7 @@ class onnx_zoo:
         except os.error as err:
             print("OS error: {0}".format(err))
             sys.exit()
-        except BaseException:
+        except SystemExit:
             print("Error: Load " + self.file_name + " model first.")
             sys.exit()
         
@@ -73,7 +74,7 @@ class onnx_zoo:
         except os.error as err:
             print("OS error: {0}".format(err))
             sys.exit()
-        except BaseException:
+        except SystemExit:
             print("Error: " + self.file_name + " model metadata is too big.")
             sys.exit()
 
@@ -85,5 +86,5 @@ class onnx_zoo:
             print("producer_name={}".format(meta.producer_name))
             print("version={}".format(meta.version))
         else:
-            print("Metadata does not exist")
+            print(self.file_name + " metadata does not exist")
         
