@@ -46,7 +46,7 @@ output_text, output_logits = generative_t5(prompt, max_length=100, temperature=0
 # output_text: "J'ai été victime d'une série d'accidents."
 ```
 
-Or if you wish to produce the embeddings of a sentence
+Or if you wish to produce the embeddings of a sentence:
 ```python
 from onnxt5.api import get_encoder_decoder_tokenizer, run_embeddings_text
 
