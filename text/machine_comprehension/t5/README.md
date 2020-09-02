@@ -36,7 +36,7 @@ For the full list of task you can refer to the appendix D of the [original paper
 
 
 ### Preprocessing steps
-The easiest way to use the model is to use the onnxt5 utilities (installable with ```pip install onnxt5```).
+The easiest way to use the model is to use the onnxt5 utilities (installation instructions: ```pip install onnxt5```).
 
 In that case you can use the model with the following piece of code:
 ```python
@@ -49,7 +49,7 @@ output_text, output_logits = generative_t5(prompt, max_length=100, temperature=0
 # output_text: "J'ai été victime d'une série d'accidents."
 ```
 
-Or if you wish to produce the embeddings of a sentence
+Or if you wish to produce the embeddings of a sentence:
 ```python
 from onnxt5.api import get_encoder_decoder_tokenizer, run_embeddings_text
 
