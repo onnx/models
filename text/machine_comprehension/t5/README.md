@@ -33,7 +33,7 @@ For the full list of task you can refer to the appendix D of the [original paper
 
 
 ### Preprocessing steps
-The easiest way to use the model is to use the onnxt5 utilities (installable with ```pip install onnxt5```).
+The easiest way to use the model is to use the onnxt5 utilities (installation instructions: ```pip install onnxt5```).
 
 In that case you can use the model with the following piece of code:
 ```python
