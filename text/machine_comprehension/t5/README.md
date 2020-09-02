@@ -12,8 +12,8 @@ understanding through the training of multiple tasks at once.
 
  |Model        |Download  | Compressed |ONNX version|Opset version|
 |-------------|:--------------|:--------------|:--------------|:--------------|
-|T5-encoder       |[650.6 MB](model/t5-encoder.onnx) | [205.0 MB](model/t5-encoder.tar.gz)| 1.6 | 12 
-|T5-decoder-with-lm-head |[304.9 MB](model/t5-decoder-with-lm-head.onnx) | [304.9 MB](model/t5-decoder-with-lm-head.tar.gz)| 1.6 | 12 
+|T5-encoder       |[650.6 MB](model/t5-encoder-12.onnx) | [205.0 MB](model/t5-encoder-12.tar.gz)| 1.6 | 12 
+|T5-decoder-with-lm-head |[304.9 MB](model/t5-decoder-with-lm-head-12.onnx) | [304.9 MB](model/t5-decoder-with-lm-head-12.tar.gz)| 1.6 | 12 
 
 
 ### Source
@@ -21,6 +21,9 @@ Huggingface PyTorch T5 + script changes ==> ONNX T5-encoder
 
 Huggingface PyTorch T5 + script changes ==> ONNX T5-decoder-with-lm-head
 
+Script changes include:
+ - reshaping the Huggingface models to combine the lm head with the decoder to allow for a unified model
+ - reshaping the encoder to output the hidden state directly
 
 ## Inference
 The script for ONNX model conversion and ONNX Runtime inference is [here](dependencies/T5-export.py).

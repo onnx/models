@@ -115,6 +115,7 @@ This subset of natural language processing models that answer questions about a 
 |<b>[BERT-Squad](text/machine_comprehension/bert-squad)</b>|[Devlin et al.](https://arxiv.org/pdf/1810.04805.pdf)|This model answers questions based on the context of the given input paragraph. |
 |<b>[RoBERTa](text/machine_comprehension/roberta)</b>|[Liu et al.](https://arxiv.org/pdf/1907.11692.pdf)|A large transformer-based model that predicts sentiment based on given input text.|
 |<b>[GPT-2](text/machine_comprehension/gpt-2)</b>|[Radford et al.](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)|A large transformer-based language model that given a sequence of words within some text, predicts the next word. |
+|<b>[T5](text/machine_comprehension/t5)</b>|[Raffel et al.](https://arxiv.org/abs/1910.10683)|A large transformer-based language model trained on multiple tasks at once to achieve better semantic understanding of the prompt, capable of sentiment-analysis, question-answering, similarity-detection, translation, summarization, etc. |
 <hr>
 
 ### Machine Translation <a name="machine_translation"/>
@@ -124,6 +125,7 @@ This class of natural language processing models learns how to translate input t
 |-|-|-|
 |Neural Machine Translation by jointly learning to align and translate|	[Bahdanau et al.](https://arxiv.org/abs/1409.0473)|Aims to build a single neural network that can be jointly tuned to maximize the translation performance. <br>[contribute](contribute.md)|
 |Google's Neural Machine Translation System|	[Wu et al.](https://arxiv.org/abs/1609.08144)|This model helps to improve issues faced by the Neural Machine Translation (NMT) systems like parallelism that helps accelerate the final translation speed.<br>[contribute](contribute.md)|
+|<b>[T5](text/machine_comprehension/t5)</b>|[Raffel et al.](https://arxiv.org/abs/1910.10683)|A large transformer-based language model trained on multiple tasks at once to achieve better semantic understanding of the prompt, capable of sentiment-analysis, question-answering, similarity-detection, translation, summarization, etc. |
 <hr>
 
 ### Language Modelling <a name="language"/>
@@ -132,6 +134,7 @@ This subset of natural language processing models learns representations of lang
 |Model Class |Reference |Description |
 |-|-|-|
 |Deep Neural Network Language Models | [Arisoy et al.](https://pdfs.semanticscholar.org/a177/45f1d7045636577bcd5d513620df5860e9e5.pdf)|A DNN acoustic model. Used in many natural language technologies. Represents a probability distribution over all possible word strings in a language. <br> [contribute](contribute.md)|
+|<b>[T5](text/machine_comprehension/t5)</b>|[Raffel et al.](https://arxiv.org/abs/1910.10683)|A large transformer-based language model trained on multiple tasks at once to achieve better semantic understanding of the prompt, capable of sentiment-analysis, question-answering, similarity-detection, translation, summarization, etc. |
 <hr>
 
 ### Visual Question Answering & Dialog <a name="visual_qna"/>
