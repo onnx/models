@@ -125,7 +125,6 @@ This class of natural language processing models learns how to translate input t
 |-|-|-|
 |Neural Machine Translation by jointly learning to align and translate|	[Bahdanau et al.](https://arxiv.org/abs/1409.0473)|Aims to build a single neural network that can be jointly tuned to maximize the translation performance. <br>[contribute](contribute.md)|
 |Google's Neural Machine Translation System|	[Wu et al.](https://arxiv.org/abs/1609.08144)|This model helps to improve issues faced by the Neural Machine Translation (NMT) systems like parallelism that helps accelerate the final translation speed.<br>[contribute](contribute.md)|
-|<b>[T5](text/machine_comprehension/t5)</b>|[Raffel et al.](https://arxiv.org/abs/1910.10683)|A large transformer-based language model trained on multiple tasks at once to achieve better semantic understanding of the prompt, capable of sentiment-analysis, question-answering, similarity-detection, translation, summarization, etc. |
 <hr>
 
 ### Language Modelling <a name="language"/>
