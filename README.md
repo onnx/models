@@ -133,7 +133,6 @@ This subset of natural language processing models learns representations of lang
 |Model Class |Reference |Description |
 |-|-|-|
 |Deep Neural Network Language Models | [Arisoy et al.](https://pdfs.semanticscholar.org/a177/45f1d7045636577bcd5d513620df5860e9e5.pdf)|A DNN acoustic model. Used in many natural language technologies. Represents a probability distribution over all possible word strings in a language. <br> [contribute](contribute.md)|
-|<b>[T5](text/machine_comprehension/t5)</b>|[Raffel et al.](https://arxiv.org/abs/1910.10683)|A large transformer-based language model trained on multiple tasks at once to achieve better semantic understanding of the prompt, capable of sentiment-analysis, question-answering, similarity-detection, translation, summarization, etc. |
 <hr>
 
 ### Visual Question Answering & Dialog <a name="visual_qna"/>
