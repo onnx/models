@@ -114,6 +114,7 @@ This subset of natural language processing models that answer questions about a 
 |<b>[BERT-Squad](text/machine_comprehension/bert-squad)</b>|[Devlin et al.](https://arxiv.org/pdf/1810.04805.pdf)|This model answers questions based on the context of the given input paragraph. |
 |<b>[RoBERTa](text/machine_comprehension/roberta)</b>|[Liu et al.](https://arxiv.org/pdf/1907.11692.pdf)|A large transformer-based model that predicts sentiment based on given input text.|
 |<b>[GPT-2](text/machine_comprehension/gpt-2)</b>|[Radford et al.](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)|A large transformer-based language model that given a sequence of words within some text, predicts the next word. |
+|<b>[T5](text/machine_comprehension/t5)</b>|[Raffel et al.](https://arxiv.org/abs/1910.10683)|A large transformer-based language model trained on multiple tasks at once to achieve better semantic understanding of the prompt, capable of sentiment-analysis, question-answering, similarity-detection, translation, summarization, etc. |
 <hr>
 
 ### Machine Translation <a name="machine_translation"/>
