@@ -12,7 +12,7 @@ The SSD-MobilenetV1 is suitable for mobile and embedded vision applications.
 
 |Model        |Download  | Download (with sample test data)|ONNX version|Opset version|
 |-------------|:--------------|:--------------|:--------------|:--------------|
-|SSD-MobilenetV1       | [29.3 MB](ssd-mobilenetv1/model/ssd_mobilenet_v1_10.onnx)  |[27.9 MB](ssd-mobilenetv1/model/ssd_mobilenet_v1_10.tar.gz) |1.7.0 | 10 |
+|SSD-MobilenetV1       | [29.3 MB](model/ssd_mobilenet_v1_10.onnx)  |[27.9 MB](model/ssd_mobilenet_v1_10.tar.gz) |1.7.0 | 10 |
 
 ### Source
 Tensorflow SSD-MobileNetV1 ==> ONNX SSD-MobileNetV1 
