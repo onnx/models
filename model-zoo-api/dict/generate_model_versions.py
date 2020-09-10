@@ -6,11 +6,8 @@ from collections import defaultdict
 # identify list of onnx models in model Zoo
 model_list = []
 
-def get_a_list():
-    return []
-
 # generate default dictionary
-dict = defaultdict(get_a_list)
+dict = defaultdict(list)
 
 for path in Path('text').rglob('*.onnx'):
     model_list.append(str(path))
