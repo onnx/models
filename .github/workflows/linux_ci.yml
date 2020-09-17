@@ -36,4 +36,4 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install onnx==${{ matrix.onnx-version }} requests
           python -m pip install onnxruntime
-          python .github/workflows/test_models.py
+          python .github/workflows/test_all_models.py
