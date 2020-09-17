@@ -5,8 +5,11 @@ import requests
 import ort_test_dir_utils
 import onnxruntime
 import sys
+import os
+import shutil
 
 cwd_path = Path.cwd()
+TEST_DIR = 'test_dir'
 
 def run_lfs_install():
     result = subprocess.run(['git', 'lfs', 'install'], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -28,8 +31,7 @@ def check_by_onnx(model_path):
 
 def check_by_onnxruntime(model_path):
     onnxruntime.InferenceSession(model_path)
-    test_dir = 'test_dir'
-    ort_test_dir_utils.create_test_dir(model_path, './', test_dir)
+    ort_test_dir_utils.create_test_dir(model_path, './', TEST_DIR)
     ort_test_dir_utils.run_test_dir(test_dir)
 
 
@@ -39,9 +41,16 @@ def main():
     cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdoutput, stderroutput = obtain_diff.communicate()
     diff_list = stdoutput.split()
+    model_directory = ["."] # ['text', 'vision']
+    model_list = []
 
-    # identify list of changed onnx models in model Zoo
-    model_list = [str(model).replace("b'","").replace("'", "") for model in diff_list if ".onnx" in str(model)]
+    for directory in model_directory:
+        for root, dirs, files in os.walk(directory):
+            for file in files:
+                if file.endswith('.onnx'):
+                    model_list.append(os.path.join(root, file))
+                    print(os.path.join(root, file))
+
 
     # run lfs install before starting the tests
     run_lfs_install()
@@ -61,6 +70,9 @@ def main():
         except Exception as e:
             print(e)
             failed_models.append(model_path)
+
+        if TEST_DIR.exists() and TEST_DIR.is_dir():
+            shutil.rmtree(TEST_DIR)
 
     if len(failed_models) != 0:
         print(str(len(failed_models)) +" models failed onnx checker.")
