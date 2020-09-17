@@ -41,9 +41,6 @@ jobs:
           path: .git/lfs
           key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}-v1
 
-      - name: Git LFS Pull
-        run: git lfs pull
-
       - name: Install dependencies and test ONNX models
         run: |
           python -m pip install --upgrade pip
