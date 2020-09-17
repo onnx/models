@@ -35,4 +35,5 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install onnx==${{ matrix.onnx-version }} requests
-          python .azure-pipelines/test_models.py
+          python -m pip install onnxruntime
+          python .github/workflows/test_models.py
