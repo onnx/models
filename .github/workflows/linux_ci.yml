@@ -24,6 +24,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: Checkout repo
+        with:
+          lfs: false
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v1
@@ -40,9 +42,8 @@ jobs:
         with:
           path: .git/lfs
           key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}-v1
-
-      - name: Git LFS Pull
-        run: git lfs pull
+          restore-keys: |
+            ${{ runner.os }}-lfs-
 
       - name: Install dependencies and test ONNX models
         run: |
