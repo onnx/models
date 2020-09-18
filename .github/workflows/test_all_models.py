@@ -7,6 +7,7 @@ import onnxruntime
 import sys
 import os
 import shutil
+import time
 
 cwd_path = Path.cwd()
 TEST_DIR = 'test_dir'
@@ -39,7 +40,7 @@ def check_by_onnxruntime(model_path, model_name):
 
 
 def main():
-    model_directory = ['text', 'vision'] # ['vision/classification/efficientnet-lite4/']
+    model_directory = ['text/machine_comprehension/t5/'] # ['text', 'vision'] # ['vision/classification/efficientnet-lite4/']
     model_list = []
 
     for directory in model_directory:
@@ -57,11 +58,12 @@ def main():
     # run checker on each model
     failed_models = []
     for model_path in model_list:
+        start = time.time()
         model_name = model_path.split('/')[-1]
         print('----------------Testing: {}----------------'.format(model_name))
 
         try:
-            # pull_lfs_file(model_path)
+            pull_lfs_file(model_path)
             check_by_onnx(model_path, model_name)
             check_by_onnxruntime(model_path, model_name)
             if os.path.exists(TEST_DIR) and os.path.isdir(TEST_DIR):
@@ -70,6 +72,8 @@ def main():
         except Exception as e:
             print('[FAIL]: {}'.format(e))
             failed_models.append(model_path)
+        end = time.time()
+        print('----------------Time used: {} secs----------------'.format(end - start))
 
 
     if len(failed_models) == 0:
