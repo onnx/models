@@ -73,7 +73,7 @@ def main():
             print('[FAIL]: {}'.format(e))
             failed_models.append(model_path)
         end = time.time()
-        print('----------------Time used: {} secs----------------'.format(end - start))
+        print('--------------Time used: {} secs--------------'.format(end - start))
 
 
     if len(failed_models) == 0:
