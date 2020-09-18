@@ -44,6 +44,9 @@ jobs:
           key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}-v1
           restore-keys: |
             ${{ runner.os }}-lfs-
+              
+      - name: Pull lfs data, if not cached
+        run: GIT_TRACE=1 git lfs pull
 
       - name: Install dependencies and test ONNX models
         run: |
