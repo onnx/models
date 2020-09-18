@@ -39,7 +39,7 @@ def check_by_onnxruntime(model_path, model_name):
 
 
 def main():
-    model_directory = ['vision/classification/efficientnet-lite4/'] #['text', vision'] # ['vision/classification/efficientnet-lite4/']
+    model_directory = ['text', 'vision'] # ['vision/classification/efficientnet-lite4/']
     model_list = []
 
     for directory in model_directory:
@@ -61,7 +61,7 @@ def main():
         print('----------------Testing: {}----------------'.format(model_name))
 
         try:
-            pull_lfs_file(model_path)
+            # pull_lfs_file(model_path)
             check_by_onnx(model_path, model_name)
             check_by_onnxruntime(model_path, model_name)
             if os.path.exists(TEST_DIR) and os.path.isdir(TEST_DIR):
