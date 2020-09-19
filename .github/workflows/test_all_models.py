@@ -40,7 +40,7 @@ def check_by_onnxruntime(model_path, model_name):
 
 
 def main():
-    model_directory = ['text']#,'vision'] #['text/machine_comprehension/t5/'] # ['vision/classification/efficientnet-lite4/']
+    model_directory = ['text', 'vision'] #['text/machine_comprehension/t5/'] # ['vision/classification/efficientnet-lite4/']
     model_list = []
 
     for directory in model_directory:
