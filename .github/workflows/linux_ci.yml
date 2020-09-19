@@ -45,9 +45,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-lfs-
 
-      - name: Pull lfs onnx files, if not cached
-        run: git lfs pull --include *.onnx --exclude ''
-
       - name: Install dependencies and test ONNX models
         run: |
           python -m pip install --upgrade pip
