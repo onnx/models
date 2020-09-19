@@ -32,7 +32,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           architecture: ${{ matrix.architecture }}
-      # load git LFS cache to avoid redownloading
+      
       - name: Create LFS file list
         run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
 
@@ -44,13 +44,15 @@ jobs:
           key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}-v1
           restore-keys: |
             ${{ runner.os }}-lfs-
-              
-      - name: Pull lfs data, if not cached
-        run: GIT_TRACE=1 git lfs pull
 
       - name: Install dependencies and test ONNX models
         run: |
           python -m pip install --upgrade pip
           python -m pip install onnx==${{ matrix.onnx-version }} requests
           python -m pip install onnxruntime
+          git clone onnxruntime
+          export PATH="./onnxruntime/tools/python/:$PATH"
+          python .github/workflows/test_all_models.py
+      - name: Test ONNX models by onnx and onnxruntime
+        run: |
           python .github/workflows/test_all_models.py

@@ -64,8 +64,6 @@ def main():
 
         try:
             pull_lfs_file(model_path)
-            end = time.time()
-            print('--------------Time used: {} secs--------------'.format(end - start))
             check_by_onnx(model_path, model_name)
             check_by_onnxruntime(model_path, model_name)
             if os.path.exists(TEST_DIR) and os.path.isdir(TEST_DIR):
@@ -74,7 +72,8 @@ def main():
         except Exception as e:
             print('[FAIL]: {}'.format(e))
             failed_models.append(model_path)
-
+        end = time.time()
+        print('--------------Time used: {} secs--------------'.format(end - start))
 
 
     if len(failed_models) == 0:
