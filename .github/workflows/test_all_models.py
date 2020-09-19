@@ -63,7 +63,7 @@ def main():
         print('-----------------Testing: {}-----------------'.format(model_name))
 
         try:
-            pull_lfs_file(model_path)
+            #pull_lfs_file(model_path)
             #check_by_onnx(model_path, model_name)
             #check_by_onnxruntime(model_path, model_name)
             if os.path.exists(TEST_DIR) and os.path.isdir(TEST_DIR):
