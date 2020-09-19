@@ -60,7 +60,7 @@ def main():
     for model_path in model_list:
         start = time.time()
         model_name = model_path.split('/')[-1]
-        print('----------------Testing: {}----------------'.format(model_name))
+        print('-----------------Testing: {}-----------------'.format(model_name))
 
         try:
             pull_lfs_file(model_path)
@@ -73,7 +73,7 @@ def main():
             print('[FAIL]: {}'.format(e))
             failed_models.append(model_path)
         end = time.time()
-        print('--------------Time used: {} secs--------------'.format(end - start))
+        print('--------------Time used: {} secs-------------'.format(end - start))
 
 
     if len(failed_models) == 0:
