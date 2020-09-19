@@ -64,8 +64,8 @@ def main():
 
         try:
             pull_lfs_file(model_path)
-            #check_by_onnx(model_path, model_name)
-            #check_by_onnxruntime(model_path, model_name)
+            check_by_onnx(model_path, model_name)
+            check_by_onnxruntime(model_path, model_name)
             if os.path.exists(TEST_DIR) and os.path.isdir(TEST_DIR):
                 shutil.rmtree(TEST_DIR)
 
@@ -80,7 +80,7 @@ def main():
         print('{} models have been checked.'.format(len(model_list)))
     else:
         print('In all {} models, {} models failed.'.format(len(model_list), len(failed_models)))
-        sys.exit(1)
+        #sys.exit(1)
       
 
 if __name__ == '__main__':
