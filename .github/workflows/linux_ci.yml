@@ -54,5 +54,6 @@ jobs:
           
       - name: Test ONNX models by onnx and onnxruntime
         run: |
+          du -h
           export PYTHONPATH="$(pwd)/onnxruntime/tools/python/:$PYTHONPATH"
           python .github/workflows/test_all_models.py
