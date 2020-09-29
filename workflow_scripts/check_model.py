@@ -23,4 +23,3 @@ def by_onnxruntime(model_path, model_name, test_data_set_0):
         shutil.copytree(test_data_set_0, test_dir)
         ort_test_dir_utils.run_test_dir(test_dir)
     print('[PASS]: {} is checked by onnxruntime. '.format(model_name))
-}
