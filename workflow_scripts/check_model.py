@@ -1,9 +1,7 @@
 import ort_test_dir_utils
 import onnxruntime
 import onnx
-import os
 import test_utils
-import shutil
 
 
 def by_onnx(model_path, model_name):
