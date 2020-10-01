@@ -8,11 +8,14 @@ import test_utils
 
 
 def main(argv):
+  # default test by onnx and onnxruntime
   test_onnx, test_onnxruntime = True, True
+  # test by onnx only
   if len(argv) >= 2 and argv[1] == 'onnx':
-    test_onnx, test_onnxruntime = True, False
+    test_onnxruntime = False
+  # test by onnxruntime only
   elif len(argv) >= 2 and argv[1] == 'onnxruntime':
-    test_onnx, test_onnxruntime = False, True
+    test_onnx = False
     
   cwd_path = Path.cwd()
   # obtain list of added or modified files in this PR
@@ -26,43 +29,51 @@ def main(argv):
   # run lfs install before starting the tests
   test_utils.run_lfs_install()
 
-  print("\n=== Running ONNX Checker on added models ===\n")
+  print('\n=== Running ONNX Checker on added models ===\n')
   # run checker on each model
   failed_models = []
+  tar_ext_name = '.tar.gz'
   for model_path in model_list:
       model_name = model_path.split('/')[-1]
-      print('Testing {}'.format(model_name))
+      tar_name = model_name.replace('.onnx', tar_ext_name)
+      print('==============Testing {}=============='.format(model_name))
 
       try:
         # replace '.onnx' with '.tar.gz'
-        tar_gz_path = model_path[::-5] + '.tar.gz'
-        test_data = None
-        # if tar.gz exists, use the onnx model 
+        tar_gz_path = model_path[:-5] + '.tar.gz'
+        test_data_set = []
+        # if tar.gz exists, use the onnx model
         if os.path.exists(tar_gz_path):
-          test_utils.pull_lfs_file(model_path)
+          test_utils.pull_lfs_file(tar_gz_path)
           # check whether 'test_data_set_0' exists
-          model_path_from_tar, test_data = test_utils.extract_test_data(tar_gz_path)
-          # check the onnx model from .tar.gz
-          if test_onnx: check_model.by_onnx(model_path_from_tar, model_name)
-          if test_onnxruntime: check_model.by_onnxruntime(model_path_from_tar, model_name, test_data)
-          print('Model {} from .tar.gz has been successfully checked. '.format(model_name))
+          model_path_from_tar, test_data_set = test_utils.extract_test_data(tar_gz_path)
+
+          # 1. check the onnx model from .tar.gz
+          if test_onnx: check_model.by_onnx(model_path_from_tar, tar_name)
+          if test_onnxruntime: check_model.by_onnxruntime(model_path_from_tar, tar_name, test_data_set)
         else:
           test_utils.pull_lfs_file(model_path)
 
-        # check the onnx model from GitHub
+        # 2. check the uploaded onnx model
         if test_onnx: check_model.by_onnx(model_path, model_name)
-        if test_onnxruntime: check_model.by_onnxruntime(model_path, model_name, test_data)
-        print('Model {} from GitHub has been successfully checked. '.format(model_name))
+        if test_onnxruntime: check_model.by_onnxruntime(model_path, model_name, test_data_set)
+        
+        if os.path.exists(tar_gz_path):
+          print('[SUCCESS] Both {} and {} checked. '.format(tar_name, model_name))
+        else:
+          print('[SUCCESS] {} checked. '.format(model_name))
 
       except Exception as e:
-        print(e)
+        print('[FAIL] {}: {}'.format(model_name, e))
         failed_models.append(model_path)
-      test_utils.remove_test_dir()
+
+      # remove the produced tar directory
+      test_utils.remove_tar_dir()
 
   if len(failed_models) == 0:
-      print('{} models have been checked.'.format(len(model_list)))
+      print('{} models have been checked. '.format(len(model_list)))
   else:
-      print('In all {} models, {} models failed.'.format(len(model_list), len(failed_models)))
+      print('In all {} models, {} models failed. '.format(len(model_list), len(failed_models)))
       sys.exit(1)
 
 if __name__ == '__main__':

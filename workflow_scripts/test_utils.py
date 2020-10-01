@@ -4,7 +4,8 @@ import tarfile
 import os
 import shutil
 
-TEST_DIR = 'ci_test_dir'
+TEST_ORT_DIR = 'ci_test_dir'
+TEST_TAR_DIR = 'ci_test_tar_dir'
 cwd_path = Path.cwd()
 
 def get_model_directory(model_path):
@@ -20,22 +21,27 @@ def pull_lfs_file(file_name):
 
 def extract_test_data(file_path):
     tar = tarfile.open(file_path, "r:gz")
-    tar.extractall(TEST_DIR)
+    tar.extractall(TEST_TAR_DIR)
     tar.close()
-    return get_model_and_test_data(TEST_DIR)
+    return get_model_and_test_data(TEST_TAR_DIR)
     
 def get_model_and_test_data(directory_path):
-    onnx_model, test_data_set_0 = None, None
-    for directory in directory_path:
-        for root, dirs, files in os.walk(directory):
-            for file in files:
-                file_path = os.path.join(root, file)
-                if file.endswith('.onnx'):
-                    onnx_model = file_path
-                elif file == 'test_data_set_0':
-                    test_data_set_0 = file_path
-    return onnx_model, test_data_set_0
+    onnx_model = None
+    test_data_set = []
+    for root, dirs, files in os.walk(directory_path):
+        for file in files:
+            file_path = os.path.join(root, file)
+            if file.endswith('.onnx'):
+                onnx_model = file_path
+            # detect any test_data_set
+            elif file.startswith('test_data_set_'):
+                test_data_set.append(file_path)
+    return onnx_model, test_data_set
 
-def remove_test_dir():
-    if os.path.exists(TEST_DIR) and os.path.isdir(TEST_DIR):
-        shutil.rmtree(TEST_DIR)
+def remove_tar_dir():
+    if os.path.exists(TEST_TAR_DIR) and os.path.isdir(TEST_TAR_DIR):
+        shutil.rmtree(TEST_TAR_DIR)
+
+def remove_onnxruntime_test_dir():
+    if os.path.exists(TEST_ORT_DIR) and os.path.isdir(TEST_ORT_DIR):
+        shutil.rmtree(TEST_ORT_DIR)        
