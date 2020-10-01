@@ -31,8 +31,16 @@ jobs:
           python-version: ${{ matrix.python-version }}
           architecture: ${{ matrix.architecture }}
       
-      - name: Install dependencies and test ONNX models
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           python -m pip install onnx==${{ matrix.onnx-version }} requests
-          python .azure-pipelines/test_models.py
+          python -m pip install onnxruntime
+          git clone https://github.com/microsoft/onnxruntime.git
+          echo "PYTHONPATH=%cd%\onnxruntime\tools\python/;$PYTHONPATH" >> $GITHUB_ENV
+      - name: Test new models by onnx
+        run: |
+          python workflow_scripts/test_models.py onnx
+      - name: Test new models by onnxruntime
+        run: |
+          python workflow_scripts/test_models.py onnxruntime          

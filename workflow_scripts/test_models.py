@@ -1,4 +1,3 @@
-import onnx
 from pathlib import Path
 import subprocess
 import sys
@@ -66,6 +65,7 @@ def main(argv):
       except Exception as e:
         print('[FAIL] {}: {}'.format(model_name, e))
         failed_models.append(model_path)
+        test_utils.remove_onnxruntime_test_dir()
 
       # remove the produced tar directory
       test_utils.remove_tar_dir()
