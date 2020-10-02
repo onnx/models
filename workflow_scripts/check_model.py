@@ -4,12 +4,12 @@ import onnx
 import test_utils
 
 
-def by_onnx(model_path, model_name):
+def run_onnx_checker(model_path, model_name):
     model = onnx.load(model_path)
     onnx.checker.check_model(model)
     print('[PASS] {} is checked by onnx. '.format(model_name))
 
-def by_onnxruntime(model_path, model_name, test_data_set):
+def run_backend_ort(model_path, model_name, test_data_set=None):
     # if 'test_data_set_N' doesn't exist, create test_dir
     if not test_data_set:
         onnxruntime.InferenceSession(model_path)

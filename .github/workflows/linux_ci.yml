@@ -40,9 +40,9 @@ jobs:
           echo "PYTHONPATH=$(pwd)/onnxruntime/tools/python/:$PYTHONPATH" >> $GITHUB_ENV
       - name: Test new models by onnxs
         run: |
-          python workflow_scripts/test_models.py onnx
+          python workflow_scripts/test_models.py --target onnx
       - name: Test new models by onnxruntime
         run: |
-          python workflow_scripts/test_models.py onnxruntime
+          python workflow_scripts/test_models.py --target onnxruntime
 
     

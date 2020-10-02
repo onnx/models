@@ -1,20 +1,23 @@
+import argparse
+import check_model
+import os
 from pathlib import Path
 import subprocess
 import sys
-import check_model
-import os
 import test_utils
 
+def check_by_target(model_path, file_name, test_data_set, target):
+  if target != 'onnxruntime':
+    check_model.run_onnx_checker(model_path, file_name)
+  if target != 'onnx':
+    check_model.run_backend_ort(model_path, file_name, test_data_set)
 
-def main(argv):
-  # default test by onnx and onnxruntime
-  test_onnx, test_onnxruntime = True, True
-  # test by onnx only
-  if len(argv) >= 2 and argv[1] == 'onnx':
-    test_onnxruntime = False
-  # test by onnxruntime only
-  elif len(argv) >= 2 and argv[1] == 'onnxruntime':
-    test_onnx = False
+def main():
+  parser = argparse.ArgumentParser(description='Test settings')
+  # default test by both onnx and onnxruntime
+  # if target is specified, only test by the specified one
+  parser.add_argument('--target', help='Test the model by which (onnx/onnxruntime)?')
+  args = parser.parse_args()
     
   cwd_path = Path.cwd()
   # obtain list of added or modified files in this PR
@@ -41,21 +44,20 @@ def main(argv):
         # replace '.onnx' with '.tar.gz'
         tar_gz_path = model_path[:-5] + '.tar.gz'
         test_data_set = []
-        # if tar.gz exists, use the onnx model
+        # if tar.gz exists, git pull and try to get test data
         if os.path.exists(tar_gz_path):
           test_utils.pull_lfs_file(tar_gz_path)
           # check whether 'test_data_set_0' exists
           model_path_from_tar, test_data_set = test_utils.extract_test_data(tar_gz_path)
 
           # 1. check the onnx model from .tar.gz
-          if test_onnx: check_model.by_onnx(model_path_from_tar, tar_name)
-          if test_onnxruntime: check_model.by_onnxruntime(model_path_from_tar, tar_name, test_data_set)
-        else:
-          test_utils.pull_lfs_file(model_path)
+          check_by_target(model_path_from_tar, tar_name, test_data_set, args.target)
+        
+        # git pull the onnx file
+        test_utils.pull_lfs_file(model_path)
 
         # 2. check the uploaded onnx model
-        if test_onnx: check_model.by_onnx(model_path, model_name)
-        if test_onnxruntime: check_model.by_onnxruntime(model_path, model_name, test_data_set)
+        check_by_target(model_path, model_name, test_data_set, args.target)
         
         if os.path.exists(tar_gz_path):
           print('[SUCCESS] Both {} and {} checked. '.format(tar_name, model_name))
@@ -77,4 +79,4 @@ def main(argv):
       sys.exit(1)
 
 if __name__ == '__main__':
-    main(sys.argv)
+    main()

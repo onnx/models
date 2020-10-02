@@ -40,8 +40,8 @@ jobs:
       - name: Test new models by onnx
         run: |
           $Env:PYTHONPATH=".\onnxruntime\tools\python";
-          python workflow_scripts/test_models.py onnx
+          python workflow_scripts/test_models.py --target onnx
       - name: Test new models by onnxruntime
         run: |
           $Env:PYTHONPATH=".\onnxruntime\tools\python";
-          python workflow_scripts/test_models.py onnxruntime          
+          python workflow_scripts/test_models.py --target onnxruntime          
