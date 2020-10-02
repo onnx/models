@@ -7,18 +7,20 @@ import sys
 import test_utils
 
 def check_by_target(model_path, file_name, test_data_set, target):
-  if target != 'onnxruntime':
+  if target == 'onnx' or target == 'None':
     check_model.run_onnx_checker(model_path, file_name)
-  if target != 'onnx':
+  if target == 'onnxruntime' or target == 'None':
     check_model.run_backend_ort(model_path, file_name, test_data_set)
 
 def main():
   parser = argparse.ArgumentParser(description='Test settings')
-  # default test by both onnx and onnxruntime
+  # default None: test by both onnx and onnxruntime
   # if target is specified, only test by the specified one
-  parser.add_argument('--target', help='Test the model by which (onnx/onnxruntime)?')
+  parser.add_argument('--target', required=False, default='None', type=str, 
+                      help='Test the model by which (onnx/onnxruntime)?',
+                      choices=['onnx', 'onnxruntime', 'None'])
   args = parser.parse_args()
-    
+
   cwd_path = Path.cwd()
   # obtain list of added or modified files in this PR
   obtain_diff = subprocess.Popen(['git', 'diff', '--name-only', '--diff-filter=AM', 'origin/master', 'HEAD'],
