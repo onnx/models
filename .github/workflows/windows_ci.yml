@@ -38,7 +38,7 @@ jobs:
           python -m pip install onnxruntime
           git clone https://github.com/microsoft/onnxruntime.git
       - env:
-        PYTHONPATH: .\onnxruntime\tools\python
+          PYTHONPATH: .\onnxruntime\tools\python
       - name: Test new models by onnx
         run: |
           python workflow_scripts/test_models.py --target onnx
