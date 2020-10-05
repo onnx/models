@@ -6,11 +6,6 @@ import subprocess
 import sys
 import test_utils
 
-def check_by_target(model_path, file_name, test_data_set, target):
-  if target == 'onnx' or target == 'None':
-    check_model.run_onnx_checker(model_path, file_name)
-  if target == 'onnxruntime' or target == 'None':
-    check_model.run_backend_ort(model_path, file_name, test_data_set)
 
 def main():
   parser = argparse.ArgumentParser(description='Test settings')
@@ -43,23 +38,26 @@ def main():
       print('==============Testing {}=============='.format(model_name))
 
       try:
+        # Step 1: check the onnx model and test_data_set from .tar.gz by ORT
         # replace '.onnx' with '.tar.gz'
         tar_gz_path = model_path[:-5] + '.tar.gz'
         test_data_set = []
         # if tar.gz exists, git pull and try to get test data
-        if os.path.exists(tar_gz_path):
+        if (args.target == 'onnxruntime' or args.target == 'None') and os.path.exists(tar_gz_path):
           test_utils.pull_lfs_file(tar_gz_path)
           # check whether 'test_data_set_0' exists
           model_path_from_tar, test_data_set = test_utils.extract_test_data(tar_gz_path)
-
-          # 1. check the onnx model from .tar.gz
-          check_by_target(model_path_from_tar, tar_name, test_data_set, args.target)
+          # finally check the onnx model from .tar.gz by ORT
+          # if the test_data_set does not exist, create the test_data_set
+          check_model.run_backend_ort(model_path_from_tar, tar_name, test_data_set)
         
+        # Step 2: check the uploaded onnx model by ONNX
         # git pull the onnx file
         test_utils.pull_lfs_file(model_path)
+        # 2. check the uploaded onnx model by ONNX
+        if args.target == 'onnx' or args.target == 'None':
+          check_model.run_onnx_checker(model_path, model_name)
 
-        # 2. check the uploaded onnx model
-        check_by_target(model_path, model_name, test_data_set, args.target)
         
         if os.path.exists(tar_gz_path):
           print('[SUCCESS] Both {} and {} checked. '.format(tar_name, model_name))

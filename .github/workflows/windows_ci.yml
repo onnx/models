@@ -20,6 +20,7 @@ jobs:
         python-version: [3.7]
         architecture: ['x64']
         onnx-version: ['1.7']
+    # To get the tool ort_test_dir_utils from ORT
     env:
       PYTHONPATH: .\onnxruntime\tools\python
     steps:
