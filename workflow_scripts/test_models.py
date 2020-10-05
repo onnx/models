@@ -9,11 +9,11 @@ import test_utils
 
 def main():
   parser = argparse.ArgumentParser(description='Test settings')
-  # default None: test by both onnx and onnxruntime
+  # default all: test by both onnx and onnxruntime
   # if target is specified, only test by the specified one
-  parser.add_argument('--target', required=False, default='None', type=str, 
+  parser.add_argument('--target', required=False, default='all', type=str, 
                       help='Test the model by which (onnx/onnxruntime)?',
-                      choices=['onnx', 'onnxruntime', 'None'])
+                      choices=['onnx', 'onnxruntime', 'all'])
   args = parser.parse_args()
 
   cwd_path = Path.cwd()
@@ -43,26 +43,22 @@ def main():
         tar_gz_path = model_path[:-5] + '.tar.gz'
         test_data_set = []
         # if tar.gz exists, git pull and try to get test data
-        if (args.target == 'onnxruntime' or args.target == 'None') and os.path.exists(tar_gz_path):
+        if (args.target == 'onnxruntime' or args.target == 'all') and os.path.exists(tar_gz_path):
           test_utils.pull_lfs_file(tar_gz_path)
           # check whether 'test_data_set_0' exists
           model_path_from_tar, test_data_set = test_utils.extract_test_data(tar_gz_path)
           # finally check the onnx model from .tar.gz by ORT
           # if the test_data_set does not exist, create the test_data_set
-          check_model.run_backend_ort(model_path_from_tar, tar_name, test_data_set)
+          check_model.run_backend_ort(model_path_from_tar, test_data_set)
+          print('[PASS] {} is checked by onnxruntime. '.format(tar_name))
         
         # Step 2: check the uploaded onnx model by ONNX
         # git pull the onnx file
         test_utils.pull_lfs_file(model_path)
         # 2. check the uploaded onnx model by ONNX
-        if args.target == 'onnx' or args.target == 'None':
-          check_model.run_onnx_checker(model_path, model_name)
-
-        
-        if os.path.exists(tar_gz_path):
-          print('[SUCCESS] Both {} and {} checked. '.format(tar_name, model_name))
-        else:
-          print('[SUCCESS] {} checked. '.format(model_name))
+        if args.target == 'onnx' or args.target == 'all':
+          check_model.run_onnx_checker(model_path)
+          print('[PASS] {} is checked by onnx. '.format(model_name))
 
       except Exception as e:
         print('[FAIL] {}: {}'.format(model_name, e))

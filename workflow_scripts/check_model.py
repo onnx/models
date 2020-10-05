@@ -4,12 +4,11 @@ import onnx
 import test_utils
 
 
-def run_onnx_checker(model_path, model_name):
+def run_onnx_checker(model_path):
     model = onnx.load(model_path)
     onnx.checker.check_model(model)
-    print('[PASS] {} is checked by onnx. '.format(model_name))
 
-def run_backend_ort(model_path, model_name, test_data_set=None):
+def run_backend_ort(model_path, test_data_set=None):
     # if 'test_data_set_N' doesn't exist, create test_dir
     if not test_data_set:
         onnxruntime.InferenceSession(model_path)
@@ -19,6 +18,5 @@ def run_backend_ort(model_path, model_name, test_data_set=None):
     else:
         test_dir_from_tar = test_utils.get_model_directory(model_path)
         ort_test_dir_utils.run_test_dir(test_dir_from_tar)
-    print('[PASS] {} is checked by onnxruntime. '.format(model_name))
     # remove the produced test_dir from ORT
     test_utils.remove_onnxruntime_test_dir()
