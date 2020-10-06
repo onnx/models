@@ -17,6 +17,8 @@ def main():
   args = parser.parse_args()
 
   cwd_path = Path.cwd()
+  # git fetch first for git diff on GitHub Action
+  subprocess.run(['git', 'fetch', 'origin', 'master:master'], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
   # obtain list of added or modified files in this PR
   obtain_diff = subprocess.Popen(['git', 'diff', '--name-only', '--diff-filter=AM', 'origin/master', 'HEAD'],
   cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
