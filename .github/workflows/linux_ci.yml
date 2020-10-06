@@ -36,8 +36,6 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install onnx==${{ matrix.onnx-version }} requests
           python -m pip install onnxruntime
-          git clone https://github.com/microsoft/onnxruntime.git
-          echo "PYTHONPATH=$(pwd)/onnxruntime/tools/python/:$PYTHONPATH" >> $GITHUB_ENV
       - name: Test new models by onnxs
         run: |
           python workflow_scripts/test_models.py --target onnx

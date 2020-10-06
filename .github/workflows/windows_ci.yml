@@ -20,9 +20,6 @@ jobs:
         python-version: [3.7]
         architecture: ['x64']
         onnx-version: ['1.7']
-    # To get the tool ort_test_dir_utils from ORT
-    env:
-      PYTHONPATH: .\onnxruntime\tools\python
     steps:
       - uses: actions/checkout@v2
         name: Checkout repo
@@ -38,10 +35,9 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install onnx==${{ matrix.onnx-version }} requests
           python -m pip install onnxruntime
-          git clone https://github.com/microsoft/onnxruntime.git
       - name: Test new models by onnx
         run: |
           python workflow_scripts/test_models.py --target onnx
       - name: Test new models by onnxruntime
         run: |
-          python workflow_scripts/test_models.py --target onnxruntime          
+          python workflow_scripts/test_models.py --target onnxruntime
