@@ -38,9 +38,9 @@ jobs:
           python -m pip install onnxruntime
       - name: Test new models by onnxs
         run: |
-          python workflow_scripts/test_models.py --target onnx
+          python workflow_scripts/test_new_models.py --target onnx
       - name: Test new models by onnxruntime
         run: |
-          python workflow_scripts/test_models.py --target onnxruntime
+          python workflow_scripts/test_new_models.py --target onnxruntime
 
     

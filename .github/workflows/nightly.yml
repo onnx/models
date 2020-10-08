@@ -1,0 +1,25 @@
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
+    name: main
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        if: "!endsWith(matrix.python-version, '-dev')"
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: deadsnakes/action@v1.0.0
+        if: endsWith(matrix.python-version, '-dev')
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: |
+          python -m pip install --upgrade pip
+          python -m pip install onnx
+          python workflow_scripts/test_all_onnx_checker.py --test_dir text
+          python workflow_scripts/test_all_onnx_checker.py --test_dir vision
