@@ -3,8 +3,8 @@ import os
 from pathlib import Path
 import subprocess
 import sys
-import utils.test_utils as test_utils
-import utils.check_model as check_model
+from utils import test_utils
+from utils import check_model
 
 
 def main():

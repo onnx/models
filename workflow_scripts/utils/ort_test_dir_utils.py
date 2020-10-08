@@ -4,7 +4,7 @@
 import glob
 import numpy as np
 import onnx
-import onnx_test_data_utils
+from utils import onnx_test_data_utils
 import onnxruntime as ort
 import os
 import shutil

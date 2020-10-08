@@ -1,6 +1,6 @@
 import os
 import sys
-import utils.test_utils as test_utils
+from utils import test_utils
 import time
 import onnx
 import argparse
