@@ -13,15 +13,22 @@ def main():
     parser.add_argument('--test_dir', required=False, default='', type=str, 
                         help='Directory path for testing. e.g., text, vision')
     args = parser.parse_args()
-    parent_dir = os.getcwd() if not args.test_dir else args.test_dir
+    parent_dir = []
+    # if not set, go throught each directory
+    if not args.test_dir:
+        for file in os.listdir():
+            if os.path.isdir(file):
+                parent_dir.append(file)
+    else:
+        parent_dir.append(args.test_dir)
     model_list = []
-
-    for root, dirs, files in os.walk(parent_dir):
-        for file in files:
-            if file.endswith('.onnx'):
-                onnx_model_path = os.path.join(root, file)
-                model_list.append(onnx_model_path)
-                print(onnx_model_path)
+    for directory in parent_dir:
+        for root, _, files in os.walk(directory):
+            for file in files:
+                if file.endswith('.onnx'):
+                    onnx_model_path = os.path.join(root, file)
+                    model_list.append(onnx_model_path)
+                    print(onnx_model_path)
 
     # run lfs install before starting the tests
     test_utils.run_lfs_install()

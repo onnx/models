@@ -11,7 +11,7 @@ on:
     branches: [ master ]
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '47 05 * * 4'
+    - cron:  '58 05 * * 4'
 
 jobs:
   # This workflow contains a single job called "build"
