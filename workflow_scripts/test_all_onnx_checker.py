@@ -46,6 +46,8 @@ def main():
             inferred_model = onnx.shape_inference.infer_shapes(model)
             onnx.checker.check_model(inferred_model)
             onnx.checker.check_model(inferred_model, True)
+            # remove the model to save space in CIs
+            os.remove(model_path)
 
             print('[PASS]: {} is checked by onnx. '.format(model_name))
 

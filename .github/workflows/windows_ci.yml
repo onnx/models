@@ -1,5 +1,5 @@
 # Basic windows ci workflow for model zoo.
-# Runs model checker for models updated in the PR
+# Runs onnx.checker/ort_test_dir for models updated in the PR
 
 name: Windows CI
 
