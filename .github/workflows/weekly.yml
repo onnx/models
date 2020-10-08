@@ -11,7 +11,7 @@ on:
     branches: [ master ]
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '58 05 * * 4'
+    - cron:  '02 06 * * 4'
 
 jobs:
   # This workflow contains a single job called "build"
@@ -38,6 +38,8 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install onnx==${{ matrix.onnx-version }} requests
+      - name: Test all models with onnx.checker
+        run: |
           python workflow_scripts/test_all_onnx_checker.py
 
     
