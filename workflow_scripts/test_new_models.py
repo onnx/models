@@ -1,10 +1,10 @@
 import argparse
-import check_model
 import os
 from pathlib import Path
 import subprocess
 import sys
-import test_utils
+import utils.test_utils as test_utils
+import utils.check_model as check_model
 
 
 def main():
