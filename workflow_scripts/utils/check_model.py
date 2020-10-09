@@ -5,7 +5,6 @@ from utils import test_utils
 
 
 def run_onnx_checker(model):
-    onnx.checker.check_model(model)
     # stricter onnx.checker with onnx.shape_inference
     onnx.checker.check_model(model, True)
 
