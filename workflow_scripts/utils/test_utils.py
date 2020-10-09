@@ -51,6 +51,13 @@ def remove_onnxruntime_test_dir():
         shutil.rmtree(TEST_ORT_DIR)        
 
 def test_models(model_list, target):
+    """
+    model_list: a list of model path which will be tested
+    target: all, onnx, onnxruntime 
+    Given model_list, pull and test them by target
+    including model check and test data validation
+    eventually remove all files to save space in CIs
+    """
     # run lfs install before starting the tests
     run_lfs_install()
     failed_models = []
@@ -94,8 +101,9 @@ def test_models(model_list, target):
             failed_models.append(model_path)
             remove_onnxruntime_test_dir()
         
-        # remove the model to save space in CIs
+        # remove the model/tar files to save space in CIs
         if os.path.exists(model_path): os.remove(model_path)
+        if os.path.exists(tar_gz_path): os.remove(tar_gz_path)
         # remove the produced tar directory
         remove_tar_dir()
 
