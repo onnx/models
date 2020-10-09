@@ -16,12 +16,16 @@ def get_model_directory(model_path):
     return '/'.join(model_path.split('/')[:-1])
 
 def run_lfs_install():
-    result = subprocess.run(['git', 'lfs', 'install'], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    result = subprocess.run(['GIT_TRACE=1', 'git', 'lfs', 'install'], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     print('Git LFS install completed with return code= {}'.format(result.returncode))
 
 def pull_lfs_file(file_name):
-    result = subprocess.run(['git', 'lfs', 'pull', '--include', file_name, '--exclude', '\'\''], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    result = subprocess.run(['GIT_TRACE=1', 'git', 'lfs', 'pull', '--include', file_name, '--exclude', '\'\''], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     print('LFS pull completed with return code= {}'.format(result.returncode))
+
+def run_lfs_prune():
+    result = subprocess.run(['GIT_TRACE=1', 'git', 'lfs', 'prune'], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    print('LFS prune completed with return code= {}'.format(result.returncode))
 
 def extract_test_data(file_path):
     tar = tarfile.open(file_path, "r:gz")
@@ -112,7 +116,9 @@ def test_models(model_list, target):
         # remove the produced tar/test directories
         remove_tar_dir()
         remove_onnxruntime_test_dir()
-        result =subprocess.run(['df'], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        # clean git lfs cache
+        run_lfs_prune()
+        result = subprocess.run(['df'], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         print(result)
     if len(failed_models) == 0:
         print('{} models have been checked. '.format(len(model_list)))
