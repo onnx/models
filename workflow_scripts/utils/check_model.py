@@ -4,9 +4,10 @@ import onnx
 from utils import test_utils
 
 
-def run_onnx_checker(model_path):
-    model = onnx.load(model_path)
+def run_onnx_checker(model):
     onnx.checker.check_model(model)
+    # stricter onnx.checker with onnx.shape_inference
+    onnx.checker.check_model(model, True)
 
 def run_backend_ort(model_path, test_data_set=None):
     # if 'test_data_set_N' doesn't exist, create test_dir

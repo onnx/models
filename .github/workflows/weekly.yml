@@ -5,8 +5,10 @@ name: Weekly CI with onnx.checker
 
 # Triggers the workflow on push or pull request events but only for the master branch
 on:
+  # test this PR for now, remove it before the merge
+  pull_request:
+    branches: [ master ]
   schedule:
-    # * is a special character in YAML so you have to quote this string
     - cron:  '59 23 * * SUN'
 
 jobs:
@@ -34,8 +36,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install onnx==${{ matrix.onnx-version }} requests
-      - name: Test all models with onnx.checker
+          python -m pip install ort-nightly
+      - name: Test all models with onnx.checker and ORT backend
         run: |
-          python workflow_scripts/test_all_onnx_checker.py
+          python workflow_scripts/test_all_models.py
 
     
