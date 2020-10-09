@@ -69,7 +69,7 @@ def main():
         print('{} models have been checked.'.format(len(model_list)))
     else:
         print('In all {} models, {} models failed.'.format(len(model_list), len(failed_models)))
-        #sys.exit(1)
+        sys.exit(1)
       
 
 if __name__ == '__main__':
