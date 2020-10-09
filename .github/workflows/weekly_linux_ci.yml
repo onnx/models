@@ -40,6 +40,5 @@ jobs:
           python -m pip install ort-nightly
       - name: Test all models with onnx.checker and ORT backend
         run: |
+          $Env:GIT_TRACE=1
           python workflow_scripts/test_all_models.py
-
-    
