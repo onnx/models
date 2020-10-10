@@ -49,12 +49,12 @@ def get_model_and_test_data(directory_path):
 def remove_tar_dir():
     if os.path.exists(TEST_TAR_DIR) and os.path.isdir(TEST_TAR_DIR):
         shutil.rmtree(TEST_TAR_DIR)
-        print('Remove {}.'.format(TEST_TAR_DIR))
+
 
 def remove_onnxruntime_test_dir():
     if os.path.exists(TEST_ORT_DIR) and os.path.isdir(TEST_ORT_DIR):
-        shutil.rmtree(TEST_ORT_DIR)   
-        print('Remove {}.'.format(TEST_ORT_DIR))     
+        shutil.rmtree(TEST_ORT_DIR)
+     
 
 def test_models(model_list, target):
     """
@@ -109,17 +109,14 @@ def test_models(model_list, target):
         # remove the model/tar files to save space in CIs
         if os.path.exists(model_path):
             os.remove(model_path)
-            print('Remove {}.'.format(model_path))
         if os.path.exists(tar_gz_path):
             os.remove(tar_gz_path)
-            print('Remove {}.'.format(tar_gz_path))
         # remove the produced tar/test directories
         remove_tar_dir()
         remove_onnxruntime_test_dir()
         # clean git lfs cache
         run_lfs_prune()
-        result = subprocess.run(['df'], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        print(result)
+
     if len(failed_models) == 0:
         print('{} models have been checked. '.format(len(model_list)))
     else:
