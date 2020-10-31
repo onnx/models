@@ -14,7 +14,7 @@ Rothe et al. in their [paper](https://data.vision.ee.ethz.ch/cvl/publications/pa
 Input tensor ```1 x 3 x height x width```, which values are in range of ```[0, 255]```. Input image have to be previously resized to ```224 x 224``` pixels and converted to **BGR** format.
 
 ## Python example
-Download ONNX models from google drive. Define your ONNX models and test image in Python [script](age_gender.py)  
+Download ONNX models from google drive. Define your ONNX models and test image in [Python script](age_gender.py)  
 ```python
 age_model = "vgg_ilsvrc_16_age_imdb_wiki.onnx"
 gender_model = "vgg_ilsvrc_16_gender_imdb_wiki.onnx"
