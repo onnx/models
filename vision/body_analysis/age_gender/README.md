@@ -20,7 +20,7 @@ age_model = "vgg_ilsvrc_16_age_imdb_wiki.onnx"
 gender_model = "vgg_ilsvrc_16_gender_imdb_wiki.onnx"
 image_name = "images/brad.jpg"
 ```
-and run it  
+Check the results  
 ```
 Input image: images/brad.jpg
 Gender: Man
