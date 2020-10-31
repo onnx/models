@@ -24,8 +24,7 @@ Check the results
 ```
 Input image: images/brad.jpg
 Gender: Man
-Age: 43.0
-Time elapsed 0:00:08.258990 (hh:mm:ss.ms)
+Age: 41.8
 ```
 
 ## References
