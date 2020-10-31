@@ -15,6 +15,7 @@ def cv_resize(img, size):
     num[border[0]:new_size[0]+border[0], border[1]:new_size[1]+border[1]] = jpg 
     return num
 
+
 # fields
 age_model = "vgg_ilsvrc_16_age_imdb_wiki.onnx"
 gender_model = "vgg_ilsvrc_16_gender_imdb_wiki.onnx"
