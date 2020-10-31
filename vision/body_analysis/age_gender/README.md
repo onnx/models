@@ -10,6 +10,9 @@ Rothe et al. in their [paper](https://data.vision.ee.ethz.ch/cvl/publications/pa
 | [vgg_ilsvrc_16_age_imdb_wiki](https://drive.google.com/drive/folders/14wckle-MbnN10xzdzgF464bMnlM-dd5-?usp=sharing) | [513 MB](https://drive.google.com/file/d/1ECle8EvsXiIid_vMa1_vwMJk6abhzrPF/view?usp=sharing)| 1.5 | 5 | IMDB-WIKI |
 | [vgg_ilsvrc_16_gender_imdb_wiki](https://drive.google.com/drive/folders/16Z1r7GEXCsJG_384VsjlNxOFXbxcXrqM?usp=sharing) | [512 MB](https://drive.google.com/file/d/1epLM5ghucLcnGZg-NCIf1r16lotN004I/view?usp=sharing)| 1.5 | 5 | IMDB-WIKI |
 
+## Inference
+Input image has to be loaded as ```1 x 3 x height x width``` tensor in to a range of [0, 255], resized to 224 x 224 and converted to BGR format.
+
 ## References
 * Levi et al. - [Age and Gender Classification Using Convolutional Neural Networks](https://talhassner.github.io/home/publication/2015_CVPR) (**NOT compatible with ONNX**).
 * Rothe et al. - [IMDB-WIKI – 500k+ face images with age and gender labels](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/).
