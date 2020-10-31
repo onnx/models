@@ -30,7 +30,7 @@ label = "Woman" if (np.argmax(outputs) == 0) else "Man"
 print('Gender: {}'.format(label))
 
 
-# prepare age prediction session
+# prepare and run age prediction session
 age_session = onnxruntime.InferenceSession(age_model)
 input_name = age_session.get_inputs()[0].name
 outputs = age_session.run(None, {input_name: img})[0][0]
