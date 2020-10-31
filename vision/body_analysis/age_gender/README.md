@@ -3,7 +3,7 @@
 ## Description
 Rothe et al. in their [paper](https://data.vision.ee.ethz.ch/cvl/publications/papers/proceedings/eth_biwi_01229.pdf) propose a deep learning solution to age estimation from a single face image without the use of facial landmarks and introduce the [IMDB-WIKI dataset](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/), the largest public dataset of face images with age and gender labels. If the real age estimation research spans over decades, the study of apparent age estimation or the age as perceived by other humans from a face image is a recent endeavor. Rothe et al. tackle both tasks with their convolutional neural networks (CNNs) of VGG-16 architecture which are pre-trained on ImageNet for image classification. They pose the age estimation problem as a deep classification problem followed by a softmax expected value refinement. The key factors of our solution are: deep learned models from large data, robust face alignment, and expected value formulation for age regression. They validate their methods on standard benchmarks and achieve state-of-the-art results for both real and apparent age estimation.
 
-## Models
+## Model
 | Model (Caffe) | Download | ONNX version | Opset version | Dataset |
 |:-------------|:--------------|:--------------|:--------------|:--------------|
 | [vgg_ilsvrc_16_age_chalearn_iccv2015](https://drive.google.com/drive/folders/1wE4_sj-UBumkjDK9mtfaO9eUan_z44cY?usp=sharing) | [513 MB](https://drive.google.com/file/d/1V75U1kUJ0udBLs6bg3lGqBk3ym8q9guV/view?usp=sharing) | 1.5 | 5 | ChaLearn LAP 2015 |
