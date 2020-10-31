@@ -16,7 +16,7 @@ Input tensor ```1 x 3 x height x width```, which values are in range of ```[0, 2
 ## References
 * Levi et al. - [Age and Gender Classification Using Convolutional Neural Networks](https://talhassner.github.io/home/publication/2015_CVPR) (**NOT compatible with ONNX**).
 * Rothe et al. - [IMDB-WIKI – 500k+ face images with age and gender labels](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/).
-* Caffe to ONNX [converter](https://github.com/asiryan/caffe-onnx).
+* Caffe to ONNX: [unofficial converter](https://github.com/asiryan/caffe-onnx).
 
 ## Contributors
 Asiryan Valery ([asiryan](https://github.com/asiryan))
