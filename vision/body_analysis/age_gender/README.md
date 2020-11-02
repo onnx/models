@@ -33,7 +33,7 @@ Age: 41.8
 * Caffe to ONNX: [unofficial converter](https://github.com/asiryan/caffe-onnx).
 
 ## Contributors
-Asiryan Valery ([asiryan](https://github.com/asiryan))
+Valery Asiryan ([asiryan](https://github.com/asiryan))
 
 ## License
 Apache 2.0
