@@ -67,7 +67,7 @@ indices: `('nbox'x3)`, selected indices from the boxes tensor. The selected inde
 Post processing and meaning of output
 ```python
 out_boxes, out_scores, out_classes = [], [], []
-for idx_ in indices:
+for idx_ in indices[0]:
     out_classes.append(idx_[1])
     out_scores.append(scores[tuple(idx_)])
     idx_1 = (idx_[0], idx_[2])
