@@ -1,7 +1,5 @@
 import cv2
-import onnx
 import onnxruntime as ort
-import math
 import argparse
 import numpy as np
 from box_utils import predict
@@ -24,7 +22,6 @@ def scale(box):
 
 # crop image
 def cropImage(image, box):
-    num = np.zeros((box[3]-box[1], box[2]-box[0], 3), np.uint8)
     num = image[box[1]:box[3], box[0]:box[2]]
     return num
 
