@@ -1,35 +1,30 @@
 # Age and Gender Classification using Convolutional Neural Networks
 
 ## Description
-Rothe et al. in their [paper](https://data.vision.ee.ethz.ch/cvl/publications/papers/proceedings/eth_biwi_01229.pdf) propose a deep learning solution to age estimation from a single face image without the use of facial landmarks and introduce the [IMDB-WIKI dataset](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/), the largest public dataset of face images with age and gender labels. If the real age estimation research spans over decades, the study of apparent age estimation or the age as perceived by other humans from a face image is a recent endeavor. Rothe et al. tackle both tasks with their convolutional neural networks (CNNs) of VGG-16 architecture which are pre-trained on ImageNet for image classification. They pose the age estimation problem as a deep classification problem followed by a softmax expected value refinement. The key factors of this solution are: deep learned models from large data, robust face alignment, and expected value formulation for age regression. They validate their methods on standard benchmarks and achieve state-of-the-art results for both real and apparent age estimation.
+Automatic age and gender classification has become relevant to an increasing amount of applications, particularly since the rise of social platforms and social media. Nevertheless, performance of existing methods on real-world images is still significantly lacking, especially when compared to the tremendous leaps in performance recently reported for the related task of face recognition.
 
-## Model
+## Models
 | Model (Caffe) | Download | ONNX version | Opset version | Dataset |
 |:-------------|:--------------|:--------------|:--------------|:--------------|
-| [vgg_ilsvrc_16_age_chalearn_iccv2015](https://drive.google.com/drive/folders/1wE4_sj-UBumkjDK9mtfaO9eUan_z44cY?usp=sharing) | [513 MB](https://drive.google.com/file/d/1V75U1kUJ0udBLs6bg3lGqBk3ym8q9guV/view?usp=sharing) | 1.5 | 5 | ChaLearn LAP 2015 |
-| [vgg_ilsvrc_16_age_imdb_wiki](https://drive.google.com/drive/folders/14wckle-MbnN10xzdzgF464bMnlM-dd5-?usp=sharing) | [513 MB](https://drive.google.com/file/d/1ECle8EvsXiIid_vMa1_vwMJk6abhzrPF/view?usp=sharing)| 1.5 | 5 | IMDB-WIKI |
-| [vgg_ilsvrc_16_gender_imdb_wiki](https://drive.google.com/drive/folders/16Z1r7GEXCsJG_384VsjlNxOFXbxcXrqM?usp=sharing) | [512 MB](https://drive.google.com/file/d/1epLM5ghucLcnGZg-NCIf1r16lotN004I/view?usp=sharing)| 1.5 | 5 | IMDB-WIKI |
+| [googlenet_age_adience](https://drive.google.com/drive/folders/1GeLTHzHALgTYFj2Q9o5aWdztA9WzoErx?usp=sharing) | [23 MB](models/age_googlenet.onnx) | 1.6 | 11 | Adience |
+| [googlenet_gender_adience](https://drive.google.com/drive/folders/1r0GroTfsF7VpLhcS3IxU-LmAh6rI6vbQ?usp=sharing) | [23 MB](models/gender_googlenet.onnx)| 1.6 | 11 | Adience |
+| [vgg_ilsvrc_16_age_chalearn_iccv2015](https://drive.google.com/drive/folders/1wE4_sj-UBumkjDK9mtfaO9eUan_z44cY?usp=sharing) | [513 MB](models/vgg_ilsvrc_16_age_chalearn_iccv2015.onnx) | 1.6 | 11 | ChaLearn LAP 2015 |
+| [vgg_ilsvrc_16_age_imdb_wiki](https://drive.google.com/drive/folders/14wckle-MbnN10xzdzgF464bMnlM-dd5-?usp=sharing) | [513 MB](models/vgg_ilsvrc_16_age_imdb_wiki.onnx)| 1.6 | 11 | IMDB-WIKI |
+| [vgg_ilsvrc_16_gender_imdb_wiki](https://drive.google.com/drive/folders/16Z1r7GEXCsJG_384VsjlNxOFXbxcXrqM?usp=sharing) | [512 MB](models/vgg_ilsvrc_16_gender_imdb_wiki.onnx)| 1.6 | 11 | IMDB-WIKI |
 
 ## Inference
-Input tensor ```1 x 3 x height x width```, which values are in range of ```[0, 255]```. Input image have to be previously resized to ```224 x 224``` pixels and converted to ```BGR``` format.
+### GoogleNet
+Input tensor is ```1 x 3 x height x width``` with mean values ```104, 117, 123```. Input image have to be previously resized to ```224 x 224``` pixels and converted to ```BGR``` format.
+Run [levi_googlenet.py](levi_googlenet.py) python script example.
 
-## Python example
-Define downloaded ONNX models and test image in [Python script](age_gender.py)  
-```python
-age_model = "vgg_ilsvrc_16_age_imdb_wiki.onnx"
-gender_model = "vgg_ilsvrc_16_gender_imdb_wiki.onnx"
-image_name = "images/brad.jpg"
-```
-Check the results  
-```
-Input image: images/brad.jpg
-Gender: Man
-Age: 41.8
-```
+### VGG-16
+Input tensor is ```1 x 3 x height x width```, which values are in range of ```[0, 255]```. Input image have to be previously resized to ```224 x 224``` pixels and converted to ```BGR``` format.
+Run [rothe_vgg.py](rothe_vgg.py) python scripts example. 
 
 ## References
-* Levi et al. - [Age and Gender Classification Using Convolutional Neural Networks](https://talhassner.github.io/home/publication/2015_CVPR) (**NOT compatible with ONNX**).
+* Levi et al. - [Age and Gender Classification Using Convolutional Neural Networks](https://talhassner.github.io/home/publication/2015_CVPR).
 * Rothe et al. - [IMDB-WIKI – 500k+ face images with age and gender labels](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/).
+* Lapuschkin et al. - [Understanding and Comparing Deep Neural Networks for Age and Gender Classification](https://github.com/sebastian-lapuschkin/understanding-age-gender-deep-learning-models).
 * Caffe to ONNX: [unofficial converter](https://github.com/asiryan/caffe-onnx).
 
 ## Contributors
