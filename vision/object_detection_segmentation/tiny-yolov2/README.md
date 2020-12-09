@@ -8,8 +8,7 @@ CoreML TinyYoloV2 ==> ONNX TinyYoloV2
 ## Model
 |Model|Download|Download (with sample test data)| ONNX version |Opset version|
 |-----|:-------|:-------------------------------|:-------------|:------------|
-|Tiny YOLOv2|[62 MB](model/tinyyolov2-1.onnx)|[59 MB](model/tinyyolov2-1.tar.gz) |1.0  |1 |
-|     |[62 MB](model/tinyyolov2-7.onnx)|[59 MB](model/tinyyolov2-7.tar.gz) |1.2  |7 |
+|Tiny YOLOv2|[62 MB](model/tinyyolov2-7.onnx)|[59 MB](model/tinyyolov2-7.tar.gz) |1.2  |7 |
 |     |[62 MB](model/tinyyolov2-8.onnx)|[59 MB](model/tinyyolov2-8.tar.gz) |1.3  |8 |
 
 ### Paper
