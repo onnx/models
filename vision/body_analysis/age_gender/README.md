@@ -14,12 +14,12 @@ Automatic age and gender classification has become relevant to an increasing amo
 
 ## Inference
 ### GoogleNet
-Input tensor is ```1 x 3 x height x width``` with mean values ```104, 117, 123```. Input image have to be previously resized to ```224 x 224``` pixels and converted to ```BGR``` format.
+Input tensor is `1 x 3 x height x width` with mean values `104, 117, 123`. Input image have to be previously resized to `224 x 224` pixels and converted to `BGR` format.
 Run [levi_googlenet.py](levi_googlenet.py) python script example.
 
 ### VGG-16
-Input tensor is ```1 x 3 x height x width```, which values are in range of ```[0, 255]```. Input image have to be previously resized to ```224 x 224``` pixels and converted to ```BGR``` format.
-Run [rothe_vgg.py](rothe_vgg.py) python scripts example. 
+Input tensor is `1 x 3 x height x width`, which values are in range of `[0, 255]`. Input image have to be previously resized to `224 x 224` pixels and converted to `BGR` format.
+Run [rothe_vgg.py](rothe_vgg.py) python script example. 
 
 ## References
 * Levi et al. - [Age and Gender Classification Using Convolutional Neural Networks](https://talhassner.github.io/home/publication/2015_CVPR).
