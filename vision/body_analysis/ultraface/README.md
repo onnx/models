@@ -41,5 +41,8 @@ The model outputs two arrays `(1 x 4420 x 2)` and `(1 x 4420 x 4)` of scores and
 ### Postprocessing
 In postprocessing, threshold filtration and [non-max suppression](dependencies/box_utils.py) are applied to the scores and boxes arrays.
 
+## Contributors
+Valery Asiryan ([asiryan](https://github.com/asiryan))
+
 ## License
 MIT
