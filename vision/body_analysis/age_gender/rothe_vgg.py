@@ -2,11 +2,13 @@ import cv2
 import onnxruntime as ort
 import argparse
 import numpy as np
-from box_utils import predict
+import sys
+sys.path.append('..')
+from ultraface.dependencies.box_utils import predict
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------
 # Face detection using UltraFace-320 onnx model
-face_detector_onnx = "models/version-RFB-320.onnx"
+face_detector_onnx = "../ultraface/models/version-RFB-320.onnx"
 face_detector = ort.InferenceSession(face_detector_onnx)
 
 # scale current rectangle to box
@@ -82,7 +84,7 @@ parser=argparse.ArgumentParser()
 parser.add_argument("-i", "--image", type=str, required=False, help="input image")
 args=parser.parse_args()
 
-img_path = args.image if args.image else "images/bruce.jpg"
+img_path = args.image if args.image else "dependencies/bruce.jpg"
 color = (255, 128, 0)
 
 orig_image = cv2.imread(img_path)
