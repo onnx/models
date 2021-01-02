@@ -12,7 +12,7 @@ Caffe2 VGG-19 ==> ONNX VGG [19-caffe2]
 
 ## Model
 
-The models below are variant of same network with different number of layers and use of batch normalization. VGG 16 and VGG 19 have 16 and 19 convolutional layers respectively. VGG 16_bn and VGG 19_bn have the same architecture as their original counterparts but with batch normalization applied after each convolutional layer, which leads to better convergence and slightly better accuracies.
+The models below are variant of same network with different number of layers and use of batch normalization. VGG 16 and VGG 19 have 16 and 19 layers (13 convolutional + 3 dense and 16 convolutional + 3 dense) respectively. VGG 16_bn and VGG 19_bn have the same architecture as their original counterparts but with batch normalization applied after each convolutional layer, which leads to better convergence and slightly better accuracies.
 
  |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
