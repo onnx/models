@@ -43,9 +43,9 @@ def get_model_and_test_data(directory_path):
                 onnx_model = os.path.join(root, file)
             for subdir in dirs:
             # detect any test_data_set
-            if subdir.startswith('test_data_set_'):
-                subdir_path = os.path.join(root, subdir)
-                test_data_set.append(subdir_path)
+                if subdir.startswith('test_data_set_'):
+                    subdir_path = os.path.join(root, subdir)
+                    test_data_set.append(subdir_path)
     return onnx_model, test_data_set
 
 def remove_tar_dir():
