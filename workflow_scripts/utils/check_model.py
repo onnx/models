@@ -1,14 +1,19 @@
-from utils import ort_test_dir_utils
+  
+import ort_test_dir_utils
 import onnxruntime
 import onnx
-from utils import test_utils
+import test_utils
 
 
-def run_onnx_checker(model):
-    # stricter onnx.checker with onnx.shape_inference
-    onnx.checker.check_model(model, True)
+def run_onnx_checker(model_path):
+    model = onnx.load(model_path)
+    onnx.checker.check_model(model)
 
 def run_backend_ort(model_path, test_data_set=None):
+    model = onnx.load(model_path)
+    if model.opset_import[0].version < 7:
+        print('Skip ORT test since it only *guarantees* support for models stamped with opset version 7')
+        return
     # if 'test_data_set_N' doesn't exist, create test_dir
     if not test_data_set:
         onnxruntime.InferenceSession(model_path)

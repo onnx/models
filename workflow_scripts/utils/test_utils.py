@@ -13,7 +13,7 @@ TEST_TAR_DIR = 'ci_test_tar_dir'
 cwd_path = Path.cwd()
 
 def get_model_directory(model_path):
-    return '/'.join(model_path.split('/')[:-1])
+    return os.path.dirname(model_path)
 
 def run_lfs_install():
     result = subprocess.run(['git', 'lfs', 'install'], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -38,12 +38,14 @@ def get_model_and_test_data(directory_path):
     test_data_set = []
     for root, dirs, files in os.walk(directory_path):
         for file in files:
-            file_path = os.path.join(root, file)
             if file.endswith('.onnx'):
-                onnx_model = file_path
+                assert onnx_model is None, "More than one ONNX model detected"
+                onnx_model = os.path.join(root, file)
+            for subdir in dirs:
             # detect any test_data_set
-            elif file.startswith('test_data_set_'):
-                test_data_set.append(file_path)
+            if subdir.startswith('test_data_set_'):
+                subdir_path = os.path.join(root, subdir)
+                test_data_set.append(subdir_path)
     return onnx_model, test_data_set
 
 def remove_tar_dir():
