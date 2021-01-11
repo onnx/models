@@ -11,3 +11,6 @@ ENV/
 
 # PyCharm
 .idea/
+
+# Python temp files
+__pycache__/

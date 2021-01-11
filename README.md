@@ -80,9 +80,9 @@ Face detection models identify and/or recognize human faces and emotions in give
 |Model Class |Reference |Description |
 |-|-|-|
 |<b>[ArcFace](vision/body_analysis/arcface)</b>|[Deng et al.](https://arxiv.org/abs/1801.07698)|A CNN based model for face recognition which learns discriminative features of faces and produces embeddings for input face images.|
-|CNN Cascade|[Li et al.](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Li_A_Convolutional_Neural_2015_CVPR_paper.pdf)|The model operates at multiple resolutions, quickly rejecting the background regions in the fast low resolution stages in an image and carefully evaluates a small number of challenging candidates in the last high resolution stage. <br>[contribute](contribute.md)|
+|<b>[UltraFace](vision/body_analysis/ultraface)</b>|[Ultra-lightweight face detection model](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB)|This model is a lightweight facedetection model designed for edge computing devices.|
 |<b>[Emotion FerPlus](vision/body_analysis/emotion_ferplus)</b> |[Barsoum et al.](https://arxiv.org/abs/1608.01041)	| Deep CNN for emotion recognition trained on images of faces.|
-|Age and Gender Classification using Convolutional Neural Networks| [Levi et al.](https://www.openu.ac.il/home/hassner/projects/cnn_agegender/CNN_AgeGenderEstimation.pdf)	|This model accurately classifies gender and age even the amount of learning data is limited.<br>[contribute](contribute.md)|
+|<b>[Age and Gender Classification using Convolutional Neural Networks](vision/body_analysis/age_gender)</b>| [Rothe et al.](https://data.vision.ee.ethz.ch/cvl/publications/papers/proceedings/eth_biwi_01229.pdf)	|This model accurately classifies gender and age even the amount of learning data is limited.|
 <hr>
 
 ### Image Manipulation <a name="image_manipulation"/>

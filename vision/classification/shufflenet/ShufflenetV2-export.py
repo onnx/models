@@ -16,7 +16,7 @@ MODELS = [
 ]
 data_dir = 'test_data_set_0'
 
-url, filename = ("https://github.com/pytorch/hub/raw/master/dog.jpg", "dog.jpg")
+url, filename = ("https://github.com/pytorch/hub/raw/master/images/dog.jpg", "dog.jpg")
 urllib.request.urlretrieve(url, filename)
 
 
@@ -135,7 +135,8 @@ def shufflenetv2_test():
         model_dir, data_dir = save_model('shufflenetv2', model.cpu(), input_1, output_1,
                                          opset_version=10,
                                          input_names=['input'],
-                                         output_names=['output'])
+                                         output_names=['output'],
+                                         dynamic_axes={"input": {0: 'batch_size'}, "output": {0: 'batch_size'}})
 
         # Test exported model with TensorProto data saved in files
         inputs_flatten = flatten(input_1)
@@ -160,6 +161,11 @@ def shufflenetv2_test():
             outputs.append(numpy_helper.to_array(tensor))
 
         inference(model_dir, inputs, outputs)
+
+        # Test model with different input
+        input_2 = torch.randn(6, 3, 224, 224)
+        output_2 = model(input_2)
+        inference(model_dir, input_2, output_2)
 
 
 shufflenetv2_test()
