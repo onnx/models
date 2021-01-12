@@ -1,4 +1,5 @@
 import argparse
+import config
 import os
 from pathlib import Path
 import subprocess
@@ -38,7 +39,7 @@ def main():
                     print(onnx_model_path)
 
     print('=== Running Test on all {} models ==='.format(len(model_list)))
-    test_utils.test_models(model_list, args.target)
+    test_utils.test_models(model_list, args.target, config.SKIP_CHECKER_MODELS)
 
 
 if __name__ == '__main__':

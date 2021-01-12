@@ -58,7 +58,7 @@ def remove_onnxruntime_test_dir():
         shutil.rmtree(TEST_ORT_DIR)
      
 
-def test_models(model_list, target):
+def test_models(model_list, target, skip_list=[]):
     """
     model_list: a list of model path which will be tested
     target: all, onnx, onnxruntime 
@@ -69,6 +69,7 @@ def test_models(model_list, target):
     # run lfs install before starting the tests
     run_lfs_install()
     failed_models = []
+    skip_models = []
     tar_ext_name = '.tar.gz'
     for model_path in model_list:
         start = time.time()
@@ -82,6 +83,10 @@ def test_models(model_list, target):
             # git pull the onnx file
             pull_lfs_file(model_path)
             if target == 'onnx' or target == 'all':
+                if model_path in skip_list:
+                    skip_models.append(model_name)
+                    continue
+
                 model = onnx.load(model_path)
                 # check original model
                 check_model.run_onnx_checker(model)
@@ -122,5 +127,5 @@ def test_models(model_list, target):
     if len(failed_models) == 0:
         print('{} models have been checked. '.format(len(model_list)))
     else:
-        print('In all {} models, {} models failed. '.format(len(model_list), len(failed_models)))
+        print('In all {} models, {} models failed, {} models were skipped. '.format(len(model_list), len(failed_models), len(skip_models)))
         sys.exit(1)
