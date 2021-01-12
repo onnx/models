@@ -1,9 +1,6 @@
-  
-import ort_test_dir_utils
-import onnxruntime
 import onnx
-import test_utils
-
+import onnxruntime  
+from utils import ort_test_dir_utils, test_utils
 
 def run_onnx_checker(model_path):
     model = onnx.load(model_path)

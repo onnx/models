@@ -1,13 +1,13 @@
-# This file is cloned from onnxruntime/tools/python
+# This file is cloned from onnxruntime/tools/python and updated
 # onnxruntime commit id: 5bd7241839acd74ae424c002ed8696f0be836d73
 
 import glob
 import numpy as np
 import onnx
-import onnx_test_data_utils
 import onnxruntime as ort
 import os
 import shutil
+from utils import onnx_test_data_utils
 
 from onnx import numpy_helper
 
