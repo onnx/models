@@ -39,7 +39,6 @@ def get_model_and_test_data(directory_path):
     for root, dirs, files in os.walk(directory_path):
         for file in files:
             if file.endswith('.onnx'):
-                assert onnx_model is None, "More than one ONNX model detected"
                 onnx_model = os.path.join(root, file)
             for subdir in dirs:
             # detect any test_data_set
