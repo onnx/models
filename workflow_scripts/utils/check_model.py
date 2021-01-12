@@ -3,7 +3,6 @@ import onnxruntime
 from utils import ort_test_dir_utils, test_utils
 
 def run_onnx_checker(model_path):
-    model = onnx.load(model_path)
     onnx.checker.check_model(model)
 
 def run_backend_ort(model_path, test_data_set=None):
