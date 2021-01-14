@@ -1,4 +1,7 @@
 #!/usr/bin/python
+
+# SPDX-License-Identifier: Apache-2.0
+
 #
 '''
 This script contains label names, original ids, modified train ids and color maps for the categories in the cityscapes dataset.

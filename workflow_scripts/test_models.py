@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 import argparse
 import check_model
 import os
@@ -11,7 +13,7 @@ def main():
   parser = argparse.ArgumentParser(description='Test settings')
   # default all: test by both onnx and onnxruntime
   # if target is specified, only test by the specified one
-  parser.add_argument('--target', required=False, default='all', type=str, 
+  parser.add_argument('--target', required=False, default='all', type=str,
                       help='Test the model by which (onnx/onnxruntime)?',
                       choices=['onnx', 'onnxruntime', 'all'])
   args = parser.parse_args()

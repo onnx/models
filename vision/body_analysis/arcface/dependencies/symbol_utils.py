@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 import mxnet as mx
 
 def Conv(**kwargs):
@@ -5,7 +7,7 @@ def Conv(**kwargs):
     return body
 
 def Act(data, act_type, name):
-    #ignore param act_type, set it in this function 
+    #ignore param act_type, set it in this function
     body = mx.sym.LeakyReLU(data = data, act_type='prelu', name = name)
     return body
 
@@ -61,7 +63,7 @@ def get_fc1(last_conv, num_classes, fc_type):
   return fc1
 
 def residual_unit_v3(data, num_filter, stride, dim_match, name, **kwargs):
-    
+
     """Return ResNet Unit symbol for building ResNet
     Parameters
     ----------

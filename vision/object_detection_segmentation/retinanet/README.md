@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # RetinaNet
 
 ## Description
@@ -62,7 +64,7 @@ def detection_postprocess(image, cls_heads, box_heads):
 	# Inference post-processing
 	anchors = {}
 	decoded = []
-	
+
 	for cls_head, box_head in zip(cls_heads, box_heads):
 	    # Generate level's anchors
 	    stride = image.shape[-1] // cls_head.shape[-1]
@@ -72,13 +74,13 @@ def detection_postprocess(image, cls_heads, box_heads):
 	    # Decode and filter boxes
 	    decoded.append(decode(cls_head, box_head, stride,
 	                          threshold=0.05, top_n=1000, anchors=anchors[stride]))
-	
+
 	# Perform non-maximum suppression
 	decoded = [torch.cat(tensors, 1) for tensors in zip(*decoded)]
 	# NMS threshold = 0.5
 	scores, boxes, labels = nms(*decoded, nms=0.5, ndetections=100)
 	return scores, boxes, labels
-	
+
 
 scores, boxes, labels = detection_postprocess(input_image, cls_heads, box_heads)
 

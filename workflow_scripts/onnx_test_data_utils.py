@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 # This file is cloned from onnxruntime/tools/python
 # onnxruntime commit id: 5bd7241839acd74ae424c002ed8696f0be836d73
 

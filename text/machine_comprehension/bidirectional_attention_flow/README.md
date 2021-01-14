@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # BiDAF
 
  ## Description
@@ -87,5 +89,5 @@ This model is converted from a CNTK model trained from [this implementation](htt
 <hr>
 
  ## License
-MIT License
+Apache License v2.0
 <hr>

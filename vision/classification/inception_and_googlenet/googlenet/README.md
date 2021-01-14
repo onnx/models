@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # GoogleNet
 
 |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
@@ -36,7 +38,7 @@ data_0: float[1, 3, 224, 224]
 prob_0: float[1, 1000]
 ```
 ### Pre-processing steps
-#### Necessary Imports 
+#### Necessary Imports
 ```python
 import imageio
 from PIL import Image
@@ -50,9 +52,9 @@ def get_image(path):
 '''
     img = imageio.imread(path, pilmode='RGB')
     return img
-    
+
 # Pre-processing function for ImageNet models using numpy
-def preprocess(img):   
+def preprocess(img):
     '''
     Preprocessing required on the images for inference with mxnet gluon
     The function takes loaded image and returns processed tensor
@@ -64,7 +66,7 @@ def preprocess(img):
     img[:,:,[0,1,2]] = img[:,:,[2,1,0]]
     img = img.transpose((2, 0, 1))
     img = np.expand_dims(img, axis=0)
-    
+
     return img
 ```
 

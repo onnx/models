@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # GPT-2
 
 ## Use-cases
@@ -15,7 +17,7 @@ Transformer-based language model for text generation.
 
 
 ### Source
-PyTorch GPT-2 ==> ONNX GPT-2  
+PyTorch GPT-2 ==> ONNX GPT-2
 PyTorch GPT-2 + script changes ==> ONNX GPT-2-LM-HEAD
 
 
@@ -116,7 +118,7 @@ This model is converted directly from [huggingface/transformers](https://github.
 <hr>
 
 ## Contributors
-Negin Raoof  
+Negin Raoof
 Joddiy Zhang
 <hr>
 

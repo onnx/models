@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # FER+ Emotion Recognition
 
 ## Description
@@ -42,7 +44,7 @@ def preprocess(image_path):
 ```
 
 ### Output
-The model outputs a `(1x8)` array of scores corresponding to the 8 emotion classes, where the labels map as follows:  
+The model outputs a `(1x8)` array of scores corresponding to the 8 emotion classes, where the labels map as follows:
 `emotion_table = {'neutral':0, 'happiness':1, 'surprise':2, 'sadness':3, 'anger':4, 'disgust':5, 'fear':6, 'contempt':7}`
 ### Postprocessing
 Route the model output through a softmax function to map the aggregated activations across the network to probabilities across the 8 classes.

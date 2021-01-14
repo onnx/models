@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # Tiny YOLOv3
 
 ## Description
@@ -95,5 +97,5 @@ This model is converted from a keras model [repository](https://github.com/qqwwe
 <hr>
 
 ## License
-MIT License
+Apache License v2.0
 <hr>

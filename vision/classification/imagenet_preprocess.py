@@ -1,8 +1,10 @@
+# SPDX-License-Identifier: Apache-2.0
+
 import mxnet
 from mxnet.gluon.data.vision import transforms
 
 # Pre-processing function for ImageNet models
-def preprocess(img):   
+def preprocess(img):
     '''
     Preprocessing required on the images for inference with mxnet gluon
     The function takes path to an image and returns processed tensor
@@ -15,5 +17,5 @@ def preprocess(img):
     ])
     img = transform_fn(img)
     img = img.expand_dims(axis=0) # batchify
-    
+
     return img

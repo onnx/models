@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # Mask R-CNN
 
 ## Description
@@ -155,5 +157,5 @@ This model is converted from [facebookresearch/maskrcnn-benchmark](https://githu
 <hr>
 
 ## License
-MIT License
+Apache License v2.0
 <hr>

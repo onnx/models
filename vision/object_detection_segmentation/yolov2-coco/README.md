@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # YOLOv2-COCO
 
 ## Description
@@ -27,4 +29,4 @@ The YOLOv2 model was trained on the [COCO](http://cocodataset.org/#home) dataset
 "YOLO9000: Better, Faster, Stronger" [arXiv:1612.08242](https://arxiv.org/pdf/1612.08242.pdf)
 
 ## License
-MIT License
+Apache License v2.0

@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # DenseNet-121
 
 |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|

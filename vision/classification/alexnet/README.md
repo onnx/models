@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # AlexNet
 
 |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
