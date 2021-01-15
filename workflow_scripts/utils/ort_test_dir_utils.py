@@ -133,9 +133,9 @@ def create_test_dir(model_path, root_path, test_name,
         symbolic_dim_values_map = {}
 
     _create_missing_input_data(model_inputs, name_input_map, symbolic_dim_values_map)
-
     save_data("input", name_input_map, model_inputs)
-
+    for i in onnx.load(model_path).graph.initializer:
+        del name_input_map[i.name]
     # save expected output data if provided. run model to create if not.
     if not name_output_map:
         output_names = [o.name for o in model_outputs]
