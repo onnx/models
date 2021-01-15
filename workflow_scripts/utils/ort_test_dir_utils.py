@@ -24,7 +24,7 @@ def _get_numpy_type(model_info, name):
     raise ValueError("{} was not found in the model info.".format(name))
 
 
-def _create_missing_input_data(model_inputs, name_input_map, symbolic_dim_values_map):
+def _create_missing_input_data(model_inputs, name_input_map, symbolic_dim_values_map, initializer_set):
     """
     Update name_input_map with random input for any missing values in the model inputs.
 
@@ -35,7 +35,8 @@ def _create_missing_input_data(model_inputs, name_input_map, symbolic_dim_values
     for input in model_inputs:
         if input.name in name_input_map and name_input_map[input.name] is not None:
             continue
-
+        if input.name in initializer_set:
+            continue
         input_type = input.type.WhichOneof('value')
         if input_type != 'tensor_type':
             raise ValueError('Unsupported model. Need to handle input type of {}'.format(input_type))
@@ -131,11 +132,11 @@ def create_test_dir(model_path, root_path, test_name,
 
     if not symbolic_dim_values_map:
         symbolic_dim_values_map = {}
-
-    _create_missing_input_data(model_inputs, name_input_map, symbolic_dim_values_map)
+    initializer_set = set()
+    for initializer in onnx.load(model_path).graph.initializer:
+        initializer_set.add(initializer.name)
+    _create_missing_input_data(model_inputs, name_input_map, symbolic_dim_values_map, initializer_set)
     save_data("input", name_input_map, model_inputs)
-    for i in onnx.load(model_path).graph.initializer:
-        del name_input_map[i.name]
     # save expected output data if provided. run model to create if not.
     if not name_output_map:
         output_names = [o.name for o in model_outputs]
