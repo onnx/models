@@ -84,6 +84,7 @@ def test_models(model_list, target, skip_list=[]):
             if target == 'onnx' or target == 'all':
                 if model_path in skip_list:
                     skip_models.append(model_name)
+                    print('SKIP {} is in the skip list for checker. '.format(model_name))
                     continue
 
                 model = onnx.load(model_path)
@@ -93,7 +94,6 @@ def test_models(model_list, target, skip_list=[]):
                 inferred_model = onnx.shape_inference.infer_shapes(model)
                 check_model.run_onnx_checker(inferred_model)
                 print('[PASS] {} is checked by onnx. '.format(model_name))
-                del model
 
             # Step 2: check the onnx model and test_data_set from .tar.gz by ORT
             # if tar.gz exists, git pull and try to get test data
