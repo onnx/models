@@ -37,9 +37,9 @@ def main():
                     onnx_model_path = os.path.join(root, file)
                     model_list.append(onnx_model_path)
                     print(onnx_model_path)
-    model_list = ['vision/object_detection_segmentation/duc/model/ResNet101-DUC-7.onnx', 'text/machine_comprehension/bert-squad/model/bertsquad-8.onnx', 'vision/classification/vgg/model/vgg19-7.onnx', 'vision/classification/vgg/model/vgg19-bn-7.onnx', ['vision/body_analysis/arcface/model/arcfaceresnet100-8.onnx']]
     print('=== Running Test on all {} models ==='.format(len(model_list)))
-    test_utils.test_models(model_list, args.target, config.SKIP_CHECKER_MODELS)
+    test_utils.test_models(model_list, args.target,
+        config.SKIP_CHECKER_MODELS, config.SKIP_ORT_MODELS)
 
 
 if __name__ == '__main__':

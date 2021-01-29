@@ -57,7 +57,7 @@ def remove_onnxruntime_test_dir():
         shutil.rmtree(TEST_ORT_DIR)
      
 
-def test_models(model_list, target, skip_list=[]):
+def test_models(model_list, target, skip_checker_set=set(), skip_ort_set=set()):
     """
     model_list: a list of model path which will be tested
     target: all, onnx, onnxruntime 
@@ -82,7 +82,7 @@ def test_models(model_list, target, skip_list=[]):
             # git pull the onnx file
             pull_lfs_file(model_path)
             if target == 'onnx' or target == 'all':
-                if model_path in skip_list:
+                if model_path in skip_checker_set:
                     skip_models.append(model_name)
                     print('SKIP {} is in the skip list for checker. '.format(model_name))
                     continue
@@ -98,6 +98,10 @@ def test_models(model_list, target, skip_list=[]):
             # Step 2: check the onnx model and test_data_set from .tar.gz by ORT
             # if tar.gz exists, git pull and try to get test data
             if (target == 'onnxruntime' or target == 'all') and os.path.exists(tar_gz_path):
+                if model_path in skip_ort_set:
+                    skip_models.append(model_name)
+                    print('SKIP {} is in the skip list for ORT backend. '.format(model_name))
+                    continue                
                 pull_lfs_file(tar_gz_path)
                 # check whether 'test_data_set_0' exists
                 model_path_from_tar, test_data_set = extract_test_data(tar_gz_path)

@@ -1,7 +1,7 @@
 # Originally there are some checker failures in weekly-CI
 # Skip them in test_model_zoo.py for now
 # TODO: fix these checker failures
-SKIP_CHECKER_MODELS = ['vision/classification/alexnet/model/bvlcalexnet-3.onnx',  # opset1 typeinference function missing
+SKIP_CHECKER_MODELS = {'vision/classification/alexnet/model/bvlcalexnet-3.onnx',  # opset1 typeinference function missing
                        'vision/classification/caffenet/model/caffenet-6.onnx',  # this should be caffenet-3.onnx; missing too
                        'vision/classification/densenet-121/model/densenet-3.onnx',  # opset1 typeinference function missing
                        'vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-3.onnx',  # opset1 typeinference function missing
@@ -11,4 +11,5 @@ SKIP_CHECKER_MODELS = ['vision/classification/alexnet/model/bvlcalexnet-3.onnx',
                        'vision/classification/shufflenet/model/shufflenet-3.onnx',  # opset1 typeinference function missing
                        'vision/classification/squeezenet/model/squeezenet1.0-3.onnx',  # opset1 typeinference function missing
                        'vision/classification/vgg/model/vgg19-caffe2-3.onnx',  # opset1 typeinference function missing
-                       'vision/classification/zfnet-512/model/zfnet512-3.onnx']  # opset1 typeinference function missing
+                       'vision/classification/zfnet-512/model/zfnet512-3.onnx'}  # opset1 typeinference function missing
+SKIP_ORT_MODELS = {'text/machine_comprehension/bert-squad/model/bertsquad-8.onnx', 'vision/classification/vgg/model/vgg19-7.onnx', 'vision/classification/vgg/model/vgg19-bn-7.onnx', 'vision/body_analysis/arcface/model/arcfaceresnet100-8.onnx'}
