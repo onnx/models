@@ -111,6 +111,7 @@ def test_models(model_list, target, skip_checker_set=set(), skip_ort_set=set()):
                     check_model.run_backend_ort(model_path_from_tar, test_data_set)
                 except:
                     print('Warning: original test data for {} is broken. '.format(model_path))
+                    # if existing test_data_set_0 cannot pass ORT backend, create a new one
                     check_model.run_backend_ort(model_path_from_tar, None)
                 print('[PASS] {} is checked by onnxruntime. '.format(tar_name))
 
@@ -132,8 +133,7 @@ def test_models(model_list, target, skip_checker_set=set(), skip_ort_set=set()):
         # clean git lfs cache
         run_lfs_prune()
 
-    if len(failed_models) == 0:
-        print('{} models have been checked. '.format(len(model_list)))
-    else:
-        print('In all {} models, {} models failed, {} models were skipped. '.format(len(model_list), len(failed_models), len(skip_models)))
+    print('In all {} models, {} models failed, {} models were skipped. '.format(len(model_list), len(failed_models), len(skip_models)))
+    if len(failed_models) != 0:
+        print("Failed models: {}".format(failed_models))
         sys.exit(1)

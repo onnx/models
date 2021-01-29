@@ -11,5 +11,8 @@ SKIP_CHECKER_MODELS = {'vision/classification/alexnet/model/bvlcalexnet-3.onnx',
                        'vision/classification/shufflenet/model/shufflenet-3.onnx',  # opset1 typeinference function missing
                        'vision/classification/squeezenet/model/squeezenet1.0-3.onnx',  # opset1 typeinference function missing
                        'vision/classification/vgg/model/vgg19-caffe2-3.onnx',  # opset1 typeinference function missing
-                       'vision/classification/zfnet-512/model/zfnet512-3.onnx'}  # opset1 typeinference function missing
-SKIP_ORT_MODELS = {'text/machine_comprehension/bert-squad/model/bertsquad-8.onnx', 'vision/classification/vgg/model/vgg19-7.onnx', 'vision/classification/vgg/model/vgg19-bn-7.onnx', 'vision/body_analysis/arcface/model/arcfaceresnet100-8.onnx'}
+                       'vision/classification/zfnet-512/model/zfnet512-3.onnx'  # opset1 typeinference function missing
+                    }
+SKIP_ORT_MODELS = {'text/machine_comprehension/bert-squad/model/bertsquad-8.onnx',  #Gather node: indices element out of data bounds, idx=2 must be within the inclusive range [-2,1]
+                   'vision/body_analysis/arcface/model/arcfaceresnet100-8.onnx'  # BatchNormalization node: Invalid input scale: NumDimensions() != 3
+                }
