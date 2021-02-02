@@ -133,5 +133,5 @@ Refer to this [paper](https://arxiv.org/abs/1905.11946) for more details on the 
 <hr>
 
 ## License
-Apache License v2.0
+MIT License
 <hr>

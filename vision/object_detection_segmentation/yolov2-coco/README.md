@@ -29,4 +29,4 @@ The YOLOv2 model was trained on the [COCO](http://cocodataset.org/#home) dataset
 "YOLO9000: Better, Faster, Stronger" [arXiv:1612.08242](https://arxiv.org/pdf/1612.08242.pdf)
 
 ## License
-Apache License v2.0
+MIT License

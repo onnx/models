@@ -97,5 +97,5 @@ This model is converted from a keras model [repository](https://github.com/qqwwe
 <hr>
 
 ## License
-Apache License v2.0
+MIT License
 <hr>

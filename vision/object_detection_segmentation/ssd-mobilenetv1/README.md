@@ -137,5 +137,5 @@ Tensorflow to ONNX conversion [tutorial](https://github.com/onnx/tensorflow-onnx
 [Shirley Su](https://github.com/shirleysu8)
 
 ## License
-Apache License v2.0
+MIT License
 <hr>

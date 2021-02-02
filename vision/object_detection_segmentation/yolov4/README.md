@@ -268,4 +268,4 @@ This model is diretly coverted from [hunglc007/tensorflow-yolov4-tflite](https:/
 [Jennifer Wang](https://github.com/jennifererwangg)
 
 ## License
-Apache License v2.0
+MIT License

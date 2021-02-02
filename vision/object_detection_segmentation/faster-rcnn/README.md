@@ -123,5 +123,5 @@ This model is converted from [facebookresearch/maskrcnn-benchmark](https://githu
 <hr>
 
 ## License
-Apache License v2.0
+MIT License
 <hr>

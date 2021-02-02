@@ -143,4 +143,4 @@ This model is converted from the [Torchvision Model Zoo](https://pytorch.org/doc
 [Jack Duvall](https://github.com/duvallj)
 
 ## License
-Apache License v2.0
+MIT License

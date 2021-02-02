@@ -89,5 +89,5 @@ This model is converted from a CNTK model trained from [this implementation](htt
 <hr>
 
  ## License
-Apache License v2.0
+MIT License
 <hr>
