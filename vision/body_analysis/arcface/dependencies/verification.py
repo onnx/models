@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 
 """Helper for evaluation on the Labeled Faces in the Wild dataset
 """
