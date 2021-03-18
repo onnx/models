@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: BSD-3-Clause -->
+
 # AlexNet
 
 |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|

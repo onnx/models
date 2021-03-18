@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: MIT -->
+
 # Tiny YOLOv2
 
 ## Description

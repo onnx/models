@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: MIT -->
+
 # Inception v2
 
 |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|

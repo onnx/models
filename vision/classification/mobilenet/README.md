@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # MobileNet
 
 ## Use cases
@@ -13,7 +15,7 @@ The below model is using multiplier value as 1.0.
 
  |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|MobileNet v2-1.0|    [13.6 MB](model/mobilenetv2-7.onnx)  |  [14.1 MB](model/mobilenetv2-7.tar.gz) |  1.2.1  | 7| 70.94    |     89.99           | 
+|MobileNet v2-1.0|    [13.6 MB](model/mobilenetv2-7.onnx)  |  [14.1 MB](model/mobilenetv2-7.tar.gz) |  1.2.1  | 7| 70.94    |     89.99           |
 
 ## Inference
 We used MXNet as framework with gluon APIs to perform inference. View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook.

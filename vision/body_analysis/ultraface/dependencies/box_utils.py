@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+
 import numpy as np
 
 def area_of(left_top, right_bottom):
@@ -82,7 +84,7 @@ def predict(width, height, confidences, boxes, prob_threshold, iou_threshold=0.5
     confidences = confidences[0]
     #print(boxes)
     #print(confidences)
-    
+
     picked_box_probs = []
     picked_labels = []
     for class_index in range(1, confidences.shape[1]):
@@ -91,7 +93,7 @@ def predict(width, height, confidences, boxes, prob_threshold, iou_threshold=0.5
         #print(probs)
         mask = probs > prob_threshold
         probs = probs[mask]
-        
+
         if probs.shape[0] == 0:
             continue
         subset_boxes = boxes[mask, :]

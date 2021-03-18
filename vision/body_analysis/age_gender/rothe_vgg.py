@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 import cv2
 import onnxruntime as ort
 import argparse
@@ -18,7 +20,7 @@ def scale(box):
     maximum = max(width, height)
     dx = int((maximum - width)/2)
     dy = int((maximum - height)/2)
-    
+
     bboxes = [box[0] - dx, box[1] - dy, box[2] + dx, box[3] + dy]
     return bboxes
 
@@ -96,7 +98,7 @@ for i in range(boxes.shape[0]):
     gender = genderClassifier(cropped)
     age = ageClassifier(cropped)
     print(f'Box {i} --> {gender}, {age}')
-    
+
     cv2.rectangle(orig_image, (box[0], box[1]), (box[2], box[3]), color, 4)
     cv2.putText(orig_image, f'{gender}, {age}', (box[0], box[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 1.25, color, 2, cv2.LINE_AA)
     cv2.imshow('', orig_image)

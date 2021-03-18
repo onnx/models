@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: BSD-3-Clause -->
+
 # ShuffleNet
 
 ## Use cases
@@ -6,7 +8,7 @@ Computationally efficient CNN architecture designed specifically for mobile devi
 ## Description
 ShuffleNet is a deep convolutional network for image classification. [ShuffleNetV2](https://pytorch.org/hub/pytorch_vision_shufflenet_v2/) is an improved architecture that is the state-of-the-art in terms of speed and accuracy tradeoff used for image classification.
 
-Caffe2 ShuffleNet-v1 ==> ONNX ShuffleNet-v1  
+Caffe2 ShuffleNet-v1 ==> ONNX ShuffleNet-v1
 PyTorch ShuffleNet-v2 ==> ONNX ShuffleNet-v2
 
 ## Model

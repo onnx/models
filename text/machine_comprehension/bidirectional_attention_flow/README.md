@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: MIT -->
+
 # BiDAF
 
  ## Description

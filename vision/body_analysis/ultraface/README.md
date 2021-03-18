@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: MIT -->
+
 # Ultra-lightweight face detection model
 
 ## Description
