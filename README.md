@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # ONNX Model Zoo
 
 [Open Neural Network Exchange (ONNX)](http://onnx.ai) is an open standard format for representing machine learning models. ONNX is supported by a community of partners who have implemented it in many frameworks and tools.
@@ -247,4 +249,4 @@ Do you want to contribute a model? To get started, pick any model presented abov
 
 # License
 
-[MIT License](LICENSE)
+[Apache License v2.0](LICENSE)

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 
 import cv2
 import numpy as np
@@ -97,7 +99,7 @@ def preprocess(img, bbox=None, landmark=None, **kwargs):
     ret = img[bb[1]:bb[3],bb[0]:bb[2],:]
     if len(image_size)>0:
       ret = cv2.resize(ret, (image_size[1], image_size[0]))
-    return ret 
+    return ret
   else: #do align using landmark
     assert len(image_size)==2
 

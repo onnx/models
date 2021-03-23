@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -119,7 +121,7 @@ class FaceImageIter(io.DataIter):
                 raise StopIteration
             header, img = recordio.unpack(s)
             return header.label, img, None, None
-            
+
     # Define functions for data augmentation - brightness, contrast, saturation, color, mirror
     def brightness_aug(self, src, x):
       alpha = 1.0 + random.uniform(-x, x)

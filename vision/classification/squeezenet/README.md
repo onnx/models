@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # SqueezeNet
 
 ## Use cases
@@ -34,7 +36,7 @@ The images have to be loaded in to a range of [0, 1] and then normalized using m
 
 ### Output
 The model outputs image scores for each of the [1000 classes of ImageNet](../synset.txt).
- 
+
 ``softmaxout_1: float[1, 1000, 1, 1]``
 
 ### Postprocessing
@@ -55,7 +57,7 @@ We used MXNet as framework with gluon APIs to perform training. View the [traini
 We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_validation](../imagenet_validation.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 
 ## References
-* **SqueezeNet1.1**  
+* **SqueezeNet1.1**
 SqueezeNet1.1 presented in the [Official SqueezeNet repo](https://github.com/DeepScale/SqueezeNet/tree/master/SqueezeNet_v1.1) is an improved version of SqueezeNet1.0 from the paper [SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size](https://arxiv.org/abs/1602.07360)
 
 * [MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io)

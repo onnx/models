@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # Age and Gender Classification using Convolutional Neural Networks
 
 ## Description
@@ -19,7 +21,7 @@ Run [levi_googlenet.py](levi_googlenet.py) python script example.
 
 ### VGG-16
 Input tensor is `1 x 3 x height x width`, which values are in range of `[0, 255]`. Input image have to be previously resized to `224 x 224` pixels and converted to `BGR` format.
-Run [rothe_vgg.py](rothe_vgg.py) python script example. 
+Run [rothe_vgg.py](rothe_vgg.py) python script example.
 
 ## References
 * Levi et al. - [Age and Gender Classification Using Convolutional Neural Networks](https://talhassner.github.io/home/publication/2015_CVPR).

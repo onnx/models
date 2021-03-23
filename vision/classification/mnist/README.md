@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: MIT -->
+
 # MNIST - Handwritten Digit Recognition
 
 ## Description
@@ -25,11 +27,11 @@ The model is trained in CNTK following the tutorial [CNTK 103D: Convolutional Ne
 We used CNTK as the framework to perform inference. A brief description of the inference process is provided below:
 
 ### Input
-Input tensor has shape `(1x1x28x28)`, with type of float32.      
-One image at a time. This model doesn't support mini-batch.      
+Input tensor has shape `(1x1x28x28)`, with type of float32.
+One image at a time. This model doesn't support mini-batch.
 
 ### Preprocessing
-Images are resized into (28x28) in grayscale, with a black background and a white foreground (the number should be in white). Color value is scaled to [0.0, 1.0]. 
+Images are resized into (28x28) in grayscale, with a black background and a white foreground (the number should be in white). Color value is scaled to [0.0, 1.0].
 
 Example:
 ```python

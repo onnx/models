@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+
 import cv2
 import onnxruntime as ort
 import argparse
@@ -16,7 +18,7 @@ def scale(box):
     maximum = max(width, height)
     dx = int((maximum - width)/2)
     dy = int((maximum - height)/2)
-    
+
     bboxes = [box[0] - dx, box[1] - dy, box[2] + dx, box[3] + dy]
     return bboxes
 

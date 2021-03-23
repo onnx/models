@@ -1,7 +1,9 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # BERT-Squad
 
 ## Use cases
-This model answers questions based on the context of the given input paragraph.   
+This model answers questions based on the context of the given input paragraph.
 
 ## Description
 BERT (Bidirectional Encoder Representations from Transformers) applies Transformers, a popular attention model, to language modelling. This mechanism has an encoder to read the input text and a decoder that produces a prediction for the task. This model uses the technique of masking out some of the words in the input and then condition each word bidirectionally to predict the masked words. BERT also learns to model relationships between sentences, predicts if the sentences are connected or not.

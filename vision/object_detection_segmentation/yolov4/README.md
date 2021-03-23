@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: MIT -->
+
 # YOLOv4
 
 ## Description
@@ -241,7 +243,7 @@ def draw_bbox(image, bboxes, classes=read_class_names("coco.names"), show_label=
         if show_label:
             bbox_mess = '%s: %.2f' % (classes[class_ind], score)
             t_size = cv2.getTextSize(bbox_mess, 0, fontScale, thickness=bbox_thick//2)[0]
-            cv2.rectangle(image, c1, (c1[0] + t_size[0], c1[1] - t_size[1] - 3), bbox_color, -1)  
+            cv2.rectangle(image, c1, (c1[0] + t_size[0], c1[1] - t_size[1] - 3), bbox_color, -1)
 
             cv2.putText(image, bbox_mess, (c1[0], c1[1]-2), cv2.FONT_HERSHEY_SIMPLEX,
                         fontScale, (0, 0, 0), bbox_thick//2, lineType=cv2.LINE_AA)
@@ -250,13 +252,13 @@ def draw_bbox(image, bboxes, classes=read_class_names("coco.names"), show_label=
 ```
 
 ## Dataset
-Pretrained yolov4 weights can be downloaded [here](https://drive.google.com/open?id=1cewMfusmPjYWbrnuJRuKhPMwRe_b9PaT). 
+Pretrained yolov4 weights can be downloaded [here](https://drive.google.com/open?id=1cewMfusmPjYWbrnuJRuKhPMwRe_b9PaT).
 
 ## Validation accuracy
 mAP50 on COCO 2017 dataset is 0.5733, based on the original tensorflow [model](https://github.com/hunglc007/tensorflow-yolov4-tflite#map50-on-coco-2017-dataset).
 
 ## Publication/Attribution
-* [YOLOv4: Optimal Speed and Accuracy of Object Detection](https://arxiv.org/abs/2004.10934). Alexey Bochkovskiy, Chien-Yao Wang, Hong-Yuan Mark Liao. 
+* [YOLOv4: Optimal Speed and Accuracy of Object Detection](https://arxiv.org/abs/2004.10934). Alexey Bochkovskiy, Chien-Yao Wang, Hong-Yuan Mark Liao.
 * Original models from [Darknet Github repository](https://github.com/AlexeyAB/darknet).
 
 ## References

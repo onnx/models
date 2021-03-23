@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 import atexit
 import logging
 import multiprocessing as mp
@@ -44,8 +46,8 @@ class CityLoader(mx.io.DataIter):
             self.stop_flag = mp.Value('b', False)
             self.result_queue = mp.Queue(maxsize=self.batch_size*3)
             self.data_queue = mp.Queue()
-            
-    @staticmethod        
+
+    @staticmethod
     def read_data(data_list):
         data = []
         with open(data_list, 'r') as f:
@@ -58,7 +60,7 @@ class CityLoader(mx.io.DataIter):
                     item.append(frags[3:])  # item[2] is parameters for cropping
                 data.append(item)
         return data
-    
+
     def _insert_queue(self):
         for item in self.data:
             self.data_queue.put(item)
@@ -97,8 +99,8 @@ class CityLoader(mx.io.DataIter):
     @property
     def provide_data(self):
         return [(self.data_name[i], self.data_shape[i]) for i in range(len(self.data_name))]
-        
-    def reset(self): 
+
+    def reset(self):
         self.data_num = len(self.data)
         self.current = 0
         self.shuffle()
