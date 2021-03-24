@@ -59,10 +59,14 @@ def remove_onnxruntime_test_dir():
         shutil.rmtree(TEST_ORT_DIR)
      
 
-def test_models(model_list, target, skip_checker_set=set(), skip_ort_set=set()):
+def test_models(model_list, target, create_if_failed=False, skip_checker_set=set(), skip_ort_set=set()):
     """
-    model_list: a list of model path which will be tested
+    model_list: a string list of model path which will be tested
     target: all, onnx, onnxruntime 
+    create_if_failed: (boolean) if true, it will create test data by ORT if failure
+    skip_checker_set: a string list of model path which will be excluded for onnx.checker
+    skip_ort_set: a string list of model path which will be excluded for ORT test
+
     Given model_list, pull and test them by target
     including model check and test data validation
     eventually remove all files to save space in CIs
@@ -109,12 +113,16 @@ def test_models(model_list, target, skip_checker_set=set(), skip_ort_set=set()):
                 model_path_from_tar, test_data_set = extract_test_data(tar_gz_path)
                 # finally check the onnx model from .tar.gz by ORT
                 # if the test_data_set does not exist, create the test_data_set
-                try:
+                if not create_if_failed:
                     check_model.run_backend_ort(model_path_from_tar, test_data_set)
-                except:
-                    print('Warning: original test data for {} is broken. '.format(model_path))
-                    # if existing test_data_set_0 cannot pass ORT backend, create a new one
-                    check_model.run_backend_ort(model_path_from_tar, None)
+                # TODO: this condition should be removed if all of failed test data have been fixed
+                else:
+                    try:
+                        check_model.run_backend_ort(model_path_from_tar, test_data_set)
+                    except:
+                        print('Warning: original test data for {} is broken. '.format(model_path))
+                        # if existing test_data_set_0 cannot pass ORT backend, create a new one
+                        check_model.run_backend_ort(model_path_from_tar, None)
                 print('[PASS] {} is checked by onnxruntime. '.format(tar_name))
 
             end = time.time()

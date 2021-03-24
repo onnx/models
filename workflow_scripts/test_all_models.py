@@ -40,7 +40,7 @@ def main():
                     model_list.append(onnx_model_path)
                     print(onnx_model_path)
     print('=== Running Test on all {} models ==='.format(len(model_list)))
-    test_utils.test_models(model_list, args.target,
+    test_utils.test_models(model_list, args.target, True
         config.SKIP_CHECKER_MODELS, config.SKIP_ORT_MODELS)
 
 
