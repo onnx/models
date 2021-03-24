@@ -119,8 +119,8 @@ def test_models(model_list, target, create_if_failed=False, skip_checker_set=set
                 else:
                     try:
                         check_model.run_backend_ort(model_path_from_tar, test_data_set)
-                    except:
-                        print('Warning: original test data for {} is broken. '.format(model_path))
+                    except Exception as e:
+                        print('Warning: original test data for {} is broken: {}'.format(model_path, e))
                         # if existing test_data_set_0 cannot pass ORT backend, create a new one
                         check_model.run_backend_ort(model_path_from_tar, None)
                 print('[PASS] {} is checked by onnxruntime. '.format(tar_name))
