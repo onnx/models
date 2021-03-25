@@ -18,12 +18,13 @@ def run_backend_ort(model_path, test_data_set=None, tar_gz_path=None):
     if not test_data_set:
         ort_test_dir_utils.create_test_dir(model_path, './', dir_path)
         ort_test_dir_utils.run_test_dir(dir_path)
+        os.remove(tar_gz_path)
+        make_tarfile(tar_gz_path, dir_path)
     # otherwise use the existing 'test_data_set_N' as test data
     else:
         test_dir_from_tar = test_utils.get_model_directory(model_path)
         ort_test_dir_utils.run_test_dir(test_dir_from_tar)
-    os.remove(tar_gz_path)
-    make_tarfile(tar_gz_path, dir_path)
+    
     # remove the produced test_dir from ORT
     test_utils.remove_onnxruntime_test_dir()
 
