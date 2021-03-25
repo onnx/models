@@ -76,7 +76,7 @@ def test_models(model_list, target, create_if_failed=False, skip_checker_set=set
     failed_models = []
     skip_models = []
     tar_ext_name = '.tar.gz'
-    for model_path in model_list:
+    for model_path in model_list[::-1]:
         start = time.time()
         model_name = model_path.split('/')[-1]
         tar_name = model_name.replace('.onnx', tar_ext_name)
@@ -87,19 +87,6 @@ def test_models(model_list, target, create_if_failed=False, skip_checker_set=set
             # Step 1: check the uploaded onnx model by ONNX
             # git pull the onnx file
             pull_lfs_file(model_path)
-            if target == 'onnx' or target == 'all':
-                if model_path in skip_checker_set:
-                    skip_models.append(model_name)
-                    print('SKIP {} is in the skip list for checker. '.format(model_name))
-                    continue
-
-                model = onnx.load(model_path)
-                # check original model
-                check_model.run_onnx_checker(model)
-                # check inferred model as well
-                inferred_model = onnx.shape_inference.infer_shapes(model)
-                check_model.run_onnx_checker(inferred_model)
-                print('[PASS] {} is checked by onnx. '.format(model_name))
 
             # Step 2: check the onnx model and test_data_set from .tar.gz by ORT
             # if tar.gz exists, git pull and try to get test data
@@ -122,7 +109,7 @@ def test_models(model_list, target, create_if_failed=False, skip_checker_set=set
                     except Exception as e:
                         print('Warning: original test data for {} is broken: {}'.format(model_path, e))
                         # if existing test_data_set_0 cannot pass ORT backend, create a new one
-                        check_model.run_backend_ort(model_path_from_tar, None)
+                        check_model.run_backend_ort(model_path_from_tar, None, tar_gz_path)
                 print('[PASS] {} is checked by onnxruntime. '.format(tar_name))
 
             end = time.time()
@@ -131,7 +118,6 @@ def test_models(model_list, target, create_if_failed=False, skip_checker_set=set
         except Exception as e:
             print('[FAIL] {}: {}'.format(model_name, e))
             failed_models.append(model_path)
-        
         # remove the model/tar files to save space in CIs
         if os.path.exists(model_path):
             os.remove(model_path)
@@ -142,6 +128,7 @@ def test_models(model_list, target, create_if_failed=False, skip_checker_set=set
         remove_onnxruntime_test_dir()
         # clean git lfs cache
         run_lfs_prune()
+        return
 
     print('In all {} models, {} models failed, {} models were skipped. '.format(len(model_list), len(failed_models), len(skip_models)))
     if len(failed_models) != 0:
