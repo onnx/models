@@ -79,7 +79,6 @@ def test_models(model_list, target, create_if_failed=False, skip_checker_set=set
     for model_path in model_list[::-1]:
         start = time.time()
         model_name = model_path.split('/')[-1]
-        if "super-resolution" not in model_name: return
         tar_name = model_name.replace('.onnx', tar_ext_name)
         print('==============Testing {}=============='.format(model_name))
         tar_gz_path = model_path[:-5] + '.tar.gz'
