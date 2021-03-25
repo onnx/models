@@ -79,7 +79,6 @@ def test_models(model_list, target, create_if_failed=False, skip_checker_set=set
     for model_path in model_list[::-1]:
         start = time.time()
         model_name = model_path.split('/')[-1]
-        if 'gpt2-lm-head-10.onnx' not in model_name: continue
         tar_name = model_name.replace('.onnx', tar_ext_name)
         print('==============Testing {}=============='.format(model_name))
         tar_gz_path = model_path[:-5] + '.tar.gz'
@@ -129,7 +128,7 @@ def test_models(model_list, target, create_if_failed=False, skip_checker_set=set
         remove_onnxruntime_test_dir()
         # clean git lfs cache
         run_lfs_prune()
-        #return
+        return
 
     print('In all {} models, {} models failed, {} models were skipped. '.format(len(model_list), len(failed_models), len(skip_models)))
     if len(failed_models) != 0:
