@@ -34,5 +34,5 @@ def run_backend_ort(model_path, test_data_set=None, tar_gz_path=None):
     test_utils.remove_onnxruntime_test_dir()
 
 def make_tarfile(output_filename, source_dir):
-    with tarfile.open(output_filename, "w:gz") as tar:
+    with tarfile.open(output_filename, "w:gz", format=tarfile.GNU_FORMAT) as tar:
         tar.add(source_dir, arcname=os.path.basename(source_dir))

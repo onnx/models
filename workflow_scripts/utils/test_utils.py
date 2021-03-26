@@ -129,6 +129,7 @@ def test_models(model_list, target, create_if_failed=False, skip_checker_set=set
         # clean git lfs cache
         run_lfs_prune()
 
+
     print('In all {} models, {} models failed, {} models were skipped. '.format(len(model_list), len(failed_models), len(skip_models)))
     if len(failed_models) != 0:
         print("Failed models: {}".format(failed_models))
