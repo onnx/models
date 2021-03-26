@@ -4,6 +4,7 @@ import onnx
 from utils import ort_test_dir_utils, test_utils
 import tarfile
 import os.path
+import shutil
 
 def run_onnx_checker(model_path):
     onnx.checker.check_model(model_path)
