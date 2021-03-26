@@ -20,6 +20,10 @@ def run_backend_ort(model_path, test_data_set=None, tar_gz_path=None):
         ort_test_dir_utils.run_test_dir(dir_path)
         os.remove(tar_gz_path)
         make_tarfile(tar_gz_path, dir_path)
+
+        if os.path.exists(dir_path) and os.path.isdir(dir_path):
+            shutil.rmtree(dir_path)
+
     # otherwise use the existing 'test_data_set_N' as test data
     else:
         test_dir_from_tar = test_utils.get_model_directory(model_path)
