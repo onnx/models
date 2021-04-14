@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: BSD-3-Clause -->
+
 # Fast Neural Style Transfer
 
 ## Use-cases

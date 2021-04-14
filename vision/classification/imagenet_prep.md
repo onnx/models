@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # Guide for preparing ImageNet Dataset
 
 <!-- refer to https://docs.aws.amazon.com/dlami/latest/devguide/tutorial-horovod.html#tutorial-horovod-imagenet

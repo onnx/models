@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # Dense Upsampling Convolution (DUC)
 
 ## Use cases
@@ -26,7 +28,7 @@ The DUC layer has an effect of partitioning the image into d^2 subparts (d = dow
 The output of the network is a tensor of shape (1 X `label_num` X `H` * `W`) where `H` and `W` are the height and width of the output segmented map.
 
 ### Postprocessing
-The output tensor is reshaped and resized to give the softmax map of shape (`H` X `W` X `label_num`). The raw label map is computed by doing an argmax on the softmax map. The script [cityscapes_labels.py](dependencies/cityscapes_labels.py) contains the segmentation category labels and their corresponding color map. Using this the colorized segmented images are generated. Check [duc-postprocess.py](dependencies/duc-postprocess.py) for code.  
+The output tensor is reshaped and resized to give the softmax map of shape (`H` X `W` X `label_num`). The raw label map is computed by doing an argmax on the softmax map. The script [cityscapes_labels.py](dependencies/cityscapes_labels.py) contains the segmentation category labels and their corresponding color map. Using this the colorized segmented images are generated. Check [duc-postprocess.py](dependencies/duc-postprocess.py) for code.
 
 To do quick inference with the model, check out [Model Server](https://github.com/awslabs/mxnet-model-server/blob/master/docs/model_zoo.md/#duc-resnet101_onnx).
 

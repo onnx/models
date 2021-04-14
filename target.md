@@ -1,8 +1,10 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # Target models
 Below is a list of models that we would like to have in the model zoo in the near future. Please refer to the [contribution guidelines](contribute.md) to contribute a model.
 ## CNN models
 
-|Model      | Reference | 
+|Model      | Reference |
 |-------------|:--------------|
 |   Gender Detection| [Age and Gender Classification using Convolutional Neural Networks](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=7&ved=0ahUKEwjEzsev5pDaAhVI2GMKHZvjCjEQFgiLATAG&url=http%3A%2F%2Fciteseerx.ist.psu.edu%2Fviewdoc%2Fdownload%3Fdoi%3D10.1.1.722.9654%26rep%3Drep1%26type%3Dpdf&usg=AOvVaw0-c9n2_ZcsRCyc6BCb0Zdj)	|
 |		Single Shot Detector|	[SSD: Single Shot Multi Detector](https://arxiv.org/abs/1512.02325)	|
@@ -16,13 +18,13 @@ Below is a list of models that we would like to have in the model zoo in the nea
 
 
 ## GAN models
-|Model      | Reference | 
+|Model      | Reference |
 |-------------|:--------------|
 |	Text to Image|	[Generative Adversarial Text to image Synthesis ](https://arxiv.org/abs/1605.05396)|
 |Style Transfer	|[Unpaired Image to Image Translation using Cycle consistent Adversarial Network ](https://arxiv.org/abs/1703.10593)|
 |Sound Generative models|	[WaveNet: A Generative Model for Raw Audio ](https://arxiv.org/abs/1609.03499)|
 ## NLP models
-|Model      | Reference | 
+|Model      | Reference |
 |-------------|:--------------|
 |Speech Recognition|	[Speech recognition with deep recurrent neural networks ](https://www.cs.toronto.edu/~fritz/absps/RNN13.pdf)|
 |	Text To Speech|	[Deep voice: Real time neural text to speech ](https://arxiv.org/abs/1702.07825)	|
@@ -31,7 +33,7 @@ Below is a list of models that we would like to have in the model zoo in the nea
 |Machine Translation|	[Google's Neural Machine Translation System: Bridging the Gap between Human and Machine Translation ](https://arxiv.org/abs/1609.08144)	|
 
 ## Models using Image as well as NLP
-|Model      | Reference | 
+|Model      | Reference |
 |-------------|:--------------|
 |Visual Question Answering	|[VQA: Visual Question Answering ](https://arxiv.org/pdf/1505.00468v6.pdf)
 |Visual Question Answering	|[Yin and Yang: Balancing and Answering Binary Visual Questions ](https://arxiv.org/pdf/1511.05099.pdf)
@@ -40,7 +42,7 @@ Below is a list of models that we would like to have in the model zoo in the nea
 
 
 ## Other interesting models
-|Model      | Reference | 
+|Model      | Reference |
 |-------------|:--------------|
 |Time Series Forecasting|	[Modeling Long- and Short-Term Temporal Patterns with Deep Neural Networks ](https://arxiv.org/pdf/1703.07015.pdf)
 |Recommender systems|[DropoutNet: Addressing Cold Start in Recommender Systems](http://www.cs.toronto.edu/~mvolkovs/nips2017_deepcf.pdf)

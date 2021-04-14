@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: MIT -->
+
 # YOLOv2-COCO
 
 ## Description

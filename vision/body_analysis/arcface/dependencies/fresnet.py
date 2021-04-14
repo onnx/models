@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -304,7 +306,7 @@ def residual_unit_v2(data, num_filter, stride, dim_match, name, bottle_neck, **k
         return conv2 + shortcut
 
 def residual_unit_v3(data, num_filter, stride, dim_match, name, bottle_neck, **kwargs):
-    
+
     """Return ResNet Unit symbol for building ResNet
     Parameters
     ----------
@@ -395,7 +397,7 @@ def residual_unit_v3(data, num_filter, stride, dim_match, name, bottle_neck, **k
         return bn3 + shortcut
 
 def residual_unit_v3_x(data, num_filter, stride, dim_match, name, bottle_neck, **kwargs):
-    
+
     """Return ResNeXt Unit symbol for building ResNeXt
     Parameters
     ----------
