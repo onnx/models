@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: MIT -->
+
 # YOLOv3
 
 ## Description

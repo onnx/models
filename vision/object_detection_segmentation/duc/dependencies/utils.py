@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 '''
 This script contains helper functions which are used by cityscapes_loader.py in duc-validation.ipynb
 '''

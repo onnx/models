@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: MIT -->
+
 # ZFNet-512
 
 |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|

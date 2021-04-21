@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 # This file is cloned from onnxruntime/tools/python
 # onnxruntime commit id: 5bd7241839acd74ae424c002ed8696f0be836d73
 
@@ -48,9 +50,11 @@ def _create_missing_input_data(model_inputs, name_input_map, symbolic_dim_values
                 dims.append(dim.dim_value)
             elif dim_type == 'dim_param':
                 if dim.dim_param not in symbolic_dim_values_map:
-                    raise ValueError("Value for symbolic dim {} was not provided.".format(dim.dim_param))
-
-                dims.append(symbolic_dim_values_map[dim.dim_param])
+                    print("Warning: Value for symbolic dim {} was not provided.".format(dim.dim_param))
+                    # If symbolic dim is not given, set it as 1
+                    dims.append(1)
+                else:
+                    dims.append(symbolic_dim_values_map[dim.dim_param])
             else:
                 # TODO: see if we need to provide a way to specify these values. could ask for the whole
                 # shape for the input name instead.

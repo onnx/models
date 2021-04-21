@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # T5
 
 ## Use-cases
@@ -12,8 +14,8 @@ understanding through the training of multiple tasks at once.
 
  |Model        |Download  | Compressed |ONNX version|Opset version|
 |-------------|:--------------|:--------------|:--------------|:--------------|
-|T5-encoder       |[650.6 MB](model/t5-encoder-12.onnx) | [205.0 MB](model/t5-encoder-12.tar.gz)| 1.6 | 12 
-|T5-decoder-with-lm-head |[304.9 MB](model/t5-decoder-with-lm-head-12.onnx) | [304.9 MB](model/t5-decoder-with-lm-head-12.tar.gz)| 1.6 | 12 
+|T5-encoder       |[650.6 MB](model/t5-encoder-12.onnx) | [205.0 MB](model/t5-encoder-12.tar.gz)| 1.6 | 12
+|T5-decoder-with-lm-head |[304.9 MB](model/t5-decoder-with-lm-head-12.onnx) | [304.9 MB](model/t5-decoder-with-lm-head-12.tar.gz)| 1.6 | 12
 
 
 ### Source
@@ -122,8 +124,8 @@ Benchmarking can be run with the following [script](https://github.com/abelribou
 
 
 ## Publication/Attribution
-This repo is based on the work of Colin Raffel and Noam Shazeer and Adam Roberts and Katherine Lee and Sharan Narang and 
-Michael Matena and Yanqi Zhou and Wei Li and Peter J. Liu from Google, as well as the implementation of T5 from the 
+This repo is based on the work of Colin Raffel and Noam Shazeer and Adam Roberts and Katherine Lee and Sharan Narang and
+Michael Matena and Yanqi Zhou and Wei Li and Peter J. Liu from Google, as well as the implementation of T5 from the
 huggingface team, the work of the Microsoft ONNX and onnxruntime teams, in particular Tianlei Wu, and the work of Thomas Wolf on generation of text.
 
 [Original T5 Paper](https://arxiv.org/pdf/1910.10683.pdf)

@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # ResNet
 
 ## Use cases
@@ -6,8 +8,8 @@ ResNet models perform image classification - they take images as input and class
 ## Description
 Deeper neural networks are more difficult to train. Residual learning framework ease the training of networks that are substantially deeper. The research explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. It also provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset the residual nets were evaluated with a depth of up to 152 layers — 8× deeper than VGG nets but still having lower complexity.
 
-MXNet ResNet-v1 ==> ONNX ResNet-v1 [18, 34, 50, 101, 152]  
-MXNet ResNet-v2 ==> ONNX ResNet-v2 [18, 34, 50, 101, 152]  
+MXNet ResNet-v1 ==> ONNX ResNet-v1 [18, 34, 50, 101, 152]
+MXNet ResNet-v2 ==> ONNX ResNet-v2 [18, 34, 50, 101, 152]
 Caffe2 ResNet-50 ==> ONNX ResNet [50-caffe2]
 
 ## Model
@@ -21,7 +23,7 @@ ResNet v2 uses pre-activation function whereas ResNet v1  uses post-activation f
 
 |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|ResNet18|    [44.7 MB](model/resnet18-v1-7.onnx)    |[42.9 MB](model/resnet18-v1-7.tar.gz)    |  1.2.1  |7| 69.93         |    89.29|         
+|ResNet18|    [44.7 MB](model/resnet18-v1-7.onnx)    |[42.9 MB](model/resnet18-v1-7.tar.gz)    |  1.2.1  |7| 69.93         |    89.29|
 |ResNet34|    [83.3 MB](model/resnet34-v1-7.onnx)    | [78.6 MB](model/resnet34-v1-7.tar.gz)    |  1.2.1   |7|73.73         |     91.40           |
 |ResNet50|    [97.8 MB](model/resnet50-v1-7.onnx)    |[92.2 MB](model/resnet50-v1-7.tar.gz)    |1.2.1    |7|74.93         |     92.38           |
 |ResNet101|    [170.6 MB](model/resnet101-v1-7.onnx)   | [159.8 MB](model/resnet101-v1-7.tar.gz)    |  1.2.1  |7  | 76.48         |     93.20           |
@@ -65,7 +67,7 @@ def preprocess(img_data):
     mean_vec = np.array([0.485, 0.456, 0.406])
     stddev_vec = np.array([0.229, 0.224, 0.225])
     norm_img_data = np.zeros(img_data.shape).astype('float32')
-    for i in range(img_data.shape[0]):  
+    for i in range(img_data.shape[0]):
          # for each pixel in each channel, divide the value by 255 to get value between [0, 1] and then normalize
         norm_img_data[i,:,:] = (img_data[i,:,:]/255 - mean_vec[i]) / stddev_vec[i]
     return norm_img_data

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 import torch
 import torch.nn.functional as F
 from tqdm import trange
@@ -110,7 +112,7 @@ class GenerativeT5(torch.nn.Module):
 
         """
         with torch.no_grad():
-            new_tokens = []
+            new_tokens = torch.tensor(())
             new_logits = []
             generated = torch.tensor(self.tokenizer(prompt)['input_ids'])[:max_context_length - 1].unsqueeze(0)
             if self.cuda and not self.onnx:
@@ -146,6 +148,6 @@ class GenerativeT5(torch.nn.Module):
                     filtered_logits = top_k_top_p_filtering(next_token_logits, top_k=top_k, top_p=top_p)
                     next_token = torch.multinomial(F.softmax(filtered_logits, dim=-1), num_samples=1)
                 generated = torch.cat((generated, next_token.unsqueeze(0)), dim=1)
-                new_tokens.append(next_token)
+                new_tokens = torch.cat((new_tokens, next_token), 0)
 
             return self.tokenizer.decode(new_tokens), new_logits

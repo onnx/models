@@ -1,6 +1,8 @@
+# SPDX-License-Identifier: BSD-3-Clause
+
 # BSD 3-Clause License
 
-# Copyright (c) 2017, 
+# Copyright (c) 2017,
 # All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
@@ -28,7 +30,7 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# The original version of this file can be obtained at 
+# The original version of this file can be obtained at
 # https://github.com/pytorch/examples/blob/master/fast_neural_style/neural_style/transformer_net.py
 
 import torch

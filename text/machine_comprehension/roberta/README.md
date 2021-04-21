@@ -1,7 +1,9 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # RoBERTa
 
 ## Use cases
-Transformer-based language model for text generation.   
+Transformer-based language model for text generation.
 
 ## Description
 RoBERTa builds on BERT’s language masking strategy and modifies key hyperparameters in BERT, including removing BERT’s next-sentence pretraining objective, and training with much larger mini-batches and learning rates. RoBERTa was also trained on an order of magnitude more data than BERT, for a longer amount of time. This allows RoBERTa representations to generalize even better to downstream tasks compared to BERT.
@@ -18,7 +20,7 @@ PyTorch RoBERTa => ONNX RoBERTa
 PyTorch RoBERTa + script changes => ONNX RoBERTa-SequenceClassification
 
 ## Conversion
-Here is the [benchmark script](https://github.com/microsoft/onnxruntime/blob/master/onnxruntime/python/tools/transformers/run_benchmark.sh) that was used for exporting RoBERTa-BASE model. 
+Here is the [benchmark script](https://github.com/microsoft/onnxruntime/blob/master/onnxruntime/python/tools/transformers/run_benchmark.sh) that was used for exporting RoBERTa-BASE model.
 
 Tutorial for conversion of RoBERTa-SequenceClassification model can be found in the [conversion](https://github.com/SeldonIO/seldon-models/blob/master/pytorch/moviesentiment_roberta/pytorch-roberta-onnx.ipynb) notebook.
 
@@ -30,12 +32,12 @@ We used [ONNX Runtime](https://github.com/microsoft/onnxruntime) to perform the 
 Tutorial for running inference for RoBERTa-SequenceClassification model using onnxruntime can be found in the [inference](dependencies/roberta-inference.ipynb) notebook.
 
 ### Input
-input_ids: Indices of input tokens in the vocabulary. It's a int64 tensor of dynamic shape (batch_size, sequence_length). Text tokenized by RobertaTokenizer. 
+input_ids: Indices of input tokens in the vocabulary. It's a int64 tensor of dynamic shape (batch_size, sequence_length). Text tokenized by RobertaTokenizer.
 
-For RoBERTa-BASE model: 
+For RoBERTa-BASE model:
 Input is a sequence of words as a string. Example: "Text to encode: Hello, World"
 
-For RoBERTa-SequenceClassification model: 
+For RoBERTa-SequenceClassification model:
 Input is a sequence of words as a string including sentiment. Example: "This film is so good"
 
 

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 import argparse
 import check_model
 import os
@@ -11,7 +13,7 @@ def main():
   parser = argparse.ArgumentParser(description='Test settings')
   # default all: test by both onnx and onnxruntime
   # if target is specified, only test by the specified one
-  parser.add_argument('--target', required=False, default='all', type=str, 
+  parser.add_argument('--target', required=False, default='all', type=str,
                       help='Test the model by which (onnx/onnxruntime)?',
                       choices=['onnx', 'onnxruntime', 'all'])
   args = parser.parse_args()
@@ -43,6 +45,7 @@ def main():
         # Step 1: check the onnx model and test_data_set from .tar.gz by ORT
         # replace '.onnx' with '.tar.gz'
         tar_gz_path = model_path[:-5] + '.tar.gz'
+        print(tar_gz_path)
         test_data_set = []
         # if tar.gz exists, git pull and try to get test data
         if (args.target == 'onnxruntime' or args.target == 'all') and os.path.exists(tar_gz_path):
@@ -53,7 +56,7 @@ def main():
           # if the test_data_set does not exist, create the test_data_set
           check_model.run_backend_ort(model_path_from_tar, test_data_set)
           print('[PASS] {} is checked by onnxruntime. '.format(tar_name))
-        
+
         # Step 2: check the uploaded onnx model by ONNX
         # git pull the onnx file
         test_utils.pull_lfs_file(model_path)

@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: MIT -->
+
 # Faster R-CNN
 
 ## Description

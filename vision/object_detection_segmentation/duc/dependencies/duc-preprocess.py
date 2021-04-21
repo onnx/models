@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 import numpy as np
 import math
 import cv2 as cv

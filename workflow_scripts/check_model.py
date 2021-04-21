@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 import ort_test_dir_utils
 import onnxruntime
 import onnx
