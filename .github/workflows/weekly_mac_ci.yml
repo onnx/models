@@ -1,25 +1,27 @@
-# Basic linux ci workflow for model zoo.
-# Runs onnx.checker/ort_test_dir for models updated in the PR
+# Weekly ci workflow for model zoo
+# Runs onnx.checker and ORT backend test for all models
 
-name: Linux CI
+name: Weekly CI with onnx.checker and ORT backend test
 
 # Triggers the workflow on push or pull request events but only for the master branch
 on:
-  push:
-    branches: [ master ]
+  # test this PR for now, remove it before the merge
   pull_request:
-    branches: [ master ]
+    branches: [ master ]  
+  schedule:
+    # run weekly on Sunday 23:59
+    - cron:  '59 23 * * SUN'
 
 jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     strategy:
       matrix:
         python-version: [3.7]
         architecture: ['x64']
-        onnx-version: ['1.7']
+        onnx-version: ['1.8']
 
     steps:
       - uses: actions/checkout@v2
@@ -35,12 +37,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install onnx==${{ matrix.onnx-version }} requests
-          python -m pip install onnxruntime
-      - name: Test new models by onnxs
+          python -m pip install ort-nightly
+      - name: Test all models with onnx.checker and ORT backend
         run: |
-          python workflow_scripts/test_new_models.py --target onnx
-      - name: Test new models by onnxruntime
-        run: |
-          python workflow_scripts/test_new_models.py --target onnxruntime
-
-    
+          python workflow_scripts/test_all_models.py

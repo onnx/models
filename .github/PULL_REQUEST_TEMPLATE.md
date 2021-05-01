@@ -87,7 +87,7 @@ def create_test_dir(model_path, root_path, test_name,
 The input/output .pb files will be produced under `temp/examples/test1/test_data_set_0`.
 ```
 import sys
-sys.path.append('<onnx/models root dir>/workflow_scripts/')
+sys.path.append('<onnx/models root dir>/workflow_scripts/utils/')
 import ort_test_dir_utils
 import numpy as np
 
