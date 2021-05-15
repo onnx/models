@@ -262,7 +262,7 @@ mAP50 on COCO 2017 dataset is 0.5733, based on the original tensorflow [model](h
 * Original models from [Darknet Github repository](https://github.com/AlexeyAB/darknet).
 
 ## References
-This model is diretly coverted from [hunglc007/tensorflow-yolov4-tflite](https://github.com/hunglc007/tensorflow-yolov4-tflite).
+This model is directly converted from [hunglc007/tensorflow-yolov4-tflite](https://github.com/hunglc007/tensorflow-yolov4-tflite).
 
 ## Contributors
 [Jennifer Wang](https://github.com/jennifererwangg)
