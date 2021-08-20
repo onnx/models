@@ -9,8 +9,12 @@ ResNet models perform image classification - they take images as input and class
 Deeper neural networks are more difficult to train. Residual learning framework ease the training of networks that are substantially deeper. The research explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. It also provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset the residual nets were evaluated with a depth of up to 152 layers — 8× deeper than VGG nets but still having lower complexity.
 
 MXNet ResNet-v1 ==> ONNX ResNet-v1 [18, 34, 50, 101, 152]
+
 MXNet ResNet-v2 ==> ONNX ResNet-v2 [18, 34, 50, 101, 152]
+
 Caffe2 ResNet-50 ==> ONNX ResNet [50-caffe2]
+
+ONNX ResNet50-v1 ==> Quantized ONNX ResNet50-v1
 
 ## Model
 
@@ -18,6 +22,8 @@ The model below are ResNet v1 and v2. ResNet models consists of residual blocks 
 ResNet v2 uses pre-activation function whereas ResNet v1  uses post-activation for the residual blocks. The models below have 18, 34, 50, 101 and 152 layers for with ResNetv1 and ResNetv2 architecture.
 
 [Run ResNet-50 in browser](https://microsoft.github.io/onnxjs-demo/#/resnet50) - implemented by ONNX.js with ResNet50-Caffe2 release 1.2
+
+[Details of Resnet-50 quantization & evaluation](./model_quantized/README.md) - implemented by [Intel® Low Precision Optimization Tool (LPOT)](https://github.com/intel/lpot)
 
 * ResNet V1:
 

@@ -2,15 +2,7 @@
 
 # ResNet
 
-## Use cases
-ResNet models perform image classification - they take images as input and classify the major object in the image into a set of pre-defined classes. They are trained on ImageNet dataset which contains images from 1000 classes. ResNet models provide very high accuracies with affordable model sizes. They are ideal for cases when high accuracy of classification is required.
-
 ## Description
-Deeper neural networks are more difficult to train. Residual learning framework ease the training of networks that are substantially deeper. The research explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. It also provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset the residual networks are evaluated with a depth of up to 152 layers - 8X deeper than VGG nets but still having lower complexity.
-
-ONNX ResNet50-v1 ==> Quantized ONNX ResNet50-v1
-
-## Model
 
 The model below is ResNet50-v1. ResNet50_int8 is obtained by quantizing ResNet50_fp32 model. Note the latency depends on the test hardware and the displayed results are tested by Intel® Xeon® Platinum 8280 Processor. 
 
@@ -44,7 +36,7 @@ def preprocess(img):
 ```
 
 ### Output
-The model outputs image scores for each of the [1000 classes of ImageNet](../../synset.txt).
+The model outputs image scores for each class.
 
 ### Postprocessing
 The post-processing sort the predictions to report the most probable classes.
@@ -56,7 +48,7 @@ print('class=%s ; probability=%f' %(labels[a[0]],preds[a[0]]))
 ```
 
 ### Dataset
-Dataset used for validation: [ImageNet (ILSVRC2012)](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../../imagenet_prep.md) for guidelines on preparing the dataset.
+Please refer to [Resnet Description](../README.md) for dataset information.
 
 ## Quantization
 We use [Intel® Low Precision Optimization Tool (LPOT)](https://github.com/intel/lpot) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/lpot/tree/master/examples/onnxrt/onnx_model_zoo/resnet50/README.md) to understand how to use LPOT for quantization.
