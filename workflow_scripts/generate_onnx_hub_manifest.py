@@ -36,20 +36,31 @@ def parse_html(table):
     return pd.DataFrame(data_matrix, columns=headers)
 
 
-globDirs = [join("..", "vision"), join("..", "text")]
+def parse_readme(filename):
+    with open(filename, "r") as f:
+        parsed = markdown.markdown(f.read(), extensions=["markdown.extensions.tables"])
+        soup = bs4.BeautifulSoup(parsed, "html.parser")
+        return [parse_html(table) for table in soup.find_all("table")]
 
-markdown_files = []
-for dir in globDirs:
-    markdown_files += glob.glob(join(dir, "**", "README.md"), recursive=True)
-manifest_object = []
+
+top_level_readme = join("..", "README.md")
+top_level_tables = parse_readme(top_level_readme)
+markdown_files = set()
+for top_level_table in top_level_tables:
+    for i, row in top_level_table.iterrows():
+        if "Model Class" in row:
+            try:
+                markdown_files.add(join(
+                    "..", row["Model Class"].contents[0].contents[0].attrs['href'], "README.md"))
+            except AttributeError:
+                print("{} has no link to implementation".format(row["Model Class"].contents[0]))
+# Sort for reproducibility
+markdown_files = sorted(list(markdown_files))
 
 all_tables = []
 for markdown_file in markdown_files:
     with open(markdown_file, "r") as f:
-        parsed = markdown.markdown(f.read(), extensions=["markdown.extensions.tables"])
-        soup = bs4.BeautifulSoup(parsed, "html.parser")
-        for table in soup.find_all("table"):
-            parsed = parse_html(table)
+        for parsed in parse_readme(markdown_file):
             parsed = parsed.rename(columns={"Opset Version": "Opset version"})
             if all(col in parsed.columns.values for col in ["Model", "Download", "Opset version", "ONNX version"]):
                 parsed["source_file"] = markdown_file
@@ -161,4 +172,5 @@ for i, row in renamed.iterrows():
         print("Missing model in {}".format(row["source_file"]))
 
 with open(join("..", "ONNX_HUB_MANIFEST.json"), "w+") as f:
+    print("Found {} models".format(len(output)))
     json.dump(output, f, indent=4)

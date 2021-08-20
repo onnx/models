@@ -1,5 +1,685 @@
 [
     {
+        "model": "BERT-Squad",
+        "model_path": "text/machine_comprehension/bert-squad/model/bertsquad-8.onnx",
+        "onnx_version": "1.3",
+        "opset_version": 8,
+        "metadata": {
+            "model_sha": "cad65b9807a5e0393e4f84331f9a0c5c844d9cc736e39781a80f9c48ca39447c",
+            "model_bytes": 435882893,
+            "tags": [
+                "text",
+                "machine comprehension",
+                "bert-squad"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "unique_ids_raw_output___9:0",
+                        "shape": [
+                            "unk__475"
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "segment_ids:0",
+                        "shape": [
+                            "unk__476",
+                            256
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "input_mask:0",
+                        "shape": [
+                            "unk__477",
+                            256
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "input_ids:0",
+                        "shape": [
+                            "unk__478",
+                            256
+                        ],
+                        "type": "tensor(int64)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "unstack:1",
+                        "shape": [
+                            "unk__479",
+                            256
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "unstack:0",
+                        "shape": [
+                            "unk__480",
+                            256
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "unique_ids:0",
+                        "shape": [
+                            "unk__481"
+                        ],
+                        "type": "tensor(int64)"
+                    }
+                ]
+            },
+            "model_with_data_path": "text/machine_comprehension/bert-squad/model/bertsquad-8.tar.gz",
+            "model_with_data_sha": "c8c6c7e0ab9e1333b86e8415a9d990b2570f9374f80be1c1cb72f182d266f666",
+            "model_with_data_bytes": 403400046
+        }
+    },
+    {
+        "model": "BERT-Squad",
+        "model_path": "text/machine_comprehension/bert-squad/model/bertsquad-10.onnx",
+        "onnx_version": "1.5",
+        "opset_version": 10,
+        "metadata": {
+            "model_sha": "5945dee6478abdab2d5e4ce3868b4d969741e3dad2134cc669da65a4f092755b",
+            "model_bytes": 435852734,
+            "tags": [
+                "text",
+                "machine comprehension",
+                "bert-squad"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "unique_ids_raw_output___9:0",
+                        "shape": [
+                            "unk__492"
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "segment_ids:0",
+                        "shape": [
+                            "unk__493",
+                            256
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "input_mask:0",
+                        "shape": [
+                            "unk__494",
+                            256
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "input_ids:0",
+                        "shape": [
+                            "unk__495",
+                            256
+                        ],
+                        "type": "tensor(int64)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "unstack:1",
+                        "shape": [
+                            "unk__496",
+                            256
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "unstack:0",
+                        "shape": [
+                            "unk__497",
+                            256
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "unique_ids:0",
+                        "shape": [
+                            "unk__498"
+                        ],
+                        "type": "tensor(int64)"
+                    }
+                ]
+            },
+            "model_with_data_path": "text/machine_comprehension/bert-squad/model/bertsquad-10.tar.gz",
+            "model_with_data_sha": "5ed61ab22c90db6928e88fad21f72217b04d6b5ed249c92de46321f77a6f35c3",
+            "model_with_data_bytes": 403081843
+        }
+    },
+    {
+        "model": "GPT-2",
+        "model_path": "text/machine_comprehension/gpt-2/model/gpt2-10.onnx",
+        "onnx_version": "1.6",
+        "opset_version": 10,
+        "metadata": {
+            "model_sha": "a4b41071a9fd8fd5591d74d6c7e3a850feaf161f7289148a3b845c84f75c55e0",
+            "model_bytes": 548227537,
+            "tags": [
+                "text",
+                "machine comprehension",
+                "gpt-2"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input1",
+                        "shape": [
+                            "input1_dynamic_axes_1",
+                            "input1_dynamic_axes_2",
+                            "input1_dynamic_axes_3"
+                        ],
+                        "type": "tensor(int64)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "output1",
+                        "shape": [
+                            1,
+                            1,
+                            8,
+                            768
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output2",
+                        "shape": [
+                            2,
+                            1,
+                            12,
+                            8,
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output3",
+                        "shape": [
+                            2,
+                            1,
+                            12,
+                            8,
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output4",
+                        "shape": [
+                            2,
+                            1,
+                            12,
+                            8,
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output5",
+                        "shape": [
+                            2,
+                            1,
+                            12,
+                            8,
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output6",
+                        "shape": [
+                            2,
+                            1,
+                            12,
+                            8,
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output7",
+                        "shape": [
+                            2,
+                            1,
+                            12,
+                            8,
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output8",
+                        "shape": [
+                            2,
+                            1,
+                            12,
+                            8,
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output9",
+                        "shape": [
+                            2,
+                            1,
+                            12,
+                            8,
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output10",
+                        "shape": [
+                            2,
+                            1,
+                            12,
+                            8,
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output11",
+                        "shape": [
+                            2,
+                            1,
+                            12,
+                            8,
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output12",
+                        "shape": [
+                            2,
+                            1,
+                            12,
+                            8,
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output13",
+                        "shape": [
+                            2,
+                            1,
+                            12,
+                            8,
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "text/machine_comprehension/gpt-2/model/gpt2-10.tar.gz",
+            "model_with_data_sha": "0c9b81350c95cf2f40e8e72f76792ef6b3c73894beee571171739079330aad53",
+            "model_with_data_bytes": 463131530
+        }
+    },
+    {
+        "model": "GPT-2-LM-HEAD",
+        "model_path": "text/machine_comprehension/gpt-2/model/gpt2-lm-head-10.onnx",
+        "onnx_version": "1.6",
+        "opset_version": 10,
+        "metadata": {
+            "model_sha": "12fbb1ec2d2d70c8ebd21a290a348a4109447b98582af64c6f93b6526d5c8f35",
+            "model_bytes": 664871060,
+            "tags": [
+                "text",
+                "machine comprehension",
+                "gpt-2"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input1",
+                        "shape": [
+                            "input1_dynamic_axes_1",
+                            "input1_dynamic_axes_2",
+                            "input1_dynamic_axes_3"
+                        ],
+                        "type": "tensor(int64)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "output1",
+                        "shape": [
+                            "input1_dynamic_axes_1",
+                            "input1_dynamic_axes_2",
+                            "input1_dynamic_axes_3",
+                            50257
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output2",
+                        "shape": [
+                            2,
+                            "input1_dynamic_axes_2",
+                            12,
+                            "input1_dynamic_axes_3",
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output3",
+                        "shape": [
+                            2,
+                            "input1_dynamic_axes_2",
+                            12,
+                            "input1_dynamic_axes_3",
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output4",
+                        "shape": [
+                            2,
+                            "input1_dynamic_axes_2",
+                            12,
+                            "input1_dynamic_axes_3",
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output5",
+                        "shape": [
+                            2,
+                            "input1_dynamic_axes_2",
+                            12,
+                            "input1_dynamic_axes_3",
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output6",
+                        "shape": [
+                            2,
+                            "input1_dynamic_axes_2",
+                            12,
+                            "input1_dynamic_axes_3",
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output7",
+                        "shape": [
+                            2,
+                            "input1_dynamic_axes_2",
+                            12,
+                            "input1_dynamic_axes_3",
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output8",
+                        "shape": [
+                            2,
+                            "input1_dynamic_axes_2",
+                            12,
+                            "input1_dynamic_axes_3",
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output9",
+                        "shape": [
+                            2,
+                            "input1_dynamic_axes_2",
+                            12,
+                            "input1_dynamic_axes_3",
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output10",
+                        "shape": [
+                            2,
+                            "input1_dynamic_axes_2",
+                            12,
+                            "input1_dynamic_axes_3",
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output11",
+                        "shape": [
+                            2,
+                            "input1_dynamic_axes_2",
+                            12,
+                            "input1_dynamic_axes_3",
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output12",
+                        "shape": [
+                            2,
+                            "input1_dynamic_axes_2",
+                            12,
+                            "input1_dynamic_axes_3",
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output13",
+                        "shape": [
+                            2,
+                            "input1_dynamic_axes_2",
+                            12,
+                            "input1_dynamic_axes_3",
+                            64
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "text/machine_comprehension/gpt-2/model/gpt2-lm-head-10.tar.gz",
+            "model_with_data_sha": "820f53e5403bb9fa0dac10af138cedcb71f282a527f04d76e35db5b2b88871c8",
+            "model_with_data_bytes": 606542743
+        }
+    },
+    {
+        "model": "RoBERTa-BASE",
+        "model_path": "text/machine_comprehension/roberta/model/roberta-base-11.onnx",
+        "onnx_version": "1.6",
+        "opset_version": 11,
+        "metadata": {
+            "model_sha": "ad476a33a4b227f6e6b2e1c7192df1b61640657f26b390857ab943de66236c0b",
+            "model_bytes": 498649858,
+            "tags": [
+                "text",
+                "machine comprehension",
+                "roberta"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input_ids",
+                        "shape": [
+                            "batch_size",
+                            "seq_len"
+                        ],
+                        "type": "tensor(int64)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "output_1",
+                        "shape": [
+                            "batch_size",
+                            "seq_len",
+                            768
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "output_2",
+                        "shape": [
+                            "batch_size",
+                            768
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "text/machine_comprehension/roberta/model/roberta-base-11.tar.gz",
+            "model_with_data_sha": "b14c5c6d6f656192390f7e7b22da2b47755f9f0a5a2b1907205096f7bf14a72d",
+            "model_with_data_bytes": 295338327
+        }
+    },
+    {
+        "model": "RoBERTa-SequenceClassification",
+        "model_path": "text/machine_comprehension/roberta/model/roberta-sequence-classification-9.onnx",
+        "onnx_version": "1.6",
+        "opset_version": 9,
+        "metadata": {
+            "model_sha": "8b28f588889de84ef45918765b25bd0e74179b9be5d9320dafdddcb2553784cc",
+            "model_bytes": 498658080,
+            "tags": [
+                "text",
+                "machine comprehension",
+                "roberta"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input",
+                        "shape": [
+                            "batch_size",
+                            "sentence_length"
+                        ],
+                        "type": "tensor(int64)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "output",
+                        "shape": [
+                            "batch_size",
+                            2
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "text/machine_comprehension/roberta/model/roberta-sequence-classification-9.tar.gz",
+            "model_with_data_sha": "149f8aa33713d9ae0411cee5cdc47107bafe771e93f590de6c082b45b2f6984d",
+            "model_with_data_bytes": 431685676
+        }
+    },
+    {
+        "model": "T5-encoder",
+        "model_path": "text/machine_comprehension/t5/model/t5-encoder-12.onnx",
+        "onnx_version": "1.6",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "4523122d7cf0f50905694d84995633c8a0cc223da762d3eb2aaffa17251a6f60",
+            "model_bytes": 438549611,
+            "tags": [
+                "text",
+                "machine comprehension",
+                "t5"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input_ids",
+                        "shape": [
+                            "batch",
+                            "sequence"
+                        ],
+                        "type": "tensor(int64)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "hidden_states",
+                        "shape": [
+                            "batch",
+                            "sequence",
+                            768
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "model": "T5-decoder-with-lm-head",
+        "model_path": "text/machine_comprehension/t5/model/t5-decoder-with-lm-head-12.onnx",
+        "onnx_version": "1.6",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "235afca35d3c47a5fd7209844ac11f3157fe7263fd074197a45b7f536e40ea56",
+            "model_bytes": 650564941,
+            "tags": [
+                "text",
+                "machine comprehension",
+                "t5"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input_ids",
+                        "shape": [
+                            "batch",
+                            "sequence"
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "encoder_hidden_states",
+                        "shape": [
+                            "batch",
+                            "sequence",
+                            768
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "hidden_states",
+                        "shape": [
+                            "batch",
+                            "sequence",
+                            32128
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            }
+        }
+    },
+    {
         "model": "LResNet100E-IR",
         "model_path": "vision/body_analysis/arcface/model/arcfaceresnet100-8.onnx",
         "onnx_version": "1.3",
@@ -4515,686 +5195,6 @@
             "model_with_data_path": "vision/super_resolution/sub_pixel_cnn_2016/model/super-resolution-10.tar.gz",
             "model_with_data_sha": "e42d465bfbed87ea770a7a856ba5d0c62b7fa8e2e0c260e6750e82ce9ddb72f2",
             "model_with_data_bytes": 1815286
-        }
-    },
-    {
-        "model": "BERT-Squad",
-        "model_path": "text/machine_comprehension/bert-squad/model/bertsquad-8.onnx",
-        "onnx_version": "1.3",
-        "opset_version": 8,
-        "metadata": {
-            "model_sha": "cad65b9807a5e0393e4f84331f9a0c5c844d9cc736e39781a80f9c48ca39447c",
-            "model_bytes": 435882893,
-            "tags": [
-                "text",
-                "machine comprehension",
-                "bert-squad"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "unique_ids_raw_output___9:0",
-                        "shape": [
-                            "unk__475"
-                        ],
-                        "type": "tensor(int64)"
-                    },
-                    {
-                        "name": "segment_ids:0",
-                        "shape": [
-                            "unk__476",
-                            256
-                        ],
-                        "type": "tensor(int64)"
-                    },
-                    {
-                        "name": "input_mask:0",
-                        "shape": [
-                            "unk__477",
-                            256
-                        ],
-                        "type": "tensor(int64)"
-                    },
-                    {
-                        "name": "input_ids:0",
-                        "shape": [
-                            "unk__478",
-                            256
-                        ],
-                        "type": "tensor(int64)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "unstack:1",
-                        "shape": [
-                            "unk__479",
-                            256
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "unstack:0",
-                        "shape": [
-                            "unk__480",
-                            256
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "unique_ids:0",
-                        "shape": [
-                            "unk__481"
-                        ],
-                        "type": "tensor(int64)"
-                    }
-                ]
-            },
-            "model_with_data_path": "text/machine_comprehension/bert-squad/model/bertsquad-8.tar.gz",
-            "model_with_data_sha": "c8c6c7e0ab9e1333b86e8415a9d990b2570f9374f80be1c1cb72f182d266f666",
-            "model_with_data_bytes": 403400046
-        }
-    },
-    {
-        "model": "BERT-Squad",
-        "model_path": "text/machine_comprehension/bert-squad/model/bertsquad-10.onnx",
-        "onnx_version": "1.5",
-        "opset_version": 10,
-        "metadata": {
-            "model_sha": "5945dee6478abdab2d5e4ce3868b4d969741e3dad2134cc669da65a4f092755b",
-            "model_bytes": 435852734,
-            "tags": [
-                "text",
-                "machine comprehension",
-                "bert-squad"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "unique_ids_raw_output___9:0",
-                        "shape": [
-                            "unk__492"
-                        ],
-                        "type": "tensor(int64)"
-                    },
-                    {
-                        "name": "segment_ids:0",
-                        "shape": [
-                            "unk__493",
-                            256
-                        ],
-                        "type": "tensor(int64)"
-                    },
-                    {
-                        "name": "input_mask:0",
-                        "shape": [
-                            "unk__494",
-                            256
-                        ],
-                        "type": "tensor(int64)"
-                    },
-                    {
-                        "name": "input_ids:0",
-                        "shape": [
-                            "unk__495",
-                            256
-                        ],
-                        "type": "tensor(int64)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "unstack:1",
-                        "shape": [
-                            "unk__496",
-                            256
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "unstack:0",
-                        "shape": [
-                            "unk__497",
-                            256
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "unique_ids:0",
-                        "shape": [
-                            "unk__498"
-                        ],
-                        "type": "tensor(int64)"
-                    }
-                ]
-            },
-            "model_with_data_path": "text/machine_comprehension/bert-squad/model/bertsquad-10.tar.gz",
-            "model_with_data_sha": "5ed61ab22c90db6928e88fad21f72217b04d6b5ed249c92de46321f77a6f35c3",
-            "model_with_data_bytes": 403081843
-        }
-    },
-    {
-        "model": "GPT-2",
-        "model_path": "text/machine_comprehension/gpt-2/model/gpt2-10.onnx",
-        "onnx_version": "1.6",
-        "opset_version": 10,
-        "metadata": {
-            "model_sha": "a4b41071a9fd8fd5591d74d6c7e3a850feaf161f7289148a3b845c84f75c55e0",
-            "model_bytes": 548227537,
-            "tags": [
-                "text",
-                "machine comprehension",
-                "gpt-2"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "input1",
-                        "shape": [
-                            "input1_dynamic_axes_1",
-                            "input1_dynamic_axes_2",
-                            "input1_dynamic_axes_3"
-                        ],
-                        "type": "tensor(int64)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "output1",
-                        "shape": [
-                            1,
-                            1,
-                            8,
-                            768
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output2",
-                        "shape": [
-                            2,
-                            1,
-                            12,
-                            8,
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output3",
-                        "shape": [
-                            2,
-                            1,
-                            12,
-                            8,
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output4",
-                        "shape": [
-                            2,
-                            1,
-                            12,
-                            8,
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output5",
-                        "shape": [
-                            2,
-                            1,
-                            12,
-                            8,
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output6",
-                        "shape": [
-                            2,
-                            1,
-                            12,
-                            8,
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output7",
-                        "shape": [
-                            2,
-                            1,
-                            12,
-                            8,
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output8",
-                        "shape": [
-                            2,
-                            1,
-                            12,
-                            8,
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output9",
-                        "shape": [
-                            2,
-                            1,
-                            12,
-                            8,
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output10",
-                        "shape": [
-                            2,
-                            1,
-                            12,
-                            8,
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output11",
-                        "shape": [
-                            2,
-                            1,
-                            12,
-                            8,
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output12",
-                        "shape": [
-                            2,
-                            1,
-                            12,
-                            8,
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output13",
-                        "shape": [
-                            2,
-                            1,
-                            12,
-                            8,
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "model_with_data_path": "text/machine_comprehension/gpt-2/model/gpt2-10.tar.gz",
-            "model_with_data_sha": "0c9b81350c95cf2f40e8e72f76792ef6b3c73894beee571171739079330aad53",
-            "model_with_data_bytes": 463131530
-        }
-    },
-    {
-        "model": "GPT-2-LM-HEAD",
-        "model_path": "text/machine_comprehension/gpt-2/model/gpt2-lm-head-10.onnx",
-        "onnx_version": "1.6",
-        "opset_version": 10,
-        "metadata": {
-            "model_sha": "12fbb1ec2d2d70c8ebd21a290a348a4109447b98582af64c6f93b6526d5c8f35",
-            "model_bytes": 664871060,
-            "tags": [
-                "text",
-                "machine comprehension",
-                "gpt-2"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "input1",
-                        "shape": [
-                            "input1_dynamic_axes_1",
-                            "input1_dynamic_axes_2",
-                            "input1_dynamic_axes_3"
-                        ],
-                        "type": "tensor(int64)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "output1",
-                        "shape": [
-                            "input1_dynamic_axes_1",
-                            "input1_dynamic_axes_2",
-                            "input1_dynamic_axes_3",
-                            50257
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output2",
-                        "shape": [
-                            2,
-                            "input1_dynamic_axes_2",
-                            12,
-                            "input1_dynamic_axes_3",
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output3",
-                        "shape": [
-                            2,
-                            "input1_dynamic_axes_2",
-                            12,
-                            "input1_dynamic_axes_3",
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output4",
-                        "shape": [
-                            2,
-                            "input1_dynamic_axes_2",
-                            12,
-                            "input1_dynamic_axes_3",
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output5",
-                        "shape": [
-                            2,
-                            "input1_dynamic_axes_2",
-                            12,
-                            "input1_dynamic_axes_3",
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output6",
-                        "shape": [
-                            2,
-                            "input1_dynamic_axes_2",
-                            12,
-                            "input1_dynamic_axes_3",
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output7",
-                        "shape": [
-                            2,
-                            "input1_dynamic_axes_2",
-                            12,
-                            "input1_dynamic_axes_3",
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output8",
-                        "shape": [
-                            2,
-                            "input1_dynamic_axes_2",
-                            12,
-                            "input1_dynamic_axes_3",
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output9",
-                        "shape": [
-                            2,
-                            "input1_dynamic_axes_2",
-                            12,
-                            "input1_dynamic_axes_3",
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output10",
-                        "shape": [
-                            2,
-                            "input1_dynamic_axes_2",
-                            12,
-                            "input1_dynamic_axes_3",
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output11",
-                        "shape": [
-                            2,
-                            "input1_dynamic_axes_2",
-                            12,
-                            "input1_dynamic_axes_3",
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output12",
-                        "shape": [
-                            2,
-                            "input1_dynamic_axes_2",
-                            12,
-                            "input1_dynamic_axes_3",
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output13",
-                        "shape": [
-                            2,
-                            "input1_dynamic_axes_2",
-                            12,
-                            "input1_dynamic_axes_3",
-                            64
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "model_with_data_path": "text/machine_comprehension/gpt-2/model/gpt2-lm-head-10.tar.gz",
-            "model_with_data_sha": "820f53e5403bb9fa0dac10af138cedcb71f282a527f04d76e35db5b2b88871c8",
-            "model_with_data_bytes": 606542743
-        }
-    },
-    {
-        "model": "RoBERTa-BASE",
-        "model_path": "text/machine_comprehension/roberta/model/roberta-base-11.onnx",
-        "onnx_version": "1.6",
-        "opset_version": 11,
-        "metadata": {
-            "model_sha": "ad476a33a4b227f6e6b2e1c7192df1b61640657f26b390857ab943de66236c0b",
-            "model_bytes": 498649858,
-            "tags": [
-                "text",
-                "machine comprehension",
-                "roberta"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "input_ids",
-                        "shape": [
-                            "batch_size",
-                            "seq_len"
-                        ],
-                        "type": "tensor(int64)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "output_1",
-                        "shape": [
-                            "batch_size",
-                            "seq_len",
-                            768
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "output_2",
-                        "shape": [
-                            "batch_size",
-                            768
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "model_with_data_path": "text/machine_comprehension/roberta/model/roberta-base-11.tar.gz",
-            "model_with_data_sha": "b14c5c6d6f656192390f7e7b22da2b47755f9f0a5a2b1907205096f7bf14a72d",
-            "model_with_data_bytes": 295338327
-        }
-    },
-    {
-        "model": "RoBERTa-SequenceClassification",
-        "model_path": "text/machine_comprehension/roberta/model/roberta-sequence-classification-9.onnx",
-        "onnx_version": "1.6",
-        "opset_version": 9,
-        "metadata": {
-            "model_sha": "8b28f588889de84ef45918765b25bd0e74179b9be5d9320dafdddcb2553784cc",
-            "model_bytes": 498658080,
-            "tags": [
-                "text",
-                "machine comprehension",
-                "roberta"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "input",
-                        "shape": [
-                            "batch_size",
-                            "sentence_length"
-                        ],
-                        "type": "tensor(int64)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "output",
-                        "shape": [
-                            "batch_size",
-                            2
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "model_with_data_path": "text/machine_comprehension/roberta/model/roberta-sequence-classification-9.tar.gz",
-            "model_with_data_sha": "149f8aa33713d9ae0411cee5cdc47107bafe771e93f590de6c082b45b2f6984d",
-            "model_with_data_bytes": 431685676
-        }
-    },
-    {
-        "model": "T5-encoder",
-        "model_path": "text/machine_comprehension/t5/model/t5-encoder-12.onnx",
-        "onnx_version": "1.6",
-        "opset_version": 12,
-        "metadata": {
-            "model_sha": "4523122d7cf0f50905694d84995633c8a0cc223da762d3eb2aaffa17251a6f60",
-            "model_bytes": 438549611,
-            "tags": [
-                "text",
-                "machine comprehension",
-                "t5"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "input_ids",
-                        "shape": [
-                            "batch",
-                            "sequence"
-                        ],
-                        "type": "tensor(int64)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "hidden_states",
-                        "shape": [
-                            "batch",
-                            "sequence",
-                            768
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            }
-        }
-    },
-    {
-        "model": "T5-decoder-with-lm-head",
-        "model_path": "text/machine_comprehension/t5/model/t5-decoder-with-lm-head-12.onnx",
-        "onnx_version": "1.6",
-        "opset_version": 12,
-        "metadata": {
-            "model_sha": "235afca35d3c47a5fd7209844ac11f3157fe7263fd074197a45b7f536e40ea56",
-            "model_bytes": 650564941,
-            "tags": [
-                "text",
-                "machine comprehension",
-                "t5"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "input_ids",
-                        "shape": [
-                            "batch",
-                            "sequence"
-                        ],
-                        "type": "tensor(int64)"
-                    },
-                    {
-                        "name": "encoder_hidden_states",
-                        "shape": [
-                            "batch",
-                            "sequence",
-                            768
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "hidden_states",
-                        "shape": [
-                            "batch",
-                            "sequence",
-                            32128
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            }
         }
     }
 ]
