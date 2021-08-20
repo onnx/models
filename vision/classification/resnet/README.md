@@ -23,7 +23,7 @@ ResNet v2 uses pre-activation function whereas ResNet v1  uses post-activation f
 
 [Run ResNet-50 in browser](https://microsoft.github.io/onnxjs-demo/#/resnet50) - implemented by ONNX.js with ResNet50-Caffe2 release 1.2
 
-[Details of Resnet-50 quantization & evaluation](./model_quantized/README.md) - implemented by [Intel® Low Precision Optimization Tool (LPOT)](https://github.com/intel/lpot)
+[Details of Resnet-50 quantization & evaluation](./Quantization.md) - implemented by [Intel® Low Precision Optimization Tool (LPOT)](https://github.com/intel/lpot)
 
 * ResNet V1:
 
@@ -42,6 +42,14 @@ ResNet v2 uses pre-activation function whereas ResNet v1  uses post-activation f
 |ResNet50-caffe2| [32 MB](model/resnet50-caffe2-v1-7.onnx)  |  [100 MB](model/resnet50-caffe2-v1-7.tar.gz) |  1.2 | 7|
 |ResNet50-caffe2| [32 MB](model/resnet50-caffe2-v1-8.onnx)  |  [100 MB](model/resnet50-caffe2-v1-8.tar.gz) |  1.3 | 8|
 |ResNet50-caffe2| [32 MB](model/resnet50-caffe2-v1-9.onnx)  |  [100 MB](model/resnet50-caffe2-v1-9.tar.gz) |  1.4 | 9|
+
+|Model        |Download  |Download (with sample test data)| ONNX version |Opset version|Top-1 accuracy (%)|latency (ms)|
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|ResNet50_fp32|[97.8 MB](model/resnet50-v1-12.onnx)|[92.0 MB](model/resnet50-v1-12.tar.gz)|1.7.0|12|74.97|8.32|
+|ResNet50_int8|[24.6 MB](model/resnet50-v1-12-int8.onnx)|[22.3 MB](model/resnet50-v1-12-int8.tar.gz)|1.7.0|12|74.77|4.30|
+
+> Note the latency depends on the test hardware and the displayed results are tested by Intel® Xeon® Platinum 8280 Processor.
+> Compared with the fp32 model, we get an accuracy drop of 0.2% and a performance improvement of 1.9X after quantization.
 
 * ResNet V2:
 
