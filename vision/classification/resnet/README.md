@@ -23,8 +23,6 @@ ResNet v2 uses pre-activation function whereas ResNet v1  uses post-activation f
 
 [Run ResNet-50 in browser](https://microsoft.github.io/onnxjs-demo/#/resnet50) - implemented by ONNX.js with ResNet50-Caffe2 release 1.2
 
-[Details of Resnet-50 quantization & evaluation](./Quantization.md) - implemented by [Intel® Low Precision Optimization Tool (LPOT)](https://github.com/intel/lpot)
-
 * ResNet V1:
 
 |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|Top-1 accuracy (%)|Top-5 accuracy (%)|Realtime (ms)|
