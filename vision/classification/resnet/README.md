@@ -9,8 +9,12 @@ ResNet models perform image classification - they take images as input and class
 Deeper neural networks are more difficult to train. Residual learning framework ease the training of networks that are substantially deeper. The research explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. It also provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset the residual nets were evaluated with a depth of up to 152 layers — 8× deeper than VGG nets but still having lower complexity.
 
 MXNet ResNet-v1 ==> ONNX ResNet-v1 [18, 34, 50, 101, 152]
+
 MXNet ResNet-v2 ==> ONNX ResNet-v2 [18, 34, 50, 101, 152]
+
 Caffe2 ResNet-50 ==> ONNX ResNet [50-caffe2]
+
+ONNX ResNet50-v1 ==> Quantized ONNX ResNet50-v1
 
 ## Model
 
@@ -26,8 +30,15 @@ ResNet v2 uses pre-activation function whereas ResNet v1  uses post-activation f
 |ResNet18|    [44.7 MB](model/resnet18-v1-7.onnx)    |[42.9 MB](model/resnet18-v1-7.tar.gz)    |  1.2.1  |7| 69.93         |    89.29|
 |ResNet34|    [83.3 MB](model/resnet34-v1-7.onnx)    | [78.6 MB](model/resnet34-v1-7.tar.gz)    |  1.2.1   |7|73.73         |     91.40           |
 |ResNet50|    [97.8 MB](model/resnet50-v1-7.onnx)    |[92.2 MB](model/resnet50-v1-7.tar.gz)    |1.2.1    |7|74.93         |     92.38           |
-|ResNet101|    [170.6 MB](model/resnet101-v1-7.onnx)   | [159.8 MB](model/resnet101-v1-7.tar.gz)    |  1.2.1  |7  | 76.48         |     93.20           |
-|ResNet152|    [230.6 MB](model/resnet152-v1-7.onnx)    |[217.2 MB](model/resnet152-v1-7.tar.gz)    | 1.2.1  |7 |77.11         |     93.61           |
+|ResNet101|    [170.6 MB](model/resnet101-v1-7.onnx)   | [159.8 MB](model/resnet101-v1-7.tar.gz)    |  1.2.1  |7  | 76.48         |     93.20         |
+|ResNet152|    [230.6 MB](model/resnet152-v1-7.onnx)    |[217.2 MB](model/resnet152-v1-7.tar.gz)    | 1.2.1  |7 |77.11         |     93.61         |
+|ResNet50_fp32| [97.8 MB](model/resnet50-v1-12.onnx) |[92.0 MB](model/resnet50-v1-12.tar.gz)   |1.7.0 |12 |74.97 |92.33 |
+|ResNet50_int8| [24.6 MB](model/resnet50-v1-12-int8.onnx) |[22.3 MB](model/resnet50-v1-12-int8.tar.gz) |1.7.0 |12 |74.77 |92.32 |
+> Compared with the fp32 ResNet50, int8 ResNet50's Top-1 accuracy drop ratio is 0.27%, Top-5 accuracy drop ratio is 0.01% and performance improvement is 1.82x.
+>
+> Note the performance depends on the test hardware. 
+> 
+> Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
 |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
 |-------------|:--------------|:--------------|:--------------|:--------------|
@@ -97,6 +108,29 @@ We used MXNet as framework with gluon APIs to perform training. View the [traini
 ## Validation
 We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_validation](../imagenet_validation.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 
+## Quantization
+ResNet50_int8 is obtained by quantizing ResNet50_fp32 model. We use [Intel® Low Precision Optimization Tool (LPOT)](https://github.com/intel/lpot) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/lpot/tree/master/examples/onnxrt/onnx_model_zoo/resnet50/README.md) to understand how to use LPOT for quantization.
+
+### Environment
+onnx: 1.7.0 
+onnxruntime: 1.6.0+
+
+### Prepare model
+```shell
+wget https://github.com/onnx/models/tree/master/vision/classification/resnet/model/resnet50-v1-12.onnx
+```
+
+### Model quantize
+Make sure to specify the appropriate dataset path in the configuration file.
+```bash
+bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
+                   --config=resnet50_v1_5.yaml \
+                   --output_model=path/to/save
+```
+
+### Model inference
+We use onnxruntime to perform Resnet50_fp32 and Resnet50_int8 inference. View the notebook [onnxrt_inference](../onnxrt_inference.ipynb) to understand how to use these 2 models for doing inference as well as which preprocess and postprocess we use.
+
 ## References
 * **ResNetv1**
 [Deep residual learning for image recognition](https://arxiv.org/abs/1512.03385)
@@ -109,9 +143,15 @@ In European Conference on Computer Vision, pp. 630-645. Springer, Cham, 2016.
 
 * [MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io)
 
+* [Intel® Low Precision Optimization Tool (LPOT)](https://github.com/intel/lpot)
+
 ## Contributors
 * [ankkhedia](https://github.com/ankkhedia) (Amazon AI)
 * [abhinavs95](https://github.com/abhinavs95) (Amazon AI)
+* [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [airMeng](https://github.com/airMeng) (Intel)
+* [ftian1](https://github.com/ftian1) (Intel)
+* [hshen14](https://github.com/hshen14) (Intel)
 
 ## License
 Apache 2.0
