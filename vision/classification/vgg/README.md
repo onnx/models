@@ -10,7 +10,10 @@ VGG models provide very high accuracies but at the cost of increased model sizes
 VGG presents the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. VGG networks have increased depth with very small (3 × 3) convolution filters, which showed a significant improvement on the prior-art configurations achieved by pushing the depth to 16–19 weight layers. The work secured the first and the second places in the localization and classification tracks respectively in ImageNet Challenge 2014. The representations from VGG generalize well to other datasets, where they achieve state-of-the-art results.
 
 MXNet VGG ==> ONNX VGG [16, 16-bn, 19, 19-bn]
+
 Caffe2 VGG-19 ==> ONNX VGG [19-caffe2]
+
+ONNX vgg16 ==> Quantized ONNX vgg16
 
 ## Model
 
@@ -22,6 +25,13 @@ The models below are variant of same network with different number of layers and
 |VGG 16-bn|    [527.9 MB](model/vgg16-bn-7.onnx) |[490.2 MB](model/vgg16-bn-7.tar.gz)   |  1.2.1  |7|   72.71     |      91.21    |
 |VGG 19|    [548.1 MB](model/vgg19-7.onnx)    |[508.5 MB](model/vgg19-7.tar.gz)| 1.2.1  |7 | 73.72     |      91.58     |
 |VGG 19-bn|    [548.1 MB](model/vgg19-bn-7.onnx) |[508.6 MB](model/vgg19-bn-7.tar.gz)   |  1.2.1 |7   | 73.83    |      91.79     |
+|VGG 16-fp32|    [527.8 MB](model/vgg16-12.onnx)   |[488.2 MB](model/vgg16-12.tar.gz)| 1.9.0 | 12 | 72.38 | 91.00 |
+|VGG 16-int8|    [132.0 MB](model/vgg16-12-int8.onnx)   |[101.1 MB](model/vgg16-12-int8.tar.gz)| 1.9.0 | 12 | 72.32 | 90.97 |
+> Compared with the fp32 VGG 16, int8 VGG 16's Top-1 accuracy drop ratio is 0.06%, Top-5 accuracy drop ratio is 0.03% and performance improvement is 2.31x.
+>
+> Note the performance depends on the test hardware. 
+> 
+> Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
 |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
 |-------------|:--------------|:--------------|:--------------|:--------------|
@@ -70,6 +80,28 @@ We used MXNet as framework with gluon APIs to perform training. View the [traini
 ## Validation
 We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_validation](../imagenet_validation.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 
+## Quantization
+VGG 16-int8 is obtained by quantizing VGG 16-fp32 model. We use [Intel® Low Precision Optimization Tool (LPOT)](https://github.com/intel/lpot) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/lpot/tree/master/examples/onnxrt/onnx_model_zoo/vgg16/README.md) to understand how to use LPOT for quantization.
+
+### Environment
+onnx: 1.9.0 
+onnxruntime: 1.8.0
+
+### Prepare model
+```shell
+wget https://github.com/onnx/models/tree/master/vision/classification/vgg/model/vgg16-12.onnx
+```
+
+### Model quantize
+Make sure to specify the appropriate dataset path in the configuration file.
+```bash
+bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
+                   --config=vgg16.yaml \
+                   --output_model=path/to/save
+```
+
+### Model inference
+We use onnxruntime to perform VGG 16-fp32 and VGG 16-int8 inference. View the notebook [onnxrt_inference](../onnxrt_inference.ipynb) to understand how to use these 2 models for doing inference as well as which preprocess and postprocess we use.
 
 ## References
 * **VGG 16** and **VGG 19** are from the paper [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/abs/1409.1556)
@@ -78,9 +110,15 @@ We used MXNet as framework with gluon APIs to perform validation. Use the notebo
 
 * [MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io)
 
+* [Intel® Low Precision Optimization Tool (LPOT)](https://github.com/intel/lpot)
+
 ## Contributors
 * [abhinavs95](https://github.com/abhinavs95) (Amazon AI)
 * [ankkhedia](https://github.com/ankkhedia) (Amazon AI)
+* [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [airMeng](https://github.com/airMeng) (Intel)
+* [ftian1](https://github.com/ftian1) (Intel)
+* [hshen14](https://github.com/hshen14) (Intel)
 
 ## License
 Apache 2.0
