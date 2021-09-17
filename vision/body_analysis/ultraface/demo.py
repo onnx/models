@@ -9,7 +9,13 @@ from dependencies.box_utils import predict
 # ------------------------------------------------------------------------------------------------------------------------------------------------
 # Face detection using UltraFace-320 onnx model
 face_detector_onnx = "../ultraface/models/version-RFB-320.onnx"
-face_detector = ort.InferenceSession(face_detector_onnx)
+
+# Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
+# other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
+# based on the build flags) when instantiating InferenceSession.
+# Following code assumes NVIDIA GPU is available, you can specify other execution providers or don't include providers parameter
+# to use default CPU provider.
+face_detector = ort.InferenceSession(face_detector_onnx, providers=['CUDAExecutionProvider'])
 
 # scale current rectangle to box
 def scale(box):

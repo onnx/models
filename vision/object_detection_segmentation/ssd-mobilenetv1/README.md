@@ -26,8 +26,13 @@ Refer to this [conversion and inference notebook](https://github.com/onnx/tensor
 
     import onnxruntime as rt
 
-    # load model and run inference
-    sess = rt.InferenceSession(os.path.join(WORK, MODEL + ".onnx"))
+    # Load model and run inference
+    # Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
+    # other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
+    # based on the build flags) when instantiating InferenceSession.
+    # Following code assumes NVIDIA GPU is available, you can specify other execution providers or don't include providers parameter
+    # to use default CPU provider.
+    sess = rt.InferenceSession(os.path.join(WORK, MODEL + ".onnx"), providers=['CUDAExecutionProvider'])
     result = sess.run(outputs, {"image_tensor:0": img_data})
     num_detections, detection_boxes, detection_scores, detection_classes = result
 

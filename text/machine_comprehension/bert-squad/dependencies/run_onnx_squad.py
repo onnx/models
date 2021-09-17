@@ -540,7 +540,12 @@ def main():
         convert_examples_to_features(eval_examples, tokenizer, args.max_seq_length,
                                      args.doc_stride, args.max_query_length)
 
-    sess = onnxrt.InferenceSession(args.model, sess_options)
+    # Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
+    # other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
+    # based on the build flags) when instantiating InferenceSession.
+    # Following code assumes NVIDIA GPU is available, you can specify other execution providers or don't include providers parameter
+    # to use default CPU provider.
+    sess = onnxrt.InferenceSession(args.model, sess_options, providers=['CUDAExecutionProvider'])
     for input_meta in sess.get_inputs():
         print(input_meta)
     n = len(input_ids)

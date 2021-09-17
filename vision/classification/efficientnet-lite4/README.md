@@ -106,7 +106,12 @@ Output of model is an inference score with array shape `float32[1,1000]`. The ou
 The following steps detail how to print the output results of the model.
 
     # load the model
-    sess = rt.InferenceSession(MODEL + ".onnx")
+    # Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
+    # other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
+    # based on the build flags) when instantiating InferenceSession.
+    # Following code assumes NVIDIA GPU is available, you can specify other execution providers or don't include providers parameter
+    # to use default CPU provider.
+    sess = rt.InferenceSession(MODEL + ".onnx", providers=['CUDAExecutionProvider'])
     # run inference and print results
     results = sess.run(["Softmax:0"], {"images:0": img_batch})[0]
     result = reversed(results[0].argsort()[-5:])

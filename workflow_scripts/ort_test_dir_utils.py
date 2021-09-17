@@ -141,7 +141,12 @@ def create_test_dir(model_path, root_path, test_name,
     # save expected output data if provided. run model to create if not.
     if not name_output_map:
         output_names = [o.name for o in model_outputs]
-        sess = ort.InferenceSession(test_model_filename)
+        # Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
+        # other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
+        # based on the build flags) when instantiating InferenceSession.
+        # Following code assumes NVIDIA GPU is available, you can specify other execution providers or don't include providers parameter
+        # to use default CPU provider.
+        sess = ort.InferenceSession(test_model_filename, providers=['CUDAExecutionProvider'])
         outputs = sess.run(output_names, name_input_map)
         name_output_map = {}
         for name, data in zip(output_names, outputs):
@@ -209,7 +214,12 @@ def run_test_dir(model_or_dir):
     if not test_dirs:
         raise ValueError("No directories with name starting with 'test' were found in {}.".format(model_dir))
 
-    sess = ort.InferenceSession(model_path)
+    # Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
+    # other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
+    # based on the build flags) when instantiating InferenceSession.
+    # Following code assumes NVIDIA GPU is available, you can specify other execution providers or don't include providers parameter
+    # to use default CPU provider.
+    sess = ort.InferenceSession(model_path, providers=['CUDAExecutionProvider'])
 
     for d in test_dirs:
         print(d)
