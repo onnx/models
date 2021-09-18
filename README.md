@@ -20,7 +20,7 @@ We have standardized on [Git LFS (Large File Storage)](https://git-lfs.github.co
 #### Language
 * [Machine Comprehension](#machine_comprehension)
 * [Machine Translation](#machine_translation)
-* [Language Modelling](#language)
+* [Language Modelling](#language_modelling)
 
 #### Other
 * [Visual Question Answering & Dialog](#visual_qna)
@@ -128,7 +128,7 @@ This class of natural language processing models learns how to translate input t
 |Google's Neural Machine Translation System|	[Wu et al.](https://arxiv.org/abs/1609.08144)|This model helps to improve issues faced by the Neural Machine Translation (NMT) systems like parallelism that helps accelerate the final translation speed.<br>[contribute](contribute.md)|
 <hr>
 
-### Language Modelling <a name="language"/>
+### Language Modelling <a name="language_modelling"/>
 This subset of natural language processing models learns representations of language from large corpuses of text.
 
 |Model Class |Reference |Description |
