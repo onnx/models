@@ -29,6 +29,11 @@ The following steps show how to run the inference using onnxruntime.
     import onnxruntime as rt
 
     # load model
+    # Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
+    # other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
+    # based on the build flags) when instantiating InferenceSession.
+    # For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
+    # rt.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
     sess = rt.InferenceSession(MODEL + ".onnx")
     # run inference
     results = sess.run(["Softmax:0"], {"images:0": img_batch})[0]
@@ -109,9 +114,9 @@ The following steps detail how to print the output results of the model.
     # Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
     # other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
     # based on the build flags) when instantiating InferenceSession.
-    # Following code assumes NVIDIA GPU is available, you can specify other execution providers or don't include providers parameter
-    # to use default CPU provider.
-    sess = rt.InferenceSession(MODEL + ".onnx", providers=['CUDAExecutionProvider'])
+    # For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
+    # rt.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
+    sess = rt.InferenceSession(MODEL + ".onnx")
     # run inference and print results
     results = sess.run(["Softmax:0"], {"images:0": img_batch})[0]
     result = reversed(results[0].argsort()[-5:])

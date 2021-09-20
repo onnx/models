@@ -120,9 +120,9 @@ def get_model_io_ports(source_file):
         # Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
         # other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
         # based on the build flags) when instantiating InferenceSession.
-        # Following code assumes NVIDIA GPU is available, you can specify other execution providers or don't include providers parameter
-        # to use default CPU provider.
-        session = ort.InferenceSession(model_path, providers=['CUDAExecutionProvider'])
+        # For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
+        # ort.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
+        session = ort.InferenceSession(model_path])
         inputs = session.get_inputs()
         outputs = session.get_outputs()
         return {

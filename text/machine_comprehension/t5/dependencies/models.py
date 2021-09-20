@@ -90,10 +90,10 @@ class GenerativeT5(torch.nn.Module):
             >>> # Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
             >>> # other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
             >>> # based on the build flags) when instantiating InferenceSession.
-            >>> # Following code assumes NVIDIA GPU is available, you can specify other execution providers or don't include providers parameter
-            >>> # to use default CPU provider.
-            >>> decoder_sess = InferenceSession('~/t5-decoder-with-lm-head.onnx', providers=['CUDAExecutionProvider'])
-            >>> encoder_sess = InferenceSession('~/t5-encoder.onnx', providers=['CUDAExecutionProvider'])
+            >>> # For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
+            >>> # InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
+            >>> decoder_sess = InferenceSession('~/t5-decoder-with-lm-head.onnx')
+            >>> encoder_sess = InferenceSession('~/t5-encoder.onnx')
             >>> tokenizer = T5Tokenizer.from_pretrained(pretrained_model)
             >>> generative_t5 = GenerativeT5(encoder_sess, decoder_sess, tokenizer, onnx=True)
             >>> generative_t5('translate English to French: I was a victim of a series of accidents.', 16, temperature=0.)[0]
