@@ -122,7 +122,7 @@ def get_model_io_ports(source_file):
         # based on the build flags) when instantiating InferenceSession.
         # For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
         # ort.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
-        session = ort.InferenceSession(model_path])
+        session = ort.InferenceSession(model_path)
         inputs = session.get_inputs()
         outputs = session.get_outputs()
         return {
