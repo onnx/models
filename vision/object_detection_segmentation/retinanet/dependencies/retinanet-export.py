@@ -103,8 +103,8 @@ def inference(file, inputs, outputs):
     # other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
     # based on the build flags) when instantiating InferenceSession.
     # For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
-    # ort.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
-    sess = ort.InferenceSession(file)
+    # onnxruntime.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
+    sess = onnxruntime.InferenceSession(file)
     ort_inputs = dict((sess.get_inputs()[i].name, to_numpy(input)) for i, input in enumerate(inputs_flatten))
     res = sess.run(None, ort_inputs)
 
