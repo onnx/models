@@ -141,6 +141,11 @@ def create_test_dir(model_path, root_path, test_name,
     # save expected output data if provided. run model to create if not.
     if not name_output_map:
         output_names = [o.name for o in model_outputs]
+        # Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
+        # other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
+        # based on the build flags) when instantiating InferenceSession.
+        # For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
+        # ort.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
         sess = ort.InferenceSession(test_model_filename)
         outputs = sess.run(output_names, name_input_map)
         name_output_map = {}
@@ -209,6 +214,11 @@ def run_test_dir(model_or_dir):
     if not test_dirs:
         raise ValueError("No directories with name starting with 'test' were found in {}.".format(model_dir))
 
+    # Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
+    # other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
+    # based on the build flags) when instantiating InferenceSession.
+    # For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
+    # ort.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
     sess = ort.InferenceSession(model_path)
 
     for d in test_dirs:

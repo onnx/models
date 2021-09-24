@@ -68,6 +68,12 @@ from transformers import T5Tokenizer
 from .dependencies.models import GenerativeT5
 
 tokenizer = T5Tokenizer.from_pretrained('t5-base')
+
+# Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
+# other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
+# based on the build flags) when instantiating InferenceSession.
+# For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
+# InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
 decoder_sess = InferenceSession(str(path_t5_decoder))
 encoder_sess = InferenceSession(str(path_t5_encoder))
 generative_t5 = GenerativeT5(encoder_sess, decoder_sess, tokenizer, onnx=True)

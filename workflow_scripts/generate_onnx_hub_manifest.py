@@ -117,6 +117,11 @@ def get_model_io_ports(source_file):
     try:
         # Hide graph warnings. Severity 3 means error and above.
         ort.set_default_logger_severity(3)
+        # Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
+        # other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
+        # based on the build flags) when instantiating InferenceSession.
+        # For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
+        # ort.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
         session = ort.InferenceSession(model_path)
         inputs = session.get_inputs()
         outputs = session.get_outputs()
