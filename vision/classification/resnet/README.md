@@ -109,7 +109,7 @@ We used MXNet as framework with gluon APIs to perform training. View the [traini
 We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_validation](../imagenet_validation.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 
 ## Quantization
-ResNet50_int8 is obtained by quantizing ResNet50_fp32 model. We use [Intel® Low Precision Optimization Tool (LPOT)](https://github.com/intel/lpot) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/lpot/tree/master/examples/onnxrt/onnx_model_zoo/resnet50/README.md) to understand how to use LPOT for quantization.
+ResNet50_int8 is obtained by quantizing ResNet50_fp32 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/onnx_model_zoo/resnet50/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.7.0 
@@ -143,7 +143,7 @@ In European Conference on Computer Vision, pp. 630-645. Springer, Cham, 2016.
 
 * [MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io)
 
-* [Intel® Low Precision Optimization Tool (LPOT)](https://github.com/intel/lpot)
+* [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
 
 ## Contributors
 * [ankkhedia](https://github.com/ankkhedia) (Amazon AI)
