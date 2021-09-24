@@ -20,7 +20,7 @@ We have standardized on [Git LFS (Large File Storage)](https://git-lfs.github.co
 #### Language
 * [Machine Comprehension](#machine_comprehension)
 * [Machine Translation](#machine_translation)
-* [Language Modelling](#language)
+* [Language Modelling](#language_modelling)
 
 #### Other
 * [Visual Question Answering & Dialog](#visual_qna)
@@ -73,7 +73,7 @@ Object detection models detect the presence of multiple objects in an image and 
 |<b>[Tiny YOLOv3](vision/object_detection_segmentation/tiny-yolov3)</b>|[Redmon et al.](https://arxiv.org/pdf/1804.02767.pdf)| A smaller version of YOLOv3 model. |
 |<b>[YOLOv4](vision/object_detection_segmentation/yolov4)</b>|[Bochkovskiy et al.](https://arxiv.org/abs/2004.10934)|Optimizes the speed and accuracy of object detection. Two times faster than EfficientDet. It improves YOLOv3's AP and FPS by 10% and 12%, respectively, with mAP50 of 52.32 on the COCO 2017 dataset and FPS of 41.7 on a Tesla V100.|
 |<b>[DUC](vision/object_detection_segmentation/duc)</b>|[Wang et al.](https://arxiv.org/abs/1702.08502)|Deep CNN based pixel-wise semantic segmentation model with >80% [mIOU](/models/semantic_segmentation/DUC/README.md/#metric) (mean Intersection Over Union). Trained on cityscapes dataset, which can be effectively implemented in self driving vehicle systems.|
-|FCN|[Long et al.](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)|Deep CNN based segmentation model trained end-to-end, pixel-to-pixel that produces efficient inference and learning. Built off of AlexNet, VGG net, GoogLeNet classification methods. <br>[contribute](contribute.md)|
+|<b>[FCN](vision/object_detection_segmentation/fcn)|[Long et al.](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)|Deep CNN based segmentation model trained end-to-end, pixel-to-pixel that produces efficient inference and learning. Built off of AlexNet, VGG net, GoogLeNet classification methods. <br>[contribute](contribute.md)|
 <hr>
 
 ### Body, Face & Gesture Analysis <a name="body_analysis"/>
@@ -128,7 +128,7 @@ This class of natural language processing models learns how to translate input t
 |Google's Neural Machine Translation System|	[Wu et al.](https://arxiv.org/abs/1609.08144)|This model helps to improve issues faced by the Neural Machine Translation (NMT) systems like parallelism that helps accelerate the final translation speed.<br>[contribute](contribute.md)|
 <hr>
 
-### Language Modelling <a name="language"/>
+### Language Modelling <a name="language_modelling"/>
 This subset of natural language processing models learns representations of language from large corpuses of text.
 
 |Model Class |Reference |Description |
