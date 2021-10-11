@@ -82,8 +82,8 @@ Details of performance on COCO object detection are provided in [this paper](htt
 ShuffleNet-v2-int8 is obtained by quantizing ShuffleNet-v2-fp32 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/onnx_model_zoo/shufflenet/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
-onnx: 1.7.0 
-onnxruntime: 1.6.0+
+onnx: 1.9.0 
+onnxruntime: 1.8.0
 
 ### Prepare model
 ```shell
@@ -99,7 +99,7 @@ bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
 ```
 
 ### Model inference
-We use onnxruntime to perform Resnet50_fp32 and Resnet50_int8 inference. View the notebook [onnxrt_inference](../onnxrt_inference.ipynb) to understand how to use these 2 models for doing inference as well as which preprocess and postprocess we use.
+We use onnxruntime to perform ShuffleNetv2_fp32 and ShuffleNetv2_int8 inference. View the notebook [onnxrt_inference](../onnxrt_inference.ipynb) to understand how to use these 2 models for doing inference as well as which preprocess and postprocess we use.
 
 ## References
 * Ningning Ma, Xiangyu Zhang, Hai-Tao Zheng, Jian Sun. ShuffleNet V2: Practical Guidelines for EfficientCNN Architecture Design. 2018.
