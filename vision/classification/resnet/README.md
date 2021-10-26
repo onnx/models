@@ -52,11 +52,11 @@ ResNet v2 uses pre-activation function whereas ResNet v1  uses post-activation f
 
 |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|ResNet18|    [44.6 MB](model/resnet18-v2-7.onnx)    | [42.9 MB](model/resnet18-v2-7.tar.gz)    | 1.2.1  |7 |    69.70         |     89.49          |
-|ResNet34|    [83.2 MB](model/resnet34-v2-7.onnx)    |[78.6 MB](model/resnet34-v2-7.tar.gz)    |  1.2.1   |7| 73.36         |     91.43           |
-|ResNet50|    [97.7 MB](model/resnet50-v2-7.onnx)   |[92.0 MB](model/resnet50-v2-7.tar.gz)    | 1.2.1 |7|75.81         |     92.82           |
-|ResNet101|    [170.4 MB](model/resnet101-v2-7.onnx)    |[159.4 MB](model/resnet101-v2-7.tar.gz)    |  1.2.1  |7 | 77.42         |     93.61           |
-|ResNet152|    [230.3 MB](model/resnet152-v2-7.onnx)    |[216.0 MB](model/resnet152-v2-7.tar.gz)    | 1.2.1   |7 | 78.20         |     94.21           |
+|ResNet18-v2|    [44.6 MB](model/resnet18-v2-7.onnx)    | [42.9 MB](model/resnet18-v2-7.tar.gz)    | 1.2.1  |7 |    69.70         |     89.49          |
+|ResNet34-v2|    [83.2 MB](model/resnet34-v2-7.onnx)    |[78.6 MB](model/resnet34-v2-7.tar.gz)    |  1.2.1   |7| 73.36         |     91.43           |
+|ResNet50-v2|    [97.7 MB](model/resnet50-v2-7.onnx)   |[92.0 MB](model/resnet50-v2-7.tar.gz)    | 1.2.1 |7|75.81         |     92.82           |
+|ResNet101-v2|    [170.4 MB](model/resnet101-v2-7.onnx)    |[159.4 MB](model/resnet101-v2-7.tar.gz)    |  1.2.1  |7 | 77.42         |     93.61           |
+|ResNet152-v2|    [230.3 MB](model/resnet152-v2-7.onnx)    |[216.0 MB](model/resnet152-v2-7.tar.gz)    | 1.2.1   |7 | 78.20         |     94.21           |
 
 
 ## Inference
