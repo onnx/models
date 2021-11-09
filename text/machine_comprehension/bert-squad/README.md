@@ -11,7 +11,7 @@ BERT (Bidirectional Encoder Representations from Transformers) applies Transform
 ## Model
 
  |Model        |Download  |Download (with sample test data)| ONNX version |Opset version| Accuracy|
-| ------------- | ------------- | ------------- | ------------- | ------------- |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 |BERT-Squad| [416 MB](model/bertsquad-8.onnx) |  [385 MB](model/bertsquad-8.tar.gz) |  1.3 | 8| |
 |BERT-Squad| [416 MB](model/bertsquad-10.onnx) |  [384 MB](model/bertsquad-10.tar.gz) |  1.5 | 10| |
 |BERT-Squad| [416 MB](model/bertsquad-12.onnx) |  [384 MB](model/bertsquad-12.tar.gz) |  1.9 | 12| 80.67171|
@@ -141,10 +141,11 @@ bash run_tuning.sh --input_model=/path/to/model \ # model path as *.onnx
 * **BERT** Model from the paper [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805)
 
 * [BERT Tutorial](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/BertTutorial.ipynb)
-## Contributors
-[Kundana Pillari](https://github.com/kundanapillari)
+
+* [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
 
 ## Contributors
+* [Kundana Pillari](https://github.com/kundanapillari)
 * [mengniwang95](https://github.com/mengniwang95) (Intel)
 * [airMeng](https://github.com/airMeng) (Intel)
 * [ftian1](https://github.com/ftian1) (Intel)
