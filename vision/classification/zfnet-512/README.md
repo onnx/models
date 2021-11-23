@@ -9,17 +9,15 @@
 |ZFNet-512| [341 MB](model/zfnet512-7.onnx)  |  [320 MB](model/zfnet512-7.tar.gz) |  1.2 | 7| | |
 |ZFNet-512| [341 MB](model/zfnet512-8.onnx)  |  [318 MB](model/zfnet512-8.tar.gz) |  1.3 | 8| | |
 |ZFNet-512| [341 MB](model/zfnet512-9.onnx)  |  [318 MB](model/zfnet512-9.tar.gz) |  1.4 | 9| | |
-|ZFNet-512| [233 MB](model/zfnet512-12.onnx)  |  [216 MB](model/zfnet512-12.tar.gz) |  1.9 | 12|55.97|79.41|
-|ZFNet-512-int8| [58 MB](model/zfnet512-12-int8.onnx)  |  [39 MB](model/zfnet512-12-int8.tar.gz) |  1.9 | 12|55.84|79.33|
+|ZFNet-512| [333 MB](model/zfnet512-12.onnx)  |  [309 MB](model/zfnet512-12.tar.gz) |  1.9 | 12|55.97|79.41|
+|ZFNet-512-int8| [83 MB](model/zfnet512-12-int8.onnx)  |  [48 MB](model/zfnet512-12-int8.tar.gz) |  1.9 | 12|55.84|79.33|
 > Compared with the fp32 ZFNet-512, int8 ZFNet-512's Top-1 accuracy drop ratio is 0.23%, Top-5 accuracy drop ratio is 0.10% and performance improvement is 1.78x.
 >
 > **Note** 
 >
-> The performance depends on the test hardware.
->
-> Different preprocess methods will lead to different accuracies, the accuracy in table depends on this specific [preprocess method](https://github.com/intel-innersource/frameworks.ai.lpot.intel-lpot/blob/master/examples/onnxrt/onnx_model_zoo/zfnet/main.py)
+> Different preprocess methods will lead to different accuracies, the accuracy in table depends on this specific [preprocess method](https://github.com/intel-innersource/frameworks.ai.lpot.intel-lpot/blob/master/examples/onnxrt/onnx_model_zoo/zfnet/main.py).
 > 
-> Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
+> The performance depends on the test hardware. Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
 ## Description
 ZFNet-512 is a deep convolutional networks for classification.

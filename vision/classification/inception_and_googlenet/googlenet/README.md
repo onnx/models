@@ -15,9 +15,7 @@
 >
 > **Note** 
 >
-> The performance depends on the test hardware.
-> 
-> Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
+> The performance depends on the test hardware. Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
 ## Description
 GoogLeNet is the name of a convolutional neural network for classification,

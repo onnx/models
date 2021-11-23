@@ -20,15 +20,13 @@ SqueezeNet 1.1 has 2.4x less computation and slightly fewer parameters than Sque
 |SqueezeNet 1.0| [5 MB](model/squeezenet1.0-7.onnx)  |  [11 MB](model/squeezenet1.0-7.tar.gz) |  1.2 | 7|
 |SqueezeNet 1.0| [5 MB](model/squeezenet1.0-8.onnx)  |  [11 MB](model/squeezenet1.0-8.tar.gz) |  1.3 | 8|
 |SqueezeNet 1.0| [5 MB](model/squeezenet1.0-9.onnx)  |  [11 MB](model/squeezenet1.0-9.tar.gz) |  1.4 | 9|
-|SqueezeNet 1.0| [233 MB](model/squeezenet1.0-12.onnx)  |  [216 MB](model/squeezenet1.0-12.tar.gz) |  1.9 | 12|56.85|79.87|
-|SqueezeNet 1.0-int8| [58 MB](model/squeezenet1.0-12-int8.onnx)  |  [39 MB](model/squeezenet1.0-12-int8.tar.gz) |  1.9 | 12|56.48|79.76|
+|SqueezeNet 1.0| [5 MB](model/squeezenet1.0-12.onnx)  |  [5 MB](model/squeezenet1.0-12.tar.gz) |  1.9 | 12|56.85|79.87|
+|SqueezeNet 1.0-int8| [2 MB](model/squeezenet1.0-12-int8.onnx)  |  [2 MB](model/squeezenet1.0-12-int8.tar.gz) |  1.9 | 12|56.48|79.76|
 > Compared with the fp32 SqueezeNet 1.0, int8 SqueezeNet 1.0's Top-1 accuracy drop ratio is 0.65%, Top-5 accuracy drop ratio is 0.14% and performance improvement is 1.31x.
 >
 > **Note** 
 >
-> The performance depends on the test hardware.
-> 
-> Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
+> The performance depends on the test hardware. Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
 ## Inference
 We used MXNet as framework with gluon APIs to perform inference for SqueezeNet 1.1. View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook.
