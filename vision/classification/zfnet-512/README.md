@@ -52,7 +52,7 @@ random generated sampe test data:
 ## Results/accuracy on test set
 
 ## Quantization
-ZFNet-512-int8 is obtained by quantizing fp32 ZFNet-512 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel-innersource/frameworks.ai.lpot.intel-lpot/blob/master/examples/onnxrt/onnx_model_zoo/zfnet/README.md) to understand how to use Intel® Neural Compressor for quantization.
+ZFNet-512-int8 is obtained by quantizing fp32 ZFNet-512 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/zfnet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 

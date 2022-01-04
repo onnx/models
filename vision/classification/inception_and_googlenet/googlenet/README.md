@@ -103,7 +103,7 @@ just the center crop. (Using the average of 10 crops,
 (4 + 1 center) * 2 mirror, should obtain a bit higher accuracy.)
 
 ## Quantization
-GoogleNet-int8 is obtained by quantizing fp32 GoogleNet model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel-innersource/frameworks.ai.lpot.intel-lpot/blob/master/examples/onnxrt/onnx_model_zoo/googlenet/README.md) to understand how to use Intel® Neural Compressor for quantization.
+GoogleNet-int8 is obtained by quantizing fp32 GoogleNet model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/googlenet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 
