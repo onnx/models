@@ -10,8 +10,14 @@ This model is a real-time neural network for object detection that detects 80 di
 |Model        |Download  | Download (with sample test data)|ONNX version|Opset version|Accuracy |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |SSD       |[80.4 MB](model/ssd-10.onnx) | [78.5 MB](model/ssd-10.tar.gz) |1.5 |10 |mAP of 0.195 |
+|SSD       |[77.6 MB](model/ssd-12.onnx) | [86.4 MB](model/ssd-12.tar.gz) |1.9 |12 |mAP of 0.1898 |
+|SSD-int8|[19.5 MB](model/ssd-12-int8.onnx) | [30.3 MB](model/ssd-12-int8.tar.gz) |1.9 |12 |mAP of 0.1882 |
 
-
+> Compared with the fp32 SSD, SSD-int8's mAP drop ratio is 0.84% and performance improvement is 1.53x.
+>
+> **Note**
+>
+> The performance depends on the test hardware. Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
 <hr>
 
@@ -69,8 +75,38 @@ Wei Liu, Dragomir Anguelov, Dumitru Erhan, Christian Szegedy, Scott Reed, Cheng-
 Backbone is ResNet34 pretrained on ILSVRC 2012 (from torchvision). Modifications to the backbone networks: remove conv_5x residual blocks, change the first 3x3 convolution of the conv_4x block from stride 2 to stride1 (this increases the resolution of the feature map to which detector heads are attached), attach all 6 detector heads to the output of the last conv_4x residual block. Thus detections are attached to 38x38, 19x19, 10x10, 5x5, 3x3, and 1x1 feature maps. Convolutions in the detector layers are followed by batch normalization layers.
 <hr>
 
+## Quantization
+SSD-int8 is obtained by quantizing fp32 SSD model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/object_detection/onnx_model_zoo/ssd/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+
+### Environment
+onnx: 1.9.0 
+onnxruntime: 1.8.0
+
+### Prepare model
+```shell
+wget https://github.com/onnx/models/blob/master/vision/object_detection_segmentation/ssd/model/ssd-12.onnx
+```
+
+### Model quantize
+Make sure to specify the appropriate dataset path in the configuration file.
+```bash
+bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
+                   --config=ssd.yaml \
+                   --output_model=path/to/save
+```
+<hr>
+
 ## References
-This model is converted from mlperf/inference [repository](https://github.com/mlperf/inference/tree/master/others/cloud/single_stage_detector) with modifications in [repository](https://github.com/BowenBao/inference/tree/master/cloud/single_stage_detector/pytorch).
+* This model is converted from mlperf/inference [repository](https://github.com/mlperf/inference/tree/master/others/cloud/single_stage_detector) with modifications in [repository](https://github.com/BowenBao/inference/tree/master/cloud/single_stage_detector/pytorch).
+
+* [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
+<hr>
+
+## Contributors
+* [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [airMeng](https://github.com/airMeng) (Intel)
+* [ftian1](https://github.com/ftian1) (Intel)
+* [hshen14](https://github.com/hshen14) (Intel)
 <hr>
 
 ## License
