@@ -64,7 +64,7 @@ We used MXNet as framework with gluon APIs to perform training. View the [traini
 We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_validation](../imagenet_validation.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 
 ## Quantization
-SqueezeNet 1.0-int8 is obtained by quantizing fp32 SqueezeNet 1.0 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel-innersource/frameworks.ai.lpot.intel-lpot/blob/master/examples/onnxrt/onnx_model_zoo/squeezenet/README.md) to understand how to use Intel® Neural Compressor for quantization.
+SqueezeNet 1.0-int8 is obtained by quantizing fp32 SqueezeNet 1.0 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/squeezenet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 

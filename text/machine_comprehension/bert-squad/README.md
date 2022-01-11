@@ -118,7 +118,7 @@ Metric is Exact Matching (EM) of 80.7, computed over SQuAD v1.1 dev data, for th
 Fine-tuned the model using SQuAD-1.1 dataset. Look at [BertTutorial.ipynb](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/BertTutorial.ipynb) for more information for converting the model from tensorflow to onnx and for fine-tuning
 
 ## Quantization
-BERT-Squad-int8 is obtained by quantizing BERT-Squad model (opset=12). We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel-innersource/frameworks.ai.lpot.intel-lpot/blob/master/examples/onnxrt/onnx_model_zoo/bert-squad/readme.md) to understand how to use Intel® Neural Compressor for quantization.
+BERT-Squad-int8 is obtained by quantizing BERT-Squad model (opset=12). We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/language_translation/onnx_model_zoo/bert-squad/quantization/ptq/readme.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 
