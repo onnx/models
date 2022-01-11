@@ -12,12 +12,20 @@ The SSD-MobilenetV1 is suitable for mobile and embedded vision applications.
 
 ## Model
 
-|Model        |Download  | Download (with sample test data)|ONNX version|Opset version|
-|-------------|:--------------|:--------------|:--------------|:--------------|
-|SSD-MobilenetV1       | [29.3 MB](model/ssd_mobilenet_v1_10.onnx)  |[27.9 MB](model/ssd_mobilenet_v1_10.tar.gz) |1.7.0 | 10 |
+|Model        |Download  | Download (with sample test data)|ONNX version|Opset version| mAP |
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|SSD-MobilenetV1       | [29.3 MB](model/ssd_mobilenet_v1_10.onnx)  |[27.9 MB](model/ssd_mobilenet_v1_10.tar.gz) |1.7.0 | 10 | |
+|SSD-MobilenetV1-12       | [28.1 MB](model/ssd_mobilenet_v1_12.onnx)  |[24.3 MB](model/ssd_mobilenet_v1_12.tar.gz) |1.9.0 | 12 |0.2303 |
+|SSD-MobilenetV1-12-int8       | [8.5 MB](model/ssd_mobilenet_v1_12-int8.onnx)  |[5.5 MB](model/ssd_mobilenet_v1_12-int8.tar.gz) |1.9.0 | 12 |0.2285 |
+> Compared with the fp32 SSD-MobilenetV1-12, int8 SSD-MobilenetV1-12's mAP drop ratio is 0.78% and performance improvement is 1.15x.
+>
+> **Note** 
+>
+> The performance depends on the test hardware. Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
 ### Source
 Tensorflow SSD-MobileNetV1 ==> ONNX SSD-MobileNetV1
+ONNX SSD-MobileNetV1 ==> Quantized ONNX SSD-MobileNetV1
 
 ## Inference
 
@@ -134,12 +142,37 @@ The model was trained using [MS COCO 2017 Train Images, Val Images, and Train/Va
 Training details for the SSD-MobileNet model's preprocessing is found in this [tutorial notebook](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/ConvertingSSDMobilenetToONNX.ipynb).
 The notebook also details how the ONNX model was converted.
 
-### References
-Tensorflow to ONNX conversion [tutorial](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/ConvertingSSDMobilenetToONNX.ipynb). The notebook references how to run an evaluation on the SSD-MobilenetV1 model and export it as a saved model. It also details how to convert the tensorflow model into onnx, and how to run its preprocessing and postprocessing code for the inputs and outputs.
+## Quantization
+SSD-MobilenetV1-12-int8 is obtained by quantizing fp32 SSD-MobilenetV1-12 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/object_detection/onnx_model_zoo/ssd_mobilenet_v1/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
+### Environment
+onnx: 1.9.0 
+onnxruntime: 1.8.0
+
+### Prepare model
+```shell
+wget https://github.com/onnx/models/raw/master/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_12.onnx
+```
+
+### Model quantize
+Make sure to specify the appropriate dataset path in the configuration file.
+```bash
+bash run_tuning.sh --input_model=path/to/model  \ # model path as *.onnx
+                   --config=ssd_mobilenet_v1.yaml \ 
+                   --output_model=path/to/save
+```
+
+### References
+* Tensorflow to ONNX conversion [tutorial](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/ConvertingSSDMobilenetToONNX.ipynb). The notebook references how to run an evaluation on the SSD-MobilenetV1 model and export it as a saved model. It also details how to convert the tensorflow model into onnx, and how to run its preprocessing and postprocessing code for the inputs and outputs.
+
+* [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
 
 ## Contributors
-[Shirley Su](https://github.com/shirleysu8)
+* [Shirley Su](https://github.com/shirleysu8)
+* [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [airMeng](https://github.com/airMeng) (Intel)
+* [ftian1](https://github.com/ftian1) (Intel)
+* [hshen14](https://github.com/hshen14) (Intel)
 
 ## License
 MIT License

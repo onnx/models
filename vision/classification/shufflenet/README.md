@@ -79,7 +79,7 @@ Details of performance on COCO object detection are provided in [this paper](htt
 <hr>
 
 ## Quantization
-ShuffleNet-v2-int8 is obtained by quantizing ShuffleNet-v2-fp32 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/onnx_model_zoo/shufflenet/README.md) to understand how to use Intel® Neural Compressor for quantization.
+ShuffleNet-v2-int8 is obtained by quantizing ShuffleNet-v2-fp32 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/shufflenet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 

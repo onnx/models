@@ -10,13 +10,19 @@ EfficientNet-Lite 4 is the largest variant and most accurate of the set of Effic
 
 ## Model
 
- |Model        |Download | Download (with sample test data)|ONNX version|Opset version|
-|-------------|:--------------|:--------------|:--------------|:--------------|
-|EfficientNet-Lite4     | [51.9 MB](model/efficientnet-lite4-11.onnx)	  | [48.6 MB](model/efficientnet-lite4-11.tar.gz)|1.7.0|11|
-
+ |Model        |Download | Download (with sample test data)|ONNX version|Opset version|Top-1 accuracy (%)|
+|-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+|EfficientNet-Lite4     | [51.9 MB](model/efficientnet-lite4-11.onnx)	  | [48.6 MB](model/efficientnet-lite4-11.tar.gz)|1.7.0|11|80.4|
+|EfficientNet-Lite4-int8     | [13.0 MB](model/efficientnet-lite4-11-int8.onnx)	  | [12.2 MB](model/efficientnet-lite4-11-int8.tar.gz)|1.9.0|11|77.56|
+> The fp32 Top-1 accuracy got by [Intel® Neural Compressor](https://github.com/intel/neural-compressor) is 77.70%, and compared with this value, int8 EfficientNet-Lite4's Top-1 accuracy drop ratio is 0.18% and performance improvement is 1.12x.
+>
+> **Note** 
+>
+> The performance depends on the test hardware. Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
 ### Source
 Tensorflow EfficientNet-Lite4 => ONNX EfficientNet-Lite4
+ONNX EfficientNet-Lite4 => Quantized ONNX EfficientNet-Lite4
 
 <hr>
 
@@ -132,14 +138,43 @@ The model was trained using [COCO 2017 Train Images, Val Images, and Train/Val a
 Refer to [efficientnet-lite4 conversion notebook](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/efficientnet-lite.ipynb) for details of how to use it and reproduce accuracy.
 <hr>
 
-## References
-Tensorflow to Onnx conversion [tutorial](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/efficientnet-lite.ipynb). The Juypter Notebook references how to run an evaluation on the efficientnet-lite4 model and export it as a saved model. It also details how to convert the tensorflow model into onnx, and how to run its preprocessing and postprocessing code for the inputs and outputs.
+## Quantization
+CaffeNet-int8 is obtained by quantizing fp32 CaffeNet model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/efficientnet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
-Refer to this [paper](https://arxiv.org/abs/1905.11946) for more details on the model.
+### Environment
+onnx: 1.9.0 
+onnxruntime: 1.8.0
+
+### Prepare model
+```shell
+wget https://github.com/onnx/models/raw/master/vision/classification/efficientnet-lite4/model/efficientnet-lite4-11.onnx
+```
+
+### Model quantize
+Make sure to specify the appropriate dataset path in the configuration file.
+```bash
+bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
+                   --config=efficientnet.yaml \
+                   --output_model=path/to/save
+```
+<hr>
+
+## References
+* Tensorflow to Onnx conversion [tutorial](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/efficientnet-lite.ipynb). The Juypter Notebook references how to run an evaluation on the efficientnet-lite4 model and export it as a saved model. It also details how to convert the tensorflow model into onnx, and how to run its preprocessing and postprocessing code for the inputs and outputs.
+
+* Refer to this [paper](https://arxiv.org/abs/1905.11946) for more details on the model.
+
+* [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
+
 <hr>
 
 ## Contributors
- [Shirley Su](https://github.com/shirleysu8)
+* [Shirley Su](https://github.com/shirleysu8)
+* [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [airMeng](https://github.com/airMeng) (Intel)
+* [ftian1](https://github.com/ftian1) (Intel)
+* [hshen14](https://github.com/hshen14) (Intel)
+
 <hr>
 
 ## License

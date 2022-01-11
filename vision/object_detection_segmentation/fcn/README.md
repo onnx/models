@@ -13,11 +13,14 @@ This specific model detects 20 different [classes](dependencies/voc_classes.txt)
 |----------------|:--------------------------------------|:----------------------------------------|:-------------|:--------------|:--------|
 | FCN ResNet-50  | [134 MB](model/fcn-resnet50-11.onnx)  | [213 MB](model/fcn-resnet50-11.tar.gz)  | 1.8.0        | 11 | 60.5% |
 | FCN ResNet-101 | [207 MB](model/fcn-resnet101-11.onnx) | [281 MB](model/fcn-resnet101-11.tar.gz) | 1.8.0        | 11 | 63.7% |
+| FCN ResNet-50  | [134 MB](model/fcn-resnet50-12.onnx)  | [125 MB](model/fcn-resnet50-12.tar.gz)  | 1.8.0        | 12 | 60.5% |
+| FCN ResNet-50-int8  | [34 MB](model/fcn-resnet50-12-int8.onnx)  | [29 MB](model/fcn-resnet50-12-int8.tar.gz)  | 1.8.0        | 12 | 64.7% |
 
 ### Source
 
  * PyTorch Torchvision FCN ResNet50 ==> ONNX FCN ResNet50
  * PyTorch Torchvision FCN ResNet101 ==> ONNX FCN ResNet101
+ * ONNX FCN ResNet50 ==> Quantized ONNX FCN ResNet50
 
 ## Inference
 
@@ -129,18 +132,53 @@ If you have the [COCO val2017 dataset](https://cocodataset.org/#download) downlo
 | Model          | mean IoU | global pixelwise accuracy |
 |----------------|:---------|:--------------------------|
 | FCN ResNet 50  | 65.0     | 99.6                      |
+| FCN ResNet 50-int8 | 64.7 | 99.5                      |
 | FCN ResNet 101 | 66.7     | 99.6                      |
 
 The more conservative of the two estimates is used in the model files table.
+
+> Compared with the fp32 FCN ResNet 50, FCN ResNet 50-int8's mean IoU drop ratio is 0.46% global pixelwise accuracy drop ratio is 0.10% and performance improvement is 1.28x.
+>
+> **Note**
+>
+>The performance depends on the test hardware. Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per inst ance, CentOS Linux 8.3, data batch size is 1.
 <hr>
 
-## References
-Jonathan Long, Evan Shelhamer, Trevor Darrell; Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2015, pp. 3431-3440
+## Quantization
+FCN ResNet 50-int8 is obtained by quantizing fp32 FCN ResNet 50 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/fcn/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
-This model is converted from the [Torchvision Model Zoo](https://pytorch.org/docs/stable/torchvision/models.html), originally implemented by Francisco Moss [here](https://github.com/pytorch/vision/tree/master/torchvision/models/segmentation/fcn.py).
+### Environment
+onnx: 1.9.0 
+onnxruntime: 1.8.0
+
+### Prepare model
+```shell
+wget https://github.com/onnx/models/raw/master/vision/object_detection_segmentation/fcn/model/fcn-resnet50-12.onnx
+```
+
+### Model quantize
+Make sure to specify the appropriate dataset path in the configuration file.
+```bash
+bash run_tuning.sh --input_model=path/to/model  \ # model path as *.onnx
+                   --config=fcn_rn50.yaml \ 
+                   --data_path=path/to/coco/val2017 \
+                   --label_path=path/to/coco/annotations/instances_val2017.json \
+                   --output_model=path/to/save
+```
+
+## References
+* Jonathan Long, Evan Shelhamer, Trevor Darrell; Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2015, pp. 3431-3440
+
+* This model is converted from the [Torchvision Model Zoo](https://pytorch.org/docs/stable/torchvision/models.html), originally implemented by Francisco Moss [here](https://github.com/pytorch/vision/tree/master/torchvision/models/segmentation/fcn.py).
+
+* [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
 
 ## Contributors
-[Jack Duvall](https://github.com/duvallj)
+* [Jack Duvall](https://github.com/duvallj)
+* [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [airMeng](https://github.com/airMeng) (Intel)
+* [ftian1](https://github.com/ftian1) (Intel)
+* [hshen14](https://github.com/hshen14) (Intel)
 
 ## License
 MIT License
