@@ -87,7 +87,7 @@ onnxruntime: 1.8.0
 
 ### Prepare model
 ```shell
-wget https://github.com/onnx/models/tree/master/vision/classification/shufflenet/model/shufflenet-v2-12.onnx
+wget https://github.com/onnx/models/tree/main/vision/classification/shufflenet/model/shufflenet-v2-12.onnx
 ```
 
 ### Model quantize

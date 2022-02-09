@@ -117,7 +117,7 @@ onnxruntime: 1.6.0+
 
 ### Prepare model
 ```shell
-wget https://github.com/onnx/models/tree/master/vision/classification/resnet/model/resnet50-v1-12.onnx
+wget https://github.com/onnx/models/tree/main/vision/classification/resnet/model/resnet50-v1-12.onnx
 ```
 
 ### Model quantize
