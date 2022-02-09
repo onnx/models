@@ -30,7 +30,7 @@ ONNX SSD-MobileNetV1 ==> Quantized ONNX SSD-MobileNetV1
 ## Inference
 
 ### Running inference
-Refer to this [conversion and inference notebook](https://github.com/onnx/tensorflow-onnx/blob/main/tutorials/ConvertingSSDMobilenetToONNX.ipynb) for more details on how to inference this model using onnxruntime and define environment variables for the model.
+Refer to this [conversion and inference notebook](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/ConvertingSSDMobilenetToONNX.ipynb) for more details on how to inference this model using onnxruntime and define environment variables for the model.
 
     import onnxruntime as rt
 
@@ -56,7 +56,7 @@ Refer to this [conversion and inference notebook](https://github.com/onnx/tensor
 This model does not require fixed image dimensions. Input batch size is 1, with 3 color channels. Image has these variables: `(batch_size, height, width, channels)`.
 
 ### Preprocessing
-The following code shows how preprocessing is done. For more information and an example on how preprocessing is done, please visit the [tf2onnx conversion and inference notebook](https://github.com/onnx/tensorflow-onnx/blob/main/tutorials/ConvertingSSDMobilenetToONNX.ipynb) for this model.
+The following code shows how preprocessing is done. For more information and an example on how preprocessing is done, please visit the [tf2onnx conversion and inference notebook](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/ConvertingSSDMobilenetToONNX.ipynb) for this model.
 
     import numpy as np
     from PIL import Image, ImageDraw, ImageColor
@@ -139,11 +139,11 @@ The model was trained using [MS COCO 2017 Train Images, Val Images, and Train/Va
 
 ### Training
 
-Training details for the SSD-MobileNet model's preprocessing is found in this [tutorial notebook](https://github.com/onnx/tensorflow-onnx/blob/main/tutorials/ConvertingSSDMobilenetToONNX.ipynb).
+Training details for the SSD-MobileNet model's preprocessing is found in this [tutorial notebook](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/ConvertingSSDMobilenetToONNX.ipynb).
 The notebook also details how the ONNX model was converted.
 
 ## Quantization
-SSD-MobilenetV1-12-int8 is obtained by quantizing fp32 SSD-MobilenetV1-12 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/main/examples/onnxrt/object_detection/onnx_model_zoo/ssd_mobilenet_v1/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+SSD-MobilenetV1-12-int8 is obtained by quantizing fp32 SSD-MobilenetV1-12 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/object_detection/onnx_model_zoo/ssd_mobilenet_v1/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 
@@ -151,7 +151,7 @@ onnxruntime: 1.8.0
 
 ### Prepare model
 ```shell
-wget https://github.com/onnx/models/raw/main/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_12.onnx
+wget https://github.com/onnx/models/raw/master/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_12.onnx
 ```
 
 ### Model quantize
@@ -163,7 +163,7 @@ bash run_tuning.sh --input_model=path/to/model  \ # model path as *.onnx
 ```
 
 ### References
-* Tensorflow to ONNX conversion [tutorial](https://github.com/onnx/tensorflow-onnx/blob/main/tutorials/ConvertingSSDMobilenetToONNX.ipynb). The notebook references how to run an evaluation on the SSD-MobilenetV1 model and export it as a saved model. It also details how to convert the tensorflow model into onnx, and how to run its preprocessing and postprocessing code for the inputs and outputs.
+* Tensorflow to ONNX conversion [tutorial](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/ConvertingSSDMobilenetToONNX.ipynb). The notebook references how to run an evaluation on the SSD-MobilenetV1 model and export it as a saved model. It also details how to convert the tensorflow model into onnx, and how to run its preprocessing and postprocessing code for the inputs and outputs.
 
 * [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
 

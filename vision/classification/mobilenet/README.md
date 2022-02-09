@@ -33,7 +33,7 @@ The model outputs image scores for each of the [1000 classes of ImageNet](../syn
 ### Postprocessing
 The post-processing involves calculating the softmax probablility scores for each class and sorting them to report the most probable classes. Check [imagenet_postprocess.py](../imagenet_postprocess.py) for code.
 
-To do quick inference with the model, check out [Model Server](https://github.com/awslabs/mxnet-model-server/blob/main/docs/model_zoo.md/#mobilenetv2-1.0_onnx).
+To do quick inference with the model, check out [Model Server](https://github.com/awslabs/mxnet-model-server/blob/master/docs/model_zoo.md/#mobilenetv2-1.0_onnx).
 
 ## Dataset
 Dataset used for train and validation: [ImageNet (ILSVRC2012)](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.

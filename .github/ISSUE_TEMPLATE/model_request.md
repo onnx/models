@@ -24,4 +24,4 @@ Why is this model an improvement upon current ONNX model zoo offerings?
 ### Notes
 Any additional information, code snippets
 
-The ONNX team strongly encourages community members to submit a PR for models they want to use in the ONNX model zoo, and always welcomes new contributors. To get started, look at the [ONNX Model Zoo contribution page](https://github.com/onnx/models/blob/main/contribute.md).
+The ONNX team strongly encourages community members to submit a PR for models they want to use in the ONNX model zoo, and always welcomes new contributors. To get started, look at the [ONNX Model Zoo contribution page](https://github.com/onnx/models/blob/master/contribute.md).

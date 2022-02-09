@@ -121,11 +121,11 @@ output_text, output_logits = generative_t5(prompt, max_length=100, temperature=0
 
 ## Dataset (Train and validation)
 The original model from Google Brain is pretrained on the [Colossal Clean Crawled Corpus](https://www.tensorflow.org/datasets/catalog/c4).
-The pretrained model is referenced in [huggingface/transformers](https://github.com/huggingface/transformers/blob/main/transformers/modeling_t5.py), trained on the same data.
+The pretrained model is referenced in [huggingface/transformers](https://github.com/huggingface/transformers/blob/master/transformers/modeling_t5.py), trained on the same data.
 <hr>
 
 ## Validation accuracy
-Benchmarking can be run with the following [script](https://github.com/abelriboulot/onnxt5/blob/main/notebooks/benchmark_performance.ipynb) with initial results in this [post](https://kta.io/posts/onnx_t5).
+Benchmarking can be run with the following [script](https://github.com/abelriboulot/onnxt5/blob/master/notebooks/benchmark_performance.ipynb) with initial results in this [post](https://kta.io/posts/onnx_t5).
 <hr>
 
 
@@ -147,7 +147,7 @@ huggingface team, the work of the Microsoft ONNX and onnxruntime teams, in parti
 ```
 
 ## References
-This model is converted directly from [huggingface/transformers](https://github.com/huggingface/transformers/blob/main/src/transformers/modeling_t5.py).
+This model is converted directly from [huggingface/transformers](https://github.com/huggingface/transformers/blob/master/src/transformers/modeling_t5.py).
 <hr>
 
 ## Contributors

@@ -3,12 +3,12 @@
 
 name: Linux CI
 
-# Triggers the workflow on push or pull request events but only for the main branch
+# Triggers the workflow on push or pull request events but only for the master branch
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   # This workflow contains a single job called "build"

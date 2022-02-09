@@ -13,7 +13,7 @@ from onnx import numpy_helper
 import urllib
 
 data_dir = 'test_data_set_0'
-url, filename = ("https://github.com/onnx/models/raw/main/vision/object_detection_segmentation/retinanet/dependencies/demo.jpg", "demo.jpg")
+url, filename = ("https://github.com/onnx/models/raw/master/vision/object_detection_segmentation/retinanet/dependencies/demo.jpg", "demo.jpg")
 urllib.request.urlretrieve(url, filename)
 
 

@@ -15,7 +15,7 @@
 >
 > **Note** 
 >
-> Different preprocess methods will lead to different accuracies, the accuracy in table depends on this specific [preprocess method](https://github.com/intel/neural-compressor/blob/main/examples/onnxrt/image_recognition/onnx_model_zoo/caffenet/quantization/ptq/main.py).
+> Different preprocess methods will lead to different accuracies, the accuracy in table depends on this specific [preprocess method](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/caffenet/quantization/ptq/main.py).
 > 
 > The performance depends on the test hardware. Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
@@ -64,7 +64,7 @@ This model obtains a top-1 accuracy 57.4% and a top-5 accuracy
 should obtain a bit higher accuracy still.)
 
 ## Quantization
-CaffeNet-int8 is obtained by quantizing fp32 CaffeNet model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/main/examples/onnxrt/image_recognition/onnx_model_zoo/caffenet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+CaffeNet-int8 is obtained by quantizing fp32 CaffeNet model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/caffenet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 
@@ -72,7 +72,7 @@ onnxruntime: 1.8.0
 
 ### Prepare model
 ```shell
-wget https://github.com/onnx/models/blob/main/vision/classification/caffenet/model/caffenet-12.onnx
+wget https://github.com/onnx/models/blob/master/vision/classification/caffenet/model/caffenet-12.onnx
 ```
 
 ### Model quantize

@@ -49,7 +49,7 @@ The following steps show how to run the inference using onnxruntime.
 Input image to model is resized to shape `float32[1,224,224,3]`. The batch size is 1, with 224 x 224 height and width dimensions. The input is an RBG image that has 3 channels: red, green, and blue. Inference was done using a jpg image.
 
 ### Preprocessing steps
-The following steps show how to preprocess the input image. For more details visit [this conversion notebook](https://github.com/onnx/tensorflow-onnx/blob/main/tutorials/efficientnet-lite.ipynb).
+The following steps show how to preprocess the input image. For more details visit [this conversion notebook](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/efficientnet-lite.ipynb).
 
     import numpy as np
     import math
@@ -135,11 +135,11 @@ The model was trained using [COCO 2017 Train Images, Val Images, and Train/Val a
 <hr>
 
 ## Validation
-Refer to [efficientnet-lite4 conversion notebook](https://github.com/onnx/tensorflow-onnx/blob/main/tutorials/efficientnet-lite.ipynb) for details of how to use it and reproduce accuracy.
+Refer to [efficientnet-lite4 conversion notebook](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/efficientnet-lite.ipynb) for details of how to use it and reproduce accuracy.
 <hr>
 
 ## Quantization
-CaffeNet-int8 is obtained by quantizing fp32 CaffeNet model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/main/examples/onnxrt/image_recognition/onnx_model_zoo/efficientnet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+CaffeNet-int8 is obtained by quantizing fp32 CaffeNet model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/efficientnet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 
@@ -147,7 +147,7 @@ onnxruntime: 1.8.0
 
 ### Prepare model
 ```shell
-wget https://github.com/onnx/models/raw/main/vision/classification/efficientnet-lite4/model/efficientnet-lite4-11.onnx
+wget https://github.com/onnx/models/raw/master/vision/classification/efficientnet-lite4/model/efficientnet-lite4-11.onnx
 ```
 
 ### Model quantize
@@ -160,7 +160,7 @@ bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
 <hr>
 
 ## References
-* Tensorflow to Onnx conversion [tutorial](https://github.com/onnx/tensorflow-onnx/blob/main/tutorials/efficientnet-lite.ipynb). The Juypter Notebook references how to run an evaluation on the efficientnet-lite4 model and export it as a saved model. It also details how to convert the tensorflow model into onnx, and how to run its preprocessing and postprocessing code for the inputs and outputs.
+* Tensorflow to Onnx conversion [tutorial](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/efficientnet-lite.ipynb). The Juypter Notebook references how to run an evaluation on the efficientnet-lite4 model and export it as a saved model. It also details how to convert the tensorflow model into onnx, and how to run its preprocessing and postprocessing code for the inputs and outputs.
 
 * Refer to this [paper](https://arxiv.org/abs/1905.11946) for more details on the model.
 

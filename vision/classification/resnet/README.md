@@ -92,7 +92,7 @@ The model outputs image scores for each of the [1000 classes of ImageNet](../syn
 ### Postprocessing
 The post-processing involves calculating the softmax probability scores for each class. You can also sort them to report the most probable classes. Check [imagenet_postprocess.py](../imagenet_postprocess.py) for code.
 
-To do quick inference with the model, check out [Model Server](https://github.com/awslabs/mxnet-model-server/blob/main/docs/model_zoo.md/#resnet_header).
+To do quick inference with the model, check out [Model Server](https://github.com/awslabs/mxnet-model-server/blob/master/docs/model_zoo.md/#resnet_header).
 
 ## Dataset
 Dataset used for train and validation: [ImageNet (ILSVRC2012)](http://www.image-net.org/challenges/LSVRC/2012/). Check [imagenet_prep](../imagenet_prep.md) for guidelines on preparing the dataset.
@@ -109,7 +109,7 @@ We used MXNet as framework with gluon APIs to perform training. View the [traini
 We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_validation](../imagenet_validation.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 
 ## Quantization
-ResNet50_int8 is obtained by quantizing ResNet50_fp32 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/main/examples/onnxrt/image_recognition/onnx_model_zoo/resnet50/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+ResNet50_int8 is obtained by quantizing ResNet50_fp32 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/resnet50/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.7.0 
@@ -117,7 +117,7 @@ onnxruntime: 1.6.0+
 
 ### Prepare model
 ```shell
-wget https://github.com/onnx/models/tree/main/vision/classification/resnet/model/resnet50-v1-12.onnx
+wget https://github.com/onnx/models/tree/master/vision/classification/resnet/model/resnet50-v1-12.onnx
 ```
 
 ### Model quantize
