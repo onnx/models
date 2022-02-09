@@ -18,7 +18,7 @@
 # under the License.
 
 '''
-Adapted from https://github.com/tornadomeet/ResNet/blob/master/symbol_resnet.py
+Adapted from https://github.com/tornadomeet/ResNet/blob/main/symbol_resnet.py
 Original author Wei Wu
 
 Implemented the following paper:
@@ -539,7 +539,7 @@ def resnet(units, num_stages, filter_list, num_classes, bottle_neck, **kwargs):
 
 def get_symbol(num_classes, num_layers, **kwargs):
     """
-    Adapted from https://github.com/tornadomeet/ResNet/blob/master/train_resnet.py
+    Adapted from https://github.com/tornadomeet/ResNet/blob/main/train_resnet.py
     Original author Wei Wu
     """
     if num_layers >= 101:

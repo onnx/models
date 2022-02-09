@@ -20,11 +20,11 @@ PyTorch RoBERTa => ONNX RoBERTa
 PyTorch RoBERTa + script changes => ONNX RoBERTa-SequenceClassification
 
 ## Conversion
-Here is the [benchmark script](https://github.com/microsoft/onnxruntime/blob/master/onnxruntime/python/tools/transformers/run_benchmark.sh) that was used for exporting RoBERTa-BASE model.
+Here is the [benchmark script](https://github.com/microsoft/onnxruntime/blob/main/onnxruntime/python/tools/transformers/run_benchmark.sh) that was used for exporting RoBERTa-BASE model.
 
-Tutorial for conversion of RoBERTa-SequenceClassification model can be found in the [conversion](https://github.com/SeldonIO/seldon-models/blob/master/pytorch/moviesentiment_roberta/pytorch-roberta-onnx.ipynb) notebook.
+Tutorial for conversion of RoBERTa-SequenceClassification model can be found in the [conversion](https://github.com/SeldonIO/seldon-models/blob/main/pytorch/moviesentiment_roberta/pytorch-roberta-onnx.ipynb) notebook.
 
-Official tool from HuggingFace that can be used to convert transformers models to ONNX can be found [here](https://github.com/huggingface/transformers/blob/master/src/transformers/convert_graph_to_onnx.py)
+Official tool from HuggingFace that can be used to convert transformers models to ONNX can be found [here](https://github.com/huggingface/transformers/blob/main/src/transformers/convert_graph_to_onnx.py)
 
 ## Inference
 We used [ONNX Runtime](https://github.com/microsoft/onnxruntime) to perform the inference.
@@ -95,13 +95,13 @@ RoBERTa-SequenceClassification model weights can be downloaded [here](https://st
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 |```roberta.base```| 87.6 | 92.8 |  91.9 | 78.7|94.8|90.2|63.6|91.2|
 
-Metric and benchmarking details are provided by [fairseq](https://github.com/pytorch/fairseq/tree/master/examples/roberta).
+Metric and benchmarking details are provided by [fairseq](https://github.com/pytorch/fairseq/tree/main/examples/roberta).
 
 ## Publication/Attribution
 * [RoBERTa: A Robustly Optimized BERT Pretraining Approach](https://arxiv.org/pdf/1907.11692.pdf).Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, Veselin Stoyanov
 
 ## References
-* The RoBERTa-SequenceClassification model is converted directly from [seldon-models/pytorch](https://github.com/SeldonIO/seldon-models/blob/master/pytorch/moviesentiment_roberta/pytorch-roberta-onnx.ipynb)
+* The RoBERTa-SequenceClassification model is converted directly from [seldon-models/pytorch](https://github.com/SeldonIO/seldon-models/blob/main/pytorch/moviesentiment_roberta/pytorch-roberta-onnx.ipynb)
 * [Accelerate your NLP pipelines using Hugging Face Transformers and ONNX Runtime](https://medium.com/microsoftazure/accelerate-your-nlp-pipelines-using-hugging-face-transformers-and-onnx-runtime-2443578f4333)
 
 ## Contributors

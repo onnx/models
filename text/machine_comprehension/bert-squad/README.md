@@ -115,10 +115,10 @@ The model is trained with [SQuAD v1.1](https://rajpurkar.github.io/SQuAD-explore
 Metric is Exact Matching (EM) of 80.7, computed over SQuAD v1.1 dev data, for this onnx model.
 
 ## Training
-Fine-tuned the model using SQuAD-1.1 dataset. Look at [BertTutorial.ipynb](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/BertTutorial.ipynb) for more information for converting the model from tensorflow to onnx and for fine-tuning
+Fine-tuned the model using SQuAD-1.1 dataset. Look at [BertTutorial.ipynb](https://github.com/onnx/tensorflow-onnx/blob/main/tutorials/BertTutorial.ipynb) for more information for converting the model from tensorflow to onnx and for fine-tuning
 
 ## Quantization
-BERT-Squad-int8 is obtained by quantizing BERT-Squad model (opset=12). We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/language_translation/onnx_model_zoo/bert-squad/quantization/ptq/readme.md) to understand how to use Intel® Neural Compressor for quantization.
+BERT-Squad-int8 is obtained by quantizing BERT-Squad model (opset=12). We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/main/examples/onnxrt/language_translation/onnx_model_zoo/bert-squad/quantization/ptq/readme.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 
@@ -126,7 +126,7 @@ onnxruntime: 1.8.0
 
 ### Prepare model
 ```shell
-wget https://github.com/onnx/models/raw/master/text/machine_comprehension/bert-squad/model/bertsquad-12.onnx
+wget https://github.com/onnx/models/raw/main/text/machine_comprehension/bert-squad/model/bertsquad-12.onnx
 ```
 
 ### Model quantize
@@ -140,7 +140,7 @@ bash run_tuning.sh --input_model=/path/to/model \ # model path as *.onnx
 ## References
 * **BERT** Model from the paper [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805)
 
-* [BERT Tutorial](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/BertTutorial.ipynb)
+* [BERT Tutorial](https://github.com/onnx/tensorflow-onnx/blob/main/tutorials/BertTutorial.ipynb)
 
 * [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
 

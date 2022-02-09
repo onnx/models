@@ -20,7 +20,7 @@ shape `(1x3x416x416)`
 shape `(1x425x13x13)`
 
 ### Postprocessing steps
-The output is a `(1x425x13x13)` tensor where 13x13 is the number of grid cells that the image gets divided into. Each grid cell corresponds to 5 anchors, made up of the 5 bounding boxes predicted by the grid cell and the 80 classes that describe each bounding box (`5 x (80 classes + 5) = 425`). For more information on how to derive the final bounding boxes and their corresponding confidence scores, refer to this [post](https://docs.microsoft.com/en-us/dotnet/machine-learning/tutorials/object-detection-onnx) and [PyTorch source code](https://github.com/marvis/pytorch-yolo2/blob/master/detect.py).
+The output is a `(1x425x13x13)` tensor where 13x13 is the number of grid cells that the image gets divided into. Each grid cell corresponds to 5 anchors, made up of the 5 bounding boxes predicted by the grid cell and the 80 classes that describe each bounding box (`5 x (80 classes + 5) = 425`). For more information on how to derive the final bounding boxes and their corresponding confidence scores, refer to this [post](https://docs.microsoft.com/en-us/dotnet/machine-learning/tutorials/object-detection-onnx) and [PyTorch source code](https://github.com/marvis/pytorch-yolo2/blob/main/detect.py).
 
 ## Dataset (Train and validation)
 The YOLOv2 model was trained on the [COCO](http://cocodataset.org/#home) datasets and was sourced from the original yolov2-voc `.cfg` and `.weights` files from [link](https://pjreddie.com/darknet/yolov2/).

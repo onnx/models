@@ -100,7 +100,7 @@ for i in range(batch_size):
 
 ## Dataset (Train and validation)
 The original model from OpenAI is pretrained on a dataset of [8 million web pages](https://openai.com/blog/better-language-models).
-The pretrained model is referenced in  [huggingface/transformers](https://github.com/huggingface/transformers/blob/master/transformers/modeling_gpt2.py) repository as a causal (unidirectional) transformer pre-trained using language modeling on a very large corpus of ~40 GB of text data.
+The pretrained model is referenced in  [huggingface/transformers](https://github.com/huggingface/transformers/blob/main/transformers/modeling_gpt2.py) repository as a causal (unidirectional) transformer pre-trained using language modeling on a very large corpus of ~40 GB of text data.
 https://s3.amazonaws.com/models.huggingface.co/bert/gpt2-pytorch_model.bin
 
 <hr>
@@ -114,7 +114,7 @@ Metric and benchmarking details are provided by HuggingFace in this [post](https
 Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, andIlya Sutskever. Language Models are Unsupervised Multitask Learners. 2019.
 
 ## References
-This model is converted directly from [huggingface/transformers](https://github.com/huggingface/transformers/blob/master/src/transformers/modeling_gpt2.py).
+This model is converted directly from [huggingface/transformers](https://github.com/huggingface/transformers/blob/main/src/transformers/modeling_gpt2.py).
 <hr>
 
 ## Contributors

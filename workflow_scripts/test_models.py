@@ -20,9 +20,9 @@ def main():
 
   cwd_path = Path.cwd()
   # git fetch first for git diff on GitHub Action
-  subprocess.run(['git', 'fetch', 'origin', 'master:master'], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+  subprocess.run(['git', 'fetch', 'origin', 'main:main'], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
   # obtain list of added or modified files in this PR
-  obtain_diff = subprocess.Popen(['git', 'diff', '--name-only', '--diff-filter=AM', 'origin/master', 'HEAD'],
+  obtain_diff = subprocess.Popen(['git', 'diff', '--name-only', '--diff-filter=AM', 'origin/main', 'HEAD'],
   cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
   stdoutput, stderroutput = obtain_diff.communicate()
   diff_list = stdoutput.split()

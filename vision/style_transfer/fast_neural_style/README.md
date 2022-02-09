@@ -3,7 +3,7 @@
 # Fast Neural Style Transfer
 
 ## Use-cases
-This artistic style transfer model mixes the content of an image with the style of another image. Examples of the styles can be seen [in this PyTorch example](https://github.com/pytorch/examples/tree/master/fast_neural_style#models).
+This artistic style transfer model mixes the content of an image with the style of another image. Examples of the styles can be seen [in this PyTorch example](https://github.com/pytorch/examples/tree/main/fast_neural_style#models).
 
 
 ## Description
@@ -59,16 +59,16 @@ img = Image.fromarray(result)
 <hr>
 
 ## Dataset (Train and validation)
-The original fast neural style model is from [pytorch/examples/fast_neural_style](https://github.com/pytorch/examples/tree/master/fast_neural_style). All models are trained using the [COCO 2014 Training images dataset](http://cocodataset.org/#download) [80K/13GB].
+The original fast neural style model is from [pytorch/examples/fast_neural_style](https://github.com/pytorch/examples/tree/main/fast_neural_style). All models are trained using the [COCO 2014 Training images dataset](http://cocodataset.org/#download) [80K/13GB].
 <hr>
 
 ## Training
-Refer to [pytorch/examples/fast_neural_style](https://github.com/pytorch/examples/tree/master/fast_neural_style) for training details in PyTorch. Refer to [conversion.ipynb](dependencies/conversion.ipynb) to learn how the PyTorch models are converted to ONNX format.
+Refer to [pytorch/examples/fast_neural_style](https://github.com/pytorch/examples/tree/main/fast_neural_style) for training details in PyTorch. Refer to [conversion.ipynb](dependencies/conversion.ipynb) to learn how the PyTorch models are converted to ONNX format.
 <hr>
 
 
 ## References
-Original style transfer model in PyTorch: <https://github.com/pytorch/examples/tree/master/fast_neural_style>
+Original style transfer model in PyTorch: <https://github.com/pytorch/examples/tree/main/fast_neural_style>
 <hr>
 
 ## Contributors

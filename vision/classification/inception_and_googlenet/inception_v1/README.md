@@ -51,7 +51,7 @@ random generated sampe test data:
 ## Results/accuracy on test set
 
 ## Quantization
-Inception-1-int8 is obtained by quantizing fp32 Inception-1 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/inception/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+Inception-1-int8 is obtained by quantizing fp32 Inception-1 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/main/examples/onnxrt/image_recognition/onnx_model_zoo/inception/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 
@@ -59,7 +59,7 @@ onnxruntime: 1.8.0
 
 ### Prepare model
 ```shell
-wget https://github.com/onnx/models/blob/master/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12.onnx
+wget https://github.com/onnx/models/blob/main/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12.onnx
 ```
 
 ### Model quantize

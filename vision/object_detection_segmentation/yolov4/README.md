@@ -72,7 +72,7 @@ Output shape: `(1, 52, 52, 3, 85)`
 
 There are 3 output layers. For each layer, there are 255 outputs: 85 values per anchor, times 3 anchors.
 
-The 85 values of each anchor consists of 4 box coordinates describing the predicted bounding box (x, y, h, w), 1 object confidence, and 80 class confidences. [Here](https://github.com/hunglc007/tensorflow-yolov4-tflite/blob/master/data/classes/coco.names) is the class list.
+The 85 values of each anchor consists of 4 box coordinates describing the predicted bounding box (x, y, h, w), 1 object confidence, and 80 class confidences. [Here](https://github.com/hunglc007/tensorflow-yolov4-tflite/blob/main/data/classes/coco.names) is the class list.
 
 ### Postprocessing steps
 The following postprocessing steps are modified from the [hunglc007/tensorflow-yolov4-tflite](https://github.com/hunglc007/tensorflow-yolov4-tflite) repository.

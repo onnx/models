@@ -115,7 +115,7 @@ ort_test_dir_utils.create_test_dir(model_path, 'temp/examples', 'test2', name_in
 ```
 
 ### More details
-https://github.com/microsoft/onnxruntime/blob/master/tools/python/PythonTools.md
+https://github.com/microsoft/onnxruntime/blob/main/tools/python/PythonTools.md
 
 <hr>
 

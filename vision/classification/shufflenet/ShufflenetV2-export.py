@@ -18,7 +18,7 @@ MODELS = [
 ]
 data_dir = 'test_data_set_0'
 
-url, filename = ("https://github.com/pytorch/hub/raw/master/images/dog.jpg", "dog.jpg")
+url, filename = ("https://github.com/pytorch/hub/raw/main/images/dog.jpg", "dog.jpg")
 urllib.request.urlretrieve(url, filename)
 
 

@@ -30,7 +30,7 @@ The output of the network is a tensor of shape (1 X `label_num` X `H` * `W`) whe
 ### Postprocessing
 The output tensor is reshaped and resized to give the softmax map of shape (`H` X `W` X `label_num`). The raw label map is computed by doing an argmax on the softmax map. The script [cityscapes_labels.py](dependencies/cityscapes_labels.py) contains the segmentation category labels and their corresponding color map. Using this the colorized segmented images are generated. Check [duc-postprocess.py](dependencies/duc-postprocess.py) for code.
 
-To do quick inference with the model, check out [Model Server](https://github.com/awslabs/mxnet-model-server/blob/master/docs/model_zoo.md/#duc-resnet101_onnx).
+To do quick inference with the model, check out [Model Server](https://github.com/awslabs/mxnet-model-server/blob/main/docs/model_zoo.md/#duc-resnet101_onnx).
 
 ## <a name="dset"></a>Dataset
 Cityscapes dataset is used for training and validation. It is a large dataset that focuses on semantic understanding of urban street scenes. It contains 5000 images with fine annotations across 50 cities, different seasons, varying scene layout and background. There are a total of 30 categories in the dataset of which 19 are included for training and evaluation. The training, validation and test set contains 2975, 500 and 1525 fine images, respectively.

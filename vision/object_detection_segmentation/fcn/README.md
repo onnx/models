@@ -145,7 +145,7 @@ The more conservative of the two estimates is used in the model files table.
 <hr>
 
 ## Quantization
-FCN ResNet 50-int8 is obtained by quantizing fp32 FCN ResNet 50 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/fcn/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+FCN ResNet 50-int8 is obtained by quantizing fp32 FCN ResNet 50 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/main/examples/onnxrt/image_recognition/onnx_model_zoo/fcn/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 
@@ -153,7 +153,7 @@ onnxruntime: 1.8.0
 
 ### Prepare model
 ```shell
-wget https://github.com/onnx/models/raw/master/vision/object_detection_segmentation/fcn/model/fcn-resnet50-12.onnx
+wget https://github.com/onnx/models/raw/main/vision/object_detection_segmentation/fcn/model/fcn-resnet50-12.onnx
 ```
 
 ### Model quantize
@@ -169,7 +169,7 @@ bash run_tuning.sh --input_model=path/to/model  \ # model path as *.onnx
 ## References
 * Jonathan Long, Evan Shelhamer, Trevor Darrell; Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2015, pp. 3431-3440
 
-* This model is converted from the [Torchvision Model Zoo](https://pytorch.org/docs/stable/torchvision/models.html), originally implemented by Francisco Moss [here](https://github.com/pytorch/vision/tree/master/torchvision/models/segmentation/fcn.py).
+* This model is converted from the [Torchvision Model Zoo](https://pytorch.org/docs/stable/torchvision/models.html), originally implemented by Francisco Moss [here](https://github.com/pytorch/vision/tree/main/torchvision/models/segmentation/fcn.py).
 
 * [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
 

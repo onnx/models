@@ -76,7 +76,7 @@ Backbone is ResNet34 pretrained on ILSVRC 2012 (from torchvision). Modifications
 <hr>
 
 ## Quantization
-SSD-int8 is obtained by quantizing fp32 SSD model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/object_detection/onnx_model_zoo/ssd/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+SSD-int8 is obtained by quantizing fp32 SSD model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/main/examples/onnxrt/object_detection/onnx_model_zoo/ssd/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 
@@ -84,7 +84,7 @@ onnxruntime: 1.8.0
 
 ### Prepare model
 ```shell
-wget https://github.com/onnx/models/blob/master/vision/object_detection_segmentation/ssd/model/ssd-12.onnx
+wget https://github.com/onnx/models/blob/main/vision/object_detection_segmentation/ssd/model/ssd-12.onnx
 ```
 
 ### Model quantize
@@ -97,7 +97,7 @@ bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
 <hr>
 
 ## References
-* This model is converted from mlperf/inference [repository](https://github.com/mlperf/inference/tree/master/others/cloud/single_stage_detector) with modifications in [repository](https://github.com/BowenBao/inference/tree/master/cloud/single_stage_detector/pytorch).
+* This model is converted from mlperf/inference [repository](https://github.com/mlperf/inference/tree/main/others/cloud/single_stage_detector) with modifications in [repository](https://github.com/BowenBao/inference/tree/main/cloud/single_stage_detector/pytorch).
 
 * [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
 <hr>

@@ -32,7 +32,7 @@ The model outputs an embedding vector for the input face images. The size of the
 ### Postprocessing
 The post-processing involves normalizing the output embedding vectors to have unit length. Check [face_postprocess.py](dependencies/face_postprocess.py) for code.
 
-To do quick inference with the model, check out [Model Server](https://github.com/awslabs/mxnet-model-server/blob/master/docs/model_zoo.md/#arcface-resnet100_onnx).
+To do quick inference with the model, check out [Model Server](https://github.com/awslabs/mxnet-model-server/blob/main/docs/model_zoo.md/#arcface-resnet100_onnx).
 
 ## Dataset
 ### Training

@@ -31,7 +31,7 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # The original version of this file can be obtained at
-# https://github.com/pytorch/examples/blob/master/fast_neural_style/neural_style/transformer_net.py
+# https://github.com/pytorch/examples/blob/main/fast_neural_style/neural_style/transformer_net.py
 
 import torch
 
