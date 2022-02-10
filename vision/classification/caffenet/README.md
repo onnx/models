@@ -72,7 +72,7 @@ onnxruntime: 1.8.0
 
 ### Prepare model
 ```shell
-wget https://github.com/onnx/models/blob/master/vision/classification/caffenet/model/caffenet-12.onnx
+wget https://github.com/onnx/models/blob/main/vision/classification/caffenet/model/caffenet-12.onnx
 ```
 
 ### Model quantize
