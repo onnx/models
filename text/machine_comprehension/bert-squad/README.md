@@ -126,7 +126,7 @@ onnxruntime: 1.8.0
 
 ### Prepare model
 ```shell
-wget https://github.com/onnx/models/raw/master/text/machine_comprehension/bert-squad/model/bertsquad-12.onnx
+wget https://github.com/onnx/models/raw/main/text/machine_comprehension/bert-squad/model/bertsquad-12.onnx
 ```
 
 ### Model quantize
