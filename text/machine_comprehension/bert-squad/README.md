@@ -1,17 +1,26 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # BERT-Squad
 
 ## Use cases
-This model answers questions based on the context of the given input paragraph.   
+This model answers questions based on the context of the given input paragraph.
 
 ## Description
 BERT (Bidirectional Encoder Representations from Transformers) applies Transformers, a popular attention model, to language modelling. This mechanism has an encoder to read the input text and a decoder that produces a prediction for the task. This model uses the technique of masking out some of the words in the input and then condition each word bidirectionally to predict the masked words. BERT also learns to model relationships between sentences, predicts if the sentences are connected or not.
 
 ## Model
 
- |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-|BERT-Squad| [416 MB](model/bertsquad-8.onnx) |  [385 MB](model/bertsquad-8.tar.gz) |  1.3 | 8|
-|BERT-Squad| [416 MB](model/bertsquad-10.onnx) |  [384 MB](model/bertsquad-10.tar.gz) |  1.5 | 10|
+ |Model        |Download  |Download (with sample test data)| ONNX version |Opset version| Accuracy|
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+|BERT-Squad| [416 MB](model/bertsquad-8.onnx) |  [385 MB](model/bertsquad-8.tar.gz) |  1.3 | 8| |
+|BERT-Squad| [416 MB](model/bertsquad-10.onnx) |  [384 MB](model/bertsquad-10.tar.gz) |  1.5 | 10| |
+|BERT-Squad| [416 MB](model/bertsquad-12.onnx) |  [384 MB](model/bertsquad-12.tar.gz) |  1.9 | 12| 80.67171|
+|BERT-Squad-int8| [119 MB](model/bertsquad-12-int8.onnx) |  [101 MB](model/bertsquad-12-int8.tar.gz) |  1.9 | 12| 80.43519|
+> Compared with the fp32 BERT-Squad, BERT-Squad-int8's accuracy drop ratio is 0.29%, performance improvement is 1.81x.
+>
+> Note the performance depends on the test hardware. 
+> 
+> Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
 Dependencies
 * [tokenization.py](dependencies/tokenization.py)
@@ -108,13 +117,39 @@ Metric is Exact Matching (EM) of 80.7, computed over SQuAD v1.1 dev data, for th
 ## Training
 Fine-tuned the model using SQuAD-1.1 dataset. Look at [BertTutorial.ipynb](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/BertTutorial.ipynb) for more information for converting the model from tensorflow to onnx and for fine-tuning
 
+## Quantization
+BERT-Squad-int8 is obtained by quantizing BERT-Squad model (opset=12). We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/language_translation/onnx_model_zoo/bert-squad/quantization/ptq/readme.md) to understand how to use Intel® Neural Compressor for quantization.
+
+### Environment
+onnx: 1.9.0 
+onnxruntime: 1.8.0
+
+### Prepare model
+```shell
+wget https://github.com/onnx/models/raw/main/text/machine_comprehension/bert-squad/model/bertsquad-12.onnx
+```
+
+### Model quantize
+```bash
+bash run_tuning.sh --input_model=/path/to/model \ # model path as *.onnx
+                   --output_model=/path/to/model_tune \
+                   --dataset_location=/path/to/SQuAD/dataset \
+                   --config=bert.yaml
+```
 
 ## References
 * **BERT** Model from the paper [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805)
 
 * [BERT Tutorial](https://github.com/onnx/tensorflow-onnx/blob/master/tutorials/BertTutorial.ipynb)
+
+* [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
+
 ## Contributors
-[Kundana Pillari](https://github.com/kundanapillari)
+* [Kundana Pillari](https://github.com/kundanapillari)
+* [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [airMeng](https://github.com/airMeng) (Intel)
+* [ftian1](https://github.com/ftian1) (Intel)
+* [hshen14](https://github.com/hshen14) (Intel)
 
 ## License
 Apache 2.0

@@ -3,12 +3,12 @@
 
 name: Linux CI
 
-# Triggers the workflow on push or pull request events but only for the master branch
+# Triggers the workflow on push or pull request events but only for the main branch
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   # This workflow contains a single job called "build"
@@ -17,9 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.7]
+        python-version: [3.8]
         architecture: ['x64']
-        onnx-version: ['1.7']
 
     steps:
       - uses: actions/checkout@v2
@@ -34,11 +33,12 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install onnx==${{ matrix.onnx-version }} requests
-          python -m pip install onnxruntime
+          python -m pip install onnx onnxruntime requests
+
       - name: Test new models by onnxs
         run: |
           python workflow_scripts/test_models.py --target onnx
+
       - name: Test new models by onnxruntime
         run: |
           python workflow_scripts/test_models.py --target onnxruntime

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 import cv2
 import onnxruntime as ort
 import argparse
@@ -9,6 +11,12 @@ from ultraface.dependencies.box_utils import predict
 # ------------------------------------------------------------------------------------------------------------------------------------------------
 # Face detection using UltraFace-320 onnx model
 face_detector_onnx = "../ultraface/models/version-RFB-320.onnx"
+
+# Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
+# other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
+# based on the build flags) when instantiating InferenceSession.
+# For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
+# ort.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
 face_detector = ort.InferenceSession(face_detector_onnx)
 
 # scale current rectangle to box
@@ -18,7 +26,7 @@ def scale(box):
     maximum = max(width, height)
     dx = int((maximum - width)/2)
     dy = int((maximum - height)/2)
-    
+
     bboxes = [box[0] - dx, box[1] - dy, box[2] + dx, box[3] + dy]
     return bboxes
 
@@ -44,6 +52,14 @@ def faceDetector(orig_image, threshold = 0.7):
 # ------------------------------------------------------------------------------------------------------------------------------------------------
 # Face gender classification using VGG-16 onnx model
 gender_classifier_onnx = "models/vgg_ilsvrc_16_gender_imdb_wiki.onnx"
+
+# Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
+# other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
+# based on the build flags) when instantiating InferenceSession.
+# Following code assumes NVIDIA GPU is available, you can specify other execution providers or don't include providers parameter
+# to use default CPU provider.
+# For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
+# ort.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
 gender_classifier = ort.InferenceSession(gender_classifier_onnx)
 genderList=['Female','Male']
 
@@ -62,6 +78,14 @@ def genderClassifier(orig_image):
 # ------------------------------------------------------------------------------------------------------------------------------------------------
 # Face age classification using VGG-16 onnx model
 age_classifier_onnx = "models/vgg_ilsvrc_16_age_imdb_wiki.onnx"
+
+# Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
+# other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
+# based on the build flags) when instantiating InferenceSession.
+# Following code assumes NVIDIA GPU is available, you can specify other execution providers or don't include providers parameter
+# to use default CPU provider.
+# For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
+# ort.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
 age_classifier = ort.InferenceSession(age_classifier_onnx)
 
 # age classification method
@@ -96,7 +120,7 @@ for i in range(boxes.shape[0]):
     gender = genderClassifier(cropped)
     age = ageClassifier(cropped)
     print(f'Box {i} --> {gender}, {age}')
-    
+
     cv2.rectangle(orig_image, (box[0], box[1]), (box[2], box[3]), color, 4)
     cv2.putText(orig_image, f'{gender}, {age}', (box[0], box[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 1.25, color, 2, cv2.LINE_AA)
     cv2.imshow('', orig_image)

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 import numpy as np
 import cv2 as cv
 from PIL import Image
@@ -47,10 +49,10 @@ def postprocess(labels,img_shape,result_shape):
     labels = np.transpose(labels, [1, 2, 0])
     labels = cv.resize(labels, (result_width, result_height), interpolation=cv.INTER_LINEAR)
     labels = np.transpose(labels, [2, 0, 1])
-    
+
     # get softmax output
     softmax = labels
-    
+
     # get classification labels
     results = np.argmax(labels, axis=0).astype(np.uint8)
     raw_labels = results
@@ -60,9 +62,9 @@ def postprocess(labels,img_shape,result_shape):
 
     # generate segmented image
     result_img = Image.fromarray(colorize(raw_labels)).resize(result_shape[::-1])
-    
+
     # generate blended image
     blended_img = Image.fromarray(cv.addWeighted(im[:, :, ::-1], 0.5, np.array(result_img), 0.5, 0))
 
     return confidence, result_img, blended_img, raw_labels
-    
+

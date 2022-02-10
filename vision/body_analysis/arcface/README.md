@@ -1,10 +1,12 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # ArcFace
 
 ## Use cases
 For each face image, the model produces a fixed length embedding vector corresponding to the face in the image. The vectors from face images of a single person have a higher similarity than that from different persons. Therefore, the model is primarily used for face recognition/verification. It can also be used in other applications like facial feature based clustering.
 
 ## Description
-ArcFace is a CNN based model for face recognition which learns discriminative features of faces and produces embeddings for input face images. To enhance the discriminative power of softmax loss, a novel supervisor signal called additive angular margin (ArcFace) is used here as an additive term in the softmax loss. ArcFace can use a variety of CNN networks as its backend, each having different accuracy and performance. 
+ArcFace is a CNN based model for face recognition which learns discriminative features of faces and produces embeddings for input face images. To enhance the discriminative power of softmax loss, a novel supervisor signal called additive angular margin (ArcFace) is used here as an additive term in the softmax loss. ArcFace can use a variety of CNN networks as its backend, each having different accuracy and performance.
 
 ## Model
 The model LResNet100E-IR is an ArcFace model that uses ResNet100 as a backend with modified input and output layers.
@@ -18,7 +20,7 @@ The model LResNet100E-IR is an ArcFace model that uses ResNet100 as a backend wi
 ## Inference
 We used MXNet as framework to perform inference. View the notebook [arcface_inference](dependencies/arcface_inference.ipynb) to understand how to use above models for doing inference. A brief description of the inference process is provided below:
 
-### Input 
+### Input
 The input to the model should preferably be images containing a single face in each image. There are no constraints on the size of the image. The example displayed in the inference notebook was done using jpeg images.
 
 ### Preprocessing

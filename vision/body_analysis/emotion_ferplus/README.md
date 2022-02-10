@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: MIT -->
+
 # FER+ Emotion Recognition
 
 ## Description
@@ -8,8 +10,8 @@ This model is a deep convolutional neural network for emotion recognition in fac
 | Model          | Download | Download (with sample test data) | ONNX version | Opset version |
 |----------------|:-----------|:-----------|:--------|:-------------|
 |Emotion FERPlus |[34 MB](model/emotion-ferplus-2.onnx)|[31 MB](model/emotion-ferplus-2.tar.gz)|1.0|2|
-|                |[34 MB](model/emotion-ferplus-7.onnx)|[31 MB](model/emotion-ferplus-7.tar.gz)|1.2|7|
-|                |[34 MB](model/emotion-ferplus-8.onnx)|[31 MB](model/emotion-ferplus-8.tar.gz)|1.3|8|
+|Emotion FERPlus |[34 MB](model/emotion-ferplus-7.onnx)|[31 MB](model/emotion-ferplus-7.tar.gz)|1.2|7|
+|Emotion FERPlus |[34 MB](model/emotion-ferplus-8.onnx)|[31 MB](model/emotion-ferplus-8.tar.gz)|1.3|8|
 
 ### Paper
 "Training Deep Networks for Facial Expression Recognition with Crowd-Sourced Label Distribution" [arXiv:1608.01041](https://arxiv.org/abs/1608.01041)
@@ -42,7 +44,7 @@ def preprocess(image_path):
 ```
 
 ### Output
-The model outputs a `(1x8)` array of scores corresponding to the 8 emotion classes, where the labels map as follows:  
+The model outputs a `(1x8)` array of scores corresponding to the 8 emotion classes, where the labels map as follows:
 `emotion_table = {'neutral':0, 'happiness':1, 'surprise':2, 'sadness':3, 'anger':4, 'disgust':5, 'fear':6, 'contempt':7}`
 ### Postprocessing
 Route the model output through a softmax function to map the aggregated activations across the network to probabilities across the 8 classes.

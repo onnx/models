@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 from transformers import T5ForConditionalGeneration
 from .models import CombinedDecoder, SimplifiedT5Encoder
 import torch

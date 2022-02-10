@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: BSD-3-Clause
+
 import os
 import torch
 import onnxruntime
@@ -11,7 +13,7 @@ from onnx import numpy_helper
 import urllib
 
 data_dir = 'test_data_set_0'
-url, filename = ("https://github.com/onnx/models/raw/master/vision/object_detection_segmentation/retinanet/dependencies/demo.jpg", "demo.jpg")
+url, filename = ("https://github.com/onnx/models/raw/main/vision/object_detection_segmentation/retinanet/dependencies/demo.jpg", "demo.jpg")
 urllib.request.urlretrieve(url, filename)
 
 
@@ -97,6 +99,11 @@ def inference(file, inputs, outputs):
     outputs_flatten = flatten(outputs)
     outputs_flatten = update_flatten_list(outputs_flatten, [])
 
+    # Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
+    # other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
+    # based on the build flags) when instantiating InferenceSession.
+    # For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
+    # onnxruntime.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
     sess = onnxruntime.InferenceSession(file)
     ort_inputs = dict((sess.get_inputs()[i].name, to_numpy(input)) for i, input in enumerate(inputs_flatten))
     res = sess.run(None, ort_inputs)
@@ -115,6 +122,11 @@ def torch_inference(model, input):
 
 def ort_inference(file, inputs_flatten, outputs_flatten):
     print("====== ORT Inference ======")
+    # Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
+    # other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
+    # based on the build flags) when instantiating InferenceSession.
+    # For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
+    # onnxruntime.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
     ort_sess = onnxruntime.InferenceSession(file)
     ort_inputs = dict((ort_sess.get_inputs()[i].name, to_numpy(input)) for i, input in enumerate(inputs_flatten))
     ort_outs = ort_sess.run(None, ort_inputs)

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: MIT
+
 import cv2
 import onnxruntime as ort
 import argparse
@@ -7,6 +9,12 @@ from dependencies.box_utils import predict
 # ------------------------------------------------------------------------------------------------------------------------------------------------
 # Face detection using UltraFace-320 onnx model
 face_detector_onnx = "../ultraface/models/version-RFB-320.onnx"
+
+# Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
+# other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
+# based on the build flags) when instantiating InferenceSession.
+# For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
+# ort.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
 face_detector = ort.InferenceSession(face_detector_onnx)
 
 # scale current rectangle to box
@@ -16,7 +24,7 @@ def scale(box):
     maximum = max(width, height)
     dx = int((maximum - width)/2)
     dy = int((maximum - height)/2)
-    
+
     bboxes = [box[0] - dx, box[1] - dy, box[2] + dx, box[3] + dy]
     return bboxes
 

@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # T5
 
 ## Use-cases
@@ -12,8 +14,8 @@ understanding through the training of multiple tasks at once.
 
  |Model        |Download  | Compressed |ONNX version|Opset version|
 |-------------|:--------------|:--------------|:--------------|:--------------|
-|T5-encoder       |[650.6 MB](model/t5-encoder-12.onnx) | [205.0 MB](model/t5-encoder-12.tar.gz)| 1.6 | 12 
-|T5-decoder-with-lm-head |[304.9 MB](model/t5-decoder-with-lm-head-12.onnx) | [304.9 MB](model/t5-decoder-with-lm-head-12.tar.gz)| 1.6 | 12 
+|T5-encoder       |[650.6 MB](model/t5-encoder-12.onnx) | [205.0 MB](model/t5-encoder-12.tar.gz)| 1.6 | 12
+|T5-decoder-with-lm-head |[304.9 MB](model/t5-decoder-with-lm-head-12.onnx) | [304.9 MB](model/t5-decoder-with-lm-head-12.tar.gz)| 1.6 | 12
 
 
 ### Source
@@ -66,6 +68,12 @@ from transformers import T5Tokenizer
 from .dependencies.models import GenerativeT5
 
 tokenizer = T5Tokenizer.from_pretrained('t5-base')
+
+# Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
+# other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
+# based on the build flags) when instantiating InferenceSession.
+# For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
+# InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
 decoder_sess = InferenceSession(str(path_t5_decoder))
 encoder_sess = InferenceSession(str(path_t5_encoder))
 generative_t5 = GenerativeT5(encoder_sess, decoder_sess, tokenizer, onnx=True)
@@ -122,8 +130,8 @@ Benchmarking can be run with the following [script](https://github.com/abelribou
 
 
 ## Publication/Attribution
-This repo is based on the work of Colin Raffel and Noam Shazeer and Adam Roberts and Katherine Lee and Sharan Narang and 
-Michael Matena and Yanqi Zhou and Wei Li and Peter J. Liu from Google, as well as the implementation of T5 from the 
+This repo is based on the work of Colin Raffel and Noam Shazeer and Adam Roberts and Katherine Lee and Sharan Narang and
+Michael Matena and Yanqi Zhou and Wei Li and Peter J. Liu from Google, as well as the implementation of T5 from the
 huggingface team, the work of the Microsoft ONNX and onnxruntime teams, in particular Tianlei Wu, and the work of Thomas Wolf on generation of text.
 
 [Original T5 Paper](https://arxiv.org/pdf/1910.10683.pdf)

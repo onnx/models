@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: BSD-3-Clause -->
+
 # ShuffleNet
 
 ## Use cases
@@ -6,8 +8,13 @@ Computationally efficient CNN architecture designed specifically for mobile devi
 ## Description
 ShuffleNet is a deep convolutional network for image classification. [ShuffleNetV2](https://pytorch.org/hub/pytorch_vision_shufflenet_v2/) is an improved architecture that is the state-of-the-art in terms of speed and accuracy tradeoff used for image classification.
 
-Caffe2 ShuffleNet-v1 ==> ONNX ShuffleNet-v1  
+Caffe2 ShuffleNet-v1 ==> ONNX ShuffleNet-v1
+
 PyTorch ShuffleNet-v2 ==> ONNX ShuffleNet-v2
+
+ONNX ShuffleNet-v2 ==> Quantized ONNX ShuffleNet-v2
+
+ONNX ShuffleNet-v2 ==> Quantized ONNX ShuffleNet-v2
 
 ## Model
 
@@ -22,6 +29,13 @@ PyTorch ShuffleNet-v2 ==> ONNX ShuffleNet-v2
 |Model        |Download  |Download (with sample test data)|ONNX version|Opset version|Top-1 error |Top-5 error |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |ShuffleNet-v2 |[9.2MB](model/shufflenet-v2-10.onnx) |  [8.7MB](model/shufflenet-v2-10.tar.gz) | 1.6 | 10 | 30.64 | 11.68|
+|ShuffleNet-v2-fp32 |[8.79MB](model/shufflenet-v2-12.onnx) |[8.69MB](model/shufflenet-v2-12.tar.gz) |1.9 |12 |33.65 |13.43|
+|ShuffleNet-v2-int8 |[2.28MB](model/shufflenet-v2-12-int8.onnx) |[2.37MB](model/shufflenet-v2-10-int8.tar.gz) |1.9 |12 |33.85 |13.66 |
+> Compared with the fp32 ShuffleNet-v2, int8 ShuffleNet-v2's Top-1 error rising ratio is 0.59%, Top-5 error rising ratio is 1.71% and performance improvement is 1.62x.
+>
+> Note the performance depends on the test hardware. 
+> 
+> Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
 ## Inference
 [This script](ShufflenetV2-export.py) converts the ShuffleNetv2 model from PyTorch to ONNX and uses ONNX Runtime for inference.
@@ -64,14 +78,43 @@ For training we use train+valset in COCO except for 5000 images from minivalset,
 Details of performance on COCO object detection are provided in [this paper](https://arxiv.org/pdf/1807.11164v1.pdf)
 <hr>
 
-## References
-Ningning Ma, Xiangyu Zhang, Hai-Tao Zheng, Jian Sun. ShuffleNet V2: Practical Guidelines for EfficientCNN Architecture Design. 2018.
+## Quantization
+ShuffleNet-v2-int8 is obtained by quantizing ShuffleNet-v2-fp32 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/shufflenet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
-[ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices](https://arxiv.org/abs/1707.01083)
+### Environment
+onnx: 1.9.0 
+onnxruntime: 1.8.0
+
+### Prepare model
+```shell
+wget https://github.com/onnx/models/tree/main/vision/classification/shufflenet/model/shufflenet-v2-12.onnx
+```
+
+### Model quantize
+Make sure to specify the appropriate dataset path in the configuration file.
+```bash
+bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
+                   --config=shufflenetv2.yaml \
+                   --output_model=path/to/save
+```
+
+### Model inference
+We use onnxruntime to perform ShuffleNetv2_fp32 and ShuffleNetv2_int8 inference. View the notebook [onnxrt_inference](../onnxrt_inference.ipynb) to understand how to use these 2 models for doing inference as well as which preprocess and postprocess we use.
+
+## References
+* Ningning Ma, Xiangyu Zhang, Hai-Tao Zheng, Jian Sun. ShuffleNet V2: Practical Guidelines for EfficientCNN Architecture Design. 2018.
+
+* huffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices](https://arxiv.org/abs/1707.01083)
+
+* [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
 <hr>
 
 ## Contributors
-Ksenija Stanojevic
+* Ksenija Stanojevic
+* [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [airMeng](https://github.com/airMeng) (Intel)
+* [ftian1](https://github.com/ftian1) (Intel)
+* [hshen14](https://github.com/hshen14) (Intel)
 <hr>
 
 ## License

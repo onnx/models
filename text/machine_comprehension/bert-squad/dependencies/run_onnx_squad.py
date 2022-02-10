@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 # Copyright 2018 The Google AI Language Team Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -538,6 +540,11 @@ def main():
         convert_examples_to_features(eval_examples, tokenizer, args.max_seq_length,
                                      args.doc_stride, args.max_query_length)
 
+    # Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
+    # other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
+    # based on the build flags) when instantiating InferenceSession.
+    # For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
+    # onnxrt.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
     sess = onnxrt.InferenceSession(args.model, sess_options)
     for input_meta in sess.get_inputs():
         print(input_meta)

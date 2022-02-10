@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 # coding: utf-8
 # YuanYang
 import math
@@ -132,7 +134,7 @@ def generate_bbox(map, reg, scale, threshold):
 def detect_first_stage(img, net, scale, threshold):
     """
         run PNet for first stage
-    
+
     Parameters:
     ----------
         img: numpy array, bgr order
@@ -148,9 +150,9 @@ def detect_first_stage(img, net, scale, threshold):
     height, width, _ = img.shape
     hs = int(math.ceil(height * scale))
     ws = int(math.ceil(width * scale))
-    
+
     im_data = cv2.resize(img, (ws,hs))
-    
+
     # adjust for the network input
     input_buf = adjust_input(im_data)
     output = net.predict(input_buf)
