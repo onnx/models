@@ -16,6 +16,13 @@ The below model is using multiplier value as 1.0.
  |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |MobileNet v2-1.0|    [13.6 MB](model/mobilenetv2-7.onnx)  |  [14.1 MB](model/mobilenetv2-7.tar.gz) |  1.2.1  | 7| 70.94    |     89.99           |
+|MobileNet v2-1.0|    [13.3 MB](model/mobilenetv2-12.onnx)  |  [12.9 MB](model/mobilenetv2-12.tar.gz) |  1.9.0  | 12| 69.48    |     89.26           |
+|MobileNet v2-1.0-int8|    [3.5 MB](model/mobilenetv2-12-int8.onnx)  |  [3.7 MB](model/mobilenetv2-12-int8.tar.gz) |  1.9.0  | 12| 68.30    |     88.44           |
+> Compared with the fp32 MobileNet v2-1.0, int8 MobileNet v2-1.0's Top-1 accuracy decline ratio is 1.70%, Top-5 accuracy decline ratio is 0.92% and performance improvement is 1.05x.
+>
+> Note the performance depends on the test hardware. 
+> 
+> Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
 ## Inference
 We used MXNet as framework with gluon APIs to perform inference. View the notebook [imagenet_inference](../imagenet_inference.ipynb) to understand how to use above models for doing inference. Make sure to specify the appropriate model name in the notebook.
@@ -48,15 +55,40 @@ We used MXNet as framework with gluon APIs to perform training. View the [traini
 ## Validation
 We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_validation](../imagenet_validation.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 
+## Quantization
+MobileNet v2-1.0-int8 is obtained by quantizing MobileNet v2-1.0 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/mobilenet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+
+### Environment
+onnx: 1.9.0 
+onnxruntime: 1.8.0
+
+### Prepare model
+```shell
+wget https://github.com/onnx/models/raw/master/vision/classification/mobilenet/model/mobilenetv2-12.onnx
+```
+
+### Model quantize
+Make sure to specify the appropriate dataset path in the configuration file.
+```bash
+bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
+                   --config=mobilenetv2.yaml \
+                   --output_model=path/to/save
+```
 
 ## References
 * **MobileNet-v2** Model from the paper [MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381)
 
 * [MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io)
 
+* [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
+
 ## Contributors
 * [ankkhedia](https://github.com/ankkhedia) (Amazon AI)
 * [abhinavs95](https://github.com/abhinavs95) (Amazon AI)
+* [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [airMeng](https://github.com/airMeng) (Intel)
+* [ftian1](https://github.com/ftian1) (Intel)
+* [hshen14](https://github.com/hshen14) (Intel)
 
 ## License
 Apache 2.0
