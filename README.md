@@ -80,8 +80,8 @@ Object detection models detect the presence of multiple objects in an image and 
 ### Body, Face & Gesture Analysis <a name="body_analysis"/>
 Face detection models identify and/or recognize human faces and emotions in given images. Body and Gesture Analysis models identify gender and age in given image.
 
-|Model Class |Reference |Description |
-|-|-|-|
+|Model Class |Reference |Description |Hugging Face Spaces |
+|-|-|-|-|
 |<b>[ArcFace](vision/body_analysis/arcface)</b>|[Deng et al.](https://arxiv.org/abs/1801.07698)|A CNN based model for face recognition which learns discriminative features of faces and produces embeddings for input face images.| [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/onnx/ArcFace) |
 |<b>[UltraFace](vision/body_analysis/ultraface)</b>|[Ultra-lightweight face detection model](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB)|This model is a lightweight facedetection model designed for edge computing devices.|
 |<b>[Emotion FerPlus](vision/body_analysis/emotion_ferplus)</b> |[Barsoum et al.](https://arxiv.org/abs/1608.01041)	| Deep CNN for emotion recognition trained on images of faces.|
