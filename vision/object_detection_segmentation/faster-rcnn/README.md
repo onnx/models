@@ -127,7 +127,7 @@ onnxruntime: 1.8.0
 
 ### Prepare model
 ```shell
-wget https://github.com/onnx/models/blob/master/vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12.onnx
+wget https://github.com/onnx/models/blob/main/vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12.onnx
 ```
 
 ### Model quantize
