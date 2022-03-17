@@ -35,7 +35,7 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install onnx onnxruntime requests
 
-      - name: Test new models by onnxs
+      - name: Test new models by onnx
         run: |
           python workflow_scripts/test_models.py --target onnx
 
