@@ -13,7 +13,7 @@ This specific model detects 20 different [classes](dependencies/voc_classes.txt)
 |----------------|:--------------------------------------|:----------------------------------------|:-------------|:--------------|:--------|
 | FCN ResNet-50  | [134 MB](model/fcn-resnet50-11.onnx)  | [213 MB](model/fcn-resnet50-11.tar.gz)  | 1.8.0        | 11 | 60.5% |
 | FCN ResNet-101 | [207 MB](model/fcn-resnet101-11.onnx) | [281 MB](model/fcn-resnet101-11.tar.gz) | 1.8.0        | 11 | 63.7% |
-| FCN ResNet-50  | [134 MB](model/fcn-resnet50-12.onnx)  | [125 MB](model/fcn-resnet50-12.tar.gz)  | 1.8.0        | 12 | 60.5% |
+| FCN ResNet-50  | [134 MB](model/fcn-resnet50-12.onnx)  | [125 MB](model/fcn-resnet50-12.tar.gz)  | 1.8.0        | 12 | 65.0% |
 | FCN ResNet-50-int8  | [34 MB](model/fcn-resnet50-12-int8.onnx)  | [29 MB](model/fcn-resnet50-12-int8.tar.gz)  | 1.8.0        | 12 | 64.7% |
 
 ### Source
