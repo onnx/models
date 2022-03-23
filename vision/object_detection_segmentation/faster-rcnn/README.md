@@ -10,7 +10,13 @@ This model is a real-time neural network for object detection that detects 80 di
 |Model        |Download  | Download (with sample test data)|ONNX version|Opset version|Accuracy |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |Faster R-CNN R-50-FPN      |[167.3 MB](model/FasterRCNN-10.onnx) |[158.0 MB](model/FasterRCNN-10.tar.gz) |1.5 |10 |mAP of 0.35 |
-
+|Faster R-CNN R-50-FPN-fp32      |[168.5 MB](model/FasterRCNN-12.onnx) |[156.2 MB](model/FasterRCNN-12.tar.gz) |1.9 |12 |mAP of 0.3437 |
+|Faster R-CNN R-50-FPN-int8      |[42.6 MB](model/FasterRCNN-12-int8.onnx) |[36.2 MB](model/FasterRCNN-12-int8.tar.gz) |1.9 |12 |mAP of 0.3399 |
+> Compared with the fp32 FasterRCNN-12, int8 FasterRCNN-12's mAP decline ratio is 1.11% and performance improvement is 1.43x.
+>
+> Note the performance depends on the test hardware. 
+> 
+> Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
 
 <hr>
@@ -112,6 +118,27 @@ Metric is COCO box mAP (averaged over IoU of 0.5:0.95), computed over 2017 COCO 
 mAP of 0.353
 <hr>
 
+## Quantization
+Faster R-CNN R-50-FPN-fp32 is obtained by quantizing Faster R-CNN R-50-FPN-fp32 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/object_detection/onnx_model_zoo/faster_rcnn/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+
+### Environment
+onnx: 1.9.0 
+onnxruntime: 1.8.0
+
+### Prepare model
+```shell
+wget https://github.com/onnx/models/blob/main/vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12.onnx
+```
+
+### Model quantize
+```bash
+bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
+                   --config=faster_rcnn.yaml \
+                   --data_path=path/to/COCO2017 \
+                   --output_model=path/to/save
+```
+<hr>
+
 ## Publication/Attribution
 Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun. Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks. Conference on Neural Information Processing Systems (NIPS), 2015.
 
@@ -119,7 +146,16 @@ Massa, Francisco and Girshick, Ross. maskrcnn-benchmark: Fast, modular reference
 <hr>
 
 ## References
-This model is converted from [facebookresearch/maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark) with modifications in [repository](https://github.com/BowenBao/maskrcnn-benchmark/tree/onnx_stage).
+* This model is converted from [facebookresearch/maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark) with modifications in [repository](https://github.com/BowenBao/maskrcnn-benchmark/tree/onnx_stage).
+
+* [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
+<hr>
+
+## Contributors
+* [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [airMeng](https://github.com/airMeng) (Intel)
+* [ftian1](https://github.com/ftian1) (Intel)
+* [hshen14](https://github.com/hshen14) (Intel)
 <hr>
 
 ## License
