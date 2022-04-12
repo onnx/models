@@ -12,6 +12,15 @@ model_proto = onnx.load("path to .onnx file")
 checker.check_model(model_proto)
 ```
 
+### Contribute a Gradio Demo to ONNX Organization on Hugging Face
+
+* Create an account on Hugging Face: https://huggingface.co/join
+* See list of models left to add to ONNX organization, please refer to the table with the [Models listed](https://github.com/onnx/models)
+* Add Gradio Demo under your username, see blog for setting up Gradio Demo on Hugging Face: https://huggingface.co/blog/gradio-spaces
+* request to join ONNX Organization: https://huggingface.co/onnx
+* once approved transfer model from your username to ONNX organization
+
+
 ## Model
 
 |Model        |Download  | Download (with sample test data)|ONNX version|Opset version|Accuracy |
