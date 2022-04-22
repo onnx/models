@@ -30,7 +30,7 @@ ONNX ShuffleNet-v2 ==> Quantized ONNX ShuffleNet-v2
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |ShuffleNet-v2 |[9.2MB](model/shufflenet-v2-10.onnx) |  [8.7MB](model/shufflenet-v2-10.tar.gz) | 1.6 | 10 | 30.64 | 11.68|
 |ShuffleNet-v2-fp32 |[8.79MB](model/shufflenet-v2-12.onnx) |[8.69MB](model/shufflenet-v2-12.tar.gz) |1.9 |12 |33.65 |13.43|
-|ShuffleNet-v2-int8 |[2.28MB](model/shufflenet-v2-12-int8.onnx) |[2.37MB](model/shufflenet-v2-10-int8.tar.gz) |1.9 |12 |33.85 |13.66 |
+|ShuffleNet-v2-int8 |[2.28MB](model/shufflenet-v2-12-int8.onnx) |[2.37MB](model/shufflenet-v2-12-int8.tar.gz) |1.9 |12 |33.85 |13.66 |
 > Compared with the fp32 ShuffleNet-v2, int8 ShuffleNet-v2's Top-1 error rising ratio is 0.59%, Top-5 error rising ratio is 1.71% and performance improvement is 1.62x.
 >
 > Note the performance depends on the test hardware. 
