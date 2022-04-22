@@ -24,7 +24,7 @@ def main():
                    stderr=subprocess.PIPE)
     # obtain list of added or modified files in this PR
     obtain_diff = subprocess.Popen(['git', 'diff', '--name-only', '--diff-filter=AM', 'origin/main', 'HEAD'],
-                                   subprocess.PIPE, stderr=subprocess.PIPE)
+                                   cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdoutput, _ = obtain_diff.communicate()
     diff_list = stdoutput.split()
 
