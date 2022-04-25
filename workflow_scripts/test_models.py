@@ -39,6 +39,7 @@ def main():
     print('\n=== Running ONNX Checker on added models ===\n')
     # run checker on each model
     failed_models = []
+    print(model_list)
     for model_path in model_list:
         model_name = model_path.split('/')[-1]
         print('==============Testing {}=============='.format(model_name))
