@@ -32,7 +32,7 @@ def main():
     tar_ext_name = '.tar.gz'
     onnx_ext_name = '.onnx'
     model_list = [str(model).replace("b'", "").replace("'", "")
-                  for model in diff_list if onnx_ext_name in model or tar_ext_name in model]
+                  for model in diff_list if onnx_ext_name in str(model) or tar_ext_name in str(model)]
     # run lfs install before starting the tests
     test_utils.run_lfs_install()
 
