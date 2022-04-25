@@ -32,7 +32,7 @@ def main():
     tar_ext_name = '.tar.gz'
     onnx_ext_name = '.onnx'
     model_list = [str(model).replace("b'", "").replace("'", "")
-                  for model in diff_list if onnx_ext_name or tar_ext_name in str(model)]
+                  for model in diff_list if onnx_ext_name in model or tar_ext_name in model]
     # run lfs install before starting the tests
     test_utils.run_lfs_install()
 
@@ -49,11 +49,11 @@ def main():
             if tar_ext_name in model_name:
                 # Step 1: check the ONNX model and test_data_set from .tar.gz by ORT
                 test_data_set = []
+                test_utils.pull_lfs_file(model_path)
+                # check whether 'test_data_set_0' exists
+                model_path_from_tar, test_data_set = test_utils.extract_test_data(model_path)
                 # if tar.gz exists, git pull and try to get test data
                 if (args.target == 'onnxruntime' or args.target == 'all'):
-                    test_utils.pull_lfs_file(model_path)
-                    # check whether 'test_data_set_0' exists
-                    model_path_from_tar, test_data_set = test_utils.extract_test_data(model_path)
                     # finally check the ONNX model from .tar.gz by ORT
                     # if the test_data_set does not exist, create the test_data_set
                     check_model.run_backend_ort(model_path_from_tar, test_data_set)
