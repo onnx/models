@@ -10,6 +10,13 @@
 |Model        |Download  |Download (with sample test data)|ONNX version|Opset version|Accuracy |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |YOLOv4       |[251 MB](model/yolov4.onnx) |[236 MB](model/yolov4.tar.gz)|1.6 |11 |mAP of 0.5733 |
+|YOLOv4-int8  |[63.0 MB](model/yolov4-int8.onnx)  |  [61.8 MB](model/yolov4-int8.tar.gz) |1.9.0 |11 |mAP of 0.570 |
+> Compared with the YOLOv4, YOLOv4-int8's mAP decline is 0.33% and performance improvement is 1.59x.
+>
+> Note the performance depends on the test hardware.
+>
+> Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
+
 
 ### Source
 Tensorflow YOLOv4 => ONNX YOLOv4
@@ -255,17 +262,51 @@ def draw_bbox(image, bboxes, classes=read_class_names("coco.names"), show_label=
 Pretrained yolov4 weights can be downloaded [here](https://drive.google.com/open?id=1cewMfusmPjYWbrnuJRuKhPMwRe_b9PaT).
 
 ## Validation accuracy
+YOLOv4:
 mAP50 on COCO 2017 dataset is 0.5733, based on the original tensorflow [model](https://github.com/hunglc007/tensorflow-yolov4-tflite#map50-on-coco-2017-dataset).
+
+YOLOv4-int8:
+mAP50 on COCO 2017 dataset is 0.570, metric is COCO box mAP@[IoU=0.50:0.95 | area= large | maxDets=100].
+<hr>
+
+## Quantization
+YOLOv4-int8 is obtained by quantizing YOLOv4 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/object_detection/onnx_model_zoo/yolov4/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+
+### Environment
+onnx: 1.9.0
+onnxruntime: 1.10.0
+
+### Prepare model
+```shell
+wget https://github.com/onnx/models/blob/main/vision/object_detection_segmentation/yolov4/model/yolov4.onnx
+```
+
+### Model quantize
+```bash
+bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
+                   --config=yolov4.yaml \
+                   --data_path=path/to/COCO2017 \
+                   --output_model=path/to/save
+```
+<hr>
 
 ## Publication/Attribution
 * [YOLOv4: Optimal Speed and Accuracy of Object Detection](https://arxiv.org/abs/2004.10934). Alexey Bochkovskiy, Chien-Yao Wang, Hong-Yuan Mark Liao.
 * Original models from [Darknet Github repository](https://github.com/AlexeyAB/darknet).
 
 ## References
-This model is directly converted from [hunglc007/tensorflow-yolov4-tflite](https://github.com/hunglc007/tensorflow-yolov4-tflite).
+* This model is directly converted from [hunglc007/tensorflow-yolov4-tflite](https://github.com/hunglc007/tensorflow-yolov4-tflite).
+
+* [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
+<hr>
 
 ## Contributors
-[Jennifer Wang](https://github.com/jennifererwangg)
+* [Jennifer Wang](https://github.com/jennifererwangg)
+* [XinyuYe-Intel](https://github.com/XinyuYe-Intel) (Intel)
+* [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [airMeng](https://github.com/airMeng) (Intel)
+* [ftian1](https://github.com/ftian1) (Intel)
+* [hshen14](https://github.com/hshen14) (Intel)
 
 ## License
 MIT License
