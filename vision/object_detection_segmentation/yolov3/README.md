@@ -10,7 +10,13 @@ This model is a neural network for real-time object detection that detects 80 di
 |Model        |Download  |Download (with sample test data)|ONNX version|Opset version|Accuracy |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |YOLOv3       |[237 MB](model/yolov3-10.onnx) |[222 MB](model/yolov3-10.tar.gz)|1.5 |10 |mAP of 0.553 |
-
+|YOLOv3-12    |[237 MB](model/yolov3-12.onnx) |[222 MB](model/yolov3-12.tar.gz)|1.9 |12 |mAP of 0.2874 |
+|YOLOv3-12-int8 |[61 MB](model/yolov3-12-int8.onnx) |[47 MB](model/yolov3-12-int8.tar.gz)|1.9 |12 |mAP of 0.2688 |
+> Compared with the YOLOv3-12, YOLOv3-12-int8's mAP decline is 0.0186 and performance improvement is 2.25x.
+>
+> Note the performance depends on the test hardware. 
+> 
+> Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
 
 <hr>
@@ -83,8 +89,33 @@ We use pretrained weights from pjreddie.com [here](https://pjreddie.com/media/fi
 <hr>
 
 ## Validation accuracy
+YOLOv3:
 Metric is COCO box mAP (averaged over IoU of 0.5:0.95), computed over 2017 COCO val data.
 mAP of 0.553 based on original Yolov3 model [here](https://pjreddie.com/darknet/yolo/)
+
+YOLOv3-12 & YOLOv3-12-int8:
+Metric is COCO box mAP@[IoU=0.50:0.95 | area=all | maxDets=100], computed over 2017 COCO val data.
+<hr>
+
+## Quantization
+YOLOv3-12-int8 is obtained by quantizing YOLOv3-12 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/object_detection/onnx_model_zoo/yolov3/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+
+### Environment
+onnx: 1.9.0 
+onnxruntime: 1.10.0
+
+### Prepare model
+```shell
+wget https://github.com/onnx/models/raw/main/vision/object_detection_segmentation/yolov3/model/yolov3-12.onnx
+```
+
+### Model quantize
+```bash
+bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
+                   --config=yolov3.yaml \
+                   --data_path=path/to/COCO2017 \
+                   --output_model=path/to/save
+```
 <hr>
 
 ## Publication/Attribution
@@ -93,7 +124,15 @@ Joseph Redmon, Ali Farhadi. YOLOv3: An Incremental Improvement, [paper](https://
 <hr>
 
 ## References
-This model is converted from a keras model [repository](https://github.com/qqwweee/keras-yolo3) using keras2onnx converter [repository](https://github.com/onnx/keras-onnx).
+* This model is converted from a keras model [repository](https://github.com/qqwweee/keras-yolo3) using keras2onnx converter [repository](https://github.com/onnx/keras-onnx).
+* [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
+<hr>
+
+## Contributors
+* [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [airMeng](https://github.com/airMeng) (Intel)
+* [ftian1](https://github.com/ftian1) (Intel)
+* [hshen14](https://github.com/hshen14) (Intel)
 <hr>
 
 ## License
