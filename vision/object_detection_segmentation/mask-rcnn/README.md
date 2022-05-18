@@ -10,6 +10,13 @@ This model is a real-time neural network for object instance segmentation that d
 |Model        |Download  | Download (with sample test data)|ONNX version|Opset version|Accuracy |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |Mask R-CNN R-50-FPN      |[177.9 MB](model/MaskRCNN-10.onnx) | [168.8 MB](model/MaskRCNN-10.tar.gz) |1.5 |10 |mAP of 0.36 & 0.33 |
+|Mask R-CNN R-50-FPN-fp32      |[169.7 MB](model/MaskRCNN-12.onnx) | [157.3 MB](model/MaskRCNN-12.tar.gz) |1.9 |12 |mAP of 0.3372 |
+|Mask R-CNN R-50-FPN-int8      |[45.9 MB](model/MaskRCNN-12-int8.onnx) | [34.2 MB](model/MaskRCNN-12-int8.tar.gz) |1.9 |12 |mAP of 0.3340 |
+> Compared with the Mask R-CNN R-50-FPN-fp32, Mask R-CNN R-50-FPN-int8's mAP decline ratio is 0.95% and performance improvement is 1.99x.
+>
+> Note the performance depends on the test hardware. 
+> 
+> Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
 
 <hr>
@@ -142,8 +149,33 @@ The original pretrained Mask R-CNN model is from [facebookresearch/maskrcnn-benc
 <hr>
 
 ## Validation accuracy
+Mask R-CNN R-50-FPN:
 Metric is COCO mAP (averaged over IoU of 0.5:0.95), computed over 2017 COCO val data.
 box mAP of 0.361, and mask mAP of 0.327.
+
+Mask R-CNN R-50-FPN-fp32 & Mask R-CNN R-50-FPN-int8:
+Metric is COCO box mAP@[IoU=0.50:0.95 | area=all | maxDets=100], computed over 2017 COCO val data.
+<hr>
+
+## Quantization
+Mask R-CNN R-50-FPN-int8 is obtained by quantizing Mask R-CNN R-50-FPN-fp32 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/object_detection/onnx_model_zoo/mask_rcnn/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+
+### Environment
+onnx: 1.9.0 
+onnxruntime: 1.10.0
+
+### Prepare model
+```shell
+wget https://github.com/onnx/models/raw/main/vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12.onnx
+```
+
+### Model quantize
+```bash
+bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
+                   --config=mask_rcnn.yaml \
+                   --data_path=path/to/COCO2017 \
+                   --output_model=path/to/save
+```
 <hr>
 
 ## Publication/Attribution
@@ -153,7 +185,16 @@ Massa, Francisco and Girshick, Ross. maskrcnn-benchmark: Fast, modular reference
 <hr>
 
 ## References
-This model is converted from [facebookresearch/maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark) with modifications in [repository](https://github.com/BowenBao/maskrcnn-benchmark/tree/onnx_stage).
+* This model is converted from [facebookresearch/maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark) with modifications in [repository](https://github.com/BowenBao/maskrcnn-benchmark/tree/onnx_stage).
+
+* [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
+<hr>
+
+## Contributors
+* [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [airMeng](https://github.com/airMeng) (Intel)
+* [ftian1](https://github.com/ftian1) (Intel)
+* [hshen14](https://github.com/hshen14) (Intel)
 <hr>
 
 ## License
