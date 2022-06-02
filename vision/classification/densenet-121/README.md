@@ -60,7 +60,7 @@ onnxruntime: 1.10.0
 
 ### Prepare model
 ```shell
-wget https://github.com/onnx/models/blob/main/vision/classification/densenet-121/model/densenet-12.onnx
+wget https://github.com/onnx/models/raw/main/vision/classification/densenet-121/model/densenet-12.onnx
 ```
 
 ### Model quantize
