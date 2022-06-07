@@ -36,6 +36,7 @@ jobs:
           # TODO: now ONNX only supports Protobuf <= 3.20.1
           python -m pip install protobuf==3.20.1
           python -m pip install onnx onnxruntime requests py-cpuinfo
+          # Print CPU info for debugging ONNX Runtime inference difference
           python -m cpuinfo
 
       - name: Test new models by onnx

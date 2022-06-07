@@ -7,12 +7,8 @@ import onnx
 import test_utils
 
 
-def has_vnni_support():
-    return 'avx512' in str(get_cpu_info()['flags'])
-
-
-def skip_quant_models_if_missing_vnni(model_name):
-    return '-int8' in model_name and not has_vnni_support()
+def has_avx512f_support():
+    return 'avx512f' in set(get_cpu_info()['flags'])
 
 
 def run_onnx_checker(model_path):
@@ -20,13 +16,19 @@ def run_onnx_checker(model_path):
     onnx.checker.check_model(model)
 
 
-def run_backend_ort(model_path, test_data_set=None):
-    if skip_quant_models_if_missing_vnni(model_path):
-        print(f'Skip ORT test for {model_path} because this machine lacks of VNNI support and the output.pb was produced with VNNI support.')
-        return
+def ort_skip_reason(model_path):
+    if '-int8.onnx' in model_path and not has_avx512f_support():
+        return f'Skip ORT test for {model_path} because this machine lacks avx512f support and the output.pb was produced with avx512f support.'
     model = onnx.load(model_path)
     if model.opset_import[0].version < 7:
-        print('Skip ORT test since it only *guarantees* support for models stamped with opset version 7')
+        return f'Skip ORT test for {model_path} because ORT only *guarantees* support for models stamped with opset version 7'
+    return None
+
+
+def run_backend_ort(model_path, test_data_set=None):
+    skip_reason = ort_skip_reason(model_path)
+    if skip_reason:
+        print(skip_reason)
         return
     # if 'test_data_set_N' doesn't exist, create test_dir
     if not test_data_set:
