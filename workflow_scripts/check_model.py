@@ -21,7 +21,7 @@ def ort_skip_reason(model_path):
         return f'Skip ORT test for {model_path} because this machine lacks avx512f support and the output.pb was produced with avx512f support.'
     model = onnx.load(model_path)
     if model.opset_import[0].version < 7:
-        return f'Skip ORT test for {model_path} because ORT only *guarantees* support for models stamped with opset version 7'
+        return f'Skip ORT test for {model_path} because ORT only supports opset version >= 7'
     return None
 
 
