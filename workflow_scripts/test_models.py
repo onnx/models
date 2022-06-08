@@ -97,9 +97,13 @@ def main():
         except Exception as e:
             print('[FAIL] {}: {}'.format(model_name, e))
             failed_models.append(model_path)
-            test_utils.remove_onnxruntime_test_dir()
-        # remove the produced tar directory
+
+        # remove checked models and directories to save space in CIs
+        if os.path.exists(model_path):
+            os.remove(model_path)
+        test_utils.remove_onnxruntime_test_dir()
         test_utils.remove_tar_dir()
+        test_utils.run_lfs_prune()
 
     if len(failed_models) == 0:
         print('{} models have been checked. '.format(len(model_list)))

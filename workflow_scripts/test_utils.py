@@ -25,6 +25,11 @@ def pull_lfs_file(file_name):
     print('LFS pull completed with return code= {}'.format(result.returncode))
 
 
+def run_lfs_prune():
+    result = subprocess.run(['git', 'lfs', 'prune'], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    print(f'LFS prune completed with return code= {result.returncode}')
+
+
 def extract_test_data(file_path):
     tar = tarfile.open(file_path, "r:gz")
     tar.extractall(TEST_TAR_DIR)
@@ -49,11 +54,14 @@ def get_model_and_test_data(directory_path):
     return onnx_model, test_data_set
 
 
+def remove_dir(directory_path):
+    if os.path.exists(directory_path) and os.path.isdir(directory_path):
+        shutil.rmtree(directory_path)
+
+
 def remove_tar_dir():
-    if os.path.exists(TEST_TAR_DIR) and os.path.isdir(TEST_TAR_DIR):
-        shutil.rmtree(TEST_TAR_DIR)
+    remove_dir(TEST_TAR_DIR)
 
 
 def remove_onnxruntime_test_dir():
-    if os.path.exists(TEST_ORT_DIR) and os.path.isdir(TEST_ORT_DIR):
-        shutil.rmtree(TEST_ORT_DIR)
+    remove_dir(TEST_ORT_DIR)
