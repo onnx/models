@@ -4,6 +4,8 @@ from cpuinfo import get_cpu_info
 import ort_test_dir_utils
 import onnxruntime
 import onnx
+import os
+import tarfile
 import test_utils
 
 
@@ -20,7 +22,12 @@ def run_onnx_checker(model_path):
     onnx.checker.check_model(model)
 
 
-def run_backend_ort(model_path, test_data_set=None):
+def make_tarfile(output_filename, source_dir):
+    with tarfile.open(output_filename, "w:gz", format=tarfile.GNU_FORMAT) as tar:
+        tar.add(source_dir, arcname=os.path.basename(source_dir))
+
+
+def run_backend_ort(model_path, test_data_set=None, tar_gz_path=None):
     if skip_quant_models_if_missing_vnni(model_path):
         print(f'Skip ORT test for {model_path} because this machine lacks of VNNI support and the output.pb was produced with VNNI support.')
         return
@@ -38,6 +45,8 @@ def run_backend_ort(model_path, test_data_set=None):
         onnxruntime.InferenceSession(model_path)
         ort_test_dir_utils.create_test_dir(model_path, './', test_utils.TEST_ORT_DIR)
         ort_test_dir_utils.run_test_dir(test_utils.TEST_ORT_DIR)
+        os.remove(tar_gz_path)
+        make_tarfile(tar_gz_path, test_utils.TEST_ORT_DIR)
     # otherwise use the existing 'test_data_set_N' as test data
     else:
         test_dir_from_tar = test_utils.get_model_directory(model_path)

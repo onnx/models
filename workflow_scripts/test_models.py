@@ -6,6 +6,19 @@ from pathlib import Path
 import subprocess
 import sys
 import test_utils
+import os
+
+
+def get_all_models():
+    model_list = []
+    parent_dir = ["text", "vision"]
+    for directory in parent_dir:
+        for root, _, files in os.walk(directory):
+            for file in files:
+                if file.endswith('.tar.gz') or file.endswith('.onnx'):
+                    onnx_model_path = os.path.join(root, file)
+                    model_list.append(onnx_model_path)
+    return model_list
 
 
 def main():
@@ -15,6 +28,8 @@ def main():
     parser.add_argument('--target', required=False, default='all', type=str,
                         help='Test the model by which (onnx/onnxruntime)?',
                         choices=['onnx', 'onnxruntime', 'all'])
+    # set it True to update broken test_data_set
+    create_if_failed = False
     args = parser.parse_args()
 
     cwd_path = Path.cwd()
@@ -55,16 +70,27 @@ def main():
                 if (args.target == 'onnxruntime' or args.target == 'all'):
                     # finally check the ONNX model from .tar.gz by ORT
                     # if the test_data_set does not exist, create the test_data_set
-                    check_model.run_backend_ort(model_path_from_tar, test_data_set)
-                    print('[PASS] {} is checked by onnxruntime. '.format(model_name))
+                    try:
+                        check_model.run_backend_ort(model_path_from_tar, test_data_set)
+                        print('[PASS] {} is checked by onnxruntime. '.format(model_name))
+                    except Exception as e:
+                        if not create_if_failed:
+                            raise Exception(e)
+                        else:
+                            print('Warning: original test data for {} is broken: {}'.format(model_path, e))
+                        if '-int8' not in model_name:
+                            check_model.run_backend_ort(model_path_from_tar, None, model_name)
+                        else:
+                            print('Skip int8 models because their test_data_set was created in avx512_vnni machines')
+                        print('[PASS] {} is checked by onnxruntime. '.format(model_name))
                 # Step 2: check the ONNX model inside .tar.gz by ONNX
                 if args.target == 'onnx' or args.target == 'all':
                     check_model.run_onnx_checker(model_path_from_tar)
                     print('[PASS] {} is checked by onnx. '.format(model_name))
             # check uploaded standalone ONNX model by ONNX
             elif onnx_ext_name in model_name:
-                test_utils.pull_lfs_file(model_path)
                 if args.target == 'onnx' or args.target == 'all':
+                    test_utils.pull_lfs_file(model_path)
                     check_model.run_onnx_checker(model_path)
                     print('[PASS] {} is checked by onnx. '.format(model_name))
 
