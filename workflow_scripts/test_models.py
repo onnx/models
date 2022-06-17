@@ -9,29 +9,23 @@ import test_utils
 import os
 
 
+tar_ext_name = '.tar.gz'
+onnx_ext_name = '.onnx'
+
+
 def get_all_models():
     model_list = []
     parent_dir = ["text", "vision"]
     for directory in parent_dir:
         for root, _, files in os.walk(directory):
             for file in files:
-                if file.endswith('.tar.gz') or file.endswith('.onnx'):
-                    onnx_model_path = os.path.join(root, file)
-                    model_list.append(onnx_model_path)
+                if file.endswith(tar_ext_name) or file.endswith(onnx_ext_name):
+                    model_list.append(os.path.join(root, file))
     return model_list
 
 
-def main():
-    parser = argparse.ArgumentParser(description='Test settings')
-    # default all: test by both onnx and onnxruntime
-    # if target is specified, only test by the specified one
-    parser.add_argument('--target', required=False, default='all', type=str,
-                        help='Test the model by which (onnx/onnxruntime)?',
-                        choices=['onnx', 'onnxruntime', 'all'])
-    # set it True to update broken test_data_set
-    create_if_failed = False
-    args = parser.parse_args()
-
+def get_changed_models():
+    model_list = []
     cwd_path = Path.cwd()
     # git fetch first for git diff on GitHub Action
     subprocess.run(['git', 'fetch', 'origin', 'main:main'],
@@ -44,15 +38,30 @@ def main():
     diff_list = stdoutput.split()
 
     # identify list of changed ONNX models in ONXX Model Zoo
-    tar_ext_name = '.tar.gz'
-    onnx_ext_name = '.onnx'
     model_list = [str(model).replace("b'", "").replace("'", "")
                   for model in diff_list if onnx_ext_name in str(model) or tar_ext_name in str(model)]
+    return model_list
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Test settings')
+    # default all: test by both onnx and onnxruntime
+    # if target is specified, only test by the specified one
+    parser.add_argument('--target', required=False, default='all', type=str,
+                        help='Test the model by which (onnx/onnxruntime)?',
+                        choices=['onnx', 'onnxruntime', 'all'])
+    # use python workflow_scripts\test_models.py --create --all_models to create broken test data by ORT
+    parser.add_argument('--create', required=False, default=False, action='store_true',
+                        help='Create new test data by ORT if it fails with existing test data')
+    parser.add_argument('--all_models', required=False, default=False, action='store_true',
+                        help='Test all ONNX Model Zoo models instead of only chnaged models')
+    args = parser.parse_args()
+
+    model_list = get_all_models() if args.all_models else get_changed_models()
     # run lfs install before starting the tests
     test_utils.run_lfs_install()
 
-    print('\n=== Running ONNX Checker on added models ===\n')
-    # run checker on each model
+    print('\n=== Running test on ONNX models ===\n')
     failed_models = []
     for model_path in model_list:
         model_name = model_path.split('/')[-1]
@@ -74,7 +83,7 @@ def main():
                         check_model.run_backend_ort(model_path_from_tar, test_data_set)
                         print('[PASS] {} is checked by onnxruntime. '.format(model_name))
                     except Exception as e:
-                        if not create_if_failed:
+                        if not args.create:
                             raise Exception(e)
                         else:
                             print('Warning: original test data for {} is broken: {}'.format(model_path, e))
@@ -99,7 +108,7 @@ def main():
             failed_models.append(model_path)
 
         # remove checked models and directories to save space in CIs
-        if os.path.exists(model_path):
+        if os.path.exists(model_path) and args.all_models:
             os.remove(model_path)
         test_utils.remove_onnxruntime_test_dir()
         test_utils.remove_tar_dir()
