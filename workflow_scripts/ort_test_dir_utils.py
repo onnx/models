@@ -38,7 +38,7 @@ def _create_missing_input_data(model_inputs, name_input_map, symbolic_dim_values
     for input in model_inputs:
         if input.name in name_input_map and name_input_map[input.name] is not None:
             continue
-        # skip if the input has already exists in initializer
+        # skip if the input has already existed in initializer
         # models whose ir_version < 4 can have input same as initializer; no need to create input data
         if input.name in initializer_set:
             continue
@@ -54,6 +54,7 @@ def _create_missing_input_data(model_inputs, name_input_map, symbolic_dim_values
                 dims.append(dim.dim_value)
             elif dim_type == "dim_param":
                 if dim.dim_param not in symbolic_dim_values_map:
+                    # The following two lines are different from onnxruntime
                     print("Warning: Value for symbolic dim {} was not provided.".format(dim.dim_param))
                     dims.append(1)
                 else:
