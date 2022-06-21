@@ -5,6 +5,7 @@ import ort_test_dir_utils
 import onnxruntime
 import onnx
 import os
+from shutil import rmtree
 import tarfile
 import test_utils
 
@@ -43,10 +44,13 @@ def run_backend_ort(model_path, test_data_set=None, tar_gz_path=None):
         # For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
         # onnxruntime.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
         onnxruntime.InferenceSession(model_path)
-        ort_test_dir_utils.create_test_dir(model_path, './', test_utils.TEST_ORT_DIR)
-        ort_test_dir_utils.run_test_dir(test_utils.TEST_ORT_DIR)
+        # Get model name without .onnx
+        model_name = model_path.split("/")[-1][:-5]
+        ort_test_dir_utils.create_test_dir(model_path, './', model_name)
+        ort_test_dir_utils.run_test_dir(model_name)
         os.remove(tar_gz_path)
         make_tarfile(tar_gz_path, test_utils.TEST_ORT_DIR)
+        rmtree(model_name)
     # otherwise use the existing 'test_data_set_N' as test data
     else:
         test_dir_from_tar = test_utils.get_model_directory(model_path)
