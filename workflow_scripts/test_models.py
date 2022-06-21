@@ -37,7 +37,7 @@ def get_changed_models():
     diff_list = stdoutput.split()
 
     # identify list of changed ONNX models in ONXX Model Zoo
-    model_list = [str(model).replace("b"", "").replace(""", "")
+    model_list = [str(model).replace("b'", "").replace("'", "")
                   for model in diff_list if onnx_ext_name in str(model) or tar_ext_name in str(model)]
     return model_list
 
