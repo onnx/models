@@ -54,14 +54,11 @@ def get_model_and_test_data(directory_path):
     return onnx_model, test_data_set
 
 
-def remove_dir(directory_path):
-    if os.path.exists(directory_path) and os.path.isdir(directory_path):
-        shutil.rmtree(directory_path)
-
-
 def remove_tar_dir():
-    remove_dir(TEST_TAR_DIR)
+    if os.path.exists(TEST_TAR_DIR) and os.path.isdir(TEST_TAR_DIR):
+        shutil.rmtree(TEST_TAR_DIR)
 
 
 def remove_onnxruntime_test_dir():
-    remove_dir(TEST_ORT_DIR)
+    if os.path.exists(TEST_ORT_DIR) and os.path.isdir(TEST_ORT_DIR):
+        shutil.rmtree(TEST_ORT_DIR)

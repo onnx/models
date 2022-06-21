@@ -54,6 +54,8 @@ def _create_missing_input_data(model_inputs, name_input_map, symbolic_dim_values
                 dims.append(dim.dim_value)
             elif dim_type == "dim_param":
                 if dim.dim_param not in symbolic_dim_values_map:
+                    # If the values for dim_param is not specified, simpply use 1 to represent unknown dim_param
+                    # to create dummpy test_data_set for ONNX Model Zoo models
                     # The following two lines are different from onnxruntime
                     print("Warning: Value for symbolic dim {} was not provided.".format(dim.dim_param))
                     dims.append(1)
