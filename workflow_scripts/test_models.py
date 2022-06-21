@@ -88,6 +88,7 @@ def main():
                             raise
                         else:
                             print("Warning: original test data for {} is broken: {}".format(model_path, e))
+                            test_utils.remove_onnxruntime_test_dir()
                         if "-int8" not in model_name:
                             check_model.run_backend_ort(model_path_from_tar, None, model_name)
                         else:

@@ -46,10 +46,15 @@ def run_backend_ort(model_path, test_data_set=None, tar_gz_path=None):
         onnxruntime.InferenceSession(model_path)
         # Get model name without .onnx
         model_name = model_path.split("/")[-1][:-5]
-        ort_test_dir_utils.create_test_dir(model_path, './', model_name)
-        ort_test_dir_utils.run_test_dir(model_name)
-        os.remove(tar_gz_path)
-        make_tarfile(tar_gz_path, test_utils.TEST_ORT_DIR)
+        if model_name is None:
+            print(f"The model path {model_path} is invalid")
+            return
+        ort_test_dir_utils.create_test_dir(model_path, './', test_utils.TEST_ORT_DIR)
+        ort_test_dir_utils.run_test_dir(test_utils.TEST_ORT_DIR)
+        if os.path.exists(model_name) and os.path.isdir(model_name):
+            rmtree(model_name)
+        os.rename(test_utils.TEST_ORT_DIR, model_name)
+        make_tarfile(tar_gz_path, model_name)
         rmtree(model_name)
     # otherwise use the existing 'test_data_set_N' as test data
     else:
