@@ -72,7 +72,7 @@ onnxruntime: 1.8.0
 
 ### Prepare model
 ```shell
-wget https://github.com/onnx/models/blob/main/vision/classification/squeezenet/model/squeezenet1.0-12.onnx
+wget https://github.com/onnx/models/raw/main/vision/classification/squeezenet/model/squeezenet1.0-12.onnx
 ```
 
 ### Model quantize
