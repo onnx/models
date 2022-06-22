@@ -45,7 +45,7 @@ def run_backend_ort(model_path, test_data_set=None, tar_gz_path=None):
         # onnxruntime.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
         onnxruntime.InferenceSession(model_path)
         # Get model name without .onnx
-        model_name = model_path.split("/")[-1][:-5]
+        model_name = os.path.basename(os.path.splitext(model_path)[0])
         if model_name is None:
             print(f"The model path {model_path} is invalid")
             return
