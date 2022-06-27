@@ -89,7 +89,7 @@ onnxruntime: 1.8.0
 
 ### Prepare model
 ```shell
-wget https://github.com/onnx/models/tree/main/vision/classification/vgg/model/vgg16-12.onnx
+wget https://github.com/onnx/models/raw/main/vision/classification/vgg/model/vgg16-12.onnx
 ```
 
 ### Model quantize
