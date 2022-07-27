@@ -36,13 +36,6 @@ jobs:
           python -m pip install onnx onnxruntime requests py-cpuinfo
           python -m cpuinfo
 
-      - name: Test updated ONNX_HUB_MANIFEST.json
-        run: |
-          python -m pip install typepy BeautifulSoup4 markdown pandas
-          cd workflow_scripts
-          python generate_onnx_hub_manifest.py --target diff
-          git diff --exit-code  -- .
-
       - name: Test new models by onnx
         run: |
           python workflow_scripts/test_models.py --target onnx
@@ -50,3 +43,10 @@ jobs:
       - name: Test new models by onnxruntime
         run: |
           python workflow_scripts/test_models.py --target onnxruntime
+
+      - name: Test updated ONNX_HUB_MANIFEST.json
+        run: |
+          python -m pip install typepy BeautifulSoup4 markdown pandas
+          cd workflow_scripts
+          python generate_onnx_hub_manifest.py --target diff
+          git diff --exit-code  -- .
