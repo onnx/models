@@ -47,5 +47,6 @@ jobs:
       - name: Test updated ONNX_HUB_MANIFEST.json
         run: |
           python -m pip install typepy
+          cd workflow_scripts
           python generate_onnx_hub_manifest.py --target diff
           git diff --exit-code  -- . 
