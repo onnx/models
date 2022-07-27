@@ -11,6 +11,8 @@ import onnxruntime as ort
 from onnxruntime.capi.onnxruntime_pybind11_state import NotImplemented
 import onnx
 from onnx import shape_inference
+import argparse
+from test_models import get_changed_models
 
 
 # Acknowledgments to pytablereader codebase for this function
@@ -196,12 +198,41 @@ feature_tensor_names = {
     'ZFNet-512': 'gpu_0/fc7_2'
 }
 
+parser = argparse.ArgumentParser(description="Test settings")
+# default all: test by both onnx and onnxruntime
+# if target is specified, only test by the specified one
+parser.add_argument("--target", required=False, default="all", type=str,
+                    help="Update target? (all, diff, single)",
+                    choices=["all", "diff", "single"])
+parser.add_argument("--path", required=False, default=None, type=str,
+                    help="The model path which you want to update.")
+args = parser.parse_args()
+
+
 output = []
+if args.target == "diff":
+    changed_models = set(get_changed_models())
+    print(f"{len(changed_models)} of changed models: {changed_models}")
+if args.target == "diff" or args.target == "single":
+    with open(join("..", "ONNX_HUB_MANIFEST.json"), "r+") as f:
+        output = json.load(f)
+    path_to_object = {}
+    for model in output:
+        path_to_object[model["model_path"]] = model
+
 for i, row in renamed.iterrows():
     if len(row["model"].contents) > 0 and len(row["model_path"].contents) > 0:
         model_name = row["model"].contents[0]
         model_info = get_file_info(row, "model_path")
         model_path = model_info.pop("model_path")
+        if args.target == "diff":
+            if model_path not in changed_models:
+                continue
+        if args.target == "single":
+            if args.path is None:
+                raise ValueError("Please specify --path if you want to update by single model.")
+            if model_path != args.path:
+                continue
         metadata = model_info
         metadata["tags"] = get_model_tags(row)
         io_ports, extra_ports = get_model_ports(model_path, metadata, model_name)
@@ -221,7 +252,10 @@ for i, row in renamed.iterrows():
         except ValueError:
             print("malformed opset {} in {}".format(row["opset_version"].contents[0], row["source_file"]))
             continue
-
+        if args.target != "all":
+            if model_path in path_to_object:
+                # To update existing information, remove previous one
+                output.remove(path_to_object[model_path])
         output.append(
             {
                 "model": model_name,
@@ -233,7 +267,7 @@ for i, row in renamed.iterrows():
         )
     else:
         print("Missing model in {}".format(row["source_file"]))
-
+output.sort(key=lambda x:x["model_path"])
 with open(join("..", "ONNX_HUB_MANIFEST.json"), "w+") as f:
     print("Found {} models".format(len(output)))
     json.dump(output, f, indent=4)
