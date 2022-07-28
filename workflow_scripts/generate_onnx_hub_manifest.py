@@ -13,6 +13,7 @@ import onnx
 from onnx import shape_inference
 import argparse
 from test_models import get_changed_models
+from test_utils import pull_lfs_file
 
 
 # Acknowledgments to pytablereader codebase for this function
@@ -128,7 +129,12 @@ def get_model_ports(source_file, metadata, model_name):
         # based on the build flags) when instantiating InferenceSession.
         # For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
         # ort.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
-        session = ort.InferenceSession(model_path)
+        try:
+            session = ort.InferenceSession(model_path)
+        except:
+            # it might fail because the model hasn't been git-lfs pulled yet
+            pull_lfs_file(model_path)
+            session = ort.InferenceSession(model_path)
         inputs = session.get_inputs()
         outputs = session.get_outputs()
         io_ports = {
@@ -206,12 +212,20 @@ parser.add_argument("--target", required=False, default="all", type=str,
                     choices=["all", "diff", "single"])
 parser.add_argument("--path", required=False, default=None, type=str,
                     help="The model path which you want to update.")
+parser.add_argument("--keep", required=False, default=False, action="store_true",
+                    help="Keep downloaded models after verification.")
 args = parser.parse_args()
 
 
 output = []
 if args.target == "diff":
-    changed_models = set(get_changed_models())
+    changed_models = set()
+    changed_list = get_changed_models()
+    for file in changed_list:
+        # If the .tar.gz was updated, the model's manifest needs to be updated as well
+        if ".tar.gz" in file:
+            file = file.replace(".tar.gz", ".onnx")
+        changed_models.add(file)
     print(f"{len(changed_models)} of changed models: {changed_models}")
 if args.target == "diff" or args.target == "single":
     with open(join("..", "ONNX_HUB_MANIFEST.json"), "r+") as f:
@@ -256,6 +270,7 @@ for i, row in renamed.iterrows():
             if model_path in path_to_object:
                 # To update existing information, remove previous one
                 output.remove(path_to_object[model_path])
+                print(f"Updating: {model_path}")
         output.append(
             {
                 "model": model_name,
@@ -265,6 +280,9 @@ for i, row in renamed.iterrows():
                 "metadata": metadata
             }
         )
+        if os.path.exists(model_path) and not args.keep:
+            os.remove(model_path)
+
     else:
         print("Missing model in {}".format(row["source_file"]))
 output.sort(key=lambda x:x["model_path"])
