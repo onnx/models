@@ -47,15 +47,14 @@ def parse_readme(filename):
         return [parse_html(table) for table in soup.find_all("table")]
 
 
-top_level_readme = join("..", "README.md")
+top_level_readme = "README.md"
 top_level_tables = parse_readme(top_level_readme)
 markdown_files = set()
 for top_level_table in top_level_tables:
     for i, row in top_level_table.iterrows():
         if "Model Class" in row:
             try:
-                markdown_files.add(join(
-                    "..", row["Model Class"].contents[0].contents[0].attrs['href'], "README.md"))
+                markdown_files.add(join(row["Model Class"].contents[0].contents[0].attrs['href'], "README.md"))
             except AttributeError:
                 print("{} has no link to implementation".format(row["Model Class"].contents[0]))
 # Sort for reproducibility
@@ -100,8 +99,8 @@ def get_file_info(row, field):
     source_dir = split(row["source_file"])[0]
     model_file = row[field].contents[0].attrs["href"]
     ## So that model relative path is consistent across OS
-    rel_path = "/".join(join(source_dir, model_file).split(os.sep)[1:])
-    with open(join("..", rel_path), "rb") as f:
+    rel_path = "/".join(join(source_dir, model_file).split(os.sep))
+    with open(rel_path, "rb") as f:
         bytes = f.read()
         sha256 = hashlib.sha256(bytes).hexdigest()
     return {
@@ -113,12 +112,12 @@ def get_file_info(row, field):
 
 def get_model_tags(row):
     source_dir = split(row["source_file"])[0]
-    raw_tags = source_dir.split("/")[1:]
+    raw_tags = source_dir.split("/")
     return [tag.replace("_", " ") for tag in raw_tags]
 
 
 def get_model_ports(source_file, metadata, model_name):
-    model_path = join("..", source_file)
+    model_path = source_file
     try:
         # Hide graph warnings. Severity 3 means error and above.
         ort.set_default_logger_severity(3)
@@ -228,7 +227,7 @@ if args.target == "diff":
         changed_models.add(file)
     print(f"{len(changed_models)} of changed models: {changed_models}")
 if args.target == "diff" or args.target == "single":
-    with open(join("..", "ONNX_HUB_MANIFEST.json"), "r+") as f:
+    with open("ONNX_HUB_MANIFEST.json", "r+") as f:
         output = json.load(f)
     path_to_object = {}
     for model in output:
@@ -286,6 +285,6 @@ for i, row in renamed.iterrows():
     else:
         print("Missing model in {}".format(row["source_file"]))
 output.sort(key=lambda x:x["model_path"])
-with open(join("..", "ONNX_HUB_MANIFEST.json"), "w+") as f:
+with open( "ONNX_HUB_MANIFEST.json", "w+") as f:
     print("Found {} models".format(len(output)))
     json.dump(output, f, indent=4)
