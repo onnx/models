@@ -211,8 +211,8 @@ parser.add_argument("--target", required=False, default="all", type=str,
                     choices=["all", "diff", "single"])
 parser.add_argument("--path", required=False, default=None, type=str,
                     help="The model path which you want to update.")
-parser.add_argument("--keep", required=False, default=False, action="store_true",
-                    help="Keep downloaded models after verification.")
+parser.add_argument("--drop", required=False, default=False, action="store_true",
+                    help="Drop downloaded models after verification. (Foy space limitation in CIs)")
 args = parser.parse_args()
 
 
@@ -279,7 +279,7 @@ for i, row in renamed.iterrows():
                 "metadata": metadata
             }
         )
-        if os.path.exists(model_path) and not args.keep:
+        if os.path.exists(model_path) and args.drop:
             os.remove(model_path)
 
     else:

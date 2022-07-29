@@ -49,13 +49,13 @@ def main():
     parser.add_argument("--target", required=False, default="all", type=str,
                         help="Test the model by which (onnx/onnxruntime)?",
                         choices=["onnx", "onnxruntime", "all"])
-    # use python workflow_scripts\test_models.py --create --all_models --keep to create broken test data by ORT
+    # use python workflow_scripts\test_models.py --create --all_models to create broken test data by ORT
     parser.add_argument("--create", required=False, default=False, action="store_true",
                         help="Create new test data by ORT if it fails with existing test data")
     parser.add_argument("--all_models", required=False, default=False, action="store_true",
                         help="Test all ONNX Model Zoo models instead of only chnaged models")
-    parser.add_argument("--keep", required=False, default=False, action="store_true",
-                        help="Keep downloaded models after verification")
+    parser.add_argument("--drop", required=False, default=False, action="store_true",
+                        help="Drop downloaded models after verification. (Foy space limitation in CIs)")
     args = parser.parse_args()
 
     model_list = get_all_models() if args.all_models else get_changed_models()
@@ -110,7 +110,7 @@ def main():
             failed_models.append(model_path)
 
         # remove checked models and directories to save space in CIs
-        if os.path.exists(model_path) and not args.keep:
+        if os.path.exists(model_path) and args.drop:
             os.remove(model_path)
         test_utils.remove_onnxruntime_test_dir()
         test_utils.remove_tar_dir()
