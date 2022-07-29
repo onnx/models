@@ -128,6 +128,9 @@ https://github.com/microsoft/onnxruntime/blob/master/tools/python/PythonTools.md
 
 <hr>
 
+### Update ONNX_HUB_MANIFEST.json for ONNX Hub
+If this PR does update/add .onnx or .tar.gz files, please use `python workflow_scripts/generate_onnx_hub_manifest.py --target diff` to update ONNX_HUB_MANIFEST.json with according model information (especially SHA) for ONNX Hub.
+
 ### References
 Link to paper or references.
 

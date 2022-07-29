@@ -95,11 +95,16 @@ renamed = df.rename(columns={col: prep_name(col) for col in df.columns.values})
 metadata_fields = [f for f in renamed.columns.values if f not in top_level_fields]
 
 
-def get_file_info(row, field):
+def get_file_info(row, field, target_models=None):
     source_dir = split(row["source_file"])[0]
     model_file = row[field].contents[0].attrs["href"]
     ## So that model relative path is consistent across OS
     rel_path = "/".join(join(source_dir, model_file).split(os.sep))
+    if target_models is not None and rel_path not in target_models:
+        return None
+    # git-lfs pull if target .onnx or .tar.gz does not exist
+    pull_lfs_file(rel_path)
+    pull_lfs_file(rel_path.replace(".onnx", ".tar.gz"))
     with open(rel_path, "rb") as f:
         bytes = f.read()
         sha256 = hashlib.sha256(bytes).hexdigest()
@@ -128,12 +133,7 @@ def get_model_ports(source_file, metadata, model_name):
         # based on the build flags) when instantiating InferenceSession.
         # For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
         # ort.InferenceSession(path/to/model, providers=['CUDAExecutionProvider'])
-        try:
-            session = ort.InferenceSession(model_path)
-        except:
-            # it might fail because the model hasn't been git-lfs pulled yet
-            pull_lfs_file(model_path)
-            session = ort.InferenceSession(model_path)
+        session = ort.InferenceSession(model_path)
         inputs = session.get_inputs()
         outputs = session.get_outputs()
         io_ports = {
@@ -212,7 +212,7 @@ parser.add_argument("--target", required=False, default="all", type=str,
 parser.add_argument("--path", required=False, default=None, type=str,
                     help="The model path which you want to update.")
 parser.add_argument("--drop", required=False, default=False, action="store_true",
-                    help="Drop downloaded models after verification. (Foy space limitation in CIs)")
+                    help="Drop downloaded models after verification. (For space limitation in CIs)")
 args = parser.parse_args()
 
 
@@ -236,16 +236,17 @@ if args.target == "diff" or args.target == "single":
 for i, row in renamed.iterrows():
     if len(row["model"].contents) > 0 and len(row["model_path"].contents) > 0:
         model_name = row["model"].contents[0]
-        model_info = get_file_info(row, "model_path")
-        model_path = model_info.pop("model_path")
+        target_models = None
         if args.target == "diff":
-            if model_path not in changed_models:
-                continue
-        if args.target == "single":
+            target_models = changed_models
+        elif args.target == "single":
             if args.path is None:
                 raise ValueError("Please specify --path if you want to update by single model.")
-            if model_path != args.path:
-                continue
+            target_models = set(args.path)
+        model_info = get_file_info(row, "model_path", target_models)
+        if model_info is None:
+            continue
+        model_path = model_info.pop("model_path")
         metadata = model_info
         metadata["tags"] = get_model_tags(row)
         io_ports, extra_ports = get_model_ports(model_path, metadata, model_name)
@@ -279,8 +280,12 @@ for i, row in renamed.iterrows():
                 "metadata": metadata
             }
         )
-        if os.path.exists(model_path) and args.drop:
-            os.remove(model_path)
+        if args.drop:
+            if os.path.exists(model_path):
+                os.remove(model_path)
+            tar_path = model_path.replace(".onnx", ".tar.gz")
+            if os.path.exists(tar_path):
+                os.remove(tar_path)
 
     else:
         print("Missing model in {}".format(row["source_file"]))

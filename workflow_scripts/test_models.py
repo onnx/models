@@ -55,7 +55,7 @@ def main():
     parser.add_argument("--all_models", required=False, default=False, action="store_true",
                         help="Test all ONNX Model Zoo models instead of only chnaged models")
     parser.add_argument("--drop", required=False, default=False, action="store_true",
-                        help="Drop downloaded models after verification. (Foy space limitation in CIs)")
+                        help="Drop downloaded models after verification. (For space limitation in CIs)")
     args = parser.parse_args()
 
     model_list = get_all_models() if args.all_models else get_changed_models()
