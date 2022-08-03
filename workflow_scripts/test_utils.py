@@ -17,12 +17,12 @@ def get_model_directory(model_path):
 
 def run_lfs_install():
     result = subprocess.run(['git', 'lfs', 'install'], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    print('Git LFS install completed with return code= {}'.format(result.returncode))
+    print(f'Git LFS install completed with return code= {result.returncode}')
 
 
 def pull_lfs_file(file_name):
     result = subprocess.run(['git', 'lfs', 'pull', '--include', file_name, '--exclude', '\'\''], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    print('LFS pull completed with return code= {}'.format(result.returncode))
+    print(f'LFS pull completed for {file_name} with return code= {result.returncode}')
 
 
 def run_lfs_prune():
