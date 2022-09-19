@@ -14,6 +14,7 @@ EfficientNet-Lite 4 is the largest variant and most accurate of the set of Effic
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |EfficientNet-Lite4     | [51.9 MB](model/efficientnet-lite4-11.onnx)	  | [48.6 MB](model/efficientnet-lite4-11.tar.gz)|1.7.0|11|80.4|
 |EfficientNet-Lite4-int8     | [13.0 MB](model/efficientnet-lite4-11-int8.onnx)	  | [12.2 MB](model/efficientnet-lite4-11-int8.tar.gz)|1.9.0|11|77.56|
+|EfficientNet-Lite4-qdq | [12.9 MB](model/efficientnet-lite4-11._qdq.onnx) | [9.72 MB](model/efficientnet-lite4-11_qdq.tar.gz) |1.10.0 | 11| 76.90 |
 > The fp32 Top-1 accuracy got by [Intel® Neural Compressor](https://github.com/intel/neural-compressor) is 77.70%, and compared with this value, int8 EfficientNet-Lite4's Top-1 accuracy drop ratio is 0.18% and performance improvement is 1.12x.
 >
 > **Note** 
@@ -139,7 +140,7 @@ Refer to [efficientnet-lite4 conversion notebook](https://github.com/onnx/tensor
 <hr>
 
 ## Quantization
-CaffeNet-int8 is obtained by quantizing fp32 CaffeNet model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/efficientnet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+EfficientNet-Lite4-int8 and EfficientNet-Lite4-qdq are obtained by quantizing fp32 CaffeNet model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/efficientnet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 
