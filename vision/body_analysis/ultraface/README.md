@@ -6,7 +6,7 @@
 This model is a lightweight facedetection model designed for edge computing devices.
 
 ## Model
-| Model | Download | Compressed | ONNX version | Opset version |
+| Model | Download | Download (with sample test data) | ONNX version | Opset version |
 |----------------|:-----------|:-----------|:--------|
 |version-RFB-320|[1.21 MB](models/version-RFB-320.onnx)|[1.92 MB](models/version-RFB-320.tar.gz)|1.4|9|
 |version-RFB-640|[1.51 MB](models/version-RFB-640.onnx)|[4.59 MB](models/version-RFB-640.tar.gz)|1.4|9|
