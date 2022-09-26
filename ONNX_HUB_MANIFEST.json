@@ -2126,8 +2126,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/efficientnet-lite4/model/efficientnet-lite4-11_qdq.tar.gz",
-            "model_with_data_sha": "001ea5b1ab1c8dcc868484bf720f7dc79db509fcd455d73cb8a12fbf0dd735ab",
-            "model_with_data_bytes": 10193670
+            "model_with_data_sha": "13863fcabfb972399d8f1d2e713df18eb3af99dc6176b736d6d4a130bd3fb925",
+            "model_with_data_bytes": 10193458
         }
     },
     {
@@ -3328,8 +3328,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/mobilenet/model/mobilenetv2-12_qdq.tar.gz",
-            "model_with_data_sha": "b0a1b4f174f48edc4015ceadbe6e86b2cb9720545ee7881c096e42f6f75f19c0",
-            "model_with_data_bytes": 3431118
+            "model_with_data_sha": "8520e4b5224e06d072667dd90f300b1f348b1f2d25ab32db8e953c80f0661998",
+            "model_with_data_bytes": 3431178
         }
     },
     {
@@ -4369,8 +4369,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/resnet/model/resnet50-v1-12_qdq.tar.gz",
-            "model_with_data_sha": "0533d266bc5688f1d61bf01f4e6f1e71632d051bba170fa7aa55aeecc2d6d5ff",
-            "model_with_data_bytes": 17042992
+            "model_with_data_sha": "27f3af1ae5df7b1d27c980ca866a24e52cffb186dde8a0715574d6b4e941078c",
+            "model_with_data_bytes": 17607587
         }
     },
     {
