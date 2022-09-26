@@ -753,7 +753,7 @@
     {
         "model": "T5-decoder-with-lm-head",
         "model_path": "text/machine_comprehension/t5/model/t5-decoder-with-lm-head-12.onnx",
-        "onnx_version": "1.6",
+        "onnx_version": "1.7",
         "opset_version": 12,
         "metadata": {
             "model_sha": "235afca35d3c47a5fd7209844ac11f3157fe7263fd074197a45b7f536e40ea56",
@@ -800,7 +800,7 @@
     {
         "model": "T5-encoder",
         "model_path": "text/machine_comprehension/t5/model/t5-encoder-12.onnx",
-        "onnx_version": "1.6",
+        "onnx_version": "1.7",
         "opset_version": 12,
         "metadata": {
             "model_sha": "4523122d7cf0f50905694d84995633c8a0cc223da762d3eb2aaffa17251a6f60",
@@ -977,104 +977,6 @@
             "model_with_data_path": "vision/body_analysis/emotion_ferplus/model/emotion-ferplus-8.tar.gz",
             "model_with_data_sha": "f200563a2cad231634970bb603ba74f68f01aab0f33a92251ec6d390c1991b1d",
             "model_with_data_bytes": 32384240
-        }
-    },
-    {
-        "model": "version-RFB-320",
-        "model_path": "vision/body_analysis/ultraface/models/version-RFB-320.onnx",
-        "onnx_version": "1.4",
-        "opset_version": 9,
-        "metadata": {
-            "model_sha": "34cd7e60aeff28744c657de7a3dc64e872d506741de66987f3426f2b79f88017",
-            "model_bytes": 1270727,
-            "tags": [
-                "vision",
-                "body analysis",
-                "ultraface"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "input",
-                        "shape": [
-                            1,
-                            3,
-                            240,
-                            320
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "scores",
-                        "shape": [
-                            1,
-                            4420,
-                            2
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "boxes",
-                        "shape": [
-                            1,
-                            4420,
-                            4
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            }
-        }
-    },
-    {
-        "model": "version-RFB-640",
-        "model_path": "vision/body_analysis/ultraface/models/version-RFB-640.onnx",
-        "onnx_version": "1.4",
-        "opset_version": 9,
-        "metadata": {
-            "model_sha": "8f4c659275977e7a3bfbfa339a9c769ad793df50f9c0baa8c14b11baa1646430",
-            "model_bytes": 1588012,
-            "tags": [
-                "vision",
-                "body analysis",
-                "ultraface"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "input",
-                        "shape": [
-                            1,
-                            3,
-                            480,
-                            640
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "scores",
-                        "shape": [
-                            1,
-                            17640,
-                            2
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "boxes",
-                        "shape": [
-                            1,
-                            17640,
-                            4
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            }
         }
     },
     {
