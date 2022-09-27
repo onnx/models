@@ -214,7 +214,7 @@ parser.add_argument("--target", required=False, default="all", type=str,
                     help="Update target? (all, diff, single)",
                     choices=["all", "diff", "single"])
 parser.add_argument("--path", required=False, default=None, type=str,
-                    help="The model path which you want to update.")
+                    help="The model path which you want to update. e.g., vision/classification/resnet/model/resnet50.onnx")
 parser.add_argument("--drop", required=False, default=False, action="store_true",
                     help="Drop downloaded models after verification. (For space limitation in CIs)")
 args = parser.parse_args()
