@@ -12,8 +12,8 @@ understanding through the training of multiple tasks at once.
 
 ## Model
 
- |Model        |Download  | Compressed |ONNX version|Opset version|
-|-------------|:--------------|:--------------|:--------------|:--------------|
+| Model | Download  | Download (with sample test data) | ONNX version | Opset version |
+| ----------- | ---------- |--------------| -------------- | -------------- |
 |T5-encoder       |[650.6 MB](model/t5-encoder-12.onnx) | [205.0 MB](model/t5-encoder-12.tar.gz)| 1.7 | 12
 |T5-decoder-with-lm-head |[304.9 MB](model/t5-decoder-with-lm-head-12.onnx) | [304.9 MB](model/t5-decoder-with-lm-head-12.tar.gz)| 1.7 | 12
 

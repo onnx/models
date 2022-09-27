@@ -6,7 +6,7 @@
 Automatic age and gender classification has become relevant to an increasing amount of applications, particularly since the rise of social platforms and social media. Nevertheless, performance of existing methods on real-world images is still significantly lacking, especially when compared to the tremendous leaps in performance recently reported for the related task of face recognition.
 
 ## Models
-| Model (Caffe) | Download | ONNX version | Opset version | Dataset |
+| Model | Download | ONNX version | Opset version | Dataset |
 |:-------------|:--------------|:--------------|:--------------|:--------------|
 | [googlenet_age_adience](https://drive.google.com/drive/folders/1GeLTHzHALgTYFj2Q9o5aWdztA9WzoErx?usp=sharing) | [23 MB](models/age_googlenet.onnx) | 1.6 | 11 | Adience |
 | [googlenet_gender_adience](https://drive.google.com/drive/folders/1r0GroTfsF7VpLhcS3IxU-LmAh6rI6vbQ?usp=sharing) | [23 MB](models/gender_googlenet.onnx)| 1.6 | 11 | Adience |
