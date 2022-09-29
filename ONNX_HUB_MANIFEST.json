@@ -7332,7 +7332,10 @@
                         "type": "tensor(float)"
                     }
                 ]
-            }
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/yolov2-coco/model/yolov2-coco-9.tar.gz",
+            "model_with_data_sha": "c34966e4e96165f8db6f2549f509b6a8bdfc01ddd978e6fd07daad4e665d5383",
+            "model_with_data_bytes": 191439022
         }
     },
     {
