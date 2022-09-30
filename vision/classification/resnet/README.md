@@ -32,9 +32,9 @@ ResNet v2 uses pre-activation function whereas ResNet v1  uses post-activation f
 |ResNet50|    [97.8 MB](model/resnet50-v1-7.onnx)    |[92.2 MB](model/resnet50-v1-7.tar.gz)    |1.2.1    |7|74.93         |     92.38           |
 |ResNet101|    [170.6 MB](model/resnet101-v1-7.onnx)   | [159.8 MB](model/resnet101-v1-7.tar.gz)    |  1.2.1  |7  | 76.48         |     93.20         |
 |ResNet152|    [230.6 MB](model/resnet152-v1-7.onnx)    |[217.2 MB](model/resnet152-v1-7.tar.gz)    | 1.2.1  |7 |77.11         |     93.61         |
-|ResNet50_fp32| [97.8 MB](model/resnet50-v1-12.onnx) |[92.0 MB](model/resnet50-v1-12.tar.gz)   |1.7.0 |12 |74.97 |92.33 |
-|ResNet50_int8| [24.6 MB](model/resnet50-v1-12-int8.onnx) |[22.3 MB](model/resnet50-v1-12-int8.tar.gz) |1.7.0 |12 |74.77 |92.32 |
-|ResNet50_qdq | [24.6 MB](model/resnet50-v1-12_qdq.onnx) | [16.8 MB](model/resnet50-v1-12_qdq.tar.gz) | 1.10.0 | 12 |74.43 | |
+|ResNet50-fp32| [97.8 MB](model/resnet50-v1-12.onnx) |[92.0 MB](model/resnet50-v1-12.tar.gz)   |1.7.0 |12 |74.97 |92.33 |
+|ResNet50-int8| [24.6 MB](model/resnet50-v1-12-int8.onnx) |[22.3 MB](model/resnet50-v1-12-int8.tar.gz) |1.7.0 |12 |74.77 |92.32 |
+|ResNet50-qdq | [24.6 MB](model/resnet50-v1-12-qdq.onnx) | [16.8 MB](model/resnet50-v1-12-qdq.tar.gz) | 1.10.0 | 12 |74.43 | |
 > Compared with the fp32 ResNet50, int8 ResNet50's Top-1 accuracy drop ratio is 0.27%, Top-5 accuracy drop ratio is 0.01% and performance improvement is 1.82x.
 >
 > Note the performance depends on the test hardware. 
@@ -110,7 +110,7 @@ We used MXNet as framework with gluon APIs to perform training. View the [traini
 We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_validation](../imagenet_validation.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 
 ## Quantization
-ResNet50_int8 and ResNet50_qdq are obtained by quantizing ResNet50_fp32 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/resnet50/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+ResNet50-int8 and ResNet50-qdq are obtained by quantizing ResNet50-fp32 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/resnet50/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.7.0 
