@@ -15,7 +15,7 @@ def has_vnni_support():
 
 
 def skip_quant_models_if_missing_vnni(model_name):
-    return '-int8' in model_name and not has_vnni_support()
+    return ('-int8' in model_name or '-qdq' in model_name) and not has_vnni_support()
 
 
 def run_onnx_checker(model_path):
