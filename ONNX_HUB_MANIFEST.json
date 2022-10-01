@@ -2034,6 +2034,48 @@
         }
     },
     {
+        "model": "EfficientNet-Lite4-qdq",
+        "model_path": "vision/classification/efficientnet-lite4/model/efficientnet-lite4-11-qdq.onnx",
+        "onnx_version": "1.10.0",
+        "opset_version": 11,
+        "metadata": {
+            "model_sha": "6837d0b19625d4aff8266d7197a7f3775afd82a8c40f9fd0283d52db4955566f",
+            "model_bytes": 13469992,
+            "tags": [
+                "vision",
+                "classification",
+                "efficientnet-lite4"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "images:0",
+                        "shape": [
+                            1,
+                            224,
+                            224,
+                            3
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "Softmax:0",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/efficientnet-lite4/model/efficientnet-lite4-11-qdq.tar.gz",
+            "model_with_data_sha": "f58754ff53120d937e4bc32e6a815fc0163261f7b842762868ed453947258390",
+            "model_with_data_bytes": 10193490
+        }
+    },
+    {
         "model": "EfficientNet-Lite4",
         "model_path": "vision/classification/efficientnet-lite4/model/efficientnet-lite4-11.onnx",
         "onnx_version": "1.7.0",
@@ -3207,6 +3249,48 @@
         }
     },
     {
+        "model": "MobileNet v2-1.0-qdq",
+        "model_path": "vision/classification/mobilenet/model/mobilenetv2-12-qdq.onnx",
+        "onnx_version": "1.10.0",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "41a36090dafe98f4ad8f9b7fe0b218c56ac3c031e547f0367c30655d2702bffe",
+            "model_bytes": 3593903,
+            "tags": [
+                "vision",
+                "classification",
+                "mobilenet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input",
+                        "shape": [
+                            "batch_size",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "output",
+                        "shape": [
+                            "batch_size",
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/mobilenet/model/mobilenetv2-12-qdq.tar.gz",
+            "model_with_data_sha": "29be79b1561b1bf028a064eb4061b23b92883cb7f22b50f5f52d685efd23a04c",
+            "model_with_data_bytes": 3431250
+        }
+    },
+    {
         "model": "MobileNet v2-1.0-fp32",
         "model_path": "vision/classification/mobilenet/model/mobilenetv2-12.onnx",
         "onnx_version": "1.9.0",
@@ -4190,6 +4274,48 @@
             "model_with_data_path": "vision/classification/resnet/model/resnet50-v1-12-int8.tar.gz",
             "model_with_data_sha": "7ddcf6ac49d0cc1ab0d3b7ecb6b81e295714c3e3de7f582fee85a7bebd8426e9",
             "model_with_data_bytes": 22318352
+        }
+    },
+    {
+        "model": "ResNet50-qdq",
+        "model_path": "vision/classification/resnet/model/resnet50-v1-12-qdq.onnx",
+        "onnx_version": "1.10.0",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "e6429d274805654c79ba68dc886c1efd4eff95393e747c35d3fdab579febd8a0",
+            "model_bytes": 25753167,
+            "tags": [
+                "vision",
+                "classification",
+                "resnet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data",
+                        "shape": [
+                            "N",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "resnetv17_dense0_fwd",
+                        "shape": [
+                            "N",
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/resnet/model/resnet50-v1-12-qdq.tar.gz",
+            "model_with_data_sha": "986160ffdcf88dedba54ee1fd8ea9597a91b11ccf16016f495bffe22e83ea40e",
+            "model_with_data_bytes": 17043120
         }
     },
     {
