@@ -1,6 +1,240 @@
 [
     {
         "model": "BERT-Squad",
+        "model_path": "text/machine_comprehension/bert-squad/model/bertsquad-10.onnx",
+        "onnx_version": "1.5",
+        "opset_version": 10,
+        "metadata": {
+            "model_sha": "5945dee6478abdab2d5e4ce3868b4d969741e3dad2134cc669da65a4f092755b",
+            "model_bytes": 435852734,
+            "tags": [
+                "text",
+                "machine comprehension",
+                "bert-squad"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "unique_ids_raw_output___9:0",
+                        "shape": [
+                            "unk__492"
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "segment_ids:0",
+                        "shape": [
+                            "unk__493",
+                            256
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "input_mask:0",
+                        "shape": [
+                            "unk__494",
+                            256
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "input_ids:0",
+                        "shape": [
+                            "unk__495",
+                            256
+                        ],
+                        "type": "tensor(int64)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "unstack:1",
+                        "shape": [
+                            "unk__496",
+                            256
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "unstack:0",
+                        "shape": [
+                            "unk__497",
+                            256
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "unique_ids:0",
+                        "shape": [
+                            "unk__498"
+                        ],
+                        "type": "tensor(int64)"
+                    }
+                ]
+            },
+            "model_with_data_path": "text/machine_comprehension/bert-squad/model/bertsquad-10.tar.gz",
+            "model_with_data_sha": "0ff18af268a891e7de390c5476191084e95eafba2763a69091c83ced7030c8b2",
+            "model_with_data_bytes": 403398451
+        }
+    },
+    {
+        "model": "BERT-Squad-int8",
+        "model_path": "text/machine_comprehension/bert-squad/model/bertsquad-12-int8.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "24325bdf732256859e07a385d2f363a6839b20b2bb4a57ac362b3982fc8ce121",
+            "model_bytes": 124565601,
+            "tags": [
+                "text",
+                "machine comprehension",
+                "bert-squad"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "unique_ids_raw_output___9:0",
+                        "shape": [
+                            "unk__492"
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "segment_ids:0",
+                        "shape": [
+                            "unk__493",
+                            256
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "input_mask:0",
+                        "shape": [
+                            "unk__494",
+                            256
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "input_ids:0",
+                        "shape": [
+                            "unk__495",
+                            256
+                        ],
+                        "type": "tensor(int64)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "unstack:1",
+                        "shape": [
+                            "unk__496",
+                            256
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "unstack:0",
+                        "shape": [
+                            "unk__497",
+                            256
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "unique_ids:0",
+                        "shape": [
+                            "unk__498"
+                        ],
+                        "type": "tensor(int64)"
+                    }
+                ]
+            },
+            "model_with_data_path": "text/machine_comprehension/bert-squad/model/bertsquad-12-int8.tar.gz",
+            "model_with_data_sha": "5f4bd418f2ee55310788fed78842297ec0b3ecda6669c563196f20396cb4d401",
+            "model_with_data_bytes": 105881973
+        }
+    },
+    {
+        "model": "BERT-Squad",
+        "model_path": "text/machine_comprehension/bert-squad/model/bertsquad-12.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "5f0d96a9e6b8a4a2e59f9636f8bbad09ee8a0c58c8212027cc17c5fcc9659e55",
+            "model_bytes": 435852736,
+            "tags": [
+                "text",
+                "machine comprehension",
+                "bert-squad"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "unique_ids_raw_output___9:0",
+                        "shape": [
+                            "unk__492"
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "segment_ids:0",
+                        "shape": [
+                            "unk__493",
+                            256
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "input_mask:0",
+                        "shape": [
+                            "unk__494",
+                            256
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "input_ids:0",
+                        "shape": [
+                            "unk__495",
+                            256
+                        ],
+                        "type": "tensor(int64)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "unstack:1",
+                        "shape": [
+                            "unk__496",
+                            256
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "unstack:0",
+                        "shape": [
+                            "unk__497",
+                            256
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "unique_ids:0",
+                        "shape": [
+                            "unk__498"
+                        ],
+                        "type": "tensor(int64)"
+                    }
+                ]
+            },
+            "model_with_data_path": "text/machine_comprehension/bert-squad/model/bertsquad-12.tar.gz",
+            "model_with_data_sha": "4cd041010ab4ad11c23c0eb7f056c4e4286a894b6d712ef09445b955763fb1b1",
+            "model_with_data_bytes": 403082198
+        }
+    },
+    {
+        "model": "BERT-Squad",
         "model_path": "text/machine_comprehension/bert-squad/model/bertsquad-8.onnx",
         "onnx_version": "1.3",
         "opset_version": 8,
@@ -75,84 +309,6 @@
             "model_with_data_path": "text/machine_comprehension/bert-squad/model/bertsquad-8.tar.gz",
             "model_with_data_sha": "c8c6c7e0ab9e1333b86e8415a9d990b2570f9374f80be1c1cb72f182d266f666",
             "model_with_data_bytes": 403400046
-        }
-    },
-    {
-        "model": "BERT-Squad",
-        "model_path": "text/machine_comprehension/bert-squad/model/bertsquad-10.onnx",
-        "onnx_version": "1.5",
-        "opset_version": 10,
-        "metadata": {
-            "model_sha": "5945dee6478abdab2d5e4ce3868b4d969741e3dad2134cc669da65a4f092755b",
-            "model_bytes": 435852734,
-            "tags": [
-                "text",
-                "machine comprehension",
-                "bert-squad"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "unique_ids_raw_output___9:0",
-                        "shape": [
-                            "unk__492"
-                        ],
-                        "type": "tensor(int64)"
-                    },
-                    {
-                        "name": "segment_ids:0",
-                        "shape": [
-                            "unk__493",
-                            256
-                        ],
-                        "type": "tensor(int64)"
-                    },
-                    {
-                        "name": "input_mask:0",
-                        "shape": [
-                            "unk__494",
-                            256
-                        ],
-                        "type": "tensor(int64)"
-                    },
-                    {
-                        "name": "input_ids:0",
-                        "shape": [
-                            "unk__495",
-                            256
-                        ],
-                        "type": "tensor(int64)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "unstack:1",
-                        "shape": [
-                            "unk__496",
-                            256
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "unstack:0",
-                        "shape": [
-                            "unk__497",
-                            256
-                        ],
-                        "type": "tensor(float)"
-                    },
-                    {
-                        "name": "unique_ids:0",
-                        "shape": [
-                            "unk__498"
-                        ],
-                        "type": "tensor(int64)"
-                    }
-                ]
-            },
-            "model_with_data_path": "text/machine_comprehension/bert-squad/model/bertsquad-10.tar.gz",
-            "model_with_data_sha": "5ed61ab22c90db6928e88fad21f72217b04d6b5ed249c92de46321f77a6f35c3",
-            "model_with_data_bytes": 403081843
         }
     },
     {
@@ -550,8 +706,8 @@
                 ]
             },
             "model_with_data_path": "text/machine_comprehension/roberta/model/roberta-base-11.tar.gz",
-            "model_with_data_sha": "ddce38695d3d72a8a742b7e03a031040a7b0fd92c270215254ceb4e5a50e766f",
-            "model_with_data_bytes": 294964351
+            "model_with_data_sha": "16134da10f8fee3283d22a0d70928fe5ceea1ca2ea23507fe0b0f295108a8815",
+            "model_with_data_bytes": 291239125
         }
     },
     {
@@ -590,46 +746,8 @@
                 ]
             },
             "model_with_data_path": "text/machine_comprehension/roberta/model/roberta-sequence-classification-9.tar.gz",
-            "model_with_data_sha": "149f8aa33713d9ae0411cee5cdc47107bafe771e93f590de6c082b45b2f6984d",
-            "model_with_data_bytes": 431685676
-        }
-    },
-    {
-        "model": "T5-encoder",
-        "model_path": "text/machine_comprehension/t5/model/t5-encoder-12.onnx",
-        "onnx_version": "1.6",
-        "opset_version": 12,
-        "metadata": {
-            "model_sha": "4523122d7cf0f50905694d84995633c8a0cc223da762d3eb2aaffa17251a6f60",
-            "model_bytes": 438549611,
-            "tags": [
-                "text",
-                "machine comprehension",
-                "t5"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "input_ids",
-                        "shape": [
-                            "batch",
-                            "sequence"
-                        ],
-                        "type": "tensor(int64)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "hidden_states",
-                        "shape": [
-                            "batch",
-                            "sequence",
-                            768
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            }
+            "model_with_data_sha": "1fb22feddadc6a0e26f65b6022f0d77d3585d24866b88a7126ab243451032c5b",
+            "model_with_data_bytes": 431071460
         }
     },
     {
@@ -680,12 +798,50 @@
         }
     },
     {
+        "model": "T5-encoder",
+        "model_path": "text/machine_comprehension/t5/model/t5-encoder-12.onnx",
+        "onnx_version": "1.6",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "4523122d7cf0f50905694d84995633c8a0cc223da762d3eb2aaffa17251a6f60",
+            "model_bytes": 438549611,
+            "tags": [
+                "text",
+                "machine comprehension",
+                "t5"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input_ids",
+                        "shape": [
+                            "batch",
+                            "sequence"
+                        ],
+                        "type": "tensor(int64)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "hidden_states",
+                        "shape": [
+                            "batch",
+                            "sequence",
+                            768
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            }
+        }
+    },
+    {
         "model": "LResNet100E-IR",
         "model_path": "vision/body_analysis/arcface/model/arcfaceresnet100-8.onnx",
         "onnx_version": "1.3",
         "opset_version": 8,
         "metadata": {
-            "model_sha": "f0a2e278b430372d308fef67c1aea308c2baf37f32e8908d9bfce035c26a3fb4",
+            "model_sha": "f3a6bc281e72f88862f5748b53be3d76b3b48f8f1ab1f4a537941bdc4e1b01da",
             "model_bytes": 261036388,
             "tags": [
                 "vision",
@@ -717,8 +873,8 @@
                 ]
             },
             "model_with_data_path": "vision/body_analysis/arcface/model/arcfaceresnet100-8.tar.gz",
-            "model_with_data_sha": "e014dc4b9d5b512543267ae8e880bc49ac338ae9da4025c83facbaf7bf0398e0",
-            "model_with_data_bytes": 237568694
+            "model_with_data_sha": "f7098d004468725906a805e50d772eabc95e31f57eedeaaa72aeab8225598c2a",
+            "model_with_data_bytes": 237272167
         }
     },
     {
@@ -777,8 +933,8 @@
                 ]
             },
             "model_with_data_path": "vision/body_analysis/emotion_ferplus/model/emotion-ferplus-7.tar.gz",
-            "model_with_data_sha": "a20af13561752fffb11fc250e1f0e6d31e2d448242e69186700d23fdff6ec0e7",
-            "model_with_data_bytes": 32384474
+            "model_with_data_sha": "6a0341e6f1ebcad345c42883c84591e219d751590d5fdb82d4b35f09722f22ce",
+            "model_with_data_bytes": 32384236
         }
     },
     {
@@ -819,8 +975,8 @@
                 ]
             },
             "model_with_data_path": "vision/body_analysis/emotion_ferplus/model/emotion-ferplus-8.tar.gz",
-            "model_with_data_sha": "2941173471d94d9b9592260573c4d313ca3c312a20fd40b90f9c01886d6e08d6",
-            "model_with_data_bytes": 32384491
+            "model_with_data_sha": "f200563a2cad231634970bb603ba74f68f01aab0f33a92251ec6d390c1991b1d",
+            "model_with_data_bytes": 32384240
         }
     },
     {
@@ -922,6 +1078,101 @@
         }
     },
     {
+        "model": "AlexNet-int8",
+        "model_path": "vision/classification/alexnet/model/bvlcalexnet-12-int8.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "d53bbedf100be79277cf55d78c72bdcb67d88786988561bf5d530f038e443c7b",
+            "model_bytes": 60984008,
+            "tags": [
+                "vision",
+                "classification",
+                "alexnet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "prob_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/alexnet/model/bvlcalexnet-12-int8.tar.gz",
+            "model_with_data_sha": "6ec09e19e5475c51fda2d6b6205f194969ff07199e19944934b806414b34ef2e",
+            "model_with_data_bytes": 40683138
+        }
+    },
+    {
+        "model": "AlexNet",
+        "model_path": "vision/classification/alexnet/model/bvlcalexnet-12.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "6b0da9510f27f234ee96a85dc3809dd210150fdefad87f6850f9788513216945",
+            "model_bytes": 243863787,
+            "tags": [
+                "vision",
+                "classification",
+                "alexnet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "prob_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "fc7_1",
+                        "shape": [
+                            1,
+                            4096
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/alexnet/model/bvlcalexnet-12.tar.gz",
+            "model_with_data_sha": "24abe33e5587bf8df8f824559d4b8c0d24db860efbe21152dc9536451ce8ddc1",
+            "model_with_data_bytes": 226657165
+        }
+    },
+    {
         "model": "AlexNet",
         "model_path": "vision/classification/alexnet/model/bvlcalexnet-3.onnx",
         "onnx_version": "1.1",
@@ -1006,8 +1257,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/alexnet/model/bvlcalexnet-7.tar.gz",
-            "model_with_data_sha": "d9bb9bf70d9591a20b7b213c7e6daafe5de257acd987592d3f4ef000bdc979fd",
-            "model_with_data_bytes": 231241493
+            "model_with_data_sha": "d3b909372a704d0c8614998b2c036d007f658e9cf1e4698a2a0e9f180d44ae20",
+            "model_with_data_bytes": 226848956
         }
     },
     {
@@ -1059,8 +1310,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/alexnet/model/bvlcalexnet-8.tar.gz",
-            "model_with_data_sha": "7d056c881ba90d83cff23cb04d1af51d3beed50ec06a432865b1267be6629973",
-            "model_with_data_bytes": 231241418
+            "model_with_data_sha": "2d651095a6a61a2c807a2ddc4bca1063224f5bcf289bb41a2c5ad3cb32728752",
+            "model_with_data_bytes": 226849065
         }
     },
     {
@@ -1112,8 +1363,103 @@
                 ]
             },
             "model_with_data_path": "vision/classification/alexnet/model/bvlcalexnet-9.tar.gz",
-            "model_with_data_sha": "bcc6d092a2a50fb1c114854f8e22487750a2a09e27eaa9351bdc58f637ee3e1a",
-            "model_with_data_bytes": 231241421
+            "model_with_data_sha": "8ade7829c8705846f8f00ef67e62cf8915f23868b0f0cdc8ade19f8df2891743",
+            "model_with_data_bytes": 226848864
+        }
+    },
+    {
+        "model": "CaffeNet-int8",
+        "model_path": "vision/classification/caffenet/model/caffenet-12-int8.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "ee44f74d2582aa4ca7131929cd28b2a07f5f39f951d8d4f997fffcbed42aa61d",
+            "model_bytes": 60984071,
+            "tags": [
+                "vision",
+                "classification",
+                "caffenet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "prob_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/caffenet/model/caffenet-12-int8.tar.gz",
+            "model_with_data_sha": "24deead9c27254631332923c021c6b9cb429ef19b3367a0cc1cb171b9375c0e5",
+            "model_with_data_bytes": 40718510
+        }
+    },
+    {
+        "model": "CaffeNet",
+        "model_path": "vision/classification/caffenet/model/caffenet-12.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "ea563e5c47d1f58e1717cf1a2d8bf288b8adc07af0ad228b622096cd243aeecb",
+            "model_bytes": 243863798,
+            "tags": [
+                "vision",
+                "classification",
+                "caffenet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "prob_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "fc7_1",
+                        "shape": [
+                            1,
+                            4096
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/caffenet/model/caffenet-12.tar.gz",
+            "model_with_data_sha": "cd6077af2d35872550f2a118dc9505546eb8d80ab343f264aa90dafe5869b5c1",
+            "model_with_data_bytes": 226654456
         }
     },
     {
@@ -1201,8 +1547,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/caffenet/model/caffenet-7.tar.gz",
-            "model_with_data_sha": "e0287e08e40dcaf179e450da00da75b467235da6ded9f8bdf27b37ef15c340e1",
-            "model_with_data_bytes": 229551315
+            "model_with_data_sha": "6fe316230146dd17ecbf39704a9dd0c8e00f9334f804f53825d6960941fc7e09",
+            "model_with_data_bytes": 226844168
         }
     },
     {
@@ -1254,8 +1600,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/caffenet/model/caffenet-8.tar.gz",
-            "model_with_data_sha": "69292692098ccecb7df067c577165de0c2c1885cca821045648f93f6964af0ed",
-            "model_with_data_bytes": 229551319
+            "model_with_data_sha": "f9b4938e7979d512b1761ad1f61879033711bd9ca609c60508c4817ee650715f",
+            "model_with_data_bytes": 226844337
         }
     },
     {
@@ -1307,8 +1653,96 @@
                 ]
             },
             "model_with_data_path": "vision/classification/caffenet/model/caffenet-9.tar.gz",
-            "model_with_data_sha": "ae8ac99c5627bc69e63db078a4fb46b547e1a589010eb0bd97dd1501646dea14",
-            "model_with_data_bytes": 229551368
+            "model_with_data_sha": "f5d1ac993a9865dc4f174f92420299a28c48279f2a2dec62b843c29b24ae7f93",
+            "model_with_data_bytes": 226844131
+        }
+    },
+    {
+        "model": "DenseNet-121-12-int8",
+        "model_path": "vision/classification/densenet-121/model/densenet-12-int8.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "22ab62382b43c2757d84832bf7db13569ab22073d2b1c086ab5669be46d89016",
+            "model_bytes": 8901304,
+            "tags": [
+                "vision",
+                "classification",
+                "densenet-121"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "fc6_1",
+                        "shape": [
+                            1,
+                            1000,
+                            1,
+                            1
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/densenet-121/model/densenet-12-int8.tar.gz",
+            "model_with_data_sha": "d6f8fc9bf3560fb10c176e38ab49fa1e58e5aabd24362ee96d9b8635264c1285",
+            "model_with_data_bytes": 6329146
+        }
+    },
+    {
+        "model": "DenseNet-121-12",
+        "model_path": "vision/classification/densenet-121/model/densenet-12.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "0294e7e88e5b3360de9b0fdc321baf9e6ef18b7f058c4536caae3b9f18ed9ed5",
+            "model_bytes": 32726877,
+            "tags": [
+                "vision",
+                "classification",
+                "densenet-121"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "fc6_1",
+                        "shape": [
+                            1,
+                            1000,
+                            1,
+                            1
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/densenet-121/model/densenet-12.tar.gz",
+            "model_with_data_sha": "055c8ea3bdb3536063bc71b8bb3752f9482ed368a1d48c59a9fd769ded565682",
+            "model_with_data_bytes": 30882195
         }
     },
     {
@@ -1382,8 +1816,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/densenet-121/model/densenet-6.tar.gz",
-            "model_with_data_sha": "68377f0df580eb3a269d6afd5e3837ea75de23a28ae11e88c4714213b1df44d7",
-            "model_with_data_bytes": 33660618
+            "model_with_data_sha": "3b6401ac4491f8c4c884e8fc52dfebfe68c81ef7cd8ca0228e999b8c38284c60",
+            "model_with_data_bytes": 30902760
         }
     },
     {
@@ -1439,8 +1873,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/densenet-121/model/densenet-7.tar.gz",
-            "model_with_data_sha": "51962687b5fd5ac636fb8b682a463d607f5c6713c21514fcd7d89a02c81a3d11",
-            "model_with_data_bytes": 33660614
+            "model_with_data_sha": "c8da317719041caea1e4ded47da287f604e898ec056e36ba1fa15620ec4a19ed",
+            "model_with_data_bytes": 30902681
         }
     },
     {
@@ -1496,8 +1930,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/densenet-121/model/densenet-8.tar.gz",
-            "model_with_data_sha": "c44501ca60c207076bd400f2dbedcfc19b92e98a4fffe929a4e007acccb207c0",
-            "model_with_data_bytes": 33660609
+            "model_with_data_sha": "645ce789ac537da24b733d758089ff1b32171775ff277515177c072c3fdbb213",
+            "model_with_data_bytes": 30902606
         }
     },
     {
@@ -1553,8 +1987,92 @@
                 ]
             },
             "model_with_data_path": "vision/classification/densenet-121/model/densenet-9.tar.gz",
-            "model_with_data_sha": "68377f0df580eb3a269d6afd5e3837ea75de23a28ae11e88c4714213b1df44d7",
-            "model_with_data_bytes": 33660618
+            "model_with_data_sha": "3794ac95cbdbd4e5588ad5db9bdcb4f19e6cee89fdcdbc343b08a474df425d59",
+            "model_with_data_bytes": 30902653
+        }
+    },
+    {
+        "model": "EfficientNet-Lite4-int8",
+        "model_path": "vision/classification/efficientnet-lite4/model/efficientnet-lite4-11-int8.onnx",
+        "onnx_version": "1.9.0",
+        "opset_version": 11,
+        "metadata": {
+            "model_sha": "2b3cbb5077262b20df565dacddecb3724c0976c35029a87e512d13aa4eff04a2",
+            "model_bytes": 13585963,
+            "tags": [
+                "vision",
+                "classification",
+                "efficientnet-lite4"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "images:0",
+                        "shape": [
+                            1,
+                            224,
+                            224,
+                            3
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "Softmax:0",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/efficientnet-lite4/model/efficientnet-lite4-11-int8.tar.gz",
+            "model_with_data_sha": "3b03546fb343ba48e3243c893ea37e47cb1f337d80ed0aca562077d8d3da51b6",
+            "model_with_data_bytes": 12780764
+        }
+    },
+    {
+        "model": "EfficientNet-Lite4-qdq",
+        "model_path": "vision/classification/efficientnet-lite4/model/efficientnet-lite4-11-qdq.onnx",
+        "onnx_version": "1.10.0",
+        "opset_version": 11,
+        "metadata": {
+            "model_sha": "6837d0b19625d4aff8266d7197a7f3775afd82a8c40f9fd0283d52db4955566f",
+            "model_bytes": 13469992,
+            "tags": [
+                "vision",
+                "classification",
+                "efficientnet-lite4"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "images:0",
+                        "shape": [
+                            1,
+                            224,
+                            224,
+                            3
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "Softmax:0",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/efficientnet-lite4/model/efficientnet-lite4-11-qdq.tar.gz",
+            "model_with_data_sha": "f58754ff53120d937e4bc32e6a815fc0163261f7b842762868ed453947258390",
+            "model_with_data_bytes": 10193490
         }
     },
     {
@@ -1613,6 +2131,105 @@
         }
     },
     {
+        "model": "GoogleNet-int8",
+        "model_path": "vision/classification/inception_and_googlenet/googlenet/model/googlenet-12-int8.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "282290386d7055c1b1e9692680621907991a87f9839391892b5cbe4da2e9871f",
+            "model_bytes": 7122858,
+            "tags": [
+                "vision",
+                "classification",
+                "inception and googlenet",
+                "googlenet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "prob_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/inception_and_googlenet/googlenet/model/googlenet-12-int8.tar.gz",
+            "model_with_data_sha": "fcedb191d6fd2453ed27f1dbf192cda8b88ec83a6d2a9448fa1d24a2c23cd675",
+            "model_with_data_bytes": 5724344
+        }
+    },
+    {
+        "model": "GoogleNet",
+        "model_path": "vision/classification/inception_and_googlenet/googlenet/model/googlenet-12.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "c99c507058eaf41de8723408fdda7db8325cb57f0a89f2ee07a716d6e963e14e",
+            "model_bytes": 28021836,
+            "tags": [
+                "vision",
+                "classification",
+                "inception and googlenet",
+                "googlenet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "prob_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "pool5/7x7_s1_2",
+                        "shape": [
+                            1,
+                            1024,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/inception_and_googlenet/googlenet/model/googlenet-12.tar.gz",
+            "model_with_data_sha": "cdc6457821113082defd34905342385f63f823363feb1bf439eee4427577659c",
+            "model_with_data_bytes": 26545491
+        }
+    },
+    {
         "model": "GoogleNet",
         "model_path": "vision/classification/inception_and_googlenet/googlenet/model/googlenet-3.onnx",
         "onnx_version": "1.1",
@@ -1664,8 +2281,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/inception_and_googlenet/googlenet/model/googlenet-3.tar.gz",
-            "model_with_data_sha": "3e4045f1cfec9936588a1f0352ce32b4764cc844013403f8116854c5bc4ff184",
-            "model_with_data_bytes": 30906583
+            "model_with_data_sha": "26348e6f4e8073a8b6bf878b4104941443fff445ffa5785b1ae66ad955f209a8",
+            "model_with_data_bytes": 26565157
         }
     },
     {
@@ -1720,8 +2337,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/inception_and_googlenet/googlenet/model/googlenet-6.tar.gz",
-            "model_with_data_sha": "d8e2cf0321f97283d3e8664e0e35fffc5aee52c4c078d0655b29e4972867bcac",
-            "model_with_data_bytes": 30906642
+            "model_with_data_sha": "3085e172e8cd28e049e9d47ae575f8063fff6c98a85b056f89158e8b2fd39018",
+            "model_with_data_bytes": 26565143
         }
     },
     {
@@ -1776,8 +2393,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/inception_and_googlenet/googlenet/model/googlenet-7.tar.gz",
-            "model_with_data_sha": "3e4045f1cfec9936588a1f0352ce32b4764cc844013403f8116854c5bc4ff184",
-            "model_with_data_bytes": 30906583
+            "model_with_data_sha": "58219a44c0a22a95aa4956d653f7688a753cb9389fbf08bbcad6c62b0294c6fd",
+            "model_with_data_bytes": 26565243
         }
     },
     {
@@ -1832,8 +2449,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/inception_and_googlenet/googlenet/model/googlenet-8.tar.gz",
-            "model_with_data_sha": "24f8576ba8ea7e0589af6dabfc236e564dd01d94823a2fcb6a762ad3bf736c37",
-            "model_with_data_bytes": 30906601
+            "model_with_data_sha": "5f1020194e63177e0765aa8de917b4e7057cd3c62bb46b4fe4564210cdabe3bc",
+            "model_with_data_bytes": 26565142
         }
     },
     {
@@ -1888,8 +2505,107 @@
                 ]
             },
             "model_with_data_path": "vision/classification/inception_and_googlenet/googlenet/model/googlenet-9.tar.gz",
-            "model_with_data_sha": "d8e2cf0321f97283d3e8664e0e35fffc5aee52c4c078d0655b29e4972867bcac",
-            "model_with_data_bytes": 30906642
+            "model_with_data_sha": "ea5a81dd36c3067a78cfc1e6baa7a4142849e28d97d054fdc42aa1f9539d400f",
+            "model_with_data_bytes": 26565214
+        }
+    },
+    {
+        "model": "Inception-1-int8",
+        "model_path": "vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12-int8.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "7d25f0bfa7a92e9a67d8049facd4454911ca4388a303fc61ee14664b1010c717",
+            "model_bytes": 10191535,
+            "tags": [
+                "vision",
+                "classification",
+                "inception and googlenet",
+                "inception v1"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "prob_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12-int8.tar.gz",
+            "model_with_data_sha": "296e49e0f1253877053d5aa48f4192f675b302b5828e70a821d6d94e0c8ee4e3",
+            "model_with_data_bytes": 9463738
+        }
+    },
+    {
+        "model": "Inception-1",
+        "model_path": "vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "814b31a6316873bd03d2d808415ce1f40a7bf48ad88eab5ecc3cdc8dc6cf38ec",
+            "model_bytes": 28021958,
+            "tags": [
+                "vision",
+                "classification",
+                "inception and googlenet",
+                "inception v1"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "prob_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "pool5/7x7_s1_2",
+                        "shape": [
+                            1,
+                            1024,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12.tar.gz",
+            "model_with_data_sha": "c4198ed3415d59dacab2f6fa90c81f1a3aa9f3623b66e2d9653f16d06a5cc68c",
+            "model_with_data_bytes": 26545542
         }
     },
     {
@@ -1982,8 +2698,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-7.tar.gz",
-            "model_with_data_sha": "7bae43d53cc836bcd20cc5eacdd12c2d24d34c17e960a3342d7501489d5d9157",
-            "model_with_data_bytes": 29323411
+            "model_with_data_sha": "56c2d167a5400861d674c8a3d73df3fb3c4007b40ef350edf4da5e900138f86b",
+            "model_with_data_bytes": 26565189
         }
     },
     {
@@ -2038,8 +2754,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-8.tar.gz",
-            "model_with_data_sha": "2104acf056bf9c7ce2407fd1e886eb9bec78413639c7c14f1c15a096305932b7",
-            "model_with_data_bytes": 29323364
+            "model_with_data_sha": "e3ecd30178504237bbf45dc87ae96a46b6301157a8b8e5c8cf25c817e4512628",
+            "model_with_data_bytes": 26565228
         }
     },
     {
@@ -2094,8 +2810,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-9.tar.gz",
-            "model_with_data_sha": "2242cbd72b324f384e767634bc9acf4db240aea3ae15d6a1817ee81256d016ce",
-            "model_with_data_bytes": 29323358
+            "model_with_data_sha": "faeb7ab80e0f60d22ae8472f6188700a20cd3fc466682f2dab5e00e8955c611c",
+            "model_with_data_bytes": 26565173
         }
     },
     {
@@ -2188,8 +2904,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-7.tar.gz",
-            "model_with_data_sha": "c23f2596676c27640d668115588c25771a5645966e5f00e858295e3cd9fbfd58",
-            "model_with_data_bytes": 45015328
+            "model_with_data_sha": "5ef4d35e4490468986254a5915a567849183b211b49c2552e816165a74dd4aa0",
+            "model_with_data_bytes": 42257087
         }
     },
     {
@@ -2244,8 +2960,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-8.tar.gz",
-            "model_with_data_sha": "b2e7863a96ace0783328586e75fd59ccaa7e7de7bd72be6d030cc206e312b690",
-            "model_with_data_bytes": 45015310
+            "model_with_data_sha": "c222c2f1c530aad79496f0b15898d4aa6807dc66e82ac67cec1573cfd4b59c87",
+            "model_with_data_bytes": 42257042
         }
     },
     {
@@ -2300,8 +3016,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-9.tar.gz",
-            "model_with_data_sha": "e4b06f72212011ed60e3515242ea7f7695ff59e0735633953573ad053b57abfe",
-            "model_with_data_bytes": 45015320
+            "model_with_data_sha": "c0722dff7401d4ade189c62f66b3a39eaa3b15c1a28457b7e3efd44de9917491",
+            "model_with_data_bytes": 42256996
         }
     },
     {
@@ -2320,6 +3036,90 @@
             "model_with_data_path": "vision/classification/mnist/model/mnist-1.tar.gz",
             "model_with_data_sha": "a296485a657137a78b5c9b0ade09fca4041364da2c530dd0edfca1e1bb53283e",
             "model_with_data_bytes": 26518
+        }
+    },
+    {
+        "model": "MNIST-12-int8",
+        "model_path": "vision/classification/mnist/model/mnist-12-int8.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "5eac0752eecf4991a5e4157cf31a186f2c61090494019e87979ac17df1dae253",
+            "model_bytes": 10969,
+            "tags": [
+                "vision",
+                "classification",
+                "mnist"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "Input3",
+                        "shape": [
+                            1,
+                            1,
+                            28,
+                            28
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "Plus214_Output_0",
+                        "shape": [
+                            1,
+                            10
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/mnist/model/mnist-12-int8.tar.gz",
+            "model_with_data_sha": "e4ea757f0fbf49c5aebc0c885397c72dc7a38617fbef2db408f531f91a7bb49c",
+            "model_with_data_bytes": 10668
+        }
+    },
+    {
+        "model": "MNIST-12",
+        "model_path": "vision/classification/mnist/model/mnist-12.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "5c688690f8bacf667d4c2074af5ad0646ca328d7ab03eccf944a65b320171bdd",
+            "model_bytes": 26143,
+            "tags": [
+                "vision",
+                "classification",
+                "mnist"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "Input3",
+                        "shape": [
+                            1,
+                            1,
+                            28,
+                            28
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "Plus214_Output_0",
+                        "shape": [
+                            1,
+                            10
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/mnist/model/mnist-12.tar.gz",
+            "model_with_data_sha": "a53a59dcaca8804a0f6dfda9a3cf2e082979589391dbde73640b60684f1d24e9",
+            "model_with_data_bytes": 26741
         }
     },
     {
@@ -2360,8 +3160,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/mnist/model/mnist-7.tar.gz",
-            "model_with_data_sha": "89edba3ef306f620acece85ec7bf4629a3f58c597a2b9cce9fc64ab8b1e9b452",
-            "model_with_data_bytes": 25959
+            "model_with_data_sha": "35601ad2a49200f62e3030d1530e5db1c1edeb2d6632b2216bcebee2287dbb7c",
+            "model_with_data_bytes": 26757
         }
     },
     {
@@ -2402,8 +3202,134 @@
                 ]
             },
             "model_with_data_path": "vision/classification/mnist/model/mnist-8.tar.gz",
-            "model_with_data_sha": "1dd098b0fe8bc750585eefc02013c37be1a1cae2bdba0191ccdb8e8518b3a882",
-            "model_with_data_bytes": 25962
+            "model_with_data_sha": "2f47e338faddbb30488abd83e8179ce44882de465165bb3a5b2640719f64f70c",
+            "model_with_data_bytes": 26751
+        }
+    },
+    {
+        "model": "MobileNet v2-1.0-int8",
+        "model_path": "vision/classification/mobilenet/model/mobilenetv2-12-int8.onnx",
+        "onnx_version": "1.9.0",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "cc028fe6cae7bc11a4ff53cfc9b79c920e8be65ce33a904ec3e2a8f66d77f95f",
+            "model_bytes": 3655033,
+            "tags": [
+                "vision",
+                "classification",
+                "mobilenet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input",
+                        "shape": [
+                            "batch_size",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "output",
+                        "shape": [
+                            "batch_size",
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/mobilenet/model/mobilenetv2-12-int8.tar.gz",
+            "model_with_data_sha": "f00ea406993d4b2a404a4c5f4258e862f68aedfbcc324510267e556612501211",
+            "model_with_data_bytes": 3910933
+        }
+    },
+    {
+        "model": "MobileNet v2-1.0-qdq",
+        "model_path": "vision/classification/mobilenet/model/mobilenetv2-12-qdq.onnx",
+        "onnx_version": "1.10.0",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "41a36090dafe98f4ad8f9b7fe0b218c56ac3c031e547f0367c30655d2702bffe",
+            "model_bytes": 3593903,
+            "tags": [
+                "vision",
+                "classification",
+                "mobilenet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input",
+                        "shape": [
+                            "batch_size",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "output",
+                        "shape": [
+                            "batch_size",
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/mobilenet/model/mobilenetv2-12-qdq.tar.gz",
+            "model_with_data_sha": "29be79b1561b1bf028a064eb4061b23b92883cb7f22b50f5f52d685efd23a04c",
+            "model_with_data_bytes": 3431250
+        }
+    },
+    {
+        "model": "MobileNet v2-1.0-fp32",
+        "model_path": "vision/classification/mobilenet/model/mobilenetv2-12.onnx",
+        "onnx_version": "1.9.0",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "c0c3f76d93fa3fd6580652a45618618a220fced18babf65774ed169de0432ad5",
+            "model_bytes": 13964571,
+            "tags": [
+                "vision",
+                "classification",
+                "mobilenet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input",
+                        "shape": [
+                            "batch_size",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "output",
+                        "shape": [
+                            "batch_size",
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/mobilenet/model/mobilenetv2-12.tar.gz",
+            "model_with_data_sha": "5f83b422708a708b592a5fd56d84710038511789df3ae510b84123930c37762d",
+            "model_with_data_bytes": 13498787
         }
     },
     {
@@ -2457,8 +3383,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/mobilenet/model/mobilenetv2-7.tar.gz",
-            "model_with_data_sha": "147af1703264c68d6e0880b3f807bf43fd5ada98d2df6b4c4aec3be6ac26d6f2",
-            "model_with_data_bytes": 14570532
+            "model_with_data_sha": "3e4e9e2de0241cc829917e9c0233229974f5d35d3cfd012a263ca36c98f36ac3",
+            "model_with_data_bytes": 13504391
         }
     },
     {
@@ -2546,8 +3472,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-7.tar.gz",
-            "model_with_data_sha": "527a6470798ce06425202dc002df041c49b7cab55c24406ac13b3d47bc44d0ea",
-            "model_with_data_bytes": 218957602
+            "model_with_data_sha": "a9c56a0e02b4df95a1639f6d7883e39b9f416f8929d09cdf6f45783aa1605d1f",
+            "model_with_data_bytes": 214642762
         }
     },
     {
@@ -2599,8 +3525,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-8.tar.gz",
-            "model_with_data_sha": "b10a14df9ab26260838a1b306c366efd1ede2eed81768888a231148479e5f67a",
-            "model_with_data_bytes": 218957576
+            "model_with_data_sha": "ce469bf52e1a8bf2884f502e8921ce2e7cd92f9aeb7d9a16c6da639cf8d39a74",
+            "model_with_data_bytes": 214642707
         }
     },
     {
@@ -2652,173 +3578,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-9.tar.gz",
-            "model_with_data_sha": "f3f300570508439f538f7ae7325b1b121b69fd539a775087c59e0fcc4d363951",
-            "model_with_data_bytes": 218957598
-        }
-    },
-    {
-        "model": "ResNet18",
-        "model_path": "vision/classification/resnet/model/resnet18-v1-7.onnx",
-        "onnx_version": "1.2.1",
-        "opset_version": 7,
-        "metadata": {
-            "model_sha": "433c77f0a2e1394ca452f86b097f50d78e4888a9d4860348688d1b0bb9acc292",
-            "model_bytes": 46820735,
-            "tags": [
-                "vision",
-                "classification",
-                "resnet"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "data",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "resnetv15_dense0_fwd",
-                        "shape": [
-                            1,
-                            1000
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "extra_ports": {
-                "features": [
-                    {
-                        "name": "resnetv15_pool1_fwd",
-                        "shape": [
-                            1,
-                            512,
-                            1,
-                            1
-                        ]
-                    }
-                ]
-            },
-            "model_with_data_path": "vision/classification/resnet/model/resnet18-v1-7.tar.gz",
-            "model_with_data_sha": "9f44e036690712d57ce07cfc433b7eed32edbe9fe63c02d4c8b0c6f6f06b4f4d",
-            "model_with_data_bytes": 44992229
-        }
-    },
-    {
-        "model": "ResNet34",
-        "model_path": "vision/classification/resnet/model/resnet34-v1-7.onnx",
-        "onnx_version": "1.2.1",
-        "opset_version": 7,
-        "metadata": {
-            "model_sha": "495e37f161ef24920b3e1883faa22eb87907829ac05120acca07cd7e9e383e7c",
-            "model_bytes": 87302586,
-            "tags": [
-                "vision",
-                "classification",
-                "resnet"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "data",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "resnetv16_dense0_fwd",
-                        "shape": [
-                            1,
-                            1000
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "extra_ports": {
-                "features": [
-                    {
-                        "name": "resnetv16_pool1_fwd",
-                        "shape": [
-                            1,
-                            512,
-                            1,
-                            1
-                        ]
-                    }
-                ]
-            },
-            "model_with_data_path": "vision/classification/resnet/model/resnet34-v1-7.tar.gz",
-            "model_with_data_sha": "08547c6d76297de11775db27d598e4ed902f94649e281f7e6599be082cc12a71",
-            "model_with_data_bytes": 82449233
-        }
-    },
-    {
-        "model": "ResNet50",
-        "model_path": "vision/classification/resnet/model/resnet50-v1-7.onnx",
-        "onnx_version": "1.2.1",
-        "opset_version": 7,
-        "metadata": {
-            "model_sha": "3efe394824ceb1bc354bc08c4fa477f60a4505cf4259e42bda3ac90ad2aa6af6",
-            "model_bytes": 102583338,
-            "tags": [
-                "vision",
-                "classification",
-                "resnet"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "data",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "resnetv17_dense0_fwd",
-                        "shape": [
-                            1,
-                            1000
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "extra_ports": {
-                "features": [
-                    {
-                        "name": "resnetv17_pool1_fwd",
-                        "shape": [
-                            1,
-                            2048,
-                            1,
-                            1
-                        ]
-                    }
-                ]
-            },
-            "model_with_data_path": "vision/classification/resnet/model/resnet50-v1-7.tar.gz",
-            "model_with_data_sha": "c69e9cb3e709ca7e6ec97a334bdc7e91eda58db77f3d93b1d814539cf6263fc4",
-            "model_with_data_bytes": 96686465
+            "model_with_data_sha": "ef3f40805e4257213440401536e28ad3aa6404ebce5a6cf9d7fcdb44fee09f37",
+            "model_with_data_bytes": 214642550
         }
     },
     {
@@ -2827,8 +3588,8 @@
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
-            "model_sha": "faafaf3aea406a105e26805cf3e8e591549e1c06feb60a8e60d85bcf94f8d8c5",
-            "model_bytes": 178914041,
+            "model_sha": "760702f6ec0138f71ebac66f4e95d1c72dc9267a8544f4d4667a53075fd0497c",
+            "model_bytes": 178914043,
             "tags": [
                 "vision",
                 "classification",
@@ -2839,7 +3600,7 @@
                     {
                         "name": "data",
                         "shape": [
-                            1,
+                            "N",
                             3,
                             224,
                             224
@@ -2851,7 +3612,7 @@
                     {
                         "name": "resnetv18_dense0_fwd",
                         "shape": [
-                            1,
+                            "N",
                             1000
                         ],
                         "type": "tensor(float)"
@@ -2863,7 +3624,7 @@
                     {
                         "name": "resnetv18_pool1_fwd",
                         "shape": [
-                            1,
+                            0,
                             2048,
                             1,
                             1
@@ -2872,537 +3633,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/resnet/model/resnet101-v1-7.tar.gz",
-            "model_with_data_sha": "e6c1914c942be3305d9caea84bb03a82193bcad00052aeeda5965b9a8c1ebb08",
-            "model_with_data_bytes": 167594279
-        }
-    },
-    {
-        "model": "ResNet152",
-        "model_path": "vision/classification/resnet/model/resnet152-v1-7.onnx",
-        "onnx_version": "1.2.1",
-        "opset_version": 7,
-        "metadata": {
-            "model_sha": "a1c165290f7ac03128a24d9e34e8497d27630498d503c80b762a41169b64c112",
-            "model_bytes": 241816204,
-            "tags": [
-                "vision",
-                "classification",
-                "resnet"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "data",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "resnetv19_dense0_fwd",
-                        "shape": [
-                            1,
-                            1000
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "extra_ports": {
-                "features": [
-                    {
-                        "name": "resnetv19_pool1_fwd",
-                        "shape": [
-                            1,
-                            2048,
-                            1,
-                            1
-                        ]
-                    }
-                ]
-            },
-            "model_with_data_path": "vision/classification/resnet/model/resnet152-v1-7.tar.gz",
-            "model_with_data_sha": "cb9927d5c9b361ceda38d0c6896936982199b2d026af0399f6a4d55a42f95a43",
-            "model_with_data_bytes": 227763406
-        }
-    },
-    {
-        "model": "ResNet50_fp32",
-        "model_path": "vision/classification/resnet/model/resnet50-v1-12.onnx",
-        "onnx_version": "1.7.0",
-        "opset_version": 12,
-        "metadata": {
-            "model_sha": "b26ed585485cac8c25d418749b177386e00f46dbffc0828ca9adaa1911923509",
-            "model_bytes": 102576417,
-            "tags": [
-                "vision",
-                "classification",
-                "resnet"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "data",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "resnetv17_dense0_fwd",
-                        "shape": [
-                            1,
-                            1000
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "extra_ports": {
-                "features": [
-                    {
-                        "name": "resnetv17_pool1_fwd",
-                        "shape": [
-                            1,
-                            2048,
-                            1,
-                            1
-                        ]
-                    }
-                ]
-            },
-            "model_with_data_path": "vision/classification/resnet/model/resnet50-v1-12.tar.gz",
-            "model_with_data_sha": "1a35fca7f6c9933b3e1595a84c2810a817b535e85414b6e055c342996590359c",
-            "model_with_data_bytes": 96559462
-        }
-    },
-    {
-        "model": "ResNet50_int8",
-        "model_path": "vision/classification/resnet/model/resnet50-v1-12-int8.onnx",
-        "onnx_version": "1.7.0",
-        "opset_version": 12,
-        "metadata": {
-            "model_sha": "69ddc6f768e6bd7dbc84a52bf312dc9b2fc2f2853308aacc374b6c4dc222157e",
-            "model_bytes": 25815876,
-            "tags": [
-                "vision",
-                "classification",
-                "resnet"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "data",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "resnetv17_dense0_fwd",
-                        "shape": [
-                            1,
-                            1000
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "extra_ports": {
-                "features": [
-                    {
-                        "name": "flatten_473_quantized",
-                        "shape": [
-                            1,
-                            2048
-                        ]
-                    }
-                ]
-            },
-            "model_with_data_path": "vision/classification/resnet/model/resnet50-v1-12-int8.tar.gz",
-            "model_with_data_sha": "1788ca7b238eef393cd6ed32b49974644c900896e6a055901e467392bcf0a640",
-            "model_with_data_bytes": 22355966
-        }
-    },
-    {
-        "model": "ResNet50-caffe2",
-        "model_path": "vision/classification/resnet/model/resnet50-caffe2-v1-3.onnx",
-        "onnx_version": "1.1",
-        "opset_version": 3,
-        "metadata": {
-            "model_sha": "59d7b26391117eb7968feb384be692c1b80619330f5d4cfe25c4efc5f7e4a12e",
-            "model_bytes": 102491871,
-            "tags": [
-                "vision",
-                "classification",
-                "resnet"
-            ],
-            "model_with_data_path": "vision/classification/resnet/model/resnet50-caffe2-v1-3.tar.gz",
-            "model_with_data_sha": "074ba053b6aa46c6b74d09ba9b742335e59d5220951f576dbe1fd40abe3b6601",
-            "model_with_data_bytes": 96826419
-        }
-    },
-    {
-        "model": "ResNet50-caffe2",
-        "model_path": "vision/classification/resnet/model/resnet50-caffe2-v1-6.onnx",
-        "onnx_version": "1.1.2",
-        "opset_version": 6,
-        "metadata": {
-            "model_sha": "129da56da1667008f911e79ac9619cd39fef0fd34d0102835e25007cc3044240",
-            "model_bytes": 102490289,
-            "tags": [
-                "vision",
-                "classification",
-                "resnet"
-            ],
-            "model_with_data_path": "vision/classification/resnet/model/resnet50-caffe2-v1-6.tar.gz",
-            "model_with_data_sha": "89e669a4c7d5a561cc148f962f7ae2c406ae2338185caec6ab8f9647277f782a",
-            "model_with_data_bytes": 98452623
-        }
-    },
-    {
-        "model": "ResNet50-caffe2",
-        "model_path": "vision/classification/resnet/model/resnet50-caffe2-v1-7.onnx",
-        "onnx_version": "1.2",
-        "opset_version": 7,
-        "metadata": {
-            "model_sha": "75f14934cf138fc4912e3a8d33315d8065b01172eacbe65db4e6eb2f770f7a91",
-            "model_bytes": 102489423,
-            "tags": [
-                "vision",
-                "classification",
-                "resnet"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "gpu_0/data_0",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "gpu_0/softmax_1",
-                        "shape": [
-                            1,
-                            1000
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "extra_ports": {
-                "features": [
-                    {
-                        "name": "gpu_0/pool5_1",
-                        "shape": [
-                            1,
-                            2048,
-                            1,
-                            1
-                        ]
-                    }
-                ]
-            },
-            "model_with_data_path": "vision/classification/resnet/model/resnet50-caffe2-v1-7.tar.gz",
-            "model_with_data_sha": "ec5da15009b3a150508c01bb54872367f74f24faf3e3a04c71a2ded1f0bd2ed3",
-            "model_with_data_bytes": 101706350
-        }
-    },
-    {
-        "model": "ResNet50-caffe2",
-        "model_path": "vision/classification/resnet/model/resnet50-caffe2-v1-8.onnx",
-        "onnx_version": "1.3",
-        "opset_version": 8,
-        "metadata": {
-            "model_sha": "d52ce8f6349001e14226e354bb815aba5b35112b0e8837a884448d06e667853d",
-            "model_bytes": 102489423,
-            "tags": [
-                "vision",
-                "classification",
-                "resnet"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "gpu_0/data_0",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "gpu_0/softmax_1",
-                        "shape": [
-                            1,
-                            1000
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "extra_ports": {
-                "features": [
-                    {
-                        "name": "gpu_0/pool5_1",
-                        "shape": [
-                            1,
-                            2048,
-                            1,
-                            1
-                        ]
-                    }
-                ]
-            },
-            "model_with_data_path": "vision/classification/resnet/model/resnet50-caffe2-v1-8.tar.gz",
-            "model_with_data_sha": "3700e4f398267402a565c54c15bd476bef2fb34212eebf9bb6fe024fdf64379a",
-            "model_with_data_bytes": 101706397
-        }
-    },
-    {
-        "model": "ResNet50-caffe2",
-        "model_path": "vision/classification/resnet/model/resnet50-caffe2-v1-9.onnx",
-        "onnx_version": "1.4",
-        "opset_version": 9,
-        "metadata": {
-            "model_sha": "78eecdb9354e71364b9df6f3b5824ecc48710938d5b4ea23724b9a2e9edbc4a6",
-            "model_bytes": 102489423,
-            "tags": [
-                "vision",
-                "classification",
-                "resnet"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "gpu_0/data_0",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "gpu_0/softmax_1",
-                        "shape": [
-                            1,
-                            1000
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "extra_ports": {
-                "features": [
-                    {
-                        "name": "gpu_0/pool5_1",
-                        "shape": [
-                            1,
-                            2048,
-                            1,
-                            1
-                        ]
-                    }
-                ]
-            },
-            "model_with_data_path": "vision/classification/resnet/model/resnet50-caffe2-v1-9.tar.gz",
-            "model_with_data_sha": "ac8d0674c0e919fdd995c4068894381e9b2bb0313fd67bfffc790bcc0f31d38c",
-            "model_with_data_bytes": 101706363
-        }
-    },
-    {
-        "model": "ResNet18-v2",
-        "model_path": "vision/classification/resnet/model/resnet18-v2-7.onnx",
-        "onnx_version": "1.2.1",
-        "opset_version": 7,
-        "metadata": {
-            "model_sha": "bd75e414be9d14d50c8c067121e90a7bec0531a4793fe21e5dcb6bc66f2addcb",
-            "model_bytes": 46806735,
-            "tags": [
-                "vision",
-                "classification",
-                "resnet"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "data",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "resnetv22_dense0_fwd",
-                        "shape": [
-                            1,
-                            1000
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "extra_ports": {
-                "features": [
-                    {
-                        "name": "resnetv22_pool1_fwd",
-                        "shape": [
-                            1,
-                            512,
-                            1,
-                            1
-                        ]
-                    }
-                ]
-            },
-            "model_with_data_path": "vision/classification/resnet/model/resnet18-v2-7.tar.gz",
-            "model_with_data_sha": "b94e8dd1543f36149ade0767232398f9e7eb4921047f4ae7c261a32cf0ecc659",
-            "model_with_data_bytes": 44966711
-        }
-    },
-    {
-        "model": "ResNet34-v2",
-        "model_path": "vision/classification/resnet/model/resnet34-v2-7.onnx",
-        "onnx_version": "1.2.1",
-        "opset_version": 7,
-        "metadata": {
-            "model_sha": "17f9350e613339ffd46314bb905998f1adaaa6cf983a8c058efbb3cbc6046ca5",
-            "model_bytes": 87288585,
-            "tags": [
-                "vision",
-                "classification",
-                "resnet"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "data",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "resnetv23_dense0_fwd",
-                        "shape": [
-                            1,
-                            1000
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "extra_ports": {
-                "features": [
-                    {
-                        "name": "resnetv23_pool1_fwd",
-                        "shape": [
-                            1,
-                            512,
-                            1,
-                            1
-                        ]
-                    }
-                ]
-            },
-            "model_with_data_path": "vision/classification/resnet/model/resnet34-v2-7.tar.gz",
-            "model_with_data_sha": "c333b01edeee5bdb9e3a3b6acc76968bfb3a50ea36b80976aac26a98afd28848",
-            "model_with_data_bytes": 82421588
-        }
-    },
-    {
-        "model": "ResNet50-v2",
-        "model_path": "vision/classification/resnet/model/resnet50-v2-7.onnx",
-        "onnx_version": "1.2.1",
-        "opset_version": 7,
-        "metadata": {
-            "model_sha": "1e80e8a7c8eec8e8b20c440d7dd7f2f8590779c7c2859dc4514870dc463845d3",
-            "model_bytes": 102442450,
-            "tags": [
-                "vision",
-                "classification",
-                "resnet"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "data",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "resnetv24_dense0_fwd",
-                        "shape": [
-                            1,
-                            1000
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "extra_ports": {
-                "features": [
-                    {
-                        "name": "resnetv24_pool1_fwd",
-                        "shape": [
-                            1,
-                            2048,
-                            1,
-                            1
-                        ]
-                    }
-                ]
-            },
-            "model_with_data_path": "vision/classification/resnet/model/resnet50-v2-7.tar.gz",
-            "model_with_data_sha": "0a52a62f690ffaeea08a10673bf77de7c4ad2b2f3dad638156c5a922e679f679",
-            "model_with_data_bytes": 96494594
+            "model_with_data_sha": "27f51a51a9de6c1b10455cb09164f384746288c4b9e7bbb4af49ab206abd6703",
+            "model_with_data_bytes": 166222423
         }
     },
     {
@@ -3411,8 +3643,8 @@
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
-            "model_sha": "b610c141f3b26bf8324dcbd13532779cceedffac5213dbcc3ad0047b489ce304",
-            "model_bytes": 178682299,
+            "model_sha": "3a0a819ea0953fb4700b0d98e43540aeee253e5b4c503c552b0c7979fc67767d",
+            "model_bytes": 178682301,
             "tags": [
                 "vision",
                 "classification",
@@ -3423,7 +3655,7 @@
                     {
                         "name": "data",
                         "shape": [
-                            1,
+                            "N",
                             3,
                             224,
                             224
@@ -3435,7 +3667,7 @@
                     {
                         "name": "resnetv25_dense0_fwd",
                         "shape": [
-                            1,
+                            "N",
                             1000
                         ],
                         "type": "tensor(float)"
@@ -3447,7 +3679,7 @@
                     {
                         "name": "resnetv25_pool1_fwd",
                         "shape": [
-                            1,
+                            0,
                             2048,
                             1,
                             1
@@ -3456,18 +3688,18 @@
                 ]
             },
             "model_with_data_path": "vision/classification/resnet/model/resnet101-v2-7.tar.gz",
-            "model_with_data_sha": "ac8363b02d0f8fc911c0cd5b9c74dbf1a0b94d7f29d0a608b8977c9eea81fe59",
-            "model_with_data_bytes": 167263639
+            "model_with_data_sha": "566663c700f5cc1e8eb0043c00923d5422abaca4fae21568973ef9c446084f6e",
+            "model_with_data_bytes": 165872227
         }
     },
     {
-        "model": "ResNet152-v2",
-        "model_path": "vision/classification/resnet/model/resnet152-v2-7.onnx",
+        "model": "ResNet152",
+        "model_path": "vision/classification/resnet/model/resnet152-v1-7.onnx",
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
-            "model_sha": "12ee6c5da7ec0437b5405d51ab459a4980ed91d51b0cd7e3c0a0b276ad0b1caa",
-            "model_bytes": 241503846,
+            "model_sha": "b0ec92437bf8c9d0739bf9bafdea9638e13f9e3c1e2fb766ad546cc182fd3f6d",
+            "model_bytes": 241816206,
             "tags": [
                 "vision",
                 "classification",
@@ -3478,7 +3710,62 @@
                     {
                         "name": "data",
                         "shape": [
+                            "N",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "resnetv19_dense0_fwd",
+                        "shape": [
+                            "N",
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "resnetv19_pool1_fwd",
+                        "shape": [
+                            0,
+                            2048,
                             1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/resnet/model/resnet152-v1-7.tar.gz",
+            "model_with_data_sha": "470ccde11c3ee2b490c214e48459c03e5b4118e8143f83dd795263efcf794cf3",
+            "model_with_data_bytes": 226450954
+        }
+    },
+    {
+        "model": "ResNet152-v2",
+        "model_path": "vision/classification/resnet/model/resnet152-v2-7.onnx",
+        "onnx_version": "1.2.1",
+        "opset_version": 7,
+        "metadata": {
+            "model_sha": "40fb3f6dd313ba786a2c8077a0ef7d7b4afeda5d037365400d3a7fbc2b1bee64",
+            "model_bytes": 241503848,
+            "tags": [
+                "vision",
+                "classification",
+                "resnet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data",
+                        "shape": [
+                            "N",
                             3,
                             224,
                             224
@@ -3490,7 +3777,7 @@
                     {
                         "name": "resnetv27_dense0_fwd",
                         "shape": [
-                            1,
+                            "N",
                             1000
                         ],
                         "type": "tensor(float)"
@@ -3502,7 +3789,7 @@
                     {
                         "name": "resnetv27_pool1_fwd",
                         "shape": [
-                            1,
+                            0,
                             2048,
                             1,
                             1
@@ -3511,8 +3798,689 @@
                 ]
             },
             "model_with_data_path": "vision/classification/resnet/model/resnet152-v2-7.tar.gz",
-            "model_with_data_sha": "f511fb360f7b09371232b246215101a286cb5977d6689cd258201650a7468bd7",
-            "model_with_data_bytes": 226621705
+            "model_with_data_sha": "78b507483050a427870a264c398d121f44b92d69c8ca0c53217eb5137b6b51e3",
+            "model_with_data_bytes": 225131715
+        }
+    },
+    {
+        "model": "ResNet18",
+        "model_path": "vision/classification/resnet/model/resnet18-v1-7.onnx",
+        "onnx_version": "1.2.1",
+        "opset_version": 7,
+        "metadata": {
+            "model_sha": "4e8f8653e7a2222b3904cc3fe8e304cd8b339ce1d05fd24688162f86fb6df52c",
+            "model_bytes": 46820737,
+            "tags": [
+                "vision",
+                "classification",
+                "resnet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data",
+                        "shape": [
+                            "N",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "resnetv15_dense0_fwd",
+                        "shape": [
+                            "N",
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "resnetv15_pool1_fwd",
+                        "shape": [
+                            0,
+                            512,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/resnet/model/resnet18-v1-7.tar.gz",
+            "model_with_data_sha": "2163225f89c858f120b5376758b752e57139601e967f6c6f614a3d77e9d66505",
+            "model_with_data_bytes": 43835620
+        }
+    },
+    {
+        "model": "ResNet18-v2",
+        "model_path": "vision/classification/resnet/model/resnet18-v2-7.onnx",
+        "onnx_version": "1.2.1",
+        "opset_version": 7,
+        "metadata": {
+            "model_sha": "3b4d048057854022232aa20bf68262e31718ab7119a17f920b8a2dc1433f824b",
+            "model_bytes": 46806737,
+            "tags": [
+                "vision",
+                "classification",
+                "resnet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data",
+                        "shape": [
+                            "N",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "resnetv22_dense0_fwd",
+                        "shape": [
+                            "N",
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "resnetv22_pool1_fwd",
+                        "shape": [
+                            0,
+                            512,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/resnet/model/resnet18-v2-7.tar.gz",
+            "model_with_data_sha": "a64c111fac5d4e8bebf9246507ec7a92ea1c1596de09fca73bb7f94e9750e316",
+            "model_with_data_bytes": 43808776
+        }
+    },
+    {
+        "model": "ResNet34",
+        "model_path": "vision/classification/resnet/model/resnet34-v1-7.onnx",
+        "onnx_version": "1.2.1",
+        "opset_version": 7,
+        "metadata": {
+            "model_sha": "883a41b2e30ddc2e422c108b091b5e70b92d37dc5c345a2c563dcae27971e2cc",
+            "model_bytes": 87302588,
+            "tags": [
+                "vision",
+                "classification",
+                "resnet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data",
+                        "shape": [
+                            "N",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "resnetv16_dense0_fwd",
+                        "shape": [
+                            "N",
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "resnetv16_pool1_fwd",
+                        "shape": [
+                            0,
+                            512,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/resnet/model/resnet34-v1-7.tar.gz",
+            "model_with_data_sha": "c95b29c28e4d2c6b9ee7969e668b35cff335ec11761e9722f3ebe67490c19f7b",
+            "model_with_data_bytes": 81220173
+        }
+    },
+    {
+        "model": "ResNet34-v2",
+        "model_path": "vision/classification/resnet/model/resnet34-v2-7.onnx",
+        "onnx_version": "1.2.1",
+        "opset_version": 7,
+        "metadata": {
+            "model_sha": "3d3815e25f4b1ea967e2a526a3b27ef2a03af1725bdc199a63a271c26862d914",
+            "model_bytes": 87288587,
+            "tags": [
+                "vision",
+                "classification",
+                "resnet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data",
+                        "shape": [
+                            "N",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "resnetv23_dense0_fwd",
+                        "shape": [
+                            "N",
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "resnetv23_pool1_fwd",
+                        "shape": [
+                            0,
+                            512,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/resnet/model/resnet34-v2-7.tar.gz",
+            "model_with_data_sha": "b04865581abb9a51af87cfc170ac26e928eeade336e16abbe984c410441453cc",
+            "model_with_data_bytes": 81189514
+        }
+    },
+    {
+        "model": "ResNet50-caffe2",
+        "model_path": "vision/classification/resnet/model/resnet50-caffe2-v1-3.onnx",
+        "onnx_version": "1.1",
+        "opset_version": 3,
+        "metadata": {
+            "model_sha": "22cbd5723582d9e4636c46da43732980c8a60f8fc74c37f15db522034e6ae84d",
+            "model_bytes": 102491873,
+            "tags": [
+                "vision",
+                "classification",
+                "resnet"
+            ],
+            "model_with_data_path": "vision/classification/resnet/model/resnet50-caffe2-v1-3.tar.gz",
+            "model_with_data_sha": "b83fbf3bc6a25ece62216e2ed801061383af864c1b1ddc9c18d0a08e6daead61",
+            "model_with_data_bytes": 96754305
+        }
+    },
+    {
+        "model": "ResNet50-caffe2",
+        "model_path": "vision/classification/resnet/model/resnet50-caffe2-v1-6.onnx",
+        "onnx_version": "1.1.2",
+        "opset_version": 6,
+        "metadata": {
+            "model_sha": "166b367d86f2afe34f7438154f2798d081b13d369df20c75b485b76763c16a0e",
+            "model_bytes": 102490291,
+            "tags": [
+                "vision",
+                "classification",
+                "resnet"
+            ],
+            "model_with_data_path": "vision/classification/resnet/model/resnet50-caffe2-v1-6.tar.gz",
+            "model_with_data_sha": "92df484b9242282bb3a8ee6e82849db3c82dd96d231f253c9287b483c6f119e5",
+            "model_with_data_bytes": 98379563
+        }
+    },
+    {
+        "model": "ResNet50-caffe2",
+        "model_path": "vision/classification/resnet/model/resnet50-caffe2-v1-7.onnx",
+        "onnx_version": "1.2",
+        "opset_version": 7,
+        "metadata": {
+            "model_sha": "48c377bd20b8e7c1b4a2e371c1badefbb9db906f57bcc5c800a28835c6b988bf",
+            "model_bytes": 102489425,
+            "tags": [
+                "vision",
+                "classification",
+                "resnet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "gpu_0/data_0",
+                        "shape": [
+                            "N",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "gpu_0/softmax_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "gpu_0/pool5_1",
+                        "shape": [
+                            0,
+                            2048,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/resnet/model/resnet50-caffe2-v1-7.tar.gz",
+            "model_with_data_sha": "c3c19b61bffe72bf94b6c0214c1f5f5375b3cca08ee24ec83fff515b6761ac57",
+            "model_with_data_bytes": 95636370
+        }
+    },
+    {
+        "model": "ResNet50-caffe2",
+        "model_path": "vision/classification/resnet/model/resnet50-caffe2-v1-8.onnx",
+        "onnx_version": "1.3",
+        "opset_version": 8,
+        "metadata": {
+            "model_sha": "4f4a244f1485883fbf4faa0f967409a747164733a7b59b2d07d124d6bbd26ae0",
+            "model_bytes": 102489425,
+            "tags": [
+                "vision",
+                "classification",
+                "resnet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "gpu_0/data_0",
+                        "shape": [
+                            "N",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "gpu_0/softmax_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "gpu_0/pool5_1",
+                        "shape": [
+                            0,
+                            2048,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/resnet/model/resnet50-caffe2-v1-8.tar.gz",
+            "model_with_data_sha": "04b0525962974065137fcf3d37cb4608d73f36e3d28bea5933af56e61cad35ce",
+            "model_with_data_bytes": 95636234
+        }
+    },
+    {
+        "model": "ResNet50-caffe2",
+        "model_path": "vision/classification/resnet/model/resnet50-caffe2-v1-9.onnx",
+        "onnx_version": "1.4",
+        "opset_version": 9,
+        "metadata": {
+            "model_sha": "822daa93e11ecd505f282eb16e02d7fa6d7a88a4db0c9f832320798e508ba0dd",
+            "model_bytes": 102489425,
+            "tags": [
+                "vision",
+                "classification",
+                "resnet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "gpu_0/data_0",
+                        "shape": [
+                            "N",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "gpu_0/softmax_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "gpu_0/pool5_1",
+                        "shape": [
+                            0,
+                            2048,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/resnet/model/resnet50-caffe2-v1-9.tar.gz",
+            "model_with_data_sha": "e0703ef13fefd8207747ec5713eb07fc87fa0ab1257e92a052bc7b761101d49c",
+            "model_with_data_bytes": 95636091
+        }
+    },
+    {
+        "model": "ResNet50_int8",
+        "model_path": "vision/classification/resnet/model/resnet50-v1-12-int8.onnx",
+        "onnx_version": "1.7.0",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "c234f30975989788b4405f25253275aae247ab6dbdd34aaa69ab0a59ff76f6d0",
+            "model_bytes": 25816052,
+            "tags": [
+                "vision",
+                "classification",
+                "resnet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data",
+                        "shape": [
+                            "N",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "resnetv17_dense0_fwd",
+                        "shape": [
+                            "N",
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "flatten_473_quantized",
+                        "shape": [
+                            0,
+                            2048
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/resnet/model/resnet50-v1-12-int8.tar.gz",
+            "model_with_data_sha": "7ddcf6ac49d0cc1ab0d3b7ecb6b81e295714c3e3de7f582fee85a7bebd8426e9",
+            "model_with_data_bytes": 22318352
+        }
+    },
+    {
+        "model": "ResNet50-qdq",
+        "model_path": "vision/classification/resnet/model/resnet50-v1-12-qdq.onnx",
+        "onnx_version": "1.10.0",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "e6429d274805654c79ba68dc886c1efd4eff95393e747c35d3fdab579febd8a0",
+            "model_bytes": 25753167,
+            "tags": [
+                "vision",
+                "classification",
+                "resnet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data",
+                        "shape": [
+                            "N",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "resnetv17_dense0_fwd",
+                        "shape": [
+                            "N",
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/resnet/model/resnet50-v1-12-qdq.tar.gz",
+            "model_with_data_sha": "986160ffdcf88dedba54ee1fd8ea9597a91b11ccf16016f495bffe22e83ea40e",
+            "model_with_data_bytes": 17043120
+        }
+    },
+    {
+        "model": "ResNet50_fp32",
+        "model_path": "vision/classification/resnet/model/resnet50-v1-12.onnx",
+        "onnx_version": "1.7.0",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "3f03fdef724b22947eed826f1eef1dc5c34151bb4c37d634f1db89dfa2dd1526",
+            "model_bytes": 102576593,
+            "tags": [
+                "vision",
+                "classification",
+                "resnet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data",
+                        "shape": [
+                            "N",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "resnetv17_dense0_fwd",
+                        "shape": [
+                            "N",
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "resnetv17_pool1_fwd",
+                        "shape": [
+                            0,
+                            2048,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/resnet/model/resnet50-v1-12.tar.gz",
+            "model_with_data_sha": "9391137cfc8fbec372d7a1e59e272d67550dab72d93cf7c7d6256782262599ea",
+            "model_with_data_bytes": 96559469
+        }
+    },
+    {
+        "model": "ResNet50",
+        "model_path": "vision/classification/resnet/model/resnet50-v1-7.onnx",
+        "onnx_version": "1.2.1",
+        "opset_version": 7,
+        "metadata": {
+            "model_sha": "af16a04a6ec48ac494065d4439fe9dea590d337b9ca6dc328160ccf04a217b9c",
+            "model_bytes": 102583340,
+            "tags": [
+                "vision",
+                "classification",
+                "resnet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data",
+                        "shape": [
+                            "N",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "resnetv17_dense0_fwd",
+                        "shape": [
+                            "N",
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "resnetv17_pool1_fwd",
+                        "shape": [
+                            0,
+                            2048,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/resnet/model/resnet50-v1-7.tar.gz",
+            "model_with_data_sha": "898a9183256e884ae06fb1c11869386eccd38393ab41d9339909e974519a9feb",
+            "model_with_data_bytes": 95435189
+        }
+    },
+    {
+        "model": "ResNet50-v2",
+        "model_path": "vision/classification/resnet/model/resnet50-v2-7.onnx",
+        "onnx_version": "1.2.1",
+        "opset_version": 7,
+        "metadata": {
+            "model_sha": "79102261eb6e5fd7af5d27f41316293e388c5cb691e5d25bfb035c4f64fefe31",
+            "model_bytes": 102442452,
+            "tags": [
+                "vision",
+                "classification",
+                "resnet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data",
+                        "shape": [
+                            "N",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "resnetv24_dense0_fwd",
+                        "shape": [
+                            "N",
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "resnetv24_pool1_fwd",
+                        "shape": [
+                            0,
+                            2048,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/resnet/model/resnet50-v2-7.tar.gz",
+            "model_with_data_sha": "d6a8b7ec924dae64e19c0850e7aa9c633095f7c4422393f5cc478c4982e97667",
+            "model_with_data_bytes": 95237476
         }
     },
     {
@@ -3584,8 +4552,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/shufflenet/model/shufflenet-6.tar.gz",
-            "model_with_data_sha": "33e0e2976a7e319aa7e5767768b6324bc3c037ea6b15ec7695f9959f7df12d70",
-            "model_with_data_bytes": 8604891
+            "model_with_data_sha": "090749323dc94018eccf6d1ae2d1ab575b6e0b24ff1f77d248e780eecf5fd61b",
+            "model_with_data_bytes": 5858851
         }
     },
     {
@@ -3639,8 +4607,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/shufflenet/model/shufflenet-7.tar.gz",
-            "model_with_data_sha": "2374f4c1808e0fc4a9743849f82fa617f2681b404b76611f3df4c23534edc88e",
-            "model_with_data_bytes": 8604888
+            "model_with_data_sha": "323202f6de6ed3b853452967fdd4df27f034b9224c94a123d667aa14e3e96fee",
+            "model_with_data_bytes": 5858831
         }
     },
     {
@@ -3712,8 +4680,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/shufflenet/model/shufflenet-9.tar.gz",
-            "model_with_data_sha": "2f71595f1ca1aa5ac6d062716c0be4f451fdaf301cd68e82c68aaaf1e006e126",
-            "model_with_data_bytes": 8604895
+            "model_with_data_sha": "75ff4f8c8cacbb09623a6b49906c9932d7f717a9df21637f0a1c63337107343f",
+            "model_with_data_bytes": 5858835
         }
     },
     {
@@ -3770,6 +4738,59 @@
         }
     },
     {
+        "model": "ShuffleNet-v2-int8",
+        "model_path": "vision/classification/shufflenet/model/shufflenet-v2-12-int8.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "bf5eefde67941aa7eaa7787316c9c52c4b04e07fc9587a6ea7028883be9a8d4e",
+            "model_bytes": 2388912,
+            "tags": [
+                "vision",
+                "classification",
+                "shufflenet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "output",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "611",
+                        "shape": [
+                            1,
+                            1024
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/shufflenet/model/shufflenet-v2-12-int8.tar.gz",
+            "model_with_data_sha": "c746144bf4383cf0a3f1e3a4093eb46da625f0ce4db1e5657d6f8fd3f1cf9d50",
+            "model_with_data_bytes": 2485799
+        }
+    },
+    {
         "model": "ShuffleNet-v2-fp32",
         "model_path": "vision/classification/shufflenet/model/shufflenet-v2-12.onnx",
         "onnx_version": "1.9",
@@ -3823,63 +4844,13 @@
         }
     },
     {
-        "model": "ShuffleNet-v2-int8",
-        "model_path": "vision/classification/shufflenet/model/shufflenet-v2-12-int8.onnx",
+        "model": "SqueezeNet 1.0-int8",
+        "model_path": "vision/classification/squeezenet/model/squeezenet1.0-12-int8.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
-            "model_sha": "bf5eefde67941aa7eaa7787316c9c52c4b04e07fc9587a6ea7028883be9a8d4e",
-            "model_bytes": 2388912,
-            "tags": [
-                "vision",
-                "classification",
-                "shufflenet"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "input",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "output",
-                        "shape": [
-                            1,
-                            1000
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "extra_ports": {
-                "features": [
-                    {
-                        "name": "611",
-                        "shape": [
-                            1,
-                            1024
-                        ]
-                    }
-                ]
-            }
-        }
-    },
-    {
-        "model": "SqueezeNet 1.1",
-        "model_path": "vision/classification/squeezenet/model/squeezenet1.1-7.onnx",
-        "onnx_version": "1.2.1",
-        "opset_version": 7,
-        "metadata": {
-            "model_sha": "1eeff551a67ae8d565ca33b572fc4b66e3ef357b0eb2863bb9ff47a918cc4088",
-            "model_bytes": 4956208,
+            "model_sha": "3da17dfad1b7ba23c93fac6dbf49f6db78cd42f7519e915a2e27d37c5c0a972b",
+            "model_bytes": 1293388,
             "tags": [
                 "vision",
                 "classification",
@@ -3888,7 +4859,7 @@
             "io_ports": {
                 "inputs": [
                     {
-                        "name": "data",
+                        "name": "data_0",
                         "shape": [
                             1,
                             3,
@@ -3900,10 +4871,56 @@
                 ],
                 "outputs": [
                     {
-                        "name": "squeezenet0_flatten0_reshape0",
+                        "name": "softmaxout_1",
                         "shape": [
                             1,
-                            1000
+                            1000,
+                            1,
+                            1
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/squeezenet/model/squeezenet1.0-12-int8.tar.gz",
+            "model_with_data_sha": "28de6cb53cdaf15b81d293dc480b5f4f9fd766ab05bc97dbc1a5befb6981f1b2",
+            "model_with_data_bytes": 1562359
+        }
+    },
+    {
+        "model": "SqueezeNet 1.0",
+        "model_path": "vision/classification/squeezenet/model/squeezenet1.0-12.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "dec81a8684617770b3cf13fadc1d92565d1d453d23935fc6388b792d99c992bd",
+            "model_bytes": 4952956,
+            "tags": [
+                "vision",
+                "classification",
+                "squeezenet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "softmaxout_1",
+                        "shape": [
+                            1,
+                            1000,
+                            1,
+                            1
                         ],
                         "type": "tensor(float)"
                     }
@@ -3912,7 +4929,7 @@
             "extra_ports": {
                 "features": [
                     {
-                        "name": "squeezenet0_pool3_fwd",
+                        "name": "pool10_1",
                         "shape": [
                             1,
                             1000,
@@ -3922,9 +4939,9 @@
                     }
                 ]
             },
-            "model_with_data_path": "vision/classification/squeezenet/model/squeezenet1.1-7.tar.gz",
-            "model_with_data_sha": "aff6280d73c0b826f088f7289e4495f01f6e84ce75507279e1b2a01590427723",
-            "model_with_data_bytes": 6231548
+            "model_with_data_path": "vision/classification/squeezenet/model/squeezenet1.0-12.tar.gz",
+            "model_with_data_sha": "8a2dcc5a8f2b8c314b96b6484703a72882c796faa4eaf0de1b913fc0765cb917",
+            "model_with_data_bytes": 5151210
         }
     },
     {
@@ -4055,8 +5072,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/squeezenet/model/squeezenet1.0-7.tar.gz",
-            "model_with_data_sha": "ddb50fe7961120427b5120506b82936e90faaaa4214d74be3234b943fb73cbbd",
-            "model_with_data_bytes": 11131117
+            "model_with_data_sha": "62b373de7241b04041c688a275612a4d55507012ed8d5a077dd6c68f108909ca",
+            "model_with_data_bytes": 5154452
         }
     },
     {
@@ -4112,8 +5129,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/squeezenet/model/squeezenet1.0-8.tar.gz",
-            "model_with_data_sha": "84b5548e9c1610ccd330df97d83922e7402751ba9ab0a60f559daca1ea715f02",
-            "model_with_data_bytes": 11131147
+            "model_with_data_sha": "f08042579f6f9aaa32aefca1a111710035335fabe804036c88c54dda6606294a",
+            "model_with_data_bytes": 5154407
         }
     },
     {
@@ -4169,8 +5186,158 @@
                 ]
             },
             "model_with_data_path": "vision/classification/squeezenet/model/squeezenet1.0-9.tar.gz",
-            "model_with_data_sha": "f4c9a2906a949f089bee5ef1bf9ea1c0dc1b49d5abeb1874fff3d206751d0f3b",
-            "model_with_data_bytes": 11131125
+            "model_with_data_sha": "210b9509fa78688b7ade604a210e03bdb76f3d0eac28eb4a79c6e9d5500342df",
+            "model_with_data_bytes": 5154458
+        }
+    },
+    {
+        "model": "SqueezeNet 1.1",
+        "model_path": "vision/classification/squeezenet/model/squeezenet1.1-7.onnx",
+        "onnx_version": "1.2.1",
+        "opset_version": 7,
+        "metadata": {
+            "model_sha": "1eeff551a67ae8d565ca33b572fc4b66e3ef357b0eb2863bb9ff47a918cc4088",
+            "model_bytes": 4956208,
+            "tags": [
+                "vision",
+                "classification",
+                "squeezenet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "squeezenet0_flatten0_reshape0",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "squeezenet0_pool3_fwd",
+                        "shape": [
+                            1,
+                            1000,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/squeezenet/model/squeezenet1.1-7.tar.gz",
+            "model_with_data_sha": "95dc7fbafbc7372aabe75555db9e89f05e0715ab7472cf7f8fb751ff54543c3e",
+            "model_with_data_bytes": 5156484
+        }
+    },
+    {
+        "model": "VGG 16-int8",
+        "model_path": "vision/classification/vgg/model/vgg16-12-int8.onnx",
+        "onnx_version": "1.9.0",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "0d0a8e1d69f70404421e37dbad4f8bd21d42758e9f426bd5b39e9e4e9e1afa23",
+            "model_bytes": 138407238,
+            "tags": [
+                "vision",
+                "classification",
+                "vgg"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "vgg0_dense2_fwd",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "flatten_70_quantized",
+                        "shape": [
+                            1,
+                            4096
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/vgg/model/vgg16-12-int8.tar.gz",
+            "model_with_data_sha": "477a77f7ba31bc6bebe6e9824cb0108173d3bb0c54506d8c6663ea36eee7dfb4",
+            "model_with_data_bytes": 105964121
+        }
+    },
+    {
+        "model": "VGG 16-fp32",
+        "model_path": "vision/classification/vgg/model/vgg16-12.onnx",
+        "onnx_version": "1.9.0",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "722c42f53ca03a5480296bf8f9c85a151de3eed9ec982d7d2302ff6e2900c67b",
+            "model_bytes": 553437752,
+            "tags": [
+                "vision",
+                "classification",
+                "vgg"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "vgg0_dense2_fwd",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/vgg/model/vgg16-12.tar.gz",
+            "model_with_data_sha": "bab278d40411f29dfc2e9515c534d2871eb0393480b736855bfe7f73c312cbc6",
+            "model_with_data_bytes": 511942031
         }
     },
     {
@@ -4222,8 +5389,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/vgg/model/vgg16-7.tar.gz",
-            "model_with_data_sha": "67ae525d46b971bde45c7e5830c50f09ce4c7cdc97bf6dce48a4238a9b69efba",
-            "model_with_data_bytes": 513753139
+            "model_with_data_sha": "586413f9108e2316ebf80c3aa484d55f995d693b153e4c90742750519a9e27be",
+            "model_with_data_bytes": 512679010
         }
     },
     {
@@ -4275,8 +5442,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/vgg/model/vgg16-bn-7.tar.gz",
-            "model_with_data_sha": "038c2009704127b644a613de6bb0c69152663c96e5085dfae8440ed37c512b65",
-            "model_with_data_bytes": 513970920
+            "model_with_data_sha": "143e59ca3000cc3b461cfe09d4c62a93bb5e9f7a0c4e5db0010e1a525fdd50bd",
+            "model_with_data_bytes": 512894836
         }
     },
     {
@@ -4328,8 +5495,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/vgg/model/vgg19-7.tar.gz",
-            "model_with_data_sha": "b484c34c59b294d80aff6de07769b1077275915cf761eb3eeaa81c8f502d5e2b",
-            "model_with_data_bytes": 533203669
+            "model_with_data_sha": "797517bc882ea820d09f803e711c203e223b0c214b3c85412cb6c059b63325b7",
+            "model_with_data_bytes": 532124692
         }
     },
     {
@@ -4381,100 +5548,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/vgg/model/vgg19-bn-7.tar.gz",
-            "model_with_data_sha": "7578a4037b5121ded13fe413984410e020fbc1a380448262832ec3fd0aa3864d",
-            "model_with_data_bytes": 533350067
-        }
-    },
-    {
-        "model": "VGG 16-fp32",
-        "model_path": "vision/classification/vgg/model/vgg16-12.onnx",
-        "onnx_version": "1.9.0",
-        "opset_version": 12,
-        "metadata": {
-            "model_sha": "722c42f53ca03a5480296bf8f9c85a151de3eed9ec982d7d2302ff6e2900c67b",
-            "model_bytes": 553437752,
-            "tags": [
-                "vision",
-                "classification",
-                "vgg"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "data",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "vgg0_dense2_fwd",
-                        "shape": [
-                            1,
-                            1000
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "model_with_data_path": "vision/classification/vgg/model/vgg16-12.tar.gz",
-            "model_with_data_sha": "bab278d40411f29dfc2e9515c534d2871eb0393480b736855bfe7f73c312cbc6",
-            "model_with_data_bytes": 511942031
-        }
-    },
-    {
-        "model": "VGG 16-int8",
-        "model_path": "vision/classification/vgg/model/vgg16-12-int8.onnx",
-        "onnx_version": "1.9.0",
-        "opset_version": 12,
-        "metadata": {
-            "model_sha": "0d0a8e1d69f70404421e37dbad4f8bd21d42758e9f426bd5b39e9e4e9e1afa23",
-            "model_bytes": 138407238,
-            "tags": [
-                "vision",
-                "classification",
-                "vgg"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "data",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "vgg0_dense2_fwd",
-                        "shape": [
-                            1,
-                            1000
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "extra_ports": {
-                "features": [
-                    {
-                        "name": "flatten_70_quantized",
-                        "shape": [
-                            1,
-                            4096
-                        ]
-                    }
-                ]
-            }
+            "model_with_data_sha": "976427d5cbb8909784fbe3ba997fcf62a67b92c42ffd54f961c0e0748e004b1c",
+            "model_with_data_bytes": 532271265
         }
     },
     {
@@ -4562,8 +5637,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/vgg/model/vgg19-caffe2-7.tar.gz",
-            "model_with_data_sha": "0d86de02fcd018ca9ef474fa28f1846bcbe88c149c8920afde43abba30696284",
-            "model_with_data_bytes": 536839305
+            "model_with_data_sha": "4af84e5006a0196facad8add53094424a22809ef97e434215a923b20fc1a528b",
+            "model_with_data_bytes": 534082025
         }
     },
     {
@@ -4615,8 +5690,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/vgg/model/vgg19-caffe2-8.tar.gz",
-            "model_with_data_sha": "033f76e8bd7b8473d1ff28cc2536d13d03c86f0244703c96268a5bf49d0a9efa",
-            "model_with_data_bytes": 536839273
+            "model_with_data_sha": "1f6254d85d8a102e36a1c2c4ebd7b1f5831d95fd8255a81a0411f24b3c38381e",
+            "model_with_data_bytes": 534082067
         }
     },
     {
@@ -4668,8 +5743,103 @@
                 ]
             },
             "model_with_data_path": "vision/classification/vgg/model/vgg19-caffe2-9.tar.gz",
-            "model_with_data_sha": "7f2aa43c7809f0ad9d4243e076f3da8a1b125de82fc1d1b69dbfb717209cfff6",
-            "model_with_data_bytes": 536839233
+            "model_with_data_sha": "bf7f96d04f4b635a8a37efd4540ea35958d52201971e91cb74bb55c89e6f4d5c",
+            "model_with_data_bytes": 534081932
+        }
+    },
+    {
+        "model": "ZFNet-512-int8",
+        "model_path": "vision/classification/zfnet-512/model/zfnet512-12-int8.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "df166c66ff5626538400506f7871cad4f721bd07bbb2ba2af6d2309c7250917c",
+            "model_bytes": 87274426,
+            "tags": [
+                "vision",
+                "classification",
+                "zfnet-512"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "gpu_0/data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "gpu_0/softmax_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/zfnet-512/model/zfnet512-12-int8.tar.gz",
+            "model_with_data_sha": "786528fcfddff5da00cb87ac18fda53e84a1f3eaeaa80d3f57a1c8522b6fd3da",
+            "model_with_data_bytes": 50270897
+        }
+    },
+    {
+        "model": "ZFNet-512",
+        "model_path": "vision/classification/zfnet-512/model/zfnet512-12.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "c975ca6a24c0a2e1584c6f82667e0ac9c06084fc7769d267f71b4a154d1f1c72",
+            "model_bytes": 349005501,
+            "tags": [
+                "vision",
+                "classification",
+                "zfnet-512"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "gpu_0/data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "gpu_0/softmax_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "gpu_0/fc7_2",
+                        "shape": [
+                            1,
+                            1024
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/zfnet-512/model/zfnet512-12.tar.gz",
+            "model_with_data_sha": "8b06a4b6bf8d58f1810828cde5861cc5e8bfd72738be55da41460f965521dfe2",
+            "model_with_data_bytes": 323924791
         }
     },
     {
@@ -4686,8 +5856,8 @@
                 "zfnet-512"
             ],
             "model_with_data_path": "vision/classification/zfnet-512/model/zfnet512-3.tar.gz",
-            "model_with_data_sha": "5a9235aba3477532a59adcb5bc9f98c7e644e8c937ab1deba28ecd774b1ebdde",
-            "model_with_data_bytes": 326944060
+            "model_with_data_sha": "de9a1f2db305eb6362d6262758203cd6ba6d29431fef5fb569acde1d3dff1732",
+            "model_with_data_bytes": 325256523
         }
     },
     {
@@ -4704,8 +5874,8 @@
                 "zfnet-512"
             ],
             "model_with_data_path": "vision/classification/zfnet-512/model/zfnet512-6.tar.gz",
-            "model_with_data_sha": "5399c62056d5eb51d601de4280871e30b86241e00cc95a0fef59049c02f4996a",
-            "model_with_data_bytes": 326892866
+            "model_with_data_sha": "01b7de071b9a17b3654039a648c1571db272ed83af2d58776c0951271e3481da",
+            "model_with_data_bytes": 326891392
         }
     },
     {
@@ -4757,8 +5927,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/zfnet-512/model/zfnet512-7.tar.gz",
-            "model_with_data_sha": "f198b1aee75f80a3d5448ad2d2f181181da23956e38d7295be7f3cdf52bcafcf",
-            "model_with_data_bytes": 325254100
+            "model_with_data_sha": "531c9010f14056a332b7148914473dc8bf4f0c42b3d68c9bd23f224d0967ce17",
+            "model_with_data_bytes": 324181951
         }
     },
     {
@@ -4810,8 +5980,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/zfnet-512/model/zfnet512-8.tar.gz",
-            "model_with_data_sha": "cd65e8f8f5686d913b75ad1874abc9d7f9a3fb20d9eeeff87156aa125f33eb6c",
-            "model_with_data_bytes": 325254018
+            "model_with_data_sha": "797a462613065ee77f84d549d80d1bfde88314f741a10e8c83d4f406b1bc517b",
+            "model_with_data_bytes": 324182001
         }
     },
     {
@@ -4863,8 +6033,94 @@
                 ]
             },
             "model_with_data_path": "vision/classification/zfnet-512/model/zfnet512-9.tar.gz",
-            "model_with_data_sha": "8d7c18e84eacda744e7415d68f0c427dd77c67a42a7818f0242fbdd15050d4aa",
-            "model_with_data_bytes": 325254106
+            "model_with_data_sha": "4e90c1f5f82fc6e4a1056b42cf967f9a54363bfd3d7f2b404ea260cefbc57518",
+            "model_with_data_bytes": 324181833
+        }
+    },
+    {
+        "model": "ResNet101_DUC_HDC-12-int8",
+        "model_path": "vision/object_detection_segmentation/duc/model/ResNet101-DUC-12-int8.onnx",
+        "onnx_version": "1.9.0",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "08a3c24af5e375d064d7a4bb80b46191adf5f0f302fd4b5bee7f632ebdadbf67",
+            "model_bytes": 65552143,
+            "tags": [
+                "vision",
+                "object detection segmentation",
+                "duc"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data",
+                        "shape": [
+                            1,
+                            3,
+                            800,
+                            800
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "seg_loss",
+                        "shape": [
+                            1,
+                            19,
+                            160000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/duc/model/ResNet101-DUC-12-int8.tar.gz",
+            "model_with_data_sha": "0955ab4564ccb54128639eacc0f57aa3d75be5da0f88c9e7de67ca0c1d286947",
+            "model_with_data_bytes": 71077085
+        }
+    },
+    {
+        "model": "ResNet101_DUC_HDC-12",
+        "model_path": "vision/object_detection_segmentation/duc/model/ResNet101-DUC-12.onnx",
+        "onnx_version": "1.9.0",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "11ebd46b66706e8bb45e74f67a616f0f61029014e99bd8ea7e55deb74a61e9b6",
+            "model_bytes": 260671144,
+            "tags": [
+                "vision",
+                "object detection segmentation",
+                "duc"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data",
+                        "shape": [
+                            1,
+                            3,
+                            800,
+                            800
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "seg_loss",
+                        "shape": [
+                            1,
+                            19,
+                            160000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/duc/model/ResNet101-DUC-12.tar.gz",
+            "model_with_data_sha": "33753b1118846c5e5eda4564c346f615fe1c42db82da8e4ae77c9509380dc46a",
+            "model_with_data_bytes": 259342514
         }
     },
     {
@@ -4906,8 +6162,8 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/duc/model/ResNet101-DUC-7.tar.gz",
-            "model_with_data_sha": "6ef022454971b1362fef68234cfc63d9dd6336186b5dd48b4413032bebdd423e",
-            "model_with_data_bytes": 295745909
+            "model_with_data_sha": "bd14b6dc0dc49412edbb9828494876cf9afc94ea52496ba6a11794619872b61c",
+            "model_with_data_bytes": 259587240
         }
     },
     {
@@ -4961,8 +6217,172 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-10.tar.gz",
-            "model_with_data_sha": "b71db127152f4ee949f521feaaf74752e1638abff8a610221b0ecb746d1545d9",
-            "model_with_data_bytes": 158020758
+            "model_with_data_sha": "99e70d1e9b2902f6d402a235e994ed8242d0b04b59f799eb09ff88bff55acb1d",
+            "model_with_data_bytes": 155190684
+        }
+    },
+    {
+        "model": "Faster R-CNN R-50-FPN-int8",
+        "model_path": "vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12-int8.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "c6bb169f20bd4bf1c08212f2c8b2693a22a6343454f8115fd8c0fadd2a49922a",
+            "model_bytes": 44626453,
+            "tags": [
+                "vision",
+                "object detection segmentation",
+                "faster-rcnn"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "image",
+                        "shape": [
+                            3,
+                            "height",
+                            "width"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "6379",
+                        "shape": [
+                            "nbox",
+                            4
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "6381",
+                        "shape": [
+                            "nbox"
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "6383",
+                        "shape": [
+                            "nbox"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12-int8.tar.gz",
+            "model_with_data_sha": "599fcd738eb08d8d5daee9edb332f785c59f9a3c704292ba420a41c1b43404e2",
+            "model_with_data_bytes": 37955516
+        }
+    },
+    {
+        "model": "Faster R-CNN R-50-FPN-fp32",
+        "model_path": "vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "789104f5a47f008450a37e02da8a8d3642766ed10d91238312b1532fe72789a6",
+            "model_bytes": 176713194,
+            "tags": [
+                "vision",
+                "object detection segmentation",
+                "faster-rcnn"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "image",
+                        "shape": [
+                            3,
+                            "height",
+                            "width"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "6379",
+                        "shape": [
+                            "nbox",
+                            4
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "6381",
+                        "shape": [
+                            "nbox"
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "6383",
+                        "shape": [
+                            "nbox"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12.tar.gz",
+            "model_with_data_sha": "67208685047b27a201c1b50a3a7a0ea25161e9988bc4211adb74c85637c33860",
+            "model_with_data_bytes": 163814449
+        }
+    },
+    {
+        "model": "FCN ResNet-101",
+        "model_path": "vision/object_detection_segmentation/fcn/model/fcn-resnet101-11.onnx",
+        "onnx_version": "1.8.0",
+        "opset_version": 11,
+        "metadata": {
+            "model_sha": "fd63d026cf4b2e54ef2bffb766914ddbffef9bd7a67eba0e67dbf1514bcf539d",
+            "model_bytes": 217069155,
+            "tags": [
+                "vision",
+                "object detection segmentation",
+                "fcn"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input",
+                        "shape": [
+                            "batch",
+                            3,
+                            "height",
+                            "width"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "out",
+                        "shape": [
+                            "batch",
+                            21,
+                            "height",
+                            "width"
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "aux",
+                        "shape": [
+                            "batch",
+                            21,
+                            "height",
+                            "width"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/fcn/model/fcn-resnet101-11.tar.gz",
+            "model_with_data_sha": "672ca7f736bff936f6b5fa1c8e07546f5775edc55bf33d62ae21ab372e8f6065",
+            "model_with_data_bytes": 294729465
         }
     },
     {
@@ -5020,13 +6440,13 @@
         }
     },
     {
-        "model": "FCN ResNet-101",
-        "model_path": "vision/object_detection_segmentation/fcn/model/fcn-resnet101-11.onnx",
+        "model": "FCN ResNet-50-int8",
+        "model_path": "vision/object_detection_segmentation/fcn/model/fcn-resnet50-12-int8.onnx",
         "onnx_version": "1.8.0",
-        "opset_version": 11,
+        "opset_version": 12,
         "metadata": {
-            "model_sha": "fd63d026cf4b2e54ef2bffb766914ddbffef9bd7a67eba0e67dbf1514bcf539d",
-            "model_bytes": 217069155,
+            "model_sha": "67fcba8ebd435c2fb6b297d2e7c084f3c3b9ae6bc7ae41453b748ae4ed8c0331",
+            "model_bytes": 35545058,
             "tags": [
                 "vision",
                 "object detection segmentation",
@@ -5068,9 +6488,63 @@
                     }
                 ]
             },
-            "model_with_data_path": "vision/object_detection_segmentation/fcn/model/fcn-resnet101-11.tar.gz",
-            "model_with_data_sha": "672ca7f736bff936f6b5fa1c8e07546f5775edc55bf33d62ae21ab372e8f6065",
-            "model_with_data_bytes": 294729465
+            "model_with_data_path": "vision/object_detection_segmentation/fcn/model/fcn-resnet50-12-int8.tar.gz",
+            "model_with_data_sha": "8e81dd5cd5625e8c544f92429e36028596b88d0574ccf72c8ebc48174508cb29",
+            "model_with_data_bytes": 30117697
+        }
+    },
+    {
+        "model": "FCN ResNet-50",
+        "model_path": "vision/object_detection_segmentation/fcn/model/fcn-resnet50-12.onnx",
+        "onnx_version": "1.8.0",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "eb5017d1b80372eb0b58552655274698817ba2e774437e2c2d3c0a613d2e99bd",
+            "model_bytes": 141193555,
+            "tags": [
+                "vision",
+                "object detection segmentation",
+                "fcn"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input",
+                        "shape": [
+                            "batch",
+                            3,
+                            "height",
+                            "width"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "out",
+                        "shape": [
+                            "batch",
+                            21,
+                            "height",
+                            "width"
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "aux",
+                        "shape": [
+                            "batch",
+                            21,
+                            "height",
+                            "width"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/fcn/model/fcn-resnet50-12.tar.gz",
+            "model_with_data_sha": "470813ecd5791f20f7b21c54765d8eae51b22bcf2ece668656384476f97d6075",
+            "model_with_data_bytes": 131124463
         }
     },
     {
@@ -5134,8 +6608,138 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-10.tar.gz",
-            "model_with_data_sha": "3101f45c6977cfa66097f4b711d3909935c4d47f97802e75ccfe66dbe77cc128",
-            "model_with_data_bytes": 168800296
+            "model_with_data_sha": "a4cea423312fac6fa9dd0300ace676df4955edc413de66eaaf00d08f30d65738",
+            "model_with_data_bytes": 165013602
+        }
+    },
+    {
+        "model": "Mask R-CNN R-50-FPN-int8",
+        "model_path": "vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12-int8.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "96388cfb596cbdb9a38dca16f1c22a1533843a030b094cdea3f1a2c90ef79156",
+            "model_bytes": 48137510,
+            "tags": [
+                "vision",
+                "object detection segmentation",
+                "mask-rcnn"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "image",
+                        "shape": [
+                            3,
+                            "height",
+                            "width"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "6568",
+                        "shape": [
+                            "nbox",
+                            4
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "6570",
+                        "shape": [
+                            "nbox"
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "6572",
+                        "shape": [
+                            "nbox"
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "6887",
+                        "shape": [
+                            "nbox",
+                            1,
+                            28,
+                            28
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12-int8.tar.gz",
+            "model_with_data_sha": "edd066f26976b565171ea60563b6ec21a46f5ef5dc64592a4a33503089812918",
+            "model_with_data_bytes": 35901397
+        }
+    },
+    {
+        "model": "Mask R-CNN R-50-FPN-fp32",
+        "model_path": "vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "5bf940c124d9117f6fae350c4e0d46df180cbb01981832b35fdbed148078b946",
+            "model_bytes": 177970010,
+            "tags": [
+                "vision",
+                "object detection segmentation",
+                "mask-rcnn"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "image",
+                        "shape": [
+                            3,
+                            "height",
+                            "width"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "6568",
+                        "shape": [
+                            "nbox",
+                            4
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "6570",
+                        "shape": [
+                            "nbox"
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "6572",
+                        "shape": [
+                            "nbox"
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "6887",
+                        "shape": [
+                            "nbox",
+                            1,
+                            28,
+                            28
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12.tar.gz",
+            "model_with_data_sha": "6e41b51713a19119bcf0ef72120ca5362dbdd151112ea91e6a07ae6d3c82265c",
+            "model_with_data_bytes": 164901207
         }
     },
     {
@@ -5334,8 +6938,140 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_10.tar.gz",
-            "model_with_data_sha": "b00add7ea1ffae33d879e6cf1498ab70dc828c07439528643ea5b9ba47474fd8",
-            "model_with_data_bytes": 27902184
+            "model_with_data_sha": "7a2ff9ea172ff3a88dbc7890ede008a5ec8e9ce276d866f0a846ed3007f5c3f0",
+            "model_with_data_bytes": 25464564
+        }
+    },
+    {
+        "model": "SSD-MobilenetV1-12-int8",
+        "model_path": "vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_12-int8.onnx",
+        "onnx_version": "1.9.0",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "45af75d9ddb063744277887ee27a658f7759980f7c1a87e21b53a11e7ae59627",
+            "model_bytes": 8958931,
+            "tags": [
+                "vision",
+                "object detection segmentation",
+                "ssd-mobilenetv1"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "inputs",
+                        "shape": [
+                            "unk__6578",
+                            "unk__6579",
+                            "unk__6580",
+                            3
+                        ],
+                        "type": "tensor(uint8)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "detection_boxes",
+                        "shape": [
+                            "unk__6581",
+                            "unk__6582",
+                            4
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "detection_classes",
+                        "shape": [
+                            "unk__6583",
+                            "unk__6584"
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "detection_scores",
+                        "shape": [
+                            "unk__6585",
+                            "unk__6586"
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "num_detections",
+                        "shape": [
+                            "unk__6587"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_12-int8.tar.gz",
+            "model_with_data_sha": "39a0e207a731374c6a186de474ce937f8c277a20f0b4fd04cf43db56fb6047f5",
+            "model_with_data_bytes": 5778852
+        }
+    },
+    {
+        "model": "SSD-MobilenetV1-12",
+        "model_path": "vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_12.onnx",
+        "onnx_version": "1.9.0",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "b8fba5e404077d4048d27fcd1667e85e27e192eb9bf51e696c46a3acd7d21058",
+            "model_bytes": 29461455,
+            "tags": [
+                "vision",
+                "object detection segmentation",
+                "ssd-mobilenetv1"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "inputs",
+                        "shape": [
+                            "unk__6578",
+                            "unk__6579",
+                            "unk__6580",
+                            3
+                        ],
+                        "type": "tensor(uint8)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "detection_boxes",
+                        "shape": [
+                            "unk__6581",
+                            "unk__6582",
+                            4
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "detection_classes",
+                        "shape": [
+                            "unk__6583",
+                            "unk__6584"
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "detection_scores",
+                        "shape": [
+                            "unk__6585",
+                            "unk__6586"
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "num_detections",
+                        "shape": [
+                            "unk__6587"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_12.tar.gz",
+            "model_with_data_sha": "bb7485300ba8379f963e47278d3940cebeedba1fd1370b374aac733414d7cf9b",
+            "model_with_data_bytes": 25475584
         }
     },
     {
@@ -5398,6 +7134,124 @@
         }
     },
     {
+        "model": "SSD-int8",
+        "model_path": "vision/object_detection_segmentation/ssd/model/ssd-12-int8.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "687696a719e57bb86aabb5fe44b0262cabd5bf26bd82e2698eb14753647632c4",
+            "model_bytes": 20484185,
+            "tags": [
+                "vision",
+                "object detection segmentation",
+                "ssd"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "image",
+                        "shape": [
+                            1,
+                            3,
+                            1200,
+                            1200
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "bboxes",
+                        "shape": [
+                            1,
+                            "nbox",
+                            4
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "labels",
+                        "shape": [
+                            1,
+                            "nbox"
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "scores",
+                        "shape": [
+                            1,
+                            "nbox"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/ssd/model/ssd-12-int8.tar.gz",
+            "model_with_data_sha": "9f70dc76cac7618375cdc2f4d4b8a42bea229d2545882df57a3b6cce282515a5",
+            "model_with_data_bytes": 31815039
+        }
+    },
+    {
+        "model": "SSD",
+        "model_path": "vision/object_detection_segmentation/ssd/model/ssd-12.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "5ec1e058e666ef980a6213ac40088877865aafb2b6676b9af204b3828e4bb9d5",
+            "model_bytes": 80366315,
+            "tags": [
+                "vision",
+                "object detection segmentation",
+                "ssd"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "image",
+                        "shape": [
+                            1,
+                            3,
+                            1200,
+                            1200
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "bboxes",
+                        "shape": [
+                            1,
+                            "nbox",
+                            4
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "labels",
+                        "shape": [
+                            1,
+                            "nbox"
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "scores",
+                        "shape": [
+                            1,
+                            "nbox"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/ssd/model/ssd-12.tar.gz",
+            "model_with_data_sha": "43e57501da34abe0c01ea30902303bdb14f590f59c18fbb15ea3473810b0e86b",
+            "model_with_data_bytes": 90592544
+        }
+    },
+    {
         "model": "Tiny YOLOv2",
         "model_path": "vision/object_detection_segmentation/tiny-yolov2/model/tinyyolov2-7.onnx",
         "onnx_version": "1.2",
@@ -5437,8 +7291,8 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/tiny-yolov2/model/tinyyolov2-7.tar.gz",
-            "model_with_data_sha": "4bcdc5e4884784c13bdc131f418040129885960e98134fc1bac7a97373418023",
-            "model_with_data_bytes": 60875841
+            "model_with_data_sha": "b20099da6c3d78ee60f1a68073eb2b522dd572c32b1787f588b822afd2d2e34c",
+            "model_with_data_bytes": 60865248
         }
     },
     {
@@ -5481,8 +7335,8 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/tiny-yolov2/model/tinyyolov2-8.tar.gz",
-            "model_with_data_sha": "0d64e5b246b6ffa5ba9defcf72e726ac2dcfc97a8e1a79b43bf184f3caad7ea5",
-            "model_with_data_bytes": 60875831
+            "model_with_data_sha": "5122c3e7dd199668fd1d99e1e36132c3ca71ae6c18c3470e7d0e3e7570f8dfbd",
+            "model_with_data_bytes": 60864927
         }
     },
     {
@@ -5664,6 +7518,142 @@
         }
     },
     {
+        "model": "YOLOv3-12-int8",
+        "model_path": "vision/object_detection_segmentation/yolov3/model/yolov3-12-int8.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "d076e4866b0f4af3ba2b25df61652b0da2df6d01b760d35a0b032705115167e4",
+            "model_bytes": 63200797,
+            "tags": [
+                "vision",
+                "object detection segmentation",
+                "yolov3"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input_1",
+                        "shape": [
+                            "unk__576",
+                            3,
+                            "unk__577",
+                            "unk__578"
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "image_shape",
+                        "shape": [
+                            "unk__579",
+                            2
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "yolonms_layer_1/ExpandDims_1:0",
+                        "shape": [
+                            1,
+                            "unk__581",
+                            4
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "yolonms_layer_1/ExpandDims_3:0",
+                        "shape": [
+                            1,
+                            80,
+                            "unk__584"
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "yolonms_layer_1/concat_2:0",
+                        "shape": [
+                            "unk__585",
+                            3
+                        ],
+                        "type": "tensor(int32)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/yolov3/model/yolov3-12-int8.tar.gz",
+            "model_with_data_sha": "fbabc4a7c273bc23d546b836abdee878a93f1edae0e68b08399d4c3dd4466a66",
+            "model_with_data_bytes": 48719693
+        }
+    },
+    {
+        "model": "YOLOv3-12",
+        "model_path": "vision/object_detection_segmentation/yolov3/model/yolov3-12.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "d97d7d5c1bbab2ec1ea197f0b689eb121231d62985ad223fb8aa833f8ef79836",
+            "model_bytes": 247942267,
+            "tags": [
+                "vision",
+                "object detection segmentation",
+                "yolov3"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input_1",
+                        "shape": [
+                            "unk__576",
+                            3,
+                            "unk__577",
+                            "unk__578"
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "image_shape",
+                        "shape": [
+                            "unk__579",
+                            2
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "yolonms_layer_1/ExpandDims_1:0",
+                        "shape": [
+                            1,
+                            "unk__581",
+                            4
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "yolonms_layer_1/ExpandDims_3:0",
+                        "shape": [
+                            1,
+                            80,
+                            "unk__584"
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "yolonms_layer_1/concat_2:0",
+                        "shape": [
+                            "unk__585",
+                            3
+                        ],
+                        "type": "tensor(int32)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/yolov3/model/yolov3-12.tar.gz",
+            "model_with_data_sha": "bcd5021e0aaa492ce9f629466974092244710337d07e6887fc7854932b6ae0a3",
+            "model_with_data_bytes": 232651839
+        }
+    },
+    {
         "model": "YOLOv4",
         "model_path": "vision/object_detection_segmentation/yolov4/model/yolov4.onnx",
         "onnx_version": "1.6",
@@ -5726,8 +7716,140 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/yolov4/model/yolov4.tar.gz",
-            "model_with_data_sha": "b2fce1287242740a139bc8b15cf463fd4b50f15f480f1461d70e454f75ed0404",
-            "model_with_data_bytes": 248665735
+            "model_with_data_sha": "7d06db57b6b4fff4f75dd3bd16f29b32faec4552d763869d5a3c37d25542cbb2",
+            "model_with_data_bytes": 243453644
+        }
+    },
+    {
+        "model": "Candy",
+        "model_path": "vision/style_transfer/fast_neural_style/model/candy-8.onnx",
+        "onnx_version": "1.4",
+        "opset_version": 8,
+        "metadata": {
+            "model_sha": "e3c6f442e12014c5fec12b4307c14ca303df185cda19f67522afeef40c4d22b8",
+            "model_bytes": 6726529,
+            "tags": [
+                "vision",
+                "style transfer",
+                "fast neural style"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input1",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "output1",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/style_transfer/fast_neural_style/model/candy-8.tar.gz",
+            "model_with_data_sha": "e6a40c8d1b5f6b680f4c770ac9ec5a26638fea1439bb2561e71a3a4a55c1e8a7",
+            "model_with_data_bytes": 7338783
+        }
+    },
+    {
+        "model": "Candy",
+        "model_path": "vision/style_transfer/fast_neural_style/model/candy-9.onnx",
+        "onnx_version": "1.4",
+        "opset_version": 9,
+        "metadata": {
+            "model_sha": "9d11a3529d1e547da6ae07201d93484dbab2ec0a3614535752c8f40f0fe2968a",
+            "model_bytes": 6728029,
+            "tags": [
+                "vision",
+                "style transfer",
+                "fast neural style"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input1",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "output1",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/style_transfer/fast_neural_style/model/candy-9.tar.gz",
+            "model_with_data_sha": "7647c08408079b400f95526bf15e21a247af2112ca7019396fc6945b76f9cb33",
+            "model_with_data_bytes": 7338825
+        }
+    },
+    {
+        "model": "Mosaic",
+        "model_path": "vision/style_transfer/fast_neural_style/model/mosaic-8.onnx",
+        "onnx_version": "1.4",
+        "opset_version": 8,
+        "metadata": {
+            "model_sha": "8547ad01962f2709c2ca6732345c74d14cb1dd79c09c92365ac113cdb6c2eac5",
+            "model_bytes": 6726529,
+            "tags": [
+                "vision",
+                "style transfer",
+                "fast neural style"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input1",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "output1",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/style_transfer/fast_neural_style/model/mosaic-8.tar.gz",
+            "model_with_data_sha": "2b3090c84a0e28fe00fc162b764c8946186a33535eee6250e2595429ac309346",
+            "model_with_data_bytes": 7333067
         }
     },
     {
@@ -5775,12 +7897,56 @@
         }
     },
     {
-        "model": "Candy",
-        "model_path": "vision/style_transfer/fast_neural_style/model/candy-9.onnx",
+        "model": "Pointilism",
+        "model_path": "vision/style_transfer/fast_neural_style/model/pointilism-8.onnx",
+        "onnx_version": "1.4",
+        "opset_version": 8,
+        "metadata": {
+            "model_sha": "09fb31931c1826daf42552e451a908d068486a3ca946324a3ece758d51f46cad",
+            "model_bytes": 6726529,
+            "tags": [
+                "vision",
+                "style transfer",
+                "fast neural style"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input1",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "output1",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/style_transfer/fast_neural_style/model/pointilism-8.tar.gz",
+            "model_with_data_sha": "e67096dba8f00a30b86422868563f1c299565592314778e42033b87d46ba1ca8",
+            "model_with_data_bytes": 7333381
+        }
+    },
+    {
+        "model": "Pointilism",
+        "model_path": "vision/style_transfer/fast_neural_style/model/pointilism-9.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
-            "model_sha": "9d11a3529d1e547da6ae07201d93484dbab2ec0a3614535752c8f40f0fe2968a",
+            "model_sha": "5ee2b8d4d6bc60a777f54e0fe96a1b717360a004b79d56c67390d4a975b14d98",
             "model_bytes": 6728029,
             "tags": [
                 "vision",
@@ -5813,9 +7979,53 @@
                     }
                 ]
             },
-            "model_with_data_path": "vision/style_transfer/fast_neural_style/model/candy-9.tar.gz",
-            "model_with_data_sha": "7647c08408079b400f95526bf15e21a247af2112ca7019396fc6945b76f9cb33",
-            "model_with_data_bytes": 7338825
+            "model_with_data_path": "vision/style_transfer/fast_neural_style/model/pointilism-9.tar.gz",
+            "model_with_data_sha": "ceac242d7e058391b317fccc656c43be9e58a148036027dd38d6b1bd4ac040fd",
+            "model_with_data_bytes": 7335554
+        }
+    },
+    {
+        "model": "Rain Princess",
+        "model_path": "vision/style_transfer/fast_neural_style/model/rain-princess-8.onnx",
+        "onnx_version": "1.4",
+        "opset_version": 8,
+        "metadata": {
+            "model_sha": "bf13b623576021a77dab6aa54c366d0900e8f55909be27cf4a40248d6ff6e097",
+            "model_bytes": 6726529,
+            "tags": [
+                "vision",
+                "style transfer",
+                "fast neural style"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input1",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "output1",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/style_transfer/fast_neural_style/model/rain-princess-8.tar.gz",
+            "model_with_data_sha": "483c273fd3c293417250329cb9c64d68c19c1cf5a1c8e4a375ff92a00b3cb972",
+            "model_with_data_bytes": 7344452
         }
     },
     {
@@ -5864,226 +8074,6 @@
     },
     {
         "model": "Udnie",
-        "model_path": "vision/style_transfer/fast_neural_style/model/udnie-9.onnx",
-        "onnx_version": "1.4",
-        "opset_version": 9,
-        "metadata": {
-            "model_sha": "8656b6ce7dec8f22ee13c2d557d6b67bd6f550dde88d0f2e7c9972aeb765cc0d",
-            "model_bytes": 6728029,
-            "tags": [
-                "vision",
-                "style transfer",
-                "fast neural style"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "input1",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "output1",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "model_with_data_path": "vision/style_transfer/fast_neural_style/model/udnie-9.tar.gz",
-            "model_with_data_sha": "713f43d88764577218b25e4820b4fc75fe1b547d59c9bfcfa0349cbdbfd84a1e",
-            "model_with_data_bytes": 7338543
-        }
-    },
-    {
-        "model": "Pointilism",
-        "model_path": "vision/style_transfer/fast_neural_style/model/pointilism-9.onnx",
-        "onnx_version": "1.4",
-        "opset_version": 9,
-        "metadata": {
-            "model_sha": "5ee2b8d4d6bc60a777f54e0fe96a1b717360a004b79d56c67390d4a975b14d98",
-            "model_bytes": 6728029,
-            "tags": [
-                "vision",
-                "style transfer",
-                "fast neural style"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "input1",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "output1",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "model_with_data_path": "vision/style_transfer/fast_neural_style/model/pointilism-9.tar.gz",
-            "model_with_data_sha": "ceac242d7e058391b317fccc656c43be9e58a148036027dd38d6b1bd4ac040fd",
-            "model_with_data_bytes": 7335554
-        }
-    },
-    {
-        "model": "Mosaic",
-        "model_path": "vision/style_transfer/fast_neural_style/model/mosaic-8.onnx",
-        "onnx_version": "1.4",
-        "opset_version": 8,
-        "metadata": {
-            "model_sha": "8547ad01962f2709c2ca6732345c74d14cb1dd79c09c92365ac113cdb6c2eac5",
-            "model_bytes": 6726529,
-            "tags": [
-                "vision",
-                "style transfer",
-                "fast neural style"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "input1",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "output1",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "model_with_data_path": "vision/style_transfer/fast_neural_style/model/mosaic-8.tar.gz",
-            "model_with_data_sha": "2b3090c84a0e28fe00fc162b764c8946186a33535eee6250e2595429ac309346",
-            "model_with_data_bytes": 7333067
-        }
-    },
-    {
-        "model": "Candy",
-        "model_path": "vision/style_transfer/fast_neural_style/model/candy-8.onnx",
-        "onnx_version": "1.4",
-        "opset_version": 8,
-        "metadata": {
-            "model_sha": "e3c6f442e12014c5fec12b4307c14ca303df185cda19f67522afeef40c4d22b8",
-            "model_bytes": 6726529,
-            "tags": [
-                "vision",
-                "style transfer",
-                "fast neural style"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "input1",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "output1",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "model_with_data_path": "vision/style_transfer/fast_neural_style/model/candy-8.tar.gz",
-            "model_with_data_sha": "e6a40c8d1b5f6b680f4c770ac9ec5a26638fea1439bb2561e71a3a4a55c1e8a7",
-            "model_with_data_bytes": 7338783
-        }
-    },
-    {
-        "model": "Rain Princess",
-        "model_path": "vision/style_transfer/fast_neural_style/model/rain-princess-8.onnx",
-        "onnx_version": "1.4",
-        "opset_version": 8,
-        "metadata": {
-            "model_sha": "bf13b623576021a77dab6aa54c366d0900e8f55909be27cf4a40248d6ff6e097",
-            "model_bytes": 6726529,
-            "tags": [
-                "vision",
-                "style transfer",
-                "fast neural style"
-            ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "input1",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "output1",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "model_with_data_path": "vision/style_transfer/fast_neural_style/model/rain-princess-8.tar.gz",
-            "model_with_data_sha": "483c273fd3c293417250329cb9c64d68c19c1cf5a1c8e4a375ff92a00b3cb972",
-            "model_with_data_bytes": 7344452
-        }
-    },
-    {
-        "model": "Udnie",
         "model_path": "vision/style_transfer/fast_neural_style/model/udnie-8.onnx",
         "onnx_version": "1.4",
         "opset_version": 8,
@@ -6127,13 +8117,13 @@
         }
     },
     {
-        "model": "Pointilism",
-        "model_path": "vision/style_transfer/fast_neural_style/model/pointilism-8.onnx",
+        "model": "Udnie",
+        "model_path": "vision/style_transfer/fast_neural_style/model/udnie-9.onnx",
         "onnx_version": "1.4",
-        "opset_version": 8,
+        "opset_version": 9,
         "metadata": {
-            "model_sha": "09fb31931c1826daf42552e451a908d068486a3ca946324a3ece758d51f46cad",
-            "model_bytes": 6726529,
+            "model_sha": "8656b6ce7dec8f22ee13c2d557d6b67bd6f550dde88d0f2e7c9972aeb765cc0d",
+            "model_bytes": 6728029,
             "tags": [
                 "vision",
                 "style transfer",
@@ -6165,9 +8155,9 @@
                     }
                 ]
             },
-            "model_with_data_path": "vision/style_transfer/fast_neural_style/model/pointilism-8.tar.gz",
-            "model_with_data_sha": "e67096dba8f00a30b86422868563f1c299565592314778e42033b87d46ba1ca8",
-            "model_with_data_bytes": 7333381
+            "model_with_data_path": "vision/style_transfer/fast_neural_style/model/udnie-9.tar.gz",
+            "model_with_data_sha": "713f43d88764577218b25e4820b4fc75fe1b547d59c9bfcfa0349cbdbfd84a1e",
+            "model_with_data_bytes": 7338543
         }
     },
     {
@@ -6210,8 +8200,8 @@
                 ]
             },
             "model_with_data_path": "vision/super_resolution/sub_pixel_cnn_2016/model/super-resolution-10.tar.gz",
-            "model_with_data_sha": "e42d465bfbed87ea770a7a856ba5d0c62b7fa8e2e0c260e6750e82ce9ddb72f2",
-            "model_with_data_bytes": 1815286
+            "model_with_data_sha": "15810206d8a5a57a6cc4caa9aa2bd712d3a144a2098b2ec31b5074714c4aeeac",
+            "model_with_data_bytes": 2079037
         }
     }
 ]

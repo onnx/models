@@ -14,6 +14,13 @@ The model ResNet101_DUC_HDC uses ResNet101 as a backend network with both Dense 
 |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|[mIOU](#metric) (%)|
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |ResNet101_DUC_HDC|    [248.6 MB](model/ResNet101-DUC-7.onnx) | [282.0 MB](model/ResNet101-DUC-7.tar.gz) |1.2.2  |7 |81.92 |
+|ResNet101_DUC_HDC-12|    [248.6 MB](model/ResNet101-DUC-12.onnx) | [247.3 MB](model/ResNet101-DUC-12.tar.gz) |1.9.0  |12 |81.92 |
+|ResNet101_DUC_HDC-12-int8|    [62.5 MB](model/ResNet101-DUC-12-int8.onnx) | [67.8 MB](model/ResNet101-DUC-12-int8.tar.gz) |1.9.0  |12 |81.62 |
+> Compared with the ResNet101_DUC_HDC-12, ResNet101_DUC_HDC-12-int8's mIOU decline ratio is 0.37% and performance improvement is 1.69x.
+>
+> Note the performance depends on the test hardware. 
+> 
+> Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
 ## Inference
 We used MXNet as framework to perform inference. View the notebook [duc-inference](dependencies/duc-inference.ipynb) to understand how to use above models for doing inference. A brief description of the inference process is provided below:
@@ -57,12 +64,38 @@ The [mIOU](#metric) score obtained by the models on the validation set are menti
 
 We used MXNet framework to compute mIOU of the models on the validation set described above. Use the notebook [duc-validation](dependencies/duc-validation.ipynb) to verify the mIOU of the model. The scripts [cityscapes_loader.py](dependencies/cityscapes_loader.py), [cityscapes_labels.py](dependencies/cityscapes_labels.py) and [utils.py](dependencies/utils.py) are used in the notebook for data loading and processing.
 
+## Quantization
+ResNet101_DUC_HDC-12-int8 is obtained by quantizing ResNet101_DUC_HDC-12 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/object_detection/onnx_model_zoo/DUC/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+
+### Environment
+onnx: 1.9.0 
+onnxruntime: 1.10.0
+
+### Prepare model
+```shell
+wget https://github.com/onnx/models/raw/main/vision/object_detection_segmentation/duc/model/ResNet101-DUC-12.onnx
+```
+
+### Model quantize
+```bash
+bash run_tuning.sh --input_model=path/to/model  \ # model path as *.onnx
+                   --config=DUC.yaml \ 
+                   --data_path=/path/to/leftImg8bit/val \
+                   --label_path=/path/to/gtFine/val \
+                   --output_model=path/to/save
+```
+
 ## References
 * All models are from the paper [Understanding Convolution for Semantic Segmentation](https://arxiv.org/abs/1702.08502).
 * [TuSimple-DUC repo](https://github.com/TuSimple/TuSimple-DUC), [MXNet](http://mxnet.incubator.apache.org)
+* [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
 
 ## Contributors
-[abhinavs95](https://github.com/abhinavs95) (Amazon AI)
+* [abhinavs95](https://github.com/abhinavs95) (Amazon AI)
+* [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [airMeng](https://github.com/airMeng) (Intel)
+* [ftian1](https://github.com/ftian1) (Intel)
+* [hshen14](https://github.com/hshen14) (Intel)
 
 ## License
 Apache 2.0

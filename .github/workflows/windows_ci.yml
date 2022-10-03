@@ -33,12 +33,15 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install onnx onnxruntime requests
+          # TODO: now ONNX only supports Protobuf <= 3.20.1
+          python -m pip install protobuf==3.20.1
+          python -m pip install onnx onnxruntime requests py-cpuinfo
+          python -m cpuinfo
 
       - name: Test new models by onnx
         run: |
-          python workflow_scripts/test_models.py --target onnx
+          python workflow_scripts/test_models.py --target onnx --drop
 
       - name: Test new models by onnxruntime
         run: |
-          python workflow_scripts/test_models.py --target onnxruntime
+          python workflow_scripts/test_models.py --target onnxruntime --drop
