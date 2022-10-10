@@ -753,7 +753,7 @@
     {
         "model": "T5-decoder-with-lm-head",
         "model_path": "text/machine_comprehension/t5/model/t5-decoder-with-lm-head-12.onnx",
-        "onnx_version": "1.6",
+        "onnx_version": "1.7",
         "opset_version": 12,
         "metadata": {
             "model_sha": "235afca35d3c47a5fd7209844ac11f3157fe7263fd074197a45b7f536e40ea56",
@@ -794,13 +794,16 @@
                         "type": "tensor(float)"
                     }
                 ]
-            }
+            },
+            "model_with_data_path": "text/machine_comprehension/t5/model/t5-decoder-with-lm-head-12.tar.gz",
+            "model_with_data_sha": "fa6edefa5951479f7b68bea693950a4ebc188f54c7971bf73f2b036b91bc8066",
+            "model_with_data_bytes": 287840759
         }
     },
     {
         "model": "T5-encoder",
         "model_path": "text/machine_comprehension/t5/model/t5-encoder-12.onnx",
-        "onnx_version": "1.6",
+        "onnx_version": "1.7",
         "opset_version": 12,
         "metadata": {
             "model_sha": "4523122d7cf0f50905694d84995633c8a0cc223da762d3eb2aaffa17251a6f60",
@@ -832,7 +835,10 @@
                         "type": "tensor(float)"
                     }
                 ]
-            }
+            },
+            "model_with_data_path": "text/machine_comprehension/t5/model/t5-encoder-12.tar.gz",
+            "model_with_data_sha": "434e2f691bd71c838bd4b68be47bdf32c899313fdebfe4b77c7bea0b2f52e831",
+            "model_with_data_bytes": 194535656
         }
     },
     {
@@ -1025,7 +1031,10 @@
                         "type": "tensor(float)"
                     }
                 ]
-            }
+            },
+            "model_with_data_path": "vision/body_analysis/ultraface/models/version-RFB-320.tar.gz",
+            "model_with_data_sha": "628d0dd3e0288adb821f211e13d4e97f6d6f4527237339606732dffa6f19d381",
+            "model_with_data_bytes": 2015397
         }
     },
     {
@@ -1074,7 +1083,10 @@
                         "type": "tensor(float)"
                     }
                 ]
-            }
+            },
+            "model_with_data_path": "vision/body_analysis/ultraface/models/version-RFB-640.tar.gz",
+            "model_with_data_sha": "07cc0e284b7924bd89f2ec103254ef3ab4b673fd12341153faaff07f3c1137e3",
+            "model_with_data_bytes": 4818743
         }
     },
     {
@@ -7446,7 +7458,10 @@
                         "type": "tensor(float)"
                     }
                 ]
-            }
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/yolov2-coco/model/yolov2-coco-9.tar.gz",
+            "model_with_data_sha": "c34966e4e96165f8db6f2549f509b6a8bdfc01ddd978e6fd07daad4e665d5383",
+            "model_with_data_bytes": 191439022
         }
     },
     {

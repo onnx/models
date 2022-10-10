@@ -43,7 +43,7 @@ def parse_html(table):
 
 
 def parse_readme(filename):
-    with open(filename, "r") as f:
+    with open(filename, "r", encoding="utf8") as f:
         parsed = markdown.markdown(f.read(), extensions=["markdown.extensions.tables"])
         soup = bs4.BeautifulSoup(parsed, "html.parser")
         return [parse_html(table) for table in soup.find_all("table")]
@@ -65,7 +65,11 @@ markdown_files = sorted(list(markdown_files))
 all_tables = []
 for markdown_file in markdown_files:
     with open(markdown_file, "r") as f:
-        for parsed in parse_readme(markdown_file):
+        parsed_readme = parse_readme(markdown_file)
+        if not parsed_readme:
+            print(f"{markdown_file} needs to be updated to include a table.")
+            continue
+        for parsed in parsed_readme:
             parsed = parsed.rename(columns={"Opset Version": "Opset version"})
             if all(col in parsed.columns.values for col in ["Model", "Download", "Opset version", "ONNX version"]):
                 parsed["source_file"] = markdown_file
@@ -212,7 +216,7 @@ parser.add_argument("--target", required=False, default="all", type=str,
                     help="Update target? (all, diff, single)",
                     choices=["all", "diff", "single"])
 parser.add_argument("--path", required=False, default=None, type=str,
-                    help="The model path which you want to update.")
+                    help="The model path which you want to update. e.g., vision/classification/resnet/model/resnet50.onnx")
 parser.add_argument("--drop", required=False, default=False, action="store_true",
                     help="Drop downloaded models after verification. (For space limitation in CIs)")
 args = parser.parse_args()
@@ -244,7 +248,7 @@ for i, row in renamed.iterrows():
         elif args.target == "single":
             if args.path is None:
                 raise ValueError("Please specify --path if you want to update by single model.")
-            target_models = set(args.path)
+            target_models = set([args.path.replace("\\", "/")])
         model_info = get_file_info(row, "model_path", target_models)
         if model_info is None:
             continue
@@ -261,7 +265,7 @@ for i, row in renamed.iterrows():
             for k, v in get_file_info(row, "model_with_data_path").items():
                 metadata[k] = v
         except (AttributeError, FileNotFoundError) as e:
-            print("no model_with_data in file {}: {}".format(row["source_file"], e))
+            print(f"no model_with_data in file {row['source_file']}: {e}")
 
         try:
             opset = int(row["opset_version"].contents[0])
@@ -292,6 +296,7 @@ for i, row in renamed.iterrows():
     else:
         print("Missing model in {}".format(row["source_file"]))
 output.sort(key=lambda x: x["model_path"])
+
 with open("ONNX_HUB_MANIFEST.json", "w+") as f:
     print("Found {} models".format(len(output)))
     json.dump(output, f, indent=4)
