@@ -38,7 +38,7 @@ def run_backend_ort(model_path, test_data_set=None, tar_gz_path=None):
     if skip_reason:
         print(skip_reason)
         return
-    # if "test_data_set_N" doesn"t exist, create test_dir
+    # if "test_data_set_N" doesn't exist, create test_dir
     if not test_data_set:
         # Start from ORT 1.10, ORT requires explicitly setting the providers parameter if you want to use execution providers
         # other than the default CPU provider (as opposed to the previous behavior of providers getting set/registered by default
