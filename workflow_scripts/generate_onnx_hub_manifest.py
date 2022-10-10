@@ -100,7 +100,7 @@ metadata_fields = [f for f in renamed.columns.values if f not in top_level_field
 def get_file_info(row, field, target_models=None):
     source_dir = split(row["source_file"])[0]
     model_file = row[field].contents[0].attrs["href"]
-    ## So that model relative path is consistent across OS
+    # So that model relative path is consistent across OS
     rel_path = "/".join(join(source_dir, model_file).split(os.sep))
     if target_models is not None and rel_path not in target_models:
         return None
@@ -261,7 +261,7 @@ for i, row in renamed.iterrows():
             for k, v in get_file_info(row, "model_with_data_path").items():
                 metadata[k] = v
         except (AttributeError, FileNotFoundError) as e:
-            print("no model_with_data in file {}".format(row["source_file"]))
+            print("no model_with_data in file {}: {}".format(row["source_file"], e))
 
         try:
             opset = int(row["opset_version"].contents[0])
@@ -291,7 +291,7 @@ for i, row in renamed.iterrows():
 
     else:
         print("Missing model in {}".format(row["source_file"]))
-output.sort(key=lambda x:x["model_path"])
-with open( "ONNX_HUB_MANIFEST.json", "w+") as f:
+output.sort(key=lambda x: x["model_path"])
+with open("ONNX_HUB_MANIFEST.json", "w+") as f:
     print("Found {} models".format(len(output)))
     json.dump(output, f, indent=4)
