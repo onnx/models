@@ -4519,53 +4519,16 @@
         "onnx_version": "1.1.2",
         "opset_version": 6,
         "metadata": {
-            "model_sha": "faabc409fd57ae83ddebe7fb981ee492a7899c1acb4893cc8e64c11f0ccdaa98",
-            "model_bytes": 5723770,
+            "model_sha": "b0e5f38aa3961e6d208ccfe5e34dc52c1b9bf96f4b377cdba1919c6810457258",
+            "model_bytes": 5724572,
             "tags": [
                 "vision",
                 "classification",
                 "shufflenet"
             ],
-            "io_ports": {
-                "inputs": [
-                    {
-                        "name": "gpu_0/data_0",
-                        "shape": [
-                            1,
-                            3,
-                            224,
-                            224
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ],
-                "outputs": [
-                    {
-                        "name": "gpu_0/softmax_1",
-                        "shape": [
-                            1,
-                            1000
-                        ],
-                        "type": "tensor(float)"
-                    }
-                ]
-            },
-            "extra_ports": {
-                "features": [
-                    {
-                        "name": "gpu_0/final_avg_1",
-                        "shape": [
-                            1,
-                            544,
-                            1,
-                            1
-                        ]
-                    }
-                ]
-            },
             "model_with_data_path": "vision/classification/shufflenet/model/shufflenet-6.tar.gz",
-            "model_with_data_sha": "090749323dc94018eccf6d1ae2d1ab575b6e0b24ff1f77d248e780eecf5fd61b",
-            "model_with_data_bytes": 5858851
+            "model_with_data_sha": "9f1c78a572dcf40f1056bdb9688433290c010c91e98ba4526be1ffdbfd854660",
+            "model_with_data_bytes": 8604055
         }
     },
     {
@@ -4629,16 +4592,53 @@
         "onnx_version": "1.3",
         "opset_version": 8,
         "metadata": {
-            "model_sha": "b0e5f38aa3961e6d208ccfe5e34dc52c1b9bf96f4b377cdba1919c6810457258",
-            "model_bytes": 5724572,
+            "model_sha": "faabc409fd57ae83ddebe7fb981ee492a7899c1acb4893cc8e64c11f0ccdaa98",
+            "model_bytes": 5723770,
             "tags": [
                 "vision",
                 "classification",
                 "shufflenet"
             ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "gpu_0/data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "gpu_0/softmax_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "gpu_0/final_avg_1",
+                        "shape": [
+                            1,
+                            544,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
             "model_with_data_path": "vision/classification/shufflenet/model/shufflenet-8.tar.gz",
-            "model_with_data_sha": "9f1c78a572dcf40f1056bdb9688433290c010c91e98ba4526be1ffdbfd854660",
-            "model_with_data_bytes": 8604055
+            "model_with_data_sha": "090749323dc94018eccf6d1ae2d1ab575b6e0b24ff1f77d248e780eecf5fd61b",
+            "model_with_data_bytes": 5858851
         }
     },
     {
