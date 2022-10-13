@@ -3437,8 +3437,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/mobilenet/model/mobilenetv2-7.tar.gz",
-            "model_with_data_sha": "b0e24b84c25f479cfbc55dd494d73350ffa60f5181793133335f792de3aaa838",
-            "model_with_data_bytes": 14758284
+            "model_with_data_sha": "3d5f701390850d14354ae441679ed15f718f8be92bdfb0d22324939b034ad255",
+            "model_with_data_bytes": 14754311
         }
     },
     {
