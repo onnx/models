@@ -15,9 +15,10 @@ The below model is using multiplier value as 1.0.
 
  |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|Top-1 accuracy (%)|Top-5 accuracy (%)|
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|MobileNet v2-1.0|    [13.6 MB](model/mobilenetv2-7.onnx)  |  [14.1 MB](model/mobilenetv2-7.tar.gz) |  1.2.1  | 7| 70.94    |     89.99           |
-|MobileNet v2-1.0-fp32|    [13.3 MB](model/mobilenetv2-12.onnx)  |  [12.9 MB](model/mobilenetv2-12.tar.gz) |  1.9.0  | 12| 69.48    |     89.26           |
-|MobileNet v2-1.0-int8|    [3.5 MB](model/mobilenetv2-12-int8.onnx)  |  [3.7 MB](model/mobilenetv2-12-int8.tar.gz) |  1.9.0  | 12| 68.30    |     88.44           |
+|MobileNet v2-7| [13.5 MB](model/mobilenetv2-7.onnx)  |  [14.0 MB](model/mobilenetv2-7.tar.gz) |  1.2.1  | 7 | 70.94    |     89.99           |
+|MobileNet v2-1.0| [13.3 MB](model/mobilenetv2-10.onnx)  |  [12.8 MB](model/mobilenetv2-10.tar.gz) |  1.5.0  | 10 | 70.94    |     89.99           |
+|MobileNet v2-1.0-fp32| [13.3 MB](model/mobilenetv2-12.onnx)  | [12.9 MB](model/mobilenetv2-12.tar.gz) |  1.9.0  | 12| 69.48    |     89.26           |
+|MobileNet v2-1.0-int8| [3.5 MB](model/mobilenetv2-12-int8.onnx)  | [3.7 MB](model/mobilenetv2-12-int8.tar.gz) |  1.9.0  | 12| 68.30    |     88.44           |
 |MobileNet v2-1.0-qdq| [3.4 MB](model/mobilenetv2-12-qdq.onnx) | [3.3 MB](model/mobilenetv2-12-qdq.tar.gz) |1.10.0| 12 |67.40 | |
 > Compared with the fp32 MobileNet v2-1.0, int8 MobileNet v2-1.0's Top-1 accuracy decline ratio is 1.70%, Top-5 accuracy decline ratio is 0.92% and performance improvement is 1.05x.
 >

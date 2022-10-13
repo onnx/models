@@ -3219,6 +3219,61 @@
         }
     },
     {
+        "model": "MobileNet v2-1.0",
+        "model_path": "vision/classification/mobilenet/model/mobilenetv2-10.onnx",
+        "onnx_version": "1.5.0",
+        "opset_version": 10,
+        "metadata": {
+            "model_sha": "0e7c0aa4bc74650386fa1d2c84705753de7c2bdb21909ada5c59154bb429e092",
+            "model_bytes": 13963115,
+            "tags": [
+                "vision",
+                "classification",
+                "mobilenet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input",
+                        "shape": [
+                            "batch_size",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "output",
+                        "shape": [
+                            "batch_size",
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "extra_ports": {
+                "features": [
+                    {
+                        "name": "464",
+                        "shape": [
+                            0,
+                            1280,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/mobilenet/model/mobilenetv2-10.tar.gz",
+            "model_with_data_sha": "3e4e9e2de0241cc829917e9c0233229974f5d35d3cfd012a263ca36c98f36ac3",
+            "model_with_data_bytes": 13504391
+        }
+    },
+    {
         "model": "MobileNet v2-1.0-int8",
         "model_path": "vision/classification/mobilenet/model/mobilenetv2-12-int8.onnx",
         "onnx_version": "1.9.0",
@@ -3345,13 +3400,13 @@
         }
     },
     {
-        "model": "MobileNet v2-1.0",
+        "model": "MobileNet v2-7",
         "model_path": "vision/classification/mobilenet/model/mobilenetv2-7.onnx",
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
-            "model_sha": "0e7c0aa4bc74650386fa1d2c84705753de7c2bdb21909ada5c59154bb429e092",
-            "model_bytes": 13963115,
+            "model_sha": "c1c513582d56afceff8516c73804e484c81c6a830712ab6d682253f4a3cd042f",
+            "model_bytes": 14246826,
             "tags": [
                 "vision",
                 "classification",
@@ -3360,9 +3415,9 @@
             "io_ports": {
                 "inputs": [
                     {
-                        "name": "input",
+                        "name": "data",
                         "shape": [
-                            "batch_size",
+                            1,
                             3,
                             224,
                             224
@@ -3372,31 +3427,18 @@
                 ],
                 "outputs": [
                     {
-                        "name": "output",
+                        "name": "mobilenetv20_output_flatten0_reshape0",
                         "shape": [
-                            "batch_size",
+                            1,
                             1000
                         ],
                         "type": "tensor(float)"
                     }
                 ]
             },
-            "extra_ports": {
-                "features": [
-                    {
-                        "name": "464",
-                        "shape": [
-                            0,
-                            1280,
-                            1,
-                            1
-                        ]
-                    }
-                ]
-            },
             "model_with_data_path": "vision/classification/mobilenet/model/mobilenetv2-7.tar.gz",
-            "model_with_data_sha": "3e4e9e2de0241cc829917e9c0233229974f5d35d3cfd012a263ca36c98f36ac3",
-            "model_with_data_bytes": 13504391
+            "model_with_data_sha": "b463ad62dae99f13afd88549ca7d43e9bda6876614f3592ebb41177e1db0fcc5",
+            "model_with_data_bytes": 13682646
         }
     },
     {
