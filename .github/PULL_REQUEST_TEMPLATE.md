@@ -1,4 +1,4 @@
-# Model Name
+# LeafSnap30
 
 ## Description
 Description of model - What task does it address (i.e. object detection, image classification)? What is the main advantage or feature of this model's architecture?
