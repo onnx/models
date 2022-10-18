@@ -1,6 +1,10 @@
-# Model Name
+# LeafSnap30
 
 ## Description
+Pytorch and ONNX Neural Network models trained on the [LeafSnap 30 dataset](https://zenodo.org/record/5061353/). 
+
+_The model training is described in a repository related to the [Deep Insight and Neural Networks Analysis (DIANNA) project](https://github.com/dianna-ai/dianna)_
+
 Description of model - What task does it address (i.e. object detection, image classification)? What is the main advantage or feature of this model's architecture?
 
 All ONNX models must pass the ONNX model checker before contribution. The snippet of code below can be used to perform the check. If any errors are encountered, it implies the check has failed.
