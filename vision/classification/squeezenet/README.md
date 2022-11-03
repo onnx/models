@@ -22,6 +22,7 @@ SqueezeNet 1.1 has 2.4x less computation and slightly fewer parameters than Sque
 |SqueezeNet 1.0| [5 MB](model/squeezenet1.0-9.onnx)  |  [11 MB](model/squeezenet1.0-9.tar.gz) |  1.4 | 9|
 |SqueezeNet 1.0| [5 MB](model/squeezenet1.0-12.onnx)  |  [5 MB](model/squeezenet1.0-12.tar.gz) |  1.9 | 12|56.85|79.87|
 |SqueezeNet 1.0-int8| [2 MB](model/squeezenet1.0-12-int8.onnx)  |  [2 MB](model/squeezenet1.0-12-int8.tar.gz) |  1.9 | 12|56.48|79.76|
+|SqueezeNet 1.0-qdq| [2 MB](model/squeezenet1.0-13-qdq.onnx)  |  [2 MB](model/squeezenet1.0-13-qdq.tar.gz) |  1.9 | 13|56.54|79.76|
 > Compared with the fp32 SqueezeNet 1.0, int8 SqueezeNet 1.0's Top-1 accuracy drop ratio is 0.65%, Top-5 accuracy drop ratio is 0.14% and performance improvement is 1.31x.
 >
 > **Note** 
@@ -64,7 +65,7 @@ We used MXNet as framework with gluon APIs to perform training. View the [traini
 We used MXNet as framework with gluon APIs to perform validation. Use the notebook [imagenet_validation](../imagenet_validation.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 
 ## Quantization
-SqueezeNet 1.0-int8 is obtained by quantizing fp32 SqueezeNet 1.0 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/squeezenet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+SqueezeNet 1.0-int8 and SqueezeNet 1.0-qdq are obtained by quantizing fp32 SqueezeNet 1.0 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/squeezenet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 
@@ -97,6 +98,7 @@ SqueezeNet1.1 presented in the [Official SqueezeNet repo](https://github.com/Dee
 * [abhinavs95](https://github.com/abhinavs95) (Amazon AI)
 * [ankkhedia](https://github.com/ankkhedia) (Amazon AI)
 * [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [yuwenzho](https://github.com/yuwenzho) (Intel)
 * [airMeng](https://github.com/airMeng) (Intel)
 * [ftian1](https://github.com/ftian1) (Intel)
 * [hshen14](https://github.com/hshen14) (Intel)
