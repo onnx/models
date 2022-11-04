@@ -1,11 +1,8 @@
 # LeafSnap30
 
 ## Description
-Pytorch and ONNX Neural Network models trained on the [LeafSnap 30 dataset](https://zenodo.org/record/5061353/). 
+LeafSnap30 is a Neural Network model trained on the [LeafSnap 30 dataset](https://zenodo.org/record/5061353/). It addresses an image classificaiton task- identifying 30 tree species from images of their leaves. This task has been approached with classical computer vision methods a decade ago on more species dataset containing artifacts, while this model is trained on a smaller and cleaner dataset, particularly useful for demonstrating NN classification on simple, yet realistic scientific task.
 
-_The model training is described in a repository related to the [Deep Insight and Neural Networks Analysis (DIANNA) project](https://github.com/dianna-ai/dianna)_
-
-Description of model - What task does it address (i.e. object detection, image classification)? What is the main advantage or feature of this model's architecture?
 
 All ONNX models must pass the ONNX model checker before contribution. The snippet of code below can be used to perform the check. If any errors are encountered, it implies the check has failed.
 
@@ -139,8 +136,10 @@ If this PR does update/add .onnx or .tar.gz files, please use `python workflow_s
 Link to paper or references.
 
 ## Contributors
-Contributors' names
+[Leon Oostrum](https://github.com/loostrum) (Netherlands eScience Center)
+
+[Elena Ranguelova](https://github.com/elboyran) (Netherlands eScience Center)
 
 ## License
-Add license information - on default, Apache 2.0
+Apache 2.0
 <hr>
