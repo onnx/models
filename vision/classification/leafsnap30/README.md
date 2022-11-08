@@ -136,9 +136,11 @@ If this PR does update/add .onnx or .tar.gz files, please use `python workflow_s
 Link to paper or references.
 
 ## Contributors
-[Leon Oostrum](https://github.com/loostrum) (Netherlands eScience Center)
-
-[Elena Ranguelova](https://github.com/elboyran) (Netherlands eScience Center)
+- [Leon Oostrum](https://github.com/loostrum) (Netherlands eScience Center)
+- [Christiaan Meijer](https://github.com/cwmeijer) (Netherlands eScience Center)
+- [Yang Liu](https://github.com/geek-yang) (Netherlands eScience Center)
+- [Patrick Bos](https://github.com/egpbos) (Netherlands eScience Center)
+- [Elena Ranguelova](https://github.com/elboyran) (Netherlands eScience Center)
 
 ## License
 Apache 2.0
