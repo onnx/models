@@ -3,15 +3,6 @@
 ## Description
 LeafSnap30 is a Neural Network model trained on the [LeafSnap 30 dataset](https://zenodo.org/record/5061353/). It addresses an image classificaiton task- identifying 30 tree species from images of their leaves. This task has been approached with classical computer vision methods a decade ago on more species dataset containing artifacts, while this model is trained on a smaller and cleaner dataset, particularly useful for demonstrating NN classification on simple, yet realistic scientific task.
 
-### Contribute a Gradio Demo to ONNX Organization on Hugging Face
-
-* Create an account on Hugging Face: https://huggingface.co/join
-* See list of models left to add to ONNX organization, please refer to the table with the [Models list](https://github.com/onnx/models#models)
-* Add Gradio Demo under your username, see blog for setting up Gradio Demo on Hugging Face: https://huggingface.co/blog/gradio-spaces
-* Request to join ONNX Organization: https://huggingface.co/onnx
-* Once approved transfer model from your username to ONNX organization
-* Add a badge for model in model table, see examples in [Models list](https://github.com/onnx/models#models)
-
 ## Model
 
 |Model        |Download  | Download (with sample test data)|ONNX version|Opset version|Accuracy |
