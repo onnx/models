@@ -18,7 +18,7 @@ def get_all_models():
     for directory in ["text", "vision"]:
         for root, _, files in os.walk(directory):
             for file in files:
-                if file.endswith(tar_ext_name) or file.endswith(onnx_ext_name):
+                if (file.endswith(tar_ext_name) or file.endswith(onnx_ext_name)) and ("-int8" in file or "-qdq" in file):
                     model_list.append(os.path.join(root, file))
     return model_list
 
