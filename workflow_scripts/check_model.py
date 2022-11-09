@@ -21,6 +21,8 @@ def run_onnx_checker(model_path):
 
 def ort_skip_reason(model_path):
     if (model_path.endswith("-int8.onnx") or model_path.endswith("-qdq.onnx")) and not has_vnni_support():
+        # At least run InferenceSession to test shape inference
+        onnxruntime.InferenceSession(model_path)
         return f"Skip ORT test for {model_path} because this machine lacks avx512vnni support and the output.pb was produced with avx512vnni support."
     model = onnx.load(model_path)
     if model.opset_import[0].version < 7:
