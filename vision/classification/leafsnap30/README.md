@@ -11,7 +11,7 @@ LeafSnap30 is a Neural Network model trained on the [LeafSnap 30 dataset](https:
 |LeafSnap30|    [1.48 MB](classification/leafnap30/model/leafsnap_model.onnx)    |N/A | 1.9.0  |11 | train: 87%, test: 74%     |
 
 ### Source
-Pytorch LeafSnap30 ==> ONNX LeafSNap30 
+Pytorch LeafSnap30 ==> ONNX LeafSnap30 
 
 ## Inference
 Step by step instructions on how to use the pretrained model and link to an example notebook/code. This section should ideally contain:
