@@ -8,13 +8,10 @@ LeafSnap30 is a Neural Network model trained on the [LeafSnap 30 dataset](https:
 |Model        |Download  | Download (with sample test data)|ONNX version|Opset version|Accuracy |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |Model Name       | Relative link to ONNX Model with size  | tar file containing ONNX model and synthetic test data (in .pb format)|ONNX version used for conversion| Opset version used for conversion|Accuracy values |
-|Example (VGG 19)|    [548.1 MB](classification/vgg/model/vgg19-7.onnx)    |[508.5 MB](classification/vgg/model/vgg19-7.tar.gz)| 1.2.1  |7 | 73.72     |
-
-Please submit new models with Git LFS by committing directly to the repository, and using relative links (i.e. ***model/vgg19-7.onnx***) in the table above. In this file name example, ***vgg19*** is the name of the model and ***7*** is the opset number.
+|LeafSnap30|    [1.48 MB](classification/leafnap30/model/leafsnap_model.onnx)    |N/A | 1.9.0  |11 | train: 87%, test: 74%     |
 
 ### Source
-Source Framework ==> ONNX model  
-i.e. Caffe2 DenseNet-121 ==> ONNX DenseNet
+Pytorch LeafSnap30 ==> ONNX LeafSNap30 
 
 ## Inference
 Step by step instructions on how to use the pretrained model and link to an example notebook/code. This section should ideally contain:
