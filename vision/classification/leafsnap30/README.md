@@ -14,19 +14,30 @@ LeafSnap30 is a Neural Network model trained on the [LeafSnap 30 dataset](https:
 Pytorch LeafSnap30 ==> ONNX LeafSnap30 
 
 ## Inference
-Step by step instructions on how to use the pretrained model and link to an example notebook/code. This section should ideally contain:
+The steps needed to run the pretrained model with the onnxruntime are implemented within the explainability library [dianna](https://github.com/dianna-ai/dianna) in this [code](https://github.com/dianna-ai/dianna/blob/main/dianna/utils/onnx_runner.py). An example [tutorial notebook](https://github.com/dianna-ai/dianna/blob/main/tutorials/lime_images.ipynb) shows on how to use the model with dianna.
 
 ### Input
-Input to network (Example: 224x224 pixels in RGB)
+The input to the model are 3-channel RGB images of shape ```3 x 128 x 128``` (colour channel first) as a numpy array of type ```float32```.
 
 ### Preprocessing
-Preprocessing required
+The input image is loaded to a nympy array. The pixel values are then converted to the 0-1 range. 
+
+Example:
+
+```
+# load and plot the example image
+img = np.array(Image.open(f'data/leafsnap_example_{true_species}.jpg'))
+
+plt.imshow(img)
+plt.title(f'Species: {true_species}');
+
+# the model expects float32 values in the 0-1 range for each pixel, with the colour channels as first axis
+# the .jpg file has 0-255 ints with the channel axis last so it needs to be changed
+input_data = img.transpose(2, 0, 1).astype(np.float32) / 255.
+```
 
 ### Output
-Output of network
-
-### Postprocessing
-Post processing and meaning of output
+Output of this model is a tensor of shape ``` 1 x 30``` with confidence scores over the 30 tree species. 
 
 ## Model Creation
 
