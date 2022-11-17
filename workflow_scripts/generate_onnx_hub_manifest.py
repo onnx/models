@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 import hashlib
 import json
 import os
@@ -11,6 +13,9 @@ import onnxruntime as ort
 from onnxruntime.capi.onnxruntime_pybind11_state import NotImplemented
 import onnx
 from onnx import shape_inference
+import argparse
+from test_models import get_changed_models
+from test_utils import pull_lfs_file
 
 
 # Acknowledgments to pytablereader codebase for this function
@@ -38,21 +43,20 @@ def parse_html(table):
 
 
 def parse_readme(filename):
-    with open(filename, "r") as f:
+    with open(filename, "r", encoding="utf8") as f:
         parsed = markdown.markdown(f.read(), extensions=["markdown.extensions.tables"])
         soup = bs4.BeautifulSoup(parsed, "html.parser")
         return [parse_html(table) for table in soup.find_all("table")]
 
 
-top_level_readme = join("..", "README.md")
+top_level_readme = "README.md"
 top_level_tables = parse_readme(top_level_readme)
 markdown_files = set()
 for top_level_table in top_level_tables:
     for i, row in top_level_table.iterrows():
         if "Model Class" in row:
             try:
-                markdown_files.add(join(
-                    "..", row["Model Class"].contents[0].contents[0].attrs['href'], "README.md"))
+                markdown_files.add(join(row["Model Class"].contents[0].contents[0].attrs['href'], "README.md"))
             except AttributeError:
                 print("{} has no link to implementation".format(row["Model Class"].contents[0]))
 # Sort for reproducibility
@@ -61,7 +65,11 @@ markdown_files = sorted(list(markdown_files))
 all_tables = []
 for markdown_file in markdown_files:
     with open(markdown_file, "r") as f:
-        for parsed in parse_readme(markdown_file):
+        parsed_readme = parse_readme(markdown_file)
+        if not parsed_readme:
+            print(f"{markdown_file} needs to be updated to include a table.")
+            continue
+        for parsed in parsed_readme:
             parsed = parsed.rename(columns={"Opset Version": "Opset version"})
             if all(col in parsed.columns.values for col in ["Model", "Download", "Opset version", "ONNX version"]):
                 parsed["source_file"] = markdown_file
@@ -93,12 +101,17 @@ renamed = df.rename(columns={col: prep_name(col) for col in df.columns.values})
 metadata_fields = [f for f in renamed.columns.values if f not in top_level_fields]
 
 
-def get_file_info(row, field):
+def get_file_info(row, field, target_models=None):
     source_dir = split(row["source_file"])[0]
     model_file = row[field].contents[0].attrs["href"]
-    ## So that model relative path is consistent across OS
-    rel_path = "/".join(join(source_dir, model_file).split(os.sep)[1:])
-    with open(join("..", rel_path), "rb") as f:
+    # So that model relative path is consistent across OS
+    rel_path = "/".join(join(source_dir, model_file).split(os.sep))
+    if target_models is not None and rel_path not in target_models:
+        return None
+    # git-lfs pull if target .onnx or .tar.gz does not exist
+    pull_lfs_file(rel_path)
+    pull_lfs_file(rel_path.replace(".onnx", ".tar.gz"))
+    with open(rel_path, "rb") as f:
         bytes = f.read()
         sha256 = hashlib.sha256(bytes).hexdigest()
     return {
@@ -110,12 +123,12 @@ def get_file_info(row, field):
 
 def get_model_tags(row):
     source_dir = split(row["source_file"])[0]
-    raw_tags = source_dir.split("/")[1:]
+    raw_tags = source_dir.split("/")
     return [tag.replace("_", " ") for tag in raw_tags]
 
 
 def get_model_ports(source_file, metadata, model_name):
-    model_path = join("..", source_file)
+    model_path = source_file
     try:
         # Hide graph warnings. Severity 3 means error and above.
         ort.set_default_logger_severity(3)
@@ -196,11 +209,49 @@ feature_tensor_names = {
     'ZFNet-512': 'gpu_0/fc7_2'
 }
 
+parser = argparse.ArgumentParser(description="Test settings")
+# default all: test by both onnx and onnxruntime
+# if target is specified, only test by the specified one
+parser.add_argument("--target", required=False, default="all", type=str,
+                    help="Update target? (all, diff, single)",
+                    choices=["all", "diff", "single"])
+parser.add_argument("--path", required=False, default=None, type=str,
+                    help="The model path which you want to update. e.g., vision/classification/resnet/model/resnet50.onnx")
+parser.add_argument("--drop", required=False, default=False, action="store_true",
+                    help="Drop downloaded models after verification. (For space limitation in CIs)")
+args = parser.parse_args()
+
+
 output = []
+if args.target == "diff":
+    changed_models = set()
+    changed_list = get_changed_models()
+    for file in changed_list:
+        # If the .tar.gz was updated, the model's manifest needs to be updated as well
+        if ".tar.gz" in file:
+            file = file.replace(".tar.gz", ".onnx")
+        changed_models.add(file)
+    print(f"{len(changed_models)} of changed models: {changed_models}")
+if args.target == "diff" or args.target == "single":
+    with open("ONNX_HUB_MANIFEST.json", "r+") as f:
+        output = json.load(f)
+    path_to_object = {}
+    for model in output:
+        path_to_object[model["model_path"]] = model
+
 for i, row in renamed.iterrows():
     if len(row["model"].contents) > 0 and len(row["model_path"].contents) > 0:
         model_name = row["model"].contents[0]
-        model_info = get_file_info(row, "model_path")
+        target_models = None
+        if args.target == "diff":
+            target_models = changed_models
+        elif args.target == "single":
+            if args.path is None:
+                raise ValueError("Please specify --path if you want to update by single model.")
+            target_models = set([args.path.replace("\\", "/")])
+        model_info = get_file_info(row, "model_path", target_models)
+        if model_info is None:
+            continue
         model_path = model_info.pop("model_path")
         metadata = model_info
         metadata["tags"] = get_model_tags(row)
@@ -214,14 +265,18 @@ for i, row in renamed.iterrows():
             for k, v in get_file_info(row, "model_with_data_path").items():
                 metadata[k] = v
         except (AttributeError, FileNotFoundError) as e:
-            print("no model_with_data in file {}".format(row["source_file"]))
+            print(f"no model_with_data in file {row['source_file']}: {e}")
 
         try:
             opset = int(row["opset_version"].contents[0])
         except ValueError:
             print("malformed opset {} in {}".format(row["opset_version"].contents[0], row["source_file"]))
             continue
-
+        if args.target != "all":
+            if model_path in path_to_object:
+                # To update existing information, remove previous one
+                output.remove(path_to_object[model_path])
+                print(f"Updating: {model_path}")
         output.append(
             {
                 "model": model_name,
@@ -231,9 +286,17 @@ for i, row in renamed.iterrows():
                 "metadata": metadata
             }
         )
+        if args.drop:
+            if os.path.exists(model_path):
+                os.remove(model_path)
+            tar_path = model_path.replace(".onnx", ".tar.gz")
+            if os.path.exists(tar_path):
+                os.remove(tar_path)
+
     else:
         print("Missing model in {}".format(row["source_file"]))
+output.sort(key=lambda x: x["model_path"])
 
-with open(join("..", "ONNX_HUB_MANIFEST.json"), "w+") as f:
+with open("ONNX_HUB_MANIFEST.json", "w+") as f:
     print("Found {} models".format(len(output)))
     json.dump(output, f, indent=4)
