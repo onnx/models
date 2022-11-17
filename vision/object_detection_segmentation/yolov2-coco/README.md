@@ -8,9 +8,9 @@ This model aims to detect objects in real time. It detects 80 different classes 
 ## Model
 The model was converted to ONNX from PyTorch version of YOLOv2 using [PyTorch-Yolo2](https://github.com/marvis/pytorch-yolo2). The output is fully verified by generating bounding boxes under PyTorch and onnxruntime.
 
-|Model|Download| ONNX version |Opset version|
-|-----|:--------------|:-------------|:------------|
-|YOLOv2|[203.9 MB](model/yolov2-coco-9.onnx) |1.5  |9 |
+| Model | Download | Download (with sample test data) | ONNX version | Opset version |
+| ----- | -------- | -------------------------------- | ------------ | ------------- |
+| YOLOv2 | [203.9 MB](model/yolov2-coco-9.onnx) | [182.6 MB](model/yolov2-coco-9.tar.gz) | 1.5  | 9 |
 
 ## Inference
 ### Input to model

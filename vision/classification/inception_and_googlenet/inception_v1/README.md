@@ -59,7 +59,7 @@ onnxruntime: 1.8.0
 
 ### Prepare model
 ```shell
-wget https://github.com/onnx/models/blob/main/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12.onnx
+wget https://github.com/onnx/models/raw/main/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12.onnx
 ```
 
 ### Model quantize
