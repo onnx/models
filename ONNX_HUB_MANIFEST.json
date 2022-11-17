@@ -151,8 +151,8 @@
                 ]
             },
             "model_with_data_path": "text/machine_comprehension/bert-squad/model/bertsquad-12-int8.tar.gz",
-            "model_with_data_sha": "5f4bd418f2ee55310788fed78842297ec0b3ecda6669c563196f20396cb4d401",
-            "model_with_data_bytes": 105881973
+            "model_with_data_sha": "6c33f44ee1949ee25936e259cb68da3e19bea7f6e7d5ea72a4d95ae300c86d87",
+            "model_with_data_bytes": 106044512
         }
     },
     {
@@ -2125,8 +2125,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/efficientnet-lite4/model/efficientnet-lite4-11-int8.tar.gz",
-            "model_with_data_sha": "3b03546fb343ba48e3243c893ea37e47cb1f337d80ed0aca562077d8d3da51b6",
-            "model_with_data_bytes": 12780764
+            "model_with_data_sha": "d3f50f4562e61d870a70e68157ccf64d8f03f6927540ad343e6fbddb79647e1f",
+            "model_with_data_bytes": 12789970
         }
     },
     {
@@ -2167,8 +2167,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/efficientnet-lite4/model/efficientnet-lite4-11-qdq.tar.gz",
-            "model_with_data_sha": "f58754ff53120d937e4bc32e6a815fc0163261f7b842762868ed453947258390",
-            "model_with_data_bytes": 10193490
+            "model_with_data_sha": "4802f078c57e328004e326623c3de9e0e9046d9ce485eb79ed05d4d3c478b417",
+            "model_with_data_bytes": 10194220
         }
     },
     {
@@ -2644,8 +2644,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12-int8.tar.gz",
-            "model_with_data_sha": "296e49e0f1253877053d5aa48f4192f675b302b5828e70a821d6d94e0c8ee4e3",
-            "model_with_data_bytes": 9463738
+            "model_with_data_sha": "bc3d78134d9777d3e3a3320523834beb2ba7bdd1c5e017cba5a8d268691afbc6",
+            "model_with_data_bytes": 9474526
         }
     },
     {
@@ -3395,8 +3395,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/mobilenet/model/mobilenetv2-12-int8.tar.gz",
-            "model_with_data_sha": "f00ea406993d4b2a404a4c5f4258e862f68aedfbcc324510267e556612501211",
-            "model_with_data_bytes": 3910933
+            "model_with_data_sha": "dfcf1dc15b78611489f22a19902de12e304bf0380e185bde499fcf70f7647455",
+            "model_with_data_bytes": 3914892
         }
     },
     {
@@ -3437,8 +3437,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/mobilenet/model/mobilenetv2-12-qdq.tar.gz",
-            "model_with_data_sha": "29be79b1561b1bf028a064eb4061b23b92883cb7f22b50f5f52d685efd23a04c",
-            "model_with_data_bytes": 3431250
+            "model_with_data_sha": "dd8cafda6fdf773a37ba09858482232eca8e01997ec6f1bebf1aca11aea0c1ce",
+            "model_with_data_bytes": 3434401
         }
     },
     {
@@ -4362,7 +4362,7 @@
         }
     },
     {
-        "model": "ResNet50_int8",
+        "model": "ResNet50-int8",
         "model_path": "vision/classification/resnet/model/resnet50-v1-12-int8.onnx",
         "onnx_version": "1.7.0",
         "opset_version": 12,
@@ -4398,20 +4398,9 @@
                     }
                 ]
             },
-            "extra_ports": {
-                "features": [
-                    {
-                        "name": "flatten_473_quantized",
-                        "shape": [
-                            0,
-                            2048
-                        ]
-                    }
-                ]
-            },
             "model_with_data_path": "vision/classification/resnet/model/resnet50-v1-12-int8.tar.gz",
-            "model_with_data_sha": "7ddcf6ac49d0cc1ab0d3b7ecb6b81e295714c3e3de7f582fee85a7bebd8426e9",
-            "model_with_data_bytes": 22318352
+            "model_with_data_sha": "662710f50cafe29f44727b9cd8be5430fb06da18d3004cf5f9d9645c0dc39d71",
+            "model_with_data_bytes": 22355322
         }
     },
     {
@@ -4452,12 +4441,12 @@
                 ]
             },
             "model_with_data_path": "vision/classification/resnet/model/resnet50-v1-12-qdq.tar.gz",
-            "model_with_data_sha": "986160ffdcf88dedba54ee1fd8ea9597a91b11ccf16016f495bffe22e83ea40e",
-            "model_with_data_bytes": 17043120
+            "model_with_data_sha": "6a93ba624ecab599d3f8511b1409f5103beb2f1708a85955397a3132ca423d99",
+            "model_with_data_bytes": 17049336
         }
     },
     {
-        "model": "ResNet50_fp32",
+        "model": "ResNet50-fp32",
         "model_path": "vision/classification/resnet/model/resnet50-v1-12.onnx",
         "onnx_version": "1.7.0",
         "opset_version": 12,
@@ -4490,19 +4479,6 @@
                             1000
                         ],
                         "type": "tensor(float)"
-                    }
-                ]
-            },
-            "extra_ports": {
-                "features": [
-                    {
-                        "name": "resnetv17_pool1_fwd",
-                        "shape": [
-                            0,
-                            2048,
-                            1,
-                            1
-                        ]
                     }
                 ]
             },
@@ -4924,8 +4900,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/shufflenet/model/shufflenet-v2-12-int8.tar.gz",
-            "model_with_data_sha": "c746144bf4383cf0a3f1e3a4093eb46da625f0ce4db1e5657d6f8fd3f1cf9d50",
-            "model_with_data_bytes": 2485799
+            "model_with_data_sha": "f538889aa028f6fcc4db1dce9b0bf2e7e347a81d5fc28087d96758dc0131e8c7",
+            "model_with_data_bytes": 2488137
         }
     },
     {
@@ -5476,8 +5452,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/vgg/model/vgg16-12-int8.tar.gz",
-            "model_with_data_sha": "477a77f7ba31bc6bebe6e9824cb0108173d3bb0c54506d8c6663ea36eee7dfb4",
-            "model_with_data_bytes": 105964121
+            "model_with_data_sha": "75c08988b598e24173a21a7dc0b396ca9dc49afb63be35e5c993ac56b297e4cf",
+            "model_with_data_bytes": 106112057
         }
     },
     {
@@ -6454,8 +6430,8 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12-int8.tar.gz",
-            "model_with_data_sha": "599fcd738eb08d8d5daee9edb332f785c59f9a3c704292ba420a41c1b43404e2",
-            "model_with_data_bytes": 37955516
+            "model_with_data_sha": "d497a293e8486ec0a56f5276eb246b93280b7f31dc4e23a33db444d262384591",
+            "model_with_data_bytes": 38019008
         }
     },
     {
@@ -7370,8 +7346,8 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/ssd/model/ssd-12-int8.tar.gz",
-            "model_with_data_sha": "9f70dc76cac7618375cdc2f4d4b8a42bea229d2545882df57a3b6cce282515a5",
-            "model_with_data_bytes": 31815039
+            "model_with_data_sha": "b8984dd954eb1463a8714d9f25d87d1d7276479a78660ce5ec37196a81d31413",
+            "model_with_data_bytes": 31845320
         }
     },
     {
