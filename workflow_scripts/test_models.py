@@ -89,10 +89,10 @@ def main():
                         else:
                             print("Warning: original test data for {} is broken: {}".format(model_path, e))
                             test_utils.remove_onnxruntime_test_dir()
-                        if "-int8" not in model_name:
-                            check_model.run_backend_ort(model_path_from_tar, None, model_name)
+                        if (not model_name.endswith("-int8.tar.gz") and not model_name.endswith("-qdq.tar.gz")) or check_model.has_vnni_support():
+                            check_model.run_backend_ort(model_path_from_tar, None, model_path)
                         else:
-                            print("Skip int8 models because their test_data_set was created in avx512_vnni machines")
+                            print("Skip quantized  models because their test_data_set was created in avx512vnni machines. ")
                         print("[PASS] {} is checked by onnxruntime. ".format(model_name))
                 # Step 2: check the ONNX model inside .tar.gz by ONNX
                 if args.target == "onnx" or args.target == "all":
