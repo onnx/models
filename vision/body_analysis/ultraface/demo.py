@@ -64,4 +64,5 @@ boxes, labels, probs = faceDetector(orig_image)
 for i in range(boxes.shape[0]):
     box = scale(boxes[i, :])
     cv2.rectangle(orig_image, (box[0], box[1]), (box[2], box[3]), color, 4)
-    cv2.imshow('', orig_image)
+cv2.imshow('', orig_image)
+cv2.waitKey()
