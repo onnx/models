@@ -17,10 +17,10 @@ Pytorch LeafSnap30 ==> ONNX LeafSnap30
 The steps needed to run the pretrained model with the onnxruntime are implemented within the explainability library [dianna](https://github.com/dianna-ai/dianna) in this [code](https://github.com/dianna-ai/dianna/blob/main/dianna/utils/onnx_runner.py). An example [tutorial notebook](https://github.com/dianna-ai/dianna/blob/main/tutorials/lime_images.ipynb) shows on how to use the model with dianna.
 
 ### Input
-The input to the model are 3-channel RGB images of shape ```3 x 128 x 128``` (colour channel first) as a numpy array of type ```float32```.
+The input to the model is a ``float32`` tensor of shape ``(-1, 3, 128, 128)``, where -1 is the batch axis. Each image is a ``128x128`` RGB image, with the colour channels as first axis.
 
 ### Preprocessing
-The input image is loaded to a nympy array. The pixel values are then converted to the 0-1 range. 
+The input image is loaded to a numpy array. The pixel values are then scaled to the 0-1 range. 
 
 Example:
 
@@ -37,7 +37,7 @@ input_data = img.transpose(2, 0, 1).astype(np.float32) / 255.
 ```
 
 ### Output
-Output of this model is a tensor of shape ``` 1 x 30``` with confidence scores over the 30 tree species. 
+Output of this model is the likelihood of each tree species before softmax, a tensor of shape ``` 1 x 30```. 
 
 ## Model Creation
 
