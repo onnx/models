@@ -2224,8 +2224,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/inception_and_googlenet/googlenet/model/googlenet-12-qdq.tar.gz",
-            "model_with_data_sha": "493b15a3c315eb3d88a26914543231e36c2948d83f3ae208e1ce6d150d4b4e7f",
-            "model_with_data_bytes": 5562494
+            "model_with_data_sha": "5587255e94438edd7c0017f5355178546b150deea05ed5e59109a4d4ae9aa4b3",
+            "model_with_data_bytes": 5562451
         }
     },
     {
@@ -2644,7 +2644,10 @@
                         "type": "tensor(float)"
                     }
                 ]
-            }
+            },
+            "model_with_data_path": "vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12-qdq.tar.gz",
+            "model_with_data_sha": "c981fd944a125d3626cb79720c7f0a57309da5a24994c0378e2657fdca87a869",
+            "model_with_data_bytes": 5559367
         }
     },
     {
@@ -4965,8 +4968,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/shufflenet/model/shufflenet-v2-12-qdq.tar.gz",
-            "model_with_data_sha": "0d54488b80bbe9d2c7fda85a4e4f5769f1a3b84c5afae0e095bd068c78586049",
-            "model_with_data_bytes": 2806082
+            "model_with_data_sha": "071594e233cedf5688501c9b67cad30c4babb1b46771fb87afe7fd1beb1cc008",
+            "model_with_data_bytes": 2245304
         }
     },
     {
