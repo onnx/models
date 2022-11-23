@@ -10,8 +10,8 @@ import tarfile
 import test_utils
 
 
-def has_avx512f_support():
-    return "avx512f" in set(get_cpu_info()["flags"])
+def has_vnni_support():
+    return "avx512vnni" in set(get_cpu_info()["flags"])
 
 
 def run_onnx_checker(model_path):
@@ -20,8 +20,10 @@ def run_onnx_checker(model_path):
 
 
 def ort_skip_reason(model_path):
-    if ("-int8" in model_path or "-qdq" in model_path) and not has_avx512f_support():
-        return f"Skip ORT test for {model_path} because this machine lacks avx512f support and the output.pb was produced with avx512f support."
+    if (model_path.endswith("-int8.onnx") or model_path.endswith("-qdq.onnx")) and not has_vnni_support():
+        # At least run InferenceSession to test shape inference
+        onnxruntime.InferenceSession(model_path)
+        return f"Skip ORT test for {model_path} because this machine lacks avx512vnni support and the output.pb was produced with avx512vnni support."
     model = onnx.load(model_path)
     if model.opset_import[0].version < 7:
         return f"Skip ORT test for {model_path} because ORT only supports opset version >= 7"
