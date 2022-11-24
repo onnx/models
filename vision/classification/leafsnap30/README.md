@@ -124,9 +124,9 @@ If this PR does update/add .onnx or .tar.gz files, please use `python workflow_s
 ### References
 [Leafsnap: A Computer Vision System for Automatic Plant Species Identification](https://rdcu.be/c0aBX) (original LeafSnap paper)
 
-[LeafSnap30](https://zenodo.org/record/5061353/) (Zenodo archive)
+[LeafSnap30](https://zenodo.org/record/5061353/) (Zenodo dataset archive)
 
-DIANNA: Deep Insight And Neural Network Analysis (JOSS paper under [review](https://github.com/openjournals/joss-reviews/issues/4493#issuecomment-1322539367))
+DIANNA: Deep Insight And Neural Network Analysis [![status](https://joss.theoj.org/papers/f0592c1aecb3711e068b58970588f185/status.svg)](https://joss.theoj.org/papers/f0592c1aecb3711e068b58970588f185)
 
 ## Contributors
 - [Leon Oostrum](https://github.com/loostrum) (Netherlands eScience Center)
