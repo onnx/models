@@ -122,7 +122,11 @@ https://github.com/microsoft/onnxruntime/blob/master/tools/python/PythonTools.md
 If this PR does update/add .onnx or .tar.gz files, please use `python workflow_scripts/generate_onnx_hub_manifest.py --target diff` to update ONNX_HUB_MANIFEST.json with according model information (especially SHA) for ONNX Hub.
 
 ### References
-Link to paper or references.
+[Leafsnap: A Computer Vision System for Automatic Plant Species Identification](https://rdcu.be/c0aBX) (original LeafSnap paper)
+
+[LeafSnap30](https://zenodo.org/record/5061353/) (Zenodo archive)
+
+DIANNA: Deep Insight And Neural Network Analysis (JOSS paper under [review](https://github.com/openjournals/joss-reviews/issues/4493#issuecomment-1322539367))
 
 ## Contributors
 - [Leon Oostrum](https://github.com/loostrum) (Netherlands eScience Center)
