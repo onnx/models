@@ -48,7 +48,7 @@ From the original LeafSnap dataset, the 30 most prominent classes were selected.
 The model is a CNN with 4 hidden layers, built in PyTorch and converted to ONNX. A notebook for the generation of the model, including the used hyperparameters, is available [here](https://github.com/dianna-ai/dianna-exploration/main/example_data/model_generation/).
 
 ### Validation accuracy
-The notebook used for training the model also shows the accuracy on the validation and test datasets.
+The notebook used for training the model also shows how accuracy on the validation and test datasets is calculated. The actual values were taken from the hyperparameter sweep executed with [Weights & Biases](wandb.ai).
 
 ## Test Data Creation
 
