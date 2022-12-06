@@ -45,7 +45,7 @@ Output of this model is the likelihood of each tree species before softmax, a te
 From the original LeafSnap dataset, the 30 most prominent classes were selected. The images taken in a lab were cropped semi-manually to remove any rulers and color calibration image parts. Notebooks describing these steps are available [here](https://github.com/dianna-ai/dianna-exploration/tree/main/example_data/dataset_preparation/LeafSnap). The LeafSnap30 dataset is also available on [Zenodo](https://zenodo.org/record/5061353).
 
 ### Training
-The model is a CNN with 4 hidden layers, built in PyTorch and converted to ONNX. A notebook for the generation of the model, including the used hyperparameters, is available [here](https://github.com/dianna-ai/dianna-exploration/main/example_data/model_generation/.
+The model is a CNN with 4 hidden layers, built in PyTorch and converted to ONNX. A notebook for the generation of the model, including the used hyperparameters, is available [here](https://github.com/dianna-ai/dianna-exploration/main/example_data/model_generation/).
 
 ### Validation accuracy
 The notebook used for training the model also shows the accuracy on the validation and test datasets.
