@@ -8,7 +8,7 @@ LeafSnap30 is a Neural Network model trained on the [LeafSnap 30 dataset](https:
 |Model        |Download  | Download (with sample test data)|ONNX version|Opset version|Accuracy |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |Model Name       | Relative link to ONNX Model with size  | tar file containing ONNX model and synthetic test data (in .pb format)|ONNX version used for conversion| Opset version used for conversion|Accuracy values |
-|LeafSnap30|    [1.48 MB](model/leafsnap_model.onnx)    |N/A | 1.9.0  |11 | train: 87%, test: 74%     |
+|LeafSnap30|    [1.48 MB](model/leafsnap_model.onnx)    |N/A | 1.9.0  |11 | train: 86%, test: 74%     |
 
 ### Source
 Pytorch LeafSnap30 ==> ONNX LeafSnap30 
