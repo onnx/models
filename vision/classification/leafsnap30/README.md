@@ -8,7 +8,7 @@ LeafSnap30 is a Neural Network model trained on the [LeafSnap 30 dataset](https:
 |Model        |Download  | Download (with sample test data)|ONNX version|Opset version|Accuracy |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |Model Name       | Relative link to ONNX Model with size  | tar file containing ONNX model and synthetic test data (in .pb format)|ONNX version used for conversion| Opset version used for conversion|Accuracy values |
-|LeafSnap30|    [1.48 MB](model/leafsnap_model.onnx)    |N/A | 1.9.0  |11 | train: 87%, test: 74%     |
+|LeafSnap30|    [1.48 MB](model/leafsnap_model.onnx)    |N/A | 1.9.0  |11 | train: 95%, validation: 86, test: 83%     |
 
 ### Source
 Pytorch LeafSnap30 ==> ONNX LeafSnap30 
@@ -42,15 +42,13 @@ Output of this model is the likelihood of each tree species before softmax, a te
 ## Model Creation
 
 ### Dataset (Train and validation)
-This section should discuss datasets and any preparation steps if required.
+From the original LeafSnap dataset, the 30 most prominent classes were selected. The images taken in a lab were cropped semi-manually to remove any rulers and color calibration image parts. Notebooks describing these steps are available [here](https://github.com/dianna-ai/dianna-exploration/tree/main/example_data/dataset_preparation/LeafSnap). The LeafSnap30 dataset is also available on [Zenodo](https://zenodo.org/record/5061353).
 
 ### Training
-Training details (preprocessing, hyperparameters, resources and environment) along with link to a training notebook (optional).
-
-Also clarify in case the model is not trained from scratch and include the source/process used to obtain the ONNX model.
+The model is a CNN with 4 hidden layers, built in PyTorch and converted to ONNX. A notebook for the generation of the model, including the used hyperparameters, is available [here](https://github.com/dianna-ai/dianna-exploration/main/example_data/model_generation/).
 
 ### Validation accuracy
-Validation script/notebook used to obtain accuracy reported above along with details of how to use it and reproduce accuracy. Details of experiments leading to accuracy from the reference paper.
+The notebook used for training the model also shows how accuracy on the validation and test datasets is calculated. The actual values were taken from the hyperparameter sweep executed with [Weights & Biases](wandb.ai).
 
 ## Test Data Creation
 
