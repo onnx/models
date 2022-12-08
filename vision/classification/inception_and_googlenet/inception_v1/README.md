@@ -11,6 +11,7 @@
 |Inception-1| [28 MB](model/inception-v1-9.onnx)  |  [29 MB](model/inception-v1-9.tar.gz) |  1.4 | 9| |
 |Inception-1| [27 MB](model/inception-v1-12.onnx)  |  [25 MB](model/inception-v1-12.tar.gz) |  1.9 | 12| 67.23|
 |Inception-1-int8| [10 MB](model/inception-v1-12-int8.onnx)  |  [9 MB](model/inception-v1-12-int8.tar.gz) |  1.9 | 12| 67.24|
+|Inception-1-qdq| [7 MB](model/inception-v1-12-qdq.onnx) | [5 MB](model/inception-v1-12-qdq.tar.gz) | 1.12 | 12 | 67.21 |
 > Compared with the fp32 Inception-1, int8 Inception-1's Top-1 accuracy drop ratio is -0.01% and performance improvement is 1.26x.
 >
 > **Note** 
@@ -51,7 +52,7 @@ random generated sampe test data:
 ## Results/accuracy on test set
 
 ## Quantization
-Inception-1-int8 is obtained by quantizing fp32 Inception-1 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/inception/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+Inception-1-int8 and Inception-1-qdq are obtained by quantizing fp32 Inception-1 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/inception/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 
