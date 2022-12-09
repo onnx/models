@@ -11,6 +11,7 @@
 |AlexNet| [238 MB](model/bvlcalexnet-9.onnx)  |  [226 MB](model/bvlcalexnet-9.tar.gz) |  1.4 | 9| | |
 |AlexNet| [233 MB](model/bvlcalexnet-12.onnx)  |  [216 MB](model/bvlcalexnet-12.tar.gz) |  1.9 | 12|54.80|78.23|
 |AlexNet-int8| [58 MB](model/bvlcalexnet-12-int8.onnx)  |  [39 MB](model/bvlcalexnet-12-int8.tar.gz) |  1.9 | 12|54.68|78.23|
+|AlexNet-qdq| [59 MB](model/bvlcalexnet-12-qdq.onnx)  |  [44 MB](model/bvlcalexnet-12-qdq.tar.gz) |  1.9 | 12|54.71|78.22|
 > Compared with the fp32 AlextNet, int8 AlextNet's Top-1 accuracy drop ratio is 0.22%, Top-5 accuracy drop ratio is 0.05% and performance improvement is 2.26x.
 >
 > **Note** 
@@ -63,7 +64,7 @@ This model obtains a top-1 accuracy 57.1% and a top-5 accuracy
 should obtain a bit higher accuracy.)
 
 ## Quantization
-AlexNet-int8 is obtained by quantizing fp32 AlexNet model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/alexnet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+AlexNet-int8 and AlexNet-qdq are obtained by quantizing fp32 AlexNet model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/alexnet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 
@@ -91,6 +92,7 @@ bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
 
 ## Contributors
 * [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [yuwenzho](https://github.com/yuwenzho) (Intel)
 * [airMeng](https://github.com/airMeng) (Intel)
 * [ftian1](https://github.com/ftian1) (Intel)
 * [hshen14](https://github.com/hshen14) (Intel)

@@ -1132,6 +1132,48 @@
         }
     },
     {
+        "model": "AlexNet-qdq",
+        "model_path": "vision/classification/alexnet/model/bvlcalexnet-12-qdq.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "c103c0f7b8f9d8d64b400e0899d5934d2a13d1f08368ba1907285aa0691f4cbb",
+            "model_bytes": 61009072,
+            "tags": [
+                "vision",
+                "classification",
+                "alexnet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "prob_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/alexnet/model/bvlcalexnet-12-qdq.tar.gz",
+            "model_with_data_sha": "930eeb3f4d25a20e59fa21919f95edbb7a4b3f31b51a83f62c9b6627906156b9",
+            "model_with_data_bytes": 45565042
+        }
+    },
+    {
         "model": "AlexNet",
         "model_path": "vision/classification/alexnet/model/bvlcalexnet-12.onnx",
         "onnx_version": "1.9",
@@ -1419,6 +1461,48 @@
             "model_with_data_path": "vision/classification/caffenet/model/caffenet-12-int8.tar.gz",
             "model_with_data_sha": "24deead9c27254631332923c021c6b9cb429ef19b3367a0cc1cb171b9375c0e5",
             "model_with_data_bytes": 40718510
+        }
+    },
+    {
+        "model": "CaffeNet-qdq",
+        "model_path": "vision/classification/caffenet/model/caffenet-12-qdq.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "ff1170e8123aa7b8d652bc43a9e9864ee6ba050653470f34dada9b6ad0731b40",
+            "model_bytes": 61009797,
+            "tags": [
+                "vision",
+                "classification",
+                "caffenet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "prob_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/caffenet/model/caffenet-12-qdq.tar.gz",
+            "model_with_data_sha": "7d78cb5357b90e71f38c133715e67237c5156e21be0aa6e397c9654557364a6d",
+            "model_with_data_bytes": 45685092
         }
     },
     {
@@ -5100,6 +5184,50 @@
             "model_with_data_path": "vision/classification/squeezenet/model/squeezenet1.0-12.tar.gz",
             "model_with_data_sha": "8a2dcc5a8f2b8c314b96b6484703a72882c796faa4eaf0de1b913fc0765cb917",
             "model_with_data_bytes": 5151210
+        }
+    },
+    {
+        "model": "SqueezeNet 1.0-qdq",
+        "model_path": "vision/classification/squeezenet/model/squeezenet1.0-13-qdq.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 13,
+        "metadata": {
+            "model_sha": "4a567dd7542ef440890d57268fabf47211174c593d7a1837bd7f16a1067169e7",
+            "model_bytes": 1345213,
+            "tags": [
+                "vision",
+                "classification",
+                "squeezenet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "softmaxout_1",
+                        "shape": [
+                            1,
+                            1000,
+                            1,
+                            1
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/squeezenet/model/squeezenet1.0-13-qdq.tar.gz",
+            "model_with_data_sha": "d3a84101535d52ecf31503ff1645f170c7b156b6bc53f1492caec485b7c023a7",
+            "model_with_data_bytes": 1565787
         }
     },
     {

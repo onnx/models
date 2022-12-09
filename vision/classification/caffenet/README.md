@@ -11,6 +11,7 @@
 |CaffeNet| [238 MB](model/caffenet-9.onnx)  |  [244 MB](model/caffenet-9.tar.gz) |  1.4 | 9| | |
 |CaffeNet| [233 MB](model/caffenet-12.onnx)  |  [216 MB](model/caffenet-12.tar.gz) |  1.9 | 12|56.27 |79.52 |
 |CaffeNet-int8| [58 MB](model/caffenet-12-int8.onnx)  |  [39 MB](model/caffenet-12-int8.tar.gz) |  1.9 | 12| 56.22|79.52 |
+|CaffeNet-qdq| [59 MB](model/caffenet-12-qdq.onnx)  |  [44 MB](model/caffenet-12-qdq.tar.gz) |  1.9 | 12| 56.25|79.45 |
 > Compared with the fp32 CaffeNet, int8 CaffeNet's Top-1 accuracy drop ratio is 0.09%, Top-5 accuracy drop ratio is 0.13% and performance improvement is 3.08x.
 >
 > **Note** 
@@ -64,7 +65,7 @@ This model obtains a top-1 accuracy 57.4% and a top-5 accuracy
 should obtain a bit higher accuracy still.)
 
 ## Quantization
-CaffeNet-int8 is obtained by quantizing fp32 CaffeNet model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/caffenet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+CaffeNet-int8 and CaffeNet-qdq are obtained by quantizing fp32 CaffeNet model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/caffenet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 
@@ -92,6 +93,7 @@ bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
 
 ## Contributors
 * [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [yuwenzho](https://github.com/yuwenzho) (Intel)
 * [airMeng](https://github.com/airMeng) (Intel)
 * [ftian1](https://github.com/ftian1) (Intel)
 * [hshen14](https://github.com/hshen14) (Intel)
