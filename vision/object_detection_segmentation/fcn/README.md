@@ -15,6 +15,7 @@ This specific model detects 20 different [classes](dependencies/voc_classes.txt)
 | FCN ResNet-101 | [207 MB](model/fcn-resnet101-11.onnx) | [281 MB](model/fcn-resnet101-11.tar.gz) | 1.8.0        | 11 | 63.7% |
 | FCN ResNet-50  | [134 MB](model/fcn-resnet50-12.onnx)  | [125 MB](model/fcn-resnet50-12.tar.gz)  | 1.8.0        | 12 | 65.0% |
 | FCN ResNet-50-int8  | [34 MB](model/fcn-resnet50-12-int8.onnx)  | [29 MB](model/fcn-resnet50-12-int8.tar.gz)  | 1.8.0        | 12 | 64.7% |
+| FCN ResNet-50-qdq  | [34 MB](model/fcn-resnet50-12-qdq.onnx)  | [21 MB](model/fcn-resnet50-12-qdq.tar.gz)  | 1.8.0        | 12 | 64.4% |
 
 ### Source
 
@@ -145,7 +146,7 @@ The more conservative of the two estimates is used in the model files table.
 <hr>
 
 ## Quantization
-FCN ResNet 50-int8 is obtained by quantizing fp32 FCN ResNet 50 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/fcn/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+FCN ResNet 50-int8 and FCN ResNet-50-qdq are obtained by quantizing fp32 FCN ResNet 50 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/fcn/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 
@@ -176,6 +177,7 @@ bash run_tuning.sh --input_model=path/to/model  \ # model path as *.onnx
 ## Contributors
 * [Jack Duvall](https://github.com/duvallj)
 * [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [yuwenzho](https://github.com/yuwenzho) (Intel)
 * [airMeng](https://github.com/airMeng) (Intel)
 * [ftian1](https://github.com/ftian1) (Intel)
 * [hshen14](https://github.com/hshen14) (Intel)

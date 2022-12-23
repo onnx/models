@@ -11,6 +11,7 @@
 |ZFNet-512| [341 MB](model/zfnet512-9.onnx)  |  [318 MB](model/zfnet512-9.tar.gz) |  1.4 | 9| | |
 |ZFNet-512| [333 MB](model/zfnet512-12.onnx)  |  [309 MB](model/zfnet512-12.tar.gz) |  1.9 | 12|55.97|79.41|
 |ZFNet-512-int8| [83 MB](model/zfnet512-12-int8.onnx)  |  [48 MB](model/zfnet512-12-int8.tar.gz) |  1.9 | 12|55.84|79.33|
+|ZFNet-512-qdq| [84 MB](model/zfnet512-12-qdq.onnx)  |  [56 MB](model/zfnet512-12-qdq.tar.gz) |  1.9 | 12|55.83|79.42|
 > Compared with the fp32 ZFNet-512, int8 ZFNet-512's Top-1 accuracy drop ratio is 0.23%, Top-5 accuracy drop ratio is 0.10% and performance improvement is 1.78x.
 >
 > **Note** 
@@ -52,7 +53,7 @@ random generated sampe test data:
 ## Results/accuracy on test set
 
 ## Quantization
-ZFNet-512-int8 is obtained by quantizing fp32 ZFNet-512 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/zfnet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+ZFNet-512-int8 and ZFNet-512-qdq are obtained by quantizing fp32 ZFNet-512 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/zfnet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 
@@ -80,6 +81,7 @@ bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
 
 ## Contributors
 * [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [yuwenzho](https://github.com/yuwenzho) (Intel)
 * [airMeng](https://github.com/airMeng) (Intel)
 * [ftian1](https://github.com/ftian1) (Intel)
 * [hshen14](https://github.com/hshen14) (Intel)
