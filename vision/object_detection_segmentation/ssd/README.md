@@ -12,6 +12,7 @@ This model is a real-time neural network for object detection that detects 80 di
 |SSD       |[80.4 MB](model/ssd-10.onnx) | [78.5 MB](model/ssd-10.tar.gz) |1.5 |10 |mAP of 0.195 |
 |SSD       |[77.6 MB](model/ssd-12.onnx) | [86.4 MB](model/ssd-12.tar.gz) |1.9 |12 |mAP of 0.1898 |
 |SSD-int8|[19.5 MB](model/ssd-12-int8.onnx) | [30.3 MB](model/ssd-12-int8.tar.gz) |1.9 |12 |mAP of 0.1882 |
+|SSD-qdq|[20 MB](model/ssd-12-qdq.onnx) | [26 MB](model/ssd-12-qdq.tar.gz) |1.9 |12 |mAP of 0.1863 |
 
 > Compared with the fp32 SSD, SSD-int8's mAP drop ratio is 0.84% and performance improvement is 1.53x.
 >
@@ -76,7 +77,7 @@ Backbone is ResNet34 pretrained on ILSVRC 2012 (from torchvision). Modifications
 <hr>
 
 ## Quantization
-SSD-int8 is obtained by quantizing fp32 SSD model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/object_detection/onnx_model_zoo/ssd/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+SSD-int8 and SSD-qdq are obtained by quantizing fp32 SSD model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/object_detection/onnx_model_zoo/ssd/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 
@@ -104,6 +105,7 @@ bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
 
 ## Contributors
 * [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [yuwenzho](https://github.com/yuwenzho) (Intel)
 * [airMeng](https://github.com/airMeng) (Intel)
 * [ftian1](https://github.com/ftian1) (Intel)
 * [hshen14](https://github.com/hshen14) (Intel)
