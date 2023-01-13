@@ -11,9 +11,9 @@ This model is a real-time neural network for object instance segmentation that d
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |Mask R-CNN R-50-FPN      |[177.9 MB](model/MaskRCNN-10.onnx) | [168.8 MB](model/MaskRCNN-10.tar.gz) |1.5 |10 |mAP of 0.36 & 0.33 |
 |Mask R-CNN R-50-FPN-fp32      |[169.7 MB](model/MaskRCNN-12.onnx) | [157.3 MB](model/MaskRCNN-12.tar.gz) |1.9 |12 |mAP of 0.3372 |
-|Mask R-CNN R-50-FPN-int8      |[45.9 MB](model/MaskRCNN-12-int8.onnx) | [34.2 MB](model/MaskRCNN-12-int8.tar.gz) |1.9 |12 |mAP of 0.3340 |
-|Mask R-CNN R-50-FPN-qdq      |[44 MB](model/MaskRCNN-12-qdq.onnx) | [30 MB](model/MaskRCNN-12-qdq.tar.gz) |1.9 |12 |mAP of 0.3330 |
-> Compared with the Mask R-CNN R-50-FPN-fp32, Mask R-CNN R-50-FPN-int8's mAP decline ratio is 0.95% and performance improvement is 1.99x.
+|Mask R-CNN R-50-FPN-int8      |[44 MB](model/MaskRCNN-12-int8.onnx) | [38 MB](model/MaskRCNN-12-int8.tar.gz) |1.9 |12 |mAP of 0.3314 |
+|Mask R-CNN R-50-FPN-qdq      |[44 MB](model/MaskRCNN-12-qdq.onnx) | [30 MB](model/MaskRCNN-12-qdq.tar.gz) |1.9 |12 |mAP of 0.3328 |
+> Compared with the Mask R-CNN R-50-FPN-fp32, Mask R-CNN R-50-FPN-int8's mAP decline is 0.0058 and performance improvement is 1.99x.
 >
 > Note the performance depends on the test hardware. 
 > 

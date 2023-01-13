@@ -16,9 +16,9 @@ The SSD-MobilenetV1 is suitable for mobile and embedded vision applications.
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |SSD-MobilenetV1       | [29.3 MB](model/ssd_mobilenet_v1_10.onnx)  |[27.9 MB](model/ssd_mobilenet_v1_10.tar.gz) |1.7.0 | 10 | |
 |SSD-MobilenetV1-12       | [28.1 MB](model/ssd_mobilenet_v1_12.onnx)  |[24.3 MB](model/ssd_mobilenet_v1_12.tar.gz) |1.9.0 | 12 |0.2303 |
-|SSD-MobilenetV1-12-int8       | [8.5 MB](model/ssd_mobilenet_v1_12-int8.onnx)  |[5.5 MB](model/ssd_mobilenet_v1_12-int8.tar.gz) |1.9.0 | 12 |0.2285 |
-|SSD-MobilenetV1-12-qdq       | [10 MB](model/ssd_mobilenet_v1_13_qdq.onnx)  |[6 MB](model/ssd_mobilenet_v1_13_qdq.tar.gz) |1.9.0 | 13 |0.2285 |
-> Compared with the fp32 SSD-MobilenetV1-12, int8 SSD-MobilenetV1-12's mAP drop ratio is 0.78% and performance improvement is 1.15x.
+|SSD-MobilenetV1-12-int8       | [9.2 MB](model/ssd_mobilenet_v1_12-int8.onnx)  |[5.6 MB](model/ssd_mobilenet_v1_12-int8.tar.gz) |1.9.0 | 12 |0.2297 |
+|SSD-MobilenetV1-12-qdq       | [9.6 MB](model/ssd_mobilenet_v1_13-qdq.onnx)  |[5.7 MB](model/ssd_mobilenet_v1_13-qdq.tar.gz) |1.9.0 | 13 |0.2297 |
+> Compared with the fp32 SSD-MobilenetV1-12, int8 SSD-MobilenetV1-12's mAP drop ratio is 0.26% and performance improvement is 1.23x.
 >
 > **Note** 
 >

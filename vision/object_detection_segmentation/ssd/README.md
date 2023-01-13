@@ -11,10 +11,10 @@ This model is a real-time neural network for object detection that detects 80 di
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |SSD       |[80.4 MB](model/ssd-10.onnx) | [78.5 MB](model/ssd-10.tar.gz) |1.5 |10 |mAP of 0.195 |
 |SSD       |[77.6 MB](model/ssd-12.onnx) | [86.4 MB](model/ssd-12.tar.gz) |1.9 |12 |mAP of 0.1898 |
-|SSD-int8|[19.5 MB](model/ssd-12-int8.onnx) | [30.3 MB](model/ssd-12-int8.tar.gz) |1.9 |12 |mAP of 0.1882 |
+|SSD-int8|[20 MB](model/ssd-12-int8.onnx) | [31 MB](model/ssd-12-int8.tar.gz) |1.9 |12 |mAP of 0.1892 |
 |SSD-qdq|[20 MB](model/ssd-12-qdq.onnx) | [26 MB](model/ssd-12-qdq.tar.gz) |1.9 |12 |mAP of 0.1863 |
 
-> Compared with the fp32 SSD, SSD-int8's mAP drop ratio is 0.84% and performance improvement is 1.53x.
+> Compared with the fp32 SSD, SSD-int8's mAP drop ratio is 0.32% and performance improvement is 3.49x.
 >
 > **Note**
 >

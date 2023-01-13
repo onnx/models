@@ -11,9 +11,9 @@ This model is a real-time neural network for object detection that detects 80 di
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |Faster R-CNN R-50-FPN      |[167.3 MB](model/FasterRCNN-10.onnx) |[158.0 MB](model/FasterRCNN-10.tar.gz) |1.5 |10 |mAP of 0.35 |
 |Faster R-CNN R-50-FPN-fp32      |[168.5 MB](model/FasterRCNN-12.onnx) |[156.2 MB](model/FasterRCNN-12.tar.gz) |1.9 |12 |mAP of 0.3437 |
-|Faster R-CNN R-50-FPN-int8      |[42.6 MB](model/FasterRCNN-12-int8.onnx) |[36.2 MB](model/FasterRCNN-12-int8.tar.gz) |1.9 |12 |mAP of 0.3399 |
-|Faster R-CNN R-50-FPN-qdq      |[43 MB](model/FasterRCNN-12-qdq.onnx) |[29 MB](model/FasterRCNN-12-qdq.tar.gz) |1.9 |12 |mAP of 0.3397 |
-> Compared with the fp32 FasterRCNN-12, int8 FasterRCNN-12's mAP decline ratio is 1.11% and performance improvement is 1.43x.
+|Faster R-CNN R-50-FPN-int8      |[42.6 MB](model/FasterRCNN-12-int8.onnx) |[36.2 MB](model/FasterRCNN-12-int8.tar.gz) |1.9 |12 |mAP of 0.3409 |
+|Faster R-CNN R-50-FPN-qdq      |[43 MB](model/FasterRCNN-12-qdq.onnx) |[29 MB](model/FasterRCNN-12-qdq.tar.gz) |1.9 |12 |mAP of 0.3390 |
+> Compared with the fp32 FasterRCNN-12, int8 FasterRCNN-12's mAP decline ratio is 0.81% and performance improvement is 1.43x.
 >
 > Note the performance depends on the test hardware. 
 > 
