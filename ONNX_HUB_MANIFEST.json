@@ -3033,6 +3033,24 @@
         }
     },
     {
+        "model": "LeafSnap30",
+        "model_path": "vision/classification/leafsnap/model/leafsnap_model.onnx",
+        "onnx_version": "1.9.0",
+        "opset_version": 11,
+        "metadata": {
+            "model_sha": "8cefd92fee4b5e7f3bb94843c8504bb83a84bed38a28e808fe79028c8078c156",
+            "model_bytes": 1561730,
+            "tags": [
+                "vision",
+                "classification",
+                "leafsnap30"
+            ],
+            "model_with_data_path": "vision/classification/leafsnap30/model/leafsnap30.tar.gz",
+            "model_with_data_sha": "265af6bdff36afdc83e51efbafcb589d604f96bf75ce23eb02cb3754313b672b",
+            "model_with_data_bytes": 1631211
+        }
+    },
+    {
         "model": "MNIST",
         "model_path": "vision/classification/mnist/model/mnist-1.onnx",
         "onnx_version": "1.0",
