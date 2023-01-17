@@ -31,6 +31,7 @@ ONNX ShuffleNet-v2 ==> Quantized ONNX ShuffleNet-v2
 |ShuffleNet-v2 |[9.2MB](model/shufflenet-v2-10.onnx) |  [8.7MB](model/shufflenet-v2-10.tar.gz) | 1.6 | 10 | 30.64 | 11.68|
 |ShuffleNet-v2-fp32 |[8.79MB](model/shufflenet-v2-12.onnx) |[8.69MB](model/shufflenet-v2-12.tar.gz) |1.9 |12 |33.65 |13.43|
 |ShuffleNet-v2-int8 |[2.28MB](model/shufflenet-v2-12-int8.onnx) |[2.37MB](model/shufflenet-v2-12-int8.tar.gz) |1.9 |12 |33.85 |13.66 |
+|ShuffleNet-v2-qdq |[2.30MB](model/shufflenet-v2-12-qdq.onnx) |[2.68MB](model/shufflenet-v2-12-qdq.tar.gz) |1.12 |12 |33.88 | 19.94 |
 > Compared with the fp32 ShuffleNet-v2, int8 ShuffleNet-v2's Top-1 error rising ratio is 0.59%, Top-5 error rising ratio is 1.71% and performance improvement is 1.62x.
 >
 > Note the performance depends on the test hardware. 
@@ -79,7 +80,7 @@ Details of performance on COCO object detection are provided in [this paper](htt
 <hr>
 
 ## Quantization
-ShuffleNet-v2-int8 is obtained by quantizing ShuffleNet-v2-fp32 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/shufflenet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+ShuffleNet-v2-int8 and ShuffleNet-v2-int8 are obtained by quantizing ShuffleNet-v2-fp32 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/shufflenet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 

@@ -11,6 +11,7 @@
 |GoogleNet| [28 MB](model/googlenet-9.onnx)  |  [31 MB](model/googlenet-9.tar.gz) |  1.4 | 9| | |
 |GoogleNet| [27 MB](model/googlenet-12.onnx)  |  [25 MB](model/googlenet-12.tar.gz) |  1.9 | 12|67.78|88.34|
 |GoogleNet-int8| [7 MB](model/googlenet-12-int8.onnx)  |  [5 MB](model/googlenet-12-int8.tar.gz) |  1.9 | 12|67.73|88.32|
+|GoogleNet-qdq | [7 MB](model/googlenet-12-qdq.onnx) | [5 MB](model/googlenet-12-qdq.tar.gz) | 1.12 | 12 | 67.73 | 88.31 |
 > Compared with the fp32 GoogleNet, int8 GoogleNet's Top-1 accuracy drop ratio is 0.07%, Top-5 accuracy drop ratio is 0.02% and performance improvement is 1.27x.
 >
 > **Note** 
@@ -103,7 +104,7 @@ just the center crop. (Using the average of 10 crops,
 (4 + 1 center) * 2 mirror, should obtain a bit higher accuracy.)
 
 ## Quantization
-GoogleNet-int8 is obtained by quantizing fp32 GoogleNet model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/googlenet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+GoogleNet-int8 and GoogleNet-qdq are obtained by quantizing fp32 GoogleNet model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/googlenet/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
 onnx: 1.9.0 

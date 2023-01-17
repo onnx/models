@@ -1132,6 +1132,48 @@
         }
     },
     {
+        "model": "AlexNet-qdq",
+        "model_path": "vision/classification/alexnet/model/bvlcalexnet-12-qdq.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "c103c0f7b8f9d8d64b400e0899d5934d2a13d1f08368ba1907285aa0691f4cbb",
+            "model_bytes": 61009072,
+            "tags": [
+                "vision",
+                "classification",
+                "alexnet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "prob_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/alexnet/model/bvlcalexnet-12-qdq.tar.gz",
+            "model_with_data_sha": "930eeb3f4d25a20e59fa21919f95edbb7a4b3f31b51a83f62c9b6627906156b9",
+            "model_with_data_bytes": 45565042
+        }
+    },
+    {
         "model": "AlexNet",
         "model_path": "vision/classification/alexnet/model/bvlcalexnet-12.onnx",
         "onnx_version": "1.9",
@@ -1419,6 +1461,48 @@
             "model_with_data_path": "vision/classification/caffenet/model/caffenet-12-int8.tar.gz",
             "model_with_data_sha": "24deead9c27254631332923c021c6b9cb429ef19b3367a0cc1cb171b9375c0e5",
             "model_with_data_bytes": 40718510
+        }
+    },
+    {
+        "model": "CaffeNet-qdq",
+        "model_path": "vision/classification/caffenet/model/caffenet-12-qdq.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "ff1170e8123aa7b8d652bc43a9e9864ee6ba050653470f34dada9b6ad0731b40",
+            "model_bytes": 61009797,
+            "tags": [
+                "vision",
+                "classification",
+                "caffenet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "prob_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/caffenet/model/caffenet-12-qdq.tar.gz",
+            "model_with_data_sha": "7d78cb5357b90e71f38c133715e67237c5156e21be0aa6e397c9654557364a6d",
+            "model_with_data_bytes": 45685092
         }
     },
     {
@@ -2186,6 +2270,49 @@
         }
     },
     {
+        "model": "GoogleNet-qdq",
+        "model_path": "vision/classification/inception_and_googlenet/googlenet/model/googlenet-12-qdq.onnx",
+        "onnx_version": "1.12",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "f764ae1ed52e5fca319a43a19e9526d2f028e7f10b9d17a8eefcb098cd90d36d",
+            "model_bytes": 7135204,
+            "tags": [
+                "vision",
+                "classification",
+                "inception and googlenet",
+                "googlenet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "prob_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/inception_and_googlenet/googlenet/model/googlenet-12-qdq.tar.gz",
+            "model_with_data_sha": "5587255e94438edd7c0017f5355178546b150deea05ed5e59109a4d4ae9aa4b3",
+            "model_with_data_bytes": 5562451
+        }
+    },
+    {
         "model": "GoogleNet",
         "model_path": "vision/classification/inception_and_googlenet/googlenet/model/googlenet-12.onnx",
         "onnx_version": "1.9",
@@ -2562,6 +2689,49 @@
             "model_with_data_path": "vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12-int8.tar.gz",
             "model_with_data_sha": "bc3d78134d9777d3e3a3320523834beb2ba7bdd1c5e017cba5a8d268691afbc6",
             "model_with_data_bytes": 9474526
+        }
+    },
+    {
+        "model": "Inception-1-qdq",
+        "model_path": "vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12-qdq.onnx",
+        "onnx_version": "1.12",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "c6a8e07c53ea417a0001ebba885a3a623f1c3c51fac105485aca638e2f3de25d",
+            "model_bytes": 7135424,
+            "tags": [
+                "vision",
+                "classification",
+                "inception and googlenet",
+                "inception v1"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "prob_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12-qdq.tar.gz",
+            "model_with_data_sha": "c981fd944a125d3626cb79720c7f0a57309da5a24994c0378e2657fdca87a869",
+            "model_with_data_bytes": 5559367
         }
     },
     {
@@ -4839,6 +5009,48 @@
         }
     },
     {
+        "model": "ShuffleNet-v2-qdq",
+        "model_path": "vision/classification/shufflenet/model/shufflenet-v2-12-qdq.onnx",
+        "onnx_version": "1.12",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "7c536d02e2f6af9569e5f3c7a4d8282060072119524c93c8da71e63876b4722b",
+            "model_bytes": 2415805,
+            "tags": [
+                "vision",
+                "classification",
+                "shufflenet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "output",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/shufflenet/model/shufflenet-v2-12-qdq.tar.gz",
+            "model_with_data_sha": "071594e233cedf5688501c9b67cad30c4babb1b46771fb87afe7fd1beb1cc008",
+            "model_with_data_bytes": 2245304
+        }
+    },
+    {
         "model": "ShuffleNet-v2-fp32",
         "model_path": "vision/classification/shufflenet/model/shufflenet-v2-12.onnx",
         "onnx_version": "1.9",
@@ -4990,6 +5202,50 @@
             "model_with_data_path": "vision/classification/squeezenet/model/squeezenet1.0-12.tar.gz",
             "model_with_data_sha": "8a2dcc5a8f2b8c314b96b6484703a72882c796faa4eaf0de1b913fc0765cb917",
             "model_with_data_bytes": 5151210
+        }
+    },
+    {
+        "model": "SqueezeNet 1.0-qdq",
+        "model_path": "vision/classification/squeezenet/model/squeezenet1.0-13-qdq.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 13,
+        "metadata": {
+            "model_sha": "4a567dd7542ef440890d57268fabf47211174c593d7a1837bd7f16a1067169e7",
+            "model_bytes": 1345213,
+            "tags": [
+                "vision",
+                "classification",
+                "squeezenet"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "softmaxout_1",
+                        "shape": [
+                            1,
+                            1000,
+                            1,
+                            1
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/squeezenet/model/squeezenet1.0-13-qdq.tar.gz",
+            "model_with_data_sha": "d3a84101535d52ecf31503ff1645f170c7b156b6bc53f1492caec485b7c023a7",
+            "model_with_data_bytes": 1565787
         }
     },
     {
