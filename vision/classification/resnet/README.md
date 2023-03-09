@@ -217,6 +217,7 @@ In European Conference on Computer Vision, pp. 630-645. Springer, Cham, 2016.
 * [airMeng](https://github.com/airMeng) (Intel)
 * [ftian1](https://github.com/ftian1) (Intel)
 * [hshen14](https://github.com/hshen14) (Intel)
+* [jantonguirao](https://github.com/jantonguirao) (NVIDIA)
 
 ## License
 Apache 2.0

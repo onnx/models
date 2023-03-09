@@ -124,7 +124,11 @@ def get_file_info(row, field, target_models=None):
 def get_model_tags(row):
     source_dir = split(row["source_file"])[0]
     raw_tags = source_dir.split("/")
-    return [tag.replace("_", " ") for tag in raw_tags]
+    tags = [tag.replace("_", " ") for tag in raw_tags]
+    model_file = row['model_path'].contents[0].attrs["href"]
+    if 'preproc' in model_file.split("/"):
+        tags.append('preprocessing')
+    return tags
 
 
 def get_model_ports(source_file, metadata, model_name):

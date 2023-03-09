@@ -4694,7 +4694,8 @@
             "tags": [
                 "vision",
                 "classification",
-                "resnet"
+                "resnet",
+                "preprocessing"
             ],
             "io_ports": {
                 "inputs": [
@@ -4718,8 +4719,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/resnet/preproc/resnet-preproc-v1-18.tar.gz",
-            "model_with_data_sha": "7aaa2128aed2aaffde4b58d5f0049cc052aab940b560229116528950879b3c71",
-            "model_with_data_bytes": 883512
+            "model_with_data_sha": "216b89c1676c8a5a2dfc0ee1736b179b0777f9ba845ee6dd955d4ff684f29a3c",
+            "model_with_data_bytes": 883999
         }
     },
     {
