@@ -37,8 +37,8 @@ ResNet v2 uses pre-activation function whereas ResNet v1  uses post-activation f
 |ResNet50-qdq | [24.6 MB](model/resnet50-v1-12-qdq.onnx) | [16.8 MB](model/resnet50-v1-12-qdq.tar.gz) | 1.10.0 | 12 |74.43 | |
 > Compared with the fp32 ResNet50, int8 ResNet50's Top-1 accuracy drop ratio is 0.27%, Top-5 accuracy drop ratio is 0.01% and performance improvement is 1.82x.
 >
-> Note the performance depends on the test hardware. 
-> 
+> Note the performance depends on the test hardware.
+>
 > Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
 |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
@@ -68,24 +68,88 @@ All pre-trained models expect input images normalized in the same way, i.e. mini
 The inference was done using jpeg image.
 
 ### Preprocessing
-The images have to be loaded in to a range of [0, 1] and then normalized using mean = [0.485, 0.456, 0.406] and std = [0.229, 0.224, 0.225]. The transformation should preferably happen at preprocessing.
 
-The following code shows how to preprocess a NCHW tensor:
+The image needs to be preprocessed before fed to the network.
+The first step is to extract a 224x224 crop from the center of the image. For this, the image is first scaled to a minimum size of 256x256, while keeping aspect ratio. That is, the shortest side of the image is resized to 256 and the other side is scaled accordingly to maintain the original aspect ratio. After that, the image is normalized with mean = 255*[0.485, 0.456, 0.406] and std = 255*[0.229, 0.224, 0.225]. Last step is to transpose it from HWC to CHW layout.
 
+The described preprocessing steps can be represented with an ONNX model:
 ```python
-import numpy
+import onnx
+from onnx import parser
+from onnx import checker
 
-def preprocess(img_data):
-    mean_vec = np.array([0.485, 0.456, 0.406])
-    stddev_vec = np.array([0.229, 0.224, 0.225])
-    norm_img_data = np.zeros(img_data.shape).astype('float32')
-    for i in range(img_data.shape[0]):
-         # for each pixel in each channel, divide the value by 255 to get value between [0, 1] and then normalize
-        norm_img_data[i,:,:] = (img_data[i,:,:]/255 - mean_vec[i]) / stddev_vec[i]
-    return norm_img_data
+resnet_preproc = parser.parse_model('''
+<
+  ir_version: 8,
+  opset_import: [ "" : 18, "local" : 1 ],
+  metadata_props: [ "preprocessing_fn" : "local.preprocess"]
+>
+resnet_preproc_g (seq(uint8[?, ?, 3]) images) => (float[B, 3, 224, 224] preproc_data)
+{
+    preproc_data = local.preprocess(images)
+}
+
+<
+  opset_import: [ "" : 18 ],
+  domain: "local",
+  doc_string: "Preprocessing function."
+>
+preprocess (input_batch) => (output_tensor) {
+    tmp_seq = SequenceMap <
+        body = sample_preprocessing(uint8[?, ?, 3] sample_in) => (float[3, 224, 224] sample_out) {
+            target_size = Constant <value = int64[2] {256, 256}> ()
+            image_resized = Resize <mode = \"linear\",
+                                    antialias = 1,
+                                    axes = [0, 1],
+                                    keep_aspect_ratio_policy = \"not_smaller\"> (sample_in, , , target_size)
+
+            target_crop = Constant <value = int64[2] {224, 224}> ()
+            image_sliced = CenterCropPad <axes = [0, 1]> (image_resized, target_crop)
+
+            kMean = Constant <value = float[3] {123.675, 116.28, 103.53}> ()
+            kStddev = Constant <value = float[3] {58.395, 57.12, 57.375}> ()
+            im_norm_tmp1 = Cast <to = 1> (image_sliced)
+            im_norm_tmp2 = Sub (im_norm_tmp1, kMean)
+            im_norm = Div (im_norm_tmp2, kStddev)
+
+            sample_out = Transpose <perm = [2, 0, 1]> (im_norm)
+        }
+    > (input_batch)
+    output_tensor = ConcatFromSequence < axis = 0, new_axis = 1 >(tmp_seq)
+}
+
+''')
+checker.check_model(resnet_preproc)
 ```
 
-Check [imagenet_preprocess.py](../imagenet_preprocess.py) for additional sample code.
+* ResNet preprocessing:
+
+|Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
+|-------------|:--------------|:--------------|:--------------|:--------------|
+|ResNet-preproc| [4.0KB](preproc/resnet-preproc-v1-18.onnx)  |  [864 KB](preproc/resnet-preproc-v1-18.tar.gz) |  1.13.1 | 18|
+
+
+To prepend the data preprocessing steps to the model, we can use the ONNX compose utils:
+```python
+
+import onnx
+from onnx import version_converter
+from onnx import checker
+
+network_model = onnx.version_converter.convert_version(network_model, 18)
+network_model.ir_version = 8
+checker.check_model(network_model)
+
+model_w_preproc = onnx.compose.merge_models(
+    preprocessing_model, network_model,
+    io_map=[('preproc_data', 'data')]
+)
+checker.check_model(model_w_preproc)
+
+```
+
+
+Check [imagenet_preprocess.py](../imagenet_preprocess.py) for some reference Python and MxNet implementations.
 
 ### Output
 The model outputs image scores for each of the [1000 classes of ImageNet](../synset.txt).
@@ -113,7 +177,7 @@ We used MXNet as framework with gluon APIs to perform validation. Use the notebo
 ResNet50-int8 and ResNet50-qdq are obtained by quantizing ResNet50-fp32 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/resnet50/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
 
 ### Environment
-onnx: 1.7.0 
+onnx: 1.7.0
 onnxruntime: 1.6.0+
 
 ### Prepare model
@@ -153,6 +217,7 @@ In European Conference on Computer Vision, pp. 630-645. Springer, Cham, 2016.
 * [airMeng](https://github.com/airMeng) (Intel)
 * [ftian1](https://github.com/ftian1) (Intel)
 * [hshen14](https://github.com/hshen14) (Intel)
+* [jantonguirao](https://github.com/jantonguirao) (NVIDIA)
 
 ## License
 Apache 2.0

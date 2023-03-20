@@ -157,7 +157,7 @@ def create_test_dir(
     save_data("output", name_output_map, model_outputs)
 
 
-def read_test_dir(dir_name):
+def read_test_dir(dir_name, input_types, output_types):
     """
     Read the input and output .pb files from the provided directory.
     Input files should have a prefix of 'input_'
@@ -169,15 +169,22 @@ def read_test_dir(dir_name):
 
     inputs = {}
     outputs = {}
+
     input_files = glob.glob(os.path.join(dir_name, "input_*.pb"))
     output_files = glob.glob(os.path.join(dir_name, "output_*.pb"))
 
-    for i in input_files:
-        name, data = onnx_test_data_utils.read_tensorproto_pb_file(i)
+    for i, filename in enumerate(input_files):
+        if 'seq' in input_types[i]:
+            name, data = onnx_test_data_utils.read_sequenceproto_pb_file(filename)
+        else:
+            name, data = onnx_test_data_utils.read_tensorproto_pb_file(filename)
         inputs[name] = data
 
-    for o in output_files:
-        name, data = onnx_test_data_utils.read_tensorproto_pb_file(o)
+    for i, filename in enumerate(output_files):
+        if 'seq' in output_files[i]:
+            name, data = onnx_test_data_utils.read_sequenceproto_pb_file(filename)
+        else:
+            name, data = onnx_test_data_utils.read_tensorproto_pb_file(filename)
         outputs[name] = data
 
     return inputs, outputs
@@ -217,12 +224,14 @@ def run_test_dir(model_or_dir):
     test_dirs = [d for d in glob.glob(os.path.join(model_dir, "test*")) if os.path.isdir(d)]
     if not test_dirs:
         raise ValueError("No directories with name starting with 'test' were found in {}.".format(model_dir))
-
     sess = ort.InferenceSession(model_path)
+
+    input_types = [inp.type for inp in sess.get_inputs()]
+    output_types = [out.type for out in sess.get_outputs()]
 
     for d in test_dirs:
         print(d)
-        inputs, expected_outputs = read_test_dir(d)
+        inputs, expected_outputs = read_test_dir(d, input_types, output_types)
 
         if expected_outputs:
             output_names = list(expected_outputs.keys())
