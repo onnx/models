@@ -11,14 +11,22 @@ import sys
 import numpy as np
 import onnx
 from onnx import numpy_helper
+from onnx.onnx_data_pb2 import SequenceProto
 
 
 def read_tensorproto_pb_file(filename):
     """Return tuple of tensor name and numpy.ndarray of the data from a pb file containing a TensorProto."""
-
     tensor = onnx.load_tensor(filename)
     np_array = numpy_helper.to_array(tensor)
     return tensor.name, np_array
+
+def read_sequenceproto_pb_file(filename):
+    """Return tuple of sequence name and list of numpy.ndarray of the data from a pb file containing a SequenceProto."""
+    seq = SequenceProto()
+    with open(filename, 'rb') as f:
+        seq.ParseFromString(f.read())
+    list_of_arrays = numpy_helper.to_list(seq)
+    return seq.name, list_of_arrays
 
 
 def dump_tensorproto_pb_file(filename):

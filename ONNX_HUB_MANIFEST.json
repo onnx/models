@@ -4702,6 +4702,46 @@
         }
     },
     {
+        "model": "ResNet-preproc",
+        "model_path": "vision/classification/resnet/preproc/resnet-preproc-v1-18.onnx",
+        "onnx_version": "1.13.1",
+        "opset_version": 18,
+        "metadata": {
+            "model_sha": "9cda24af90b4cd2ced4167fa36a41956ea0ce5e55c6ae475614a097cb89762c7",
+            "model_bytes": 1129,
+            "tags": [
+                "vision",
+                "classification",
+                "resnet",
+                "preprocessing"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "images",
+                        "shape": [],
+                        "type": "seq(tensor(uint8))"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "preproc_data",
+                        "shape": [
+                            "B",
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/resnet/preproc/resnet-preproc-v1-18.tar.gz",
+            "model_with_data_sha": "216b89c1676c8a5a2dfc0ee1736b179b0777f9ba845ee6dd955d4ff684f29a3c",
+            "model_with_data_bytes": 883999
+        }
+    },
+    {
         "model": "ShuffleNet-v1",
         "model_path": "vision/classification/shufflenet/model/shufflenet-3.onnx",
         "onnx_version": "1.1",
