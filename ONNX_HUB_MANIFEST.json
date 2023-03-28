@@ -842,6 +842,48 @@
         }
     },
     {
+        "model": "LResNet100E-IR-int8",
+        "model_path": "vision/body_analysis/arcface/model/arcfaceresnet100-11-int8.onnx",
+        "onnx_version": "1.13.1",
+        "opset_version": 11,
+        "metadata": {
+            "model_sha": "0d017cee05ec0456a296386cb5a3cef6647a871e40357ce0fbb10b37ca6250e1",
+            "model_bytes": 65707645,
+            "tags": [
+                "vision",
+                "body analysis",
+                "arcface"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data",
+                        "shape": [
+                            1,
+                            3,
+                            112,
+                            112
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "fc1",
+                        "shape": [
+                            1,
+                            512
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/body_analysis/arcface/model/arcfaceresnet100-11-int8.tar.gz",
+            "model_with_data_sha": "29d574ad7d6d2b0643c7630f06f603ff799429dbaa214daad978f140b7c2cc8b",
+            "model_with_data_bytes": 47939717
+        }
+    },
+    {
         "model": "LResNet100E-IR",
         "model_path": "vision/body_analysis/arcface/model/arcfaceresnet100-8.onnx",
         "onnx_version": "1.3",
