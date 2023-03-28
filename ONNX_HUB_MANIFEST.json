@@ -6558,8 +6558,8 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12-int8.tar.gz",
-            "model_with_data_sha": "001126959be29eda236ed5bf74389163cb3d0a2dd5671e8cadf447c12c159146",
-            "model_with_data_bytes": 37956924
+            "model_with_data_sha": "9edf754e3e4e6e78aed9a9d5690299edeba27b17d4dd43635a4fbd4c0e747be0",
+            "model_with_data_bytes": 38497565
         }
     },
     {
@@ -6613,8 +6613,8 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12-qdq.tar.gz",
-            "model_with_data_sha": "558cfd61e4eba3f058fc68e5de34a6b9bcb1fb77a303e435190c1751e4d28d30",
-            "model_with_data_bytes": 29862972
+            "model_with_data_sha": "90673a5a499343863af4c3f4efbed7e35c7a6c587dc37f2d5d2bf0bc77b6865a",
+            "model_with_data_bytes": 29844855
         }
     },
     {
@@ -7014,8 +7014,8 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12-int8.tar.gz",
-            "model_with_data_sha": "f1626b0a6ce37abe34e2a95da15853b49887692e7972576b2bc933cbc99f9cb9",
-            "model_with_data_bytes": 38895384
+            "model_with_data_sha": "0b16a7859d04601a3633a22c07797c9975b877ff384af23d7d9698467d57d333",
+            "model_with_data_bytes": 39438079
         }
     },
     {
@@ -7079,8 +7079,8 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12-qdq.tar.gz",
-            "model_with_data_sha": "92378aadeb8b8e02c7eb1a144b40338602ca7a6746e5b87a9428d3d1071af948",
-            "model_with_data_bytes": 30896929
+            "model_with_data_sha": "a2b03fc6dcec9bd469ac57dab47ecca97e5b9a28d332435b6820a96925ab78b1",
+            "model_with_data_bytes": 30880086
         }
     },
     {
@@ -7410,8 +7410,8 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_12-int8.tar.gz",
-            "model_with_data_sha": "1c17aa7e1180d4d7cdf68b53a9d74b9a3a7a86fa4401dd52b616eabcda5294ac",
-            "model_with_data_bytes": 5805039
+            "model_with_data_sha": "6c77eb8d85247fceb53bf5da5755023e6c84d8c961fc722cf149f86943f5aea4",
+            "model_with_data_bytes": 5804599
         }
     },
     {
@@ -7542,8 +7542,8 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_13-qdq.tar.gz",
-            "model_with_data_sha": "a07ce9b0397e734c3cc97ef79e388243f9cf784bf23ca5c898af7db426ecf04b",
-            "model_with_data_bytes": 5906867
+            "model_with_data_sha": "4080066b273a5171b8987a1ac96c6ce6efb935d7c15509089b1934aa63cdd17b",
+            "model_with_data_bytes": 5907922
         }
     },
     {
@@ -7660,8 +7660,8 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/ssd/model/ssd-12-int8.tar.gz",
-            "model_with_data_sha": "7267c875aee2ea29cd9235950d5c4456d30d0da0786cc3d0482db8754a861594",
-            "model_with_data_bytes": 31818225
+            "model_with_data_sha": "723c25c6040e1d5f7fd7ce736e236b09d6881f6f2cc6e7a79a999f3e69f86571",
+            "model_with_data_bytes": 31816976
         }
     },
     {
@@ -7719,8 +7719,8 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/ssd/model/ssd-12-qdq.tar.gz",
-            "model_with_data_sha": "19b737c1b09561a117353e5c28cd32dadb3808827a659704799a8379c4e5b154",
-            "model_with_data_bytes": 26977412
+            "model_with_data_sha": "2cd791e3ee5f472a208d292ef766f6b4f04c71463dcf290f9393dcce8b81d6d6",
+            "model_with_data_bytes": 26976158
         }
     },
     {
@@ -8115,8 +8115,8 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/yolov3/model/yolov3-12-int8.tar.gz",
-            "model_with_data_sha": "d60643a1b28c929f0f513dfb3e0f5b7a9fa3566b85a8d04836a93d3d5be1969a",
-            "model_with_data_bytes": 55161681
+            "model_with_data_sha": "1cbd40e1489553cd5fb03a0eb3059af9f8f0262a963f023dce0ecf3b9dcf90c6",
+            "model_with_data_bytes": 58205845
         }
     },
     {
