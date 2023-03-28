@@ -5622,8 +5622,8 @@
                 ]
             },
             "model_with_data_path": "vision/classification/vgg/model/vgg16-12-qdq.tar.gz",
-            "model_with_data_sha": "980c90a7990c708fe2d06fcb790da7f84beff6703a90a84d0929c9ad13c38a0d",
-            "model_with_data_bytes": 103625956
+            "model_with_data_sha": "ba8f1a789554deab15d28a3c4e6a1508595c326d36e5d744e8d5acf2729f7621",
+            "model_with_data_bytes": 103626016
         }
     },
     {
@@ -6913,8 +6913,8 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/fcn/model/fcn-resnet50-12-qdq.tar.gz",
-            "model_with_data_sha": "e15959fb4ed575df9aba2f3bcba4e1e0ce407d147f4fe903f628c10a1db331ac",
-            "model_with_data_bytes": 21947915
+            "model_with_data_sha": "0feb90c5e17f1fac9c21e17bd536e43aeb56c04adcf87d5eb66acc1ef57fbafe",
+            "model_with_data_bytes": 21876642
         }
     },
     {
