@@ -11,8 +11,8 @@ This model is a neural network for real-time object detection that detects 80 di
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |YOLOv3       |[237 MB](model/yolov3-10.onnx) |[222 MB](model/yolov3-10.tar.gz)|1.5 |10 |mAP of 0.553 |
 |YOLOv3-12    |[237 MB](model/yolov3-12.onnx) |[222 MB](model/yolov3-12.tar.gz)|1.9 |12 |mAP of 0.2874 |
-|YOLOv3-12-int8 |[61 MB](model/yolov3-12-int8.onnx) |[47 MB](model/yolov3-12-int8.tar.gz)|1.9 |12 |mAP of 0.2688 |
-> Compared with the YOLOv3-12, YOLOv3-12-int8's mAP decline is 0.0186 and performance improvement is 2.25x.
+|YOLOv3-12-int8 |[60 MB](model/yolov3-12-int8.onnx) |[53 MB](model/yolov3-12-int8.tar.gz)|1.9 |12 |mAP of 0.2693 |
+> Compared with the YOLOv3-12, YOLOv3-12-int8's mAP decline is 0.0181 and performance improvement is 2.19x.
 >
 > Note the performance depends on the test hardware. 
 > 
