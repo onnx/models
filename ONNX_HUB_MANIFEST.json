@@ -6553,8 +6553,8 @@
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
-            "model_sha": "c6bb169f20bd4bf1c08212f2c8b2693a22a6343454f8115fd8c0fadd2a49922a",
-            "model_bytes": 44626453,
+            "model_sha": "95f67f5f6249f4804f1302367dd88cee32bf47713b9858cc6d8ba835548f9b8e",
+            "model_bytes": 44631113,
             "tags": [
                 "vision",
                 "object detection segmentation",
@@ -6598,8 +6598,63 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12-int8.tar.gz",
-            "model_with_data_sha": "d497a293e8486ec0a56f5276eb246b93280b7f31dc4e23a33db444d262384591",
-            "model_with_data_bytes": 38019008
+            "model_with_data_sha": "9edf754e3e4e6e78aed9a9d5690299edeba27b17d4dd43635a4fbd4c0e747be0",
+            "model_with_data_bytes": 38497565
+        }
+    },
+    {
+        "model": "Faster R-CNN R-50-FPN-qdq",
+        "model_path": "vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12-qdq.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "7b8b530b50b2fa9737625f2bbf454c439e9156c94d44e22602946d019f105f1c",
+            "model_bytes": 44525748,
+            "tags": [
+                "vision",
+                "object detection segmentation",
+                "faster-rcnn"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "image",
+                        "shape": [
+                            3,
+                            "height",
+                            "width"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "6379",
+                        "shape": [
+                            "nbox",
+                            4
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "6381",
+                        "shape": [
+                            "nbox"
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "6383",
+                        "shape": [
+                            "nbox"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12-qdq.tar.gz",
+            "model_with_data_sha": "90673a5a499343863af4c3f4efbed7e35c7a6c587dc37f2d5d2bf0bc77b6865a",
+            "model_with_data_bytes": 29844855
         }
     },
     {
@@ -6944,8 +6999,8 @@
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
-            "model_sha": "96388cfb596cbdb9a38dca16f1c22a1533843a030b094cdea3f1a2c90ef79156",
-            "model_bytes": 48137510,
+            "model_sha": "4409935e855719fd6cd986f7ec2a3de840d0bd9c9cf7a0cba84ce95377f5b476",
+            "model_bytes": 45769352,
             "tags": [
                 "vision",
                 "object detection segmentation",
@@ -6999,8 +7054,73 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12-int8.tar.gz",
-            "model_with_data_sha": "edd066f26976b565171ea60563b6ec21a46f5ef5dc64592a4a33503089812918",
-            "model_with_data_bytes": 35901397
+            "model_with_data_sha": "0b16a7859d04601a3633a22c07797c9975b877ff384af23d7d9698467d57d333",
+            "model_with_data_bytes": 39438079
+        }
+    },
+    {
+        "model": "Mask R-CNN R-50-FPN-qdq",
+        "model_path": "vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12-qdq.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "d6fe3a9f49c3009d745b388c09c06ec3b332d942ba456053411a1f1bff22af9c",
+            "model_bytes": 45676737,
+            "tags": [
+                "vision",
+                "object detection segmentation",
+                "mask-rcnn"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "image",
+                        "shape": [
+                            3,
+                            "height",
+                            "width"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "6568",
+                        "shape": [
+                            "nbox",
+                            4
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "6570",
+                        "shape": [
+                            "nbox"
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "6572",
+                        "shape": [
+                            "nbox"
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "6887",
+                        "shape": [
+                            "nbox",
+                            1,
+                            28,
+                            28
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12-qdq.tar.gz",
+            "model_with_data_sha": "a2b03fc6dcec9bd469ac57dab47ecca97e5b9a28d332435b6820a96925ab78b1",
+            "model_with_data_bytes": 30880086
         }
     },
     {
@@ -7274,8 +7394,8 @@
         "onnx_version": "1.9.0",
         "opset_version": 12,
         "metadata": {
-            "model_sha": "45af75d9ddb063744277887ee27a658f7759980f7c1a87e21b53a11e7ae59627",
-            "model_bytes": 8958931,
+            "model_sha": "2b79e6a7fb1ec6a33f332b9b10d82d9de4b7b49dcd26b5946921bb356895c954",
+            "model_bytes": 9540809,
             "tags": [
                 "vision",
                 "object detection segmentation",
@@ -7298,8 +7418,8 @@
                     {
                         "name": "detection_boxes",
                         "shape": [
-                            "unk__6581",
-                            "unk__6582",
+                            null,
+                            null,
                             4
                         ],
                         "type": "tensor(float)"
@@ -7307,31 +7427,31 @@
                     {
                         "name": "detection_classes",
                         "shape": [
-                            "unk__6583",
-                            "unk__6584"
+                            null,
+                            null
                         ],
                         "type": "tensor(float)"
                     },
                     {
                         "name": "detection_scores",
                         "shape": [
-                            "unk__6585",
-                            "unk__6586"
+                            null,
+                            null
                         ],
                         "type": "tensor(float)"
                     },
                     {
                         "name": "num_detections",
                         "shape": [
-                            "unk__6587"
+                            null
                         ],
                         "type": "tensor(float)"
                     }
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_12-int8.tar.gz",
-            "model_with_data_sha": "39a0e207a731374c6a186de474ce937f8c277a20f0b4fd04cf43db56fb6047f5",
-            "model_with_data_bytes": 5778852
+            "model_with_data_sha": "6c77eb8d85247fceb53bf5da5755023e6c84d8c961fc722cf149f86943f5aea4",
+            "model_with_data_bytes": 5804599
         }
     },
     {
@@ -7401,6 +7521,72 @@
         }
     },
     {
+        "model": "SSD-MobilenetV1-12-qdq",
+        "model_path": "vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_13-qdq.onnx",
+        "onnx_version": "1.9.0",
+        "opset_version": 13,
+        "metadata": {
+            "model_sha": "e5caee2a4bcd7ac7e3d929febaabf1cff9210717abbf56e452c0c496c60ada9a",
+            "model_bytes": 10010183,
+            "tags": [
+                "vision",
+                "object detection segmentation",
+                "ssd-mobilenetv1"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "inputs",
+                        "shape": [
+                            "unk__6578",
+                            "unk__6579",
+                            "unk__6580",
+                            3
+                        ],
+                        "type": "tensor(uint8)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "detection_boxes",
+                        "shape": [
+                            null,
+                            null,
+                            4
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "detection_classes",
+                        "shape": [
+                            null,
+                            null
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "detection_scores",
+                        "shape": [
+                            null,
+                            null
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "num_detections",
+                        "shape": [
+                            null
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_13-qdq.tar.gz",
+            "model_with_data_sha": "4080066b273a5171b8987a1ac96c6ce6efb935d7c15509089b1934aa63cdd17b",
+            "model_with_data_bytes": 5907922
+        }
+    },
+    {
         "model": "SSD",
         "model_path": "vision/object_detection_segmentation/ssd/model/ssd-10.onnx",
         "onnx_version": "1.5",
@@ -7465,8 +7651,8 @@
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
-            "model_sha": "687696a719e57bb86aabb5fe44b0262cabd5bf26bd82e2698eb14753647632c4",
-            "model_bytes": 20484185,
+            "model_sha": "56d2c03a8c74c03f704509ccfcd91763991c6e1b92f63da730fb2b3d07565453",
+            "model_bytes": 20485276,
             "tags": [
                 "vision",
                 "object detection segmentation",
@@ -7514,8 +7700,67 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/ssd/model/ssd-12-int8.tar.gz",
-            "model_with_data_sha": "b8984dd954eb1463a8714d9f25d87d1d7276479a78660ce5ec37196a81d31413",
-            "model_with_data_bytes": 31845320
+            "model_with_data_sha": "723c25c6040e1d5f7fd7ce736e236b09d6881f6f2cc6e7a79a999f3e69f86571",
+            "model_with_data_bytes": 31816976
+        }
+    },
+    {
+        "model": "SSD-qdq",
+        "model_path": "vision/object_detection_segmentation/ssd/model/ssd-12-qdq.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "fba599b77e556525844e4e1022a9f60969b0e9130baa03640539cb0b58f474a2",
+            "model_bytes": 20479614,
+            "tags": [
+                "vision",
+                "object detection segmentation",
+                "ssd"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "image",
+                        "shape": [
+                            1,
+                            3,
+                            1200,
+                            1200
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "bboxes",
+                        "shape": [
+                            1,
+                            "nbox",
+                            4
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "labels",
+                        "shape": [
+                            1,
+                            "nbox"
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "scores",
+                        "shape": [
+                            1,
+                            "nbox"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/ssd/model/ssd-12-qdq.tar.gz",
+            "model_with_data_sha": "2cd791e3ee5f472a208d292ef766f6b4f04c71463dcf290f9393dcce8b81d6d6",
+            "model_with_data_bytes": 26976158
         }
     },
     {
@@ -7852,8 +8097,8 @@
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
-            "model_sha": "d076e4866b0f4af3ba2b25df61652b0da2df6d01b760d35a0b032705115167e4",
-            "model_bytes": 63200797,
+            "model_sha": "9230c02fb8e578c6ecfeeb3f0d4fee1bf05bf9c11d4e0399550d6d57a9ad7b5c",
+            "model_bytes": 62912863,
             "tags": [
                 "vision",
                 "object detection segmentation",
@@ -7910,8 +8155,8 @@
                 ]
             },
             "model_with_data_path": "vision/object_detection_segmentation/yolov3/model/yolov3-12-int8.tar.gz",
-            "model_with_data_sha": "fbabc4a7c273bc23d546b836abdee878a93f1edae0e68b08399d4c3dd4466a66",
-            "model_with_data_bytes": 48719693
+            "model_with_data_sha": "1cbd40e1489553cd5fb03a0eb3059af9f8f0262a963f023dce0ecf3b9dcf90c6",
+            "model_with_data_bytes": 58205845
         }
     },
     {
