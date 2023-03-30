@@ -9,8 +9,8 @@ This model is a neural network for answering a query about a given context parag
 
  |Model        |Download  |Download (with sample test data)|ONNX version|Opset version|Accuracy |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-|BiDAF  |[41.5 MB](model/bidaf-9.onnx) |[37.3 MB](model/bidaf-9.tar.gz)|1.4 |ONNX 9, ONNX.ML 1 |EM of 68.1 in SQuAD v1.1 |
-|BiDAF-int8  |[12 MB](model/bidaf-11-int8.onnx) |[8.7 MB](model/bidaf-11-int8.tar.gz)|1.13.1 |ONNX 11, ONNX.ML 1 |EM of 65.93 in SQuAD v1.1 |
+|BiDAF  |[41.5 MB](model/bidaf-9.onnx) |[37.3 MB](model/bidaf-9.tar.gz)|1.4 | 9 |EM of 68.1 in SQuAD v1.1 |
+|BiDAF-int8  |[12 MB](model/bidaf-11-int8.onnx) |[8.7 MB](model/bidaf-11-int8.tar.gz)|1.13.1 |11 |EM of 65.93 in SQuAD v1.1 |
 > Compared with the fp32 BiDAF, int8 BiDAF accuracy drop ratio is 0.23% and performance improvement is 0.89x in SQuAD v1.1.
 >
 > The performance depends on the test hardware. Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
