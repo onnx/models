@@ -5815,6 +5815,48 @@
         }
     },
     {
+        "model": "VGG 16-qdq",
+        "model_path": "vision/classification/vgg/model/vgg16-12-qdq.onnx",
+        "onnx_version": "1.9.0",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "74ae0fa7e9e5b16782581bf17b5582080d1c06b69ed59410c7b1f190d9328bb1",
+            "model_bytes": 138424439,
+            "tags": [
+                "vision",
+                "classification",
+                "vgg"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "vgg0_dense2_fwd",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/vgg/model/vgg16-12-qdq.tar.gz",
+            "model_with_data_sha": "ba8f1a789554deab15d28a3c4e6a1508595c326d36e5d744e8d5acf2729f7621",
+            "model_with_data_bytes": 103626016
+        }
+    },
+    {
         "model": "VGG 16-fp32",
         "model_path": "vision/classification/vgg/model/vgg16-12.onnx",
         "onnx_version": "1.9.0",
@@ -6303,6 +6345,48 @@
             "model_with_data_path": "vision/classification/zfnet-512/model/zfnet512-12-int8.tar.gz",
             "model_with_data_sha": "786528fcfddff5da00cb87ac18fda53e84a1f3eaeaa80d3f57a1c8522b6fd3da",
             "model_with_data_bytes": 50270897
+        }
+    },
+    {
+        "model": "ZFNet-512-qdq",
+        "model_path": "vision/classification/zfnet-512/model/zfnet512-12-qdq.onnx",
+        "onnx_version": "1.9",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "d29f9fe228a3b1ea4333e69f156faee1075e610721b46730c7ebeeb9ede36727",
+            "model_bytes": 87288258,
+            "tags": [
+                "vision",
+                "classification",
+                "zfnet-512"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "gpu_0/data_0",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "gpu_0/softmax_1",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/classification/zfnet-512/model/zfnet512-12-qdq.tar.gz",
+            "model_with_data_sha": "b65d9e14088acabfd11efccc7601cad1697b5ab48fe6074c41f15c9f7b5fed8c",
+            "model_with_data_bytes": 58038148
         }
     },
     {
@@ -7062,6 +7146,60 @@
             "model_with_data_path": "vision/object_detection_segmentation/fcn/model/fcn-resnet50-12-int8.tar.gz",
             "model_with_data_sha": "8e81dd5cd5625e8c544f92429e36028596b88d0574ccf72c8ebc48174508cb29",
             "model_with_data_bytes": 30117697
+        }
+    },
+    {
+        "model": "FCN ResNet-50-qdq",
+        "model_path": "vision/object_detection_segmentation/fcn/model/fcn-resnet50-12-qdq.onnx",
+        "onnx_version": "1.8.0",
+        "opset_version": 12,
+        "metadata": {
+            "model_sha": "0a6aef19ef5401364aacb6883303401b4b7ccd3e3cd5eb60180b467dae88dcf5",
+            "model_bytes": 35440011,
+            "tags": [
+                "vision",
+                "object detection segmentation",
+                "fcn"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input",
+                        "shape": [
+                            "batch",
+                            3,
+                            "height",
+                            "width"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "out",
+                        "shape": [
+                            "batch",
+                            21,
+                            "height",
+                            "width"
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "aux",
+                        "shape": [
+                            "batch",
+                            21,
+                            "height",
+                            "width"
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/object_detection_segmentation/fcn/model/fcn-resnet50-12-qdq.tar.gz",
+            "model_with_data_sha": "0feb90c5e17f1fac9c21e17bd536e43aeb56c04adcf87d5eb66acc1ef57fbafe",
+            "model_with_data_bytes": 21876642
         }
     },
     {
