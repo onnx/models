@@ -14,6 +14,10 @@ The model LResNet100E-IR is an ArcFace model that uses ResNet100 as a backend wi
 |Model        |Download  |Download (with sample test data)|ONNX version|Opset version|LFW * accuracy (%)|CFP-FF * accuracy (%)|CFP-FP * accuracy (%)|AgeDB-30 * accuracy (%)|
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |LResNet100E-IR|    [248.9 MB](model/arcfaceresnet100-8.onnx)|[226.6 MB](model/arcfaceresnet100-8.tar.gz) | 1.3  |8|99.77     | 99.83  |  94.21     | 97.87|
+|LResNet100E-IR-int8|    [63 MB](model/arcfaceresnet100-11-int8.onnx)|[46 MB](model/arcfaceresnet100-11-int8.tar.gz) | 1.13.1  |11|99.80     |   |       | |
+> Compared with the fp32 LResNet100E-IR, int8 LResNet100E-IR accuracy drop ratio is 0% and performance improvement is 1.78x in LFW dataset.
+>
+> The performance depends on the test hardware. Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
 \* each of the accuracy metrics correspond to accuracies on different [validation sets](#val_data) each with their own [validation methods](#val_method).
 
@@ -66,13 +70,49 @@ The validation techniques for the three validation sets are described below:
 
 We used MXNet as framework to perform validation. Use the notebook [arcface_validation](dependencies/arcface_validation.ipynb) to verify the accuracy of the model on the validation set. Make sure to specify the appropriate model name in the notebook.
 
+## Quantization
+LResNet100E-IR-int8 is obtained by quantizing fp32 LResNet100E-IR model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/body_analysis/onnx_model_zoo/arcface/quantization/ptq_static/README.md) to understand how to use Intel® Neural Compressor for quantization.
+
+
+### Prepare Model
+Download model from [ONNX Model Zoo](https://github.com/onnx/models).
+
+```shell
+wget https://github.com/onnx/models/raw/main/vision/body_analysis/arcface/model/arcfaceresnet100-8.onnx
+```
+
+Convert opset version to 11 for more quantization capability.
+
+```python
+import onnx
+from onnx import version_converter
+model = onnx.load('arcfaceresnet100-8.onnx')
+model = version_converter.convert_version(model, 11)
+onnx.save_model(model, 'arcfaceresnet100-11.onnx')
+```
+
+### Model quantize
+
+```bash
+cd neural-compressor/examples/onnxrt/body_analysis/onnx_model_zoo/arcface/quantization/ptq_static
+bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
+                   --dataset_location=/path/to/faces_ms1m_112x112/task.bin \
+                   --output_model=path/to/save
+```
+
 ## References
 * All models are from the paper [ArcFace: Additive Angular Margin Loss for Deep Face Recognition](https://arxiv.org/abs/1801.07698).
 * Original training dataset from the paper [MS-Celeb-1M: A Dataset and Benchmark for Large-Scale Face Recognition](https://arxiv.org/abs/1607.08221).
 * [InsightFace repo](https://github.com/deepinsight/insightface), [MXNet](http://mxnet.incubator.apache.org)
+* [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
 
 ## Contributors
-[abhinavs95](https://github.com/abhinavs95) (Amazon AI)
+* [abhinavs95](https://github.com/abhinavs95) (Amazon AI)
+* [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [yuwenzho](https://github.com/yuwenzho) (Intel)
+* [airMeng](https://github.com/airMeng) (Intel)
+* [ftian1](https://github.com/ftian1) (Intel)
+* [hshen14](https://github.com/hshen14) (Intel)
 
 ## License
 Apache 2.0

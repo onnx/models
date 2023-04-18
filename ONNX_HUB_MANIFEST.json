@@ -312,6 +312,154 @@
         }
     },
     {
+        "model": "BiDAF-int8",
+        "model_path": "text/machine_comprehension/bidirectional_attention_flow/model/bidaf-11-int8.onnx",
+        "onnx_version": "1.13.1",
+        "opset_version": 11,
+        "metadata": {
+            "model_sha": "c2bbfd7568f4f19c8db82395c81d8d6199f3c0237f49e0f669d47c82643ef29e",
+            "model_bytes": 12452924,
+            "tags": [
+                "text",
+                "machine comprehension",
+                "bidirectional attention flow"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "context_word",
+                        "shape": [
+                            "c",
+                            1
+                        ],
+                        "type": "tensor(string)"
+                    },
+                    {
+                        "name": "context_char",
+                        "shape": [
+                            "c",
+                            1,
+                            1,
+                            16
+                        ],
+                        "type": "tensor(string)"
+                    },
+                    {
+                        "name": "query_word",
+                        "shape": [
+                            "q",
+                            1
+                        ],
+                        "type": "tensor(string)"
+                    },
+                    {
+                        "name": "query_char",
+                        "shape": [
+                            "q",
+                            1,
+                            1,
+                            16
+                        ],
+                        "type": "tensor(string)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "start_pos",
+                        "shape": [
+                            1
+                        ],
+                        "type": "tensor(int32)"
+                    },
+                    {
+                        "name": "end_pos",
+                        "shape": [
+                            1
+                        ],
+                        "type": "tensor(int32)"
+                    }
+                ]
+            },
+            "model_with_data_path": "text/machine_comprehension/bidirectional_attention_flow/model/bidaf-11-int8.tar.gz",
+            "model_with_data_sha": "571410c31445882ea9ed7b9f48fe8c2ed6ccb72b925281a1be82a75c0c12b6ab",
+            "model_with_data_bytes": 9086295
+        }
+    },
+    {
+        "model": "BiDAF",
+        "model_path": "text/machine_comprehension/bidirectional_attention_flow/model/bidaf-9.onnx",
+        "onnx_version": "1.4",
+        "opset_version": 9,
+        "metadata": {
+            "model_sha": "dfc317b56d065a3e297240a9e9b9118ff2260790b5850f4be2bc6ea1bcc65e80",
+            "model_bytes": 43522228,
+            "tags": [
+                "text",
+                "machine comprehension",
+                "bidirectional attention flow"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "context_word",
+                        "shape": [
+                            "c",
+                            1
+                        ],
+                        "type": "tensor(string)"
+                    },
+                    {
+                        "name": "context_char",
+                        "shape": [
+                            "c",
+                            1,
+                            1,
+                            16
+                        ],
+                        "type": "tensor(string)"
+                    },
+                    {
+                        "name": "query_word",
+                        "shape": [
+                            "q",
+                            1
+                        ],
+                        "type": "tensor(string)"
+                    },
+                    {
+                        "name": "query_char",
+                        "shape": [
+                            "q",
+                            1,
+                            1,
+                            16
+                        ],
+                        "type": "tensor(string)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "start_pos",
+                        "shape": [
+                            1
+                        ],
+                        "type": "tensor(int32)"
+                    },
+                    {
+                        "name": "end_pos",
+                        "shape": [
+                            1
+                        ],
+                        "type": "tensor(int32)"
+                    }
+                ]
+            },
+            "model_with_data_path": "text/machine_comprehension/bidirectional_attention_flow/model/bidaf-9.tar.gz",
+            "model_with_data_sha": "c74387eec257f2cb37cefc2846e1c4078bfebf06cd6486e9dafe6c9f7cdc1ef3",
+            "model_with_data_bytes": 39092248
+        }
+    },
+    {
         "model": "GPT-2",
         "model_path": "text/machine_comprehension/gpt-2/model/gpt2-10.onnx",
         "onnx_version": "1.6",
@@ -839,6 +987,48 @@
             "model_with_data_path": "text/machine_comprehension/t5/model/t5-encoder-12.tar.gz",
             "model_with_data_sha": "434e2f691bd71c838bd4b68be47bdf32c899313fdebfe4b77c7bea0b2f52e831",
             "model_with_data_bytes": 194535656
+        }
+    },
+    {
+        "model": "LResNet100E-IR-int8",
+        "model_path": "vision/body_analysis/arcface/model/arcfaceresnet100-11-int8.onnx",
+        "onnx_version": "1.13.1",
+        "opset_version": 11,
+        "metadata": {
+            "model_sha": "c625ca68a422418c48aa84f73341337e0a92b111f327909005d1eec07c95f936",
+            "model_bytes": 65764892,
+            "tags": [
+                "vision",
+                "body analysis",
+                "arcface"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "data",
+                        "shape": [
+                            1,
+                            3,
+                            112,
+                            112
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "fc1",
+                        "shape": [
+                            1,
+                            512
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            },
+            "model_with_data_path": "vision/body_analysis/arcface/model/arcfaceresnet100-11-int8.tar.gz",
+            "model_with_data_sha": "d560f59c57fa4784771ba520b5b2f380097d7b2210e6c8b02ca203c2e9784f8a",
+            "model_with_data_bytes": 47945269
         }
     },
     {
