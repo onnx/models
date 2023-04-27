@@ -39,6 +39,6 @@ jobs:
 
       - name: Run mlagility
         run: |
-          which benchit
+          cd mlagility
           benchit models/torch_hub/alexnet.py --cache-dir .cache
           ls .cache
