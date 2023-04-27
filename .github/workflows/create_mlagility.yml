@@ -42,6 +42,7 @@ jobs:
       - name: Run mlagility
         run: |
           cd mlagility
-          benchit models/torch_hub/alexnet.py --cache-dir .cache
-          ls .cache/alexnet_torch_hub_2891f54c/onnx/
-          diff .cache/alexnet_torch_hub_2891f54c/onnx/ ../mlagility_models/alexnet_torch_hub_2891f54c/onnx/
+          benchit models/torch_hub/alexnet.py --cache-dir mlagility_models
+          ls mlagility_models/alexnet_torch_hub_2891f54c/onnx/
+          cd mlagility_models/alexnet_torch_hub_2891f54c/onnx/
+          git diff --exit-code -- . 
