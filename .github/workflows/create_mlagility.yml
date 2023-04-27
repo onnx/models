@@ -1,6 +1,6 @@
 # Create ONNX model from mlagility
 
-name: Linux CI
+name: Create ONNX model from mlagility
 
 on:
   schedule:
@@ -35,7 +35,7 @@ jobs:
           python -m pip install mlagility
           python -m pip install transformers
           git clone https://github.com/groq/mlagility.git
-          pip install -r groq/mlagility/models/requirements.txt
+          pip install -r mlagility/models/requirements.txt
 
       - name: Run mlagility
         run: |
