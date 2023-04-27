@@ -1,0 +1,43 @@
+# Create ONNX model from mlagility
+
+name: Linux CI
+
+on:
+  schedule:
+    - cron:  '00 00 * * MON'
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.8']
+
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout repo
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          miniconda-version: "latest"
+          activate-environment: mla
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies and mlagility
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install onnx onnxruntime requests py-cpuinfo
+          # Print CPU info for debugging ONNX Runtime inference difference
+          python -m cpuinfo
+          python -m pip install mlagility
+          python -m pip install transformers
+          git clone https://github.com/groq/mlagility.git
+          pip install -r groq/mlagility/models/requirements.txt
+
+      - name: Run mlagility
+        run: |
+          sudo benchit models/torch_hub/alexnet.py --cache-dir .cache
+          ls .cache
