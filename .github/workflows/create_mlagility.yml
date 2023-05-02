@@ -45,6 +45,7 @@ jobs:
           benchit mlagility/models/torch_hub/alexnet.py --cache-dir mlagility_models --onnx-opset $ZOO_OPSET_VERSION
           cd mlagility_models/alexnet_torch_hub_2891f54c/onnx/
           git diff --exit-code -- .
+          cd ~
           benchit mlagility/models/torchvision/fasterrcnn_resnet50_fpn_v2.py --cache-dir .cache --onnx-opset $ZOO_OPSET_VERSION
-          cd mlagility_models/fasterrcnn_resnet50_fpn_v2_torchvision_7147702b/onnx/
+          cd mlagility_models/torchvision/fasterrcnn_resnet50_fpn_v2_torchvision_7147702b/onnx/
           git diff --exit-code -- .
