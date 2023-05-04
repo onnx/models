@@ -42,8 +42,4 @@ jobs:
       - name: Run mlagility
         run: |
           pip install torch==2.0.0 torchvision==0.15.1
-          ZOO_OPSET_VERSION=18
-          benchit mlagility/models/torch_hub/alexnet.py --cache-dir mlagility_models --onnx-opset $ZOO_OPSET_VERSION
-          git diff --exit-code -- mlagility_models/alexnet_torch_hub_2891f54c/onnx/
-          benchit mlagility/models/torchvision/fasterrcnn_resnet50_fpn_v2.py --cache-dir .cache --onnx-opset $ZOO_OPSET_VERSION
-          git diff --exit-code -- mlagility_models/torchvision/fasterrcnn_resnet50_fpn_v2_torchvision_7147702b/onnx/
+          python workflow_scripts/run_mlagility.py
