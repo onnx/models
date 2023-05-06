@@ -15,6 +15,7 @@ models_info = [
     ("torchvision/fasterrcnn_resnet50_fpn_v2.py", "fasterrcnn_resnet50_fpn_v2_torchvision_ae446d48", osp.join(object_detection_dir, "faster-rcnn/fasterrcnn_resnet50_fpn_v2.onnx")),
 ]
 
+base_name = "-op18-base.onnx"
 cwd_path = Path.cwd()
 mlagility_root = "mlagility/models"
 mlagility_models_dir = "mlagility_models"
@@ -28,7 +29,7 @@ for script_path, model_name, model_zoo_path in models_info:
         subprocess.run(["benchit", osp.join(mlagility_root, script_path), "--cache-dir", mlagility_models_dir, "--onnx-opset", ZOO_OPSET_VERSION],
                         cwd=cwd_path, stdout=subprocess.PIPE,
                         stderr=subprocess.PIPE)
-        shutil.copy(osp.join(mlagility_models_dir, model_name), final_model_path)
+        shutil.copy(osp.join(mlagility_models_dir, model_name, model_name + base_name), final_model_path)
         subprocess.run(["git", "diff", "--exit-code", "--", final_model_path],
                         cwd=cwd_path, stdout=subprocess.PIPE,
                         stderr=subprocess.PIPE)
