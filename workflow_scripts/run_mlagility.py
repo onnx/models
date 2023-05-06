@@ -28,7 +28,7 @@ for script_path, model_name, model_zoo_path in models_info:
         subprocess.run(["benchit", osp.join(mlagility_root, script_path), "--cache-dir", mlagility_models_dir, "--onnx-opset", ZOO_OPSET_VERSION],
                         cwd=cwd_path, stdout=subprocess.PIPE,
                         stderr=subprocess.PIPE)
-        shutil.move(osp.join(mlagility_models_dir, model_name), final_model_path)
+        shutil.copy(osp.join(mlagility_models_dir, model_name), final_model_path)
         subprocess.run(["git", "diff", "--exit-code", "--", final_model_path],
                         cwd=cwd_path, stdout=subprocess.PIPE,
                         stderr=subprocess.PIPE)
