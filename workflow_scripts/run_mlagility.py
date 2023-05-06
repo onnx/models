@@ -29,13 +29,13 @@ for script_path, model_name, model_zoo_path in models_info:
                         cwd=cwd_path, stdout=subprocess.PIPE,
                         stderr=subprocess.PIPE)
         shutil.move(osp.join(mlagility_models_dir, model_name), final_model_path)
-        subprocess.run(["git", "diff", "--exit-code", "--", model_zoo_path],
+        subprocess.run(["git", "diff", "--exit-code", "--", final_model_path],
                         cwd=cwd_path, stdout=subprocess.PIPE,
                         stderr=subprocess.PIPE)
         print(f"Successfully checked {model_zoo_path}.")
-    except:
+    except Exception as e:
         errors += 1
-        print(f"Failed to check {model_zoo_path}.")
+        print(f"Failed to check {model_zoo_path} because of {e}.")
 
 if errors > 0:
     print(f"All {len(models_info)} models have been checked, but {errors} model(s) failed.")
