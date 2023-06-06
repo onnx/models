@@ -1,6 +1,4 @@
-# Create ONNX model from mlagility
-
-name: Create ONNX model from mlagility
+name: Validate created ONNX model from mlagility or Python
 
 on:
   schedule:
@@ -39,7 +37,11 @@ jobs:
           pip install -r models/requirements.txt
           pip install -e .
 
-      - name: Run mlagility
+      - name: Validate created ONNX model from mlagility
         run: |
           pip install torch==2.0.0 torchvision==0.15.1
           python workflow_scripts/run_mlagility.py
+
+      - name: Validate created ONNX model from Python
+        run: |
+          python workflow_scripts/run_python.py
