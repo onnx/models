@@ -1,3 +1,5 @@
+import os.path as osp
+
 models_info = [
     # (script_path, model_name, model_zoo_path)
     ("torch_hub/alexnet.py", "alexnet_torch_hub_2891f54c", osp .join(classification_dir, "alexnet/alexnet.onnx")),
