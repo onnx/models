@@ -21,6 +21,19 @@ checker.check_model(model_proto)
 * Once approved transfer model from your username to ONNX organization
 * Add a badge for model in model table, see examples in [Models list](https://github.com/onnx/models#models)
 
+
+## Two ways to contribute a new model to ONNX Model Zoo
+
+### Contribute a new ONNX model through mlagility
+* Create a Python script under https://github.com/groq/mlagility for creating Python models from PyTorch or Huggingface; pass their CIs
+* Create a PR under https://github.com/onnx/models with specified (script_path, model_name, model_zoo_path) with converted ONNX models from mlagility. The CI will run the script with the provided config and verify the converted ONNX models.
+ONNX_HUB_MANIFEST.json will need to be updated accordingly.
+
+### Contribute a new ONNX model directly with Python script for reproducing the model
+* Create a Python script under models for converting ONNX models from PyTorch, Tensorflow, Huggingface or etc. Also requirements.txt for required dependencies is NEEDED.
+* Create a PR with provided ONNX models, Python script, requirements.txt. The CI will run the script with the provided requirements.txt. and verify the converted ONNX models. ONNX_HUB_MANIFEST.json will need to be updated accordingly.
+
+
 ## Model
 
 |Model        |Download  | Download (with sample test data)|ONNX version|Opset version|Accuracy |
