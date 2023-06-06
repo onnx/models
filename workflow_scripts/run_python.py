@@ -1,7 +1,7 @@
 import os
 import subprocess
 import sys
-import Path
+from pathlib import Path
 
 python_root = "models/python"
 cwd_path = Path.cwd()
