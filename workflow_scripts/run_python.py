@@ -29,6 +29,7 @@ for root, dirs, files in os.walk(python_root):
             errors += 1
             continue
         os.remove(model_path)
+        cwd_path = dir_path
         subprocess.run(["pip", "install", "-r", requirements_path], cwd=cwd_path, stdout=subprocess.PIPE,
                         stderr=subprocess.PIPE)
         subprocess.run(["python", model_python_path], cwd=cwd_path, stdout=subprocess.PIPE,
