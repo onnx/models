@@ -29,9 +29,9 @@ for root, dirs, files in os.walk(python_root):
             errors += 1
             continue
         os.remove(model_path)
-        subprocess.run("pip", "install", "-r", requirements_path, cwd=cwd_path, stdout=subprocess.PIPE,
+        subprocess.run(["pip", "install", "-r", requirements_path], cwd=cwd_path, stdout=subprocess.PIPE,
                         stderr=subprocess.PIPE)
-        subprocess.run("python", model_python_path, cwd=cwd_path, stdout=subprocess.PIPE,
+        subprocess.run(["python", model_python_path] cwd=cwd_path, stdout=subprocess.PIPE,
                         stderr=subprocess.PIPE)
         if not os.path.exists(model_path):
             print(f"Model {model_path} was not created by {model_python_path}.")
