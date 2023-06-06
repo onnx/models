@@ -30,7 +30,7 @@ for script_path, model_name, model_zoo_path in config.models_info:
         print(f"Failed to check {model_zoo_path} because of {e}.")
 
 if errors > 0:
-    print(f"All {len(config.models_info)} models have been checked, but {errors} model(s) failed.")
+    print(f"All {len(config.models_info)} model(s) have been checked, but {errors} model(s) failed.")
     sys.exit(1)
 else:
-    print(f"All {len(config.models_info)} models have been checked.")
+    print(f"All {len(config.models_info)} model(s) have been checked.")

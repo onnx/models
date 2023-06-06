@@ -11,7 +11,8 @@ total_models = 0
 for root, dirs, files in os.walk(python_root):
     for dir in dirs:
         dir_path = os.path.join(root, dir)
-        model_path = os.path.join(dir_path, dir + ".onnx")
+        model_name = dir + ".onnx"
+        model_path = os.path.join(dir_path, model_name)
         requirements_path = os.path.join(dir_path, "requirements.txt")
         model_python_path = os.path.join(dir_path, "model.py")
         if not os.path.exists(model_python_path) and not os.path.exists(model_path):
@@ -28,12 +29,11 @@ for root, dirs, files in os.walk(python_root):
         if not os.path.exists(requirements_path):
             errors += 1
             continue
-        os.remove(model_path)
-        cwd_path = dir_path
         subprocess.run(["pip", "install", "-r", requirements_path], cwd=cwd_path, stdout=subprocess.PIPE,
                         stderr=subprocess.PIPE)
         subprocess.run(["python", model_python_path], cwd=cwd_path, stdout=subprocess.PIPE,
                         stderr=subprocess.PIPE)
+        os.replace(model_name, model_path)
         if not os.path.exists(model_path):
             print(f"Model {model_path} was not created by {model_python_path}.")
             errors += 1
@@ -45,7 +45,7 @@ for root, dirs, files in os.walk(python_root):
 
 
 if errors > 0:
-    print(f"All {total_models} models have been checked, but {errors} model(s) failed.")
+    print(f"All {total_models} model(s) have been checked, but {errors} model(s) failed.")
     sys.exit(1)
 else:
-    print(f"All {total_models} models have been checked.")
+    print(f"All {total_models} model(s) have been checked.")
