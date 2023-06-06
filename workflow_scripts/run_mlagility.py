@@ -6,11 +6,6 @@ import subprocess
 import sys
 
 
-vision_dir = "vision"
-classification_dir = osp.join(vision_dir, "classification")
-object_detection_dir = osp.join(vision_dir, "object_detection_segmentation")
-
-
 base_name = "-op18-base.onnx"
 cwd_path = Path.cwd()
 mlagility_root = "mlagility/models"
