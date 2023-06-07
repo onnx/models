@@ -4,9 +4,18 @@ import sys
 from pathlib import Path
 
 python_root = "models/python"
+cache_dir = ".cache"
 cwd_path = Path.cwd()
 errors = 0
 total_models = 0
+ZOO_OPSET_VERSION = 18
+
+def find_base_onnx(root_dir):
+    for root, _, files in os.walk(root_dir):
+        for file in files:
+            if "-base.onnx" in file:
+                return os.path.join(root, file)
+    return None
 
 for root, dirs, files in os.walk(python_root):
     for dir in dirs:
@@ -31,16 +40,31 @@ for root, dirs, files in os.walk(python_root):
             continue
         subprocess.run(["pip", "install", "-r", requirements_path], cwd=cwd_path, stdout=subprocess.PIPE,
                         stderr=subprocess.PIPE)
+        os.remove(model_path)
         subprocess.run(["python", model_python_path], cwd=cwd_path, stdout=subprocess.PIPE,
                         stderr=subprocess.PIPE)
-        os.replace(model_name, model_path)
-        if not os.path.exists(model_path):
+        if not os.path.exists(model_name):
             print(f"Model {model_path} was not created by {model_python_path}.")
             errors += 1
             continue
+        os.replace(model_name, model_path)
         subprocess.run(["git", "diff", "--exit-code", "--", model_path],
                         cwd=cwd_path, stdout=subprocess.PIPE,
                         stderr=subprocess.PIPE)
+        os.remove(model_path)
+        subprocess.run(["benchit", model_python_path, "--cache-dir", cache_dir, "--onnx-opset", ZOO_OPSET_VERSION],
+                        cwd=cwd_path, stdout=subprocess.PIPE,
+                        stderr=subprocess.PIPE)
+        cache_model = find_base_onnx(cache_dir, dir)
+        if cache_dir is None:
+            print(f"Model {model_path} was not created by benchit from mlagility.")
+            errors += 1
+            continue
+        os.replace(cache_model, model_path)
+        subprocess.run(["git", "diff", "--exit-code", "--", model_path],
+                        cwd=cwd_path, stdout=subprocess.PIPE,
+                        stderr=subprocess.PIPE)
+
         print(f"Successfully checked {model_path}.")
 
 
