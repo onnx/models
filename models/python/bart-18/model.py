@@ -24,4 +24,4 @@ inputs = {
 # Call model
 model(**inputs)
 
-torch.onnx.export(model.base_model, inputs, "bert-18.onnx", opset_version=18)
+torch.onnx.export(model.base_model, inputs, "bart-18.onnx", opset_version=18)
