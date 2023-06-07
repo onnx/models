@@ -43,11 +43,11 @@ for root, dirs, files in os.walk(python_root):
         os.remove(model_path)
         subprocess.run(["python", model_python_path], cwd=cwd_path, stdout=subprocess.PIPE,
                         stderr=subprocess.PIPE)
+        os.replace(model_name, model_path)
         if not os.path.exists(model_name):
             print(f"Model {model_path} was not created by {model_python_path}.")
             errors += 1
             continue
-        os.replace(model_name, model_path)
         subprocess.run(["git", "diff", "--exit-code", "--", model_path],
                         cwd=cwd_path, stdout=subprocess.PIPE,
                         stderr=subprocess.PIPE)
