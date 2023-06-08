@@ -1,0 +1,4 @@
+bart-18.onnx:
+  task: "Natural Language Processing"
+  opset: 18
+  description: "bart-18.onnx"
