@@ -8,7 +8,7 @@ cache_dir = ".cache"
 cwd_path = Path.cwd()
 errors = 0
 total_models = 0
-ZOO_OPSET_VERSION = 18
+ZOO_OPSET_VERSION = "18"
 
 def find_base_onnx(root_dir):
     for root, _, files in os.walk(root_dir):
