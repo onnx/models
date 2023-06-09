@@ -1,5 +1,44 @@
 [
     {
+        "model": "alexnet-18",
+        "model_path": "models/python/alexnet-18/alexnet-18.onnx",
+        "onnx_version": "1.14",
+        "opset_version": 18,
+        "metadata": {
+            "model_sha": "3f954fd5efd73ebaf2095770fa69c0c7cd254042f1c3d819c33fc5c8fe5199fa",
+            "model_bytes": 244407346,
+            "tags": [
+                "models",
+                "python",
+                "alexnet-18"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input.1",
+                        "shape": [
+                            1,
+                            3,
+                            224,
+                            224
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "36",
+                        "shape": [
+                            1,
+                            1000
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            }
+        }
+    },
+    {
         "model": "Bart",
         "model_path": "models/python/bart-18/bart-18.onnx",
         "onnx_version": "1.14",

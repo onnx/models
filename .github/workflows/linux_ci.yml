@@ -45,7 +45,7 @@ jobs:
 
       - name: Test new models by onnx
         run: |
-          python workflow_scripts/test_models.py --target onnx --drop
+          python workflow_scripts/test_models.py --target onnx
 
       - name: Test new models by onnxruntime
         run: |
