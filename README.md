@@ -119,6 +119,7 @@ This subset of natural language processing models that answer questions about a 
 |<b>[RoBERTa](text/machine_comprehension/roberta)</b>|[Liu et al.](https://arxiv.org/pdf/1907.11692.pdf)|A large transformer-based model that predicts sentiment based on given input text.| [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/onnx/RoBERTa) |
 |<b>[GPT-2](text/machine_comprehension/gpt-2)</b>|[Radford et al.](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)|A large transformer-based language model that given a sequence of words within some text, predicts the next word. | [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/onnx/GPT-2) |
 |<b>[T5](text/machine_comprehension/t5)</b>|[Raffel et al.](https://arxiv.org/abs/1910.10683)|A large transformer-based language model trained on multiple tasks at once to achieve better semantic understanding of the prompt, capable of sentiment-analysis, question-answering, similarity-detection, translation, summarization, etc. |[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/onnx/T5) |
+|<b>[Bart](models/python/bart-18)</b>|[Raffel et al.](https://arxiv.org/abs/1910.13461)|BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension | |
 <hr>
 
 ### Machine Translation <a name="machine_translation"/>
@@ -233,9 +234,12 @@ outputs = list(sample['outputs'])
 np.testing.assert_almost_equal(outputs, backend.run_model(model, inputs))
 ```
 
+### Usage - Model optimization
+TBD
+
 ### Usage - Model quantization
-You can get quantized ONNX models by using [Intel® Neural Compressor](https://github.com/intel/neural-compressor). It provides web-based UI service to make quantization easier and supports code-based usage for more abundant quantization settings. Refer to [bench document](https://github.com/intel/neural-compressor/blob/master/docs/bench.md) for how to use web-based UI service and [example document](./resource/docs/INC_code.md) for a simple code-based demo.
-![image](./resource/images/INC_GUI.gif)
+You can get quantized ONNX models by using [Intel® Neural Compressor](https://github.com/intel/neural-compressor). It provides web-based UI service to make quantization easier and supports code-based usage for more abundant quantization settings. Refer to [bench document](https://github.com/intel/neural-compressor/blob/master/docs/bench.md) for how to use web-based UI service and [example document](./docs/INCCode.md) for a simple code-based demo.
+![image](./resource/images/INCGUI.gif)
 
 ### Usage - Git LFS <a name="gitlfs-"/>
 

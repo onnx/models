@@ -15,7 +15,7 @@ onnx_ext_name = ".onnx"
 
 def get_all_models():
     model_list = []
-    for directory in ["text", "vision"]:
+    for directory in ["text", "vision", "models"]:
         for root, _, files in os.walk(directory):
             for file in files:
                 if file.endswith(tar_ext_name) or file.endswith(onnx_ext_name):
@@ -104,6 +104,21 @@ def main():
                     test_utils.pull_lfs_file(model_path)
                     check_model.run_onnx_checker(model_path)
                     print("[PASS] {} is checked by onnx. ".format(model_name))
+                if args.target == "onnxruntime" or args.target == "all":
+                    try:
+                        check_model.run_backend_ort_with_data(model_path)
+                        print("[PASS] {} is checked by onnxruntime. ".format(model_name))
+                    except Exception as e:
+                        if not args.create:
+                            raise
+                        else:
+                            print("Warning: original test data for {} is broken: {}".format(model_path, e))
+                            test_utils.remove_onnxruntime_test_dir()
+                        if (not model_name.endswith("-int8.onnx") and not model_name.endswith("-qdq.onnx")) or check_model.has_vnni_support():
+                            check_model.run_backend_ort(model_path, None, model_path)
+                        else:
+                            print("Skip quantized  models because their test_data_set was created in avx512vnni machines. ")
+                        print("[PASS] {} is checked by onnxruntime. ".format(model_name))
 
         except Exception as e:
             print("[FAIL] {}: {}".format(model_name, e))

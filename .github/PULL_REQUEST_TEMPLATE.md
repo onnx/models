@@ -26,6 +26,7 @@ checker.check_model(model_proto, full_check=True)
 
 ### Required updates for corresponding ONNX model
 - [ ] Update [models/python/model-metadata.yaml](../models/python/model-metadata.yaml) with the new model information.
+- [ ] Update [README.md](../README.md) under the root directory with the new model information. New added model needs to be added to the table as Model Class in the README.md and in that case [generate_onnx_hub_manifest.py](../workflow_scripts/generate_onnx_hub_manifest.py) can detect the new added model.
 - [ ] Update [ONNX_HUB_MANIFEST.json](../ONNX_HUB_MANIFEST.json) for ONNX Hub: If this PR does update/add .onnx, please use `python workflow_scripts/generate_onnx_hub_manifest.py --target diff` to update ONNX_HUB_MANIFEST.json with according model information (especially SHA) for ONNX Hub.
 
 <!-- 

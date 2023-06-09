@@ -39,5 +39,4 @@ jobs:
 
       - name: Validate created ONNX model from Python
         run: |
-          pip install torch==2.0.0 torchvision==0.15.1
           python workflow_scripts/run_python.py

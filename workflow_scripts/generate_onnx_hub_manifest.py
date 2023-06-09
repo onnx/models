@@ -111,14 +111,16 @@ def get_file_info(row, field, target_models=None):
     # git-lfs pull if target .onnx or .tar.gz does not exist
     pull_lfs_file(rel_path)
     pull_lfs_file(rel_path.replace(".onnx", ".tar.gz"))
-    with open(rel_path, "rb") as f:
-        bytes = f.read()
-        sha256 = hashlib.sha256(bytes).hexdigest()
-    return {
-        field: rel_path,
-        field.replace("_path", "") + "_sha": sha256,
-        field.replace("_path", "") + "_bytes": len(bytes),
-    }
+    if os.path.isfile(rel_path):
+        with open(rel_path, "rb") as f:
+            bytes = f.read()
+            sha256 = hashlib.sha256(bytes).hexdigest()
+        return {
+            field: rel_path,
+            field.replace("_path", "") + "_sha": sha256,
+            field.replace("_path", "") + "_bytes": len(bytes),
+        }
+    return None
 
 
 def get_model_tags(row):

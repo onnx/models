@@ -1,5 +1,59 @@
 [
     {
+        "model": "Bart",
+        "model_path": "models/python/bart-18/bart-18.onnx",
+        "onnx_version": "1.14",
+        "opset_version": 18,
+        "metadata": {
+            "model_sha": "b3a32b95468cde7d9b52cab4879d6bf5b296ef7403c5b7d7a1b03a2c85f34788",
+            "model_bytes": 437579710,
+            "tags": [
+                "models",
+                "python",
+                "bart-18"
+            ],
+            "io_ports": {
+                "inputs": [
+                    {
+                        "name": "input.1",
+                        "shape": [
+                            1,
+                            128
+                        ],
+                        "type": "tensor(int64)"
+                    },
+                    {
+                        "name": "attention_mask",
+                        "shape": [
+                            1,
+                            128
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "onnx::Gather_1274",
+                        "shape": [
+                            1,
+                            128,
+                            768
+                        ],
+                        "type": "tensor(float)"
+                    },
+                    {
+                        "name": "1277",
+                        "shape": [
+                            1,
+                            768
+                        ],
+                        "type": "tensor(float)"
+                    }
+                ]
+            }
+        }
+    },
+    {
         "model": "BERT-Squad",
         "model_path": "text/machine_comprehension/bert-squad/model/bertsquad-10.onnx",
         "onnx_version": "1.5",

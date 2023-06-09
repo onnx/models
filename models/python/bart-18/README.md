@@ -2,9 +2,11 @@
 
 # Bart
 
-|Model        |Download  | ONNX version |Opset version|Top-1 accuracy (%)|Top-5 accuracy (%)|
-| ------------- | ------------- | ------------- | ------------- |------------- | ------------- |
-|Bart| [417 MB](bart-18.onnx) |  1.14 | 18| | |
+## Model
+
+ |Model        |Download  | ONNX version |Opset version| Accuracy|
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+|Bart| [417 MB](bart-18.onnx) | 1.14 | 18| |
 
 
 ## Description
