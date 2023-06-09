@@ -6,7 +6,7 @@
 
  |Model        |Download  | ONNX version |Opset version| Accuracy|
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-|alexnet| [233 MB](alexnet-18.onnx) | 1.14 | 18| |
+|alexnet-18| [233 MB](alexnet-18.onnx) | 1.14 | 18| |
 
 
 ## Description

@@ -119,7 +119,6 @@ This subset of natural language processing models that answer questions about a 
 |<b>[RoBERTa](text/machine_comprehension/roberta)</b>|[Liu et al.](https://arxiv.org/pdf/1907.11692.pdf)|A large transformer-based model that predicts sentiment based on given input text.| [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/onnx/RoBERTa) |
 |<b>[GPT-2](text/machine_comprehension/gpt-2)</b>|[Radford et al.](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)|A large transformer-based language model that given a sequence of words within some text, predicts the next word. | [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/onnx/GPT-2) |
 |<b>[T5](text/machine_comprehension/t5)</b>|[Raffel et al.](https://arxiv.org/abs/1910.10683)|A large transformer-based language model trained on multiple tasks at once to achieve better semantic understanding of the prompt, capable of sentiment-analysis, question-answering, similarity-detection, translation, summarization, etc. |[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/onnx/T5) |
-|<b>[Bart](models/python/bart-18)</b>|[Raffel et al.](https://arxiv.org/abs/1910.13461)|BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension | |
 <hr>
 
 ### Machine Translation <a name="machine_translation"/>
@@ -162,6 +161,12 @@ There are many interesting deep learning models that do not fit into the categor
 |Autoencoders|[A Hierarchical Neural Autoencoder for Paragraphs and Documents](https://arxiv.org/abs/1506.01057)|An LSTM (long-short term memory) auto-encoder to preserve and reconstruct multi-sentence paragraphs.<br>[contribute](contribute.md)|
 <hr>
 
+### Opset 18 models <a name="others"/>
+There are many interesting deep learning models that do not fit into the categories described above. The ONNX team would like to highly encourage users and researchers to [contribute](contribute.md) their models to the growing model zoo.
+
+|Model Class |Reference |Description |
+|-|-|-|
+|<b>[AlexNet](models/python/alexnet-18)</b>|[Krizhevsky et al.](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)|A Deep CNN model (up to 8 layers) where the input is an image and the output is a vector of 1000 numbers. <br> Top-5 error from paper - ~15%| |
 ## Usage <a name="usage-"/>
 
 Every ONNX backend should support running the models out of the box. After downloading and extracting the tarball of each model, you will find:
