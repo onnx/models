@@ -106,7 +106,12 @@ def main():
                     print("[PASS] {} is checked by onnx. ".format(model_name))
                 if args.target == "onnxruntime" or args.target == "all":
                     try:
-                        test_utils.pull_lfs_dir("models/python/alexnet-18/test_data_set_0")
+                        # git lfs pull those test_data_set_* folders
+                        root_dir = Path(model_path).parent.absolute()
+                        for _, dirs, _ in os.walk(root_dir):
+                            for dir in dirs:
+                                if "test_data_set_" in dir:
+                                    test_utils.pull_lfs_dir(os.path.join(root_dir, dir))
                         check_model.run_backend_ort_with_data(model_path)
                         print("[PASS] {} is checked by onnxruntime. ".format(model_name))
                     except Exception as e:
