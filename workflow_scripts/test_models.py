@@ -108,10 +108,11 @@ def main():
                     try:
                         # git lfs pull those test_data_set_* folders
                         root_dir = Path(model_path).parent
-                        for _, dirs, _ in os.walk(root_dir):
-                            for dir in dirs:
-                                if "test_data_set_" in dir:
-                                    test_utils.pull_lfs_file(os.path.join(root_dir, dir, "*"))
+                        for _, _, files in os.walk(root_dir):
+                            for file in files:
+                                if file.endswith(".pb"):
+                                    print(os.path.join(root_dir, file))
+                                    test_utils.pull_lfs_file(os.path.join(root_dir, file))
                         check_model.run_backend_ort_with_data(model_path)
                         print("[PASS] {} is checked by onnxruntime. ".format(model_name))
                     except Exception as e:
