@@ -106,12 +106,12 @@ def main():
                     print("[PASS] {} is checked by onnx. ".format(model_name))
                 if args.target == "onnxruntime" or args.target == "all":
                     try:
-                        # git lfs pull those test_data_set_* folders
+                        # git lfs pull those input_*.pb and output_*.pb files
                         root_dir = Path(model_path).parent
                         for _, _, files in os.walk(root_dir):
                             for file in files:
-                                if file.endswith(".pb"):
-                                    print(os.path.join(root_dir, file))
+                                print(file)
+                                if file.startswith("input_") or file.startswith("output_"):
                                     test_utils.pull_lfs_file(os.path.join(root_dir, file))
                         check_model.run_backend_ort_with_data(model_path)
                         print("[PASS] {} is checked by onnxruntime. ".format(model_name))
