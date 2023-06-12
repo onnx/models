@@ -100,12 +100,13 @@ def main():
                     print("[PASS] {} is checked by onnx. ".format(model_name))
             # check uploaded standalone ONNX model by ONNX
             elif onnx_ext_name in model_name:
+                test_utils.pull_lfs_file(model_path)
                 if args.target == "onnx" or args.target == "all":
-                    test_utils.pull_lfs_file(model_path)
                     check_model.run_onnx_checker(model_path)
                     print("[PASS] {} is checked by onnx. ".format(model_name))
                 if args.target == "onnxruntime" or args.target == "all":
                     try:
+                        test_utils.pull_lfs_file(os.path.join(model_path, "test_data_set_0"))
                         check_model.run_backend_ort_with_data(model_path)
                         print("[PASS] {} is checked by onnxruntime. ".format(model_name))
                     except Exception as e:
