@@ -37,10 +37,6 @@ jobs:
           # Print CPU info for debugging ONNX Runtime inference difference
           python -m cpuinfo
 
-      - name: Test new models by onnx
+      - name: Test new models by onnx and onnxruntime
         run: |
-          python workflow_scripts/test_models.py --target onnx
-
-      - name: Test new models by onnxruntime
-        run: |
-          python workflow_scripts/test_models.py --target onnxruntime --drop
+          python workflow_scripts/test_models.py --target all --drop

@@ -27,4 +27,4 @@ inputs = {"x": torch.ones([batch_size, num_channels, width, height])}
 # Call model
 model(**inputs)
 
-torch.onnx.export(model, inputs, "alextnet-18.onnx", opset_version=18)
+torch.onnx.export(model, inputs, "alexnet-18.onnx", opset_version=18)
