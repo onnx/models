@@ -7,7 +7,7 @@ import subprocess
 import sys
 import test_utils
 import os
-import onnxruntime
+
 
 tar_ext_name = ".tar.gz"
 onnx_ext_name = ".onnx"
@@ -101,9 +101,12 @@ def main():
             # check uploaded standalone ONNX model by ONNX
             elif onnx_ext_name in model_name:
                 test_utils.pull_lfs_file(model_path)
+                if args.target == "onnx" or args.target == "all":
+                    check_model.run_onnx_checker(model_path)
+                    print("[PASS] {} is checked by onnx. ".format(model_name))
                 if args.target == "onnxruntime" or args.target == "all":
                     try:
-                        onnxruntime.InferenceSession(model_path)
+                        test_utils.pull_lfs_dir("test_data_set_0")
                         check_model.run_backend_ort_with_data(model_path)
                         print("[PASS] {} is checked by onnxruntime. ".format(model_name))
                     except Exception as e:
