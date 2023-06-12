@@ -16,7 +16,7 @@ jobs:
         python-version: ['3.8']
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
         name: Checkout repo
       - uses: conda-incubator/setup-miniconda@v2
         with:

@@ -53,7 +53,7 @@ for root, dirs, files in os.walk(python_root):
                         stderr=sys.stderr)
         os.remove(model_path)
         subprocess.run(["benchit", model_python_path, "--cache-dir", cache_dir, "--onnx-opset", ZOO_OPSET_VERSION],
-                        cwd=cwd_path, stdout=sys.stdout,
+                        cwd=cwd_path, stdout=subprocess.PIPE
                         stderr=sys.stderr)
         cache_model = find_base_onnx(cache_dir)
         if cache_dir is None:
