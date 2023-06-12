@@ -107,7 +107,7 @@ def main():
                 if args.target == "onnxruntime" or args.target == "all":
                     try:
                         # git lfs pull those test_data_set_* folders
-                        root_dir = Path(model_path).parent.absolute()
+                        root_dir = Path(model_path).parent
                         for _, dirs, _ in os.walk(root_dir):
                             for dir in dirs:
                                 if "test_data_set_" in dir:
