@@ -24,9 +24,6 @@ def pull_lfs_file(file_name):
     result = subprocess.run(['git', 'lfs', 'pull', '--include', file_name, '--exclude', '\'\''], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     print(f'LFS pull completed for {file_name} with return code= {result.returncode}')
 
-def pull_lfs_dir(dir_name):
-    result = subprocess.run(['git', 'lfs', 'pull', '--include', os.path.join(dir_name, "*"), '--exclude', '\'\''], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    print(f'LFS pull completed for directory {dir_name} with return code= {result.returncode}')
 
 def run_lfs_prune():
     result = subprocess.run(['git', 'lfs', 'prune'], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)

@@ -111,7 +111,7 @@ def main():
                         for _, dirs, _ in os.walk(root_dir):
                             for dir in dirs:
                                 if "test_data_set_" in dir:
-                                    test_utils.pull_lfs_dir(os.path.join(root_dir, dir))
+                                    test_utils.pull_lfs_dir(os.path.join(root_dir, dir, "/*"))
                         check_model.run_backend_ort_with_data(model_path)
                         print("[PASS] {} is checked by onnxruntime. ".format(model_name))
                     except Exception as e:
