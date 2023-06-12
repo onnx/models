@@ -7,7 +7,7 @@ import subprocess
 import sys
 import test_utils
 import os
-
+import onnxruntime
 
 tar_ext_name = ".tar.gz"
 onnx_ext_name = ".onnx"
