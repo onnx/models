@@ -106,7 +106,7 @@ def main():
                     print("[PASS] {} is checked by onnx. ".format(model_name))
                 if args.target == "onnxruntime" or args.target == "all":
                     try:
-                        test_utils.pull_lfs_dir("test_data_set_0")
+                        test_utils.pull_lfs_dir("models/python/alexnet-18/test_data_set_0")
                         check_model.run_backend_ort_with_data(model_path)
                         print("[PASS] {} is checked by onnxruntime. ".format(model_name))
                     except Exception as e:
