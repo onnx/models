@@ -9,7 +9,8 @@ import sys
 base_name = "-op18-base.onnx"
 cwd_path = Path.cwd()
 mlagility_root = "mlagility/models"
-mlagility_models_dir = ".cache"
+mlagility_models_dir = "models/mlagility"
+cache_converted_dir = ".cache"
 ZOO_OPSET_VERSION = "18"
 
 errors = 0
@@ -18,10 +19,10 @@ for script_path, model_name, model_zoo_path in config.models_info:
     try:
         print(f"----------------Checking {model_zoo_path}----------------")
         final_model_path = osp.join(mlagility_models_dir, model_zoo_path.replace(".onnx", "-" + ZOO_OPSET_VERSION + ".onnx"))
-        subprocess.run(["benchit", osp.join(mlagility_root, script_path), "--cache-dir", mlagility_models_dir, "--onnx-opset", ZOO_OPSET_VERSION],
+        subprocess.run(["benchit", osp.join(mlagility_root, script_path), "--cache-dir", cache_converted_dir, "--onnx-opset", ZOO_OPSET_VERSION],
                         cwd=cwd_path, stdout=sys.stdout,
                         stderr=sys.stderr)
-        shutil.copy(osp.join(mlagility_models_dir, model_name, "onnx", model_name + base_name), final_model_path)
+        shutil.copy(osp.join(cache_converted_dir, model_name, "onnx", model_name + base_name), final_model_path)
         subprocess.run(["git", "diff", "--exit-code", "--", final_model_path],
                         cwd=cwd_path, stdout=sys.stdout,
                         stderr=sys.stderr)
