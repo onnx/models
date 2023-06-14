@@ -39,8 +39,3 @@ jobs:
         run: |
           pip install -r models/mlagility/requirements.txt
           python workflow_scripts/run_mlagility.py
-          ls .cache/
-          ls .cache/alexnet_torch_hub_7df2a577/
-          ls .cache/alexnet_torch_hub_7df2a577/onnx
-          ls .cache/fasterrcnn_resnet50_fpn_v2_torchvision_ec445cac/
-          ls .cache/fasterrcnn_resnet50_fpn_v2_torchvision_ec445cac/onnx
