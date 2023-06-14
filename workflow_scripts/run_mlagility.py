@@ -18,9 +18,9 @@ for script_path, model_name, model_zoo_path in config.models_info:
     try:
         final_model_path = osp.join(mlagility_models_dir, model_zoo_path.replace(".onnx", "-" + ZOO_OPSET_VERSION + ".onnx"))
         subprocess.run(["benchit", osp.join(mlagility_root, script_path), "--cache-dir", mlagility_models_dir, "--onnx-opset", ZOO_OPSET_VERSION],
-                        cwd=cwd_path, stdout=subprocess.PIPE,
-                        stderr=subprocess.PIPE)
-        subprocess.run(["ls", ".cache"], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                        cwd=cwd_path, stdout=sys.stdout,
+                        stderr=stdout=sys.stdout)
+        subprocess.run(["ls", ".cache"], cwd=cwd_path, stdout=stdout=sys.stdout, stderr=stdout=sys.stdout)
         shutil.copy(osp.join(mlagility_models_dir, model_name, "onnx", model_name + base_name), final_model_path)
         subprocess.run(["git", "diff", "--exit-code", "--", final_model_path],
                         cwd=cwd_path, stdout=subprocess.PIPE,
