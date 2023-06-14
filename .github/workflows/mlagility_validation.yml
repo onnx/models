@@ -39,3 +39,4 @@ jobs:
         run: |
           pip install -r models/mlagility/requirements.txt
           python workflow_scripts/run_mlagility.py
+          ls .cache
