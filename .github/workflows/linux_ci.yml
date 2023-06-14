@@ -3,7 +3,6 @@
 
 name: Linux CI
 
-# Triggers the workflow on push or pull request events but only for the main branch
 on:
   push:
     branches: [ main, new-models]
@@ -43,10 +42,6 @@ jobs:
           python workflow_scripts/generate_onnx_hub_manifest.py --target diff --drop
           git diff --exit-code -- ONNX_HUB_MANIFEST.json || { echo 'Please use "python workflow_scripts/generate_onnx_hub_manifest.py --target diff" to update ONNX_HUB_MANIFEST.json.' ; exit 1; }
 
-      - name: Test new models by onnx
+      - name: Test new models by onnx and onnxruntime
         run: |
-          python workflow_scripts/test_models.py --target onnx --drop
-
-      - name: Test new models by onnxruntime
-        run: |
-          python workflow_scripts/test_models.py --target onnxruntime --drop
+          python workflow_scripts/test_models.py --target all --drop

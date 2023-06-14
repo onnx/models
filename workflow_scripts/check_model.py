@@ -16,7 +16,7 @@ def has_vnni_support():
 
 def run_onnx_checker(model_path):
     model = onnx.load(model_path)
-    onnx.checker.check_model(model)
+    onnx.checker.check_model(model, full_check=True)
 
 
 def ort_skip_reason(model_path):
@@ -66,3 +66,10 @@ def run_backend_ort(model_path, test_data_set=None, tar_gz_path=None):
         ort_test_dir_utils.run_test_dir(test_dir_from_tar)
     # remove the produced test_dir from ORT
     test_utils.remove_onnxruntime_test_dir()
+
+def run_backend_ort_with_data(model_path):
+    skip_reason = ort_skip_reason(model_path)
+    if skip_reason:
+        print(skip_reason)
+        return
+    ort_test_dir_utils.run_test_dir(model_path)
