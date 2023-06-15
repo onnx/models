@@ -28,8 +28,6 @@ jobs:
           python -m pip install onnx onnxruntime requests py-cpuinfo
           # Print CPU info for debugging ONNX Runtime inference difference
           python -m cpuinfo
-          # or python -m pip install mlagility
-          python -m pip install transformers
           git clone https://github.com/groq/mlagility.git
           cd mlagility
           pip install -r models/requirements.txt
