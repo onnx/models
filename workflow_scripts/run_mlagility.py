@@ -44,7 +44,7 @@ for model_info in models_info:
         subprocess.run(["git", "diff", "--exit-code", "--", final_model_path],
                         cwd=cwd_path, stdout=sys.stdout,
                         stderr=sys.stderr)
-        print(f"Successfully checked {model_zoo_dir}.")
+        print(f"Successfully checked {model_zoo_dir} by mlagility.")
     except Exception as e:
         errors += 1
         print(f"Failed to check {model_zoo_dir} because of {e}.")
