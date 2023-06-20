@@ -1,10 +1,14 @@
 import config
 import os.path as osp
+from os import listdir
 from pathlib import Path
 import shutil
 import subprocess
 import sys
 
+def get_immediate_subdirectories_count(dir):
+    return len([name for name in listdir(dir)
+            if osp.isdir(osp.join(dir, name))])
 
 ZOO_OPSET_VERSION = "18"
 base_name = f"-op{ZOO_OPSET_VERSION}-base.onnx"
@@ -37,3 +41,8 @@ if errors > 0:
     sys.exit(1)
 else:
     print(f"All {len(config.models_info)} model(s) have been checked.")
+
+mlagility_subdir_count = get_immediate_subdirectories_count(mlagility_models_dir)
+if mlagility_subdir_count != len(config.models_info):
+    print(f"Expected {len(config.models_info)} model(s) in {mlagility_models_dir}, but got {mlagility_subdir_count} model(s) under models/mlagility.")
+    sys.exit(1)
