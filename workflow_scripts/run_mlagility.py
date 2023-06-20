@@ -38,12 +38,12 @@ for model_info in models_info:
         subprocess.run(["benchit", osp.join(mlagility_root, model_info), "--cache-dir", cache_converted_dir,
                         "--onnx-opset", ZOO_OPSET_VERSION, "--export-only"],
                         cwd=cwd_path, stdout=sys.stdout,
-                        stderr=sys.stderr)
+                        stderr=sys.stderr, check=True)
         model_hash_name = find_model_hash_name(".cache", model_name + "_" + directory_name + "_")
         shutil.copy(osp.join(cache_converted_dir, model_hash_name, "onnx", model_hash_name + base_name), final_model_path)
         subprocess.run(["git", "diff", "--exit-code", "--", final_model_path],
                         cwd=cwd_path, stdout=sys.stdout,
-                        stderr=sys.stderr)
+                        stderr=sys.stderr, check=True)
         print(f"Successfully checked {model_zoo_dir} by mlagility.")
     except Exception as e:
         errors += 1
