@@ -7,9 +7,9 @@ import subprocess
 import sys
 
 
-def get_immediate_subdirectories_count(dir):
-    return len([name for name in listdir(dir)
-            if osp.isdir(osp.join(dir, name))])
+def get_immediate_subdirectories_count(dir_name):
+    return len([name for name in listdir(dir_name)
+            if osp.isdir(osp.join(dir_name, name))])
 
 
 def find_model_hash_name(dir_name, cache_dir_prefix):
@@ -34,12 +34,12 @@ for model_info in models_info:
     model_zoo_dir = model_name
     try:
         print(f"----------------Checking {model_zoo_dir}----------------")
-        model_hash_name = find_model_hash_name(".cache", model_name + "_" + directory_name + "_")
         final_model_path = osp.join(mlagility_models_dir, model_zoo_dir, f"{model_zoo_dir}-{ZOO_OPSET_VERSION}.onnx")
         subprocess.run(["benchit", osp.join(mlagility_root, model_info), "--cache-dir", cache_converted_dir,
                         "--onnx-opset", ZOO_OPSET_VERSION, "--export-only"],
                         cwd=cwd_path, stdout=sys.stdout,
                         stderr=sys.stderr)
+        model_hash_name = find_model_hash_name(".cache", model_name + "_" + directory_name + "_")
         shutil.copy(osp.join(cache_converted_dir, model_hash_name, "onnx", model_hash_name + base_name), final_model_path)
         subprocess.run(["git", "diff", "--exit-code", "--", final_model_path],
                         cwd=cwd_path, stdout=sys.stdout,
