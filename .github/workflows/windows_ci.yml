@@ -3,12 +3,11 @@
 
 name: Windows CI
 
-# Triggers the workflow on push or pull request events but only for the main branch
 on:
   push:
-    branches: [ main ]
+    branches: [ main, new-models]
   pull_request:
-    branches: [ main ]
+    branches: [ main, new-models]
 
 jobs:
   # This workflow contains a single job called "build"
@@ -37,10 +36,6 @@ jobs:
           # Print CPU info for debugging ONNX Runtime inference difference
           python -m cpuinfo
 
-      - name: Test new models by onnx
+      - name: Test new models by onnx and onnxruntime
         run: |
-          python workflow_scripts/test_models.py --target onnx --drop
-
-      - name: Test new models by onnxruntime
-        run: |
-          python workflow_scripts/test_models.py --target onnxruntime --drop
+          python workflow_scripts/test_models.py --target all --drop
