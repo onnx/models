@@ -1,0 +1,18 @@
+models_info = [
+    "torch_hub/alexnet.py",
+    "torch_hub/resnet50.py",
+    "torchvision/fasterrcnn_resnet50_fpn_v2.py",
+    "torchvision/maskrcnn_resnet50_fpn.py",
+    "torchvision/ssd_mobilenet_v2.py",
+    "torch_hub/mobilenet_v2.py",
+    "torch_hub/resnet18.py",
+    "torch_hub/resnet34.py",
+    "torch_hub/resnet101.py",
+    "torch_hub/vgg16.py",
+    "torch_hub/vgg16_bn.py",
+    "torch_hub/vgg19.py",
+    "torch_hub/vgg19_bn.py",
+    "torch_hub/densenet121.py",
+    "torch_hub/inception_v3.py",
+    "torch_hub/googlenet.py",
+]
