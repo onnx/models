@@ -16,4 +16,5 @@ models_info = [
     "torch_hub/densenet121.py",
     "torch_hub/inception_v3.py",
     "torch_hub/googlenet.py",
+    "popular_on_huggingface/bert-base-uncased.py",
 ]
