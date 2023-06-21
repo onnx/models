@@ -1,7 +1,7 @@
 import argparse
 from mlagility_config import models_info
 import os.path as osp
-from os import listdir
+from os import listdir, rename
 from pathlib import Path
 import shutil
 import subprocess
@@ -46,7 +46,9 @@ def main():
         model_zoo_dir = model_name
         try:
             print(f"----------------Checking {model_zoo_dir}----------------")
-            final_model_path = osp.join(mlagility_models_dir, model_zoo_dir, f"{model_zoo_dir}-{ZOO_OPSET_VERSION}.onnx")
+            final_model_dir = osp.join(mlagility_models_dir, model_zoo_dir)
+            final_model_name = f"{model_zoo_dir}-{ZOO_OPSET_VERSION}.onnx"
+            final_model_path = osp.join(final_model_dir, final_model_name)
             if osp.exists(final_model_path) and args.skip:
                 print(f"Skip checking {model_zoo_dir} because {final_model_path} already exists.")
                 continue
@@ -55,12 +57,13 @@ def main():
                             cwd=cwd_path, stdout=sys.stdout,
                             stderr=sys.stderr, check=True)
             model_hash_name = find_model_hash_name(".cache", model_name + "_" + directory_name + "_")
-            mlagility_created_dir = osp.join(cache_converted_dir, model_hash_name, "onnx", model_hash_name + base_name)
+            mlagility_created_onnx = osp.join(cache_converted_dir, model_hash_name, "onnx", model_hash_name + base_name)
             if args.create:
-                ort_test_dir_utils.create_test_dir(mlagility_created_dir, "./", final_model_path)
+                ort_test_dir_utils.create_test_dir(mlagility_created_onnx, "./", final_model_path)
+                rename(osp.join(final_model_dir, model_hash_name), final_model_path)
                 print(f"Successfully created {model_zoo_dir} by mlagility and ORT.")
             else:
-                shutil.copy(mlagility_created_dir, final_model_path)
+                shutil.copy(mlagility_created_onnx, final_model_path)
                 subprocess.run(["git", "diff", "--exit-code", "--", final_model_path],
                                 cwd=cwd_path, stdout=sys.stdout,
                                 stderr=sys.stderr, check=True)

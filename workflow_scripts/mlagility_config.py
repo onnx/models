@@ -2,7 +2,7 @@ models_info = [
     "torch_hub/alexnet.py",
     "torch_hub/resnet50.py",
     "torchvision/fasterrcnn_resnet50_fpn_v2.py",
-    "torchvision/maskrcnn_resnet50_fpn_v2.py",
+    "torchvision/maskrcnn_resnet50_fpn.py",
     "torchvision/ssd300_vgg16.py",
     "torch_hub/mobilenet_v2.py",
     "torch_hub/mobilenet_v3_large.py",
