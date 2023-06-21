@@ -5,6 +5,7 @@ models_info = [
     "torchvision/maskrcnn_resnet50_fpn_v2.py",
     "torchvision/ssd300_vgg16.py",
     "torch_hub/mobilenet_v2.py",
+    "torch_hub/mobilenet_v3_large.py",
     "torch_hub/resnet18.py",
     "torch_hub/resnet34.py",
     "torch_hub/resnet101.py",
