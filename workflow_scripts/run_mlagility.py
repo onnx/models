@@ -6,6 +6,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import sys
+import ort_test_dir_utils
 
 
 def get_immediate_subdirectories_count(dir_name):
@@ -54,10 +55,12 @@ def main():
                             cwd=cwd_path, stdout=sys.stdout,
                             stderr=sys.stderr, check=True)
             model_hash_name = find_model_hash_name(".cache", model_name + "_" + directory_name + "_")
-            shutil.copy(osp.join(cache_converted_dir, model_hash_name, "onnx", model_hash_name + base_name), final_model_path)
-            if not args.create:
-                print(f"Successfully created {model_zoo_dir} by mlagility.")
+            mlagility_created_dir = osp.join(cache_converted_dir, model_hash_name, "onnx", model_hash_name + base_name)
+            if args.create:
+                ort_test_dir_utils.create_test_dir(mlagility_created_dir, "./", final_model_path)
+                print(f"Successfully created {model_zoo_dir} by mlagility and ORT.")
             else:
+                shutil.copy(mlagility_created_dir, final_model_path)
                 subprocess.run(["git", "diff", "--exit-code", "--", final_model_path],
                                 cwd=cwd_path, stdout=sys.stdout,
                                 stderr=sys.stderr, check=True)
