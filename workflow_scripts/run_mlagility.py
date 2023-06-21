@@ -59,7 +59,7 @@ def main():
             model_hash_name = find_model_hash_name(".cache", model_name + "_" + directory_name + "_")
             mlagility_created_onnx = osp.join(cache_converted_dir, model_hash_name, "onnx", model_hash_name + base_name)
             if args.create:
-                ort_test_dir_utils.create_test_dir(mlagility_created_onnx, "./", final_model_path)
+                ort_test_dir_utils.create_test_dir(mlagility_created_onnx, "./", final_model_dir)
                 rename(osp.join(final_model_dir, model_hash_name), final_model_path)
                 print(f"Successfully created {model_zoo_dir} by mlagility and ORT.")
             else:
