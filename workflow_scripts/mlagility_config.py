@@ -16,5 +16,11 @@ models_info = [
     "torch_hub/densenet121.py",
     "torch_hub/inception_v3.py",
     "torch_hub/googlenet.py",
-    "popular_on_huggingface/bert-base-uncased.py",
+    #"popular_on_huggingface/bert-base-uncased.py",
+    #"popular_on_huggingface/CompVis_stable-diffusion-v1-4.py",
+    "transformers/gpt1.py",
+    "transformers/gpt2.py",
+    "transformers/bert_generation.py"
+    #"transformers/bert_for_question_answering.py",
+    #"transformers/t5_base.py",
 ]
