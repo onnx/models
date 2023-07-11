@@ -14,15 +14,18 @@ def get_immediate_subdirectories_count(dir_name):
             if osp.isdir(osp.join(dir_name, name))])
 
 
-def find_model_hash_name(raw_line):
-    cache_name = ".cache"
-    start = raw_line.find(cache_name)
-    if start == -1:
-        raise Exception(f"Cannot find {cache_name} in {raw_line}.")
-    return raw_line[start + len(cache_name) + 1:]
+def find_model_hash_name(stdout):
+    for line in stdout.decode().split("\n"):
+        if "Build dir:" in str(line):
+            cache_name = ".cache"
+            start = line.find(cache_name)
+            if start == -1:
+                raise Exception(f"Cannot find {cache_name} in {line}.")
+            return line[start + len(cache_name) + 1:]
+    raise Exception(f"Cannot find Build dir in {stdout}.")    
 
 
-ZOO_OPSET_VERSION = "18"
+ZOO_OPSET_VERSION = "16"
 base_name = f"-op{ZOO_OPSET_VERSION}-base.onnx"
 cwd_path = Path.cwd()
 mlagility_root = "mlagility/models"
@@ -57,13 +60,7 @@ def main():
                             "--onnx-opset", ZOO_OPSET_VERSION, "--export-only"],
                             cwd=cwd_path, stdout=sys.stdout,
                             stderr=sys.stderr, check=True)
-            model_hash_name = ""
-            for line in cmd.stdout:
-                if "Build dir:" in str(line):
-                    model_hash_name = find_model_hash_name(line)
-                    break
-            if not model_hash_name:
-                raise Exception(f"Cannot find model hash name in {cmd.stdout}.")
+            model_hash_name = find_model_hash_name(cmd.stdout)
             print(model_hash_name)
             mlagility_created_onnx = osp.join(cache_converted_dir, model_hash_name, "onnx", model_hash_name + base_name)
             if args.create:
