@@ -14,11 +14,12 @@ def get_immediate_subdirectories_count(dir_name):
             if osp.isdir(osp.join(dir_name, name))])
 
 
-def find_model_hash_name(dir_name, cache_dir_prefix):
-    for dir in listdir(dir_name):
-        if dir.startswith(cache_dir_prefix):
-            return dir
-    raise Exception(f"Cannot find model hash name: {cache_dir_prefix} in cache directory.")
+def find_model_hash_name(raw_line):
+    cache_name = ".cache"
+    start = raw_line.find(cache_name)
+    if start == -1:
+        raise Exception(f"Cannot find {cache_name} in {raw_line}.")
+    return raw_line[start + len(cache_name) + 1:]
 
 
 ZOO_OPSET_VERSION = "18"
@@ -52,11 +53,18 @@ def main():
             if osp.exists(final_model_path) and args.skip:
                 print(f"Skip checking {model_zoo_dir} because {final_model_path} already exists.")
                 continue
-            subprocess.run(["benchit", osp.join(mlagility_root, model_info), "--cache-dir", cache_converted_dir,
+            cmd = subprocess.run(["benchit", osp.join(mlagility_root, model_info), "--cache-dir", cache_converted_dir,
                             "--onnx-opset", ZOO_OPSET_VERSION, "--export-only"],
                             cwd=cwd_path, stdout=sys.stdout,
                             stderr=sys.stderr, check=True)
-            model_hash_name = find_model_hash_name(".cache", model_name + "_" + directory_name + "_")
+            model_hash_name = ""
+            for line in cmd.stdout:
+                if "Build dir:" in str(line):
+                    model_hash_name = find_model_hash_name(line)
+                    break
+            if not model_hash_name:
+                raise Exception(f"Cannot find model hash name in {cmd.stdout}.")
+            print(model_hash_name)
             mlagility_created_onnx = osp.join(cache_converted_dir, model_hash_name, "onnx", model_hash_name + base_name)
             if args.create:
                 ort_test_dir_utils.create_test_dir(mlagility_created_onnx, "./", final_model_dir)
