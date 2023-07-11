@@ -58,7 +58,7 @@ def main():
                 continue
             cmd = subprocess.run(["benchit", osp.join(mlagility_root, model_info), "--cache-dir", cache_converted_dir,
                             "--onnx-opset", ZOO_OPSET_VERSION, "--export-only"],
-                            cwd=cwd_path, stdout=sys.stdout,
+                            cwd=cwd_path, stdout=subprocess.PIPE,
                             stderr=sys.stderr, check=True)
             model_hash_name = find_model_hash_name(cmd.stdout)
             print(model_hash_name)
