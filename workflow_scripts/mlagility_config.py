@@ -16,5 +16,4 @@ models_info = [
     "torch_hub/densenet121.py",
     "torch_hub/inception_v3.py",
     "torch_hub/googlenet.py",
-    "transformers/bert_generation.py",
 ]
