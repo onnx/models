@@ -12,6 +12,7 @@ This model is a deep convolutional neural network for emotion recognition in fac
 |Emotion FERPlus |[34 MB](model/emotion-ferplus-2.onnx)|[31 MB](model/emotion-ferplus-2.tar.gz)|1.0|2|
 |Emotion FERPlus |[34 MB](model/emotion-ferplus-7.onnx)|[31 MB](model/emotion-ferplus-7.tar.gz)|1.2|7|
 |Emotion FERPlus |[34 MB](model/emotion-ferplus-8.onnx)|[31 MB](model/emotion-ferplus-8.tar.gz)|1.3|8|
+|Emotion FERPlus int8 |[19 MB](model/emotion-ferplus-12-int8.onnx)|[18 MB](model/emotion-ferplus-12-int8.tar.gz)|1.14|12|
 
 ### Paper
 "Training Deep Networks for Facial Expression Recognition with Crowd-Sourced Label Distribution" [arXiv:1608.01041](https://arxiv.org/abs/1608.01041)
@@ -68,6 +69,36 @@ def postprocess(scores):
 ### Sample test data
 Sets of sample input and output files are provided in
 * serialized protobuf TensorProtos (`.pb`), which are stored in the folders `test_data_set_*/`.
+
+## Quantization
+Emotion FERPlus int8 is obtained by quantizing fp32 Emotion FERPlus model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/body_analysis/onnx_model_zoo/emotion_ferplus/quantization/ptq_static/README.md) to understand how to use Intel® Neural Compressor for quantization.
+
+
+### Prepare Model
+Download model from [ONNX Model Zoo](https://github.com/onnx/models).
+
+```shell
+wget https://github.com/onnx/models/raw/main/vision/body_analysis/emotion_ferplus/model/emotion-ferplus-8.onnx
+```
+
+Convert opset version to 12 for more quantization capability.
+
+```python
+import onnx
+from onnx import version_converter
+model = onnx.load('emotion-ferplus-8.onnx')
+model = version_converter.convert_version(model, 12)
+onnx.save_model(model, 'emotion-ferplus-12.onnx')
+```
+
+### Model quantize
+
+```bash
+cd neural-compressor/examples/onnxrt/body_analysis/onnx_model_zoo/emotion_ferplus/quantization/ptq_static
+bash run_tuning.sh --input_model=path/to/model  \ # model path as *.onnx
+                   --dataset_location=/path/to/data \
+                   --output_model=path/to/save
+```
 
 ## License
 MIT
