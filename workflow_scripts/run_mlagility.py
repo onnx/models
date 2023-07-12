@@ -16,13 +16,12 @@ def get_immediate_subdirectories_count(dir_name):
 
 def find_model_hash_name(stdout):
     for line in stdout.decode().split("\n"):
-        if "Build dir:" in str(line):
-            cache_name = ".cache"
-            start = line.find(cache_name)
-            if start == -1:
-                raise Exception(f"Cannot find {cache_name} in {line}.")
-            return line[start + len(cache_name) + 1:]
-    raise Exception(f"Cannot find Build dir in {stdout}.")    
+        if "Build dir:" in line:
+            # handle Windows path
+            line = line.replace("\\", "/")
+            # last part of the path is the model hash name
+            return line.split("/")[-1]
+    raise Exception(f"Cannot find Build dir in {stdout}.")
 
 
 ZOO_OPSET_VERSION = "16"

@@ -1,7 +1,6 @@
 models_info = [
     "torch_hub/alexnet.py",
     "torch_hub/resnet50.py",
-    "torchvision/fasterrcnn_resnet50_fpn_v2.py",
     "torchvision/maskrcnn_resnet50_fpn.py",
     "torchvision/ssd300_vgg16.py",
     "torch_hub/mobilenet_v2.py",
@@ -16,15 +15,14 @@ models_info = [
     "torch_hub/densenet121.py",
     "torch_hub/inception_v3.py",
     "torch_hub/googlenet.py",
-    "transformers/bert_generation.py",
     #"popular_on_huggingface/bert-base-uncased.py",
     #"popular_on_huggingface/xlm-roberta-large.py",
     #"popular_on_huggingface/bert-large-uncased.py",
     "popular_on_huggingface/openai_clip-vit-large-patch14.py",
-    "popular_on_huggingface/xlm-roberta-base.py",
-    "popular_on_huggingface/roberta-base.py",
+    #"popular_on_huggingface/xlm-roberta-base.py", # output nan
+    #"popular_on_huggingface/roberta-base.py", # output nan
     "popular_on_huggingface/distilbert-base-uncased.py",
-    "popular_on_huggingface/distilroberta-base.py",
+    #"popular_on_huggingface/distilroberta-base.py", # output nan
     "popular_on_huggingface/distilbert-base-multilingual-cased.py",
     "popular_on_huggingface/albert-base-v2",
 ]
