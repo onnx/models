@@ -153,7 +153,6 @@ def create_test_dir(
         name_output_map = {}
         for name, data in zip(output_names, outputs):
             name_output_map[name] = data
-        del sess
 
     save_data("output", name_output_map, model_outputs)
 
@@ -263,8 +262,6 @@ def run_test_dir(model_or_dir):
                         print("Mismatch for {}:\nExpected:{}\nGot:{}".format(output_names[idx], expected, actual))
                         failed = True
         if failed:
-            del sess
             raise ValueError("FAILED due to output mismatch.")
         else:
             print("PASS")
-    del sess

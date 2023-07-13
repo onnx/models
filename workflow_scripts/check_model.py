@@ -16,8 +16,8 @@ def has_vnni_support():
 
 def run_onnx_checker(model_path):
     model = onnx.load(model_path)
-    onnx.checker.check_model(model, full_check=True)
     del model
+    onnx.checker.check_model(model_path, full_check=True)
 
 
 def ort_skip_reason(model_path):
@@ -48,8 +48,7 @@ def run_backend_ort(model_path, test_data_set=None, tar_gz_path=None):
         # based on the build flags) when instantiating InferenceSession.
         # For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
         # onnxruntime.InferenceSession(path/to/model, providers=["CUDAExecutionProvider"])
-        sess = onnxruntime.InferenceSession(model_path)
-        del sess
+        onnxruntime.InferenceSession(model_path)
         # Get model name without .onnx
         model_name = os.path.basename(os.path.splitext(model_path)[0])
         if model_name is None:
