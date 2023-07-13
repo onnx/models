@@ -46,7 +46,7 @@ def main():
     errors = 0
 
     for model_info in models_info:
-        directory_name, model_name = model_info.split("/")
+        _, model_name = model_info.split("/")
         model_name = model_name.replace(".py", "")
         model_zoo_dir = model_name
         print(f"----------------Checking {model_zoo_dir}----------------")
