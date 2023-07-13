@@ -34,4 +34,4 @@ jobs:
         run: |
           # TODO: remove the following after mlagility has resovled version contradict issue
           pip install -r models/mlagility/requirements.txt
-          python workflow_scripts/run_mlagility.py
+          python workflow_scripts/run_mlagility.py --drop

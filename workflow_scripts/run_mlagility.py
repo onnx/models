@@ -39,6 +39,8 @@ def main():
                         help="Create new models from mlagility if not exist.")
     parser.add_argument("--skip", required=False, default=False, action="store_true",
                         help="Skip checking models if already exist.")
+    parser.add_argument("--drop", required=False, default=False, action="store_true",
+                        help="Drop downloaded models after verification. (For space limitation in CIs)")
 
     args = parser.parse_args()
     errors = 0
@@ -47,20 +49,19 @@ def main():
         directory_name, model_name = model_info.split("/")
         model_name = model_name.replace(".py", "")
         model_zoo_dir = model_name
+        print(f"----------------Checking {model_zoo_dir}----------------")
+        final_model_dir = osp.join(mlagility_models_dir, model_zoo_dir)
+        final_model_name = f"{model_zoo_dir}-{ZOO_OPSET_VERSION}.onnx"
+        final_model_path = osp.join(final_model_dir, final_model_name)
+        if osp.exists(final_model_path) and args.skip:
+            print(f"Skip checking {model_zoo_dir} because {final_model_path} already exists.")
+            continue
         try:
-            print(f"----------------Checking {model_zoo_dir}----------------")
-            final_model_dir = osp.join(mlagility_models_dir, model_zoo_dir)
-            final_model_name = f"{model_zoo_dir}-{ZOO_OPSET_VERSION}.onnx"
-            final_model_path = osp.join(final_model_dir, final_model_name)
-            if osp.exists(final_model_path) and args.skip:
-                print(f"Skip checking {model_zoo_dir} because {final_model_path} already exists.")
-                continue
             cmd = subprocess.run(["benchit", osp.join(mlagility_root, model_info), "--cache-dir", cache_converted_dir,
                             "--onnx-opset", ZOO_OPSET_VERSION, "--export-only"],
                             cwd=cwd_path, stdout=subprocess.PIPE,
                             stderr=sys.stderr, check=True)
             model_hash_name = find_model_hash_name(cmd.stdout)
-            print(model_hash_name)
             mlagility_created_onnx = osp.join(cache_converted_dir, model_hash_name, "onnx", model_hash_name + base_name)
             if args.create:
                 ort_test_dir_utils.create_test_dir(mlagility_created_onnx, "./", final_model_dir)
@@ -75,6 +76,9 @@ def main():
         except Exception as e:
             errors += 1
             print(f"Failed to check {model_zoo_dir} because of {e}.")
+        if args.drop:
+            shutil.rmtree(final_model_dir, ignore_errors=True)
+            shutil.rmtree(cache_converted_dir, ignore_errors=True)
 
     if errors > 0:
         print(f"All {len(models_info)} model(s) have been checked, but {errors} model(s) failed.")
