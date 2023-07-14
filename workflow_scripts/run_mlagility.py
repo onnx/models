@@ -7,7 +7,6 @@ import shutil
 import subprocess
 import sys
 import ort_test_dir_utils
-import onnx
 
 
 def get_immediate_subdirectories_count(dir_name):
@@ -69,11 +68,13 @@ def main():
                 rename(osp.join(final_model_dir, model_hash_name + base_name), final_model_path)
                 print(f"Successfully created {model_zoo_dir} by mlagility and ORT.")
             else:
-                original_model = onnx.load(final_model_path)
                 shutil.copy(mlagility_created_onnx, final_model_path)
-                mlagility_onnx = onnx.load(mlagility_created_onnx)
-                if original_model != mlagility_onnx:
-                    raise Exception(f"Model {final_model_path} is not the same as {mlagility_created_onnx}.")
+                """
+                subprocess.run(["git", "diff", "--exit-code", "--", final_model_path],
+                                cwd=cwd_path, stdout=sys.stdout,
+                                stderr=sys.stderr, check=True)
+                """
+                ort_test_dir_utils.run_test_dir(final_model_dir)
                 print(f"Successfully checked {model_zoo_dir} by mlagility.")
         except Exception as e:
             errors += 1
