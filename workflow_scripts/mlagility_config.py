@@ -15,11 +15,11 @@ models_info = [
     "torch_hub/densenet121.py",
     "torch_hub/inception_v3.py",
     "torch_hub/googlenet.py",
-    "transformers/bert_generation.py",
+    #"transformers/bert_generation.py"
     #"popular_on_huggingface/bert-base-uncased.py",
     #"popular_on_huggingface/xlm-roberta-large.py",
     #"popular_on_huggingface/bert-large-uncased.py",
-    #"popular_on_huggingface/openai_clip-vit-large-patch14.py",
+    "popular_on_huggingface/openai_clip-vit-large-patch14.py",
     #"popular_on_huggingface/xlm-roberta-base.py", # output nan
     #"popular_on_huggingface/roberta-base.py", # output nan
     "popular_on_huggingface/distilbert-base-uncased.py",
