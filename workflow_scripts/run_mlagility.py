@@ -29,7 +29,7 @@ base_name = f"-op{ZOO_OPSET_VERSION}-base.onnx"
 cwd_path = Path.cwd()
 mlagility_root = "mlagility/models"
 mlagility_models_dir = "models/mlagility"
-cache_converted_dir = "~/.cache"
+cache_converted_dir = ".cache"
 
 
 def main():
@@ -81,11 +81,9 @@ def main():
             print(f"Failed to check {model_zoo_dir} because of {e}.")
         if args.drop:
             subprocess.run(["benchit", "cache", "delete"], 
-                        cwd=cwd_path, stdout=sys.stdout,
-                        stderr=sys.stderr, check=True)
+                        cwd=cwd_path, stdout=sys.stdout, stderr=sys.stderr)
             subprocess.run(["benchit", "cache", "clean"], 
-                        cwd=cwd_path, stdout=sys.stdout,
-                        stderr=sys.stderr, check=True)
+                        cwd=cwd_path, stdout=sys.stdout, stderr=sys.stderr)
             shutil.rmtree(final_model_dir, ignore_errors=True)
             shutil.rmtree(cache_converted_dir, ignore_errors=True)
 
