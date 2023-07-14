@@ -29,7 +29,7 @@ base_name = f"-op{ZOO_OPSET_VERSION}-base.onnx"
 cwd_path = Path.cwd()
 mlagility_root = "mlagility/models"
 mlagility_models_dir = "models/mlagility"
-cache_converted_dir = ".cache"
+cache_converted_dir = "~/.cache"
 
 
 def main():
