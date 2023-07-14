@@ -80,7 +80,9 @@ def main():
             errors += 1
             print(f"Failed to check {model_zoo_dir} because of {e}.")
         if args.drop:
-            subprocess.run(["benchit", "cache", "clean", "--all"], 
+            subprocess.run(["benchit", "cache", "delete", "--all", "--cache-dir", cache_converted_dir], 
+                        cwd=cwd_path, stdout=sys.stdout, stderr=sys.stderr, check=True)
+            subprocess.run(["benchit", "cache", "clean", "--all", "--cache-dir", cache_converted_dir], 
                         cwd=cwd_path, stdout=sys.stdout, stderr=sys.stderr, check=True)
             shutil.rmtree(final_model_dir, ignore_errors=True)
             shutil.rmtree(cache_converted_dir, ignore_errors=True)
