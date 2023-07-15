@@ -74,7 +74,7 @@ def main():
                                 cwd=cwd_path, stdout=sys.stdout,
                                 stderr=sys.stderr, check=True)
                 """
-                ort_test_dir_utils.run_test_dir(final_model_dir)
+                ort_test_dir_utils.run_test_dir(final_model_path)
                 print(f"Successfully checked {model_zoo_dir} by mlagility.")
         except Exception as e:
             errors += 1
