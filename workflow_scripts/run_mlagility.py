@@ -69,13 +69,11 @@ def main():
                 print(f"Successfully created {model_zoo_dir} by mlagility and ORT.")
             else:
                 shutil.copy(mlagility_created_onnx, final_model_path)
-                """
                 subprocess.run(["git", "diff", "--exit-code", "--", final_model_path],
                                 cwd=cwd_path, stdout=sys.stdout,
                                 stderr=sys.stderr, check=True)
-                """
-                test_utils.pull_lfs_directory(final_model_dir)
-                ort_test_dir_utils.run_test_dir(final_model_path)
+                #test_utils.pull_lfs_directory(final_model_dir)
+                #ort_test_dir_utils.run_test_dir(final_model_path)
                 print(f"Successfully checked {model_zoo_dir} by mlagility.")
         except Exception as e:
             errors += 1
