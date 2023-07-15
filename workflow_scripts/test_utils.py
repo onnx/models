@@ -25,6 +25,18 @@ def pull_lfs_file(file_name):
     print(f'LFS pull completed for {file_name} with return code= {result.returncode}')
 
 
+def pull_lfs_directory(directory_name):
+    # git lfs pull those test_data_set_* folders
+    for _, dirs, _ in os.walk(directory_name):
+        for dir in dirs:
+            if "test_data_set_" in dir:
+                test_data_set_dir = os.path.join(directory_name, dir)
+                for _, _, files in os.walk(test_data_set_dir):
+                    for file in files:
+                        if file.endswith(".pb"):
+                            pull_lfs_file(os.path.join(test_data_set_dir, file))
+
+
 def run_lfs_prune():
     result = subprocess.run(['git', 'lfs', 'prune'], cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     print(f'LFS prune completed with return code= {result.returncode}')

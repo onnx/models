@@ -7,7 +7,7 @@ import shutil
 import subprocess
 import sys
 import ort_test_dir_utils
-
+import test_utils
 
 def get_immediate_subdirectories_count(dir_name):
     return len([name for name in listdir(dir_name)
@@ -74,6 +74,7 @@ def main():
                                 cwd=cwd_path, stdout=sys.stdout,
                                 stderr=sys.stderr, check=True)
                 """
+                test_utils.pull_lfs_directory(final_model_dir)
                 ort_test_dir_utils.run_test_dir(final_model_path)
                 print(f"Successfully checked {model_zoo_dir} by mlagility.")
         except Exception as e:
