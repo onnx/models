@@ -14,14 +14,17 @@ def get_immediate_subdirectories_count(dir_name):
             if osp.isdir(osp.join(dir_name, name))])
 
 
-def find_model_hash_name(dir_name, cache_dir_prefix):
-    for dir in listdir(dir_name):
-        if dir.startswith(cache_dir_prefix):
-            return dir
-    raise Exception(f"Cannot find model hash name: {cache_dir_prefix} in cache directory.")
+def find_model_hash_name(stdout):
+    for line in stdout.decode().split("\n"):
+        if "Build dir:" in line:
+            # handle Windows path
+            line = line.replace("\\", "/")
+            # last part of the path is the model hash name
+            return line.split("/")[-1]
+    raise Exception(f"Cannot find Build dir in {stdout}.")    
 
 
-ZOO_OPSET_VERSION = "18"
+ZOO_OPSET_VERSION = "16"
 base_name = f"-op{ZOO_OPSET_VERSION}-base.onnx"
 cwd_path = Path.cwd()
 mlagility_root = "mlagility/models"
@@ -52,11 +55,12 @@ def main():
             if osp.exists(final_model_path) and args.skip:
                 print(f"Skip checking {model_zoo_dir} because {final_model_path} already exists.")
                 continue
-            subprocess.run(["benchit", osp.join(mlagility_root, model_info), "--cache-dir", cache_converted_dir,
+            cmd = subprocess.run(["benchit", osp.join(mlagility_root, model_info), "--cache-dir", cache_converted_dir,
                             "--onnx-opset", ZOO_OPSET_VERSION, "--export-only"],
-                            cwd=cwd_path, stdout=sys.stdout,
+                            cwd=cwd_path, stdout=subprocess.PIPE,
                             stderr=sys.stderr, check=True)
-            model_hash_name = find_model_hash_name(".cache", model_name + "_" + directory_name + "_")
+            model_hash_name = find_model_hash_name(cmd.stdout)
+            print(model_hash_name)
             mlagility_created_onnx = osp.join(cache_converted_dir, model_hash_name, "onnx", model_hash_name + base_name)
             if args.create:
                 ort_test_dir_utils.create_test_dir(mlagility_created_onnx, "./", final_model_dir)
