@@ -8,6 +8,7 @@ import subprocess
 import sys
 import ort_test_dir_utils
 import onnx
+import test_utils
 
 
 def get_immediate_subdirectories_count(dir_name):
@@ -69,6 +70,7 @@ def main():
                 rename(osp.join(final_model_dir, model_hash_name + base_name), final_model_path)
                 print(f"Successfully created {model_zoo_dir} by mlagility and ORT.")
             else:
+                test_utils.pull_lfs_file(final_model_path)
                 original_model = onnx.load(final_model_path, load_external_data=False)
                 shutil.copy(mlagility_created_onnx, final_model_path)
                 mlagility_model = onnx.load(final_model_path, load_external_data=False)
