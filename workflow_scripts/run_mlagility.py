@@ -83,8 +83,8 @@ def main():
                 print(f"node: {mlagility_model.graph.node == original_model.graph.node}")
                 print(f"output: {mlagility_model.graph.output == original_model.graph.output}")
                 print(f"opset_import: {mlagility_model.opset_import == original_model.opset_import}")
-                print(f"initializers: {mlagility_model.initializers == original_model.initializers}")
-                if mlagility_model.opset_import != original_model.opset_import:
+                print(f"initializers: {mlagility_model.graph.initializers == original_model.graph.initializers}")
+                if mlagility_model != original_model:
                     raise Exception(f"Model {final_model_path} from mlagility is not the same as the original one.")
                 print(f"Successfully checked {model_zoo_dir} by mlagility.")
         except Exception as e:
