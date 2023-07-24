@@ -77,6 +77,8 @@ def remove_onnxruntime_test_dir():
 
 
 def get_changed_models():
+    tar_ext_name = ".tar.gz"
+    onnx_ext_name = ".onnx"
     model_list = []
     cwd_path = Path.cwd()
     # git fetch first for git diff on GitHub Action

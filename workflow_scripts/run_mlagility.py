@@ -9,7 +9,6 @@ import sys
 import ort_test_dir_utils
 import onnx
 import test_utils
-import test_models
 
 
 def get_immediate_subdirectories_count(dir_name):
