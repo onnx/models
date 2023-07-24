@@ -46,7 +46,7 @@ def main():
 
     args = parser.parse_args()
     errors = 0
-    changed_models_set = set(test_utils.get_changed_models)
+    changed_models_set = set(test_utils.get_changed_models())
     for model_info in models_info:
         _, model_name = model_info.split("/")
         model_name = model_name.replace(".py", "")
