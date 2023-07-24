@@ -35,6 +35,9 @@ cache_converted_dir = ".cache"
 
 
 def main():
+    # caculate first; otherwise the directories might be deleted by shutil.rmtree
+    mlagility_subdir_count = get_immediate_subdirectories_count(mlagility_models_dir)
+
     parser = argparse.ArgumentParser(description="Test settings")
 
     parser.add_argument("--all_models", required=False, default=False, action="store_true",
@@ -99,7 +102,7 @@ def main():
     else:
         print(f"All {total_count} model(s) have been checked.")
 
-    mlagility_subdir_count = get_immediate_subdirectories_count(mlagility_models_dir)
+
     if mlagility_subdir_count != len(models_info):
         print(f"Expected {len(models_info)} model(s) in {mlagility_models_dir}, but got {mlagility_subdir_count} model(s) under models/mlagility."
             f"Please check if you have added new model(s) to models_info in mlagility_config.py.")
