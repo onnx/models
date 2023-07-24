@@ -47,7 +47,6 @@ def main():
     args = parser.parse_args()
     errors = 0
     changed_models_set = set(test_utils.get_changed_models())
-    print(f"Changed models: {changed_models_set}")
     for model_info in models_info:
         _, model_name = model_info.split("/")
         model_name = model_name.replace(".py", "")
@@ -56,7 +55,6 @@ def main():
         final_model_dir = osp.join(mlagility_models_dir, model_zoo_dir)
         final_model_name = f"{model_zoo_dir}-{ZOO_OPSET_VERSION}.onnx"
         final_model_path = osp.join(final_model_dir, final_model_name)
-        print(final_model_path)
         if final_model_path not in changed_models_set:
             print(f"Skip checking {final_model_path} because it is not changed.")
             continue
@@ -83,7 +81,6 @@ def main():
                 print(f"node: {mlagility_model.graph.node == original_model.graph.node}")
                 print(f"output: {mlagility_model.graph.output == original_model.graph.output}")
                 print(f"opset_import: {mlagility_model.opset_import == original_model.opset_import}")
-                print(f"initializers: {mlagility_model.graph.initializers == original_model.graph.initializers}")
                 if mlagility_model != original_model:
                     raise Exception(f"Model {final_model_path} from mlagility is not the same as the original one.")
                 print(f"Successfully checked {model_zoo_dir} by mlagility.")

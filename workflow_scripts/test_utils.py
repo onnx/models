@@ -86,7 +86,9 @@ def get_changed_models():
                    cwd=cwd_path, stdout=subprocess.PIPE,
                    stderr=subprocess.PIPE)
     # obtain list of added or modified files in this PR
-    obtain_diff = subprocess.Popen(["git", "diff", "--name-only", "--diff-filter=AM", "origin/main", "HEAD"],
+    # TODO: use the main branch instead of new-models
+    branch_name = "new-models" # "main"
+    obtain_diff = subprocess.Popen(["git", "diff", "--name-only", "--diff-filter=AM", "origin/" + branch_name, "HEAD"],
                                    cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdoutput, _ = obtain_diff.communicate()
     diff_list = stdoutput.split()
