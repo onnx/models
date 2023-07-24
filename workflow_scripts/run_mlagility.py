@@ -47,6 +47,7 @@ def main():
     args = parser.parse_args()
     errors = 0
     changed_models_set = set(test_utils.get_changed_models())
+    print(f"Changed models: {changed_models_set}")
     for model_info in models_info:
         _, model_name = model_info.split("/")
         model_name = model_name.replace(".py", "")
@@ -57,7 +58,7 @@ def main():
         final_model_path = osp.join(final_model_dir, final_model_name)
         if final_model_path not in changed_models_set:
             print(f"Skip checking {final_model_path} because it is not changed.")
-            continue
+            #continue
         if osp.exists(final_model_path) and args.skip:
             print(f"Skip checking {model_zoo_dir} because {final_model_path} already exists.")
             continue

@@ -81,13 +81,13 @@ def get_changed_models():
     onnx_ext_name = ".onnx"
     model_list = []
     cwd_path = Path.cwd()
+    # TODO: use the main branch instead of new-models
+    branch_name = "new-models" # "main"
     # git fetch first for git diff on GitHub Action
-    subprocess.run(["git", "fetch", "origin", "main:main"],
+    subprocess.run(["git", "fetch", "origin", f"{branch_name}:{branch_name}"],
                    cwd=cwd_path, stdout=subprocess.PIPE,
                    stderr=subprocess.PIPE)
     # obtain list of added or modified files in this PR
-    # TODO: use the main branch instead of new-models
-    branch_name = "new-models" # "main"
     obtain_diff = subprocess.Popen(["git", "diff", "--name-only", "--diff-filter=AM", "origin/" + branch_name, "HEAD"],
                                    cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdoutput, _ = obtain_diff.communicate()
