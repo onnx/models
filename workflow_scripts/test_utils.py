@@ -74,3 +74,22 @@ def remove_tar_dir():
 def remove_onnxruntime_test_dir():
     if os.path.exists(TEST_ORT_DIR) and os.path.isdir(TEST_ORT_DIR):
         rmtree(TEST_ORT_DIR)
+
+
+def get_changed_models():
+    model_list = []
+    cwd_path = Path.cwd()
+    # git fetch first for git diff on GitHub Action
+    subprocess.run(["git", "fetch", "origin", "main:main"],
+                   cwd=cwd_path, stdout=subprocess.PIPE,
+                   stderr=subprocess.PIPE)
+    # obtain list of added or modified files in this PR
+    obtain_diff = subprocess.Popen(["git", "diff", "--name-only", "--diff-filter=AM", "origin/main", "HEAD"],
+                                   cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    stdoutput, _ = obtain_diff.communicate()
+    diff_list = stdoutput.split()
+
+    # identify list of changed ONNX models in ONXX Model Zoo
+    model_list = [str(model).replace("b'", "").replace("'", "")
+                  for model in diff_list if onnx_ext_name in str(model) or tar_ext_name in str(model)]
+    return model_list

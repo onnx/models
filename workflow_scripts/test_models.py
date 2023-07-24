@@ -23,25 +23,6 @@ def get_all_models():
     return model_list
 
 
-def get_changed_models():
-    model_list = []
-    cwd_path = Path.cwd()
-    # git fetch first for git diff on GitHub Action
-    subprocess.run(["git", "fetch", "origin", "main:main"],
-                   cwd=cwd_path, stdout=subprocess.PIPE,
-                   stderr=subprocess.PIPE)
-    # obtain list of added or modified files in this PR
-    obtain_diff = subprocess.Popen(["git", "diff", "--name-only", "--diff-filter=AM", "origin/main", "HEAD"],
-                                   cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    stdoutput, _ = obtain_diff.communicate()
-    diff_list = stdoutput.split()
-
-    # identify list of changed ONNX models in ONXX Model Zoo
-    model_list = [str(model).replace("b'", "").replace("'", "")
-                  for model in diff_list if onnx_ext_name in str(model) or tar_ext_name in str(model)]
-    return model_list
-
-
 def main():
     parser = argparse.ArgumentParser(description="Test settings")
     # default all: test by both onnx and onnxruntime
@@ -58,7 +39,7 @@ def main():
                         help="Drop downloaded models after verification. (For space limitation in CIs)")
     args = parser.parse_args()
 
-    model_list = get_all_models() if args.all_models else get_changed_models()
+    model_list = get_all_models() if args.all_models else test_utils.get_changed_models()
     # run lfs install before starting the tests
     test_utils.run_lfs_install()
 
