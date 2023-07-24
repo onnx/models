@@ -77,20 +77,10 @@ def main():
                 rename(osp.join(final_model_dir, model_hash_name + base_name), final_model_path)
                 print(f"Successfully created {model_zoo_dir} by mlagility and ORT.")
             else:
-                test_utils.pull_lfs_file(final_model_path)
-                original_model = onnx.load(final_model_path, load_external_data=False)
                 shutil.copy(mlagility_created_onnx, final_model_path)
-                mlagility_model = onnx.load(mlagility_created_onnx, load_external_data=False)
-                print(f"input: {mlagility_model.graph.input == original_model.graph.input}")
-                print(f"node: {mlagility_model.graph.node == original_model.graph.node}")
-                print(f"output: {mlagility_model.graph.output == original_model.graph.output}")
-                print(f"opset_import: {mlagility_model.opset_import == original_model.opset_import}")
-                print(f"initializer: {mlagility_model.graph.initializer == original_model.graph.initializer}")
-                for k in range(len(mlagility_model.graph.initializer)):
-                    if k < len(original_model.graph.initializer) and mlagility_model.graph.initializer[k] != original_model.graph.initializer[k]:
-                        print(f"initializer {k}")
-                if mlagility_model != original_model:
-                    raise Exception(f"Model {final_model_path} from mlagility is not the same as the original one.")
+                subprocess.run(["git", "diff", "--exit-code", "--", final_model_path],
+                                cwd=cwd_path, stdout=sys.stdout,
+                                stderr=sys.stderr, check=True)
                 print(f"Successfully checked {model_zoo_dir} by mlagility.")
         except Exception as e:
             errors += 1
