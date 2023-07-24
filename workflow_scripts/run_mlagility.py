@@ -88,8 +88,7 @@ def main():
                 print(f"initializer: {mlagility_model.graph.initializer == original_model.graph.initializer}")
                 for k in range(len(mlagility_model.graph.initializer)):
                     if k < len(original_model.graph.initializer) and mlagility_model.graph.initializer[k] != original_model.graph.initializer[k]:
-                        print(f"initializer {k}: {mlagility_model.graph.initializer[k]}")
-                        print(f"but: {original_model.graph.initializer[k]}")
+                        print(f"initializer {k}")
                 if mlagility_model != original_model:
                     raise Exception(f"Model {final_model_path} from mlagility is not the same as the original one.")
                 print(f"Successfully checked {model_zoo_dir} by mlagility.")
