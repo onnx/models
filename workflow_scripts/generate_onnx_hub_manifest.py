@@ -14,8 +14,7 @@ from onnxruntime.capi.onnxruntime_pybind11_state import NotImplemented
 import onnx
 from onnx import shape_inference
 import argparse
-from test_models import get_changed_models
-from test_utils import pull_lfs_file
+from test_utils import get_changed_models, pull_lfs_file
 
 
 # Acknowledgments to pytablereader codebase for this function
