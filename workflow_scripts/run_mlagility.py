@@ -58,7 +58,7 @@ def main():
         final_model_path = osp.join(final_model_dir, final_model_name)
         if final_model_path not in changed_models_set:
             print(f"Skip checking {final_model_path} because it is not changed.")
-            #continue
+            continue
         if osp.exists(final_model_path) and args.skip:
             print(f"Skip checking {model_zoo_dir} because {final_model_path} already exists.")
             continue
@@ -82,6 +82,7 @@ def main():
                 print(f"node: {mlagility_model.graph.node == original_model.graph.node}")
                 print(f"output: {mlagility_model.graph.output == original_model.graph.output}")
                 print(f"opset_import: {mlagility_model.opset_import == original_model.opset_import}")
+                print(f"opset_import: {mlagility_model.graph.initializer == original_model.graph.initializer}")
                 if mlagility_model != original_model:
                     raise Exception(f"Model {final_model_path} from mlagility is not the same as the original one.")
                 print(f"Successfully checked {model_zoo_dir} by mlagility.")
