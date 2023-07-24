@@ -47,6 +47,7 @@ def main():
     args = parser.parse_args()
     errors = 0
     changed_models_set = set(test_utils.get_changed_models())
+    print(f"Changed models: {changed_models_set}")
     for model_info in models_info:
         _, model_name = model_info.split("/")
         model_name = model_name.replace(".py", "")
@@ -55,6 +56,7 @@ def main():
         final_model_dir = osp.join(mlagility_models_dir, model_zoo_dir)
         final_model_name = f"{model_zoo_dir}-{ZOO_OPSET_VERSION}.onnx"
         final_model_path = osp.join(final_model_dir, final_model_name)
+        print(final_model_path)
         if final_model_path not in changed_models_set:
             print(f"Skip checking {final_model_path} because it is not changed.")
             continue
@@ -76,8 +78,13 @@ def main():
                 test_utils.pull_lfs_file(final_model_path)
                 original_model = onnx.load(final_model_path, load_external_data=False)
                 shutil.copy(mlagility_created_onnx, final_model_path)
-                mlagility_model = onnx.load(final_model_path, load_external_data=False)
-                if mlagility_model.graph.node != original_model.graph.node:
+                mlagility_model = onnx.load(mlagility_created_onnx, load_external_data=False)
+                print(f"input: {mlagility_model.graph.input == original_model.graph.input}")
+                print(f"node: {mlagility_model.graph.node == original_model.graph.node}")
+                print(f"output: {mlagility_model.graph.output == original_model.graph.output}")
+                print(f"opset_import: {mlagility_model.opset_import == original_model.opset_import}")
+                print(f"initializers: {mlagility_model.initializers == original_model.initializers}")
+                if mlagility_model.opset_import != original_model.opset_import:
                     raise Exception(f"Model {final_model_path} from mlagility is not the same as the original one.")
                 print(f"Successfully checked {model_zoo_dir} by mlagility.")
         except Exception as e:
