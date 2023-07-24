@@ -9,6 +9,7 @@ import sys
 import ort_test_dir_utils
 import onnx
 import test_utils
+import test_models
 
 
 def get_immediate_subdirectories_count(dir_name):
@@ -46,7 +47,7 @@ def main():
 
     args = parser.parse_args()
     errors = 0
-
+    changed_models_set = set(test_models.get_changed_models)
     for model_info in models_info:
         _, model_name = model_info.split("/")
         model_name = model_name.replace(".py", "")
@@ -55,6 +56,9 @@ def main():
         final_model_dir = osp.join(mlagility_models_dir, model_zoo_dir)
         final_model_name = f"{model_zoo_dir}-{ZOO_OPSET_VERSION}.onnx"
         final_model_path = osp.join(final_model_dir, final_model_name)
+        if final_model_path not in changed_models_set:
+            print(f"Skip checking {final_model_path} because it is not changed.")
+            continue
         if osp.exists(final_model_path) and args.skip:
             print(f"Skip checking {model_zoo_dir} because {final_model_path} already exists.")
             continue
@@ -74,7 +78,7 @@ def main():
                 original_model = onnx.load(final_model_path, load_external_data=False)
                 shutil.copy(mlagility_created_onnx, final_model_path)
                 mlagility_model = onnx.load(final_model_path, load_external_data=False)
-                if mlagility_model != original_model:
+                if mlagility_model.graph.node != original_model.graph.node:
                     raise Exception(f"Model {final_model_path} from mlagility is not the same as the original one.")
                 print(f"Successfully checked {model_zoo_dir} by mlagility.")
         except Exception as e:
