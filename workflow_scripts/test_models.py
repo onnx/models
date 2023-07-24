@@ -34,7 +34,7 @@ def main():
     parser.add_argument("--create", required=False, default=False, action="store_true",
                         help="Create new test data by ORT if it fails with existing test data")
     parser.add_argument("--all_models", required=False, default=False, action="store_true",
-                        help="Test all ONNX Model Zoo models instead of only chnaged models")
+                        help="Test all ONNX Model Zoo models instead of only changed models")
     parser.add_argument("--drop", required=False, default=False, action="store_true",
                         help="Drop downloaded models after verification. (For space limitation in CIs)")
     args = parser.parse_args()

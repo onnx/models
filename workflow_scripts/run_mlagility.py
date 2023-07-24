@@ -37,12 +37,15 @@ cache_converted_dir = ".cache"
 def main():
     parser = argparse.ArgumentParser(description="Test settings")
 
+    parser.add_argument("--all_models", required=False, default=False, action="store_true",
+                        help="Test all ONNX Model Zoo models instead of only chnaged models")
     parser.add_argument("--create", required=False, default=False, action="store_true",
                         help="Create new models from mlagility if not exist.")
-    parser.add_argument("--skip", required=False, default=False, action="store_true",
-                        help="Skip checking models if already exist.")
     parser.add_argument("--drop", required=False, default=False, action="store_true",
                         help="Drop downloaded models after verification. (For space limitation in CIs)")
+    parser.add_argument("--skip", required=False, default=False, action="store_true",
+                        help="Skip checking models if already exist.")
+
 
     args = parser.parse_args()
     errors = 0
@@ -56,7 +59,7 @@ def main():
         final_model_dir = osp.join(mlagility_models_dir, model_zoo_dir)
         final_model_name = f"{model_zoo_dir}-{ZOO_OPSET_VERSION}.onnx"
         final_model_path = osp.join(final_model_dir, final_model_name)
-        if final_model_path not in changed_models_set:
+        if not args.all_models and final_model_path not in changed_models_set:
             print(f"Skip checking {final_model_path} because it is not changed.")
             continue
         if osp.exists(final_model_path) and args.skip:
@@ -82,7 +85,11 @@ def main():
                 print(f"node: {mlagility_model.graph.node == original_model.graph.node}")
                 print(f"output: {mlagility_model.graph.output == original_model.graph.output}")
                 print(f"opset_import: {mlagility_model.opset_import == original_model.opset_import}")
-                print(f"opset_import: {mlagility_model.graph.initializer == original_model.graph.initializer}")
+                print(f"initializer: {mlagility_model.graph.initializer == original_model.graph.initializer}")
+                for k in range(len(mlagility_model.graph.initializer)):
+                    if k < len(original_model.graph.initializer) and mlagility_model.graph.initializer[k] != original_model.graph.initializer[k]:
+                        print(f"initializer {k}: {mlagility_model.graph.initializer[k]}")
+                        print(f"but: {original_model.graph.initializer[k]}")
                 if mlagility_model != original_model:
                     raise Exception(f"Model {final_model_path} from mlagility is not the same as the original one.")
                 print(f"Successfully checked {model_zoo_dir} by mlagility.")
@@ -96,12 +103,12 @@ def main():
                         cwd=cwd_path, stdout=sys.stdout, stderr=sys.stderr, check=True)
             shutil.rmtree(final_model_dir, ignore_errors=True)
             shutil.rmtree(cache_converted_dir, ignore_errors=True)
-
+    total_count = len(models_info) if args.all_models else len(changed_models_set)
     if errors > 0:
-        print(f"All {len(models_info)} model(s) have been checked, but {errors} model(s) failed.")
+        print(f"All {total_count} model(s) have been checked, but {errors} model(s) failed.")
         sys.exit(1)
     else:
-        print(f"All {len(models_info)} model(s) have been checked.")
+        print(f"All {total_count} model(s) have been checked.")
 
     mlagility_subdir_count = get_immediate_subdirectories_count(mlagility_models_dir)
     if mlagility_subdir_count != len(models_info):
