@@ -7,7 +7,6 @@ import shutil
 import subprocess
 import sys
 import ort_test_dir_utils
-import onnx
 import test_utils
 
 
