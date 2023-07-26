@@ -23,25 +23,6 @@ def get_all_models():
     return model_list
 
 
-def get_changed_models():
-    model_list = []
-    cwd_path = Path.cwd()
-    # git fetch first for git diff on GitHub Action
-    subprocess.run(["git", "fetch", "origin", "main:main"],
-                   cwd=cwd_path, stdout=subprocess.PIPE,
-                   stderr=subprocess.PIPE)
-    # obtain list of added or modified files in this PR
-    obtain_diff = subprocess.Popen(["git", "diff", "--name-only", "--diff-filter=AM", "origin/main", "HEAD"],
-                                   cwd=cwd_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    stdoutput, _ = obtain_diff.communicate()
-    diff_list = stdoutput.split()
-
-    # identify list of changed ONNX models in ONXX Model Zoo
-    model_list = [str(model).replace("b'", "").replace("'", "")
-                  for model in diff_list if onnx_ext_name in str(model) or tar_ext_name in str(model)]
-    return model_list
-
-
 def main():
     parser = argparse.ArgumentParser(description="Test settings")
     # default all: test by both onnx and onnxruntime
@@ -53,12 +34,12 @@ def main():
     parser.add_argument("--create", required=False, default=False, action="store_true",
                         help="Create new test data by ORT if it fails with existing test data")
     parser.add_argument("--all_models", required=False, default=False, action="store_true",
-                        help="Test all ONNX Model Zoo models instead of only chnaged models")
+                        help="Test all ONNX Model Zoo models instead of only changed models")
     parser.add_argument("--drop", required=False, default=False, action="store_true",
                         help="Drop downloaded models after verification. (For space limitation in CIs)")
     args = parser.parse_args()
 
-    model_list = get_all_models() if args.all_models else get_changed_models()
+    model_list = get_all_models() if args.all_models else test_utils.get_changed_models()
     # run lfs install before starting the tests
     test_utils.run_lfs_install()
 
@@ -106,16 +87,7 @@ def main():
                     print("[PASS] {} is checked by onnx. ".format(model_name))
                 if args.target == "onnxruntime" or args.target == "all":
                     try:
-                        # git lfs pull those test_data_set_* folders
-                        root_dir = Path(model_path).parent
-                        for _, dirs, _ in os.walk(root_dir):
-                            for dir in dirs:
-                                if "test_data_set_" in dir:
-                                    test_data_set_dir = os.path.join(root_dir, dir)
-                                    for _, _, files in os.walk(test_data_set_dir):
-                                        for file in files:
-                                            if file.endswith(".pb"):
-                                                test_utils.pull_lfs_file(os.path.join(test_data_set_dir, file))
+                        test_utils.pull_lfs_directory(Path(model_path).parent)
                         check_model.run_backend_ort_with_data(model_path)
                         print("[PASS] {} is checked by onnxruntime. ".format(model_name))
                     except Exception as e:

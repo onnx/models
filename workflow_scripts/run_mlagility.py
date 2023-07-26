@@ -7,6 +7,7 @@ import shutil
 import subprocess
 import sys
 import ort_test_dir_utils
+import test_utils
 
 
 def get_immediate_subdirectories_count(dir_name):
@@ -21,7 +22,7 @@ def find_model_hash_name(stdout):
             line = line.replace("\\", "/")
             # last part of the path is the model hash name
             return line.split("/")[-1]
-    raise Exception(f"Cannot find Build dir in {stdout}.")    
+    raise Exception(f"Cannot find Build dir in {stdout}.")
 
 
 ZOO_OPSET_VERSION = "16"
@@ -33,34 +34,45 @@ cache_converted_dir = ".cache"
 
 
 def main():
+    # caculate first; otherwise the directories might be deleted by shutil.rmtree
+    mlagility_subdir_count = get_immediate_subdirectories_count(mlagility_models_dir)
+
     parser = argparse.ArgumentParser(description="Test settings")
 
+    parser.add_argument("--all_models", required=False, default=False, action="store_true",
+                        help="Test all ONNX Model Zoo models instead of only chnaged models")
     parser.add_argument("--create", required=False, default=False, action="store_true",
                         help="Create new models from mlagility if not exist.")
+    parser.add_argument("--drop", required=False, default=False, action="store_true",
+                        help="Drop downloaded models after verification. (For space limitation in CIs)")
     parser.add_argument("--skip", required=False, default=False, action="store_true",
                         help="Skip checking models if already exist.")
 
+
     args = parser.parse_args()
     errors = 0
-
+    changed_models_set = set(test_utils.get_changed_models())
+    print(f"Changed models: {changed_models_set}")
     for model_info in models_info:
-        directory_name, model_name = model_info.split("/")
+        _, model_name = model_info.split("/")
         model_name = model_name.replace(".py", "")
         model_zoo_dir = model_name
+        print(f"----------------Checking {model_zoo_dir}----------------")
+        final_model_dir = osp.join(mlagility_models_dir, model_zoo_dir)
+        final_model_name = f"{model_zoo_dir}-{ZOO_OPSET_VERSION}.onnx"
+        final_model_path = osp.join(final_model_dir, final_model_name)
+        if not args.all_models and final_model_path not in changed_models_set:
+            print(f"Skip checking {final_model_path} because it is not changed.")
+            continue
+        if osp.exists(final_model_path) and args.skip:
+            print(f"Skip checking {model_zoo_dir} because {final_model_path} already exists.")
+            continue
         try:
-            print(f"----------------Checking {model_zoo_dir}----------------")
-            final_model_dir = osp.join(mlagility_models_dir, model_zoo_dir)
-            final_model_name = f"{model_zoo_dir}-{ZOO_OPSET_VERSION}.onnx"
-            final_model_path = osp.join(final_model_dir, final_model_name)
-            if osp.exists(final_model_path) and args.skip:
-                print(f"Skip checking {model_zoo_dir} because {final_model_path} already exists.")
-                continue
             cmd = subprocess.run(["benchit", osp.join(mlagility_root, model_info), "--cache-dir", cache_converted_dir,
                             "--onnx-opset", ZOO_OPSET_VERSION, "--export-only"],
                             cwd=cwd_path, stdout=subprocess.PIPE,
                             stderr=sys.stderr, check=True)
             model_hash_name = find_model_hash_name(cmd.stdout)
-            print(model_hash_name)
             mlagility_created_onnx = osp.join(cache_converted_dir, model_hash_name, "onnx", model_hash_name + base_name)
             if args.create:
                 ort_test_dir_utils.create_test_dir(mlagility_created_onnx, "./", final_model_dir)
@@ -75,14 +87,21 @@ def main():
         except Exception as e:
             errors += 1
             print(f"Failed to check {model_zoo_dir} because of {e}.")
-
+        if args.drop:
+            subprocess.run(["benchit", "cache", "delete", "--all", "--cache-dir", cache_converted_dir], 
+                        cwd=cwd_path, stdout=sys.stdout, stderr=sys.stderr, check=True)
+            subprocess.run(["benchit", "cache", "clean", "--all", "--cache-dir", cache_converted_dir], 
+                        cwd=cwd_path, stdout=sys.stdout, stderr=sys.stderr, check=True)
+            shutil.rmtree(final_model_dir, ignore_errors=True)
+            shutil.rmtree(cache_converted_dir, ignore_errors=True)
+    total_count = len(models_info) if args.all_models else len(changed_models_set)
     if errors > 0:
-        print(f"All {len(models_info)} model(s) have been checked, but {errors} model(s) failed.")
+        print(f"All {total_count} model(s) have been checked, but {errors} model(s) failed.")
         sys.exit(1)
     else:
-        print(f"All {len(models_info)} model(s) have been checked.")
+        print(f"All {total_count} model(s) have been checked.")
 
-    mlagility_subdir_count = get_immediate_subdirectories_count(mlagility_models_dir)
+
     if mlagility_subdir_count != len(models_info):
         print(f"Expected {len(models_info)} model(s) in {mlagility_models_dir}, but got {mlagility_subdir_count} model(s) under models/mlagility."
             f"Please check if you have added new model(s) to models_info in mlagility_config.py.")

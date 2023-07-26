@@ -16,7 +16,8 @@ def has_vnni_support():
 
 def run_onnx_checker(model_path):
     model = onnx.load(model_path)
-    onnx.checker.check_model(model, full_check=True)
+    del model
+    onnx.checker.check_model(model_path, full_check=True)
 
 
 def ort_skip_reason(model_path):
