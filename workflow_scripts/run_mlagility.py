@@ -75,9 +75,13 @@ def main():
             model_hash_name = find_model_hash_name(cmd.stdout)
             mlagility_created_onnx = osp.join(cache_converted_dir, model_hash_name, "onnx", model_hash_name + base_name)
             if args.create:
-                ort_test_dir_utils.create_test_dir(mlagility_created_onnx, "./", final_model_dir)
-                rename(osp.join(final_model_dir, model_hash_name + base_name), final_model_path)
-                print(f"Successfully created {model_zoo_dir} by mlagility and ORT.")
+                try:
+                    ort_test_dir_utils.create_test_dir(mlagility_created_onnx, "./", final_model_dir)
+                    rename(osp.join(final_model_dir, model_hash_name + base_name), final_model_path)
+                    print(f"Successfully created {model_zoo_dir} by mlagility and ORT.")
+                except Exception as e:
+                    shutil.rmtree(final_model_dir, ignore_errors=True)
+                    print(f"Failed to create {model_zoo_dir} by mlagility because of {e}.")
             else:
                 shutil.copy(mlagility_created_onnx, final_model_path)
                 subprocess.run(["git", "diff", "--exit-code", "--", final_model_path],
