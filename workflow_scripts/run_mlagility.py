@@ -10,6 +10,14 @@ import ort_test_dir_utils
 import test_utils
 
 
+ZOO_OPSET_VERSION = "16"
+base_name = f"-op{ZOO_OPSET_VERSION}-base.onnx"
+cwd_path = Path.cwd()
+mlagility_root = "mlagility/models"
+mlagility_models_dir = "models/mlagility"
+cache_converted_dir = ".cache"
+
+
 def get_immediate_subdirectories_count(dir_name):
     return len([name for name in listdir(dir_name)
             if osp.isdir(osp.join(dir_name, name))])
@@ -25,12 +33,8 @@ def find_model_hash_name(stdout):
     raise Exception(f"Cannot find Build dir in {stdout}.")
 
 
-ZOO_OPSET_VERSION = "16"
-base_name = f"-op{ZOO_OPSET_VERSION}-base.onnx"
-cwd_path = Path.cwd()
-mlagility_root = "mlagility/models"
-mlagility_models_dir = "models/mlagility"
-cache_converted_dir = ".cache"
+def traverse_all_model_script(dir_name):
+    return [osp.join(dir_name, name) for name in listdir(osp.join(mlagility_root, dir_name))]
 
 
 def main():
@@ -53,6 +57,11 @@ def main():
     errors = 0
     changed_models_set = set(test_utils.get_changed_models())
     print(f"Changed models: {changed_models_set}")
+
+    # check if all models are converted under popular_on_huggingface directory
+    models_info = traverse_all_model_script("popular_on_huggingface/")
+    print(models_info)
+
     for model_info in models_info:
         _, model_name = model_info.split("/")
         model_name = model_name.replace(".py", "")
