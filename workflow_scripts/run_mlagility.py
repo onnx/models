@@ -90,6 +90,7 @@ def main():
                 try:
                     ort_test_dir_utils.create_test_dir(mlagility_created_onnx, "./", final_model_dir)
                     rename(osp.join(final_model_dir, model_hash_name + base_name), final_model_path)
+                    ort_test_dir_utils.run_test_dir(final_model_dir)
                     print(f"Successfully created {model_zoo_dir} by mlagility and ORT.")
                 except Exception as e:
                     shutil.rmtree(final_model_dir, ignore_errors=True)
