@@ -22,10 +22,8 @@ models_info = [
     "popular_on_huggingface/distilbert-base-multilingual-cased.py",
 
     "popular_on_huggingface/CompVis_stable-diffusion-v1-4.py",
-    "popular_on_huggingface/DMetaSoul_sbert-chinese-general-v2.py",
     "popular_on_huggingface/deepset_deberta-v3-base-squad2.py",
     "popular_on_huggingface/Musixmatch_umberto-commoncrawl-cased-v1.py",
-    "popular_on_huggingface/aiknowyou_aiky-sentence-bertino.py",
     "popular_on_huggingface/deepset_deberta-v3-base-squad2.py",
     "popular_on_huggingface/facebook_deit-base-patch16-224.py",
     "popular_on_huggingface/microsoft_beit-large-patch16-384.py",
@@ -59,5 +57,6 @@ models_info = [
     "popular_on_huggingface/nickprock_xlm-roberta-base-banking77-classification.py", # output nan
     "popular_on_huggingface/sentence-transformers_nli-roberta-large.py", # output nan
     "popular_on_huggingface/sentence-transformers_paraphrase-mpnet-base-v2.py", # output nan
+    "popular_on_huggingface/deepset_xlm-roberta-base-squad2-distilled.py", # output nan
     """
 ]

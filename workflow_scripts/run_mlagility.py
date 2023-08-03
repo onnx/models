@@ -1,5 +1,4 @@
 import argparse
-from mlagility_config import models_info
 import os.path as osp
 from os import listdir, rename
 from pathlib import Path
@@ -62,7 +61,9 @@ def main():
     if args.dir is not None:
         # check if all models are converted under popular_on_huggingface directory
         models_info = traverse_all_model_script(args.dir)
-        print(models_info)
+        print(f"All traversed scripts: {models_info}")
+    else:
+        from mlagility_config import models_info
 
     for model_info in models_info:
         _, model_name = model_info.split("/")
