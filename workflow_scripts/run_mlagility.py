@@ -44,23 +44,25 @@ def main():
     parser = argparse.ArgumentParser(description="Test settings")
 
     parser.add_argument("--all_models", required=False, default=False, action="store_true",
-                        help="Test all ONNX Model Zoo models instead of only chnaged models")
+                        help="Test all ONNX Model Zoo models instead of only changed models")
     parser.add_argument("--create", required=False, default=False, action="store_true",
                         help="Create new models from mlagility if not exist.")
     parser.add_argument("--drop", required=False, default=False, action="store_true",
                         help="Drop downloaded models after verification. (For space limitation in CIs)")
     parser.add_argument("--skip", required=False, default=False, action="store_true",
                         help="Skip checking models if already exist.")
-
+    parser.add_argument("--dir", required=False, nargs='?', default=None,
+                        help="Traverse all models under the specified directory from mlagility.")
 
     args = parser.parse_args()
     errors = 0
     changed_models_set = set(test_utils.get_changed_models())
     print(f"Changed models: {changed_models_set}")
 
-    # check if all models are converted under popular_on_huggingface directory
-    models_info = traverse_all_model_script("popular_on_huggingface/")
-    print(models_info)
+    if args.dir is not None:
+        # check if all models are converted under popular_on_huggingface directory
+        models_info = traverse_all_model_script(args.dir)
+        print(models_info)
 
     for model_info in models_info:
         _, model_name = model_info.split("/")
