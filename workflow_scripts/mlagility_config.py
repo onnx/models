@@ -24,8 +24,18 @@ models_info = [
     "popular_on_huggingface/Musixmatch_umberto-commoncrawl-cased-v1.py",
     "popular_on_huggingface/facebook_deit-base-patch16-224.py",
     "popular_on_huggingface/microsoft_beit-large-patch16-384.py",
+    "popular_on_huggingface/microsoft_beit-large-patch16-224-pt22k-ft22k.py",
+    "popular_on_huggingface/microsoft_beit-base-patch16-224-pt22k-ft22k.py",
     "popular_on_huggingface/aiknowyou_aiky-sentence-bertino.py",
     "popular_on_huggingface/deepset_deberta-v3-base-squad2.py",
+    "popular_on_huggingface/cross-encoder_nli-deberta-v3-large.py",
+    "popular_on_huggingface/google_vit-large-patch32-384.py",
+    "popular_on_huggingface/hustvl_yolos-small.py",
+    "popular_on_huggingface/model-attribution-challenge_xlnet-base-cased.py",
+    "popular_on_huggingface/nateraw_vit-age-classifier.py",
+    "popular_on_huggingface/navteca_bart-large-mnli.py",
+    "popular_on_huggingface/sentence-transformers_msmarco-distilbert-base-v4.py",
+    "popular_on_huggingface/thunlp_Lawformer.py",
 ]
 
 failed_models = [
