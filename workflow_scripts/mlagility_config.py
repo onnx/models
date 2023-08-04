@@ -21,7 +21,6 @@ models_info = [
     "popular_on_huggingface/distilbert-base-uncased.py",
     "popular_on_huggingface/distilbert-base-multilingual-cased.py",
 
-    #"popular_on_huggingface/CompVis_stable-diffusion-v1-4.py",
     "popular_on_huggingface/Musixmatch_umberto-commoncrawl-cased-v1.py",
     "popular_on_huggingface/facebook_deit-base-patch16-224.py",
     "popular_on_huggingface/microsoft_beit-large-patch16-384.py",
@@ -30,6 +29,7 @@ models_info = [
 ]
 
 failed_models = [
+    "popular_on_huggingface/CompVis_stable-diffusion-v1-4.py", # benchit repro failed
     "transformers/bert_generation.py", # non consistent created model from mlagility
     "popular_on_huggingface/xlm-roberta-base.py", # output nan
     "popular_on_huggingface/roberta-base.py", # output nan

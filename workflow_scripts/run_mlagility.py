@@ -57,6 +57,7 @@ def main():
     errors = 0
     changed_models_set = set(test_utils.get_changed_models())
     print(f"Changed models: {changed_models_set}")
+    checked_count = 0
 
     if args.dir is not None:
         # check if all models are converted under popular_on_huggingface directory
@@ -79,6 +80,7 @@ def main():
         if osp.exists(final_model_path) and args.skip:
             print(f"Skip checking {model_zoo_dir} because {final_model_path} already exists.")
             continue
+        checked_count += 1
         try:
             cmd = subprocess.run(["benchit", osp.join(mlagility_root, model_info), "--cache-dir", cache_converted_dir,
                             "--onnx-opset", ZOO_OPSET_VERSION, "--export-only"],
@@ -111,12 +113,12 @@ def main():
                         cwd=cwd_path, stdout=sys.stdout, stderr=sys.stderr, check=True)
             shutil.rmtree(final_model_dir, ignore_errors=True)
             shutil.rmtree(cache_converted_dir, ignore_errors=True)
-    total_count = len(models_info) if args.all_models else len(changed_models_set)
+
     if errors > 0:
-        print(f"All {total_count} model(s) have been checked, but {errors} model(s) failed.")
+        print(f"{checked_count} model(s) have been checked, but {errors} model(s) failed.")
         sys.exit(1)
     else:
-        print(f"All {total_count} model(s) have been checked.")
+        print(f"{checked_count} model(s) have been checked.")
 
 
     if mlagility_subdir_count != len(models_info):
