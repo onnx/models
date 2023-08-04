@@ -31,7 +31,6 @@ models_info = [
     "popular_on_huggingface/cross-encoder_nli-deberta-v3-large.py",
     "popular_on_huggingface/google_vit-large-patch32-384.py",
     "popular_on_huggingface/hustvl_yolos-small.py",
-    "popular_on_huggingface/model-attribution-challenge_xlnet-base-cased.py",
     "popular_on_huggingface/nateraw_vit-age-classifier.py",
     "popular_on_huggingface/navteca_bart-large-mnli.py",
     "popular_on_huggingface/sentence-transformers_msmarco-distilbert-base-v4.py",
@@ -69,4 +68,6 @@ failed_models = [
     "popular_on_huggingface/sentence-transformers_nli-roberta-large.py", # output nan
     "popular_on_huggingface/sentence-transformers_paraphrase-mpnet-base-v2.py", # output nan
     "popular_on_huggingface/deepset_xlm-roberta-base-squad2-distilled.py", # output nan
+    "popular_on_huggingface/thunlp_Lawformer.py", # git diff
+    "popular_on_huggingface/model-attribution-challenge_xlnet-base-cased.py", # benchit repro failed
 ]
