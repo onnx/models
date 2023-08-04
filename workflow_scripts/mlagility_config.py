@@ -34,7 +34,6 @@ models_info = [
     "popular_on_huggingface/nateraw_vit-age-classifier.py",
     "popular_on_huggingface/navteca_bart-large-mnli.py",
     "popular_on_huggingface/sentence-transformers_msmarco-distilbert-base-v4.py",
-    "popular_on_huggingface/thunlp_Lawformer.py",
 ]
 
 failed_models = [
