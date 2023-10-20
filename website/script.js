@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const parentDirParts = parentDir.split('/');
       const grandParentDir = parentDirParts.slice(0, -1).join('/');  // Get the parent directory of the ONNX file
       const yamlFile = yamlFiles.find(yaml => yaml.path === `${grandParentDir}/turnkey_stats.yaml`);
+      let modelTitle = pathParts[pathParts.length - 1].replace('.onnx', ''); // Default to ONNX file name
       let author = 'False';
       let opset = 'NA';
       let task = 'NA';
@@ -28,6 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const yamlResponse = await fetch(`https://raw.githubusercontent.com/aigdat/onnx-models/main/${yamlFile.path}`);
         const yamlText = await yamlResponse.text();
         const yamlLines = yamlText.split('\n');
+        const modelNameLine = yamlLines.find(line => line.startsWith('model_name:'));
+        if (modelNameLine) {
+          modelTitle = modelNameLine.split(':')[1].trim(); // Override with model name from YAML
+        }
         const authorLine = yamlLines.find(line => line.startsWith('author:'));
         const opsetLine = yamlLines.find(line => line.startsWith('opset:'));
         const taskLine = yamlLines.find(line => line.startsWith('task:'));
@@ -44,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
       modelData.push({
-        title: pathParts[pathParts.length - 1].replace('.onnx', ''),
+        title: modelTitle,
         description: `Task: ${task}`, 
         author,
         opset,
