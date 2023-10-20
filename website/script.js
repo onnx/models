@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
   async function fetchData() {
     const response = await fetch('https://api.github.com/repos/aigdat/onnx-models/git/trees/main?recursive=1');
     const data = await response.json();
-    const onnxFiles = data.tree.filter(item => item.path.endsWith('.onnx'));
+    const onnxFiles = data.tree.filter(item => item.path.endsWith('.onnx') && !item.path.includes('archive/'));
     const yamlFiles = data.tree.filter(item => item.path.endsWith('turnkey_stats.yaml'));
     const modelData = [];
     for (const file of onnxFiles) {
