@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const taskFilterOptions = document.querySelectorAll('#task-filters .filter-button');
   const authorFilterContainer = document.getElementById('author-filters');
   const taskFilterContainer = document.getElementById('task-filters');
 
@@ -44,7 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
           opset = opsetLine.split(':')[1].trim();
         }
         if (taskLine) {
-          task = taskLine.split(':')[1].trim();
+          task = taskLine.split(':')[1].trim().toLowerCase()
+          .replace(/_/g, ' ')  // Replace underscores with spaces
+          .split(' ')
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(' ');
           tasksSet.add(task);  // Add the task to tasksSet
         }
       }
