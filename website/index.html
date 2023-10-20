@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ONNX Model Zoo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="title-bar">
+    <div style="display: flex; align-items: center;">
+      <img src="https://github.com/ramkrishna2910/onnx-models/blob/main/mlagility/assets/img/onnx-logo.png?raw=true" alt="ONNX Logo" style="width:50px;height:50px;">
+      <span style="margin-left: 20px;">ONNX Model Zoo</span>
+    </div>
+    <input type="text" id="search-bar" placeholder="Search models...">
+    <div id="social-icons">
+      <a href="https://github.com/onnx/models" target="_blank"><img src="assets\logos\github.svg" alt="GitHub Logo" style="width:42px;height:42px;"></a>
+      <a href="https://twitter.com/onnxai" target="_blank"><img src="assets\logos\twitterx.svg" alt="Twitter Logo" style="width:40px;height:40px;"></a>
+      <a href="https://www.linkedin.com/company/onnx/" target="_blank"><img src="assets\logos\linkedin.svg" alt="LinkedIn Logo" style="width:40px;height:40px;"></a>
+    </div>
+  </div>
+  <div id="left-pane">
+    <h2 id="filter-title">Task</h2>
+    <div id="task-filters">
+      <!-- Task filters will be populated dynamically -->
+    </div>
+    <h2 id="filter-title">Author</h2>
+    <div id="author-filters">
+      <!-- Author filters will be populated dynamically -->
+    </div>
+  </div>
+  
+  </div>
+  <div id="main-content"></div>
+  <div id="pagination">
+    <div id="prev-page">Prev</div>
+    <div id="page-info"></div>
+    <div id="next-page">Next</div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
