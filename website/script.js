@@ -17,8 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const modelData = [];
     for (const file of onnxFiles) {
       const pathParts = file.path.split('/');
-      const grandParentDir = pathParts[pathParts.length - 3];
-      const yamlFile = yamlFiles.find(yaml => yaml.path.startsWith(grandParentDir));
+      const parentDir = pathParts.slice(0, -1).join('/');  // Exclude the ONNX filename to get its directory
+      const parentDirParts = parentDir.split('/');
+      const grandParentDir = parentDirParts.slice(0, -1).join('/');  // Get the parent directory of the ONNX file
+      const yamlFile = yamlFiles.find(yaml => yaml.path === `${grandParentDir}/turnkey_stats.yaml`);
       let author = 'False';
       let opset = 'NA';
       let task = 'NA';
