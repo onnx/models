@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let authorsSet = new Set();
 
   async function fetchData() {
-    const response = await fetch('https://api.github.com/repos/ramkrishna2910/onnx-models/git/trees/main?recursive=1');
+    const response = await fetch('https://api.github.com/repos/aigdat/onnx-models/git/trees/main?recursive=1');
     const data = await response.json();
     const onnxFiles = data.tree.filter(item => item.path.endsWith('.onnx'));
     const yamlFiles = data.tree.filter(item => item.path.endsWith('turnkey_stats.yaml'));
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let opset = 'NA';
       let task = 'NA';
       if (yamlFile) {
-        const yamlResponse = await fetch(`https://raw.githubusercontent.com/ramkrishna2910/onnx-models/main/${yamlFile.path}`);
+        const yamlResponse = await fetch(`https://raw.githubusercontent.com/aigdat/onnx-models/main/${yamlFile.path}`);
         const yamlText = await yamlResponse.text();
         const yamlLines = yamlText.split('\n');
         const authorLine = yamlLines.find(line => line.startsWith('author:'));
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
         description: `Task: ${task}`, 
         author,
         opset,
-        downloadUrl: `https://github.com/ramkrishna2910/onnx-models/raw/main/${file.path}`
+        downloadUrl: `https://github.com/aigdat/onnx-models/raw/main/${file.path}`
       });
     }
     authorsSet.forEach(author => {

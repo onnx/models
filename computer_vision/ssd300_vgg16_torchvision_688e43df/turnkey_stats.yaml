@@ -1,0 +1,41 @@
+author: torchvision
+builds:
+  x86_ort:
+    all_build_stages:
+    - export_pytorch
+    - optimize_onnx
+    - set_success
+    completed_build_stages:
+      export_pytorch: 1.3312175273895264
+      optimize_onnx: 0.702019453048706
+      set_success: 0.008996248245239258
+    device_type: x86
+    iterations: 100
+    onnx_file: C:\Users\ramkr/.cache/turnkey\ssd300_vgg16_torchvision_688e43df\onnx\ssd300_vgg16_torchvision_688e43df-op14-opt.onnx
+    runtime: ort
+class: SSDFeatureExtractorVGG
+hash: 7e037ec5
+model_name: ssd300_vgg16
+onnx_input_dimensions:
+  x:
+  - 1
+  - 3
+  - 300
+  - 300
+onnx_model_information:
+  ir_version: 7
+  opset: 14
+  size on disk (KiB): 89628.7734
+onnx_ops_counter:
+  Abs: 1
+  Clip: 1
+  Conv: 23
+  Div: 1
+  Expand: 1
+  MaxPool: 5
+  Mul: 1
+  Pow: 2
+  ReduceSum: 1
+  Relu: 23
+parameters: 22943936
+task: Computer_Vision

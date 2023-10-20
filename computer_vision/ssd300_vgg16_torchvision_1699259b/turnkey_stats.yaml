@@ -1,0 +1,68 @@
+author: torchvision
+builds:
+  x86_ort:
+    all_build_stages:
+    - export_pytorch
+    - optimize_onnx
+    - set_success
+    completed_build_stages:
+      export_pytorch: 6.05790901184082
+      optimize_onnx: 1.5445575714111328
+      set_success: 0.009000062942504883
+    device_type: x86
+    iterations: 100
+    onnx_file: C:\Users\ramkr/.cache/turnkey\ssd300_vgg16_torchvision_1699259b\onnx\ssd300_vgg16_torchvision_1699259b-op14-opt.onnx
+    runtime: ort
+class: SSD
+hash: 2ef719cf
+model_name: ssd300_vgg16
+onnx_input_dimensions:
+  images:
+  - 1
+  - 3
+  - 224
+  - 224
+onnx_model_information:
+  ir_version: 7
+  opset: 14
+  size on disk (KiB): 139536.6943
+onnx_ops_counter:
+  Abs: 1
+  Add: 4
+  Clip: 3
+  Concat: 99
+  ConstantOfShape: 90
+  Conv: 35
+  Div: 6
+  Equal: 1
+  Exp: 2
+  Expand: 1
+  Flatten: 1
+  Gather: 274
+  GatherND: 180
+  Greater: 90
+  If: 1
+  Max: 2
+  MaxPool: 5
+  Min: 2
+  Mul: 11
+  NonZero: 90
+  Pad: 1
+  Pow: 2
+  ReduceMin: 90
+  ReduceProd: 1
+  ReduceSum: 1
+  Relu: 23
+  Reshape: 115
+  Resize: 1
+  Shape: 181
+  Slice: 7
+  Softmax: 1
+  Split: 4
+  Squeeze: 7
+  Sub: 3
+  TopK: 90
+  Transpose: 102
+  Unsqueeze: 102
+parameters: 35641826
+task: Computer_Vision

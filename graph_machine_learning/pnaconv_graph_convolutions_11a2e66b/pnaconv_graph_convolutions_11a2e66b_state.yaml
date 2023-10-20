@@ -1,0 +1,37 @@
+build_status: successful_build
+cache_dir: C:\Users\ramkr/.cache/turnkey
+config:
+  auto_name: false
+  build_name: pnaconv_graph_convolutions_11a2e66b
+  device: x86
+  onnx_opset: 14
+  sequence:
+  - export_placeholder
+  - optimize_onnx
+  - set_success
+current_build_stage: null
+downcast_applied: false
+expected_input_dtypes:
+  edge_index: int64
+  x: float32
+expected_input_shapes:
+  edge_index: !!python/tuple
+  - 2
+  - 2708
+  x: !!python/tuple
+  - 2708
+  - 1433
+expected_output_names:
+- '41'
+intermediate_results:
+- C:\Users\ramkr/.cache/turnkey\pnaconv_graph_convolutions_11a2e66b\onnx\pnaconv_graph_convolutions_11a2e66b-op14-opt.onnx
+model_hash: d1f414d7af302779d3e5046ef3fb3cdfb7aa205f2f81a5e98cdfe6ef4094a464
+model_type: pytorch
+monitor: true
+quantization_samples: false
+rebuild: if_needed
+results:
+- C:\Users\ramkr/.cache/turnkey\pnaconv_graph_convolutions_11a2e66b\onnx\pnaconv_graph_convolutions_11a2e66b-op14-opt.onnx
+stats_id: x86_ort
+turnkey_version: 0.2.0
+uid: 44d8b51d432b19269a74e32831c7da70be431ed3ae13d4b88f6ce169f2133613

@@ -1,0 +1,38 @@
+build_status: successful_build
+cache_dir: C:\Users\ramkr/.cache/turnkey
+config:
+  auto_name: false
+  build_name: mobilebert_transformers_dc79ac19
+  device: x86
+  onnx_opset: 14
+  sequence:
+  - export_placeholder
+  - optimize_onnx
+  - set_success
+current_build_stage: null
+downcast_applied: false
+expected_input_dtypes:
+  attention_mask: float32
+  input_ids: int64
+expected_input_shapes:
+  attention_mask: !!python/tuple
+  - 1
+  - 128
+  input_ids: !!python/tuple
+  - 1
+  - 128
+expected_output_names:
+- onnx::Gather_4246
+- '4249'
+intermediate_results:
+- C:\Users\ramkr/.cache/turnkey\mobilebert_transformers_dc79ac19\onnx\mobilebert_transformers_dc79ac19-op14-opt.onnx
+model_hash: 88d5ec9fb5204639eeb158c9b16ae764c6505b6190ff328b5604990143e0dc08
+model_type: pytorch
+monitor: true
+quantization_samples: false
+rebuild: if_needed
+results:
+- C:\Users\ramkr/.cache/turnkey\mobilebert_transformers_dc79ac19\onnx\mobilebert_transformers_dc79ac19-op14-opt.onnx
+stats_id: x86_ort
+turnkey_version: 0.2.0
+uid: 574a53c3c2ef4cd7810fd198e55813b3455d841fa379221826d17e8f6d21d1bf

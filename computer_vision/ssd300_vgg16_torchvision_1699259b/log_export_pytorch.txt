@@ -1,0 +1,15 @@
+Exporting PyTorch to ONNX
+C:\Users\ramkr\miniconda3\envs\tkml_1\lib\site-packages\torchvision\ops\boxes.py:157: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  boxes_x = torch.min(boxes_x, torch.tensor(width, dtype=boxes.dtype, device=boxes.device))
+C:\Users\ramkr\miniconda3\envs\tkml_1\lib\site-packages\torchvision\ops\boxes.py:159: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  boxes_y = torch.min(boxes_y, torch.tensor(height, dtype=boxes.dtype, device=boxes.device))
+C:\Users\ramkr\miniconda3\envs\tkml_1\lib\site-packages\torchvision\models\detection\transform.py:298: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(s, dtype=torch.float32, device=boxes.device)
+C:\Users\ramkr\miniconda3\envs\tkml_1\lib\site-packages\torchvision\models\detection\transform.py:299: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  / torch.tensor(s_orig, dtype=torch.float32, device=boxes.device)
+============== Diagnostic Run torch.onnx.export version 2.0.1+cpu ==============
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 0 WARNING 0 ERROR ========================
+
+	Success exporting model to ONNX
+	Successfully checked onnx file

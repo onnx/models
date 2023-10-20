@@ -1,0 +1,9 @@
+Exporting PyTorch to ONNX
+C:\Users\ramkr\miniconda3\envs\tkml_1\lib\site-packages\transformers\modeling_utils.py:871: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if causal_mask.shape[1] < attention_mask.shape[1]:
+============== Diagnostic Run torch.onnx.export version 2.0.1+cpu ==============
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 0 WARNING 0 ERROR ========================
+
+	Success exporting model to ONNX
+	Successfully checked onnx file

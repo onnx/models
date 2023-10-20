@@ -1,0 +1,55 @@
+build_status: successful_build
+cache_dir: C:\Users\ramkr/.cache/turnkey
+config:
+  auto_name: false
+  build_name: llama_7b_cache_layer_transformers_babe3027
+  device: x86
+  onnx_opset: 14
+  sequence:
+  - export_placeholder
+  - optimize_onnx
+  - set_success
+current_build_stage: null
+downcast_applied: false
+expected_input_dtypes:
+  attention_mask: float32
+  hidden_states: float32
+  past_key_value[0]: float32
+  past_key_value[1]: float32
+  position_ids[0]: int32
+expected_input_shapes:
+  attention_mask: !!python/tuple
+  - 1
+  - 1
+  - 1
+  - 128
+  hidden_states: !!python/tuple
+  - 1
+  - 1
+  - 4096
+  past_key_value[0]: !!python/tuple
+  - 1
+  - 32
+  - 127
+  - 128
+  past_key_value[1]: !!python/tuple
+  - 1
+  - 32
+  - 127
+  - 128
+  position_ids[0]: !!python/tuple
+  - 1
+expected_output_names:
+- '150'
+intermediate_results:
+- C:\Users\ramkr/.cache/turnkey\llama_7b_cache_layer_transformers_babe3027\onnx\llama_7b_cache_layer_transformers_babe3027-op14-opt.onnx
+model_hash: c065aac42032ec32d383e452362888107cb5a9b2a7b3ef63fd8be805ccfcfb0f
+model_type: pytorch
+monitor: true
+quantization_samples: false
+rebuild: if_needed
+results:
+- C:\Users\ramkr/.cache/turnkey\llama_7b_cache_layer_transformers_babe3027\onnx\llama_7b_cache_layer_transformers_babe3027-op14-opt.onnx
+stats_id: x86_ort
+turnkey_version: 0.2.0
+uid: b7d7fb43a51102bdc23f878bd866ea7f3522cf1f593fcb2aba12660bb0aee249

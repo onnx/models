@@ -1,0 +1,34 @@
+build_status: successful_build
+cache_dir: C:\Users\ramkr/.cache/turnkey
+config:
+  auto_name: false
+  build_name: clip_text_encoder_diffusers_1b7a3fb4
+  device: x86
+  onnx_opset: 14
+  sequence:
+  - export_placeholder
+  - optimize_onnx
+  - set_success
+current_build_stage: null
+downcast_applied: false
+expected_input_dtypes:
+  input_ids: int32
+expected_input_shapes:
+  input_ids: !!python/tuple
+  - 1
+  - 77
+expected_output_names:
+- onnx::Shape_4024
+- '4042'
+intermediate_results:
+- C:\Users\ramkr/.cache/turnkey\clip_text_encoder_diffusers_1b7a3fb4\onnx\clip_text_encoder_diffusers_1b7a3fb4-op14-opt.onnx
+model_hash: a056cad6e6e87cdf0f572daff0dfae3e1054433170eb95404d3766bb2705aebb
+model_type: pytorch
+monitor: true
+quantization_samples: false
+rebuild: if_needed
+results:
+- C:\Users\ramkr/.cache/turnkey\clip_text_encoder_diffusers_1b7a3fb4\onnx\clip_text_encoder_diffusers_1b7a3fb4-op14-opt.onnx
+stats_id: x86_ort
+turnkey_version: 0.2.0
+uid: f644177b810717e725ea6e37f0cb1095388c63cdb4b78c178cb45a58827f443d

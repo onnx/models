@@ -1,0 +1,59 @@
+author: transformers
+builds:
+  x86_ort:
+    all_build_stages:
+    - export_pytorch
+    - optimize_onnx
+    - set_success
+    completed_build_stages:
+      export_pytorch: 14.662534713745117
+      optimize_onnx: 8.888304471969604
+      set_success: 0.010015010833740234
+    device_type: x86
+    iterations: 100
+    onnx_file: C:\Users\ramkr/.cache/turnkey\llama_7b_cache_layer_transformers_babe3027\onnx\llama_7b_cache_layer_transformers_babe3027-op14-opt.onnx
+    runtime: ort
+class: LlamaDecoderLayer
+hash: ef1e0f24
+model_name: llama_7b_cache_layer
+onnx_input_dimensions:
+  attention_mask:
+  - 1
+  - 1
+  - 1
+  - 128
+  hidden_states:
+  - 1
+  - 1
+  - 4096
+  onnx::Concat_4:
+  - 1
+  - 32
+  - 127
+  - 128
+  past_key_value:
+  - 1
+  - 32
+  - 127
+  - 128
+onnx_model_information:
+  ir_version: 7
+  opset: 14
+  size on disk (KiB): 1048601.79
+onnx_ops_counter:
+  Add: 7
+  Concat: 4
+  Div: 3
+  MatMul: 9
+  Mul: 8
+  Neg: 2
+  Pow: 2
+  ReduceMean: 2
+  Reshape: 4
+  Sigmoid: 1
+  Slice: 4
+  Softmax: 1
+  Sqrt: 2
+  Transpose: 5
+parameters: 268443648
+task: Generative_AI
