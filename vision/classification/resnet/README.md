@@ -70,7 +70,7 @@ The inference was done using jpeg image.
 ### Preprocessing
 
 The image needs to be preprocessed before fed to the network.
-The first step is to extract a 224x224 crop from the center of the image. For this, the image is first scaled to a minimum size of 256x256, while keeping aspect ratio. That is, the shortest side of the image is resized to 256 and the other side is scaled accordingly to maintain the original aspect ratio. After that, the image is normalized with mean = 255*[0.485, 0.456, 0.406] and std = 255*[0.229, 0.224, 0.225]. Last step is to transpose it from HWC to CHW layout.
+The first step is to decode the image. Next, we extract a 224x224 crop from the center of the image. For this, the image is first scaled to a minimum size of 256x256, while keeping aspect ratio. That is, the shortest side of the image is resized to 256 and the other side is scaled accordingly to maintain the original aspect ratio. After that, the image is normalized with mean = 255*[0.485, 0.456, 0.406] and std = 255*[0.229, 0.224, 0.225]. Last step is to transpose it from HWC to CHW layout.
 
 The described preprocessing steps can be represented with an ONNX model:
 ```python
@@ -81,22 +81,23 @@ from onnx import checker
 resnet_preproc = parser.parse_model('''
 <
   ir_version: 8,
-  opset_import: [ "" : 18, "local" : 1 ],
+  opset_import: [ "" : 20, "local" : 1 ],
   metadata_props: [ "preprocessing_fn" : "local.preprocess"]
 >
-resnet_preproc_g (seq(uint8[?, ?, 3]) images) => (float[B, 3, 224, 224] preproc_data)
+resnet_preproc_g (seq(uint8[?]) images) => (float[B, 3, 224, 224] preproc_data)
 {
     preproc_data = local.preprocess(images)
 }
 
 <
-  opset_import: [ "" : 18 ],
+  opset_import: [ "" : 20 ],
   domain: "local",
-  doc_string: "Preprocessing function."
+  doc_string: "Preprocessing function, including image decoding."
 >
 preprocess (input_batch) => (output_tensor) {
     tmp_seq = SequenceMap <
-        body = sample_preprocessing(uint8[?, ?, 3] sample_in) => (float[3, 224, 224] sample_out) {
+        body = sample_preprocessing(uint8[?] sample_in) => (float[3, 224, 224] sample_out) {
+            image = ImageDecoder (sample_in)
             target_size = Constant <value = int64[2] {256, 256}> ()
             image_resized = Resize <mode = \"linear\",
                                     antialias = 1,
@@ -124,9 +125,12 @@ checker.check_model(resnet_preproc)
 
 * ResNet preprocessing:
 
+Note: The version 2 (based on opset 20) of the model includes image decoding while the first version does not.
+
 |Model        |Download  |Download (with sample test data)| ONNX version |Opset version|
 |-------------|:--------------|:--------------|:--------------|:--------------|
 |ResNet-preproc| [4.0KB](preproc/resnet-preproc-v1-18.onnx)  |  [864 KB](preproc/resnet-preproc-v1-18.tar.gz) |  1.13.1 | 18|
+|ResNet-preproc-v2| [4.0KB](preproc/resnet-preproc-v2-20.onnx)  |  [864 KB](preproc/resnet-preproc-v2-20.tar.gz) |  1.15.0 | 20|
 
 
 To prepend the data preprocessing steps to the model, we can use the ONNX compose utils:
@@ -136,7 +140,7 @@ import onnx
 from onnx import version_converter
 from onnx import checker
 
-network_model = onnx.version_converter.convert_version(network_model, 18)
+network_model = onnx.version_converter.convert_version(network_model, 20)
 network_model.ir_version = 8
 checker.check_model(network_model)
 
