@@ -10,7 +10,14 @@ This model is a neural network for real-time object detection that detects 80 di
 |Model        |Download  |Download (with sample test data)|ONNX version|Opset version|Accuracy |
 |-------------|:--------------|:--------------|:--------------|:--------------|:--------------|
 |Tiny YOLOv3       |[34 MB](model/tiny-yolov3-11.onnx) |[33 MB](model/tiny-yolov3-11.tar.gz)|1.6 |11 |mAP of 0.331 |
+|Tiny YOLOv3 FP32  |[34 MB](model/tiny-yolov3-12.onnx) |[33 MB](model/tiny-yolov3-12.tar.gz)|1.11 |12 |mAP of 0.218 |
+|Tiny YOLOv3 INT8  |[9 MB](model/tiny-yolov3-12-int8.onnx) |[10 MB](model/tiny-yolov3-12-int8.tar.gz)|1.11 |12 |mAP of 0.210 |
 
+> Compared with the Tiny YOLOv3 FP32, Tiny YOLOv3 INT8's mAP decline is 0.8% and performance improvement is 1.28x.
+>
+> Note the performance depends on the test hardware.
+>
+> Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
 
 <hr>
@@ -83,18 +90,56 @@ We use pretrained weights from pjreddie.com [here](https://pjreddie.com/media/fi
 <hr>
 
 ## Validation accuracy
+- Tiny YOLOv3
 Metric is COCO box mAP (averaged over IoU of 0.5:0.95), computed over 2017 COCO val data.
 mAP of 0.331 based on original tiny Yolov3 model [here](https://pjreddie.com/darknet/yolo/)
 <hr>
+- Tiny YOLOv3 FP32
+Metric is COCO box mAP (IoU=0.50:0.95 | area=large | maxDets=100), computed over 2017 COCO val data.
+mAP of 0.218
+<hr>
+- Tiny YOLOv3 INT8
+Metric is COCO box mAP (IoU=0.50:0.95 | area=large | maxDets=100), computed over 2017 COCO val data.
+mAP of 0.210
+<hr>
 
+## Quantization
+Tiny YOLOv3 INT8 is obtained by quantizing Tiny YOLOv3 FP32 model. We use [Intel® Neural Compressor](https://github.com/intel/neural-compressor) with onnxruntime backend to perform quantization. View the [instructions](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/object_detection/onnx_model_zoo/tiny_yolov3/quantization/ptq/README.md) to understand how to use Intel® Neural Compressor for quantization.
+
+### Environment
+onnx: 1.11.0
+onnxruntime: 1.10.0
+
+### Prepare model
+```shell
+wget https://github.com/onnx/models/blob/main/vision/object_detection_segmentation/tiny-yolov3/model/tiny-yolov3-12.onnx
+```
+
+### Model quantize
+```bash
+bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
+                   --config=tiny_yolov3.yaml \
+                   --data_path=path/to/COCO2017 \
+                   --output_model=path/to/save
+```
+<hr>
 ## Publication/Attribution
 Joseph Redmon, Ali Farhadi. YOLOv3: An Incremental Improvement, [paper](https://arxiv.org/pdf/1804.02767.pdf)
 
 <hr>
 
 ## References
-This model is converted from a keras model [repository](https://github.com/qqwweee/keras-yolo3) using keras2onnx converter [repository](https://github.com/onnx/keras-onnx).
+* This model is converted from a keras model [repository](https://github.com/qqwweee/keras-yolo3) using keras2onnx converter [repository](https://github.com/onnx/keras-onnx).
 <hr>
+* [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
+<hr>
+
+## Contributors
+* [XinyuYe-Intel](https://github.com/XinyuYe-Intel) (Intel)
+* [mengniwang95](https://github.com/mengniwang95) (Intel)
+* [airMeng](https://github.com/airMeng) (Intel)
+* [ftian1](https://github.com/ftian1) (Intel)
+* [hshen14](https://github.com/hshen14) (Intel)
 
 ## License
 MIT License
