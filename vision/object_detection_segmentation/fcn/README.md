@@ -45,7 +45,13 @@ preprocess = transforms.Compose([
 ])
 
 img = Image.open('dependencies/000000017968.jpg')
-img_data = preprocess(img).detach().cpu().numpy()
+
+#Uncomment the following line to resize to the approriate resolution
+#img = img.resize((640 ,480), Image.Resampling.LANCZOS) 
+orig_tensor = np.array(img)
+img_data = utils.preprocess(orig_tensor)
+img_data = img_data.unsqueeze(0)
+img_data = img_data.detach().cpu().numpy()
 ```
 
 ### Output of model
