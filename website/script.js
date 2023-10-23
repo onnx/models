@@ -28,6 +28,25 @@ document.addEventListener('DOMContentLoaded', function() {
         const yamlResponse = await fetch(`https://raw.githubusercontent.com/aigdat/onnx-models/main/${yamlFile.path}`);
         const yamlText = await yamlResponse.text();
         const yamlLines = yamlText.split('\n');
+         // Variable to keep track if we are under 'onnx_model_information' section
+        let insideOnnxModelInfo = false;
+        for (const line of yamlLines) {
+          if (line.startsWith('onnx_model_information:')) {
+            insideOnnxModelInfo = true;
+            continue;
+          }
+          
+          if (insideOnnxModelInfo) {
+            if (line.startsWith('  opset:')) {
+              opset = line.split(':')[1].trim();
+            }
+            
+            // Reset if we're no longer inside the 'onnx_model_information' section
+            if (!line.startsWith('  ')) {
+              insideOnnxModelInfo = false;
+            }
+          }
+        }
         const modelNameLine = yamlLines.find(line => line.startsWith('model_name:'));
         if (modelNameLine) {
           modelTitle = modelNameLine.split(':')[1].trim(); // Override with model name from YAML
