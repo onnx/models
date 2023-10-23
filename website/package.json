@@ -1,0 +1,13 @@
+{
+    "type": "module",
+    "scripts": {
+        "test": "jest --verbose ./tests/script.test.js"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "jsdom": "^22.1.0"
+    },
+    "dependencies": {
+        "node-fetch": "^2.7.0"
+    }
+}
