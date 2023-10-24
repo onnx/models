@@ -123,21 +123,46 @@ document.addEventListener('DOMContentLoaded', function() {
   fetchData().then(data => {
     filteredData = data;
     renderCards(data);
+    
+    let activeAuthorFilters = new Set();
+    let activeTaskFilters = new Set();
+    
     const filterOptions = document.querySelectorAll('.filter-button');
-  filterOptions.forEach(option => {
-    option.addEventListener('click', function() {
-      this.classList.toggle('active');
-      const activeFilters = Array.from(document.querySelectorAll('.filter-button.active')).map(btn => btn.getAttribute('data-value'));
-        if (activeFilters.length === 0) {
-          filteredData = data;
+    
+    filterOptions.forEach(option => {
+      option.addEventListener('click', function() {
+        this.classList.toggle('active');
+        const filterValue = this.getAttribute('data-value');
+        const parentContainer = this.parentElement.id;
+        
+        // Add or remove the filter from the appropriate set
+        if (this.classList.contains('active')) {
+          if (parentContainer === 'author-filters') {
+            activeAuthorFilters.add(filterValue);
+          } else if (parentContainer === 'task-filters') {
+            activeTaskFilters.add(filterValue);
+          }
         } else {
-          filteredData = data.filter(item => activeFilters.includes(item.author) || activeFilters.includes(item.description.split(': ')[1]));
+          if (parentContainer === 'author-filters') {
+            activeAuthorFilters.delete(filterValue);
+          } else if (parentContainer === 'task-filters') {
+            activeTaskFilters.delete(filterValue);
+          }
         }
-      currentPage = 1;
-      renderCards(filteredData);
+        
+        // Apply the filters
+        filteredData = data.filter(item => {
+          const authorMatches = activeAuthorFilters.size === 0 || activeAuthorFilters.has(item.author);
+          const taskMatches = activeTaskFilters.size === 0 || activeTaskFilters.has(item.description.split(': ')[1]);
+          return authorMatches && taskMatches;
+        });
+        
+        currentPage = 1;
+        renderCards(filteredData);
+      });
     });
   });
-  });
+  
 
   const prevPage = document.getElementById('prev-page');
   const nextPage = document.getElementById('next-page');
