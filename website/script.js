@@ -1,10 +1,40 @@
-document.addEventListener('DOMContentLoaded', function() {
+
+let currentPage = 1;
+const itemsPerPage = 18;
+
+const renderCards = function (data) {
+  // function renderCards(data) {
+  const mainContent = document.getElementById('main-content');
+  mainContent.innerHTML = '';
+  const start = (currentPage - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  const pageData = data.slice(start, end);
+  pageData.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `<h3>${item.title}</h3><p>${item.description}<br>Author: ${item.author}<br>Opset: ${item.opset}</p>`;
+    const downloadButton = document.createElement('div');
+    downloadButton.className = 'download-button';
+    downloadButton.addEventListener('click', () => window.open(item.downloadUrl, '_blank'));
+    const downloadArrow = document.createElement('div');
+    downloadArrow.className = 'download-arrow';
+    downloadButton.appendChild(downloadArrow);
+    card.appendChild(downloadButton);
+    mainContent.appendChild(card);
+  });
+  const pageInfo = document.getElementById('page-info');
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+  if (pageInfo)
+    pageInfo.textContent = `${currentPage}/${totalPages}`;
+};
+
+console.log("!!!!!!!!!!",typeof renderCards)
+
+document.addEventListener('DOMContentLoaded', function () {
   const authorFilterContainer = document.getElementById('author-filters');
   const taskFilterContainer = document.getElementById('task-filters');
 
   let tasksSet = new Set();  // Create a new Set object for tasks
-  let currentPage = 1;
-  const itemsPerPage = 18;
   let filteredData = [];
   let authorsSet = new Set();
 
@@ -28,19 +58,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const yamlResponse = await fetch(`https://raw.githubusercontent.com/aigdat/onnx-models/main/${yamlFile.path}`);
         const yamlText = await yamlResponse.text();
         const yamlLines = yamlText.split('\n');
-         // Variable to keep track if we are under 'onnx_model_information' section
+        // Variable to keep track if we are under 'onnx_model_information' section
         let insideOnnxModelInfo = false;
         for (const line of yamlLines) {
           if (line.startsWith('onnx_model_information:')) {
             insideOnnxModelInfo = true;
             continue;
           }
-          
+
           if (insideOnnxModelInfo) {
             if (line.startsWith('  opset:')) {
               opset = line.split(':')[1].trim();
             }
-            
+
             // Reset if we're no longer inside the 'onnx_model_information' section
             if (!line.startsWith('  ')) {
               insideOnnxModelInfo = false;
@@ -63,16 +93,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         if (taskLine) {
           task = taskLine.split(':')[1].trim().toLowerCase()
-          .replace(/_/g, ' ')  // Replace underscores with spaces
-          .split(' ')
-          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-          .join(' ');
+            .replace(/_/g, ' ')  // Replace underscores with spaces
+            .split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
           tasksSet.add(task);  // Add the task to tasksSet
         }
       }
       modelData.push({
         title: modelTitle,
-        description: `Task: ${task}`, 
+        description: `Task: ${task}`,
         author,
         opset,
         downloadUrl: `https://github.com/aigdat/onnx-models/raw/main/${file.path}`
@@ -96,45 +126,21 @@ document.addEventListener('DOMContentLoaded', function() {
     return modelData;
   }
 
-  function renderCards(data) {
-    const mainContent = document.getElementById('main-content');
-    mainContent.innerHTML = '';
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    const pageData = data.slice(start, end);
-    pageData.forEach(item => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `<h3>${item.title}</h3><p>${item.description}<br>Author: ${item.author}<br>Opset: ${item.opset}</p>`;
-      const downloadButton = document.createElement('div');
-      downloadButton.className = 'download-button';
-      downloadButton.addEventListener('click', () => window.open(item.downloadUrl, '_blank'));
-      const downloadArrow = document.createElement('div');
-      downloadArrow.className = 'download-arrow';
-      downloadButton.appendChild(downloadArrow);
-      card.appendChild(downloadButton);
-      mainContent.appendChild(card);
-    });
-    const pageInfo = document.getElementById('page-info');
-    const totalPages = Math.ceil(data.length / itemsPerPage);
-    pageInfo.textContent = `${currentPage}/${totalPages}`;
-  }
-
   fetchData().then(data => {
     filteredData = data;
     renderCards(data);
-    
+
     let activeAuthorFilters = new Set();
     let activeTaskFilters = new Set();
-    
+
     const filterOptions = document.querySelectorAll('.filter-button');
-    
+
     filterOptions.forEach(option => {
-      option.addEventListener('click', function() {
+      option.addEventListener('click', function () {
         this.classList.toggle('active');
         const filterValue = this.getAttribute('data-value');
         const parentContainer = this.parentElement.id;
-        
+
         // Add or remove the filter from the appropriate set
         if (this.classList.contains('active')) {
           if (parentContainer === 'author-filters') {
@@ -149,20 +155,20 @@ document.addEventListener('DOMContentLoaded', function() {
             activeTaskFilters.delete(filterValue);
           }
         }
-        
+
         // Apply the filters
         filteredData = data.filter(item => {
           const authorMatches = activeAuthorFilters.size === 0 || activeAuthorFilters.has(item.author);
           const taskMatches = activeTaskFilters.size === 0 || activeTaskFilters.has(item.description.split(': ')[1]);
           return authorMatches && taskMatches;
         });
-        
+
         currentPage = 1;
         renderCards(filteredData);
       });
     });
   });
-  
+
 
   const prevPage = document.getElementById('prev-page');
   const nextPage = document.getElementById('next-page');
@@ -181,9 +187,13 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   const searchBar = document.getElementById('search-bar');
-  searchBar.addEventListener('input', function() {
+  searchBar.addEventListener('input', function () {
     const query = this.value.toLowerCase();
     const searchResults = filteredData.filter(item => item.title.toLowerCase().includes(query));
     renderCards(searchResults);
   });
 });
+
+console.log("#################",typeof renderCards)
+module.exports = { fetchData, renderCards };
+// exports = {fetchData, renderCards}

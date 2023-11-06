@@ -1,5 +1,44 @@
 // main.test.js
 
+let currentPage = 1;
+const itemsPerPage = 18;
+
+let renderCards = function (data) {
+  // function renderCards(data) {
+  const mainContent = document.getElementById('main-content');
+  console.log("~~~~~~~~", mainContent)
+  mainContent.innerHTML = '';
+  const start = (currentPage - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  const pageData = data.slice(start, end);
+  console.log("%%%%%%%%%%%%%%%",pageData.length)
+  pageData.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `<h3>${item.title}</h3><p>${item.description}<br>Author: ${item.author}<br>Opset: ${item.opset}</p>`;
+    const downloadButton = document.createElement('div');
+    downloadButton.className = 'download-button';
+    downloadButton.addEventListener('click', () => window.open(item.downloadUrl, '_blank'));
+    const downloadArrow = document.createElement('div');
+    downloadArrow.className = 'download-arrow';
+    downloadButton.appendChild(downloadArrow);
+    card.appendChild(downloadButton);
+    mainContent.appendChild(card);
+  });
+  const pageInfo = document.getElementById('page-info');
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+  if (pageInfo)
+    pageInfo.textContent = `${currentPage}/${totalPages}`;
+}
+
+// // import { renderCards } from '../script.js';
+// console.log(__dirname+'\\..\\script.js')
+// const path = require('path')
+// const { fetchData, renderCards } = require(path.join(__dirname, '..', 'script.js'));  // assuming you've exported these functions
+const { fetchData } = require('../script.js');  // assuming you've exported these functions
+console.log("@@@@@", typeof renderCards, typeof fetchData)
+// const { fetchData, renderCards } = require('../script.js');  // assuming you've exported these functions
+
 const { JSDOM } = require('jsdom');
 const fetch = require('node-fetch');
 
@@ -7,12 +46,10 @@ global.fetch = fetch;
 global.window = new JSDOM('<!doctype html><html><body></body></html>').window;
 global.document = window.document;
 
-const { fetchData, renderCards } = require('../script.js');  // assuming you've exported these functions
-
 // Mock fetchData
 jest.mock('../script.js', () => ({
   fetchData: jest.fn(),
-  renderCards: jest.fn()
+//   renderCards: jest.fn()
 }));
 
 describe('Fetch Data', () => {
@@ -44,38 +81,48 @@ describe('Render Cards', () => {
     let mainContent;
 
     beforeEach(() => {
-      // Create a new mainContent div and append it to the document body
-      mainContent = document.createElement('div');
-      mainContent.id = 'main-content';
-      document.body.appendChild(mainContent);
+        // Before each test, reset the mainContent and append it to the document body
+        mainContent = document.createElement('div');
+        mainContent.id = 'main-content';
+        document.body.appendChild(mainContent);
     });
-  
+
     afterEach(() => {
-      // Clean up after each test
-      document.body.removeChild(mainContent);
+        // After each test, remove the mainContent from the document body
+        document.body.removeChild(mainContent);
     });
 
     it('renders cards correctly', () => {
         const fakeData = [
-        { title: 'Model1', description: 'Task: Task1', author: 'Author1', opset: 'Opset1', downloadUrl: 'url1' },
-        { title: 'Model2', description: 'Task: Task2', author: 'Author2', opset: 'Opset2', downloadUrl: 'url2' }
+            { title: 'Model1', description: 'Task: Task1', author: 'Author1', opset: 'Opset1', downloadUrl: 'url1' },
+            { title: 'Model2', description: 'Task: Task2', author: 'Author2', opset: 'Opset2', downloadUrl: 'url2' }
         ];
 
-        // Mock the renderCards method to simulate what it does
+        // Call the actual renderCards function imported from script.js
         renderCards(fakeData);
 
-        // Simulate what renderCards would add to the DOM
-        const mainContent = document.getElementById('main-content');
-        expect(mainContent.children.length).toBe(2); // Two cards should be rendered
-        
+        // Now we check the actual DOM elements created by renderCards
+        expect(mainContent.children.length).toBe(2);
+
         const firstCard = mainContent.children[0];
         expect(firstCard.className).toBe('card');
-        expect(firstCard.querySelector('h3').textContent).toBe('Model1');
-        expect(firstCard.querySelector('p').textContent).toMatch(/Task: Task1/);
-        expect(firstCard.querySelector('p').textContent).toMatch(/Author: Author1/);
-        expect(firstCard.querySelector('p').textContent).toMatch(/Opset: Opset1/);
+
+        const title = firstCard.querySelector('h3');
+        expect(title.textContent).toBe('Model1');
+
+        const description = firstCard.querySelector('p');
+        expect(description.textContent).toMatch(/Task: Task1/);
+        expect(description.textContent).toMatch(/Author: Author1/);
+        expect(description.textContent).toMatch(/Opset: Opset1/);
+        
+        const downloadButton = firstCard.querySelector('.download-button');
+        expect(downloadButton).not.toBeNull();
+
+        const downloadArrow = downloadButton.querySelector('.download-arrow');
+        expect(downloadArrow).not.toBeNull();
     });
 });
+
 
 describe('Pagination Buttons', () => {
     let currentPage;
@@ -84,21 +131,15 @@ describe('Pagination Buttons', () => {
 
     let numberOfCardsRendered = 0;  // This variable will help us check whether the correct number of cards is rendered
 
-    function renderCards(data) {
-      // Simulate what renderCards would do in your application.
-      // For the sake of this test, we'll simply count how many items we've been asked to render.
-    
-      numberOfCardsRendered = data.length;
-    }
-
     beforeEach(() => {
         // Initialize JSDOM
-        const dom = new JSDOM('<!DOCTYPE html><html><body></body></html>');
-        global.document = dom.window.document;
 
-        // Initialize currentPage and filteredData
-        currentPage = 1;
-        filteredData = Array(50).fill({}); // Example, make it match your actual filteredData
+            const dom = new JSDOM('<!DOCTYPE html><html><body><div id="main-content"></div> </body></html>');
+            global.document = dom.window.document;
+
+            // Initialize currentPage and filteredData
+            currentPage = 1;
+            filteredData = Array(50).fill({}); // Example, make it match your actual filteredData
 
         // Create and insert prevPage and nextPage buttons into the DOM
         prevPage = document.createElement('button');
@@ -155,11 +196,6 @@ describe('Pagination Buttons', () => {
 describe('Search Bar', () => {
     let searchBar, mainContent;
 
-    let numberOfCardsRendered = 0;
-
-    function renderCards(data) {
-        numberOfCardsRendered = data.length;
-    }
     beforeEach(() => {
         // Create DOM elements and append them to the body
         searchBar = document.createElement('input');
@@ -183,44 +219,48 @@ describe('Search Bar', () => {
             { title: 'Model2', description: 'Task: NLP', author: 'Author2', opset: 'Opset2', downloadUrl: 'url2' }
         ];
 
-        // Simulate the actual event listener you would have on the search bar
+        // Attach the event listener to simulate your actual searchBar event handling
         searchBar.addEventListener('input', function() {
             const query = this.value.toLowerCase();
             const searchResults = fakeData.filter(item => item.title.toLowerCase().includes(query));
             renderCards(searchResults);
         });
 
-        // Trigger input event
+        // Simulate user input on the search bar
         searchBar.value = 'resnet';
-        const inputEvent = new Event('input');
+        const inputEvent = new window.Event('input');  // Corrected
         searchBar.dispatchEvent(inputEvent);
+        // const inputEvent = new global.Event('input');  // JSDOM compatible
+        // searchBar.dispatchEvent(inputEvent);
 
-        // Validate that renderCards was called with the correct number of models
-        expect(numberOfCardsRendered).toBe(1);
+        // Validate that renderCards was called and the correct number of models are rendered
+        const mainContent = document.getElementById("main-content")
+        expect(mainContent.children.length).toBe(1);
     });
 });
 
+
 describe('Filter Buttons', () => {
     it('filters models based on the selected task', () => {
-        const fakeData = [
+      const fakeData = [
         { title: 'Model1', description: 'Task: Computer Vision', author: 'Author1', opset: 'Opset1', downloadUrl: 'url1' },
         { title: 'Model2', description: 'Task: NLP', author: 'Author2', opset: 'Opset2', downloadUrl: 'url2' }
-        ];
-        
-        const mainContent = document.createElement('div');
-        mainContent.id = 'main-content';
-        document.body.appendChild(mainContent);
-        
-        const taskFilterButton = document.createElement('div');
-        taskFilterButton.className = 'filter-button';
-        taskFilterButton.setAttribute('data-value', 'Computer Vision');
-        document.body.appendChild(taskFilterButton);
-        
-        const clickEvent = new Event('click');
-        taskFilterButton.dispatchEvent(clickEvent);
-        renderCards(fakeData.filter(item => item.description.split(': ')[1] === 'Computer Vision'));
-
-        expect(mainContent.children.length).toBe(1);
-        expect(mainContent.querySelector('p').textContent).toMatch(/Task: Computer Vision/);
+      ];
+      
+      const taskFilterButton = document.createElement('div');
+      taskFilterButton.className = 'filter-button';
+      taskFilterButton.setAttribute('data-value', 'Computer Vision');
+      document.body.appendChild(taskFilterButton);
+      
+      // Dispatch the click event
+      const clickEvent = new window.Event('click');
+      taskFilterButton.dispatchEvent(clickEvent);
+  
+      // Call the real renderCards function with the filtered data
+      renderCards(fakeData.filter(item => item.description.split(': ')[1] === 'Computer Vision'));
+      
+      const mainContent = document.getElementById("main-content")
+      expect(mainContent.children.length).toBe(1);
+      expect(mainContent.querySelector('p').textContent).toMatch(/Task: Computer Vision/);
     });
 });

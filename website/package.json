@@ -1,7 +1,6 @@
 {
-    "type": "module",
     "scripts": {
-        "test": "jest --verbose ./tests/script.test.js"
+        "test": "jest ./tests/script.test.js"
     },
     "devDependencies": {
         "jest": "^29.7.0",
