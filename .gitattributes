@@ -6,3 +6,4 @@
 *.pkl filter=lfs diff=lfs merge=lfs -text
 *.tar.gz filter=lfs diff=lfs merge=lfs -text
 *.tgz filter=lfs diff=lfs merge=lfs -text
+*.weight filter=lfs diff=lfs merge=lfs -text
