@@ -1,3 +1,0 @@
-Exporting PyTorch to ONNX
-	Success exporting model to ONNX
-	Successfully checked onnx file
