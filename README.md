@@ -1,5 +1,9 @@
 <!--- SPDX-License-Identifier: Apache-2.0 -->
 
+
+># Deprecation Notice:
+>This repository is undergoing changes and will be transitioning to a new and refreshed ONNX Model Zoo featuring state-of-the-art models and the latest opsets by the end of this year. The current set of models in this repository will be moved to an archive and will eventually be deprecated. If you rely on models from this repository, we recommend transitioning to the new ONNX Model Zoo once it is available. If you have any questions or concerns, please open an issue or contact @ramkrishna2910/ @jcwchen for assistance. Thank you for your understanding. Stay tuned!
+
 # ONNX Model Zoo
 
 [Open Neural Network Exchange (ONNX)](http://onnx.ai) is an open standard format for representing machine learning models. ONNX is supported by a community of partners who have implemented it in many frameworks and tools.
