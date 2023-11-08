@@ -1,0 +1,44 @@
+author: diffusers
+builds:
+  x86_ort:
+    all_build_stages:
+    - export_pytorch
+    - optimize_onnx
+    - set_success
+    completed_build_stages:
+      export_pytorch: 34.322746992111206
+      optimize_onnx: 11.338666439056396
+      set_success: 0.012785911560058594
+    device_type: x86
+    iterations: 100
+    onnx_file: C:\Users\ramkr/.cache/turnkey\clip_text_encoder_diffusers_1b7a3fb4\onnx\clip_text_encoder_diffusers_1b7a3fb4-op14-opt.onnx
+    runtime: ort
+class: CLIPTextModel
+hash: 0de60f01
+model_name: clip_text_encoder
+onnx_input_dimensions:
+  input_ids:
+  - 1
+  - 77
+onnx_model_information:
+  ir_version: 7
+  opset: 14
+  size on disk (KiB): 1329957.6484
+onnx_ops_counter:
+  Add: 325
+  ArgMax: 1
+  Div: 70
+  Erf: 23
+  Flatten: 1
+  Gather: 2
+  MatMul: 184
+  Mul: 116
+  Pow: 47
+  ReduceMean: 94
+  Reshape: 233
+  Softmax: 23
+  Sqrt: 47
+  Sub: 47
+  Transpose: 115
+parameters: 340387840
+task: MultiModal

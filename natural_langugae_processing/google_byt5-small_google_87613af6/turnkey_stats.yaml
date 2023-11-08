@@ -1,0 +1,57 @@
+author: google
+builds:
+  x86_ort:
+    all_build_stages:
+    - export_pytorch
+    - optimize_onnx
+    - set_success
+    completed_build_stages:
+      export_pytorch: 23.38236689567566
+      optimize_onnx: 9.465049266815186
+      set_success: 0.01673722267150879
+    device_type: x86
+    iterations: 100
+    onnx_file: C:\Users\ramkr/.cache/turnkey\google_byt5-small_google_87613af6\onnx\google_byt5-small_google_87613af6-op14-opt.onnx
+    runtime: ort
+class: T5ForConditionalGeneration
+hash: 9e4a0aef
+model_name: google_byt5-small
+onnx_input_dimensions:
+  input_ids:
+  - 1
+  - 33
+  labels:
+  - 1
+  - 40
+onnx_model_information:
+  ir_version: 7
+  opset: 14
+  size on disk (KiB): 1170811.4434
+onnx_ops_counter:
+  Add: 126
+  Cast: 1
+  Div: 39
+  Equal: 2
+  Gather: 2
+  GatherElements: 1
+  LogSoftmax: 1
+  MatMul: 169
+  Mul: 119
+  Neg: 1
+  Pow: 54
+  ReduceMean: 38
+  ReduceSum: 2
+  Reshape: 87
+  ScatterND: 2
+  Shape: 1
+  Slice: 2
+  Softmax: 20
+  Sqrt: 38
+  Squeeze: 2
+  Sub: 1
+  Tanh: 16
+  Transpose: 90
+  Unsqueeze: 1
+  Where: 4
+parameters: 299637760
+task: Natural_Language_Processing
