@@ -1,7 +1,0 @@
-Exporting PyTorch to ONNX
-============== Diagnostic Run torch.onnx.export version 2.0.1+cpu ==============
-verbose: False, log level: Level.ERROR
-======================= 0 NONE 0 NOTE 0 WARNING 0 ERROR ========================
-
-	Success exporting model to ONNX
-	Successfully checked onnx file
