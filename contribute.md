@@ -1,10 +1,5 @@
 <!--- SPDX-License-Identifier: Apache-2.0 -->
 
-# How to Contribute to the Model Zoo
-
-To contribute a new model, create a [pull request](https://github.com/onnx/models/pull/new/). A pre-defined pull request [template](.github/PULL_REQUEST_TEMPLATE.md) is loaded when creating a new pull request, which describes all the artifacts required for making the contribution.
-
-
 # Contribution Guide for the ONNX Model Zoo
 
 ## Introduction
@@ -27,7 +22,7 @@ There are many ways you can contribute to the ONNX Model Zoo:
 
 1. **Check Existing Issues/PRs**: Before starting your work or submitting a contribution, please check the repository for existing issues or pull requests that might be related to your contribution to avoid duplication of efforts.
 
-2. **Open an Issue**: If you are adding a new feature or model, start by opening a new issue to discuss it. For bugs, document how to reproduce the error.
+2. **Open an Issue**: If you are adding a new feature or model, start by opening a new issue to discuss with the community. For bugs, document how to reproduce the error.
 
 3. **Fork the Repository**: Make a fork of this repository to your GitHub account.
 
@@ -41,7 +36,12 @@ There are many ways you can contribute to the ONNX Model Zoo:
 
     1. **Model Source**: You should provide the source file for the model (.py format), ensuring it is not duplicative.
 
-    1. **Source File Labels**: The source file must include specific labels at the top of the file, such as author, task, and license. For the correct format of these labels, please refer to the example here (todo: add link).
+    1. **Source File Labels**: The source file must include the following labels at the top of the file
+        
+        - Author - Name of the organization or the creator of the model
+        - Task - For example, Computer Vision, Natural Language Processing (NLP), Audio Processing, MultiModal, Generative AI ,Graph Machine Learning ...
+        
+        For the correct format of these labels, please refer to the example here (todo: add link).
 
     1. **Dependencies**: Include a requirements.txt file detailing all the necessary dependencies to run your model.
 
@@ -62,7 +62,8 @@ There are many ways you can contribute to the ONNX Model Zoo:
 
 5. **Commit Messages**: Use clear and descriptive commit messages. This helps to understand the purpose of your changes and speed up the review process.
 
-6. **Pull Request**: Once you've made your changes, submit a pull request (PR) to the main repository. Provide a detailed description of the changes and reference the issue number if applicable. For model contributions use this PR [template](.github/PULL_REQUEST_TEMPLATE.md), which describes all the artifacts required for making the contribution.
+6. **Pull Request**: Once you've made your changes, submit a pull request (PR) to the main repository. Provide a detailed description of the changes and reference the issue number if applicable. 
+For model contributions place the source file under `onnx\models\toolchain\models` and place the onnx file under the appropriate task category in the repo root.
 
 7. **Code Review**: Wait for the maintainers to review your PR. Be responsive to feedback and make necessary changes if requested.
 
