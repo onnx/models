@@ -1,41 +1,8 @@
 // main.test.js
 
-let currentPage = 1;
-const itemsPerPage = 18;
+const { fetchData, renderCards } = require('../script.js');  // assuming you've exported these functions
+// import { fetchData, renderCards } from '../script.js';
 
-let renderCards = function (data) {
-  // function renderCards(data) {
-  const mainContent = document.getElementById('main-content');
-  console.log("~~~~~~~~", mainContent)
-  mainContent.innerHTML = '';
-  const start = (currentPage - 1) * itemsPerPage;
-  const end = start + itemsPerPage;
-  const pageData = data.slice(start, end);
-  console.log("%%%%%%%%%%%%%%%",pageData.length)
-  pageData.forEach(item => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `<h3>${item.title}</h3><p>${item.description}<br>Author: ${item.author}<br>Opset: ${item.opset}</p>`;
-    const downloadButton = document.createElement('div');
-    downloadButton.className = 'download-button';
-    downloadButton.addEventListener('click', () => window.open(item.downloadUrl, '_blank'));
-    const downloadArrow = document.createElement('div');
-    downloadArrow.className = 'download-arrow';
-    downloadButton.appendChild(downloadArrow);
-    card.appendChild(downloadButton);
-    mainContent.appendChild(card);
-  });
-  const pageInfo = document.getElementById('page-info');
-  const totalPages = Math.ceil(data.length / itemsPerPage);
-  if (pageInfo)
-    pageInfo.textContent = `${currentPage}/${totalPages}`;
-}
-
-// // import { renderCards } from '../script.js';
-// console.log(__dirname+'\\..\\script.js')
-// const path = require('path')
-// const { fetchData, renderCards } = require(path.join(__dirname, '..', 'script.js'));  // assuming you've exported these functions
-const { fetchData } = require('../script.js');  // assuming you've exported these functions
 console.log("@@@@@", typeof renderCards, typeof fetchData)
 // const { fetchData, renderCards } = require('../script.js');  // assuming you've exported these functions
 
