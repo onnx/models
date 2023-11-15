@@ -46,21 +46,17 @@ To contribute a model to the ONNX Model Zoo, we ask that you adhere to the follo
 
 1. **Model Source**: You should provide the source file for the model (.py format).
 
-1. **Source File**: Place the source file under `onnx\models\toolchain\models` and place the onnx file under the appropriate task category in the repo root. All pretrained models should include valid weights.
+    Place the source file under `onnx\models\toolchain\models` and place the onnx file under the appropriate task category in the repo root. All pretrained models should include valid weights.
 
-The source file must include the following labels at the top of the file:
-    
-    - Author - Name of the organization or the creator of the model
-    - Task - For example, Computer Vision, Natural Language Processing (NLP), Audio Processing, MultiModal, Generative AI ,Graph Machine Learning ...
-    - License: Submissions should be under one of the following licenses: Apache-2.0, BSD-3, or MIT.
-    
-    For the correct format of these labels, please refer to the example here (todo: add link).
+    The source file must include the following labels at the top of the file:
+        
+        - Author - Name of the organization or the creator of the model
+        - Task - For example, Computer Vision, Natural Language Processing (NLP), Audio Processing, MultiModal, Generative AI ,Graph Machine Learning ...
+        - License: Submissions should be under one of the following licenses: Apache-2.0, BSD-3, or MIT.
+        
+        For the correct format of these labels, please refer to the example here (todo: add link).
 
 1. **Dependencies**: Add any additional requirements run your model to `onnx\models\toolchain\model\requirements.txt`(todo: insert link) file.
-
-1. **Documentation**: While optional, we highly encourage you to provide a README file with:
-    - A detailed description of the model.
-    - Instructions for use, including setup and execution.
 
 1. **Large Files**: If your model includes large weight files, manage them with Git LFS.
 
