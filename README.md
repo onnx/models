@@ -3,6 +3,8 @@
 
 # ONNX Model Zoo
 
+[TODO: Insert CI banners]
+
 ## Introduction
 
 Welcome to the ONNX Model Zoo! The Open Neural Network Exchange (ONNX) is an open standard format created to represent machine learning models. Supported by a robust community of partners, ONNX defines a common set of operators and a common file format to enable AI developers to use models with a variety of frameworks, tools, runtimes, and compilers.
@@ -22,7 +24,8 @@ Our Model Zoo covers a variety of use cases including:
 - Generative AI
 - Graph Machine Learning
 
-These models are sourced from popular open-source repositories such as `timm`, `torchvision`, `torch_hub`, and `transformers`. You can explore all the available models on the [Model Zoo website](link-here).
+These models are sourced from prominent open-source repositories such as [timm](https://github.com/huggingface/pytorch-image-models), [torchvision](https://github.com/pytorch/vision), [torch_hub](https://pytorch.org/hub/), and [transformers](https://github.com/huggingface/transformers), and exported into the ONNX format using the open-source [TurnkeyML toolchain](insert-link-here).
+
 
 ## Usage
 
