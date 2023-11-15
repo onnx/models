@@ -64,7 +64,7 @@ The source file must include the following labels at the top of the file:
 
 1. **Large Files**: If your model includes large weight files, manage them with Git LFS.
 
-1. **Model Building**: Use TurnkeyML's `--build-only` (todo: add link) option to generate the ONNX model. This ensures that the model conforms to standards compatible with the Model Zoo's infrastructure.
+1. **ONNX file creation**: Use TurnkeyML's `--build-only` (todo: add link) option to generate the ONNX model. This ensures that the model conforms to standards compatible with the Model Zoo's infrastructure.
 
 
 By following these guidelines, you help us maintain a high standard for the models in the ONNX Model Zoo, making it a valuable resource for everyone. We appreciate your contributions and look forward to including your models in our collection.
