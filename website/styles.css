@@ -165,3 +165,28 @@ body {
 #social-icons img {
   height: 24px;
 }
+
+#loading-indicator {
+  display: none; /* Hidden by default */
+  text-align: center; /* Center the text horizontally */
+  padding: 20px; /* Add some space around the text */
+  font-size: 24px; /* Make the text larger */
+  color: #333; /* Set the text color */
+  position: relative; /* Needed for positioning the pseudo-element */
+}
+
+#loading-indicator::before {
+  content: '';
+  display: block;
+  width: 0; /* Initial width of the bar */
+  height: 10px; /* Height of the bar */
+  background-color: #3498db; /* Color of the loading bar */
+  margin: 0 auto; /* Center the bar */
+  transition: width 2s ease-in-out; /* Smooth transition for width change */
+  animation: load 2s infinite; /* Animation for the loading effect */
+}
+
+@keyframes load {
+  0%, 100% { width: 0; }
+  50% { width: 100%; } /* Bar expands to full width */
+}

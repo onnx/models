@@ -39,6 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
   let opsetSet = new Set();
 
   async function fetchData() {
+    // Show loading indicator
+    document.getElementById('loading-indicator').style.display = 'block';
     const response = await fetch('https://api.github.com/repos/aigdat/onnx-models/git/trees/main?recursive=1');
     const data = await response.json();
     const onnxFiles = data.tree.filter(item => item.path.endsWith('.onnx') && !item.path.includes('archive/'));
@@ -150,7 +152,9 @@ document.addEventListener('DOMContentLoaded', function () {
       opsetFilter.textContent = opset;
       opsetFilterContainer.appendChild(opsetFilter);
     });
-  
+    
+    // Hide loading indicator when data is ready
+    document.getElementById('loading-indicator').style.display = 'none';
     return modelData;
   }
 
