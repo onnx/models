@@ -32,12 +32,6 @@ jobs:
           pip install dist/*.whl
           models=$(turnkey models location --quiet)
           turnkey $models/selftest/linear.py
-      - name: Publish distribution 📦 to Test PyPI
-        if: startsWith(github.ref, 'refs/tags') != true
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          password: ${{ secrets.TEST_PYPI_API_TOKEN }}
-          repository_url: https://test.pypi.org/legacy/
       - name: Publish distribution 📦 to PyPI
         if: startsWith(github.ref, 'refs/tags')
         uses: pypa/gh-action-pypi-publish@release/v1
