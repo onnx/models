@@ -37,4 +37,4 @@ We are actively seeking collaborators from across the industry. If you would lik
 
 ## License
 
-This is a closed source project. The source code and artifacts are AMD internal only. Do not distribute.
+This is an Apache 2.0 project.
