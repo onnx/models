@@ -8,3 +8,4 @@
 *.tgz filter=lfs diff=lfs merge=lfs -text
 *.weight filter=lfs diff=lfs merge=lfs -text
 *.bias filter=lfs diff=lfs merge=lfs -text
+sample.onnx !filter !diff !merge text
