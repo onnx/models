@@ -1,4 +1,4 @@
-name: Publish Python 🐍 distributions 📦 to PyPI and TestPyPI
+name: Publish Python distributions to PyPI
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-n-publish:
-    name: Build and publish Python 🐍 distributions 📦 to PyPI and TestPyPI
+    name: Build and publish Python distributions to PyPI
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
@@ -32,7 +32,7 @@ jobs:
           pip install dist/*.whl
           models=$(turnkey models location --quiet)
           turnkey $models/selftest/linear.py
-      - name: Publish distribution 📦 to PyPI
+      - name: Publish distribution package to PyPI
         if: startsWith(github.ref, 'refs/tags')
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
