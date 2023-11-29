@@ -10,9 +10,9 @@
 TurnkeyML examines the capability of vendors to provide turnkey solutions to a corpus of hundreds of off-the-shelf models. All of the model scripts and benchmarking code are published as open source software.
 
 
-## Benchmarking Tool
+## Evaluation Tool
 
-Our _turnkey_ CLI allows you to benchmark Pytorch models without changing a single line of code. The demo below shows BERT-Base being benchmarked on both Nvidia A100 and Intel Xeon. For more information, check out our [Tutorials](https://github.com/aig-bench/onnxmodelzoo/blob/main/toolchain/examples/cli/readme.md) and [Tools User Guide](https://github.com/aig-bench/onnxmodelzoo/blob/main/toolchain/docs/tools_user_guide.md).
+Our _turnkey_ CLI allows you to evaluate Pytorch models without changing a single line of code. The demo below shows BERT-Base being benchmarked on both Nvidia A100 and Intel Xeon. For more information, check out our [Tutorials](https://github.com/aig-bench/onnxmodelzoo/blob/main/toolchain/examples/cli/readme.md) and [Tools User Guide](https://github.com/aig-bench/onnxmodelzoo/blob/main/toolchain/docs/tools_user_guide.md).
 
 You can reproduce a nice demo by trying out the [Just Benchmark BERT](https://github.com/aig-bench/onnxmodelzoo/blob/main/toolchain/examples/cli/readme.md#just-benchmark-bert) tutorial.
 
