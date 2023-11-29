@@ -21,9 +21,7 @@ This directory contains the TurnkeyML models, which is a large collection of mod
 The TurnkeyML collection is made up of several corpora of models (_corpora_ is the plural of _corpus_... we had to look it up too). Each corpus is named after the online repository that the models were sourced from. Each corpus gets its own subdirectory in the `models` directory. 
 
 The corpora are:
-- `diffusers`: models from the [Huggingface `diffusers` library](https://huggingface.co/docs/diffusers/index), including the models that make up Stable Diffusion.
 - `graph_convolutions`: Graph Neural Network (GNN) models from a variety of publications. See the docstring on each .py file for the source.
-- `popular_on_huggingface`: hundreds of the most-downloaded models from the [Huggingface models repository](https://huggingface.co/models).
 - `selftest`: a small corpus with small models that can be used for testing out the tools.
 - `torch_hub`: a variety of models, including many image classification models, from the [Torch Hub repository](https://github.com/pytorch/hub).
 - `torchvision`: image recognition models from the [`torchvision` library](https://pytorch.org/vision/stable/index.html).

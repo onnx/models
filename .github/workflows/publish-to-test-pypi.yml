@@ -2,11 +2,11 @@ name: Publish Python 🐍 distributions 📦 to PyPI and TestPyPI
 
 on:
   push:
-    branches: ["main", "canary"]
+    branches: ["main", "development"]
     tags:
       - v*
   pull_request:
-    branches: ["main", "canary"]
+    branches: ["main", "development"]
 
 jobs:
   build-n-publish:
