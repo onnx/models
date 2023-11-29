@@ -1,2 +1,2 @@
 [lfs]
-  fetchexclude = *
+  fetchexclude = *.onnx,*_model.zip
