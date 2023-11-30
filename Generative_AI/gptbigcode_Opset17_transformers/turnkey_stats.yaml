@@ -6,16 +6,16 @@ builds:
     - set_success
     benchmark_status: successful
     completed_build_stages:
-      export_pytorch: 33.79395580291748
-      set_success: 0.033475399017333984
+      export_pytorch: 38.11938786506653
+      set_success: 0.03630566596984863
     device_type: x86
     iterations: 100
-    onnx_file: /home/azureuser/.cache/turnkey/gptneo_transformers_ed74b6f1/onnx/gptneo_transformers_ed74b6f1-op16-base.onnx
+    onnx_file: /home/azureuser/.cache/turnkey/gptbigcode_transformers_b6f84510/onnx/gptbigcode_transformers_b6f84510-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/gptneo.py
-class: GPTNeoModel
-hash: 9fa947af
-model_name: gptneo
+builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/gptbigcode.py
+class: GPTBigCodeModel
+hash: a94462d8
+model_name: gptbigcode
 onnx_input_dimensions:
   attention_mask:
   - 1
@@ -25,27 +25,28 @@ onnx_input_dimensions:
   - 128
 onnx_model_information:
   ir_version: 8
-  opset: 16
+  opset: 17
   size on disk (KiB): null
 onnx_ops_counter:
-  Add: 291
-  Cast: 73
-  Constant: 347
-  Div: 49
+  Add: 217
+  And: 1
+  Cast: 3
+  Constant: 252
+  CumSum: 1
+  Equal: 1
   Gather: 2
-  MatMul: 192
-  Mul: 146
-  Pow: 73
-  ReduceMean: 98
+  LayerNormalization: 49
+  MatMul: 144
+  Mul: 168
   Reshape: 99
   Softmax: 24
-  Sqrt: 49
-  Sub: 50
+  Split: 48
+  Sub: 1
   Tanh: 24
-  Transpose: 120
-  Unsqueeze: 2
-  Where: 24
-parameters: 1315575808
+  Transpose: 24
+  Unsqueeze: 1
+  Where: 25
+parameters: 1124886528
 system_info:
   Memory Info: 62.79 GB
   OEM System: Virtual Machine
