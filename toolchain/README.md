@@ -173,7 +173,7 @@ We are actively seeking collaborators from across the industry. If you would lik
 
 ## Maintainers
 
-This project is sponsored by the [ONNX Model Zoo](ADDLINK) special interest group (SIG). It is maintained by @danielholanda @jeremyfowers @ramkrishna in equal measure. You can reach us at [turnkeyml@???.com](ADDLINK) or by filing an [issue](ADDLINK).
+This project is sponsored by the [ONNX Model Zoo](ADDLINK) special interest group (SIG). It is maintained by @danielholanda @jeremyfowers @ramkrishna @vgodsoe in equal measure. You can reach us at [turnkeyml@???.com](ADDLINK) or by filing an [issue](ADDLINK).
 
 ## License
 
