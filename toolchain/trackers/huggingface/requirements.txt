@@ -1,5 +1,0 @@
-plotly>=5.10.0
-pandas>=1.4.3
-scipy>=1.9.1
-streamlit_echarts
-streamlit_toggle_switch
