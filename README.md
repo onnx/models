@@ -3,7 +3,6 @@
 
 # ONNX Model Zoo
 
-[TODO: Insert CI banners]
 
 ## Introduction
 
@@ -19,8 +18,6 @@ Our Model Zoo covers a variety of use cases including:
 
 - Computer Vision
 - Natural Language Processing (NLP)
-- Audio Processing
-- MultiModal
 - Generative AI
 - Graph Machine Learning
 
