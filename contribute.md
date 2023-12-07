@@ -28,7 +28,7 @@ There are many ways you can contribute to the ONNX Model Zoo:
 
 4. **Make Your Changes**: Work on the changes on your forked repository. 
     
-    For contributing a model refer to [Model contribution guidelines](#model-contribution-guidelines) and for contributing to the toolchain under `onnx\models\toolchain` plese refer to the contribution guidelines here. (todo: add link)
+    For contributing a model refer to [Model contribution guidelines](#model-contribution-guidelines)
 
 5. **Commit Messages**: Use clear and descriptive commit messages. This helps to understand the purpose of your changes and speed up the review process.
 
@@ -46,7 +46,7 @@ To contribute a model to the ONNX Model Zoo, we ask that you adhere to the follo
 
 1. **Model Source**: You should provide the source file for the model (.py format).
 
-    Place the source file under `onnx\models\toolchain\models` and place the onnx file under the appropriate task category in the repo root. All pretrained models should include valid weights.
+    Place the source file under [turnkeyml/models](https://github.com/onnx/turnkeyml/tree/main/models) and place the onnx file under the appropriate task category in the [onnx model zoo repo root](https://github.com/onnx/models). All pretrained models should include valid weights.
 
     The source file must include the following labels at the top of the file:
         
@@ -54,13 +54,13 @@ To contribute a model to the ONNX Model Zoo, we ask that you adhere to the follo
         - Task - For example, Computer Vision, Natural Language Processing (NLP), Audio Processing, MultiModal, Generative AI ,Graph Machine Learning ...
         - License: Submissions should be under one of the following licenses: Apache-2.0, BSD-3, or MIT.
         
-        For the correct format of these labels, please refer to the example here (todo: add link).
+    For the correct format of these labels, please refer to the example [here](https://github.com/onnx/turnkeyml/blob/main/models/timm/resnet18.py)
 
-1. **Dependencies**: Add any additional requirements run your model to `onnx\models\toolchain\model\requirements.txt`(todo: insert link) file.
+1. **Dependencies**: Add any additional requirements run your model to [turnkeyml model requirements](https://github.com/onnx/turnkeyml/blob/main/models/requirements.txt) file.
 
 1. **Large Files**: If your model includes large weight files, manage them with Git LFS.
 
-1. **ONNX file creation**: Use TurnkeyML's `--build-only` (todo: add link) option to generate the ONNX model. This ensures that the model conforms to standards compatible with the Model Zoo's infrastructure.
+1. **ONNX file creation**: Use TurnkeyML's [--build-only](https://github.com/onnx/turnkeyml/blob/main/examples/cli/build.md?plain=1#L17)  option to generate the ONNX model. This ensures that the model conforms to standards compatible with the Model Zoo's infrastructure.
 
 
 By following these guidelines, you help us maintain a high standard for the models in the ONNX Model Zoo, making it a valuable resource for everyone. We appreciate your contributions and look forward to including your models in our collection.
