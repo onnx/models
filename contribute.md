@@ -40,7 +40,7 @@ There are many ways you can contribute to the ONNX Model Zoo:
 
 ## Model Contribution Guidelines
 
-To contribute a model to the ONNX Model Zoo, we ask that you adhere to the following guidelines to ensure consistency and quality:
+Contributing to the ONNX Model Zoo involves a structured process that requires submitting Pull Requests (PRs) to two distinct repositories: [TurnkeyML](https://github.com/onnx/turnkeyml) and the [ONNX Model Zoo](https://github.com/onnx/models). We kindly ask you to adhere to the outlined steps to ensure a smooth and efficient contribution process. Please note that we are actively working on refining this procedure to enhance efficiency and ease of use.
 
 1. **Model Uniqueness**: Before submission, please search the Model Zoo to confirm that your model or an equivalent model is not already hosted.
 
