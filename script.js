@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const parentDir = pathParts.slice(0, -1).join('/');
       const yamlFile = yamlFiles.find(yaml => yaml.path === `${parentDir}/turnkey_stats.yaml`);
       if (yamlFile) {
-        return fetch(`https://raw.githubusercontent.com/onnx/models/raw/main/${yamlFile.path}`)
+        return fetch(`https://raw.githubusercontent.com/onnx/models/main/${yamlFile.path}`)
           .then(response => response.text())
           .then(yamlText => ({ file, yamlText }))
           .catch(error => {
