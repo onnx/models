@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/mobilevitv2_125_timm_d21dfc4c/onnx/mobilevitv2_125_timm_d21dfc4c-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/mobilevitv2_125.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/mobilevitv2_125.py
 class: ByobNet
 hash: a7761015
 model_name: mobilevitv2_125

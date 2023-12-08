@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/xception41_timm_13ac9e9c/onnx/xception41_timm_13ac9e9c-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/xception41.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/xception41.py
 class: XceptionAligned
 hash: 06bb54b9
 model_name: xception41

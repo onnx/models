@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/led_transformers_10d1d695/onnx/led_transformers_10d1d695-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/led.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/led.py
 class: LEDModel
 hash: 797ae7d3
 model_name: led

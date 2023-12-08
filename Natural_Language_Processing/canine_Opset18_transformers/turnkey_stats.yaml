@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/canine_transformers_5652d80b/onnx/canine_transformers_5652d80b-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/canine.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/canine.py
 class: CanineModel
 hash: 2a25ed65
 model_name: canine

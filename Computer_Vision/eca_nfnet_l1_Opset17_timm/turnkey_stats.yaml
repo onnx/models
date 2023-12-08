@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/eca_nfnet_l1_timm_64f5a356/onnx/eca_nfnet_l1_timm_64f5a356-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/eca_nfnet_l1.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/eca_nfnet_l1.py
 class: NormFreeNet
 hash: f0393679
 model_name: eca_nfnet_l1

@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/rocbert_transformers_5d14038d/onnx/rocbert_transformers_5d14038d-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/rocbert.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/rocbert.py
 class: RoCBertModel
 hash: 29f9a23b
 model_name: rocbert

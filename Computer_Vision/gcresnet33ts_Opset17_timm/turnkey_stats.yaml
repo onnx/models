@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/gcresnet33ts_timm_ef5c1619/onnx/gcresnet33ts_timm_ef5c1619-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/gcresnet33ts.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/gcresnet33ts.py
 class: ByobNet
 hash: 7f320e9d
 model_name: gcresnet33ts

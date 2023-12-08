@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/xmod_transformers_e7c2ab1b/onnx/xmod_transformers_e7c2ab1b-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/xmod.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/xmod.py
 class: XmodModel
 hash: c98c743c
 model_name: xmod

@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/seresnext101_32x8d_timm_d70f12a5/onnx/seresnext101_32x8d_timm_d70f12a5-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/seresnext101_32x8d.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/seresnext101_32x8d.py
 class: ResNet
 hash: d934f031
 model_name: seresnext101_32x8d

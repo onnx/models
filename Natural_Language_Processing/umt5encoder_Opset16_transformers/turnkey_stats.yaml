@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/umt5encoder_transformers_8ecbb141/onnx/umt5encoder_transformers_8ecbb141-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/umt5encoder.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/umt5encoder.py
 class: UMT5EncoderModel
 hash: d7a1e93d
 model_name: umt5encoder

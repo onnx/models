@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/crossvit_15_dagger_240_timm_182f41f6/onnx/crossvit_15_dagger_240_timm_182f41f6-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/crossvit_15_dagger_240.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/crossvit_15_dagger_240.py
 class: CrossVit
 hash: f930b01e
 model_name: crossvit_15_dagger_240

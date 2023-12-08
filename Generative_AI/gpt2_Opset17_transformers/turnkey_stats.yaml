@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/gpt2_transformers_1a8cdc29/onnx/gpt2_transformers_1a8cdc29-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/gpt2.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/gpt2.py
 class: GPT2Model
 hash: 6505e34a
 model_name: gpt2

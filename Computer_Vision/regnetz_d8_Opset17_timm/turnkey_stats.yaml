@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/regnetz_d8_timm_1d81e881/onnx/regnetz_d8_timm_1d81e881-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/regnetz_d8.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/regnetz_d8.py
 class: ByobNet
 hash: d6f2650a
 model_name: regnetz_d8

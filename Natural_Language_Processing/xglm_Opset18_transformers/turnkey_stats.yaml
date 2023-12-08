@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/xglm_transformers_5f74cfcb/onnx/xglm_transformers_5f74cfcb-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/xglm.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/xglm.py
 class: XGLMModel
 hash: 0ca3b3f4
 model_name: xglm

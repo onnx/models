@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/bert_transformers_bf722986/onnx/bert_transformers_bf722986-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/bert.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/bert.py
 class: BertModel
 hash: 52dd384c
 model_name: bert

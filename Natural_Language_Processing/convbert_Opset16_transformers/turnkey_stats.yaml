@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/convbert_transformers_b3f7d9c0/onnx/convbert_transformers_b3f7d9c0-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/convbert.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/convbert.py
 class: ConvBertModel
 hash: a0cab96f
 model_name: convbert

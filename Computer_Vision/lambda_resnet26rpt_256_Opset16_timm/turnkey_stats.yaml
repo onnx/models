@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/lambda_resnet26rpt_256_timm_876de2e3/onnx/lambda_resnet26rpt_256_timm_876de2e3-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/lambda_resnet26rpt_256.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/lambda_resnet26rpt_256.py
 class: ByobNet
 hash: 1d89f315
 model_name: lambda_resnet26rpt_256

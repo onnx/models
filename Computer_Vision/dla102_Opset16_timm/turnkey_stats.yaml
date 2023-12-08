@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/dla102_timm_92bd24d3/onnx/dla102_timm_92bd24d3-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/dla102.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/dla102.py
 class: DLA
 hash: fd2b8c73
 model_name: dla102

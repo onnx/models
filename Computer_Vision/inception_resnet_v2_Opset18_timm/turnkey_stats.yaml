@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/inception_resnet_v2_timm_2b05901d/onnx/inception_resnet_v2_timm_2b05901d-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/inception_resnet_v2.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/inception_resnet_v2.py
 class: InceptionResnetV2
 hash: d7df6e3a
 model_name: inception_resnet_v2

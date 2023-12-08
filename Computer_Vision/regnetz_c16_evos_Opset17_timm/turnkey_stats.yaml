@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/regnetz_c16_evos_timm_b49ef9d0/onnx/regnetz_c16_evos_timm_b49ef9d0-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/regnetz_c16_evos.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/regnetz_c16_evos.py
 class: ByobNet
 hash: a6e1afd9
 model_name: regnetz_c16_evos

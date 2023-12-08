@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/ssl_resnet18_timm_81083861/onnx/ssl_resnet18_timm_81083861-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/ssl_resnet18.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/ssl_resnet18.py
 class: ResNet
 hash: 495787f5
 model_name: ssl_resnet18

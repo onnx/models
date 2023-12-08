@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/poolformer_s36_timm_79329559/onnx/poolformer_s36_timm_79329559-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/poolformer_s36.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/poolformer_s36.py
 class: MetaFormer
 hash: bff42fd3
 model_name: poolformer_s36

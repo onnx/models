@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/wide_resnet101_2_torch_hub_a638ebdd/onnx/wide_resnet101_2_torch_hub_a638ebdd-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torch_hub/wide_resnet101_2.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torch_hub/wide_resnet101_2.py
 class: ResNet
 hash: 0eb07645
 model_name: wide_resnet101_2

@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/convmixer_1024_20_ks9_p14_timm_d5da9155/onnx/convmixer_1024_20_ks9_p14_timm_d5da9155-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/convmixer_1024_20_ks9_p14.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/convmixer_1024_20_ks9_p14.py
 class: ConvMixer
 hash: 9966e2d4
 model_name: convmixer_1024_20_ks9_p14

@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/gluon_seresnext101_64x4d_timm_730a6a37/onnx/gluon_seresnext101_64x4d_timm_730a6a37-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/gluon_seresnext101_64x4d.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/gluon_seresnext101_64x4d.py
 class: ResNet
 hash: 4295d7eb
 model_name: gluon_seresnext101_64x4d

@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/shufflenet_v2_x1_5_torch_hub_2ee4dc2b/onnx/shufflenet_v2_x1_5_torch_hub_2ee4dc2b-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torch_hub/shufflenet_v2_x1_5.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torch_hub/shufflenet_v2_x1_5.py
 class: ShuffleNetV2
 hash: '51805568'
 model_name: shufflenet_v2_x1_5

@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/dla60_res2net_timm_60640425/onnx/dla60_res2net_timm_60640425-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/dla60_res2net.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/dla60_res2net.py
 class: DLA
 hash: adb85843
 model_name: dla60_res2net

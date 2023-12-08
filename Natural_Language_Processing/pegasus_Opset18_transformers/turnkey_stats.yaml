@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/pegasus_transformers_2a0f3c31/onnx/pegasus_transformers_2a0f3c31-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/pegasus.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/pegasus.py
 class: PegasusModel
 hash: bcd1d4f1
 model_name: pegasus

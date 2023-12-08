@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/mobilenetv2_110d_timm_3d104aee/onnx/mobilenetv2_110d_timm_3d104aee-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/mobilenetv2_110d.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/mobilenetv2_110d.py
 class: EfficientNet
 hash: 483f3967
 model_name: mobilenetv2_110d

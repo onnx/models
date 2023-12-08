@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/vit_relpos_base_patch16_clsgap_224_timm_a2128bf4/onnx/vit_relpos_base_patch16_clsgap_224_timm_a2128bf4-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/vit_relpos_base_patch16_clsgap_224.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/vit_relpos_base_patch16_clsgap_224.py
 class: VisionTransformerRelPos
 hash: b6414a30
 model_name: vit_relpos_base_patch16_clsgap_224

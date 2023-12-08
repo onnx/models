@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/mobilenetv3_small_050_timm_519a10fd/onnx/mobilenetv3_small_050_timm_519a10fd-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/mobilenetv3_small_050.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/mobilenetv3_small_050.py
 class: MobileNetV3
 hash: 65cb7285
 model_name: mobilenetv3_small_050

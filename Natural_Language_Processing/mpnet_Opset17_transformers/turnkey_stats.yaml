@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/mpnet_transformers_4d21d2ec/onnx/mpnet_transformers_4d21d2ec-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/mpnet.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/mpnet.py
 class: MPNetModel
 hash: 908bc59b
 model_name: mpnet

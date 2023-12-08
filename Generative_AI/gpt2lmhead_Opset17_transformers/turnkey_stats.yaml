@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/gpt2lmhead_transformers_43de7288/onnx/gpt2lmhead_transformers_43de7288-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/gpt2lmhead.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/gpt2lmhead.py
 class: GPT2LMHeadModel
 hash: 3ce65e43
 model_name: gpt2lmhead

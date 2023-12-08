@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/xcit_small_12_p8_384_dist_timm_b2863264/onnx/xcit_small_12_p8_384_dist_timm_b2863264-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/xcit_small_12_p8_384_dist.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/xcit_small_12_p8_384_dist.py
 class: Xcit
 hash: d8e64996
 model_name: xcit_small_12_p8_384_dist

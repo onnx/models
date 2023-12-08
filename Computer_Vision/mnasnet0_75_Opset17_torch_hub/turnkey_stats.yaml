@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/mnasnet0_75_torch_hub_b5e7f927/onnx/mnasnet0_75_torch_hub_b5e7f927-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torch_hub/mnasnet0_75.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torch_hub/mnasnet0_75.py
 class: MNASNet
 hash: 4a915154
 model_name: mnasnet0_75

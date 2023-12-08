@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/tagconv_graph_convolutions_889730ec/onnx/tagconv_graph_convolutions_889730ec-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/graph_convolutions/tagconv.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/graph_convolutions/tagconv.py
 class: TAGConv
 hash: 0b552e73
 model_name: tagconv

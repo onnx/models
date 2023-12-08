@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/retinanet_resnet50_fpn_v2_torchvision_63ae293c/onnx/retinanet_resnet50_fpn_v2_torchvision_63ae293c-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torchvision/retinanet_resnet50_fpn_v2.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torchvision/retinanet_resnet50_fpn_v2.py
 class: RetinaNet
 hash: bc30c272
 model_name: retinanet_resnet50_fpn_v2

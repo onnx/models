@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/yoso_transformers_90818c10/onnx/yoso_transformers_90818c10-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/yoso.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/yoso.py
 class: YosoModel
 hash: b40e5373
 model_name: yoso

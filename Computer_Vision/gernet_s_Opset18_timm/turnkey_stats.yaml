@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/gernet_s_timm_392948c5/onnx/gernet_s_timm_392948c5-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/gernet_s.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/gernet_s.py
 class: ByobNet
 hash: adfdb7ee
 model_name: gernet_s

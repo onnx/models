@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/camembert_transformers_d6b8ed88/onnx/camembert_transformers_d6b8ed88-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/camembert.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/camembert.py
 class: CamembertModel
 hash: f4fc11d0
 model_name: camembert

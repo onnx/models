@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/resgatedgraphconv_graph_convolutions_bbe9da5b/onnx/resgatedgraphconv_graph_convolutions_bbe9da5b-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/graph_convolutions/resgatedgraphconv.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/graph_convolutions/resgatedgraphconv.py
 class: ResGatedGraphConv
 hash: bcab8e53
 model_name: resgatedgraphconv

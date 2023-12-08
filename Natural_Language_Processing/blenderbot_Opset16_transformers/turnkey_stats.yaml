@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/blenderbot_transformers_989325dc/onnx/blenderbot_transformers_989325dc-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/blenderbot.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/blenderbot.py
 class: BlenderbotModel
 hash: bf6d8047
 model_name: blenderbot

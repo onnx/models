@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/densenet121_torch_hub_6c448300/onnx/densenet121_torch_hub_6c448300-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torch_hub/densenet121.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torch_hub/densenet121.py
 class: DenseNet
 hash: d5f7254d
 model_name: densenet121

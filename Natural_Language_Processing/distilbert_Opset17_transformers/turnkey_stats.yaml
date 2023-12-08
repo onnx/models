@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/distilbert_transformers_a7a7c171/onnx/distilbert_transformers_a7a7c171-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/distilbert.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/distilbert.py
 class: DistilBertModel
 hash: 6b3f916e
 model_name: distilbert

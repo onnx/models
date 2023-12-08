@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/splinter_transformers_70407880/onnx/splinter_transformers_70407880-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/splinter.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/splinter.py
 class: SplinterModel
 hash: 9c5ed9e5
 model_name: splinter

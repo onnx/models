@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/transfoxl_transformers_ff9eb273/onnx/transfoxl_transformers_ff9eb273-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/transfoxl.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/transfoxl.py
 class: TransfoXLModel
 hash: 0add2cbc
 model_name: transfoxl

@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/swinv2_base_window12_192_22k_timm_19d6fe6b/onnx/swinv2_base_window12_192_22k_timm_19d6fe6b-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/swinv2_base_window12_192_22k.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/swinv2_base_window12_192_22k.py
 class: SwinTransformerV2
 hash: 29cdf8cc
 model_name: swinv2_base_window12_192_22k

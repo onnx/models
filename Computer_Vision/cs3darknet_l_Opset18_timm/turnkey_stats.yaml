@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/cs3darknet_l_timm_79d1f698/onnx/cs3darknet_l_timm_79d1f698-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/cs3darknet_l.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/cs3darknet_l.py
 class: CspNet
 hash: 409a6ab9
 model_name: cs3darknet_l

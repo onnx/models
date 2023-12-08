@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/resnext50_32x4d_torch_hub_520c82c0/onnx/resnext50_32x4d_torch_hub_520c82c0-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torch_hub/resnext50_32x4d.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torch_hub/resnext50_32x4d.py
 class: ResNet
 hash: ce6f3fb8
 model_name: resnext50_32x4d

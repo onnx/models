@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/resnet152_timm_a3a3c88a/onnx/resnet152_timm_a3a3c88a-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/resnet152.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/resnet152.py
 class: ResNet
 hash: d48a3c83
 model_name: resnet152

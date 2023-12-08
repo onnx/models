@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/cait_xxs36_224_timm_bf352925/onnx/cait_xxs36_224_timm_bf352925-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/cait_xxs36_224.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/cait_xxs36_224.py
 class: Cait
 hash: 734d61c0
 model_name: cait_xxs36_224

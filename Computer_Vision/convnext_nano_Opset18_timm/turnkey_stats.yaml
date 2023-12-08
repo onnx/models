@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/convnext_nano_timm_c90cc149/onnx/convnext_nano_timm_c90cc149-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/convnext_nano.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/convnext_nano.py
 class: ConvNeXt
 hash: 0e3b364e
 model_name: convnext_nano

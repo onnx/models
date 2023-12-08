@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/nystromformer_transformers_9ed45aff/onnx/nystromformer_transformers_9ed45aff-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/nystromformer.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/nystromformer.py
 class: NystromformerModel
 hash: 2419dcf0
 model_name: nystromformer

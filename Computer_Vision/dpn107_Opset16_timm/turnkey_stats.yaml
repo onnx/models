@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/dpn107_timm_e68b156e/onnx/dpn107_timm_e68b156e-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/dpn107.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/dpn107.py
 class: DPN
 hash: 8628d562
 model_name: dpn107

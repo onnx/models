@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/dla60_timm_c67068dd/onnx/dla60_timm_c67068dd-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/dla60.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/dla60.py
 class: DLA
 hash: 6d4e6f47
 model_name: dla60

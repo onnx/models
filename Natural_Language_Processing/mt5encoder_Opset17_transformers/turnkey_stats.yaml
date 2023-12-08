@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/mt5encoder_transformers_c2cadb4b/onnx/mt5encoder_transformers_c2cadb4b-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/mt5encoder.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/mt5encoder.py
 class: MT5EncoderModel
 hash: 56e9c10c
 model_name: mt5encoder

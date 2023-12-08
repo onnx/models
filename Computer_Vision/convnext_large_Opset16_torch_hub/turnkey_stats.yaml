@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/convnext_large_torch_hub_a4e99be0/onnx/convnext_large_torch_hub_a4e99be0-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torch_hub/convnext_large.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torch_hub/convnext_large.py
 class: ConvNeXt
 hash: af479213
 model_name: convnext_large

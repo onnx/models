@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/sequencer2d_l_timm_67e5fdfd/onnx/sequencer2d_l_timm_67e5fdfd-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/sequencer2d_l.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/sequencer2d_l.py
 class: Sequencer2d
 hash: 9fe3c156
 model_name: sequencer2d_l

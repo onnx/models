@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/xception_timm_095d081e/onnx/xception_timm_095d081e-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/xception.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/xception.py
 class: Xception
 hash: 0c50f5e5
 model_name: xception

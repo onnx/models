@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/levit_256_timm_fa736f2e/onnx/levit_256_timm_fa736f2e-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/levit_256.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/levit_256.py
 class: LevitDistilled
 hash: 3e4dd7b7
 model_name: levit_256

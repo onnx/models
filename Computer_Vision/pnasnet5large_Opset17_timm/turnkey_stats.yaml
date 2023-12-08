@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/pnasnet5large_timm_178e0bde/onnx/pnasnet5large_timm_178e0bde-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/pnasnet5large.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/pnasnet5large.py
 class: PNASNet5Large
 hash: d78405b4
 model_name: pnasnet5large

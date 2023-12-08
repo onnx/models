@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/ese_vovnet19b_dw_timm_be835063/onnx/ese_vovnet19b_dw_timm_be835063-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/ese_vovnet19b_dw.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/ese_vovnet19b_dw.py
 class: VovNet
 hash: 79e906fb
 model_name: ese_vovnet19b_dw

@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/coat_lite_mini_timm_4e89194a/onnx/coat_lite_mini_timm_4e89194a-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/coat_lite_mini.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/coat_lite_mini.py
 class: CoaT
 hash: cbde3c70
 model_name: coat_lite_mini

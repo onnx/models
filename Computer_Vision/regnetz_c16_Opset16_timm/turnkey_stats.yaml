@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/regnetz_c16_timm_39adf2b2/onnx/regnetz_c16_timm_39adf2b2-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/regnetz_c16.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/regnetz_c16.py
 class: ByobNet
 hash: fd5c7b6c
 model_name: regnetz_c16

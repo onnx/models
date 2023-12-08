@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/regnetx_320_timm_cb2e93c6/onnx/regnetx_320_timm_cb2e93c6-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/regnetx_320.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/regnetx_320.py
 class: RegNet
 hash: eb0ee4ce
 model_name: regnetx_320

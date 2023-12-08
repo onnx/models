@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/regnet_y_16gf_torch_hub_d0046666/onnx/regnet_y_16gf_torch_hub_d0046666-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torch_hub/regnet_y_16gf.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torch_hub/regnet_y_16gf.py
 class: RegNet
 hash: a44f744c
 model_name: regnet_y_16gf

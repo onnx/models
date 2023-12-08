@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/resmlp_12_224_dino_timm_356309d0/onnx/resmlp_12_224_dino_timm_356309d0-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/resmlp_12_224_dino.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/resmlp_12_224_dino.py
 class: MlpMixer
 hash: 371923e5
 model_name: resmlp_12_224_dino

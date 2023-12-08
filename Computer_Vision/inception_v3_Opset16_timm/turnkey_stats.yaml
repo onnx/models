@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/inception_v3_timm_6ead9f43/onnx/inception_v3_timm_6ead9f43-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/inception_v3.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/inception_v3.py
 class: InceptionV3
 hash: 4599a3df
 model_name: inception_v3

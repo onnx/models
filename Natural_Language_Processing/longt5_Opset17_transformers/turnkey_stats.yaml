@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/longt5_transformers_9d503aad/onnx/longt5_transformers_9d503aad-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/longt5.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/longt5.py
 class: LongT5Model
 hash: b0f575b5
 model_name: longt5

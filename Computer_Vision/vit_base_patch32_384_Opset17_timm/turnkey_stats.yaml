@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/vit_base_patch32_384_timm_1948d38a/onnx/vit_base_patch32_384_timm_1948d38a-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/vit_base_patch32_384.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/vit_base_patch32_384.py
 class: VisionTransformer
 hash: beab26ca
 model_name: vit_base_patch32_384

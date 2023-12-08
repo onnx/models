@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/hrnet_w18_small_timm_be95a058/onnx/hrnet_w18_small_timm_be95a058-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/hrnet_w18_small.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/hrnet_w18_small.py
 class: HighResolutionNet
 hash: 7e530df2
 model_name: hrnet_w18_small

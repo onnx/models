@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/fasterrcnn_resnet50_fpn_v2_torchvision_a7b95f81/onnx/fasterrcnn_resnet50_fpn_v2_torchvision_a7b95f81-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torchvision/fasterrcnn_resnet50_fpn_v2.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torchvision/fasterrcnn_resnet50_fpn_v2.py
 class: FasterRCNN
 hash: ae446d48
 model_name: fasterrcnn_resnet50_fpn_v2

@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/maskrcnn_resnet50_fpn_v2_torchvision_0f88bbc1/onnx/maskrcnn_resnet50_fpn_v2_torchvision_0f88bbc1-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torchvision/maskrcnn_resnet50_fpn_v2.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torchvision/maskrcnn_resnet50_fpn_v2.py
 class: MaskRCNN
 hash: 6bd8d18e
 model_name: maskrcnn_resnet50_fpn_v2

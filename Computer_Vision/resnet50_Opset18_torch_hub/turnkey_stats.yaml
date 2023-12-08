@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/resnet50_torch_hub_f7f24bc8/onnx/resnet50_torch_hub_f7f24bc8-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torch_hub/resnet50.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torch_hub/resnet50.py
 class: ResNet
 hash: 3ba0a685
 model_name: resnet50

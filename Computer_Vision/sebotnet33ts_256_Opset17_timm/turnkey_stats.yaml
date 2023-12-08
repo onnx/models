@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/sebotnet33ts_256_timm_9b083bd4/onnx/sebotnet33ts_256_timm_9b083bd4-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/sebotnet33ts_256.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/sebotnet33ts_256.py
 class: ByobNet
 hash: 120807c1
 model_name: sebotnet33ts_256

@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/fasterrcnn_mobilenet_v3_large_fpn_torchvision_2457d645/onnx/fasterrcnn_mobilenet_v3_large_fpn_torchvision_2457d645-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torchvision/fasterrcnn_mobilenet_v3_large_fpn.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torchvision/fasterrcnn_mobilenet_v3_large_fpn.py
 class: FasterRCNN
 hash: 608647d6
 model_name: fasterrcnn_mobilenet_v3_large_fpn

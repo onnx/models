@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/densenet201_timm_7020408f/onnx/densenet201_timm_7020408f-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/densenet201.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/densenet201.py
 class: DenseNet
 hash: f8aa6177
 model_name: densenet201

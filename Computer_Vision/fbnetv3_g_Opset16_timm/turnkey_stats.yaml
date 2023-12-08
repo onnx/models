@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/fbnetv3_g_timm_87516cd2/onnx/fbnetv3_g_timm_87516cd2-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/fbnetv3_g.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/fbnetv3_g.py
 class: MobileNetV3
 hash: 17ff40dd
 model_name: fbnetv3_g

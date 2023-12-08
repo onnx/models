@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/resnetv2_152x2_bit_teacher_384_timm_04cb0b5a/onnx/resnetv2_152x2_bit_teacher_384_timm_04cb0b5a-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/resnetv2_152x2_bit_teacher_384.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/resnetv2_152x2_bit_teacher_384.py
 class: ResNetV2
 hash: eba08ea2
 model_name: resnetv2_152x2_bit_teacher_384

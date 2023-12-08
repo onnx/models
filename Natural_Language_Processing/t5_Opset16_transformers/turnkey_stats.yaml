@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/t5_transformers_6b34a986/onnx/t5_transformers_6b34a986-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/t5.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/t5.py
 class: T5Model
 hash: 7f7467e3
 model_name: t5

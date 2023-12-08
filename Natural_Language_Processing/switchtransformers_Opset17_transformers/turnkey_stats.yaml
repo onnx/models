@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/switchtransformers_transformers_fafcd959/onnx/switchtransformers_transformers_fafcd959-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/switchtransformers.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/switchtransformers.py
 class: SwitchTransformersModel
 hash: 5c4376cf
 model_name: switchtransformers

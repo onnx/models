@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/swin_s_torch_hub_62bf8c0e/onnx/swin_s_torch_hub_62bf8c0e-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torch_hub/swin_s.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torch_hub/swin_s.py
 class: SwinTransformer
 hash: 910bca4e
 model_name: swin_s

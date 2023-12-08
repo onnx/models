@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/alexnet_torch_hub_68e19088/onnx/alexnet_torch_hub_68e19088-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torch_hub/alexnet.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torch_hub/alexnet.py
 class: AlexNet
 hash: 2891f54c
 model_name: alexnet

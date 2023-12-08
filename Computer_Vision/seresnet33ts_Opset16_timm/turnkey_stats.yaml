@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/seresnet33ts_timm_fab1aec9/onnx/seresnet33ts_timm_fab1aec9-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/seresnet33ts.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/seresnet33ts.py
 class: ByobNet
 hash: c5ed3d1f
 model_name: seresnet33ts

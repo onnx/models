@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/bloom_transformers_6da38299/onnx/bloom_transformers_6da38299-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/bloom.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/bloom.py
 class: BloomModel
 hash: 56ee6241
 model_name: bloom

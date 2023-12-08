@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/resnetv2_50x3_bitm_timm_ec5994fe/onnx/resnetv2_50x3_bitm_timm_ec5994fe-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/resnetv2_50x3_bitm.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/resnetv2_50x3_bitm.py
 class: ResNetV2
 hash: 1ea42a8c
 model_name: resnetv2_50x3_bitm

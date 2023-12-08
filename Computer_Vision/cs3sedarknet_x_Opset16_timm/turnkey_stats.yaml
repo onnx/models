@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/cs3sedarknet_x_timm_52b77f06/onnx/cs3sedarknet_x_timm_52b77f06-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/cs3sedarknet_x.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/cs3sedarknet_x.py
 class: CspNet
 hash: 5b1e4b75
 model_name: cs3sedarknet_x

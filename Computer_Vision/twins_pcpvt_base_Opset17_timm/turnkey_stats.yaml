@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/twins_pcpvt_base_timm_dc51c07b/onnx/twins_pcpvt_base_timm_dc51c07b-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/twins_pcpvt_base.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/twins_pcpvt_base.py
 class: Twins
 hash: 526f4431
 model_name: twins_pcpvt_base

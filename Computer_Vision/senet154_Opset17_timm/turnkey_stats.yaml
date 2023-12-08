@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/senet154_timm_89f185c7/onnx/senet154_timm_89f185c7-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/senet154.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/senet154.py
 class: ResNet
 hash: 410722aa
 model_name: senet154

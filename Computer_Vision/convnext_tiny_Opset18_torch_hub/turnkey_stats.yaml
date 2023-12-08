@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/convnext_tiny_torch_hub_8d7e89e1/onnx/convnext_tiny_torch_hub_8d7e89e1-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torch_hub/convnext_tiny.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torch_hub/convnext_tiny.py
 class: ConvNeXt
 hash: 4f884eed
 model_name: convnext_tiny

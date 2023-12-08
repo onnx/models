@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/mobilenetv3_large_100_miil_in21k_timm_855b0fb5/onnx/mobilenetv3_large_100_miil_in21k_timm_855b0fb5-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/mobilenetv3_large_100_miil_in21k.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/mobilenetv3_large_100_miil_in21k.py
 class: MobileNetV3
 hash: ec2100fb
 model_name: mobilenetv3_large_100_miil_in21k

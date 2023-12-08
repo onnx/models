@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/albert_transformers_ad82e88a/onnx/albert_transformers_ad82e88a-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/albert.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/albert.py
 class: AlbertModel
 hash: 179f2b46
 model_name: albert

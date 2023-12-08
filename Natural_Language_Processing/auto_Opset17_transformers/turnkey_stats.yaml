@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/auto_transformers_eaedd6c2/onnx/auto_transformers_eaedd6c2-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/auto.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/auto.py
 class: RobertaModel
 hash: d0d42857
 model_name: auto

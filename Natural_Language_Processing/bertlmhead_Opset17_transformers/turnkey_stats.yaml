@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/bertlmhead_transformers_3e187539/onnx/bertlmhead_transformers_3e187539-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/bertlmhead.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/bertlmhead.py
 class: BertLMHeadModel
 hash: 22ff1394
 model_name: bertlmhead

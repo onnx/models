@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/hrnet_w40_timm_2c734eea/onnx/hrnet_w40_timm_2c734eea-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/hrnet_w40.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/hrnet_w40.py
 class: HighResolutionNet
 hash: 1678f194
 model_name: hrnet_w40

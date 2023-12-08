@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/repvgg_b1g4_timm_81e6bfca/onnx/repvgg_b1g4_timm_81e6bfca-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/repvgg_b1g4.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/repvgg_b1g4.py
 class: ByobNet
 hash: 6f462fed
 model_name: repvgg_b1g4

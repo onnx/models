@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/crossvit_15_240_timm_698ef198/onnx/crossvit_15_240_timm_698ef198-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/crossvit_15_240.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/crossvit_15_240.py
 class: CrossVit
 hash: fba63b17
 model_name: crossvit_15_240

@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/tinynet_a_timm_bc3f4ab7/onnx/tinynet_a_timm_bc3f4ab7-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/tinynet_a.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/tinynet_a.py
 class: EfficientNet
 hash: 25e38fe4
 model_name: tinynet_a

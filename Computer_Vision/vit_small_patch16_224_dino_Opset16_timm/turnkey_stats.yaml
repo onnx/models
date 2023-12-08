@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/vit_small_patch16_224_dino_timm_97c5056d/onnx/vit_small_patch16_224_dino_timm_97c5056d-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/vit_small_patch16_224_dino.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/vit_small_patch16_224_dino.py
 class: VisionTransformer
 hash: 8c86c762
 model_name: vit_small_patch16_224_dino

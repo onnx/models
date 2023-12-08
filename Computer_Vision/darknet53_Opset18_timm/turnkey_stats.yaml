@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/darknet53_timm_68ed1fda/onnx/darknet53_timm_68ed1fda-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/darknet53.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/darknet53.py
 class: CspNet
 hash: f06243c0
 model_name: darknet53

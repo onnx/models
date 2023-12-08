@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/dm_nfnet_f3_timm_22ae4a5d/onnx/dm_nfnet_f3_timm_22ae4a5d-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/dm_nfnet_f3.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/dm_nfnet_f3.py
 class: NormFreeNet
 hash: 81bb086a
 model_name: dm_nfnet_f3

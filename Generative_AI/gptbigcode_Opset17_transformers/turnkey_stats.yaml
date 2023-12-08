@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/gptbigcode_transformers_b6f84510/onnx/gptbigcode_transformers_b6f84510-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/gptbigcode.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/gptbigcode.py
 class: GPTBigCodeModel
 hash: a94462d8
 model_name: gptbigcode

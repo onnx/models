@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/efficientnetv2_rw_m_timm_8a4f0045/onnx/efficientnetv2_rw_m_timm_8a4f0045-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/efficientnetv2_rw_m.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/efficientnetv2_rw_m.py
 class: EfficientNet
 hash: 4663c497
 model_name: efficientnetv2_rw_m

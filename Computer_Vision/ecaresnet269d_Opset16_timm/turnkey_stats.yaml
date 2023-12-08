@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/ecaresnet269d_timm_2474b864/onnx/ecaresnet269d_timm_2474b864-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/ecaresnet269d.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/ecaresnet269d.py
 class: ResNet
 hash: a12f5b20
 model_name: ecaresnet269d

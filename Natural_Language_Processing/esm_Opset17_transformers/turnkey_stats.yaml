@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/esm_transformers_380533f4/onnx/esm_transformers_380533f4-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/esm.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/esm.py
 class: EsmModel
 hash: f419c5d2
 model_name: esm

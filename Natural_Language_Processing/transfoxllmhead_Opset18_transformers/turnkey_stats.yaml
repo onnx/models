@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/transfoxllmhead_transformers_344f44fd/onnx/transfoxllmhead_transformers_344f44fd-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/transfoxllmhead.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/transfoxllmhead.py
 class: TransfoXLLMHeadModel
 hash: 56714d4e
 model_name: transfoxllmhead

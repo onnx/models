@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/hardcorenas_e_timm_956252f2/onnx/hardcorenas_e_timm_956252f2-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/hardcorenas_e.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/hardcorenas_e.py
 class: MobileNetV3
 hash: 447108e5
 model_name: hardcorenas_e

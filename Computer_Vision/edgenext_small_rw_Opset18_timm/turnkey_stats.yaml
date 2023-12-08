@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/edgenext_small_rw_timm_82bdf8c0/onnx/edgenext_small_rw_timm_82bdf8c0-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/edgenext_small_rw.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/edgenext_small_rw.py
 class: EdgeNeXt
 hash: 7406c4a3
 model_name: edgenext_small_rw

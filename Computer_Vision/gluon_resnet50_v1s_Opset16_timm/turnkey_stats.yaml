@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/gluon_resnet50_v1s_timm_dea8b34e/onnx/gluon_resnet50_v1s_timm_dea8b34e-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/gluon_resnet50_v1s.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/gluon_resnet50_v1s.py
 class: ResNet
 hash: da3ba6b7
 model_name: gluon_resnet50_v1s

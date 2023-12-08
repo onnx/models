@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/mnasnet_a1_timm_f720e9d0/onnx/mnasnet_a1_timm_f720e9d0-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/mnasnet_a1.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/mnasnet_a1.py
 class: EfficientNet
 hash: e1760261
 model_name: mnasnet_a1

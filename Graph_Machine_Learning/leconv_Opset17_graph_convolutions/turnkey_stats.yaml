@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/leconv_graph_convolutions_ef4394c3/onnx/leconv_graph_convolutions_ef4394c3-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/graph_convolutions/leconv.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/graph_convolutions/leconv.py
 class: LEConv
 hash: c8a67ed2
 model_name: leconv

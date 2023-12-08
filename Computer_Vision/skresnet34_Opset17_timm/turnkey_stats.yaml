@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/skresnet34_timm_7130e115/onnx/skresnet34_timm_7130e115-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/skresnet34.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/skresnet34.py
 class: ResNet
 hash: fcc5fc6f
 model_name: skresnet34

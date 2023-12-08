@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/spnasnet_100_timm_515656ab/onnx/spnasnet_100_timm_515656ab-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/spnasnet_100.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/spnasnet_100.py
 class: EfficientNet
 hash: 5bc046ef
 model_name: spnasnet_100

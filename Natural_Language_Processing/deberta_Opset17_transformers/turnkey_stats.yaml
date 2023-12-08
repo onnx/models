@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/deberta_transformers_b43a9498/onnx/deberta_transformers_b43a9498-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/deberta.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/deberta.py
 class: DebertaModel
 hash: cfc3cc11
 model_name: deberta

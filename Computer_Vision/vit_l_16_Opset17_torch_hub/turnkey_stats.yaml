@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/vit_l_16_torch_hub_89f7684f/onnx/vit_l_16_torch_hub_89f7684f-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torch_hub/vit_l_16.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torch_hub/vit_l_16.py
 class: VisionTransformer
 hash: 44b6c5a5
 model_name: vit_l_16

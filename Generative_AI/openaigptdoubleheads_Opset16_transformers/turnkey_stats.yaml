@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/openaigptdoubleheads_transformers_811f9e03/onnx/openaigptdoubleheads_transformers_811f9e03-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/openaigptdoubleheads.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/openaigptdoubleheads.py
 class: OpenAIGPTDoubleHeadsModel
 hash: a7e8e666
 model_name: openaigptdoubleheads

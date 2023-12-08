@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/fbnetc_100_timm_eb5bde0b/onnx/fbnetc_100_timm_eb5bde0b-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/fbnetc_100.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/fbnetc_100.py
 class: EfficientNet
 hash: 8c5f99d5
 model_name: fbnetc_100

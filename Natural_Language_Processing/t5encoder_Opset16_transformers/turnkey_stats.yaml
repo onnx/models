@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/t5encoder_transformers_8049605a/onnx/t5encoder_transformers_8049605a-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/t5encoder.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/t5encoder.py
 class: T5EncoderModel
 hash: ad7f615d
 model_name: t5encoder

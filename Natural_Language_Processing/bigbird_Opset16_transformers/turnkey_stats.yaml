@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/bigbird_transformers_998f5f03/onnx/bigbird_transformers_998f5f03-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/bigbird.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/bigbird.py
 class: BigBirdModel
 hash: d0866efc
 model_name: bigbird

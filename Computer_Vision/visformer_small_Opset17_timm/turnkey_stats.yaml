@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/visformer_small_timm_9d1e9a16/onnx/visformer_small_timm_9d1e9a16-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/visformer_small.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/visformer_small.py
 class: Visformer
 hash: b0b2b339
 model_name: visformer_small

@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/resnest200e_timm_6e92a0be/onnx/resnest200e_timm_6e92a0be-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/resnest200e.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/resnest200e.py
 class: ResNet
 hash: 5e51a379
 model_name: resnest200e

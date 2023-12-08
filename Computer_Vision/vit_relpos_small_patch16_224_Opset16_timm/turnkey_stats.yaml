@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/vit_relpos_small_patch16_224_timm_57c7edc6/onnx/vit_relpos_small_patch16_224_timm_57c7edc6-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/vit_relpos_small_patch16_224.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/vit_relpos_small_patch16_224.py
 class: VisionTransformerRelPos
 hash: 5d44962b
 model_name: vit_relpos_small_patch16_224

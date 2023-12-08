@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/tnt_s_patch16_224_timm_04baa7f9/onnx/tnt_s_patch16_224_timm_04baa7f9-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/tnt_s_patch16_224.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/tnt_s_patch16_224.py
 class: TNT
 hash: a0c0ebb2
 model_name: tnt_s_patch16_224

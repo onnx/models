@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/lcnet_050_timm_886fb477/onnx/lcnet_050_timm_886fb477-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/lcnet_050.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/lcnet_050.py
 class: MobileNetV3
 hash: 2ec704af
 model_name: lcnet_050

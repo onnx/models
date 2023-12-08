@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/umt5_transformers_c5a1750d/onnx/umt5_transformers_c5a1750d-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/umt5.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/umt5.py
 class: UMT5Model
 hash: 945f3ba6
 model_name: umt5

@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/xlmwithlmhead_transformers_7caa5a2a/onnx/xlmwithlmhead_transformers_7caa5a2a-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/xlmwithlmhead.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/xlmwithlmhead.py
 class: XLMWithLMHeadModel
 hash: 952e9b75
 model_name: xlmwithlmhead

@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/poolformer_m48_timm_1b23f928/onnx/poolformer_m48_timm_1b23f928-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/poolformer_m48.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/poolformer_m48.py
 class: MetaFormer
 hash: bde77009
 model_name: poolformer_m48

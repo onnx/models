@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/openaigptlmhead_transformers_2c73f043/onnx/openaigptlmhead_transformers_2c73f043-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/openaigptlmhead.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/openaigptlmhead.py
 class: OpenAIGPTLMHeadModel
 hash: fd6d7aa3
 model_name: openaigptlmhead

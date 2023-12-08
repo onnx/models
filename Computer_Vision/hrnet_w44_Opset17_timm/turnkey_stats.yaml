@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/hrnet_w44_timm_afadb577/onnx/hrnet_w44_timm_afadb577-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/hrnet_w44.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/hrnet_w44.py
 class: HighResolutionNet
 hash: a0eb99ec
 model_name: hrnet_w44

@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/gptneox_transformers_c18d0efb/onnx/gptneox_transformers_c18d0efb-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/gptneox.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/gptneox.py
 class: GPTNeoXModel
 hash: 959d4e77
 model_name: gptneox

@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/cspresnext50_timm_b9ab23e1/onnx/cspresnext50_timm_b9ab23e1-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/cspresnext50.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/cspresnext50.py
 class: CspNet
 hash: 0e30663e
 model_name: cspresnext50

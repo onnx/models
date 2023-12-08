@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/jx_nest_tiny_timm_12af7a09/onnx/jx_nest_tiny_timm_12af7a09-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/jx_nest_tiny.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/jx_nest_tiny.py
 class: Nest
 hash: 84d41539
 model_name: jx_nest_tiny

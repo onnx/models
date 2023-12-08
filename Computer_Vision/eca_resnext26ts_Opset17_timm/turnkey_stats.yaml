@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/eca_resnext26ts_timm_f88d8c7a/onnx/eca_resnext26ts_timm_f88d8c7a-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/eca_resnext26ts.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/eca_resnext26ts.py
 class: ByobNet
 hash: f0d5e6cd
 model_name: eca_resnext26ts

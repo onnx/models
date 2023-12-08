@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/legacy_seresnet18_timm_79fbb113/onnx/legacy_seresnet18_timm_79fbb113-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/legacy_seresnet18.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/legacy_seresnet18.py
 class: SENet
 hash: 9d203600
 model_name: legacy_seresnet18

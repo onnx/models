@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/tf_mixnet_l_timm_bd71a224/onnx/tf_mixnet_l_timm_bd71a224-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/tf_mixnet_l.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/tf_mixnet_l.py
 class: EfficientNet
 hash: bf323d0b
 model_name: tf_mixnet_l

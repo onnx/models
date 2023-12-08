@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/flaubertwithlmhead_transformers_bc2be784/onnx/flaubertwithlmhead_transformers_bc2be784-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/flaubertwithlmhead.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/flaubertwithlmhead.py
 class: FlaubertWithLMHeadModel
 hash: 336f6f5a
 model_name: flaubertwithlmhead

@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/deit_small_patch16_224_timm_358eb51b/onnx/deit_small_patch16_224_timm_358eb51b-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/deit_small_patch16_224.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/deit_small_patch16_224.py
 class: VisionTransformer
 hash: 8d8c48b1
 model_name: deit_small_patch16_224

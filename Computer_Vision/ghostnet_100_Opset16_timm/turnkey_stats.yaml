@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/ghostnet_100_timm_1b622250/onnx/ghostnet_100_timm_1b622250-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/ghostnet_100.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/ghostnet_100.py
 class: GhostNet
 hash: e949381f
 model_name: ghostnet_100

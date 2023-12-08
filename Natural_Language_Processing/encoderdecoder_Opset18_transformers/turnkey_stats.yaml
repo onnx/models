@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/encoderdecoder_transformers_aa9def53/onnx/encoderdecoder_transformers_aa9def53-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/encoderdecoder.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/encoderdecoder.py
 class: EncoderDecoderModel
 hash: 60c960d4
 model_name: encoderdecoder

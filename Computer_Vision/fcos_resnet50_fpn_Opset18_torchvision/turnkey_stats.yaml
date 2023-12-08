@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/fcos_resnet50_fpn_torchvision_93af0b0c/onnx/fcos_resnet50_fpn_torchvision_93af0b0c-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torchvision/fcos_resnet50_fpn.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torchvision/fcos_resnet50_fpn.py
 class: FCOS
 hash: 10d07558
 model_name: fcos_resnet50_fpn

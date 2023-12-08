@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/beit_base_patch16_384_timm_4acd429c/onnx/beit_base_patch16_384_timm_4acd429c-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/beit_base_patch16_384.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/beit_base_patch16_384.py
 class: Beit
 hash: 19030c51
 model_name: beit_base_patch16_384

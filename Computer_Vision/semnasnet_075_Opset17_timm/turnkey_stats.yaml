@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/semnasnet_075_timm_e9e093f7/onnx/semnasnet_075_timm_e9e093f7-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/semnasnet_075.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/semnasnet_075.py
 class: EfficientNet
 hash: b78c4325
 model_name: semnasnet_075

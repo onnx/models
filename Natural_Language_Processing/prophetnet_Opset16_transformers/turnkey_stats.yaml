@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/prophetnet_transformers_6b281328/onnx/prophetnet_transformers_6b281328-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/prophetnet.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/prophetnet.py
 class: ProphetNetModel
 hash: 97cf2b71
 model_name: prophetnet

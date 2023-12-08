@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/regnet_x_400mf_torch_hub_313a1512/onnx/regnet_x_400mf_torch_hub_313a1512-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torch_hub/regnet_x_400mf.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torch_hub/regnet_x_400mf.py
 class: RegNet
 hash: 08b8712e
 model_name: regnet_x_400mf

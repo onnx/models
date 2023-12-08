@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/ibert_transformers_32bf8664/onnx/ibert_transformers_32bf8664-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/ibert.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/ibert.py
 class: IBertModel
 hash: 9f074195
 model_name: ibert

@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/resmlp_big_24_224_in22ft1k_timm_7ace40b5/onnx/resmlp_big_24_224_in22ft1k_timm_7ace40b5-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/resmlp_big_24_224_in22ft1k.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/resmlp_big_24_224_in22ft1k.py
 class: MlpMixer
 hash: bb3cb732
 model_name: resmlp_big_24_224_in22ft1k

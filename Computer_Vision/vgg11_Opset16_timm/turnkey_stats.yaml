@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/vgg11_timm_bb52694c/onnx/vgg11_timm_bb52694c-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/vgg11.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/vgg11.py
 class: VGG
 hash: 694ef7de
 model_name: vgg11

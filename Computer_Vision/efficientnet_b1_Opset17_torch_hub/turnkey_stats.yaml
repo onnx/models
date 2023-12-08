@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/efficientnet_b1_torch_hub_8bada136/onnx/efficientnet_b1_torch_hub_8bada136-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torch_hub/efficientnet_b1.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torch_hub/efficientnet_b1.py
 class: EfficientNet
 hash: 8e53a932
 model_name: efficientnet_b1

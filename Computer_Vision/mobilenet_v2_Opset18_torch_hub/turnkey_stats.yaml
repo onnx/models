@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/mobilenet_v2_torch_hub_dc886fea/onnx/mobilenet_v2_torch_hub_dc886fea-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torch_hub/mobilenet_v2.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torch_hub/mobilenet_v2.py
 class: MobileNetV2
 hash: a81033ae
 model_name: mobilenet_v2

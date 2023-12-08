@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/selecsls60b_timm_1a813d3e/onnx/selecsls60b_timm_1a813d3e-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/selecsls60b.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/selecsls60b.py
 class: SelecSls
 hash: eb61f330
 model_name: selecsls60b

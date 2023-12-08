@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/nezha_transformers_9befddc7/onnx/nezha_transformers_9befddc7-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/nezha.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/nezha.py
 class: NezhaModel
 hash: a802c03f
 model_name: nezha

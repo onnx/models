@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/rexnet_150_timm_41d29802/onnx/rexnet_150_timm_41d29802-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/rexnet_150.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/rexnet_150.py
 class: RexNet
 hash: 53c804c0
 model_name: rexnet_150

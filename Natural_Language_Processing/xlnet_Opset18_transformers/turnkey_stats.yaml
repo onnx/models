@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/xlnet_transformers_07377664/onnx/xlnet_transformers_07377664-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/xlnet.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/xlnet.py
 class: XLNetModel
 hash: 671f136a
 model_name: xlnet

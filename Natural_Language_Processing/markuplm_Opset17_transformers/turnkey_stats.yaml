@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/markuplm_transformers_de333630/onnx/markuplm_transformers_de333630-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/transformers/markuplm.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/transformers/markuplm.py
 class: MarkupLMModel
 hash: 7c7fa818
 model_name: markuplm

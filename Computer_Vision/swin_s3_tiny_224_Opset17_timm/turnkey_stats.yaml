@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/swin_s3_tiny_224_timm_cdc6c81f/onnx/swin_s3_tiny_224_timm_cdc6c81f-op17-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/swin_s3_tiny_224.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/swin_s3_tiny_224.py
 class: SwinTransformer
 hash: ca04ce4b
 model_name: swin_s3_tiny_224

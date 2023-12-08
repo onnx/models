@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/resnet51q_timm_854423a5/onnx/resnet51q_timm_854423a5-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/resnet51q.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/resnet51q.py
 class: ByobNet
 hash: 9b4b723e
 model_name: resnet51q

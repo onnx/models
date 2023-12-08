@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/googlenet_torch_hub_52ffa5cf/onnx/googlenet_torch_hub_52ffa5cf-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/torch_hub/googlenet.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/torch_hub/googlenet.py
 class: GoogLeNet
 hash: 6aba3970
 model_name: googlenet

@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/convit_base_timm_8d751bb0/onnx/convit_base_timm_8d751bb0-op18-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/convit_base.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/convit_base.py
 class: ConVit
 hash: 8efb0354
 model_name: convit_base

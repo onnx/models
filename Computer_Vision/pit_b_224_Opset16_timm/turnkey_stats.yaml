@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/pit_b_224_timm_ef2a7244/onnx/pit_b_224_timm_ef2a7244-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/pit_b_224.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/pit_b_224.py
 class: PoolingVisionTransformer
 hash: e838d4d0
 model_name: pit_b_224

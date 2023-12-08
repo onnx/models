@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/legacy_senet154_timm_e5c58c55/onnx/legacy_senet154_timm_e5c58c55-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/legacy_senet154.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/legacy_senet154.py
 class: SENet
 hash: fdb00edd
 model_name: legacy_senet154

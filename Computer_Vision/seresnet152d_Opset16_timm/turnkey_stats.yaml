@@ -12,7 +12,7 @@ builds:
     iterations: 100
     onnx_file: /home/azureuser/.cache/turnkey/seresnet152d_timm_59a16313/onnx/seresnet152d_timm_59a16313-op16-base.onnx
     runtime: ort
-builtin_model_script: https://github.com/aigdat/onnxmodelzoo/tree/main/toolchain/models/timm/seresnet152d.py
+builtin_model_script: https://github.com/onnx/turnkeyml/blob/main/models/timm/seresnet152d.py
 class: ResNet
 hash: 1779c87b
 model_name: seresnet152d
