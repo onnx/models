@@ -10,7 +10,7 @@ Welcome to the ONNX Model Zoo! The Open Neural Network Exchange (ONNX) is an ope
 
 This repository is a curated collection of pre-trained, state-of-the-art models in the ONNX format. These models are sourced from prominent open-source repositories and have been contributed by a diverse group of community members. Our aim is to facilitate the spread and usage of machine learning models among a wider audience of developers, researchers, and enthusiasts.
 
-To handle ONNX model files, which can be large, we use Git LFS (Large File Storage). To download any model from this collection, please navigate to the specific model's GitHub page and click the "Download" button located in the top right corner, or visit the [ONNX Model Zoo website](insert-link-here).
+To handle ONNX model files, which can be large, we use Git LFS (Large File Storage). To download any model from this collection, please navigate to the specific model's GitHub page and click the "Download" button located in the top right corner, or visit the [ONNX Model Zoo website](http://onnx.ai/models/).
 
 ## Models
 
@@ -21,7 +21,7 @@ Our Model Zoo covers a variety of use cases including:
 - Generative AI
 - Graph Machine Learning
 
-These models are sourced from prominent open-source repositories such as [timm](https://github.com/huggingface/pytorch-image-models), [torchvision](https://github.com/pytorch/vision), [torch_hub](https://pytorch.org/hub/), and [transformers](https://github.com/huggingface/transformers), and exported into the ONNX format using the open-source [TurnkeyML toolchain](insert-link-here).
+These models are sourced from prominent open-source repositories such as [timm](https://github.com/huggingface/pytorch-image-models), [torchvision](https://github.com/pytorch/vision), [torch_hub](https://pytorch.org/hub/), and [transformers](https://github.com/huggingface/transformers), and exported into the ONNX format using the open-source [TurnkeyML toolchain](https://github.com/onnx/turnkeyml).
 
 
 ## Usage
@@ -30,7 +30,7 @@ There are multiple ways to access the ONNX Model Zoo:
 
 ### Webpage (Recommended)
 
-The [Model Zoo webpage](link-here) provides a user-friendly interface to browse models based on use case, author, or by searching for specific model names. It also offers a direct download option for your convenience.
+The [Model Zoo webpage](http://onnx.ai/models/) provides a user-friendly interface to browse models based on use case, author, or by searching for specific model names. It also offers a direct download option for your convenience.
 
 ### Git Clone (Not Recommended)
 
@@ -62,7 +62,7 @@ For a graphical representation of each model's architecture, we recommend using 
 
 ## Contributions
 
-Contributions to the ONNX Model Zoo are welcome! Please check our [contribution guidelines](here) for more information on how you can contribute to the growth and improvement of this resource.
+Contributions to the ONNX Model Zoo are welcome! Please check our [contribution guidelines](contribute.md) for more information on how you can contribute to the growth and improvement of this resource.
 
 Thank you for your interest in the ONNX Model Zoo, and we look forward to your participation in our community!
 
