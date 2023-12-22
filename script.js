@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
   async function fetchData() {
     // Show loading indicator
     document.getElementById('loading-indicator').style.display = 'block';
-    const response = await fetch('https://api.github.com/repos/onnx/models/git/trees/development?recursive=1');
+    const response = await fetch('https://api.github.com/repos/onnx/models/git/trees/main?recursive=1');
     const data = await response.json();
     const onnxFiles = data.tree.filter(item => item.path.endsWith('.onnx') && !item.path.includes('archive/'));
     const yamlFiles = data.tree.filter(item => item.path.endsWith('turnkey_stats.yaml'));
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const parentDir = pathParts.slice(0, -1).join('/');
       const yamlFile = yamlFiles.find(yaml => yaml.path === `${parentDir}/turnkey_stats.yaml`);
       if (yamlFile) {
-        return fetch(`https://raw.githubusercontent.com/onnx/models/raw/development/${yamlFile.path}`)
+        return fetch(`https://raw.githubusercontent.com/onnx/models/main/${yamlFile.path}`)
           .then(response => response.text())
           .then(yamlText => ({ file, yamlText }))
           .catch(error => {
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
         description: `Task: ${task}`,
         author,
         opset,
-        downloadUrl: `https://github.com/onnx/models/raw/development/${file.path}`
+        downloadUrl: `https://github.com/onnx/models/raw/main/${file.path}`
       };
     });
   

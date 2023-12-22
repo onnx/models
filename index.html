@@ -20,45 +20,110 @@
 
 <!-- <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>ONNX Model Zoo</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div id="title-bar">
-    <div style="display: flex; align-items: center;">
-      <img src="assets\logos\onnx.png" alt="ONNX Logo" style="width:50px;height:50px;">
-      <span style="margin-left: 20px;">ONNX Model Zoo</span>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ONNX Model Zoo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <nav class="bg-white border-gray-800 dark:bg-gray-800" id="title-bar">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="assets\logos\onnx.png" alt="ONNX Logo" class="h-8" />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+            >ONNX Model Zoo</span
+          >
+        </a>
+        <input
+          class="rounded-lg p-2 w-96"
+          type="text"
+          id="search-bar"
+          placeholder="Search models..."
+        />
+        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+          <ul
+            class="flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
+          >
+            <li>
+              <a href="https://github.com/onnx/models" target="_blank"
+                ><img
+                  src="assets\logos\github.svg"
+                  alt="GitHub Logo"
+                  class="h-12"
+              /></a>
+            </li>
+            <li>
+              <a href="https://twitter.com/onnxai" target="_blank"
+                ><img
+                  src="assets\logos\twitterx.svg"
+                  alt="Twitter Logo"
+                  class="h-12"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/onnx/" target="_blank"
+                ><img
+                  src="assets\logos\linkedin.svg"
+                  alt="LinkedIn Logo"
+                  class="h-12"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://huggingface.co/models?library=onnx&sort=trending"
+                target="_blank"
+                ><img
+                  src="assets\logos\hf-logo.svg"
+                  alt="HuggingFace Logo"
+                  class="h-12"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="grid grid-cols-5">
+      <div class="col-span-1 bg-gray-700 w-full p-4" id="left-pane">
+        <h2 class="text-2xl text-white pb-2" id="filter-title">Task</h2>
+        <div id="task-filters">
+          ###Task filters will be populated dynamically
+        </div>
+        <h2 class="text-2xl text-white pb-2" id="filter-title">Author</h2>
+        <div id="author-filters">
+          ###Author filters will be populated dynamically
+        </div>
+      </div>
+      <div class="col-span-4">
+        <div id="loading-indicator" style="display: none; text-align: center">
+          Loading...
+        </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-4"
+          id="main-content"
+        >
+          ###Main content will be populated dynamically
+        </div>
+        <div class="mt-4 items-center justify-center flex" id="pagination">
+          <div
+            class="bg-gray-700 px-4 py-2 m-4 text-white rounded-lg font-semibold cursor-pointer"
+            id="prev-page"
+          >
+            Prev
+          </div>
+          <div class="mx-8" id="page-info"></div>
+          <div
+            class="bg-gray-700 px-4 py-2 m-4 text-white rounded-lg font-semibold cursor-pointer"
+            id="next-page"
+          >
+            Next
+          </div>
+        </div>
+      </div>
     </div>
-    <input type="text" id="search-bar" placeholder="Search models...">
-    <div id="social-icons">
-      <a href="https://github.com/onnx/models" target="_blank"><img src="assets\logos\github.svg" alt="GitHub Logo" style="width:42px;height:42px;"></a>
-      <a href="https://twitter.com/onnxai" target="_blank"><img src="assets\logos\twitterx.svg" alt="Twitter Logo" style="width:40px;height:40px;"></a>
-      <a href="https://www.linkedin.com/company/onnx/" target="_blank"><img src="assets\logos\linkedin.svg" alt="LinkedIn Logo" style="width:40px;height:40px;"></a>
-    </div>
-  </div>
-  <div id="left-pane">
-    <h2 id="filter-title">Task</h2>
-    <div id="task-filters">
-      ###Task filters will be populated dynamically
-    </div>
-    <h2 id="filter-title">Author</h2>
-    <div id="author-filters">
-      ###Author filters will be populated dynamically
-    </div>
-    ###<h2 id="filter-title">Opset</h2>
-    ###<div id="opset-filters">
-      ###Opset filters will be populated dynamically
-    ###</div>
-  </div>
-  <div id="loading-indicator" style="display: none; text-align: center;">Loading...</div>
-  <div id="main-content"></div>
-  <div id="pagination">
-    <div id="prev-page">Prev</div>
-    <div id="page-info"></div>
-    <div id="next-page">Next</div>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html> -->
+    <script src="script.js"></script>
+  </body>
+</html>
