@@ -21,7 +21,7 @@ Our Model Zoo covers a variety of use cases including:
 - Generative AI
 - Graph Machine Learning
 
-These models are sourced from prominent open-source repositories such as [timm](https://github.com/huggingface/pytorch-image-models), [torchvision](https://github.com/pytorch/vision), [torch_hub](https://pytorch.org/hub/), and [transformers](https://github.com/huggingface/transformers), and exported into the ONNX format using the open-source [TurnkeyML toolchain](insert-link-here).
+These models are sourced from prominent open-source repositories such as [timm](https://github.com/huggingface/pytorch-image-models), [torchvision](https://github.com/pytorch/vision), [torch_hub](https://pytorch.org/hub/), and [transformers](https://github.com/huggingface/transformers), and exported into the ONNX format using the open-source [TurnkeyML toolchain](https://github.com/onnx/turnkeyml).
 
 
 ## Validated Models
@@ -290,7 +290,7 @@ For a graphical representation of each model's architecture, we recommend using 
 
 ## Contributions
 
-Contributions to the ONNX Model Zoo are welcome! Please check our [contribution guidelines](here) for more information on how you can contribute to the growth and improvement of this resource.
+Contributions to the ONNX Model Zoo are welcome! Please check our [contribution guidelines](contribute.md) for more information on how you can contribute to the growth and improvement of this resource.
 
 Thank you for your interest in the ONNX Model Zoo, and we look forward to your participation in our community!
 
