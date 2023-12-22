@@ -14,7 +14,8 @@ To handle ONNX model files, which can be large, we use Git LFS (Large File Stora
 
 ## Models
 
-Our Model Zoo covers a variety of use cases including:
+Currently, we are expanding the ONNX Model Zoo by incorporating additional models from the following categories.
+As we are rigorously validating the new models for accuracy, refer to the [validated models](#validated-models) below that have been successfully validated for accuracy:
 
 - Computer Vision
 - Natural Language Processing (NLP)
@@ -25,8 +26,6 @@ These models are sourced from prominent open-source repositories such as [timm](
 
 
 ## Validated Models
-
-Currently, we are expanding the ONNX Model Zoo by incorporating additional models and rigorously validating them for accuracy. Below is the list of models that have been successfully validated for accuracy:
 
 #### Vision
 * [Image Classification](#image_classification)
