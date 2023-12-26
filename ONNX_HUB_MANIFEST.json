@@ -1,7 +1,7 @@
 [
     {
         "model": "BERT-Squad",
-        "model_path": "archive/text/machine_comprehension/bert-squad/model/bertsquad-10.onnx",
+        "model_path": "validated/text/machine_comprehension/bert-squad/model/bertsquad-10.onnx",
         "onnx_version": "1.5",
         "opset_version": 10,
         "metadata": {
@@ -72,14 +72,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/text/machine_comprehension/bert-squad/model/bertsquad-10.tar.gz",
+            "model_with_data_path": "validated/text/machine_comprehension/bert-squad/model/bertsquad-10.tar.gz",
             "model_with_data_sha": "0ff18af268a891e7de390c5476191084e95eafba2763a69091c83ced7030c8b2",
             "model_with_data_bytes": 403398451
         }
     },
     {
         "model": "BERT-Squad-int8",
-        "model_path": "archive/text/machine_comprehension/bert-squad/model/bertsquad-12-int8.onnx",
+        "model_path": "validated/text/machine_comprehension/bert-squad/model/bertsquad-12-int8.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -150,14 +150,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/text/machine_comprehension/bert-squad/model/bertsquad-12-int8.tar.gz",
+            "model_with_data_path": "validated/text/machine_comprehension/bert-squad/model/bertsquad-12-int8.tar.gz",
             "model_with_data_sha": "6c33f44ee1949ee25936e259cb68da3e19bea7f6e7d5ea72a4d95ae300c86d87",
             "model_with_data_bytes": 106044512
         }
     },
     {
         "model": "BERT-Squad",
-        "model_path": "archive/text/machine_comprehension/bert-squad/model/bertsquad-12.onnx",
+        "model_path": "validated/text/machine_comprehension/bert-squad/model/bertsquad-12.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -228,14 +228,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/text/machine_comprehension/bert-squad/model/bertsquad-12.tar.gz",
+            "model_with_data_path": "validated/text/machine_comprehension/bert-squad/model/bertsquad-12.tar.gz",
             "model_with_data_sha": "4cd041010ab4ad11c23c0eb7f056c4e4286a894b6d712ef09445b955763fb1b1",
             "model_with_data_bytes": 403082198
         }
     },
     {
         "model": "BERT-Squad",
-        "model_path": "archive/text/machine_comprehension/bert-squad/model/bertsquad-8.onnx",
+        "model_path": "validated/text/machine_comprehension/bert-squad/model/bertsquad-8.onnx",
         "onnx_version": "1.3",
         "opset_version": 8,
         "metadata": {
@@ -306,14 +306,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/text/machine_comprehension/bert-squad/model/bertsquad-8.tar.gz",
+            "model_with_data_path": "validated/text/machine_comprehension/bert-squad/model/bertsquad-8.tar.gz",
             "model_with_data_sha": "c8c6c7e0ab9e1333b86e8415a9d990b2570f9374f80be1c1cb72f182d266f666",
             "model_with_data_bytes": 403400046
         }
     },
     {
         "model": "BiDAF-int8",
-        "model_path": "archive/text/machine_comprehension/bidirectional_attention_flow/model/bidaf-11-int8.onnx",
+        "model_path": "validated/text/machine_comprehension/bidirectional_attention_flow/model/bidaf-11-int8.onnx",
         "onnx_version": "1.13.1",
         "opset_version": 11,
         "metadata": {
@@ -380,14 +380,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/text/machine_comprehension/bidirectional_attention_flow/model/bidaf-11-int8.tar.gz",
+            "model_with_data_path": "validated/text/machine_comprehension/bidirectional_attention_flow/model/bidaf-11-int8.tar.gz",
             "model_with_data_sha": "571410c31445882ea9ed7b9f48fe8c2ed6ccb72b925281a1be82a75c0c12b6ab",
             "model_with_data_bytes": 9086295
         }
     },
     {
         "model": "BiDAF",
-        "model_path": "archive/text/machine_comprehension/bidirectional_attention_flow/model/bidaf-9.onnx",
+        "model_path": "validated/text/machine_comprehension/bidirectional_attention_flow/model/bidaf-9.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -454,14 +454,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/text/machine_comprehension/bidirectional_attention_flow/model/bidaf-9.tar.gz",
+            "model_with_data_path": "validated/text/machine_comprehension/bidirectional_attention_flow/model/bidaf-9.tar.gz",
             "model_with_data_sha": "c74387eec257f2cb37cefc2846e1c4078bfebf06cd6486e9dafe6c9f7cdc1ef3",
             "model_with_data_bytes": 39092248
         }
     },
     {
         "model": "GPT-2",
-        "model_path": "archive/text/machine_comprehension/gpt-2/model/gpt2-10.onnx",
+        "model_path": "validated/text/machine_comprehension/gpt-2/model/gpt2-10.onnx",
         "onnx_version": "1.6",
         "opset_version": 10,
         "metadata": {
@@ -629,14 +629,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/text/machine_comprehension/gpt-2/model/gpt2-10.tar.gz",
+            "model_with_data_path": "validated/text/machine_comprehension/gpt-2/model/gpt2-10.tar.gz",
             "model_with_data_sha": "0c9b81350c95cf2f40e8e72f76792ef6b3c73894beee571171739079330aad53",
             "model_with_data_bytes": 463131530
         }
     },
     {
         "model": "GPT-2-LM-HEAD",
-        "model_path": "archive/text/machine_comprehension/gpt-2/model/gpt2-lm-head-10.onnx",
+        "model_path": "validated/text/machine_comprehension/gpt-2/model/gpt2-lm-head-10.onnx",
         "onnx_version": "1.6",
         "opset_version": 10,
         "metadata": {
@@ -804,14 +804,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/text/machine_comprehension/gpt-2/model/gpt2-lm-head-10.tar.gz",
+            "model_with_data_path": "validated/text/machine_comprehension/gpt-2/model/gpt2-lm-head-10.tar.gz",
             "model_with_data_sha": "820f53e5403bb9fa0dac10af138cedcb71f282a527f04d76e35db5b2b88871c8",
             "model_with_data_bytes": 606542743
         }
     },
     {
         "model": "RoBERTa-BASE",
-        "model_path": "archive/text/machine_comprehension/roberta/model/roberta-base-11.onnx",
+        "model_path": "validated/text/machine_comprehension/roberta/model/roberta-base-11.onnx",
         "onnx_version": "1.6",
         "opset_version": 11,
         "metadata": {
@@ -853,14 +853,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/text/machine_comprehension/roberta/model/roberta-base-11.tar.gz",
+            "model_with_data_path": "validated/text/machine_comprehension/roberta/model/roberta-base-11.tar.gz",
             "model_with_data_sha": "16134da10f8fee3283d22a0d70928fe5ceea1ca2ea23507fe0b0f295108a8815",
             "model_with_data_bytes": 291239125
         }
     },
     {
         "model": "RoBERTa-SequenceClassification",
-        "model_path": "archive/text/machine_comprehension/roberta/model/roberta-sequence-classification-9.onnx",
+        "model_path": "validated/text/machine_comprehension/roberta/model/roberta-sequence-classification-9.onnx",
         "onnx_version": "1.6",
         "opset_version": 9,
         "metadata": {
@@ -893,14 +893,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/text/machine_comprehension/roberta/model/roberta-sequence-classification-9.tar.gz",
+            "model_with_data_path": "validated/text/machine_comprehension/roberta/model/roberta-sequence-classification-9.tar.gz",
             "model_with_data_sha": "1fb22feddadc6a0e26f65b6022f0d77d3585d24866b88a7126ab243451032c5b",
             "model_with_data_bytes": 431071460
         }
     },
     {
         "model": "T5-decoder-with-lm-head",
-        "model_path": "archive/text/machine_comprehension/t5/model/t5-decoder-with-lm-head-12.onnx",
+        "model_path": "validated/text/machine_comprehension/t5/model/t5-decoder-with-lm-head-12.onnx",
         "onnx_version": "1.7",
         "opset_version": 12,
         "metadata": {
@@ -943,14 +943,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/text/machine_comprehension/t5/model/t5-decoder-with-lm-head-12.tar.gz",
+            "model_with_data_path": "validated/text/machine_comprehension/t5/model/t5-decoder-with-lm-head-12.tar.gz",
             "model_with_data_sha": "fa6edefa5951479f7b68bea693950a4ebc188f54c7971bf73f2b036b91bc8066",
             "model_with_data_bytes": 287840759
         }
     },
     {
         "model": "T5-encoder",
-        "model_path": "archive/text/machine_comprehension/t5/model/t5-encoder-12.onnx",
+        "model_path": "validated/text/machine_comprehension/t5/model/t5-encoder-12.onnx",
         "onnx_version": "1.7",
         "opset_version": 12,
         "metadata": {
@@ -984,14 +984,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/text/machine_comprehension/t5/model/t5-encoder-12.tar.gz",
+            "model_with_data_path": "validated/text/machine_comprehension/t5/model/t5-encoder-12.tar.gz",
             "model_with_data_sha": "434e2f691bd71c838bd4b68be47bdf32c899313fdebfe4b77c7bea0b2f52e831",
             "model_with_data_bytes": 194535656
         }
     },
     {
         "model": "LResNet100E-IR-int8",
-        "model_path": "archive/vision/body_analysis/arcface/model/arcfaceresnet100-11-int8.onnx",
+        "model_path": "validated/vision/body_analysis/arcface/model/arcfaceresnet100-11-int8.onnx",
         "onnx_version": "1.13.1",
         "opset_version": 11,
         "metadata": {
@@ -1026,14 +1026,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/body_analysis/arcface/model/arcfaceresnet100-11-int8.tar.gz",
+            "model_with_data_path": "validated/vision/body_analysis/arcface/model/arcfaceresnet100-11-int8.tar.gz",
             "model_with_data_sha": "d560f59c57fa4784771ba520b5b2f380097d7b2210e6c8b02ca203c2e9784f8a",
             "model_with_data_bytes": 47945269
         }
     },
     {
         "model": "LResNet100E-IR",
-        "model_path": "archive/vision/body_analysis/arcface/model/arcfaceresnet100-8.onnx",
+        "model_path": "validated/vision/body_analysis/arcface/model/arcfaceresnet100-8.onnx",
         "onnx_version": "1.3",
         "opset_version": 8,
         "metadata": {
@@ -1068,14 +1068,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/body_analysis/arcface/model/arcfaceresnet100-8.tar.gz",
+            "model_with_data_path": "validated/vision/body_analysis/arcface/model/arcfaceresnet100-8.tar.gz",
             "model_with_data_sha": "f7098d004468725906a805e50d772eabc95e31f57eedeaaa72aeab8225598c2a",
             "model_with_data_bytes": 237272167
         }
     },
     {
         "model": "Emotion FERPlus int8",
-        "model_path": "archive/vision/body_analysis/emotion_ferplus/model/emotion-ferplus-12-int8.onnx",
+        "model_path": "validated/vision/body_analysis/emotion_ferplus/model/emotion-ferplus-12-int8.onnx",
         "onnx_version": "1.14",
         "opset_version": 12,
         "metadata": {
@@ -1110,14 +1110,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/body_analysis/emotion_ferplus/model/emotion-ferplus-12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/body_analysis/emotion_ferplus/model/emotion-ferplus-12-int8.tar.gz",
             "model_with_data_sha": "429cd3e9cdfc20330b76361c65e7aaeb4298b9edcd29282fd6f63b95aee00983",
             "model_with_data_bytes": 18119569
         }
     },
     {
         "model": "Emotion FERPlus",
-        "model_path": "archive/vision/body_analysis/emotion_ferplus/model/emotion-ferplus-2.onnx",
+        "model_path": "validated/vision/body_analysis/emotion_ferplus/model/emotion-ferplus-2.onnx",
         "onnx_version": "1.0",
         "opset_version": 2,
         "metadata": {
@@ -1128,14 +1128,14 @@
                 "body analysis",
                 "emotion ferplus"
             ],
-            "model_with_data_path": "archive/vision/body_analysis/emotion_ferplus/model/emotion-ferplus-2.tar.gz",
+            "model_with_data_path": "validated/vision/body_analysis/emotion_ferplus/model/emotion-ferplus-2.tar.gz",
             "model_with_data_sha": "07dd46eb1b83213f6fb743de869e60fdefe7f486a4d308f7612b67b046b3b013",
             "model_with_data_bytes": 32380999
         }
     },
     {
         "model": "Emotion FERPlus",
-        "model_path": "archive/vision/body_analysis/emotion_ferplus/model/emotion-ferplus-7.onnx",
+        "model_path": "validated/vision/body_analysis/emotion_ferplus/model/emotion-ferplus-7.onnx",
         "onnx_version": "1.2",
         "opset_version": 7,
         "metadata": {
@@ -1170,14 +1170,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/body_analysis/emotion_ferplus/model/emotion-ferplus-7.tar.gz",
+            "model_with_data_path": "validated/vision/body_analysis/emotion_ferplus/model/emotion-ferplus-7.tar.gz",
             "model_with_data_sha": "6a0341e6f1ebcad345c42883c84591e219d751590d5fdb82d4b35f09722f22ce",
             "model_with_data_bytes": 32384236
         }
     },
     {
         "model": "Emotion FERPlus",
-        "model_path": "archive/vision/body_analysis/emotion_ferplus/model/emotion-ferplus-8.onnx",
+        "model_path": "validated/vision/body_analysis/emotion_ferplus/model/emotion-ferplus-8.onnx",
         "onnx_version": "1.3",
         "opset_version": 8,
         "metadata": {
@@ -1212,14 +1212,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/body_analysis/emotion_ferplus/model/emotion-ferplus-8.tar.gz",
+            "model_with_data_path": "validated/vision/body_analysis/emotion_ferplus/model/emotion-ferplus-8.tar.gz",
             "model_with_data_sha": "f200563a2cad231634970bb603ba74f68f01aab0f33a92251ec6d390c1991b1d",
             "model_with_data_bytes": 32384240
         }
     },
     {
         "model": "version-RFB-320-int8",
-        "model_path": "archive/vision/body_analysis/ultraface/models/version-RFB-320-int8.onnx",
+        "model_path": "validated/vision/body_analysis/ultraface/models/version-RFB-320-int8.onnx",
         "onnx_version": "1.14",
         "opset_version": 12,
         "metadata": {
@@ -1264,14 +1264,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/body_analysis/ultraface/models/version-RFB-320-int8.tar.gz",
+            "model_with_data_path": "validated/vision/body_analysis/ultraface/models/version-RFB-320-int8.tar.gz",
             "model_with_data_sha": "a0010e6a58f9e4ca553efbd8d9cf539c8846fbd56e17e10c8b9aebc9f4d625d0",
             "model_with_data_bytes": 1211441
         }
     },
     {
         "model": "version-RFB-320",
-        "model_path": "archive/vision/body_analysis/ultraface/models/version-RFB-320.onnx",
+        "model_path": "validated/vision/body_analysis/ultraface/models/version-RFB-320.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -1316,14 +1316,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/body_analysis/ultraface/models/version-RFB-320.tar.gz",
+            "model_with_data_path": "validated/vision/body_analysis/ultraface/models/version-RFB-320.tar.gz",
             "model_with_data_sha": "628d0dd3e0288adb821f211e13d4e97f6d6f4527237339606732dffa6f19d381",
             "model_with_data_bytes": 2015397
         }
     },
     {
         "model": "version-RFB-640",
-        "model_path": "archive/vision/body_analysis/ultraface/models/version-RFB-640.onnx",
+        "model_path": "validated/vision/body_analysis/ultraface/models/version-RFB-640.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -1368,14 +1368,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/body_analysis/ultraface/models/version-RFB-640.tar.gz",
+            "model_with_data_path": "validated/vision/body_analysis/ultraface/models/version-RFB-640.tar.gz",
             "model_with_data_sha": "07cc0e284b7924bd89f2ec103254ef3ab4b673fd12341153faaff07f3c1137e3",
             "model_with_data_bytes": 4818743
         }
     },
     {
         "model": "AlexNet-int8",
-        "model_path": "archive/vision/classification/alexnet/model/bvlcalexnet-12-int8.onnx",
+        "model_path": "validated/vision/classification/alexnet/model/bvlcalexnet-12-int8.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -1410,14 +1410,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/alexnet/model/bvlcalexnet-12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/alexnet/model/bvlcalexnet-12-int8.tar.gz",
             "model_with_data_sha": "6ec09e19e5475c51fda2d6b6205f194969ff07199e19944934b806414b34ef2e",
             "model_with_data_bytes": 40683138
         }
     },
     {
         "model": "AlexNet-qdq",
-        "model_path": "archive/vision/classification/alexnet/model/bvlcalexnet-12-qdq.onnx",
+        "model_path": "validated/vision/classification/alexnet/model/bvlcalexnet-12-qdq.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -1452,14 +1452,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/alexnet/model/bvlcalexnet-12-qdq.tar.gz",
+            "model_with_data_path": "validated/vision/classification/alexnet/model/bvlcalexnet-12-qdq.tar.gz",
             "model_with_data_sha": "930eeb3f4d25a20e59fa21919f95edbb7a4b3f31b51a83f62c9b6627906156b9",
             "model_with_data_bytes": 45565042
         }
     },
     {
         "model": "AlexNet",
-        "model_path": "archive/vision/classification/alexnet/model/bvlcalexnet-12.onnx",
+        "model_path": "validated/vision/classification/alexnet/model/bvlcalexnet-12.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -1505,14 +1505,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/alexnet/model/bvlcalexnet-12.tar.gz",
+            "model_with_data_path": "validated/vision/classification/alexnet/model/bvlcalexnet-12.tar.gz",
             "model_with_data_sha": "24abe33e5587bf8df8f824559d4b8c0d24db860efbe21152dc9536451ce8ddc1",
             "model_with_data_bytes": 226657165
         }
     },
     {
         "model": "AlexNet",
-        "model_path": "archive/vision/classification/alexnet/model/bvlcalexnet-3.onnx",
+        "model_path": "validated/vision/classification/alexnet/model/bvlcalexnet-3.onnx",
         "onnx_version": "1.1",
         "opset_version": 3,
         "metadata": {
@@ -1523,14 +1523,14 @@
                 "classification",
                 "alexnet"
             ],
-            "model_with_data_path": "archive/vision/classification/alexnet/model/bvlcalexnet-3.tar.gz",
+            "model_with_data_path": "validated/vision/classification/alexnet/model/bvlcalexnet-3.tar.gz",
             "model_with_data_sha": "b640cc797d25aa446cebefaa3274d517f0c25e26d66eb6f6686ac7e4d4d8d584",
             "model_with_data_bytes": 229606515
         }
     },
     {
         "model": "AlexNet",
-        "model_path": "archive/vision/classification/alexnet/model/bvlcalexnet-6.onnx",
+        "model_path": "validated/vision/classification/alexnet/model/bvlcalexnet-6.onnx",
         "onnx_version": "1.1.2",
         "opset_version": 6,
         "metadata": {
@@ -1541,14 +1541,14 @@
                 "classification",
                 "alexnet"
             ],
-            "model_with_data_path": "archive/vision/classification/alexnet/model/bvlcalexnet-6.tar.gz",
+            "model_with_data_path": "validated/vision/classification/alexnet/model/bvlcalexnet-6.tar.gz",
             "model_with_data_sha": "7afb4036281dfbcb33edec2fc3928cc9da5e015aee9142c03faa81b3f8481db3",
             "model_with_data_bytes": 229606527
         }
     },
     {
         "model": "AlexNet",
-        "model_path": "archive/vision/classification/alexnet/model/bvlcalexnet-7.onnx",
+        "model_path": "validated/vision/classification/alexnet/model/bvlcalexnet-7.onnx",
         "onnx_version": "1.2",
         "opset_version": 7,
         "metadata": {
@@ -1594,14 +1594,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/alexnet/model/bvlcalexnet-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/alexnet/model/bvlcalexnet-7.tar.gz",
             "model_with_data_sha": "d3b909372a704d0c8614998b2c036d007f658e9cf1e4698a2a0e9f180d44ae20",
             "model_with_data_bytes": 226848956
         }
     },
     {
         "model": "AlexNet",
-        "model_path": "archive/vision/classification/alexnet/model/bvlcalexnet-8.onnx",
+        "model_path": "validated/vision/classification/alexnet/model/bvlcalexnet-8.onnx",
         "onnx_version": "1.3",
         "opset_version": 8,
         "metadata": {
@@ -1647,14 +1647,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/alexnet/model/bvlcalexnet-8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/alexnet/model/bvlcalexnet-8.tar.gz",
             "model_with_data_sha": "2d651095a6a61a2c807a2ddc4bca1063224f5bcf289bb41a2c5ad3cb32728752",
             "model_with_data_bytes": 226849065
         }
     },
     {
         "model": "AlexNet",
-        "model_path": "archive/vision/classification/alexnet/model/bvlcalexnet-9.onnx",
+        "model_path": "validated/vision/classification/alexnet/model/bvlcalexnet-9.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -1700,14 +1700,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/alexnet/model/bvlcalexnet-9.tar.gz",
+            "model_with_data_path": "validated/vision/classification/alexnet/model/bvlcalexnet-9.tar.gz",
             "model_with_data_sha": "8ade7829c8705846f8f00ef67e62cf8915f23868b0f0cdc8ade19f8df2891743",
             "model_with_data_bytes": 226848864
         }
     },
     {
         "model": "CaffeNet-int8",
-        "model_path": "archive/vision/classification/caffenet/model/caffenet-12-int8.onnx",
+        "model_path": "validated/vision/classification/caffenet/model/caffenet-12-int8.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -1742,14 +1742,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/caffenet/model/caffenet-12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/caffenet/model/caffenet-12-int8.tar.gz",
             "model_with_data_sha": "24deead9c27254631332923c021c6b9cb429ef19b3367a0cc1cb171b9375c0e5",
             "model_with_data_bytes": 40718510
         }
     },
     {
         "model": "CaffeNet-qdq",
-        "model_path": "archive/vision/classification/caffenet/model/caffenet-12-qdq.onnx",
+        "model_path": "validated/vision/classification/caffenet/model/caffenet-12-qdq.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -1784,14 +1784,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/caffenet/model/caffenet-12-qdq.tar.gz",
+            "model_with_data_path": "validated/vision/classification/caffenet/model/caffenet-12-qdq.tar.gz",
             "model_with_data_sha": "7d78cb5357b90e71f38c133715e67237c5156e21be0aa6e397c9654557364a6d",
             "model_with_data_bytes": 45685092
         }
     },
     {
         "model": "CaffeNet",
-        "model_path": "archive/vision/classification/caffenet/model/caffenet-12.onnx",
+        "model_path": "validated/vision/classification/caffenet/model/caffenet-12.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -1837,14 +1837,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/caffenet/model/caffenet-12.tar.gz",
+            "model_with_data_path": "validated/vision/classification/caffenet/model/caffenet-12.tar.gz",
             "model_with_data_sha": "cd6077af2d35872550f2a118dc9505546eb8d80ab343f264aa90dafe5869b5c1",
             "model_with_data_bytes": 226654456
         }
     },
     {
         "model": "CaffeNet",
-        "model_path": "archive/vision/classification/caffenet/model/caffenet-3.onnx",
+        "model_path": "validated/vision/classification/caffenet/model/caffenet-3.onnx",
         "onnx_version": "1.1",
         "opset_version": 3,
         "metadata": {
@@ -1855,14 +1855,14 @@
                 "classification",
                 "caffenet"
             ],
-            "model_with_data_path": "archive/vision/classification/caffenet/model/caffenet-3.tar.gz",
+            "model_with_data_path": "validated/vision/classification/caffenet/model/caffenet-3.tar.gz",
             "model_with_data_sha": "d6a210e64d1964f8132cbe9ea46d4ab8e7fcf2634ce4285b701deb3fe3e7dd1c",
             "model_with_data_bytes": 229550734
         }
     },
     {
         "model": "CaffeNet",
-        "model_path": "archive/vision/classification/caffenet/model/caffenet-6.onnx",
+        "model_path": "validated/vision/classification/caffenet/model/caffenet-6.onnx",
         "onnx_version": "1.1.2",
         "opset_version": 6,
         "metadata": {
@@ -1873,14 +1873,14 @@
                 "classification",
                 "caffenet"
             ],
-            "model_with_data_path": "archive/vision/classification/caffenet/model/caffenet-6.tar.gz",
+            "model_with_data_path": "validated/vision/classification/caffenet/model/caffenet-6.tar.gz",
             "model_with_data_sha": "bf91013f28e461722dc47acfc1ebd8464c8320d4276902204a1d810a6dd2ff2a",
             "model_with_data_bytes": 229550795
         }
     },
     {
         "model": "CaffeNet",
-        "model_path": "archive/vision/classification/caffenet/model/caffenet-7.onnx",
+        "model_path": "validated/vision/classification/caffenet/model/caffenet-7.onnx",
         "onnx_version": "1.2",
         "opset_version": 7,
         "metadata": {
@@ -1926,14 +1926,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/caffenet/model/caffenet-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/caffenet/model/caffenet-7.tar.gz",
             "model_with_data_sha": "6fe316230146dd17ecbf39704a9dd0c8e00f9334f804f53825d6960941fc7e09",
             "model_with_data_bytes": 226844168
         }
     },
     {
         "model": "CaffeNet",
-        "model_path": "archive/vision/classification/caffenet/model/caffenet-8.onnx",
+        "model_path": "validated/vision/classification/caffenet/model/caffenet-8.onnx",
         "onnx_version": "1.3",
         "opset_version": 8,
         "metadata": {
@@ -1979,14 +1979,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/caffenet/model/caffenet-8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/caffenet/model/caffenet-8.tar.gz",
             "model_with_data_sha": "f9b4938e7979d512b1761ad1f61879033711bd9ca609c60508c4817ee650715f",
             "model_with_data_bytes": 226844337
         }
     },
     {
         "model": "CaffeNet",
-        "model_path": "archive/vision/classification/caffenet/model/caffenet-9.onnx",
+        "model_path": "validated/vision/classification/caffenet/model/caffenet-9.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -2032,14 +2032,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/caffenet/model/caffenet-9.tar.gz",
+            "model_with_data_path": "validated/vision/classification/caffenet/model/caffenet-9.tar.gz",
             "model_with_data_sha": "f5d1ac993a9865dc4f174f92420299a28c48279f2a2dec62b843c29b24ae7f93",
             "model_with_data_bytes": 226844131
         }
     },
     {
         "model": "DenseNet-121-12-int8",
-        "model_path": "archive/vision/classification/densenet-121/model/densenet-12-int8.onnx",
+        "model_path": "validated/vision/classification/densenet-121/model/densenet-12-int8.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -2076,14 +2076,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/densenet-121/model/densenet-12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/densenet-121/model/densenet-12-int8.tar.gz",
             "model_with_data_sha": "d6f8fc9bf3560fb10c176e38ab49fa1e58e5aabd24362ee96d9b8635264c1285",
             "model_with_data_bytes": 6329146
         }
     },
     {
         "model": "DenseNet-121-12",
-        "model_path": "archive/vision/classification/densenet-121/model/densenet-12.onnx",
+        "model_path": "validated/vision/classification/densenet-121/model/densenet-12.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -2120,14 +2120,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/densenet-121/model/densenet-12.tar.gz",
+            "model_with_data_path": "validated/vision/classification/densenet-121/model/densenet-12.tar.gz",
             "model_with_data_sha": "055c8ea3bdb3536063bc71b8bb3752f9482ed368a1d48c59a9fd769ded565682",
             "model_with_data_bytes": 30882195
         }
     },
     {
         "model": "DenseNet-121",
-        "model_path": "archive/vision/classification/densenet-121/model/densenet-3.onnx",
+        "model_path": "validated/vision/classification/densenet-121/model/densenet-3.onnx",
         "onnx_version": "1.1",
         "opset_version": 3,
         "metadata": {
@@ -2138,14 +2138,14 @@
                 "classification",
                 "densenet-121"
             ],
-            "model_with_data_path": "archive/vision/classification/densenet-121/model/densenet-3.tar.gz",
+            "model_with_data_path": "validated/vision/classification/densenet-121/model/densenet-3.tar.gz",
             "model_with_data_sha": "70586d81f49ad3bbe733270a1a58b5235794d51da3f9302cbc1e634accb6113d",
             "model_with_data_bytes": 33658961
         }
     },
     {
         "model": "DenseNet-121",
-        "model_path": "archive/vision/classification/densenet-121/model/densenet-6.onnx",
+        "model_path": "validated/vision/classification/densenet-121/model/densenet-6.onnx",
         "onnx_version": "1.1.2",
         "opset_version": 6,
         "metadata": {
@@ -2195,14 +2195,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/densenet-121/model/densenet-6.tar.gz",
+            "model_with_data_path": "validated/vision/classification/densenet-121/model/densenet-6.tar.gz",
             "model_with_data_sha": "3b6401ac4491f8c4c884e8fc52dfebfe68c81ef7cd8ca0228e999b8c38284c60",
             "model_with_data_bytes": 30902760
         }
     },
     {
         "model": "DenseNet-121",
-        "model_path": "archive/vision/classification/densenet-121/model/densenet-7.onnx",
+        "model_path": "validated/vision/classification/densenet-121/model/densenet-7.onnx",
         "onnx_version": "1.2",
         "opset_version": 7,
         "metadata": {
@@ -2252,14 +2252,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/densenet-121/model/densenet-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/densenet-121/model/densenet-7.tar.gz",
             "model_with_data_sha": "c8da317719041caea1e4ded47da287f604e898ec056e36ba1fa15620ec4a19ed",
             "model_with_data_bytes": 30902681
         }
     },
     {
         "model": "DenseNet-121",
-        "model_path": "archive/vision/classification/densenet-121/model/densenet-8.onnx",
+        "model_path": "validated/vision/classification/densenet-121/model/densenet-8.onnx",
         "onnx_version": "1.3",
         "opset_version": 8,
         "metadata": {
@@ -2309,14 +2309,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/densenet-121/model/densenet-8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/densenet-121/model/densenet-8.tar.gz",
             "model_with_data_sha": "645ce789ac537da24b733d758089ff1b32171775ff277515177c072c3fdbb213",
             "model_with_data_bytes": 30902606
         }
     },
     {
         "model": "DenseNet-121",
-        "model_path": "archive/vision/classification/densenet-121/model/densenet-9.onnx",
+        "model_path": "validated/vision/classification/densenet-121/model/densenet-9.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -2366,14 +2366,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/densenet-121/model/densenet-9.tar.gz",
+            "model_with_data_path": "validated/vision/classification/densenet-121/model/densenet-9.tar.gz",
             "model_with_data_sha": "3794ac95cbdbd4e5588ad5db9bdcb4f19e6cee89fdcdbc343b08a474df425d59",
             "model_with_data_bytes": 30902653
         }
     },
     {
         "model": "EfficientNet-Lite4-int8",
-        "model_path": "archive/vision/classification/efficientnet-lite4/model/efficientnet-lite4-11-int8.onnx",
+        "model_path": "validated/vision/classification/efficientnet-lite4/model/efficientnet-lite4-11-int8.onnx",
         "onnx_version": "1.9.0",
         "opset_version": 11,
         "metadata": {
@@ -2408,14 +2408,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/efficientnet-lite4/model/efficientnet-lite4-11-int8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/efficientnet-lite4/model/efficientnet-lite4-11-int8.tar.gz",
             "model_with_data_sha": "d3f50f4562e61d870a70e68157ccf64d8f03f6927540ad343e6fbddb79647e1f",
             "model_with_data_bytes": 12789970
         }
     },
     {
         "model": "EfficientNet-Lite4-qdq",
-        "model_path": "archive/vision/classification/efficientnet-lite4/model/efficientnet-lite4-11-qdq.onnx",
+        "model_path": "validated/vision/classification/efficientnet-lite4/model/efficientnet-lite4-11-qdq.onnx",
         "onnx_version": "1.10.0",
         "opset_version": 11,
         "metadata": {
@@ -2450,14 +2450,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/efficientnet-lite4/model/efficientnet-lite4-11-qdq.tar.gz",
+            "model_with_data_path": "validated/vision/classification/efficientnet-lite4/model/efficientnet-lite4-11-qdq.tar.gz",
             "model_with_data_sha": "4802f078c57e328004e326623c3de9e0e9046d9ce485eb79ed05d4d3c478b417",
             "model_with_data_bytes": 10194220
         }
     },
     {
         "model": "EfficientNet-Lite4",
-        "model_path": "archive/vision/classification/efficientnet-lite4/model/efficientnet-lite4-11.onnx",
+        "model_path": "validated/vision/classification/efficientnet-lite4/model/efficientnet-lite4-11.onnx",
         "onnx_version": "1.7.0",
         "opset_version": 11,
         "metadata": {
@@ -2505,14 +2505,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/efficientnet-lite4/model/efficientnet-lite4-11.tar.gz",
+            "model_with_data_path": "validated/vision/classification/efficientnet-lite4/model/efficientnet-lite4-11.tar.gz",
             "model_with_data_sha": "1914de663a575f0ec015b7a33c335b363e910f64cc91d08e66587ea877fd9d7b",
             "model_with_data_bytes": 48592826
         }
     },
     {
         "model": "GoogleNet-int8",
-        "model_path": "archive/vision/classification/inception_and_googlenet/googlenet/model/googlenet-12-int8.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/googlenet/model/googlenet-12-int8.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -2548,14 +2548,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/googlenet/model/googlenet-12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/googlenet/model/googlenet-12-int8.tar.gz",
             "model_with_data_sha": "fcedb191d6fd2453ed27f1dbf192cda8b88ec83a6d2a9448fa1d24a2c23cd675",
             "model_with_data_bytes": 5724344
         }
     },
     {
         "model": "GoogleNet-qdq",
-        "model_path": "archive/vision/classification/inception_and_googlenet/googlenet/model/googlenet-12-qdq.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/googlenet/model/googlenet-12-qdq.onnx",
         "onnx_version": "1.12",
         "opset_version": 12,
         "metadata": {
@@ -2591,14 +2591,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/googlenet/model/googlenet-12-qdq.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/googlenet/model/googlenet-12-qdq.tar.gz",
             "model_with_data_sha": "5587255e94438edd7c0017f5355178546b150deea05ed5e59109a4d4ae9aa4b3",
             "model_with_data_bytes": 5562451
         }
     },
     {
         "model": "GoogleNet",
-        "model_path": "archive/vision/classification/inception_and_googlenet/googlenet/model/googlenet-12.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/googlenet/model/googlenet-12.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -2647,14 +2647,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/googlenet/model/googlenet-12.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/googlenet/model/googlenet-12.tar.gz",
             "model_with_data_sha": "cdc6457821113082defd34905342385f63f823363feb1bf439eee4427577659c",
             "model_with_data_bytes": 26545491
         }
     },
     {
         "model": "GoogleNet",
-        "model_path": "archive/vision/classification/inception_and_googlenet/googlenet/model/googlenet-3.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/googlenet/model/googlenet-3.onnx",
         "onnx_version": "1.1",
         "opset_version": 3,
         "metadata": {
@@ -2703,14 +2703,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/googlenet/model/googlenet-3.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/googlenet/model/googlenet-3.tar.gz",
             "model_with_data_sha": "26348e6f4e8073a8b6bf878b4104941443fff445ffa5785b1ae66ad955f209a8",
             "model_with_data_bytes": 26565157
         }
     },
     {
         "model": "GoogleNet",
-        "model_path": "archive/vision/classification/inception_and_googlenet/googlenet/model/googlenet-6.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/googlenet/model/googlenet-6.onnx",
         "onnx_version": "1.1.2",
         "opset_version": 6,
         "metadata": {
@@ -2759,14 +2759,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/googlenet/model/googlenet-6.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/googlenet/model/googlenet-6.tar.gz",
             "model_with_data_sha": "3085e172e8cd28e049e9d47ae575f8063fff6c98a85b056f89158e8b2fd39018",
             "model_with_data_bytes": 26565143
         }
     },
     {
         "model": "GoogleNet",
-        "model_path": "archive/vision/classification/inception_and_googlenet/googlenet/model/googlenet-7.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/googlenet/model/googlenet-7.onnx",
         "onnx_version": "1.2",
         "opset_version": 7,
         "metadata": {
@@ -2815,14 +2815,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/googlenet/model/googlenet-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/googlenet/model/googlenet-7.tar.gz",
             "model_with_data_sha": "58219a44c0a22a95aa4956d653f7688a753cb9389fbf08bbcad6c62b0294c6fd",
             "model_with_data_bytes": 26565243
         }
     },
     {
         "model": "GoogleNet",
-        "model_path": "archive/vision/classification/inception_and_googlenet/googlenet/model/googlenet-8.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/googlenet/model/googlenet-8.onnx",
         "onnx_version": "1.3",
         "opset_version": 8,
         "metadata": {
@@ -2871,14 +2871,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/googlenet/model/googlenet-8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/googlenet/model/googlenet-8.tar.gz",
             "model_with_data_sha": "5f1020194e63177e0765aa8de917b4e7057cd3c62bb46b4fe4564210cdabe3bc",
             "model_with_data_bytes": 26565142
         }
     },
     {
         "model": "GoogleNet",
-        "model_path": "archive/vision/classification/inception_and_googlenet/googlenet/model/googlenet-9.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/googlenet/model/googlenet-9.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -2927,14 +2927,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/googlenet/model/googlenet-9.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/googlenet/model/googlenet-9.tar.gz",
             "model_with_data_sha": "ea5a81dd36c3067a78cfc1e6baa7a4142849e28d97d054fdc42aa1f9539d400f",
             "model_with_data_bytes": 26565214
         }
     },
     {
         "model": "Inception-1-int8",
-        "model_path": "archive/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12-int8.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12-int8.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -2970,14 +2970,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12-int8.tar.gz",
             "model_with_data_sha": "bc3d78134d9777d3e3a3320523834beb2ba7bdd1c5e017cba5a8d268691afbc6",
             "model_with_data_bytes": 9474526
         }
     },
     {
         "model": "Inception-1-qdq",
-        "model_path": "archive/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12-qdq.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12-qdq.onnx",
         "onnx_version": "1.12",
         "opset_version": 12,
         "metadata": {
@@ -3013,14 +3013,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12-qdq.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12-qdq.tar.gz",
             "model_with_data_sha": "c981fd944a125d3626cb79720c7f0a57309da5a24994c0378e2657fdca87a869",
             "model_with_data_bytes": 5559367
         }
     },
     {
         "model": "Inception-1",
-        "model_path": "archive/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -3069,14 +3069,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12.tar.gz",
             "model_with_data_sha": "c4198ed3415d59dacab2f6fa90c81f1a3aa9f3623b66e2d9653f16d06a5cc68c",
             "model_with_data_bytes": 26545542
         }
     },
     {
         "model": "Inception-1",
-        "model_path": "archive/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-3.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-3.onnx",
         "onnx_version": "1.1",
         "opset_version": 3,
         "metadata": {
@@ -3088,14 +3088,14 @@
                 "inception and googlenet",
                 "inception v1"
             ],
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-3.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-3.tar.gz",
             "model_with_data_sha": "18dd953ae8f2056ac0a1fd56302ef2a5d56b35ccee44fddc7bbdcbcfe9a5adf1",
             "model_with_data_bytes": 29324028
         }
     },
     {
         "model": "Inception-1",
-        "model_path": "archive/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-6.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-6.onnx",
         "onnx_version": "1.1.2",
         "opset_version": 6,
         "metadata": {
@@ -3107,14 +3107,14 @@
                 "inception and googlenet",
                 "inception v1"
             ],
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-6.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-6.tar.gz",
             "model_with_data_sha": "caf55082c6605ff17e0074e7af862f774b6efb00557236676e7112f6f54cec61",
             "model_with_data_bytes": 29324092
         }
     },
     {
         "model": "Inception-1",
-        "model_path": "archive/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-7.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-7.onnx",
         "onnx_version": "1.2",
         "opset_version": 7,
         "metadata": {
@@ -3163,14 +3163,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-7.tar.gz",
             "model_with_data_sha": "56c2d167a5400861d674c8a3d73df3fb3c4007b40ef350edf4da5e900138f86b",
             "model_with_data_bytes": 26565189
         }
     },
     {
         "model": "Inception-1",
-        "model_path": "archive/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-8.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-8.onnx",
         "onnx_version": "1.3",
         "opset_version": 8,
         "metadata": {
@@ -3219,14 +3219,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-8.tar.gz",
             "model_with_data_sha": "e3ecd30178504237bbf45dc87ae96a46b6301157a8b8e5c8cf25c817e4512628",
             "model_with_data_bytes": 26565228
         }
     },
     {
         "model": "Inception-1",
-        "model_path": "archive/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-9.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-9.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -3275,14 +3275,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-9.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-9.tar.gz",
             "model_with_data_sha": "faeb7ab80e0f60d22ae8472f6188700a20cd3fc466682f2dab5e00e8955c611c",
             "model_with_data_bytes": 26565173
         }
     },
     {
         "model": "Inception-2",
-        "model_path": "archive/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-3.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-3.onnx",
         "onnx_version": "1.1",
         "opset_version": 3,
         "metadata": {
@@ -3294,14 +3294,14 @@
                 "inception and googlenet",
                 "inception v2"
             ],
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-3.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-3.tar.gz",
             "model_with_data_sha": "37ea826b395c559ed2cc148823ea77f793e591c5eff5a718d98733793b680dbc",
             "model_with_data_bytes": 45015362
         }
     },
     {
         "model": "Inception-2",
-        "model_path": "archive/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-6.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-6.onnx",
         "onnx_version": "1.1.2",
         "opset_version": 6,
         "metadata": {
@@ -3313,14 +3313,14 @@
                 "inception and googlenet",
                 "inception v2"
             ],
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-6.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-6.tar.gz",
             "model_with_data_sha": "a29498bbf22d78dc428f0b6a0ecdc350475896ccb653c0b8d544c14000509b0a",
             "model_with_data_bytes": 45015338
         }
     },
     {
         "model": "Inception-2",
-        "model_path": "archive/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-7.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-7.onnx",
         "onnx_version": "1.2",
         "opset_version": 7,
         "metadata": {
@@ -3369,14 +3369,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-7.tar.gz",
             "model_with_data_sha": "5ef4d35e4490468986254a5915a567849183b211b49c2552e816165a74dd4aa0",
             "model_with_data_bytes": 42257087
         }
     },
     {
         "model": "Inception-2",
-        "model_path": "archive/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-8.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-8.onnx",
         "onnx_version": "1.3",
         "opset_version": 8,
         "metadata": {
@@ -3425,14 +3425,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-8.tar.gz",
             "model_with_data_sha": "c222c2f1c530aad79496f0b15898d4aa6807dc66e82ac67cec1573cfd4b59c87",
             "model_with_data_bytes": 42257042
         }
     },
     {
         "model": "Inception-2",
-        "model_path": "archive/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-9.onnx",
+        "model_path": "validated/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-9.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -3481,14 +3481,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-9.tar.gz",
+            "model_with_data_path": "validated/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-9.tar.gz",
             "model_with_data_sha": "c0722dff7401d4ade189c62f66b3a39eaa3b15c1a28457b7e3efd44de9917491",
             "model_with_data_bytes": 42256996
         }
     },
     {
         "model": "MNIST",
-        "model_path": "archive/vision/classification/mnist/model/mnist-1.onnx",
+        "model_path": "validated/vision/classification/mnist/model/mnist-1.onnx",
         "onnx_version": "1.0",
         "opset_version": 1,
         "metadata": {
@@ -3499,14 +3499,14 @@
                 "classification",
                 "mnist"
             ],
-            "model_with_data_path": "archive/vision/classification/mnist/model/mnist-1.tar.gz",
+            "model_with_data_path": "validated/vision/classification/mnist/model/mnist-1.tar.gz",
             "model_with_data_sha": "a296485a657137a78b5c9b0ade09fca4041364da2c530dd0edfca1e1bb53283e",
             "model_with_data_bytes": 26518
         }
     },
     {
         "model": "MNIST-12-int8",
-        "model_path": "archive/vision/classification/mnist/model/mnist-12-int8.onnx",
+        "model_path": "validated/vision/classification/mnist/model/mnist-12-int8.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -3541,14 +3541,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/mnist/model/mnist-12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/mnist/model/mnist-12-int8.tar.gz",
             "model_with_data_sha": "e4ea757f0fbf49c5aebc0c885397c72dc7a38617fbef2db408f531f91a7bb49c",
             "model_with_data_bytes": 10668
         }
     },
     {
         "model": "MNIST-12",
-        "model_path": "archive/vision/classification/mnist/model/mnist-12.onnx",
+        "model_path": "validated/vision/classification/mnist/model/mnist-12.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -3583,14 +3583,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/mnist/model/mnist-12.tar.gz",
+            "model_with_data_path": "validated/vision/classification/mnist/model/mnist-12.tar.gz",
             "model_with_data_sha": "a53a59dcaca8804a0f6dfda9a3cf2e082979589391dbde73640b60684f1d24e9",
             "model_with_data_bytes": 26741
         }
     },
     {
         "model": "MNIST",
-        "model_path": "archive/vision/classification/mnist/model/mnist-7.onnx",
+        "model_path": "validated/vision/classification/mnist/model/mnist-7.onnx",
         "onnx_version": "1.2",
         "opset_version": 7,
         "metadata": {
@@ -3625,14 +3625,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/mnist/model/mnist-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/mnist/model/mnist-7.tar.gz",
             "model_with_data_sha": "35601ad2a49200f62e3030d1530e5db1c1edeb2d6632b2216bcebee2287dbb7c",
             "model_with_data_bytes": 26757
         }
     },
     {
         "model": "MNIST",
-        "model_path": "archive/vision/classification/mnist/model/mnist-8.onnx",
+        "model_path": "validated/vision/classification/mnist/model/mnist-8.onnx",
         "onnx_version": "1.3",
         "opset_version": 8,
         "metadata": {
@@ -3667,14 +3667,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/mnist/model/mnist-8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/mnist/model/mnist-8.tar.gz",
             "model_with_data_sha": "2f47e338faddbb30488abd83e8179ce44882de465165bb3a5b2640719f64f70c",
             "model_with_data_bytes": 26751
         }
     },
     {
         "model": "MobileNet v2-1.0",
-        "model_path": "archive/vision/classification/mobilenet/model/mobilenetv2-10.onnx",
+        "model_path": "validated/vision/classification/mobilenet/model/mobilenetv2-10.onnx",
         "onnx_version": "1.5.0",
         "opset_version": 10,
         "metadata": {
@@ -3722,14 +3722,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/mobilenet/model/mobilenetv2-10.tar.gz",
+            "model_with_data_path": "validated/vision/classification/mobilenet/model/mobilenetv2-10.tar.gz",
             "model_with_data_sha": "3e4e9e2de0241cc829917e9c0233229974f5d35d3cfd012a263ca36c98f36ac3",
             "model_with_data_bytes": 13504391
         }
     },
     {
         "model": "MobileNet v2-1.0-int8",
-        "model_path": "archive/vision/classification/mobilenet/model/mobilenetv2-12-int8.onnx",
+        "model_path": "validated/vision/classification/mobilenet/model/mobilenetv2-12-int8.onnx",
         "onnx_version": "1.9.0",
         "opset_version": 12,
         "metadata": {
@@ -3764,14 +3764,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/mobilenet/model/mobilenetv2-12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/mobilenet/model/mobilenetv2-12-int8.tar.gz",
             "model_with_data_sha": "dfcf1dc15b78611489f22a19902de12e304bf0380e185bde499fcf70f7647455",
             "model_with_data_bytes": 3914892
         }
     },
     {
         "model": "MobileNet v2-1.0-qdq",
-        "model_path": "archive/vision/classification/mobilenet/model/mobilenetv2-12-qdq.onnx",
+        "model_path": "validated/vision/classification/mobilenet/model/mobilenetv2-12-qdq.onnx",
         "onnx_version": "1.10.0",
         "opset_version": 12,
         "metadata": {
@@ -3806,14 +3806,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/mobilenet/model/mobilenetv2-12-qdq.tar.gz",
+            "model_with_data_path": "validated/vision/classification/mobilenet/model/mobilenetv2-12-qdq.tar.gz",
             "model_with_data_sha": "dd8cafda6fdf773a37ba09858482232eca8e01997ec6f1bebf1aca11aea0c1ce",
             "model_with_data_bytes": 3434401
         }
     },
     {
         "model": "MobileNet v2-1.0-fp32",
-        "model_path": "archive/vision/classification/mobilenet/model/mobilenetv2-12.onnx",
+        "model_path": "validated/vision/classification/mobilenet/model/mobilenetv2-12.onnx",
         "onnx_version": "1.9.0",
         "opset_version": 12,
         "metadata": {
@@ -3848,14 +3848,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/mobilenet/model/mobilenetv2-12.tar.gz",
+            "model_with_data_path": "validated/vision/classification/mobilenet/model/mobilenetv2-12.tar.gz",
             "model_with_data_sha": "5f83b422708a708b592a5fd56d84710038511789df3ae510b84123930c37762d",
             "model_with_data_bytes": 13498787
         }
     },
     {
         "model": "MobileNet v2-7",
-        "model_path": "archive/vision/classification/mobilenet/model/mobilenetv2-7.onnx",
+        "model_path": "validated/vision/classification/mobilenet/model/mobilenetv2-7.onnx",
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
@@ -3890,14 +3890,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/mobilenet/model/mobilenetv2-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/mobilenet/model/mobilenetv2-7.tar.gz",
             "model_with_data_sha": "b463ad62dae99f13afd88549ca7d43e9bda6876614f3592ebb41177e1db0fcc5",
             "model_with_data_bytes": 13682646
         }
     },
     {
         "model": "R-CNN ILSVRC13",
-        "model_path": "archive/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-3.onnx",
+        "model_path": "validated/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-3.onnx",
         "onnx_version": "1.1",
         "opset_version": 3,
         "metadata": {
@@ -3908,14 +3908,14 @@
                 "classification",
                 "rcnn ilsvrc13"
             ],
-            "model_with_data_path": "archive/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-3.tar.gz",
+            "model_with_data_path": "validated/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-3.tar.gz",
             "model_with_data_sha": "eb4fab60b84e2c69dc634f91bd669867ac7ef8828499a28023472df3219ac59c",
             "model_with_data_bytes": 217332838
         }
     },
     {
         "model": "R-CNN ILSVRC13",
-        "model_path": "archive/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-6.onnx",
+        "model_path": "validated/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-6.onnx",
         "onnx_version": "1.1.2",
         "opset_version": 6,
         "metadata": {
@@ -3926,14 +3926,14 @@
                 "classification",
                 "rcnn ilsvrc13"
             ],
-            "model_with_data_path": "archive/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-6.tar.gz",
+            "model_with_data_path": "validated/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-6.tar.gz",
             "model_with_data_sha": "399c2629de63824d52b5f71db731995492f4ebb8a2892fa36236925a4bad9f44",
             "model_with_data_bytes": 217332967
         }
     },
     {
         "model": "R-CNN ILSVRC13",
-        "model_path": "archive/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-7.onnx",
+        "model_path": "validated/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-7.onnx",
         "onnx_version": "1.2",
         "opset_version": 7,
         "metadata": {
@@ -3979,14 +3979,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-7.tar.gz",
             "model_with_data_sha": "a9c56a0e02b4df95a1639f6d7883e39b9f416f8929d09cdf6f45783aa1605d1f",
             "model_with_data_bytes": 214642762
         }
     },
     {
         "model": "R-CNN ILSVRC13",
-        "model_path": "archive/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-8.onnx",
+        "model_path": "validated/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-8.onnx",
         "onnx_version": "1.3",
         "opset_version": 8,
         "metadata": {
@@ -4032,14 +4032,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-8.tar.gz",
             "model_with_data_sha": "ce469bf52e1a8bf2884f502e8921ce2e7cd92f9aeb7d9a16c6da639cf8d39a74",
             "model_with_data_bytes": 214642707
         }
     },
     {
         "model": "R-CNN ILSVRC13",
-        "model_path": "archive/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-9.onnx",
+        "model_path": "validated/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-9.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -4085,14 +4085,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-9.tar.gz",
+            "model_with_data_path": "validated/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-9.tar.gz",
             "model_with_data_sha": "ef3f40805e4257213440401536e28ad3aa6404ebce5a6cf9d7fcdb44fee09f37",
             "model_with_data_bytes": 214642550
         }
     },
     {
         "model": "ResNet101",
-        "model_path": "archive/vision/classification/resnet/model/resnet101-v1-7.onnx",
+        "model_path": "validated/vision/classification/resnet/model/resnet101-v1-7.onnx",
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
@@ -4140,14 +4140,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/resnet/model/resnet101-v1-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/resnet/model/resnet101-v1-7.tar.gz",
             "model_with_data_sha": "27f51a51a9de6c1b10455cb09164f384746288c4b9e7bbb4af49ab206abd6703",
             "model_with_data_bytes": 166222423
         }
     },
     {
         "model": "ResNet101-v2",
-        "model_path": "archive/vision/classification/resnet/model/resnet101-v2-7.onnx",
+        "model_path": "validated/vision/classification/resnet/model/resnet101-v2-7.onnx",
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
@@ -4195,14 +4195,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/resnet/model/resnet101-v2-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/resnet/model/resnet101-v2-7.tar.gz",
             "model_with_data_sha": "566663c700f5cc1e8eb0043c00923d5422abaca4fae21568973ef9c446084f6e",
             "model_with_data_bytes": 165872227
         }
     },
     {
         "model": "ResNet152",
-        "model_path": "archive/vision/classification/resnet/model/resnet152-v1-7.onnx",
+        "model_path": "validated/vision/classification/resnet/model/resnet152-v1-7.onnx",
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
@@ -4250,14 +4250,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/resnet/model/resnet152-v1-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/resnet/model/resnet152-v1-7.tar.gz",
             "model_with_data_sha": "470ccde11c3ee2b490c214e48459c03e5b4118e8143f83dd795263efcf794cf3",
             "model_with_data_bytes": 226450954
         }
     },
     {
         "model": "ResNet152-v2",
-        "model_path": "archive/vision/classification/resnet/model/resnet152-v2-7.onnx",
+        "model_path": "validated/vision/classification/resnet/model/resnet152-v2-7.onnx",
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
@@ -4305,14 +4305,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/resnet/model/resnet152-v2-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/resnet/model/resnet152-v2-7.tar.gz",
             "model_with_data_sha": "78b507483050a427870a264c398d121f44b92d69c8ca0c53217eb5137b6b51e3",
             "model_with_data_bytes": 225131715
         }
     },
     {
         "model": "ResNet18",
-        "model_path": "archive/vision/classification/resnet/model/resnet18-v1-7.onnx",
+        "model_path": "validated/vision/classification/resnet/model/resnet18-v1-7.onnx",
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
@@ -4360,14 +4360,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/resnet/model/resnet18-v1-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/resnet/model/resnet18-v1-7.tar.gz",
             "model_with_data_sha": "2163225f89c858f120b5376758b752e57139601e967f6c6f614a3d77e9d66505",
             "model_with_data_bytes": 43835620
         }
     },
     {
         "model": "ResNet18-v2",
-        "model_path": "archive/vision/classification/resnet/model/resnet18-v2-7.onnx",
+        "model_path": "validated/vision/classification/resnet/model/resnet18-v2-7.onnx",
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
@@ -4415,14 +4415,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/resnet/model/resnet18-v2-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/resnet/model/resnet18-v2-7.tar.gz",
             "model_with_data_sha": "a64c111fac5d4e8bebf9246507ec7a92ea1c1596de09fca73bb7f94e9750e316",
             "model_with_data_bytes": 43808776
         }
     },
     {
         "model": "ResNet34",
-        "model_path": "archive/vision/classification/resnet/model/resnet34-v1-7.onnx",
+        "model_path": "validated/vision/classification/resnet/model/resnet34-v1-7.onnx",
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
@@ -4470,14 +4470,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/resnet/model/resnet34-v1-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/resnet/model/resnet34-v1-7.tar.gz",
             "model_with_data_sha": "c95b29c28e4d2c6b9ee7969e668b35cff335ec11761e9722f3ebe67490c19f7b",
             "model_with_data_bytes": 81220173
         }
     },
     {
         "model": "ResNet34-v2",
-        "model_path": "archive/vision/classification/resnet/model/resnet34-v2-7.onnx",
+        "model_path": "validated/vision/classification/resnet/model/resnet34-v2-7.onnx",
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
@@ -4525,14 +4525,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/resnet/model/resnet34-v2-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/resnet/model/resnet34-v2-7.tar.gz",
             "model_with_data_sha": "b04865581abb9a51af87cfc170ac26e928eeade336e16abbe984c410441453cc",
             "model_with_data_bytes": 81189514
         }
     },
     {
         "model": "ResNet50-caffe2",
-        "model_path": "archive/vision/classification/resnet/model/resnet50-caffe2-v1-3.onnx",
+        "model_path": "validated/vision/classification/resnet/model/resnet50-caffe2-v1-3.onnx",
         "onnx_version": "1.1",
         "opset_version": 3,
         "metadata": {
@@ -4543,14 +4543,14 @@
                 "classification",
                 "resnet"
             ],
-            "model_with_data_path": "archive/vision/classification/resnet/model/resnet50-caffe2-v1-3.tar.gz",
+            "model_with_data_path": "validated/vision/classification/resnet/model/resnet50-caffe2-v1-3.tar.gz",
             "model_with_data_sha": "b83fbf3bc6a25ece62216e2ed801061383af864c1b1ddc9c18d0a08e6daead61",
             "model_with_data_bytes": 96754305
         }
     },
     {
         "model": "ResNet50-caffe2",
-        "model_path": "archive/vision/classification/resnet/model/resnet50-caffe2-v1-6.onnx",
+        "model_path": "validated/vision/classification/resnet/model/resnet50-caffe2-v1-6.onnx",
         "onnx_version": "1.1.2",
         "opset_version": 6,
         "metadata": {
@@ -4561,14 +4561,14 @@
                 "classification",
                 "resnet"
             ],
-            "model_with_data_path": "archive/vision/classification/resnet/model/resnet50-caffe2-v1-6.tar.gz",
+            "model_with_data_path": "validated/vision/classification/resnet/model/resnet50-caffe2-v1-6.tar.gz",
             "model_with_data_sha": "92df484b9242282bb3a8ee6e82849db3c82dd96d231f253c9287b483c6f119e5",
             "model_with_data_bytes": 98379563
         }
     },
     {
         "model": "ResNet50-caffe2",
-        "model_path": "archive/vision/classification/resnet/model/resnet50-caffe2-v1-7.onnx",
+        "model_path": "validated/vision/classification/resnet/model/resnet50-caffe2-v1-7.onnx",
         "onnx_version": "1.2",
         "opset_version": 7,
         "metadata": {
@@ -4616,14 +4616,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/resnet/model/resnet50-caffe2-v1-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/resnet/model/resnet50-caffe2-v1-7.tar.gz",
             "model_with_data_sha": "c3c19b61bffe72bf94b6c0214c1f5f5375b3cca08ee24ec83fff515b6761ac57",
             "model_with_data_bytes": 95636370
         }
     },
     {
         "model": "ResNet50-caffe2",
-        "model_path": "archive/vision/classification/resnet/model/resnet50-caffe2-v1-8.onnx",
+        "model_path": "validated/vision/classification/resnet/model/resnet50-caffe2-v1-8.onnx",
         "onnx_version": "1.3",
         "opset_version": 8,
         "metadata": {
@@ -4671,14 +4671,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/resnet/model/resnet50-caffe2-v1-8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/resnet/model/resnet50-caffe2-v1-8.tar.gz",
             "model_with_data_sha": "04b0525962974065137fcf3d37cb4608d73f36e3d28bea5933af56e61cad35ce",
             "model_with_data_bytes": 95636234
         }
     },
     {
         "model": "ResNet50-caffe2",
-        "model_path": "archive/vision/classification/resnet/model/resnet50-caffe2-v1-9.onnx",
+        "model_path": "validated/vision/classification/resnet/model/resnet50-caffe2-v1-9.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -4726,14 +4726,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/resnet/model/resnet50-caffe2-v1-9.tar.gz",
+            "model_with_data_path": "validated/vision/classification/resnet/model/resnet50-caffe2-v1-9.tar.gz",
             "model_with_data_sha": "e0703ef13fefd8207747ec5713eb07fc87fa0ab1257e92a052bc7b761101d49c",
             "model_with_data_bytes": 95636091
         }
     },
     {
         "model": "ResNet50-int8",
-        "model_path": "archive/vision/classification/resnet/model/resnet50-v1-12-int8.onnx",
+        "model_path": "validated/vision/classification/resnet/model/resnet50-v1-12-int8.onnx",
         "onnx_version": "1.7.0",
         "opset_version": 12,
         "metadata": {
@@ -4768,14 +4768,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/resnet/model/resnet50-v1-12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/resnet/model/resnet50-v1-12-int8.tar.gz",
             "model_with_data_sha": "662710f50cafe29f44727b9cd8be5430fb06da18d3004cf5f9d9645c0dc39d71",
             "model_with_data_bytes": 22355322
         }
     },
     {
         "model": "ResNet50-qdq",
-        "model_path": "archive/vision/classification/resnet/model/resnet50-v1-12-qdq.onnx",
+        "model_path": "validated/vision/classification/resnet/model/resnet50-v1-12-qdq.onnx",
         "onnx_version": "1.10.0",
         "opset_version": 12,
         "metadata": {
@@ -4810,14 +4810,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/resnet/model/resnet50-v1-12-qdq.tar.gz",
+            "model_with_data_path": "validated/vision/classification/resnet/model/resnet50-v1-12-qdq.tar.gz",
             "model_with_data_sha": "6a93ba624ecab599d3f8511b1409f5103beb2f1708a85955397a3132ca423d99",
             "model_with_data_bytes": 17049336
         }
     },
     {
         "model": "ResNet50-fp32",
-        "model_path": "archive/vision/classification/resnet/model/resnet50-v1-12.onnx",
+        "model_path": "validated/vision/classification/resnet/model/resnet50-v1-12.onnx",
         "onnx_version": "1.7.0",
         "opset_version": 12,
         "metadata": {
@@ -4852,14 +4852,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/resnet/model/resnet50-v1-12.tar.gz",
+            "model_with_data_path": "validated/vision/classification/resnet/model/resnet50-v1-12.tar.gz",
             "model_with_data_sha": "9391137cfc8fbec372d7a1e59e272d67550dab72d93cf7c7d6256782262599ea",
             "model_with_data_bytes": 96559469
         }
     },
     {
         "model": "ResNet50",
-        "model_path": "archive/vision/classification/resnet/model/resnet50-v1-7.onnx",
+        "model_path": "validated/vision/classification/resnet/model/resnet50-v1-7.onnx",
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
@@ -4907,14 +4907,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/resnet/model/resnet50-v1-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/resnet/model/resnet50-v1-7.tar.gz",
             "model_with_data_sha": "898a9183256e884ae06fb1c11869386eccd38393ab41d9339909e974519a9feb",
             "model_with_data_bytes": 95435189
         }
     },
     {
         "model": "ResNet50-v2",
-        "model_path": "archive/vision/classification/resnet/model/resnet50-v2-7.onnx",
+        "model_path": "validated/vision/classification/resnet/model/resnet50-v2-7.onnx",
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
@@ -4962,14 +4962,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/resnet/model/resnet50-v2-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/resnet/model/resnet50-v2-7.tar.gz",
             "model_with_data_sha": "d6a8b7ec924dae64e19c0850e7aa9c633095f7c4422393f5cc478c4982e97667",
             "model_with_data_bytes": 95237476
         }
     },
     {
         "model": "ResNet-preproc",
-        "model_path": "archive/vision/classification/resnet/preproc/resnet-preproc-v1-18.onnx",
+        "model_path": "validated/vision/classification/resnet/preproc/resnet-preproc-v1-18.onnx",
         "onnx_version": "1.13.1",
         "opset_version": 18,
         "metadata": {
@@ -5002,14 +5002,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/resnet/preproc/resnet-preproc-v1-18.tar.gz",
+            "model_with_data_path": "validated/vision/classification/resnet/preproc/resnet-preproc-v1-18.tar.gz",
             "model_with_data_sha": "216b89c1676c8a5a2dfc0ee1736b179b0777f9ba845ee6dd955d4ff684f29a3c",
             "model_with_data_bytes": 883999
         }
     },
     {
         "model": "ShuffleNet-v1",
-        "model_path": "archive/vision/classification/shufflenet/model/shufflenet-3.onnx",
+        "model_path": "validated/vision/classification/shufflenet/model/shufflenet-3.onnx",
         "onnx_version": "1.1",
         "opset_version": 3,
         "metadata": {
@@ -5020,14 +5020,14 @@
                 "classification",
                 "shufflenet"
             ],
-            "model_with_data_path": "archive/vision/classification/shufflenet/model/shufflenet-3.tar.gz",
+            "model_with_data_path": "validated/vision/classification/shufflenet/model/shufflenet-3.tar.gz",
             "model_with_data_sha": "eeeef9e70d858a3fd72b9eb33435e480a9f2fac0fa0f2d2c75b148fe3e62cb7f",
             "model_with_data_bytes": 6980244
         }
     },
     {
         "model": "ShuffleNet-v1",
-        "model_path": "archive/vision/classification/shufflenet/model/shufflenet-6.onnx",
+        "model_path": "validated/vision/classification/shufflenet/model/shufflenet-6.onnx",
         "onnx_version": "1.1.2",
         "opset_version": 6,
         "metadata": {
@@ -5038,14 +5038,14 @@
                 "classification",
                 "shufflenet"
             ],
-            "model_with_data_path": "archive/vision/classification/shufflenet/model/shufflenet-6.tar.gz",
+            "model_with_data_path": "validated/vision/classification/shufflenet/model/shufflenet-6.tar.gz",
             "model_with_data_sha": "9f1c78a572dcf40f1056bdb9688433290c010c91e98ba4526be1ffdbfd854660",
             "model_with_data_bytes": 8604055
         }
     },
     {
         "model": "ShuffleNet-v1",
-        "model_path": "archive/vision/classification/shufflenet/model/shufflenet-7.onnx",
+        "model_path": "validated/vision/classification/shufflenet/model/shufflenet-7.onnx",
         "onnx_version": "1.2",
         "opset_version": 7,
         "metadata": {
@@ -5093,14 +5093,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/shufflenet/model/shufflenet-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/shufflenet/model/shufflenet-7.tar.gz",
             "model_with_data_sha": "323202f6de6ed3b853452967fdd4df27f034b9224c94a123d667aa14e3e96fee",
             "model_with_data_bytes": 5858831
         }
     },
     {
         "model": "ShuffleNet-v1",
-        "model_path": "archive/vision/classification/shufflenet/model/shufflenet-8.onnx",
+        "model_path": "validated/vision/classification/shufflenet/model/shufflenet-8.onnx",
         "onnx_version": "1.3",
         "opset_version": 8,
         "metadata": {
@@ -5148,14 +5148,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/shufflenet/model/shufflenet-8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/shufflenet/model/shufflenet-8.tar.gz",
             "model_with_data_sha": "090749323dc94018eccf6d1ae2d1ab575b6e0b24ff1f77d248e780eecf5fd61b",
             "model_with_data_bytes": 5858851
         }
     },
     {
         "model": "ShuffleNet-v1",
-        "model_path": "archive/vision/classification/shufflenet/model/shufflenet-9.onnx",
+        "model_path": "validated/vision/classification/shufflenet/model/shufflenet-9.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -5203,14 +5203,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/shufflenet/model/shufflenet-9.tar.gz",
+            "model_with_data_path": "validated/vision/classification/shufflenet/model/shufflenet-9.tar.gz",
             "model_with_data_sha": "75ff4f8c8cacbb09623a6b49906c9932d7f717a9df21637f0a1c63337107343f",
             "model_with_data_bytes": 5858835
         }
     },
     {
         "model": "ShuffleNet-v2",
-        "model_path": "archive/vision/classification/shufflenet/model/shufflenet-v2-10.onnx",
+        "model_path": "validated/vision/classification/shufflenet/model/shufflenet-v2-10.onnx",
         "onnx_version": "1.6",
         "opset_version": 10,
         "metadata": {
@@ -5256,14 +5256,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/shufflenet/model/shufflenet-v2-10.tar.gz",
+            "model_with_data_path": "validated/vision/classification/shufflenet/model/shufflenet-v2-10.tar.gz",
             "model_with_data_sha": "3dfa8224c1233b22006b43c689eebc4af46917cc1de0bd123f43510d8ab06bf2",
             "model_with_data_bytes": 8721925
         }
     },
     {
         "model": "ShuffleNet-v2-int8",
-        "model_path": "archive/vision/classification/shufflenet/model/shufflenet-v2-12-int8.onnx",
+        "model_path": "validated/vision/classification/shufflenet/model/shufflenet-v2-12-int8.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -5309,14 +5309,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/shufflenet/model/shufflenet-v2-12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/shufflenet/model/shufflenet-v2-12-int8.tar.gz",
             "model_with_data_sha": "f538889aa028f6fcc4db1dce9b0bf2e7e347a81d5fc28087d96758dc0131e8c7",
             "model_with_data_bytes": 2488137
         }
     },
     {
         "model": "ShuffleNet-v2-qdq",
-        "model_path": "archive/vision/classification/shufflenet/model/shufflenet-v2-12-qdq.onnx",
+        "model_path": "validated/vision/classification/shufflenet/model/shufflenet-v2-12-qdq.onnx",
         "onnx_version": "1.12",
         "opset_version": 12,
         "metadata": {
@@ -5351,14 +5351,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/shufflenet/model/shufflenet-v2-12-qdq.tar.gz",
+            "model_with_data_path": "validated/vision/classification/shufflenet/model/shufflenet-v2-12-qdq.tar.gz",
             "model_with_data_sha": "071594e233cedf5688501c9b67cad30c4babb1b46771fb87afe7fd1beb1cc008",
             "model_with_data_bytes": 2245304
         }
     },
     {
         "model": "ShuffleNet-v2-fp32",
-        "model_path": "archive/vision/classification/shufflenet/model/shufflenet-v2-12.onnx",
+        "model_path": "validated/vision/classification/shufflenet/model/shufflenet-v2-12.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -5404,14 +5404,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/shufflenet/model/shufflenet-v2-12.tar.gz",
+            "model_with_data_path": "validated/vision/classification/shufflenet/model/shufflenet-v2-12.tar.gz",
             "model_with_data_sha": "ec61f826d53c4630b2b4ead3514f2320a543abf0e862f6b12f91456b8188a4c5",
             "model_with_data_bytes": 9113274
         }
     },
     {
         "model": "SqueezeNet 1.0-int8",
-        "model_path": "archive/vision/classification/squeezenet/model/squeezenet1.0-12-int8.onnx",
+        "model_path": "validated/vision/classification/squeezenet/model/squeezenet1.0-12-int8.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -5448,14 +5448,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/squeezenet/model/squeezenet1.0-12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/squeezenet/model/squeezenet1.0-12-int8.tar.gz",
             "model_with_data_sha": "28de6cb53cdaf15b81d293dc480b5f4f9fd766ab05bc97dbc1a5befb6981f1b2",
             "model_with_data_bytes": 1562359
         }
     },
     {
         "model": "SqueezeNet 1.0",
-        "model_path": "archive/vision/classification/squeezenet/model/squeezenet1.0-12.onnx",
+        "model_path": "validated/vision/classification/squeezenet/model/squeezenet1.0-12.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -5505,14 +5505,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/squeezenet/model/squeezenet1.0-12.tar.gz",
+            "model_with_data_path": "validated/vision/classification/squeezenet/model/squeezenet1.0-12.tar.gz",
             "model_with_data_sha": "8a2dcc5a8f2b8c314b96b6484703a72882c796faa4eaf0de1b913fc0765cb917",
             "model_with_data_bytes": 5151210
         }
     },
     {
         "model": "SqueezeNet 1.0-qdq",
-        "model_path": "archive/vision/classification/squeezenet/model/squeezenet1.0-13-qdq.onnx",
+        "model_path": "validated/vision/classification/squeezenet/model/squeezenet1.0-13-qdq.onnx",
         "onnx_version": "1.9",
         "opset_version": 13,
         "metadata": {
@@ -5549,14 +5549,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/squeezenet/model/squeezenet1.0-13-qdq.tar.gz",
+            "model_with_data_path": "validated/vision/classification/squeezenet/model/squeezenet1.0-13-qdq.tar.gz",
             "model_with_data_sha": "d3a84101535d52ecf31503ff1645f170c7b156b6bc53f1492caec485b7c023a7",
             "model_with_data_bytes": 1565787
         }
     },
     {
         "model": "SqueezeNet 1.0",
-        "model_path": "archive/vision/classification/squeezenet/model/squeezenet1.0-3.onnx",
+        "model_path": "validated/vision/classification/squeezenet/model/squeezenet1.0-3.onnx",
         "onnx_version": "1.1",
         "opset_version": 3,
         "metadata": {
@@ -5567,14 +5567,14 @@
                 "classification",
                 "squeezenet"
             ],
-            "model_with_data_path": "archive/vision/classification/squeezenet/model/squeezenet1.0-3.tar.gz",
+            "model_with_data_path": "validated/vision/classification/squeezenet/model/squeezenet1.0-3.tar.gz",
             "model_with_data_sha": "80dc32f8172209d139160258da093dc08af95e61ec4457f98b9061499020331c",
             "model_with_data_bytes": 6226586
         }
     },
     {
         "model": "SqueezeNet 1.0",
-        "model_path": "archive/vision/classification/squeezenet/model/squeezenet1.0-6.onnx",
+        "model_path": "validated/vision/classification/squeezenet/model/squeezenet1.0-6.onnx",
         "onnx_version": "1.1.2",
         "opset_version": 6,
         "metadata": {
@@ -5624,14 +5624,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/squeezenet/model/squeezenet1.0-6.tar.gz",
+            "model_with_data_path": "validated/vision/classification/squeezenet/model/squeezenet1.0-6.tar.gz",
             "model_with_data_sha": "9da41b593f063b70d41d1a8245983ce85ba4fe6f2402225e9e04e19fd943173a",
             "model_with_data_bytes": 6226584
         }
     },
     {
         "model": "SqueezeNet 1.0",
-        "model_path": "archive/vision/classification/squeezenet/model/squeezenet1.0-7.onnx",
+        "model_path": "validated/vision/classification/squeezenet/model/squeezenet1.0-7.onnx",
         "onnx_version": "1.2",
         "opset_version": 7,
         "metadata": {
@@ -5681,14 +5681,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/squeezenet/model/squeezenet1.0-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/squeezenet/model/squeezenet1.0-7.tar.gz",
             "model_with_data_sha": "62b373de7241b04041c688a275612a4d55507012ed8d5a077dd6c68f108909ca",
             "model_with_data_bytes": 5154452
         }
     },
     {
         "model": "SqueezeNet 1.0",
-        "model_path": "archive/vision/classification/squeezenet/model/squeezenet1.0-8.onnx",
+        "model_path": "validated/vision/classification/squeezenet/model/squeezenet1.0-8.onnx",
         "onnx_version": "1.3",
         "opset_version": 8,
         "metadata": {
@@ -5738,14 +5738,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/squeezenet/model/squeezenet1.0-8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/squeezenet/model/squeezenet1.0-8.tar.gz",
             "model_with_data_sha": "f08042579f6f9aaa32aefca1a111710035335fabe804036c88c54dda6606294a",
             "model_with_data_bytes": 5154407
         }
     },
     {
         "model": "SqueezeNet 1.0",
-        "model_path": "archive/vision/classification/squeezenet/model/squeezenet1.0-9.onnx",
+        "model_path": "validated/vision/classification/squeezenet/model/squeezenet1.0-9.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -5795,14 +5795,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/squeezenet/model/squeezenet1.0-9.tar.gz",
+            "model_with_data_path": "validated/vision/classification/squeezenet/model/squeezenet1.0-9.tar.gz",
             "model_with_data_sha": "210b9509fa78688b7ade604a210e03bdb76f3d0eac28eb4a79c6e9d5500342df",
             "model_with_data_bytes": 5154458
         }
     },
     {
         "model": "SqueezeNet 1.1",
-        "model_path": "archive/vision/classification/squeezenet/model/squeezenet1.1-7.onnx",
+        "model_path": "validated/vision/classification/squeezenet/model/squeezenet1.1-7.onnx",
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
@@ -5850,14 +5850,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/squeezenet/model/squeezenet1.1-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/squeezenet/model/squeezenet1.1-7.tar.gz",
             "model_with_data_sha": "95dc7fbafbc7372aabe75555db9e89f05e0715ab7472cf7f8fb751ff54543c3e",
             "model_with_data_bytes": 5156484
         }
     },
     {
         "model": "VGG 16-int8",
-        "model_path": "archive/vision/classification/vgg/model/vgg16-12-int8.onnx",
+        "model_path": "validated/vision/classification/vgg/model/vgg16-12-int8.onnx",
         "onnx_version": "1.9.0",
         "opset_version": 12,
         "metadata": {
@@ -5903,14 +5903,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/vgg/model/vgg16-12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/vgg/model/vgg16-12-int8.tar.gz",
             "model_with_data_sha": "75c08988b598e24173a21a7dc0b396ca9dc49afb63be35e5c993ac56b297e4cf",
             "model_with_data_bytes": 106112057
         }
     },
     {
         "model": "VGG 16-qdq",
-        "model_path": "archive/vision/classification/vgg/model/vgg16-12-qdq.onnx",
+        "model_path": "validated/vision/classification/vgg/model/vgg16-12-qdq.onnx",
         "onnx_version": "1.9.0",
         "opset_version": 12,
         "metadata": {
@@ -5945,14 +5945,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/vgg/model/vgg16-12-qdq.tar.gz",
+            "model_with_data_path": "validated/vision/classification/vgg/model/vgg16-12-qdq.tar.gz",
             "model_with_data_sha": "ba8f1a789554deab15d28a3c4e6a1508595c326d36e5d744e8d5acf2729f7621",
             "model_with_data_bytes": 103626016
         }
     },
     {
         "model": "VGG 16-fp32",
-        "model_path": "archive/vision/classification/vgg/model/vgg16-12.onnx",
+        "model_path": "validated/vision/classification/vgg/model/vgg16-12.onnx",
         "onnx_version": "1.9.0",
         "opset_version": 12,
         "metadata": {
@@ -5987,14 +5987,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/vgg/model/vgg16-12.tar.gz",
+            "model_with_data_path": "validated/vision/classification/vgg/model/vgg16-12.tar.gz",
             "model_with_data_sha": "bab278d40411f29dfc2e9515c534d2871eb0393480b736855bfe7f73c312cbc6",
             "model_with_data_bytes": 511942031
         }
     },
     {
         "model": "VGG 16",
-        "model_path": "archive/vision/classification/vgg/model/vgg16-7.onnx",
+        "model_path": "validated/vision/classification/vgg/model/vgg16-7.onnx",
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
@@ -6040,14 +6040,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/vgg/model/vgg16-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/vgg/model/vgg16-7.tar.gz",
             "model_with_data_sha": "586413f9108e2316ebf80c3aa484d55f995d693b153e4c90742750519a9e27be",
             "model_with_data_bytes": 512679010
         }
     },
     {
         "model": "VGG 16-bn",
-        "model_path": "archive/vision/classification/vgg/model/vgg16-bn-7.onnx",
+        "model_path": "validated/vision/classification/vgg/model/vgg16-bn-7.onnx",
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
@@ -6093,14 +6093,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/vgg/model/vgg16-bn-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/vgg/model/vgg16-bn-7.tar.gz",
             "model_with_data_sha": "143e59ca3000cc3b461cfe09d4c62a93bb5e9f7a0c4e5db0010e1a525fdd50bd",
             "model_with_data_bytes": 512894836
         }
     },
     {
         "model": "VGG 19",
-        "model_path": "archive/vision/classification/vgg/model/vgg19-7.onnx",
+        "model_path": "validated/vision/classification/vgg/model/vgg19-7.onnx",
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
@@ -6146,14 +6146,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/vgg/model/vgg19-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/vgg/model/vgg19-7.tar.gz",
             "model_with_data_sha": "797517bc882ea820d09f803e711c203e223b0c214b3c85412cb6c059b63325b7",
             "model_with_data_bytes": 532124692
         }
     },
     {
         "model": "VGG 19-bn",
-        "model_path": "archive/vision/classification/vgg/model/vgg19-bn-7.onnx",
+        "model_path": "validated/vision/classification/vgg/model/vgg19-bn-7.onnx",
         "onnx_version": "1.2.1",
         "opset_version": 7,
         "metadata": {
@@ -6199,14 +6199,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/vgg/model/vgg19-bn-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/vgg/model/vgg19-bn-7.tar.gz",
             "model_with_data_sha": "976427d5cbb8909784fbe3ba997fcf62a67b92c42ffd54f961c0e0748e004b1c",
             "model_with_data_bytes": 532271265
         }
     },
     {
         "model": "VGG 19-caffe2",
-        "model_path": "archive/vision/classification/vgg/model/vgg19-caffe2-3.onnx",
+        "model_path": "validated/vision/classification/vgg/model/vgg19-caffe2-3.onnx",
         "onnx_version": "1.1",
         "opset_version": 3,
         "metadata": {
@@ -6217,14 +6217,14 @@
                 "classification",
                 "vgg"
             ],
-            "model_with_data_path": "archive/vision/classification/vgg/model/vgg19-caffe2-3.tar.gz",
+            "model_with_data_path": "validated/vision/classification/vgg/model/vgg19-caffe2-3.tar.gz",
             "model_with_data_sha": "8646cc6d0252d3453328da9a15a32e82201bbf6854a865125344e2430c90a4e1",
             "model_with_data_bytes": 536839176
         }
     },
     {
         "model": "VGG 19-caffe2",
-        "model_path": "archive/vision/classification/vgg/model/vgg19-caffe2-6.onnx",
+        "model_path": "validated/vision/classification/vgg/model/vgg19-caffe2-6.onnx",
         "onnx_version": "1.1.2",
         "opset_version": 6,
         "metadata": {
@@ -6235,14 +6235,14 @@
                 "classification",
                 "vgg"
             ],
-            "model_with_data_path": "archive/vision/classification/vgg/model/vgg19-caffe2-6.tar.gz",
+            "model_with_data_path": "validated/vision/classification/vgg/model/vgg19-caffe2-6.tar.gz",
             "model_with_data_sha": "289f11496aaa99ca1fe68ea0912b96bfaae4dcc55263187dfdc844e6f5022522",
             "model_with_data_bytes": 536839354
         }
     },
     {
         "model": "VGG 19-caffe2",
-        "model_path": "archive/vision/classification/vgg/model/vgg19-caffe2-7.onnx",
+        "model_path": "validated/vision/classification/vgg/model/vgg19-caffe2-7.onnx",
         "onnx_version": "1.2",
         "opset_version": 7,
         "metadata": {
@@ -6288,14 +6288,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/vgg/model/vgg19-caffe2-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/vgg/model/vgg19-caffe2-7.tar.gz",
             "model_with_data_sha": "4af84e5006a0196facad8add53094424a22809ef97e434215a923b20fc1a528b",
             "model_with_data_bytes": 534082025
         }
     },
     {
         "model": "VGG 19-caffe2",
-        "model_path": "archive/vision/classification/vgg/model/vgg19-caffe2-8.onnx",
+        "model_path": "validated/vision/classification/vgg/model/vgg19-caffe2-8.onnx",
         "onnx_version": "1.3",
         "opset_version": 8,
         "metadata": {
@@ -6341,14 +6341,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/vgg/model/vgg19-caffe2-8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/vgg/model/vgg19-caffe2-8.tar.gz",
             "model_with_data_sha": "1f6254d85d8a102e36a1c2c4ebd7b1f5831d95fd8255a81a0411f24b3c38381e",
             "model_with_data_bytes": 534082067
         }
     },
     {
         "model": "VGG 19-caffe2",
-        "model_path": "archive/vision/classification/vgg/model/vgg19-caffe2-9.onnx",
+        "model_path": "validated/vision/classification/vgg/model/vgg19-caffe2-9.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -6394,14 +6394,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/vgg/model/vgg19-caffe2-9.tar.gz",
+            "model_with_data_path": "validated/vision/classification/vgg/model/vgg19-caffe2-9.tar.gz",
             "model_with_data_sha": "bf7f96d04f4b635a8a37efd4540ea35958d52201971e91cb74bb55c89e6f4d5c",
             "model_with_data_bytes": 534081932
         }
     },
     {
         "model": "ZFNet-512-int8",
-        "model_path": "archive/vision/classification/zfnet-512/model/zfnet512-12-int8.onnx",
+        "model_path": "validated/vision/classification/zfnet-512/model/zfnet512-12-int8.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -6436,14 +6436,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/zfnet-512/model/zfnet512-12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/zfnet-512/model/zfnet512-12-int8.tar.gz",
             "model_with_data_sha": "786528fcfddff5da00cb87ac18fda53e84a1f3eaeaa80d3f57a1c8522b6fd3da",
             "model_with_data_bytes": 50270897
         }
     },
     {
         "model": "ZFNet-512-qdq",
-        "model_path": "archive/vision/classification/zfnet-512/model/zfnet512-12-qdq.onnx",
+        "model_path": "validated/vision/classification/zfnet-512/model/zfnet512-12-qdq.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -6478,14 +6478,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/zfnet-512/model/zfnet512-12-qdq.tar.gz",
+            "model_with_data_path": "validated/vision/classification/zfnet-512/model/zfnet512-12-qdq.tar.gz",
             "model_with_data_sha": "b65d9e14088acabfd11efccc7601cad1697b5ab48fe6074c41f15c9f7b5fed8c",
             "model_with_data_bytes": 58038148
         }
     },
     {
         "model": "ZFNet-512",
-        "model_path": "archive/vision/classification/zfnet-512/model/zfnet512-12.onnx",
+        "model_path": "validated/vision/classification/zfnet-512/model/zfnet512-12.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -6531,14 +6531,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/zfnet-512/model/zfnet512-12.tar.gz",
+            "model_with_data_path": "validated/vision/classification/zfnet-512/model/zfnet512-12.tar.gz",
             "model_with_data_sha": "8b06a4b6bf8d58f1810828cde5861cc5e8bfd72738be55da41460f965521dfe2",
             "model_with_data_bytes": 323924791
         }
     },
     {
         "model": "ZFNet-512",
-        "model_path": "archive/vision/classification/zfnet-512/model/zfnet512-3.onnx",
+        "model_path": "validated/vision/classification/zfnet-512/model/zfnet512-3.onnx",
         "onnx_version": "1.1",
         "opset_version": 3,
         "metadata": {
@@ -6549,14 +6549,14 @@
                 "classification",
                 "zfnet-512"
             ],
-            "model_with_data_path": "archive/vision/classification/zfnet-512/model/zfnet512-3.tar.gz",
+            "model_with_data_path": "validated/vision/classification/zfnet-512/model/zfnet512-3.tar.gz",
             "model_with_data_sha": "de9a1f2db305eb6362d6262758203cd6ba6d29431fef5fb569acde1d3dff1732",
             "model_with_data_bytes": 325256523
         }
     },
     {
         "model": "ZFNet-512",
-        "model_path": "archive/vision/classification/zfnet-512/model/zfnet512-6.onnx",
+        "model_path": "validated/vision/classification/zfnet-512/model/zfnet512-6.onnx",
         "onnx_version": "1.1.2",
         "opset_version": 6,
         "metadata": {
@@ -6567,14 +6567,14 @@
                 "classification",
                 "zfnet-512"
             ],
-            "model_with_data_path": "archive/vision/classification/zfnet-512/model/zfnet512-6.tar.gz",
+            "model_with_data_path": "validated/vision/classification/zfnet-512/model/zfnet512-6.tar.gz",
             "model_with_data_sha": "01b7de071b9a17b3654039a648c1571db272ed83af2d58776c0951271e3481da",
             "model_with_data_bytes": 326891392
         }
     },
     {
         "model": "ZFNet-512",
-        "model_path": "archive/vision/classification/zfnet-512/model/zfnet512-7.onnx",
+        "model_path": "validated/vision/classification/zfnet-512/model/zfnet512-7.onnx",
         "onnx_version": "1.2",
         "opset_version": 7,
         "metadata": {
@@ -6620,14 +6620,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/zfnet-512/model/zfnet512-7.tar.gz",
+            "model_with_data_path": "validated/vision/classification/zfnet-512/model/zfnet512-7.tar.gz",
             "model_with_data_sha": "531c9010f14056a332b7148914473dc8bf4f0c42b3d68c9bd23f224d0967ce17",
             "model_with_data_bytes": 324181951
         }
     },
     {
         "model": "ZFNet-512",
-        "model_path": "archive/vision/classification/zfnet-512/model/zfnet512-8.onnx",
+        "model_path": "validated/vision/classification/zfnet-512/model/zfnet512-8.onnx",
         "onnx_version": "1.3",
         "opset_version": 8,
         "metadata": {
@@ -6673,14 +6673,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/zfnet-512/model/zfnet512-8.tar.gz",
+            "model_with_data_path": "validated/vision/classification/zfnet-512/model/zfnet512-8.tar.gz",
             "model_with_data_sha": "797a462613065ee77f84d549d80d1bfde88314f741a10e8c83d4f406b1bc517b",
             "model_with_data_bytes": 324182001
         }
     },
     {
         "model": "ZFNet-512",
-        "model_path": "archive/vision/classification/zfnet-512/model/zfnet512-9.onnx",
+        "model_path": "validated/vision/classification/zfnet-512/model/zfnet512-9.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -6726,14 +6726,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/classification/zfnet-512/model/zfnet512-9.tar.gz",
+            "model_with_data_path": "validated/vision/classification/zfnet-512/model/zfnet512-9.tar.gz",
             "model_with_data_sha": "4e90c1f5f82fc6e4a1056b42cf967f9a54363bfd3d7f2b404ea260cefbc57518",
             "model_with_data_bytes": 324181833
         }
     },
     {
         "model": "ResNet101_DUC_HDC-12-int8",
-        "model_path": "archive/vision/object_detection_segmentation/duc/model/ResNet101-DUC-12-int8.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/duc/model/ResNet101-DUC-12-int8.onnx",
         "onnx_version": "1.9.0",
         "opset_version": 12,
         "metadata": {
@@ -6769,14 +6769,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/duc/model/ResNet101-DUC-12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/duc/model/ResNet101-DUC-12-int8.tar.gz",
             "model_with_data_sha": "0955ab4564ccb54128639eacc0f57aa3d75be5da0f88c9e7de67ca0c1d286947",
             "model_with_data_bytes": 71077085
         }
     },
     {
         "model": "ResNet101_DUC_HDC-12",
-        "model_path": "archive/vision/object_detection_segmentation/duc/model/ResNet101-DUC-12.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/duc/model/ResNet101-DUC-12.onnx",
         "onnx_version": "1.9.0",
         "opset_version": 12,
         "metadata": {
@@ -6812,14 +6812,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/duc/model/ResNet101-DUC-12.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/duc/model/ResNet101-DUC-12.tar.gz",
             "model_with_data_sha": "33753b1118846c5e5eda4564c346f615fe1c42db82da8e4ae77c9509380dc46a",
             "model_with_data_bytes": 259342514
         }
     },
     {
         "model": "ResNet101_DUC_HDC",
-        "model_path": "archive/vision/object_detection_segmentation/duc/model/ResNet101-DUC-7.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/duc/model/ResNet101-DUC-7.onnx",
         "onnx_version": "1.2.2",
         "opset_version": 7,
         "metadata": {
@@ -6855,14 +6855,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/duc/model/ResNet101-DUC-7.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/duc/model/ResNet101-DUC-7.tar.gz",
             "model_with_data_sha": "bd14b6dc0dc49412edbb9828494876cf9afc94ea52496ba6a11794619872b61c",
             "model_with_data_bytes": 259587240
         }
     },
     {
         "model": "Faster R-CNN R-50-FPN",
-        "model_path": "archive/vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-10.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-10.onnx",
         "onnx_version": "1.5",
         "opset_version": 10,
         "metadata": {
@@ -6910,14 +6910,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-10.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-10.tar.gz",
             "model_with_data_sha": "99e70d1e9b2902f6d402a235e994ed8242d0b04b59f799eb09ff88bff55acb1d",
             "model_with_data_bytes": 155190684
         }
     },
     {
         "model": "Faster R-CNN R-50-FPN-int8",
-        "model_path": "archive/vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12-int8.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12-int8.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -6965,14 +6965,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12-int8.tar.gz",
             "model_with_data_sha": "9edf754e3e4e6e78aed9a9d5690299edeba27b17d4dd43635a4fbd4c0e747be0",
             "model_with_data_bytes": 38497565
         }
     },
     {
         "model": "Faster R-CNN R-50-FPN-qdq",
-        "model_path": "archive/vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12-qdq.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12-qdq.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -7020,14 +7020,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12-qdq.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12-qdq.tar.gz",
             "model_with_data_sha": "90673a5a499343863af4c3f4efbed7e35c7a6c587dc37f2d5d2bf0bc77b6865a",
             "model_with_data_bytes": 29844855
         }
     },
     {
         "model": "Faster R-CNN R-50-FPN-fp32",
-        "model_path": "archive/vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -7075,14 +7075,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/faster-rcnn/model/FasterRCNN-12.tar.gz",
             "model_with_data_sha": "67208685047b27a201c1b50a3a7a0ea25161e9988bc4211adb74c85637c33860",
             "model_with_data_bytes": 163814449
         }
     },
     {
         "model": "FCN ResNet-101",
-        "model_path": "archive/vision/object_detection_segmentation/fcn/model/fcn-resnet101-11.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/fcn/model/fcn-resnet101-11.onnx",
         "onnx_version": "1.8.0",
         "opset_version": 11,
         "metadata": {
@@ -7129,14 +7129,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/fcn/model/fcn-resnet101-11.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/fcn/model/fcn-resnet101-11.tar.gz",
             "model_with_data_sha": "672ca7f736bff936f6b5fa1c8e07546f5775edc55bf33d62ae21ab372e8f6065",
             "model_with_data_bytes": 294729465
         }
     },
     {
         "model": "FCN ResNet-50",
-        "model_path": "archive/vision/object_detection_segmentation/fcn/model/fcn-resnet50-11.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/fcn/model/fcn-resnet50-11.onnx",
         "onnx_version": "1.8.0",
         "opset_version": 11,
         "metadata": {
@@ -7183,14 +7183,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/fcn/model/fcn-resnet50-11.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/fcn/model/fcn-resnet50-11.tar.gz",
             "model_with_data_sha": "05b951717bd910d9194f207373f36eb99d0dedb76c0f2526c83c6a70fb3edf0e",
             "model_with_data_bytes": 223950703
         }
     },
     {
         "model": "FCN ResNet-50-int8",
-        "model_path": "archive/vision/object_detection_segmentation/fcn/model/fcn-resnet50-12-int8.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/fcn/model/fcn-resnet50-12-int8.onnx",
         "onnx_version": "1.8.0",
         "opset_version": 12,
         "metadata": {
@@ -7237,14 +7237,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/fcn/model/fcn-resnet50-12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/fcn/model/fcn-resnet50-12-int8.tar.gz",
             "model_with_data_sha": "8e81dd5cd5625e8c544f92429e36028596b88d0574ccf72c8ebc48174508cb29",
             "model_with_data_bytes": 30117697
         }
     },
     {
         "model": "FCN ResNet-50-qdq",
-        "model_path": "archive/vision/object_detection_segmentation/fcn/model/fcn-resnet50-12-qdq.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/fcn/model/fcn-resnet50-12-qdq.onnx",
         "onnx_version": "1.8.0",
         "opset_version": 12,
         "metadata": {
@@ -7291,14 +7291,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/fcn/model/fcn-resnet50-12-qdq.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/fcn/model/fcn-resnet50-12-qdq.tar.gz",
             "model_with_data_sha": "0feb90c5e17f1fac9c21e17bd536e43aeb56c04adcf87d5eb66acc1ef57fbafe",
             "model_with_data_bytes": 21876642
         }
     },
     {
         "model": "FCN ResNet-50",
-        "model_path": "archive/vision/object_detection_segmentation/fcn/model/fcn-resnet50-12.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/fcn/model/fcn-resnet50-12.onnx",
         "onnx_version": "1.8.0",
         "opset_version": 12,
         "metadata": {
@@ -7345,14 +7345,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/fcn/model/fcn-resnet50-12.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/fcn/model/fcn-resnet50-12.tar.gz",
             "model_with_data_sha": "470813ecd5791f20f7b21c54765d8eae51b22bcf2ece668656384476f97d6075",
             "model_with_data_bytes": 131124463
         }
     },
     {
         "model": "Mask R-CNN R-50-FPN",
-        "model_path": "archive/vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-10.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-10.onnx",
         "onnx_version": "1.5",
         "opset_version": 10,
         "metadata": {
@@ -7410,14 +7410,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-10.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-10.tar.gz",
             "model_with_data_sha": "a4cea423312fac6fa9dd0300ace676df4955edc413de66eaaf00d08f30d65738",
             "model_with_data_bytes": 165013602
         }
     },
     {
         "model": "Mask R-CNN R-50-FPN-int8",
-        "model_path": "archive/vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12-int8.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12-int8.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -7475,14 +7475,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12-int8.tar.gz",
             "model_with_data_sha": "0b16a7859d04601a3633a22c07797c9975b877ff384af23d7d9698467d57d333",
             "model_with_data_bytes": 39438079
         }
     },
     {
         "model": "Mask R-CNN R-50-FPN-qdq",
-        "model_path": "archive/vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12-qdq.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12-qdq.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -7540,14 +7540,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12-qdq.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12-qdq.tar.gz",
             "model_with_data_sha": "a2b03fc6dcec9bd469ac57dab47ecca97e5b9a28d332435b6820a96925ab78b1",
             "model_with_data_bytes": 30880086
         }
     },
     {
         "model": "Mask R-CNN R-50-FPN-fp32",
-        "model_path": "archive/vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -7605,14 +7605,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/mask-rcnn/model/MaskRCNN-12.tar.gz",
             "model_with_data_sha": "6e41b51713a19119bcf0ef72120ca5362dbdd151112ea91e6a07ae6d3c82265c",
             "model_with_data_bytes": 164901207
         }
     },
     {
         "model": "RetinaNet (ResNet101 backbone)",
-        "model_path": "archive/vision/object_detection_segmentation/retinanet/model/retinanet-9.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/retinanet/model/retinanet-9.onnx",
         "onnx_version": "1.6.0",
         "opset_version": 9,
         "metadata": {
@@ -7739,14 +7739,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/retinanet/model/retinanet-9.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/retinanet/model/retinanet-9.tar.gz",
             "model_with_data_sha": "3a710eee22a7c2ae8e9d6166774d0fd7b7438146ed2d2e993b9694eb39c3addc",
             "model_with_data_bytes": 153330008
         }
     },
     {
         "model": "SSD-MobilenetV1",
-        "model_path": "archive/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_10.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_10.onnx",
         "onnx_version": "1.7.0",
         "opset_version": 10,
         "metadata": {
@@ -7805,14 +7805,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_10.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_10.tar.gz",
             "model_with_data_sha": "7a2ff9ea172ff3a88dbc7890ede008a5ec8e9ce276d866f0a846ed3007f5c3f0",
             "model_with_data_bytes": 25464564
         }
     },
     {
         "model": "SSD-MobilenetV1-12-int8",
-        "model_path": "archive/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_12-int8.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_12-int8.onnx",
         "onnx_version": "1.9.0",
         "opset_version": 12,
         "metadata": {
@@ -7871,14 +7871,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_12-int8.tar.gz",
             "model_with_data_sha": "6c77eb8d85247fceb53bf5da5755023e6c84d8c961fc722cf149f86943f5aea4",
             "model_with_data_bytes": 5804599
         }
     },
     {
         "model": "SSD-MobilenetV1-12",
-        "model_path": "archive/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_12.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_12.onnx",
         "onnx_version": "1.9.0",
         "opset_version": 12,
         "metadata": {
@@ -7937,14 +7937,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_12.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_12.tar.gz",
             "model_with_data_sha": "bb7485300ba8379f963e47278d3940cebeedba1fd1370b374aac733414d7cf9b",
             "model_with_data_bytes": 25475584
         }
     },
     {
         "model": "SSD-MobilenetV1-12-qdq",
-        "model_path": "archive/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_13-qdq.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_13-qdq.onnx",
         "onnx_version": "1.9.0",
         "opset_version": 13,
         "metadata": {
@@ -8003,14 +8003,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_13-qdq.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_13-qdq.tar.gz",
             "model_with_data_sha": "4080066b273a5171b8987a1ac96c6ce6efb935d7c15509089b1934aa63cdd17b",
             "model_with_data_bytes": 5907922
         }
     },
     {
         "model": "SSD",
-        "model_path": "archive/vision/object_detection_segmentation/ssd/model/ssd-10.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/ssd/model/ssd-10.onnx",
         "onnx_version": "1.5",
         "opset_version": 10,
         "metadata": {
@@ -8062,14 +8062,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/ssd/model/ssd-10.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/ssd/model/ssd-10.tar.gz",
             "model_with_data_sha": "5ff54f161d58e02bfc751d3264d58d484485785e71827cf2dd14620bf354c2d0",
             "model_with_data_bytes": 78515627
         }
     },
     {
         "model": "SSD-int8",
-        "model_path": "archive/vision/object_detection_segmentation/ssd/model/ssd-12-int8.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/ssd/model/ssd-12-int8.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -8121,14 +8121,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/ssd/model/ssd-12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/ssd/model/ssd-12-int8.tar.gz",
             "model_with_data_sha": "723c25c6040e1d5f7fd7ce736e236b09d6881f6f2cc6e7a79a999f3e69f86571",
             "model_with_data_bytes": 31816976
         }
     },
     {
         "model": "SSD-qdq",
-        "model_path": "archive/vision/object_detection_segmentation/ssd/model/ssd-12-qdq.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/ssd/model/ssd-12-qdq.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -8180,14 +8180,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/ssd/model/ssd-12-qdq.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/ssd/model/ssd-12-qdq.tar.gz",
             "model_with_data_sha": "2cd791e3ee5f472a208d292ef766f6b4f04c71463dcf290f9393dcce8b81d6d6",
             "model_with_data_bytes": 26976158
         }
     },
     {
         "model": "SSD",
-        "model_path": "archive/vision/object_detection_segmentation/ssd/model/ssd-12.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/ssd/model/ssd-12.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -8239,14 +8239,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/ssd/model/ssd-12.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/ssd/model/ssd-12.tar.gz",
             "model_with_data_sha": "43e57501da34abe0c01ea30902303bdb14f590f59c18fbb15ea3473810b0e86b",
             "model_with_data_bytes": 90592544
         }
     },
     {
         "model": "Tiny YOLOv2",
-        "model_path": "archive/vision/object_detection_segmentation/tiny-yolov2/model/tinyyolov2-7.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/tiny-yolov2/model/tinyyolov2-7.onnx",
         "onnx_version": "1.2",
         "opset_version": 7,
         "metadata": {
@@ -8283,14 +8283,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/tiny-yolov2/model/tinyyolov2-7.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/tiny-yolov2/model/tinyyolov2-7.tar.gz",
             "model_with_data_sha": "b20099da6c3d78ee60f1a68073eb2b522dd572c32b1787f588b822afd2d2e34c",
             "model_with_data_bytes": 60865248
         }
     },
     {
         "model": "Tiny YOLOv2",
-        "model_path": "archive/vision/object_detection_segmentation/tiny-yolov2/model/tinyyolov2-8.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/tiny-yolov2/model/tinyyolov2-8.onnx",
         "onnx_version": "1.3",
         "opset_version": 8,
         "metadata": {
@@ -8327,14 +8327,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/tiny-yolov2/model/tinyyolov2-8.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/tiny-yolov2/model/tinyyolov2-8.tar.gz",
             "model_with_data_sha": "5122c3e7dd199668fd1d99e1e36132c3ca71ae6c18c3470e7d0e3e7570f8dfbd",
             "model_with_data_bytes": 60864927
         }
     },
     {
         "model": "Tiny YOLOv3",
-        "model_path": "archive/vision/object_detection_segmentation/tiny-yolov3/model/tiny-yolov3-11.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/tiny-yolov3/model/tiny-yolov3-11.onnx",
         "onnx_version": "1.6",
         "opset_version": 11,
         "metadata": {
@@ -8396,14 +8396,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/tiny-yolov3/model/tiny-yolov3-11.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/tiny-yolov3/model/tiny-yolov3-11.tar.gz",
             "model_with_data_sha": "acdf6c64b01ad574c419efe25d8babcc17d10d49e73cd1f636b1394e1af914ee",
             "model_with_data_bytes": 34058193
         }
     },
     {
         "model": "YOLOv2",
-        "model_path": "archive/vision/object_detection_segmentation/yolov2-coco/model/yolov2-coco-9.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/yolov2-coco/model/yolov2-coco-9.onnx",
         "onnx_version": "1.5",
         "opset_version": 9,
         "metadata": {
@@ -8440,14 +8440,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/yolov2-coco/model/yolov2-coco-9.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/yolov2-coco/model/yolov2-coco-9.tar.gz",
             "model_with_data_sha": "c34966e4e96165f8db6f2549f509b6a8bdfc01ddd978e6fd07daad4e665d5383",
             "model_with_data_bytes": 191439022
         }
     },
     {
         "model": "YOLOv3",
-        "model_path": "archive/vision/object_detection_segmentation/yolov3/model/yolov3-10.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/yolov3/model/yolov3-10.onnx",
         "onnx_version": "1.5",
         "opset_version": 10,
         "metadata": {
@@ -8508,14 +8508,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/yolov3/model/yolov3-10.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/yolov3/model/yolov3-10.tar.gz",
             "model_with_data_sha": "13ca9e9fba6f2f1bcf31d62cf9b9586a04c49b5f2b8c23bc288b9b6706126c97",
             "model_with_data_bytes": 232571698
         }
     },
     {
         "model": "YOLOv3-12-int8",
-        "model_path": "archive/vision/object_detection_segmentation/yolov3/model/yolov3-12-int8.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/yolov3/model/yolov3-12-int8.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -8576,14 +8576,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/yolov3/model/yolov3-12-int8.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/yolov3/model/yolov3-12-int8.tar.gz",
             "model_with_data_sha": "1cbd40e1489553cd5fb03a0eb3059af9f8f0262a963f023dce0ecf3b9dcf90c6",
             "model_with_data_bytes": 58205845
         }
     },
     {
         "model": "YOLOv3-12",
-        "model_path": "archive/vision/object_detection_segmentation/yolov3/model/yolov3-12.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/yolov3/model/yolov3-12.onnx",
         "onnx_version": "1.9",
         "opset_version": 12,
         "metadata": {
@@ -8644,14 +8644,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/yolov3/model/yolov3-12.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/yolov3/model/yolov3-12.tar.gz",
             "model_with_data_sha": "bcd5021e0aaa492ce9f629466974092244710337d07e6887fc7854932b6ae0a3",
             "model_with_data_bytes": 232651839
         }
     },
     {
         "model": "YOLOv4",
-        "model_path": "archive/vision/object_detection_segmentation/yolov4/model/yolov4.onnx",
+        "model_path": "validated/vision/object_detection_segmentation/yolov4/model/yolov4.onnx",
         "onnx_version": "1.6",
         "opset_version": 11,
         "metadata": {
@@ -8711,14 +8711,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/object_detection_segmentation/yolov4/model/yolov4.tar.gz",
+            "model_with_data_path": "validated/vision/object_detection_segmentation/yolov4/model/yolov4.tar.gz",
             "model_with_data_sha": "7d06db57b6b4fff4f75dd3bd16f29b32faec4552d763869d5a3c37d25542cbb2",
             "model_with_data_bytes": 243453644
         }
     },
     {
         "model": "Candy",
-        "model_path": "archive/vision/style_transfer/fast_neural_style/model/candy-8.onnx",
+        "model_path": "validated/vision/style_transfer/fast_neural_style/model/candy-8.onnx",
         "onnx_version": "1.4",
         "opset_version": 8,
         "metadata": {
@@ -8755,14 +8755,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/style_transfer/fast_neural_style/model/candy-8.tar.gz",
+            "model_with_data_path": "validated/vision/style_transfer/fast_neural_style/model/candy-8.tar.gz",
             "model_with_data_sha": "e6a40c8d1b5f6b680f4c770ac9ec5a26638fea1439bb2561e71a3a4a55c1e8a7",
             "model_with_data_bytes": 7338783
         }
     },
     {
         "model": "Candy",
-        "model_path": "archive/vision/style_transfer/fast_neural_style/model/candy-9.onnx",
+        "model_path": "validated/vision/style_transfer/fast_neural_style/model/candy-9.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -8799,14 +8799,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/style_transfer/fast_neural_style/model/candy-9.tar.gz",
+            "model_with_data_path": "validated/vision/style_transfer/fast_neural_style/model/candy-9.tar.gz",
             "model_with_data_sha": "7647c08408079b400f95526bf15e21a247af2112ca7019396fc6945b76f9cb33",
             "model_with_data_bytes": 7338825
         }
     },
     {
         "model": "Mosaic",
-        "model_path": "archive/vision/style_transfer/fast_neural_style/model/mosaic-8.onnx",
+        "model_path": "validated/vision/style_transfer/fast_neural_style/model/mosaic-8.onnx",
         "onnx_version": "1.4",
         "opset_version": 8,
         "metadata": {
@@ -8843,14 +8843,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/style_transfer/fast_neural_style/model/mosaic-8.tar.gz",
+            "model_with_data_path": "validated/vision/style_transfer/fast_neural_style/model/mosaic-8.tar.gz",
             "model_with_data_sha": "2b3090c84a0e28fe00fc162b764c8946186a33535eee6250e2595429ac309346",
             "model_with_data_bytes": 7333067
         }
     },
     {
         "model": "Mosaic",
-        "model_path": "archive/vision/style_transfer/fast_neural_style/model/mosaic-9.onnx",
+        "model_path": "validated/vision/style_transfer/fast_neural_style/model/mosaic-9.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -8887,14 +8887,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/style_transfer/fast_neural_style/model/mosaic-9.tar.gz",
+            "model_with_data_path": "validated/vision/style_transfer/fast_neural_style/model/mosaic-9.tar.gz",
             "model_with_data_sha": "e7d395a1a2d8776a2bdf27adf9b581a5bb2dc94d2ea47c54791cdc55afcae7a0",
             "model_with_data_bytes": 7333449
         }
     },
     {
         "model": "Pointilism",
-        "model_path": "archive/vision/style_transfer/fast_neural_style/model/pointilism-8.onnx",
+        "model_path": "validated/vision/style_transfer/fast_neural_style/model/pointilism-8.onnx",
         "onnx_version": "1.4",
         "opset_version": 8,
         "metadata": {
@@ -8931,14 +8931,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/style_transfer/fast_neural_style/model/pointilism-8.tar.gz",
+            "model_with_data_path": "validated/vision/style_transfer/fast_neural_style/model/pointilism-8.tar.gz",
             "model_with_data_sha": "e67096dba8f00a30b86422868563f1c299565592314778e42033b87d46ba1ca8",
             "model_with_data_bytes": 7333381
         }
     },
     {
         "model": "Pointilism",
-        "model_path": "archive/vision/style_transfer/fast_neural_style/model/pointilism-9.onnx",
+        "model_path": "validated/vision/style_transfer/fast_neural_style/model/pointilism-9.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -8975,14 +8975,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/style_transfer/fast_neural_style/model/pointilism-9.tar.gz",
+            "model_with_data_path": "validated/vision/style_transfer/fast_neural_style/model/pointilism-9.tar.gz",
             "model_with_data_sha": "ceac242d7e058391b317fccc656c43be9e58a148036027dd38d6b1bd4ac040fd",
             "model_with_data_bytes": 7335554
         }
     },
     {
         "model": "Rain Princess",
-        "model_path": "archive/vision/style_transfer/fast_neural_style/model/rain-princess-8.onnx",
+        "model_path": "validated/vision/style_transfer/fast_neural_style/model/rain-princess-8.onnx",
         "onnx_version": "1.4",
         "opset_version": 8,
         "metadata": {
@@ -9019,14 +9019,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/style_transfer/fast_neural_style/model/rain-princess-8.tar.gz",
+            "model_with_data_path": "validated/vision/style_transfer/fast_neural_style/model/rain-princess-8.tar.gz",
             "model_with_data_sha": "483c273fd3c293417250329cb9c64d68c19c1cf5a1c8e4a375ff92a00b3cb972",
             "model_with_data_bytes": 7344452
         }
     },
     {
         "model": "Rain Princess",
-        "model_path": "archive/vision/style_transfer/fast_neural_style/model/rain-princess-9.onnx",
+        "model_path": "validated/vision/style_transfer/fast_neural_style/model/rain-princess-9.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -9063,14 +9063,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/style_transfer/fast_neural_style/model/rain-princess-9.tar.gz",
+            "model_with_data_path": "validated/vision/style_transfer/fast_neural_style/model/rain-princess-9.tar.gz",
             "model_with_data_sha": "8c35f1d7c72c3d89ff2b61163a9715b3701c80603a38b6df28373162d48e895a",
             "model_with_data_bytes": 7344974
         }
     },
     {
         "model": "Udnie",
-        "model_path": "archive/vision/style_transfer/fast_neural_style/model/udnie-8.onnx",
+        "model_path": "validated/vision/style_transfer/fast_neural_style/model/udnie-8.onnx",
         "onnx_version": "1.4",
         "opset_version": 8,
         "metadata": {
@@ -9107,14 +9107,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/style_transfer/fast_neural_style/model/udnie-8.tar.gz",
+            "model_with_data_path": "validated/vision/style_transfer/fast_neural_style/model/udnie-8.tar.gz",
             "model_with_data_sha": "81768986c46484c6f48f6c43d8ba267a9fa52e5eed691239e60c26e3f672299c",
             "model_with_data_bytes": 7339429
         }
     },
     {
         "model": "Udnie",
-        "model_path": "archive/vision/style_transfer/fast_neural_style/model/udnie-9.onnx",
+        "model_path": "validated/vision/style_transfer/fast_neural_style/model/udnie-9.onnx",
         "onnx_version": "1.4",
         "opset_version": 9,
         "metadata": {
@@ -9151,14 +9151,14 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/style_transfer/fast_neural_style/model/udnie-9.tar.gz",
+            "model_with_data_path": "validated/vision/style_transfer/fast_neural_style/model/udnie-9.tar.gz",
             "model_with_data_sha": "713f43d88764577218b25e4820b4fc75fe1b547d59c9bfcfa0349cbdbfd84a1e",
             "model_with_data_bytes": 7338543
         }
     },
     {
         "model": "Super_Resolution",
-        "model_path": "archive/vision/super_resolution/sub_pixel_cnn_2016/model/super-resolution-10.onnx",
+        "model_path": "validated/vision/super_resolution/sub_pixel_cnn_2016/model/super-resolution-10.onnx",
         "onnx_version": "1.5.0",
         "opset_version": 10,
         "metadata": {
@@ -9195,7 +9195,7 @@
                     }
                 ]
             },
-            "model_with_data_path": "archive/vision/super_resolution/sub_pixel_cnn_2016/model/super-resolution-10.tar.gz",
+            "model_with_data_path": "validated/vision/super_resolution/sub_pixel_cnn_2016/model/super-resolution-10.tar.gz",
             "model_with_data_sha": "15810206d8a5a57a6cc4caa9aa2bd712d3a144a2098b2ec31b5074714c4aeeac",
             "model_with_data_bytes": 2079037
         }
