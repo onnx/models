@@ -1,236 +1,487 @@
+class DataFetcher {
+  constructor() {
+    this.onnxRepoContentPath =
+      "https://api.github.com/repos/onnx/models/git/trees/main?recursive=1";
+    this.yamlRepoFilePath =
+      "https://raw.githubusercontent.com/onnx/models/main";
 
-let currentPage = 1;
-const itemsPerPage = 36;
+    this.onnxFiles = [];
+    this.yamlFiles = {};
 
-const renderCards = function (data) {
-  // function renderCards(data) {
-  const mainContent = document.getElementById('main-content');
-  mainContent.innerHTML = '';
-  const start = (currentPage - 1) * itemsPerPage;
-  const end = start + itemsPerPage;
-  const pageData = data.slice(start, end);
-  pageData.forEach(item => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `<h3>${item.title}</h3><p>${item.description}<br>Author: ${item.author}<br>Opset: ${item.opset}</p>`;
-    const downloadButton = document.createElement('div');
-    downloadButton.className = 'download-button';
-    downloadButton.addEventListener('click', () => window.open(item.downloadUrl, '_blank'));
-    const downloadArrow = document.createElement('div');
-    downloadArrow.className = 'download-arrow';
-    downloadButton.appendChild(downloadArrow);
-    card.appendChild(downloadButton);
-    mainContent.appendChild(card);
-  });
-  const pageInfo = document.getElementById('page-info');
-  const totalPages = Math.ceil(data.length / itemsPerPage);
-  if (pageInfo)
-    pageInfo.textContent = `${currentPage}/${totalPages}`;
-};
+    this.yamlFileDetails = [];
 
-document.addEventListener('DOMContentLoaded', function () {
-  const authorFilterContainer = document.getElementById('author-filters');
-  const taskFilterContainer = document.getElementById('task-filters');
-  const opsetFilterContainer = document.getElementById('opset-filters');
+    this.paginationInfo = { currentPage: 1, itemsPerPage: 20, totalPages: 0 };
 
-  let tasksSet = new Set();  // Create a new Set object for tasks
-  let filteredData = [];
-  let authorsSet = new Set();
-  let opsetSet = new Set();
+    this.availableFilters = {
+      authorsSet: new Set(),
+      opsetSet: new Set(),
+      tasksSet: new Set(),
+    };
 
-  async function fetchData() {
-    // Show loading indicator
-    document.getElementById('loading-indicator').style.display = 'block';
-    const response = await fetch('https://api.github.com/repos/onnx/models/git/trees/main?recursive=1');
+    this.activeFilters = {
+      activeAuthorsSet: new Set(),
+      activeOpsetSet: new Set(),
+      activeTasksSet: new Set(),
+      searchFilter: null,
+    };
+  }
+
+  async fetchOnnxYamlFilesData() {
+    const response = await fetch(this.onnxRepoContentPath);
     const data = await response.json();
-    const onnxFiles = data.tree.filter(item => item.path.endsWith('.onnx') && !item.path.includes('archive/'));
-    const yamlFiles = data.tree.filter(item => item.path.endsWith('turnkey_stats.yaml'));
-  
-    // Create a promise for each YAML file fetch operation
-    const fetchYamlPromises = onnxFiles.map(file => {
-      const pathParts = file.path.split('/');
-      const parentDir = pathParts.slice(0, -1).join('/');
-      const yamlFile = yamlFiles.find(yaml => yaml.path === `${parentDir}/turnkey_stats.yaml`);
-      if (yamlFile) {
-        return fetch(`https://raw.githubusercontent.com/onnx/models/main/${yamlFile.path}`)
-          .then(response => response.text())
-          .then(yamlText => ({ file, yamlText }))
-          .catch(error => {
-            console.error('Error fetching YAML:', error);
-            return { file, yamlText: null };  // Ensure the structure is consistent for error cases
-          });
+
+    data.tree.forEach((item) => {
+      if (item.path.endsWith(".onnx") && !item.path.includes("validated/")) {
+        this.onnxFiles.push(item);
       }
-      // If no YAML file is associated, resolve to null
-      return Promise.resolve({ file, yamlText: null });
+
+      if (item.path.endsWith("turnkey_stats.yaml")) {
+        this.yamlFiles[item.path] = item.path;
+      }
     });
-  
-    // Wait for all the YAML fetch operations to complete
-    const results = await Promise.all(fetchYamlPromises);
-  
-    // Process the results to create model data
-    const modelData = results.map(({ file, yamlText }) => {
-      let modelTitle = file.path.split('/').pop().replace('.onnx', ''); // Default to ONNX file name
-      let author = 'Unknown';
-      let opset = 'NA';
-      let task = 'NA';
-  
+
+    this.paginationInfo.totalPages = Math.ceil(
+      this.onnxFiles.length / this.paginationInfo.itemsPerPage
+    );
+
+    return { onnxFiles: this.onnxFiles, yamlFiles: this.yamlFiles };
+  }
+
+  async fetchYamlFileDetails(onnxFilesList, yamlFilesMap) {
+    const yamlFilePromises = onnxFilesList.map((file) => {
+      const pathParts = file.path.split("/");
+      const parentDir = pathParts.slice(0, -1).join("/");
+
+      const yamlFile = yamlFilesMap[`${parentDir}/turnkey_stats.yaml`];
+
+      if (yamlFile) {
+        return fetch(`${this.yamlRepoFilePath}/${yamlFile}`)
+          .then((response) => response.text())
+          .then((yamlText) => ({ file, yamlText }))
+          .catch((error) => {
+            console.error("Error fetching YAML:", error);
+            return { file, yamlText: null }; // Ensure the structure is consistent for error cases
+          });
+      } else {
+        // If no YAML file is associated, resolve to null
+        console.log("missing yaml file", file);
+        return Promise.resolve({ file, yamlText: null });
+      }
+    });
+
+    const yamlFilePromiseResults = await Promise.all(yamlFilePromises);
+    const processedYamlFileDetails = this.processYamlFileModels(
+      yamlFilePromiseResults
+    );
+
+    this.yamlFileDetails = this.yamlFileDetails.concat(
+      processedYamlFileDetails
+    );
+
+    return processedYamlFileDetails;
+  }
+
+  getFilteredResults(resetToFirstPage) {
+    const { activeAuthorsSet, activeTasksSet, activeOpsetSet, searchFilter } =
+      this.activeFilters;
+
+    let filteredData = this.yamlFileDetails.filter((item) => {
+      const authorMatches =
+        activeAuthorsSet.size === 0 || activeAuthorsSet.has(item.author);
+      const taskMatches =
+        activeTasksSet.size === 0 ||
+        activeTasksSet.has(item.description.split(": ")[1]);
+      const opsetMatches =
+        activeOpsetSet.size === 0 || activeOpsetSet.has(item.opset);
+      return authorMatches && taskMatches && opsetMatches;
+    });
+
+    if (searchFilter) {
+      filteredData = filteredData.filter((item) =>
+        item.title.toLowerCase().includes(searchFilter)
+      );
+    }
+
+    if (resetToFirstPage) {
+      this.paginationInfo.currentPage = 1;
+      this.paginationInfo.totalPages = Math.ceil(
+        filteredData.length / this.paginationInfo.itemsPerPage
+      );
+    }
+
+    return filteredData;
+  }
+
+  getPaginatedFilteredResults(resetToFirstPage) {
+    const filteredData = this.getFilteredResults(resetToFirstPage);
+
+    const currentPageIndexStart =
+      (this.paginationInfo.currentPage - 1) * this.paginationInfo.itemsPerPage;
+    const currentPageIndexEnd =
+      currentPageIndexStart + this.paginationInfo.itemsPerPage;
+
+    return filteredData.slice(currentPageIndexStart, currentPageIndexEnd);
+  }
+
+  processYamlFileModels(yamlFileDetails) {
+    return yamlFileDetails.map(({ file, yamlText }) => {
+      let modelTitle = file.path.split("/").pop().replace(".onnx", ""); // Default to ONNX file name
+      let author = "Unknown";
+      let opset = "NA";
+      let task = "NA";
+
       if (yamlText) {
-        const yamlLines = yamlText.split('\n');
+        const yamlLines = yamlText.split("\n");
         let insideOnnxModelInfo = false;
-  
+
         for (const line of yamlLines) {
-          if (line.startsWith('onnx_model_information:')) {
+          if (line.startsWith("onnx_model_information:")) {
             insideOnnxModelInfo = true;
             continue;
           }
           if (insideOnnxModelInfo) {
-            if (line.startsWith('  opset:')) {
-              opset = line.split(':')[1].trim();
+            if (line.startsWith("  opset:")) {
+              opset = line.split(":")[1].trim();
             }
-            if (!line.startsWith('  ')) {
+            if (!line.startsWith("  ")) {
               insideOnnxModelInfo = false;
             }
           }
         }
-  
-        const modelNameLine = yamlLines.find(line => line.startsWith('model_name:'));
-        const authorLine = yamlLines.find(line => line.startsWith('author:'));
-        const opsetLine = yamlLines.find(line => line.startsWith('opset:'));
-        const taskLine = yamlLines.find(line => line.startsWith('task:'));
-  
+
+        const modelNameLine = yamlLines.find((line) =>
+          line.startsWith("model_name:")
+        );
+        const authorLine = yamlLines.find((line) => line.startsWith("author:"));
+        const opsetLine = yamlLines.find((line) => line.startsWith("opset:"));
+        const taskLine = yamlLines.find((line) => line.startsWith("task:"));
+
         if (modelNameLine) {
-          modelTitle = modelNameLine.split(':')[1].trim();
+          modelTitle = modelNameLine.split(":")[1].trim();
         }
         if (authorLine) {
-          author = authorLine.split(':')[1].trim();
-          authorsSet.add(author);
+          author = authorLine.split(":")[1].trim();
         }
         if (opsetLine) {
-          opset = opsetLine.split(':')[1].trim();
-          opsetSet.add(opset);
+          opset = opsetLine.split(":")[1].trim();
         }
         if (taskLine) {
-          task = taskLine.split(':')[1].trim().toLowerCase()
-            .replace(/_/g, ' ')
-            .split(' ')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
-          tasksSet.add(task);
+          task = taskLine
+            .split(":")[1]
+            .trim()
+            .toLowerCase()
+            .replace(/_/g, " ")
+            .split(" ")
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(" ");
         }
       }
-  
+
+      this.availableFilters.authorsSet.add(author);
+      this.availableFilters.tasksSet.add(task);
+      this.availableFilters.opsetSet.add(opset);
+
       return {
         title: modelTitle,
         description: `Task: ${task}`,
         author,
+        task,
         opset,
-        downloadUrl: `https://github.com/onnx/models/raw/main/${file.path}`
+        downloadUrl: `https://github.com/onnx/models/raw/main/${file.path}`,
       };
     });
-  
-    // Update the filter buttons in the UI
-    authorsSet.forEach(author => {
-      const authorFilter = document.createElement('div');
-      authorFilter.className = 'filter-button';
-      authorFilter.setAttribute('data-value', author);
-      authorFilter.textContent = author;
-      authorFilterContainer.appendChild(authorFilter);
-    });
-  
-    tasksSet.forEach(task => {
-      const taskFilter = document.createElement('div');
-      taskFilter.className = 'filter-button';
-      taskFilter.setAttribute('data-value', task);
-      taskFilter.textContent = task;
-      taskFilterContainer.appendChild(taskFilter);
-    });
-  
-    opsetSet.forEach(opset => {
-      const opsetFilter = document.createElement('div');
-      opsetFilter.className = 'filter-button';
-      opsetFilter.setAttribute('data-value', opset);
-      opsetFilter.textContent = opset;
-      opsetFilterContainer.appendChild(opsetFilter);
-    });
-    
-    // Hide loading indicator when data is ready
-    document.getElementById('loading-indicator').style.display = 'none';
-    return modelData;
   }
 
-  fetchData().then(data => {
-    filteredData = data;
-    renderCards(data);
+  updateAvailableFilters(yamlFileDetails) {
+    yamlFileDetails.forEach((item) => {
+      this.availableFilters.authorsSet.add(item.author);
+      this.availableFilters.tasksSet.add(item.task);
+      this.availableFilters.opsetSet.add(item.opset);
+    });
+  }
+}
 
-    let activeAuthorFilters = new Set();
-    let activeTaskFilters = new Set();
-    let activeOpsetFilters = new Set();
+class RenderUI {
+  renderCard(cardData) {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `<h3>${cardData.title}</h3><p>${cardData.description}<br>Author: ${cardData.author}<br>Opset: ${cardData.opset}</p>`;
 
-    const filterOptions = document.querySelectorAll('.filter-button');
+    const downloadButton = document.createElement("div");
+    downloadButton.className = "download-button";
 
-    filterOptions.forEach(option => {
-      option.addEventListener('click', function () {
-        this.classList.toggle('active');
-        const filterValue = this.getAttribute('data-value');
+    downloadButton.addEventListener("click", () =>
+      window.open(cardData.downloadUrl, "_blank")
+    );
+
+    const downloadArrow = document.createElement("i");
+    downloadArrow.className = "fa-solid fa-download";
+    downloadButton.appendChild(downloadArrow);
+    card.appendChild(downloadButton);
+
+    return card;
+  }
+
+  renderCards(paginatedCardsData) {
+    const cardsContent = document.getElementById("cards-content");
+    cardsContent.innerHTML = "";
+
+    if (!paginatedCardsData || paginatedCardsData.length == 0) {
+      cardsContent.innerHTML = "No results matching the filters";
+      document.getElementById("pagination").style.visibility = "hidden";
+    } else {
+      document.getElementById("pagination").style.visibility = "visible";
+
+      paginatedCardsData.forEach((item) => {
+        const card = this.renderCard(item);
+        cardsContent.appendChild(card);
+      });
+    }
+  }
+
+  renderPaginationInfo(paginationInfo) {
+    const pageInfo = document.getElementById("page-info");
+
+    if (pageInfo) {
+      pageInfo.textContent = `${paginationInfo.currentPage}/${paginationInfo.totalPages}`;
+
+      const prevPage = document.getElementById("prev-page");
+      const nextPage = document.getElementById("next-page");
+
+      if (paginationInfo.currentPage == 1) {
+        prevPage.style.opacity = "50%";
+        prevPage.style["pointer-events"] = "none";
+        prevPage.style.cursor = "default";
+      } else {
+        prevPage.style.opacity = "100%";
+        prevPage.style["pointer-events"] = "all";
+        prevPage.style.cursor = "pointer";
+      }
+
+      if (paginationInfo.currentPage == paginationInfo.totalPages) {
+        nextPage.style.opacity = "50%";
+        nextPage.style["pointer-events"] = "none";
+        nextPage.style.cursor = "default";
+      } else {
+        nextPage.style.opacity = "100%";
+        nextPage.style["pointer-events"] = "all";
+        nextPage.style.cursor = "pointer";
+      }
+    }
+  }
+
+  renderPage(dataFetcher, resetToFirstPage) {
+    this.renderCards(dataFetcher.getPaginatedFilteredResults(resetToFirstPage));
+    this.renderPaginationInfo(dataFetcher.paginationInfo);
+    this.renderFilters(dataFetcher.availableFilters, dataFetcher.activeFilters);
+
+    this.attachFiltersEventListeners(dataFetcher);
+  }
+
+  renderFilters(filtersData, activeFiltersData) {
+    if (!filtersData || !activeFiltersData) return;
+
+    const { authorsSet, tasksSet, opsetSet } = filtersData;
+    const { activeAuthorsSet, activeTasksSet, activeOpsetSet } =
+      activeFiltersData;
+
+    const authorFilterContainer = document.getElementById("author-filters");
+    const taskFilterContainer = document.getElementById("task-filters");
+    const opsetFilterContainer = document.getElementById("opset-filters");
+
+    authorFilterContainer.innerHTML = "";
+    taskFilterContainer.innerHTML = "";
+    opsetFilterContainer.innerHTML = "";
+
+    authorsSet.forEach((author) => {
+      const authorFilter = document.createElement("div");
+      authorFilter.className = "filter-button";
+      authorFilter.setAttribute("data-value", author);
+      authorFilter.textContent = author;
+
+      if (activeAuthorsSet.has(author)) {
+        authorFilter.classList.add("active");
+      } else {
+        authorFilter.classList.remove("active");
+      }
+
+      authorFilterContainer.appendChild(authorFilter);
+    });
+
+    tasksSet.forEach((task) => {
+      const taskFilter = document.createElement("div");
+      taskFilter.className = "filter-button";
+      taskFilter.setAttribute("data-value", task);
+      taskFilter.textContent = task;
+
+      if (activeTasksSet.has(task)) {
+        taskFilter.classList.add("active");
+      } else {
+        taskFilter.classList.remove("active");
+      }
+
+      taskFilterContainer.appendChild(taskFilter);
+    });
+
+    opsetSet.forEach((opset) => {
+      const opsetFilter = document.createElement("div");
+      opsetFilter.className = "filter-button";
+      opsetFilter.setAttribute("data-value", opset);
+      opsetFilter.textContent = opset;
+
+      if (activeOpsetSet.has(opset)) {
+        opsetFilter.classList.add("active");
+      } else {
+        opsetFilter.classList.remove("active");
+      }
+
+      opsetFilterContainer.appendChild(opsetFilter);
+    });
+  }
+
+  attachPaginatedEventListeners(dataFetcher) {
+    const renderUIObj = this;
+
+    // attach event listeners for pagination
+    const prevPage = document.getElementById("prev-page");
+    const nextPage = document.getElementById("next-page");
+
+    prevPage.addEventListener("click", () => {
+      if (dataFetcher.paginationInfo.currentPage > 1) {
+        dataFetcher.paginationInfo.currentPage--;
+        renderUIObj.renderPage(dataFetcher);
+      }
+    });
+
+    nextPage.addEventListener("click", () => {
+      if (
+        dataFetcher.paginationInfo.currentPage <
+        dataFetcher.paginationInfo.totalPages
+      ) {
+        dataFetcher.paginationInfo.currentPage++;
+        renderUIObj.renderPage(dataFetcher);
+      }
+    });
+  }
+
+  attachSearchBarEventListeners(dataFetcher) {
+    const renderUIObj = this;
+
+    const searchBar = document.getElementById("search-bar");
+
+    searchBar.addEventListener("input", function () {
+      dataFetcher.activeFilters.searchFilter = this.value.toLowerCase();
+      renderUIObj.renderPage(dataFetcher, true);
+    });
+  }
+
+  attachFiltersEventListeners(dataFetcher) {
+    const renderUIObj = this;
+
+    // attach event listeners for filters
+    const filterOptions = document.querySelectorAll(".filter-button");
+    filterOptions.forEach((option) => {
+      option.addEventListener("click", function () {
+        this.classList.toggle("active");
+
+        const filterValue = this.getAttribute("data-value");
         const parentContainer = this.parentElement.id;
 
         // Add or remove the filter from the appropriate set
-        if (this.classList.contains('active')) {
-          if (parentContainer === 'author-filters') {
-            activeAuthorFilters.add(filterValue);
-          } else if (parentContainer === 'task-filters') {
-            activeTaskFilters.add(filterValue);
-          } else if (parentContainer === 'opset-filters') {
-            activeOpsetFilters.add(filterValue);
+        if (this.classList.contains("active")) {
+          if (parentContainer === "author-filters") {
+            dataFetcher.activeFilters.activeAuthorsSet.add(filterValue);
+          } else if (parentContainer === "task-filters") {
+            dataFetcher.activeFilters.activeTasksSet.add(filterValue);
+          } else if (parentContainer === "opset-filters") {
+            dataFetcher.activeFilters.activeOpsetSet.add(filterValue);
           }
         } else {
-          if (parentContainer === 'author-filters') {
-            activeAuthorFilters.delete(filterValue);
-          } else if (parentContainer === 'task-filters') {
-            activeTaskFilters.delete(filterValue);
-          } else if (parentContainer === 'opset-filters') {
-            activeOpsetFilters.delete(filterValue);
-          } 
+          if (parentContainer === "author-filters") {
+            dataFetcher.activeFilters.activeAuthorsSet.delete(filterValue);
+          } else if (parentContainer === "task-filters") {
+            dataFetcher.activeFilters.activeTasksSet.delete(filterValue);
+          } else if (parentContainer === "opset-filters") {
+            dataFetcher.activeFilters.activeOpsetSet.delete(filterValue);
+          }
         }
 
-        // Apply the filters
-        filteredData = data.filter(item => {
-          const authorMatches = activeAuthorFilters.size === 0 || activeAuthorFilters.has(item.author);
-          const taskMatches = activeTaskFilters.size === 0 || activeTaskFilters.has(item.description.split(': ')[1]);
-          const opsetMatches = activeOpsetFilters.size === 0 || activeOpsetFilters.has(item.opset);
-          return authorMatches && taskMatches && opsetMatches;
-        });
-
-        currentPage = 1;
-        renderCards(filteredData);
+        renderUIObj.renderPage(dataFetcher, true);
       });
     });
-  });
+  }
+}
 
+const loadPage = async (renderUI, dataFetcher) => {
+  const { onnxFiles, yamlFiles } = await dataFetcher.fetchOnnxYamlFilesData();
 
-  const prevPage = document.getElementById('prev-page');
-  const nextPage = document.getElementById('next-page');
-  prevPage.addEventListener('click', () => {
-    if (currentPage > 1) {
-      currentPage--;
-      renderCards(filteredData);
+  const itemsPerPage = dataFetcher.paginationInfo.itemsPerPage;
+  const totalPages = dataFetcher.paginationInfo.totalPages;
+  // Fetch first Page
+  await dataFetcher.fetchYamlFileDetails(
+    onnxFiles.slice(0, itemsPerPage),
+    yamlFiles
+  );
+
+  // Render the First Page
+  renderUI.renderPage(dataFetcher);
+
+  // Fetch Rest of the files and update the page with all available filters
+  (async () => {
+    const loadingIcon = document.getElementById("loading-filters");
+    loadingIcon.style.visibility = "visible";
+
+    for (let currentPage = 2; currentPage < totalPages; currentPage++) {
+      let currentPageIndex = (currentPage - 1) * itemsPerPage;
+
+      await dataFetcher.fetchYamlFileDetails(
+        onnxFiles.slice(currentPageIndex, currentPageIndex + itemsPerPage),
+        yamlFiles
+      );
+
+      currentPageIndex += itemsPerPage;
     }
-  });
-  nextPage.addEventListener('click', () => {
-    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
-    if (currentPage < totalPages) {
-      currentPage++;
-      renderCards(filteredData);
-    }
-  });
 
-  const searchBar = document.getElementById('search-bar');
-  searchBar.addEventListener('input', function () {
-    const query = this.value.toLowerCase();
-    const searchResults = filteredData.filter(item => item.title.toLowerCase().includes(query));
-    renderCards(searchResults);
-  });
+    localStorage.setItem(
+      "OnnxYamlFileDetails",
+      JSON.stringify({
+        value: dataFetcher.yamlFileDetails,
+        expiresOn: Date.now() + 1000 * 60 * 60 * 24, // 1day in ms
+      })
+    );
+
+    loadingIcon.style.visibility = "hidden";
+    renderUI.renderPage(dataFetcher);
+    renderUI.attachPaginatedEventListeners(dataFetcher);
+    renderUI.attachSearchBarEventListeners(dataFetcher);
+  })();
+};
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const dataFetcher = new DataFetcher();
+  const renderUI = new RenderUI();
+
+  const localStorageContent = JSON.parse(
+    localStorage.getItem("OnnxYamlFileDetails")
+  );
+
+  if (!localStorageContent) {
+    loadPage(renderUI, dataFetcher);
+  } else {
+    const expiresOn = JSON.parse(
+      localStorage.getItem("OnnxYamlFileDetails")
+    ).expiresOn;
+
+    if (Date.now() > expiresOn) {
+      localStorage.removeItem("OnnxYamlFileDetails");
+      loadPage(renderUI, dataFetcher);
+    } else {
+      dataFetcher.yamlFileDetails = localStorageContent.value;
+      dataFetcher.updateAvailableFilters(dataFetcher.yamlFileDetails);
+
+      renderUI.renderPage(dataFetcher, true);
+      renderUI.attachPaginatedEventListeners(dataFetcher);
+      renderUI.attachSearchBarEventListeners(dataFetcher);
+    }
+  }
 });
-
-module.exports = { fetchData, renderCards };
-// exports = {fetchData, renderCards}

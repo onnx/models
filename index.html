@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Maintenance Page</title>
@@ -15,115 +15,94 @@
     <h1>Maintenance in Progress</h1>
     <p>We are currently undergoing maintenance. You will be redirected shortly. Thank you for your patience.</p>
 </body>
-</html>
+</html> -->
 
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>ONNX Model Zoo</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
-    <nav class="bg-white border-gray-800 dark:bg-gray-800" id="title-bar">
-      <div
-        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
-      >
-        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="assets\logos\onnx.png" alt="ONNX Logo" class="h-8" />
-          <span
-            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-            >ONNX Model Zoo</span
-          >
-        </a>
-        <input
-          class="rounded-lg p-2 w-96"
-          type="text"
-          id="search-bar"
-          placeholder="Search models..."
-        />
-        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul
-            class="flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
-          >
-            <li>
-              <a href="https://github.com/onnx/models" target="_blank"
-                ><img
-                  src="assets\logos\github.svg"
-                  alt="GitHub Logo"
-                  class="h-12"
-              /></a>
-            </li>
-            <li>
-              <a href="https://twitter.com/onnxai" target="_blank"
-                ><img
-                  src="assets\logos\twitterx.svg"
-                  alt="Twitter Logo"
-                  class="h-12"
-              /></a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/company/onnx/" target="_blank"
-                ><img
-                  src="assets\logos\linkedin.svg"
-                  alt="LinkedIn Logo"
-                  class="h-12"
-              /></a>
-            </li>
-            <li>
-              <a
-                href="https://huggingface.co/models?library=onnx&sort=trending"
-                target="_blank"
-                ><img
-                  src="assets\logos\hf-logo.svg"
-                  alt="HuggingFace Logo"
-                  class="h-12"
-              /></a>
-            </li>
-          </ul>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>ONNX Model Zoo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="fontawesome/js/brands.js"></script>
+  <script defer src="fontawesome/js/solid.js"></script>
+  <script defer src="fontawesome/js/fontawesome.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <nav class="bg-white border-gray-800 dark:bg-gray-800" id="title-bar">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="assets\logos\onnx.png" alt="ONNX Logo" class="h-8" />
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">ONNX Model Zoo</span>
+      </a>
+      <input class="rounded-lg p-2 w-96" type="text" id="search-bar" placeholder="Search models..." />
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+          <li>
+            <a href="https://github.com/onnx/models" target="_blank">
+              <i class="fa-brands fa-github fa-2xl" style="color: #ffffff;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/onnxai" target="_blank">
+              <i class="fa-brands fa-x-twitter fa-2xl" style="color: #ffffff;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/onnx/" target="_blank">
+              <i class="fa-brands fa-linkedin fa-2xl" style="color: #ffffff;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://huggingface.co/models?library=onnx&sort=trending" target="_blank">
+              <img src="assets\logos\huggingface_logo-noborder.svg" alt="HuggingFace Logo" class="h-8" />
+            </a>
+          </li>
+        </ul>
       </div>
-    </nav>
-    <div class="grid grid-cols-5">
-      <div class="col-span-1 bg-gray-700 w-full p-4" id="left-pane">
-        <h2 class="text-2xl text-white pb-2" id="filter-title">Task</h2>
-        <div id="task-filters">
-          ###Task filters will be populated dynamically
-        </div>
-        <h2 class="text-2xl text-white pb-2" id="filter-title">Author</h2>
-        <div id="author-filters">
-          ###Author filters will be populated dynamically
-        </div>
+    </div>
+  </nav>
+  <div class="grid grid-cols-5">
+    <div class="col-span-1 bg-gray-700 w-full p-4" id="left-pane">
+      <h2 class="text-2xl text-white pb-2" id="filter-title">Task</h2>
+      <div id="task-filters">
+        <!-- ### Task filters will be populated dynamically -->
       </div>
-      <div class="col-span-4">
-        <div id="loading-indicator" style="display: none; text-align: center">
-          Loading...
+      <h2 class="text-2xl text-white pb-2" id="filter-title">Author</h2>
+      <div id="author-filters">
+        <!-- ### Author filters will be populated dynamically -->
+      </div>
+      <h2 class="text-2xl text-white pb-2" id="filter-title">Opset</h2>
+      <div id="opset-filters">
+        <!-- ### Opset filters will be populated dynamically -->
+      </div>
+      <div id="loading-filters" style="color: #ffffff; visibility: hidden;">
+        <i class="fas fa-spinner fa-spin"></i>
+        Loading More Filters...
+      </div>
+    </div>
+    <div class="col-span-4">
+      <div id="loading-indicator" style="display: none; text-align: center">
+        Loading...
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-4" id="cards-content">
+        ###Main content will be populated dynamically
+      </div>
+      <div class="mt-4 items-center justify-center flex" id="pagination">
+        <div class="bg-gray-700 px-4 py-2 m-4 text-white rounded-lg font-semibold cursor-pointer" id="prev-page" >
+          Prev
         </div>
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-4"
-          id="main-content"
-        >
-          ###Main content will be populated dynamically
-        </div>
-        <div class="mt-4 items-center justify-center flex" id="pagination">
-          <div
-            class="bg-gray-700 px-4 py-2 m-4 text-white rounded-lg font-semibold cursor-pointer"
-            id="prev-page"
-          >
-            Prev
-          </div>
-          <div class="mx-8" id="page-info"></div>
-          <div
-            class="bg-gray-700 px-4 py-2 m-4 text-white rounded-lg font-semibold cursor-pointer"
-            id="next-page"
-          >
-            Next
-          </div>
+        <div class="mx-8" id="page-info"></div>
+        <div class="bg-gray-700 px-4 py-2 m-4 text-white rounded-lg font-semibold cursor-pointer" id="next-page" >
+          Next
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
-  </body>
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>

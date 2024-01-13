@@ -32,10 +32,10 @@
   position: absolute;
   top: 1em;
   right: 1em;
-  background-color: rgb(37 99 235); /* bg-blue-500 */
   border-radius: 0.25em;
   width: 1.5em;
   height: 1.5em;
+  cursor: pointer;
 }
 
 .download-arrow {
