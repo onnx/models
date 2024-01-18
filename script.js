@@ -31,7 +31,7 @@ class DataFetcher {
     const data = await response.json();
 
     data.tree.forEach((item) => {
-      if (item.path.endsWith(".onnx") && !item.path.includes("validated/")) {
+      if (item.path.endsWith(".onnx")) {
         this.onnxFiles.push(item);
       }
 
@@ -64,7 +64,7 @@ class DataFetcher {
           });
       } else {
         // If no YAML file is associated, resolve to null
-        console.log("missing yaml file", file);
+        // console.log("missing yaml file", file);
         return Promise.resolve({ file, yamlText: null });
       }
     });
@@ -127,8 +127,8 @@ class DataFetcher {
     return yamlFileDetails.map(({ file, yamlText }) => {
       let modelTitle = file.path.split("/").pop().replace(".onnx", ""); // Default to ONNX file name
       let author = "Unknown";
-      let opset = "NA";
-      let task = "NA";
+      let opset = "Not Available";
+      let task = "Not Available";
 
       if (yamlText) {
         const yamlLines = yamlText.split("\n");
@@ -428,8 +428,9 @@ const loadPage = async (renderUI, dataFetcher) => {
 
   // Fetch Rest of the files and update the page with all available filters
   (async () => {
-    const loadingIcon = document.getElementById("loading-filters");
-    loadingIcon.style.visibility = "visible";
+    const loadingFilters = document.getElementById("loading-filters");
+    const loadingPagination = document.getElementById("loading-pagination");
+    loadingFilters.style.display = loadingPagination.style.display = "block";
 
     for (let currentPage = 2; currentPage < totalPages; currentPage++) {
       let currentPageIndex = (currentPage - 1) * itemsPerPage;
@@ -440,18 +441,19 @@ const loadPage = async (renderUI, dataFetcher) => {
       );
 
       currentPageIndex += itemsPerPage;
+
+      localStorage.setItem(
+        "OnnxYamlFileDetails",
+        JSON.stringify({
+          value: dataFetcher.yamlFileDetails,
+          expiresOn: Date.now() + 1000 * 60 * 60 * 24, // 1day in ms
+        })
+      );
+
+      renderUI.renderPage(dataFetcher);
     }
 
-    localStorage.setItem(
-      "OnnxYamlFileDetails",
-      JSON.stringify({
-        value: dataFetcher.yamlFileDetails,
-        expiresOn: Date.now() + 1000 * 60 * 60 * 24, // 1day in ms
-      })
-    );
-
-    loadingIcon.style.visibility = "hidden";
-    renderUI.renderPage(dataFetcher);
+    loadingFilters.style.display = loadingPagination.style.display = "none";
     renderUI.attachPaginatedEventListeners(dataFetcher);
     renderUI.attachSearchBarEventListeners(dataFetcher);
   })();

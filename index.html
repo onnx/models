@@ -65,44 +65,58 @@
       </div>
     </div>
   </nav>
-  <div class="grid grid-cols-5">
-    <div class="col-span-1 bg-gray-700 w-full p-4" id="left-pane">
-      <h2 class="text-2xl text-white pb-2" id="filter-title">Task</h2>
-      <div id="task-filters">
-        <!-- ### Task filters will be populated dynamically -->
-      </div>
-      <h2 class="text-2xl text-white pb-2" id="filter-title">Author</h2>
-      <div id="author-filters">
-        <!-- ### Author filters will be populated dynamically -->
-      </div>
-      <h2 class="text-2xl text-white pb-2" id="filter-title">Opset</h2>
-      <div id="opset-filters">
-        <!-- ### Opset filters will be populated dynamically -->
-      </div>
-      <div id="loading-filters" style="color: #ffffff; visibility: hidden;">
-        <i class="fas fa-spinner fa-spin"></i>
-        Loading More Filters...
-      </div>
-    </div>
-    <div class="col-span-4">
-      <div id="loading-indicator" style="display: none; text-align: center">
-        Loading...
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-4" id="cards-content">
-        ###Main content will be populated dynamically
-      </div>
-      <div class="mt-4 items-center justify-center flex" id="pagination">
-        <div class="bg-gray-700 px-4 py-2 m-4 text-white rounded-lg font-semibold cursor-pointer" id="prev-page" >
-          Prev
+  <div style="width: 90%; margin-left: auto; margin-right: auto;">
+    <div class="grid grid-cols-5">
+      <div class="col-span-1 bg-gray-700 w-full p-4" id="left-pane">
+        <div class="filters-div">
+          <h2 class="text-2xl text-white pb-2" id="filter-title">Task</h2>
+          <div id="task-filters" style="display: inline-block;">
+          </div>
+          <!-- ### Task filters will be populated dynamically -->
         </div>
-        <div class="mx-8" id="page-info"></div>
-        <div class="bg-gray-700 px-4 py-2 m-4 text-white rounded-lg font-semibold cursor-pointer" id="next-page" >
-          Next
+        <div class="filters-div">
+          <h2 class="text-2xl text-white pb-2" id="filter-title">Author</h2>
+          <div id="author-filters" style="display: inline-block;">
+          </div>
+          <!-- ### Author filters will be populated dynamically -->
+        </div>
+        <div class="filters-div">
+          <h2 class="text-2xl text-white pb-2" id="filter-title">Opset</h2>
+          <div id="opset-filters" style="display: inline-block;">
+          </div>
+          <!-- ### Opset filters will be populated dynamically -->
+        </div>
+        <div id="loading-filters" style="color: #ffffff; display: none;">
+          <i class="fas fa-spinner fa-spin"></i>
+          Loading More Filters...
         </div>
       </div>
+      <div class="col-span-4">
+        <div id="loading-indicator" style="display: none; text-align: center">
+          Loading...
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-4" id="cards-content">
+          ###Main content will be populated dynamically
+        </div>
+        <div class="mt-4 items-center justify-center flex" id="loading-pagination" style="color: black; display: none;">
+          <i class="fas fa-spinner fa-spin"></i>
+          Loading More Records in the background...
+        </div>
+        <div class="mt-4 items-center justify-center flex" id="pagination">
+          <div class="bg-gray-700 px-4 py-2 m-4 text-white rounded-lg font-semibold cursor-pointer pagination-button"
+            id="prev-page">
+            Prev
+          </div>
+          <div class="mx-8" id="page-info"></div>
+          <div class="bg-gray-700 px-4 py-2 m-4 text-white rounded-lg font-semibold cursor-pointer pagination-button"
+            id="next-page">
+            Next
+          </div>
+        </div>
+      </div>
     </div>
+    <script src="script.js"></script>
   </div>
-  <script src="script.js"></script>
 </body>
 
 </html>

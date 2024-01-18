@@ -5,10 +5,24 @@
   border-radius: 0.5em;
   margin-bottom: 0.5em;
   cursor: pointer;
+  font-size: 0.8em;
+  user-select: none;
+  width: max-content;
+  float: left;
+  margin-left: 0.5em;
 }
 
 .filter-button.active {
-  background-color: rgb(37 99 235); /* bg-blue-500 */
+  background-color: teal;
+  color: white;
+}
+
+.filters-div {
+  margin-bottom: 2em;
+}
+
+.filters-div h2 {
+  font-size: 1.4em;
 }
 
 .card {
@@ -22,6 +36,8 @@
 .card h3 {
   font-size: 1em;
   font-weight: 650;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card p {
@@ -36,6 +52,10 @@
   width: 1.5em;
   height: 1.5em;
   cursor: pointer;
+}
+
+.pagination-button {
+  user-select: none;
 }
 
 .download-arrow {
