@@ -216,4 +216,4 @@ system_info:
   - yacs==0.1.8
   - yarl==1.9.2
   - zipp==3.17.0
-task: Generative_AI
+task: Natural_Language_Processing
