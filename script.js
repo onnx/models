@@ -31,7 +31,7 @@ class DataFetcher {
     const data = await response.json();
 
     data.tree.forEach((item) => {
-      if (item.path.endsWith(".onnx")) {
+      if (item.path.endsWith(".onnx") && !item.path.includes('skip/')) {
         this.onnxFiles.push(item);
       }
 
@@ -210,12 +210,18 @@ class RenderUI {
     const downloadButton = document.createElement("div");
     downloadButton.className = "download-button";
 
+    let isValidatedURL = false;
+    if (cardData.downloadUrl.startsWith("https://github.com/onnx/models/raw/main/validated")) {
+      isValidatedURL = true;
+      cardData.downloadUrl = cardData.downloadUrl.substring(0, cardData.downloadUrl.lastIndexOf('/'));
+    }
+
     downloadButton.addEventListener("click", () =>
       window.open(cardData.downloadUrl, "_blank")
     );
 
     const downloadArrow = document.createElement("i");
-    downloadArrow.className = "fa-solid fa-download";
+    downloadArrow.className = isValidatedURL ? "fa-solid fa-external-link" : "fa-solid fa-download";
     downloadButton.appendChild(downloadArrow);
     card.appendChild(downloadButton);
 
