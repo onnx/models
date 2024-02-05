@@ -1,10 +1,10 @@
 // main.test.js
 
-const { fetchData, renderCards } = require('../script.js');  // assuming you've exported these functions
-// import { fetchData, renderCards } from '../script.js';
+const { fetchData, renderPage } = require('../script.js');  // assuming you've exported these functions
+// import { fetchData, renderPage } from '../script.js';
 
-console.log("@@@@@", typeof renderCards, typeof fetchData)
-// const { fetchData, renderCards } = require('../script.js');  // assuming you've exported these functions
+console.log("@@@@@", typeof renderPage, typeof fetchData)
+// const { fetchData, renderPage } = require('../script.js');  // assuming you've exported these functions
 
 const { JSDOM } = require('jsdom');
 const fetch = require('node-fetch');
@@ -16,7 +16,7 @@ global.document = window.document;
 // Mock fetchData
 jest.mock('../script.js', () => ({
   fetchData: jest.fn(),
-//   renderCards: jest.fn()
+//   renderPage: jest.fn()
 }));
 
 describe('Fetch Data', () => {
@@ -65,10 +65,10 @@ describe('Render Cards', () => {
             { title: 'Model2', description: 'Task: Task2', author: 'Author2', opset: 'Opset2', downloadUrl: 'url2' }
         ];
 
-        // Call the actual renderCards function imported from script.js
-        renderCards(fakeData);
+        // Call the actual renderPage function imported from script.js
+        renderPage(fakeData);
 
-        // Now we check the actual DOM elements created by renderCards
+        // Now we check the actual DOM elements created by renderPage
         expect(mainContent.children.length).toBe(2);
 
         const firstCard = mainContent.children[0];
@@ -120,14 +120,14 @@ describe('Pagination Buttons', () => {
         prevPage.addEventListener('click', () => {
         if (currentPage > 1) {
             currentPage--;
-            renderCards(filteredData);
+            renderPage(filteredData);
         }
         });
         nextPage.addEventListener('click', () => {
         const totalPages = Math.ceil(filteredData.length / 10);  // Assuming 10 items per page
         if (currentPage < totalPages) {
             currentPage++;
-            renderCards(filteredData);
+            renderPage(filteredData);
         }
         });
     });
@@ -190,7 +190,7 @@ describe('Search Bar', () => {
         searchBar.addEventListener('input', function() {
             const query = this.value.toLowerCase();
             const searchResults = fakeData.filter(item => item.title.toLowerCase().includes(query));
-            renderCards(searchResults);
+            renderPage(searchResults);
         });
 
         // Simulate user input on the search bar
@@ -200,7 +200,7 @@ describe('Search Bar', () => {
         // const inputEvent = new global.Event('input');  // JSDOM compatible
         // searchBar.dispatchEvent(inputEvent);
 
-        // Validate that renderCards was called and the correct number of models are rendered
+        // Validate that renderPage was called and the correct number of models are rendered
         const mainContent = document.getElementById("main-content")
         expect(mainContent.children.length).toBe(1);
     });
@@ -223,8 +223,8 @@ describe('Filter Buttons', () => {
       const clickEvent = new window.Event('click');
       taskFilterButton.dispatchEvent(clickEvent);
   
-      // Call the real renderCards function with the filtered data
-      renderCards(fakeData.filter(item => item.description.split(': ')[1] === 'Computer Vision'));
+      // Call the real renderPage function with the filtered data
+      renderPage(fakeData.filter(item => item.description.split(': ')[1] === 'Computer Vision'));
       
       const mainContent = document.getElementById("main-content")
       expect(mainContent.children.length).toBe(1);
