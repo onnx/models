@@ -29,7 +29,7 @@ Official tool from HuggingFace that can be used to convert transformers models t
 ## Inference
 We used [ONNX Runtime](https://github.com/microsoft/onnxruntime) to perform the inference.
 
-Tutorial for running inference for RoBERTa-SequenceClassification model using onnxruntime can be found in the [inference](dependencies/roberta-inference.ipynb) notebook.
+Tutorial for running inference for RoBERTa-SequenceClassification model using onnxruntime can be found in the [inference](https://github.com/onnx/models/blob/main/validated/text/machine_comprehension/roberta/dependencies/roberta-sequence-classification-inference.ipynb) notebook.
 
 ### Input
 input_ids: Indices of input tokens in the vocabulary. It's a int64 tensor of dynamic shape (batch_size, sequence_length). Text tokenized by RobertaTokenizer.
