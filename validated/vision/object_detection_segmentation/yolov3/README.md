@@ -24,8 +24,7 @@ This model is a neural network for real-time object detection that detects 80 di
 ## Inference
 
 ### Input to model
-Resized image `(1x3x416x416)`
-Original image size `(1x2)` which is `[image.size[1], image.size[0]]`
+Resized image `(1x3x416x416)` and Original image size `(1x2)`, which is `[image.size[1], image.size[0]]`, are both of type `float32`.
 
 ### Preprocessing steps
 The images have to be loaded in to a range of [0, 1]. The transformation should preferrably happen at preprocessing.
@@ -62,7 +61,7 @@ def preprocess(img):
 image = Image.open(img_path)
 # input
 image_data = preprocess(image)
-image_size = np.array([image.size[1], image.size[0]], dtype=np.int32).reshape(1, 2)
+image_size = np.array([image.size[1], image.size[0]], dtype='float32').reshape(1, 2)
 ```
 
 ### Output of model
