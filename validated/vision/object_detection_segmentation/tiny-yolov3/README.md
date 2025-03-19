@@ -56,7 +56,16 @@ def preprocess(img):
 image = Image.open(img_path)
 # input
 image_data = preprocess(image)
+
+# if you give the image size from here, than you will need to take care of resizing the bounding boxes back to the input image. 
 image_size = np.array([image.size[1], image.size[0]], dtype=np.float32).reshape(1, 2)
+
+# OR
+# leave it like this so that model predicts the bounding box on the image directly.
+# COSTED me hours to realise it  
+image_size = np.array([416, 416], dtype=np.float32).reshape(1, 2)
+
+
 ```
 
 ### Output of model
@@ -64,6 +73,8 @@ The model has 3 outputs.
 boxes: `(1x'n_candidates'x4)`, the coordinates of all anchor boxes,
 scores: `(1x80x'n_candidates')`, the scores of all anchor boxes per class,
 indices: `('nbox'x3)`, selected indices from the boxes tensor. The selected index format is (batch_index, class_index, box_index). The class list is [here](https://github.com/qqwweee/keras-yolo3/blob/master/model_data/coco_classes.txt)
+
+**Format of the bounding boxes is : [y_min, x_min, y_max, x_max]**
 
 ### Postprocessing steps
 Post processing and meaning of output
