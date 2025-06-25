@@ -1,5 +1,6 @@
 <!--- SPDX-License-Identifier: Apache-2.0 -->
 
+> **Deprecation Notice**: We sincerely thank the community for participating in the ONNX Model Zoo effort. As the machine learning ecosystem has evolved, much of the novel model sharing has successfully transitioned to Hugging Face, which maintains a vibrant and healthy state. We are preserving the ONNX Model Zoo for historical purposes. Please note that models will no longer be available for LFS download starting July 1st, 2025.
 
 # ONNX Model Zoo
 
