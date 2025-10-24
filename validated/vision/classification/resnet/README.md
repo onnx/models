@@ -205,7 +205,7 @@ This is an example showing how to compile and run the https://github.com/lihaofd
 conda activate ryzen-ai-1.x.0
 ```
 
-### Compile Generate NPU Cache directly 
+### Compile NPU Cache 
 
 ```shell
 cd RyzenAI
