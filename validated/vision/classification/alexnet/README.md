@@ -16,7 +16,7 @@
 >
 > **Note** 
 >
-> Different preprocess methods will lead to different accuracies, the accuracy in table depends on this specific [preprocess method](https://github.com/intel/neural-compressor/blob/master/examples/onnxrt/image_recognition/onnx_model_zoo/alexnet/quantization/ptq/main.py).
+> Different preprocess methods will lead to different accuracies, the accuracy in table depends on this specific [preprocess method](https://github.com/intel/neural-compressor/blob/0a3d4bd43f69c29e2f8a3b07ac13036e41c6579c/examples/onnxrt/image_recognition/onnx_model_zoo/alexnet/quantization/ptq_static/main.py#L133).
 > 
 > The performance depends on the test hardware. Performance data here is collected with Intel® Xeon® Platinum 8280 Processor, 1s 4c per instance, CentOS Linux 8.3, data batch size is 1.
 
