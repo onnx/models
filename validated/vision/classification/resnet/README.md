@@ -196,6 +196,78 @@ bash run_tuning.sh --input_model=path/to/model \  # model path as *.onnx
 ### Model inference
 We use onnxruntime to perform Resnet50_fp32 and Resnet50_int8 inference. View the notebook [onnxrt_inference](../onnxrt_inference.ipynb) to understand how to use these 2 models for doing inference as well as which preprocess and postprocess we use.
 
+## Model inference with AMD Ryzen AI for offloading AI workload to AMD NPU
+This is an example showing how to compile and run the https://github.com/lihaofd/models/blob/main/validated/vision/classification/resnet/model/resnet50-v2-7.onnx on AMD's Ryzen AI NPU with ease of usage. Validated on AMD Ryzen™ AI 5 340 with 50 NPU TOPS.
+
+### Install Ryzen AI msi with relative NPU driver from https://ryzenai.docs.amd.com/en/latest/inst.html
+
+```shell
+conda activate ryzen-ai-1.x.0
+```
+
+### Compile NPU Cache 
+
+```shell
+cd RyzenAI
+python compile.py resnet50-v2-7.onnx
+
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I20251024 16:56:58.719477 34428 register_ssmlp.cpp:124] Registering Custom Operator: com.amd:SSMLP
+I20251024 16:56:58.720481 34428 register_matmulnbits.cpp:110] Registering Custom Operator: com.amd:MatMulNBits
+I20251024 16:56:58.835477 34428 vitisai_compile_model.cpp:1266] Vitis AI EP Load ONNX Model Success
+I20251024 16:56:58.835477 34428 vitisai_compile_model.cpp:1267] Graph Input Node Name/Shape (1)
+I20251024 16:56:58.835477 34428 vitisai_compile_model.cpp:1271]          data : [-1x3x224x224]
+I20251024 16:56:58.835477 34428 vitisai_compile_model.cpp:1277] Graph Output Node Name/Shape (1)
+I20251024 16:56:58.835477 34428 vitisai_compile_model.cpp:1281]          resnetv24_dense0_fwd : [-1x1000]
+Adding RYZEN_AI_INSTALLATION_PATH=C:\Program Files\RyzenAI\... to installation search path
+
+...
+
+Compilation Complete
+(WARNING:95, CRITICAL-WARNING:0, ERROR:0)
+[Vitis AI EP] No. of Operators :   CPU     1  VAIML   140
+[Vitis AI EP] No. of Subgraphs :   NPU     1 Actually running on NPU      1
+
+
+NPU cache model is saved as resnet50-v2-7_ctx.onnx
+
+```
+
+### Run NPU cache model directly (set num_runs as 10 in run.py, can track NPU utlization in task manager)
+
+```shell
+cd RyzenAI
+python run.py resnet50-v2-7_ctx.onnx
+
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I20251024 17:34:19.560344  6760 register_ssmlp.cpp:124] Registering Custom Operator: com.amd:SSMLP
+I20251024 17:34:19.561345  6760 register_matmulnbits.cpp:110] Registering Custom Operator: com.amd:MatMulNBits
+I20251024 17:34:19.574344  6760 vitisai_compile_model.cpp:1266] Vitis AI EP Load ONNX Model Success
+I20251024 17:34:19.574344  6760 vitisai_compile_model.cpp:1267] Graph Input Node Name/Shape (1)
+I20251024 17:34:19.574344  6760 vitisai_compile_model.cpp:1271]          data : [-1x3x224x224]
+I20251024 17:34:19.574344  6760 vitisai_compile_model.cpp:1277] Graph Output Node Name/Shape (1)
+I20251024 17:34:19.574344  6760 vitisai_compile_model.cpp:1281]          resnetv24_dense0_fwd : [-1x1000]
+[Vitis AI EP] No. of Subgraphs supported by Vitis AI EP: VAIML     1
+'''
+
+Top 3 Probabilities
+[208 209 207]
+------------------------------------|------------
+Classification                      |Percentage
+------------------------------------|------------
+Labrador retriever                  |   54.27
+------------------------------------|------------
+Chesapeake Bay retriever            |    6.09
+------------------------------------|------------
+golden retriever                    |    4.74
+------------------------------------|------------
+INFO: Test passed
+
+```
+
+
+
+
 ## References
 * **ResNetv1**
 [Deep residual learning for image recognition](https://arxiv.org/abs/1512.03385)
@@ -209,6 +281,9 @@ In European Conference on Computer Vision, pp. 630-645. Springer, Cham, 2016.
 * [MXNet](http://mxnet.incubator.apache.org), [Gluon model zoo](https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html), [GluonCV](https://gluon-cv.mxnet.io)
 
 * [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
+
+* [AMD Ryzen AI](https://ryzenai.docs.amd.com/en/latest/inst.html)
+
 
 ## Contributors
 * [ankkhedia](https://github.com/ankkhedia) (Amazon AI)
